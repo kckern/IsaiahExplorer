@@ -1,0 +1,1730 @@
+{
+    "structure": {
+        "whole": {
+            "category": "structure",
+            "shortcode": "whole",
+            "title": "The Book of Isaiah",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "The entire, undivided text of Isaiah",
+            "details": ""
+        },
+        "mal-ben": {
+            "category": "structure",
+            "shortcode": "mal-ben",
+            "title": "Malediction & Benediction",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Dual Cursings and Blessings",
+            "details": ""
+        },
+        "literary": {
+            "category": "structure",
+            "shortcode": "literary",
+            "title": "Judgement & Restoration",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Warnings of Judgement followed by Restoration",
+            "details": ""
+        },
+        "babylon": {
+            "category": "structure",
+            "shortcode": "babylon",
+            "title": "The Ugaritic Ba\u2019al Cycle 2",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "A rephrasing of the Ugaritic Ba\u2019al Cycle",
+            "details": ""
+        },
+        "authorship": {
+            "category": "structure",
+            "shortcode": "authorship",
+            "title": "Historical Authorship",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Three Divisions based on probably authorship",
+            "details": ""
+        },
+        "hero": {
+            "category": "structure",
+            "shortcode": "hero",
+            "title": "Hero Journey",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Classic mythological phases of separation, initiation and return",
+            "details": ""
+        },
+        "tests": {
+            "category": "structure",
+            "shortcode": "tests",
+            "title": "Three Tests",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Three major tests try the loyalties of God\u2019s end-time people.",
+            "details": ""
+        },
+        "msg": {
+            "category": "structure",
+            "shortcode": "msg",
+            "title": "Judgement, Comfort, Hope",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "A high-level book breakdown from \u201cThe Message\u201d bible",
+            "details": ""
+        },
+        "bibleproject": {
+            "category": "structure",
+            "shortcode": "bibleproject",
+            "title": "The Bible Project",
+            "short_title": "Bible Project",
+            "image": "",
+            "audio": "",
+            "description": "Structure and Themes defined by the Bible Project",
+            "details": ""
+        },
+        "zion": {
+            "category": "structure",
+            "shortcode": "zion",
+            "title": "Zion Ideology",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "A Jebusite pattern featuring a redemptive Davidic figure.",
+            "details": ""
+        },
+        "hm.ex.rt": {
+            "category": "structure",
+            "shortcode": "hm.ex.rt",
+            "title": "Home, Exhile, Return",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "An Egyptian literary structure of trouble, exhile, and return",
+            "details": "This structure functions like a three-act play in which the people of God (1) break their covenant with him; (2) are cast out of their Promised Land; and (3) finally return, renewed and reconstituted. As a linear holistic structure, Trouble at Home, Exile Abroad, and Happy Homecoming follows a timeline reaching from Isaiah\u2019s day to the end of the world.|A national consciousness pervades the first part of this threefold structure as Israel dwells in the land God promised Israel\u2019s ancestors, Abraham, Isaac, and Jacob. A universal consciousness pervades the second part as Israel\u2019s twelve tribes spread throughout the earth, populating new lands and intermarrying with other nations. An individual consciousness pervades the third part as only persons who renew God\u2019s covenant respond to his end-time summons to return home.|A redeeming aspect of Israel\u2019s dispersion among the nations of the world is that through the assimilation and intermingling of Israelite lineages with gentile or non-Israelite peoples, all nations of the world can now lay claim to Israel\u2019s covenantal heritage. Repentant persons of all nations, in other words, may renew the covenant with the God of Israel and reap its abundant blessings. God thus turns evil to good on behalf of those who love him and desire to serve him."
+        },
+        "ugaritic": {
+            "category": "structure",
+            "shortcode": "ugaritic",
+            "title": "The Ugaritic Ba\u2019al Cycle",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "A four-part prophetic structure based in the Ugaritic myth of Ba\u2019al and Anath",
+            "details": ""
+        },
+        "bifid": {
+            "category": "structure",
+            "shortcode": "bifid",
+            "title": "Chiastic Bifid Structure",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Seven contrasting themes linking two parts",
+            "details": "Seven pairs of antithetical themes reveal a divine pattern in which ruin precedes rebirth, punishment precedes deliverance, humiliation precedes exaltation, suffering precedes salvation, and disinheritance precedes inheritance. This shows that to ascend to higher spiritual levels a person or nation of God\u2019s people must descend through trials, prove loyal to God under all conditions, and comply with his law and word while resisting the temptation to be disloyal or rebel.|According to this pattern, the higher a person or nation ascends spiritually, the greater the preceding descent through trials that test their loyalty. In each case, a higher law and word of God must be observed in order to ascend further. Every ascent is characterized by God\u2019s re-creating the candidate nearer to his own image and likeness. It is accompanied by the candidate\u2019s receiving a new name pertaining to the new spiritual level and by an appointment to a higher spiritual calling.|As a synchronous holistic structure\u2014in which all parts of the text interconnect concurrently or synchronously\u2014Isaiah\u2019s Seven-Part Structure transforms the entire Book of Isaiah into an apocalyptic or end-time prophecy. In that sense, Israel\u2019s ancient history, as selectively represented in the Book of Isaiah, functions as an allegory of the end-time, in which the names of ancient persons and nations act as codenames of persons and nations that exist at the end of the world."
+        },
+        "wikipedia": {
+            "category": "structure",
+            "shortcode": "wikipedia",
+            "title": "Wikipedia Outline",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Wikipedia\u2019s high-level outline of Isaiah",
+            "details": ""
+        }
+    },
+    "outline": {
+        "chapters": {
+            "category": "outline",
+            "shortcode": "chapters",
+            "title": "Book of Isaiah Chapter Numbers",
+            "short_title": "Chapter Numbers",
+            "image": "chapters.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nrsv": {
+            "category": "outline",
+            "shortcode": "nrsv",
+            "title": "Headings from the New Revised Standard Version",
+            "short_title": "NRSV Headings",
+            "image": "nrsv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "anchor": {
+            "category": "outline",
+            "shortcode": "anchor",
+            "title": "Headings from the Anchor Bible",
+            "short_title": "Anchor Headings",
+            "image": "anchor.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "amp": {
+            "category": "outline",
+            "shortcode": "amp",
+            "title": "Headings from the Amplified Bible",
+            "short_title": "Amplified Bible Headings",
+            "image": "amp.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "cev": {
+            "category": "outline",
+            "shortcode": "cev",
+            "title": "Headings from the Contemporary English Version",
+            "short_title": "CEV Headings",
+            "image": "cev.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "erv": {
+            "category": "outline",
+            "shortcode": "erv",
+            "title": "Headings from the Easy-to-Read Version",
+            "short_title": "ERV Headings",
+            "image": "erv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "esv": {
+            "category": "outline",
+            "shortcode": "esv",
+            "title": "Headings from the English Standard Version",
+            "short_title": "ESV Headings",
+            "image": "esv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "gnt": {
+            "category": "outline",
+            "shortcode": "gnt",
+            "title": "Headings from the Good News Translation",
+            "short_title": "Good News Headings",
+            "image": "gnt.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "gw": {
+            "category": "outline",
+            "shortcode": "gw",
+            "title": "Headings from \u201cGod\u2019s Word\u201d Translation",
+            "short_title": "God\u2019s Word Headings",
+            "image": "gw.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "icb": {
+            "category": "outline",
+            "shortcode": "icb",
+            "title": "Headings from the Children\u2019s Bible",
+            "short_title": "Children\u2019s Bible Headings",
+            "image": "icb.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "mev": {
+            "category": "outline",
+            "shortcode": "mev",
+            "title": "Headings from the Modern English Version",
+            "short_title": "Modern English Headings",
+            "image": "mev.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "msg": {
+            "category": "outline",
+            "shortcode": "msg",
+            "title": "Headings from the \u201cThe Message\u201d Bible",
+            "short_title": "The Message Headings",
+            "image": "msg.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "niv": {
+            "category": "outline",
+            "shortcode": "niv",
+            "title": "Headings from the New International Version",
+            "short_title": "NIV Headings",
+            "image": "niv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nkjv": {
+            "category": "outline",
+            "shortcode": "nkjv",
+            "title": "Headings from the New King James Version",
+            "short_title": "NKJV Headings",
+            "image": "nkjv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nlt": {
+            "category": "outline",
+            "shortcode": "nlt",
+            "title": "Headings from the New Living Translation",
+            "short_title": "New Living Headings",
+            "image": "nlt.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "csb": {
+            "category": "outline",
+            "shortcode": "csb",
+            "title": "Headings from the Christian Standard Bible",
+            "short_title": "CSB Headings",
+            "image": "csb.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nog": {
+            "category": "outline",
+            "shortcode": "nog",
+            "title": "Hadings from the Names of God Bible",
+            "short_title": "Names of God Headings",
+            "image": "nog.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nlv": {
+            "category": "outline",
+            "shortcode": "nlv",
+            "title": "Headings from the New Life Version",
+            "short_title": "New Life Headings",
+            "image": "nlv.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nasb": {
+            "category": "outline",
+            "shortcode": "nasb",
+            "title": "Headings from New American Standard Bible",
+            "short_title": "NASB Headings",
+            "image": "nasb.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "nwt": {
+            "category": "outline",
+            "shortcode": "nwt",
+            "title": "Outline from the New World Translation ",
+            "short_title": "NWT Outline",
+            "image": "nwt.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "net": {
+            "category": "outline",
+            "shortcode": "net",
+            "title": "Headings from the New English Translation",
+            "short_title": "NET Headings",
+            "image": "net.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "ceb": {
+            "category": "outline",
+            "shortcode": "ceb",
+            "title": "Headings from Common English Bible",
+            "short_title": "CEB Headings",
+            "image": "ceb.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        }
+    },
+    "version": {
+        "HBRS": {
+            "category": "version",
+            "shortcode": "HBRS",
+            "title": "Hebraeus Press Version",
+            "short_title": "Gileadi",
+            "image": "hbrs.jpg",
+            "audio": 1,
+            "description": "1982 Translation by Avraham Gileadi",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6Come now, let us put it to the test,\/_says Jehovah:\/though your sins are as scarlet,\/_they can be made white as snow;\/though they have reddened as crimson,\/_they may become white as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore will my Lord of himself give you a sign: the young woman with child shall give birth to a son and name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\u00b6For to us a child is born, a son appointed,\/_who will shoulder the burden of government.\/He will be called\/_Wonderful Counsellor, One Mighty in Valor,\/_a Father for Ever, a Prince of Peace\u2014"
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6Then shall the wolf dwell among lambs\/_and the leopard lie down with young goats;\/calves and young lions will feed together,\/_and a youngster will lead them to pasture."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\u00b6Like a sapling he grew up in his presence,\/_a stalk out of arid ground.\/He had no distinguished appearance,\/_that we should notice him;\/he had no pleasing aspect,\/_that we should find him attractive."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and disdained by men,\/_a man of grief, accustomed to suffering.\/As one from whom men hide their faces\/_he was shunned, deemed by us of no merit."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Yet he bore our sufferings, endured our griefs,\/_though we thought him stricken,\/_smitten of God, and humbled."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced for our transgressions,\/_crushed because of our iniquities;\/the price of our peace he incurred,\/_and with his wounds we are healed."
+                }
+            }
+        },
+        "KJV": {
+            "category": "version",
+            "shortcode": "KJV",
+            "title": "King James Version",
+            "short_title": "KJV",
+            "image": "kjv.jpg",
+            "audio": 1,
+            "description": "1611 King James I of England authorized translation",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6Come now, and let us reason together, saith the Lord: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "\u00b6For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of God, and afflicted."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "\u00b6But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+                }
+            }
+        },
+        "NRSV": {
+            "category": "version",
+            "shortcode": "NRSV",
+            "title": "New Revised Standard Version",
+            "short_title": "NRSV",
+            "image": "nrsv.jpg",
+            "audio": 1,
+            "description": "1989 Academic translation by the Division of Christian Education",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6Come now, let us argue it out,\/_says the Lord:\/though your sins are like scarlet,\/_they shall be like snow;\/though they are red like crimson,\/_they shall become like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord himself will give you a sign. Look, the young woman is with child and shall bear a son, and shall name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child has been born for us,\/_a son given to us;\/authority rests upon his shoulders;\/_and he is named\/Wonderful Counselor, Mighty God,\/_Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf shall live with the lamb,\/_the leopard shall lie down with the kid,\/the calf and the lion and the fatling together,\/_and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For he grew up before him like a young plant,\/_and like a root out of dry ground;\/he had no form or majesty that we should look at him,\/_nothing in his appearance that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by others;\/_a man of suffering and acquainted with infirmity;\/and as one from whom others hide their faces\/_he was despised, and we held him of no account."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he has borne our infirmities\/_and carried our diseases;\/yet we accounted him stricken,\/_struck down by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was wounded for our transgressions,\/_crushed for our iniquities;\/upon him was the punishment that made us whole,\/_and by his bruises we are healed."
+                }
+            }
+        },
+        "NIV": {
+            "category": "version",
+            "shortcode": "NIV",
+            "title": "New International Version",
+            "short_title": "NIV",
+            "image": "niv.jpg",
+            "audio": 1,
+            "description": "1984 Best-selling translation by Biblica",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, let us settle the matter,\u201d\/_says the Lord.\/\u201cThough your sins are like scarlet,\/_they shall be as white as snow;\/though they are red as crimson,\/_they shall be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord himself will give you a sign: The virgin will conceive and give birth to a son, and will call him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For to us a child is born,\/_to us a son is given,\/_and the government will be on his shoulders.\/And he will be called\/_Wonderful Counselor, Mighty God,\/_Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf will live with the lamb,\/_the leopard will lie down with the goat,\/the calf and the lion and the yearling together;\/_and a little child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up before him like a tender shoot,\/_and like a root out of dry ground.\/He had no beauty or majesty to attract us to him,\/_nothing in his appearance that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by mankind,\/_a man of suffering, and familiar with pain.\/Like one from whom people hide their faces\/_he was despised, and we held him in low esteem."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he took up our pain\/_and bore our suffering,\/yet we considered him punished by God,\/_stricken by him, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced for our transgressions,\/_he was crushed for our iniquities;\/the punishment that brought us peace was on him,\/_and by his wounds we are healed."
+                }
+            }
+        },
+        "MSG": {
+            "category": "version",
+            "shortcode": "MSG",
+            "title": "The Message Bible",
+            "short_title": "Message",
+            "image": "msg.jpg",
+            "audio": 1,
+            "description": "1993-2002 Contemporary paraphrase by Eugene Peterson",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6\u201cCome. Sit down. Let\u2019s argue this out.\u201d\/_This is God\u2019s Message:\/\u201cIf your sins are blood\u2010red,\/_they\u2019ll be snow\u2010white.\/If they\u2019re red like crimson,\/_they\u2019ll be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "So the Master is going to give you a sign anyway. Watch for this: A girl who is presently a virgin will get pregnant. She\u2019ll bear a son and name him Immanuel (God\u2010With\u2010Us)."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child has been born\u2014for us!\/_the gift of a son\u2014for us!\/He\u2019ll take over\/_the running of the world.\/His names will be: Amazing Counselor,\/_Strong God,\/Eternal Father,\/_Prince of Wholeness."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6The wolf will romp with the lamb,\/_the leopard sleep with the kid.\/Calf and lion will eat from the same trough,\/_and a little child will tend them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\u00b6The servant grew up before God\u2014a scrawny seedling,\/_a scrubby plant in a parched field.\/There was nothing attractive about him,\/_nothing to cause us to take a second look."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was looked down on and passed over,\/_a man who suffered, who knew pain firsthand.\/One look at him and people turned away.\/_We looked down on him, thought he was scum."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\/But the fact is, it was our pains he carried\u2014\/_our disfigurements, all the things wrong with us.\/We thought he brought it on himself,\/_that God was punishing him for his own failures."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But it was our sins that did that to him,\/_that ripped and tore and crushed him\u2014our sins!\/He took the punishment, and that made us whole.\/_Through his bruises we get healed."
+                }
+            }
+        },
+        "NKJV": {
+            "category": "version",
+            "shortcode": "NKJV",
+            "title": "New King James  Version",
+            "short_title": "NKJV",
+            "image": "nkjv.jpg",
+            "audio": 1,
+            "description": "1975 modern translation that retains the KJV style",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, and let us reason together,\u201d\/Says the Lord,\/\u201cThough your sins are like scarlet,\/They shall be as white as snow;\/Though they are red like crimson,\/They shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord Himself will give you a sign: Behold, the virgin shall conceive and bear a Son, and shall call His name Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\u00b6For unto us a Child is born,\/Unto us a Son is given;\/And the government will be upon His shoulder.\/And His name will be called\/Wonderful, Counselor, Mighty God,\/Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cThe wolf also shall dwell with the lamb,\/The leopard shall lie down with the young goat,\/The calf and the young lion and the fatling together;\/And a little child shall lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For He shall grow up before Him as a tender plant,\/And as a root out of dry ground.\/He has no form or comeliness;\/And when we see Him,\/There is no beauty that we should desire Him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He is despised and rejected by men,\/A Man of sorrows and acquainted with grief.\/And we hid, as it were, our faces from Him;\/He was despised, and we did not esteem Him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely He has borne our griefs\/And carried our sorrows;\/Yet we esteemed Him stricken,\/Smitten by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But He was wounded for our transgressions,\/He was bruised for our iniquities;\/The chastisement for our peace was upon Him,\/And by His stripes we are healed."
+                }
+            }
+        },
+        "NASB": {
+            "category": "version",
+            "shortcode": "NASB",
+            "title": "New American Standard Bible",
+            "short_title": "NASB",
+            "image": "nasb.jpg",
+            "audio": 1,
+            "description": "Published in 1971 and was updated in 1995 for smoother reading.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6\u201cCome now, and let us reason together,\u201d\/Says the Lord,\/\u201cThough your sins are as scarlet,\/They will be as white as snow;\/Though they are red like crimson,\/They will be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord Himself will give you a sign: Behold, a virgin will be with child and bear a son, and she will call His name Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child will be born to us, a son will be given to us;\/And the government will rest on His shoulders;\/And His name will be called Wonderful Counselor, Mighty God,\/Eternal Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6And the wolf will dwell with the lamb,\/And the leopard will lie down with the young goat,\/And the calf and the young lion and the fatling together;\/And a little boy will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For He grew up before Him like a tender shoot,\/And like a root out of parched ground;\/He has no stately form or majesty\/That we should look upon Him,\/Nor appearance that we should be attracted to Him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and forsaken of men,\/A man of sorrows and acquainted with grief;\/And like one from whom men hide their face\/He was despised, and we did not esteem Him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely our griefs He Himself bore,\/And our sorrows He carried;\/Yet we ourselves esteemed Him stricken,\/Smitten of God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But He was pierced through for our transgressions,\/He was crushed for our iniquities;\/The chastening for our well\u2011being fell upon Him,\/And by His scourging we are healed."
+                }
+            }
+        },
+        "AMPC": {
+            "category": "version",
+            "shortcode": "AMPC",
+            "title": "Amplified Bible",
+            "short_title": "Amplified",
+            "image": "amp.jpg",
+            "audio": 1,
+            "description": "First published in 1965 by Zondervan and The Lockman Foundation.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6Come now, and let us reason together, says the Lord. Though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore the Lord Himself shall give you a sign: Behold, the young woman who is unmarried and a virgin shall conceive and bear a son, and shall call his name Immanuel [God with us]."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "\u00b6For to us a Child is born, to us a Son is given; and the government shall be upon His shoulder, and His name shall be called Wonderful Counselor, Mighty God, Everlasting Father [of Eternity], Prince of Peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6And the wolf shall dwell with the lamb, and the leopard shall lie down with the kid, and the calf and the young lion and the fatted domestic animal together; and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6For [the Servant of God] grew up before Him like a tender plant, and like a root out of dry ground; He has no form or comeliness [royal, kingly pomp], that we should look at Him, and no beauty that we should desire Him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He was despised and rejected and forsaken by men, a Man of sorrows and pains, and acquainted with grief and sickness; and like One from Whom men hide their faces He was despised, and we did not appreciate His worth or have any esteem for Him."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6Surely He has borne our griefs (sicknesses, weaknesses, and distresses) and carried our sorrows and pains [of punishment], yet we [ignorantly] considered Him stricken, smitten, and afflicted by God [as if with leprosy]."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "\u00b6But He was wounded for our transgressions, He was bruised for our guilt and iniquities; the chastisement [needful to obtain] peace and well\u2011being for us was upon Him, and with the stripes [that wounded] Him we are healed and made whole."
+                }
+            }
+        },
+        "HCSB": {
+            "category": "version",
+            "shortcode": "HCSB",
+            "title": "Holman Christian Standard Bible",
+            "short_title": "HCSB",
+            "image": "hcsb.jpg",
+            "audio": 1,
+            "description": "First edition completed in March 2004 by Holman Bible Publishers.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome, let us discuss this,\u201d\/says the Lord.\/\u201cThough your sins are like scarlet,\/they will be as white as snow;\/though they are as red as crimson,\/they will be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore, the Lord Himself will give you a sign: The virgin will conceive, have a son, and name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child will be born for us,\/a son will be given to us,\/and the government will be on His shoulders.\/He will be named\/Wonderful Counselor, Mighty God,\/Eternal Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\/The wolf will live with the lamb,\/and the leopard will lie down with the goat.\/The calf, the young lion, and the fatling will be together,\/and a child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up before Him like a young plant\/and like a root out of dry ground.\/He didn\u2019t have an impressive form\/or majesty that we should look at Him,\/no appearance that we should desire Him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by men,\/a man of suffering who knew what sickness was.\/He was like someone people turned away from;\/He was despised, and we didn\u2019t value Him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Yet He Himself bore our sicknesses,\/and He carried our pains;\/but we in turn regarded Him stricken,\/struck down by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But He was pierced because of our transgressions,\/crushed because of our iniquities;\/punishment for our peace was on Him,\/and we are healed by His wounds."
+                }
+            }
+        },
+        "CSB": {
+            "category": "version",
+            "shortcode": "CSB",
+            "title": "Christian Standard Bible",
+            "short_title": "CSB",
+            "image": "csb.jpg",
+            "audio": 0,
+            "description": "2017 Revision of the HSCB",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome, let us settle this,\u201d\/says the Lord.\/\u201cThough your sins are scarlet,\/they will be as white as snow;\/though they are crimson red,\/they will be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore, the Lord himself will give you a sign: See, the virgin will conceive, have a son, and name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child will be born for us,\/a son will be given to us,\/and the government will be on his shoulders.\/He will be named\/Wonderful Counselor, Mighty God,\/Eternal Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf will dwell with the lamb,\/and the leopard will lie down with the goat.\/The calf, the young lion, and the fattened calf will be together,\/and a child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up before him like a young plant\/and like a root out of dry ground.\/He didn\u2019t have an impressive form\/or majesty that we should look at him,\/no appearance that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by men,\/a man of suffering who knew what sickness was.\/He was like someone people turned away from;\/he was despised, and we didn\u2019t value him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Yet he himself bore our sicknesses,\/and he carried our pains;\/but we in turn regarded him stricken,\/struck down by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced because of our rebellion,\/crushed because of our iniquities;\/punishment for our peace was on him,\/and we are healed by his wounds."
+                }
+            }
+        },
+        "CEB": {
+            "category": "version",
+            "shortcode": "CEB",
+            "title": "Common English Bible",
+            "short_title": "Common English",
+            "image": "ceb.jpg",
+            "audio": 1,
+            "description": "The translation was begun in late 2008 and was finished in 2011.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6Come now, and let\u2019s settle this,\/_says the Lord.\/Though your sins are like scarlet,\/_they will be white as snow.\/If they are red as crimson,\/_they will become like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore, the Lord will give you a sign. The young woman is pregnant and is about to give birth to a son, and she will name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/A child is born to us, a son is given to us,\/_and authority will be on his shoulders.\/_He will be named\/_Wonderful Counselor, Mighty God,\/_Eternal Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\/The wolf will live with the lamb,\/_and the leopard will lie down with the young goat;\/_the calf and the young lion will feed together,\/_and a little child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up like a young plant before us,\/_like a root from dry ground.\/He possessed no splendid form for us to see,\/_no desirable appearance."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and avoided by others;\/_a man who suffered, who knew sickness well.\/Like someone from whom people hid their faces,\/_he was despised, and we didn\u2019t think about him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6It was certainly our sickness that he carried,\/_and our sufferings that he bore,\/_but we thought him afflicted,\/_struck down by God and tormented."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/He was pierced because of our rebellions\/_and crushed because of our crimes.\/_He bore the punishment that made us whole;\/_by his wounds we are healed."
+                }
+            }
+        },
+        "NLT": {
+            "category": "version",
+            "shortcode": "NLT",
+            "title": "New Living Translation",
+            "short_title": "NLT",
+            "image": "nlt.jpg",
+            "audio": 1,
+            "description": "Revision began in 1989 with 90 translators. Published in July 1996",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, let\u2019s settle this,\u201d\/_says the Lord.\/\u201cThough your sins are like scarlet,\/_I will make them as white as snow.\/Though they are red like crimson,\/_I will make them as white as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "All right then, the Lord himself will give you the sign. Look! The virgin will conceive a child! She will give birth to a son and will call him Immanuel (which means \u2018God is with us\u2019)."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\u00b6For a child is born to us,\/_a son is given to us.\/The government will rest on his shoulders.\/_And he will be called:\/Wonderful Counselor, Mighty God,\/_Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6In that day the wolf and the lamb will live together;\/_the leopard will lie down with the baby goat.\/The calf and the yearling will be safe with the lion,\/_and a little child will lead them all."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/My servant grew up in the Lord\u2019s presence like a tender green shoot,\/_like a root in dry ground.\/There was nothing beautiful or majestic about his appearance,\/_nothing to attract us to him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected\u2014\/_a man of sorrows, acquainted with deepest grief.\/We turned our backs on him and looked the other way.\/_He was despised, and we did not care."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Yet it was our weaknesses he carried;\/_it was our sorrows that weighed him down.\/And we thought his troubles were a punishment from God,\/_a punishment for his own sins!"
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced for our rebellion,\/_crushed for our sins.\/He was beaten so we could be whole.\/_He was whipped so we could be healed."
+                }
+            }
+        },
+        "ESV": {
+            "category": "version",
+            "shortcode": "ESV",
+            "title": "English Standard Version",
+            "short_title": "ESV",
+            "image": "esv.jpg",
+            "audio": 1,
+            "description": "Revision of the 1971 edition of the Revised Standard Version.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, let us reason together, says the Lord:\/though your sins are like scarlet,\/_they shall be as white as snow;\/though they are red like crimson,\/_they shall become like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For to us a child is born,\/_to us a son is given;\/and the government shall be upon his shoulder,\/_and his name shall be called\/Wonderful Counselor, Mighty God,\/_Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf shall dwell with the lamb,\/_and the leopard shall lie down with the young goat,\/and the calf and the lion and the fattened calf together;\/_and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For he grew up before him like a young plant,\/_and like a root out of dry ground;\/he had no form or majesty that we should look at him,\/_and no beauty that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by men;\/_a man of sorrows, and acquainted with grief;\/and as one from whom men hide their faces\/_he was despised, and we esteemed him not."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he has borne our griefs\/_and carried our sorrows;\/yet we esteemed him stricken,\/_smitten by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced for our transgressions;\/_he was crushed for our iniquities;\/upon him was the chastisement that brought us peace,\/_and with his wounds we are healed."
+                }
+            }
+        },
+        "NWT84": {
+            "category": "version",
+            "shortcode": "NWT84",
+            "title": "Watchtower Reference Bible",
+            "short_title": "New World (84)",
+            "image": "nwt84.jpg",
+            "audio": 1,
+            "description": "1984 Jehovah\u2019s Witness Bible",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6\u201cCome, now, {YOU} people, and let us set matters straight between us,\u201d says Jehovah. \u201cThough the sins of {YOU} people should prove to be as scarlet, they will be made white just like snow; though they should be red like crimson cloth, they will become even like wool.  "
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore Jehovah himself will give {YOU} men a sign: Look! The maiden herself will actually become pregnant, and she is giving birth to a son, and she will certainly call his name Im\u00b7man\u02b9u\u00b7el.  "
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "For there has been a child born to us, there has been a son given to us; and the princely rule will come to be upon his shoulder. And his name will be called Wonderful Counselor, Mighty God, Eternal Father, Prince of Peace.  "
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6And the wolf will actually reside for a while with the male lamb, and with the kid the leopard itself will lie down, and the calf and the maned young lion and the well\u2011fed animal all together; and a mere little boy will be leader over them.  "
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "And he will come up like a twig before one, and like a root out of waterless land. No stately form does he have, nor any splendor; and when we shall see him, there is not the appearance so that we should desire him.   "
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He was despised and was avoided by men, a man meant for pains and for having acquaintance with sickness. And there was as if the concealing of one\u2019s face from us. He was despised, and we held him as of no account.  "
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "Truly our sicknesses were what he himself carried; and as for our pains, he bore them. But we ourselves accounted him as plagued, stricken by God and afflicted.  "
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "But he was being pierced for our transgression; he was being crushed for our errors. The chastisement meant for our peace was upon him, and because of his wounds there has been a healing for us.  "
+                }
+            }
+        },
+        "NWT": {
+            "category": "version",
+            "shortcode": "NWT",
+            "title": "Watchtower New World Translation",
+            "short_title": "New World",
+            "image": "nwt.jpg",
+            "audio": 1,
+            "description": "2013 Jehovah\u2019s Witness Bible",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6\u201cCome, now, and let us set matters straight between us,\u201d says Jehovah.\/_\u201cThough your sins are like scarlet,\/_They will be made as white as snow;\/_Though they are as red as crimson cloth,\/_They will become like wool.   "
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore, Jehovah himself will give you a sign: Look! The young woman will become pregnant and will give birth to a son, and she will name him Im\u00b7man\u02b9u\u00b7el.  "
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0For a child has been born to us,\/_A son has been given to us;\/_And the rulership will rest on his shoulder.\/_His name will be called Wonderful Counselor, Mighty God, Eternal Father, Prince of Peace.   "
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0The wolf will reside for a while with the lamb,\/_And with the young goat the leopard will lie down,\/_And the calf and the lion and the fattened animal will all be together;\/_And a little boy will lead them.   "
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0He will come up like a twig before him, like a root out of parched land.\/_No stately form does he have, nor any splendor;\/_And when we see him, his appearance does not draw us to him.   "
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0He was despised and was avoided by men,\/_A man who was meant for pains and was familiar with sickness.\/_It was as if his face were hidden from us.\/_He was despised, and we held him as of no account.   "
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0Truly he himself carried our sicknesses,\/_And he bore our pains.\/_But we considered him as plagued, stricken by God and afflicted.   "
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\u00b6\u00a0But he was pierced for our transgression;\/_He was crushed for our errors.\/_He bore the punishment for our peace,\/_And because of his wounds we were healed.   "
+                }
+            }
+        },
+        "WEB": {
+            "category": "version",
+            "shortcode": "WEB",
+            "title": "World English Bible",
+            "short_title": "World English",
+            "image": "web.jpg",
+            "audio": 1,
+            "description": "Work on the World English Bible began in 1997.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, and let us reason together,\u201d says Yahweh:\/_\u201cThough your sins be as scarlet, they shall be as white as snow.\/_Though they be red like crimson, they shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord himself will give you a sign. Behold, the virgin will conceive, and bear a son, and shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "For to us a child is born. To us a son is given; and the government will be on his shoulders. His name will be called Wonderful, Counselor, Mighty God, Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\/The wolf will live with the lamb,\/_and the leopard will lie down with the young goat;\/_The calf, the young lion, and the fattened calf together;\/_and a little child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For he grew up before him as a tender plant,\/_and as a root out of dry ground.\/He has no good looks or majesty.\/_When we see him, there is no beauty that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised,\/_and rejected by men;\/a man of suffering,\/_and acquainted with disease.\/He was despised as one from whom men hide their face;\/_and we didn\u2019t respect him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he has borne our sickness,\/_and carried our suffering;\/yet we considered him plagued,\/_struck by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was pierced for our transgressions.\/_He was crushed for our iniquities.\/The punishment that brought our peace was on him;\/_and by his wounds we are healed."
+                }
+            }
+        },
+        "GNV": {
+            "category": "version",
+            "shortcode": "GNV",
+            "title": "Geneva Bible",
+            "short_title": "Geneva",
+            "image": "gnv.jpg",
+            "audio": 1,
+            "description": "The primary Bible of 16th century English Protestantism.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6Come now, and let us reason together, saith the Lord: though your sins were as crimson, they shall be made white as snow: though they were red like scarlet, they shall be as wool,"
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and she shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "\u00b6For unto us a child is born, and unto us a Son is given: and the government is upon his shoulder, and he shall call his name, Wonderful, Counselor, The mighty God, The everlasting Father, The prince of peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6The wolf also shall dwell with the lamb, and the leopard shall lie with the kid, and the calf, and the lion, and the fat beast together, and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6But he shall grow up before him as a branch, and as a root out of a dry ground; he hath neither form nor beauty: when we shall see him, there shall be no form that we should desire him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He is despised and rejected of men: he is a man full of sorrows, and hath experience of infirmities: we hid as it were our faces from him: he was despised, and we esteemed him not."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6Surely, he hath born our infirmities, and carried our sorrows, yet we did judge him as plagued and smitten of God, and humbled."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "\u00b6But he was wounded for our transgressions: he was broken for our iniquities: the chastisement of our peace was upon him, and with his stripes are we healed."
+                }
+            }
+        },
+        "ANCHOR": {
+            "category": "version",
+            "shortcode": "ANCHOR",
+            "title": "Anchor Yale Bible Translation",
+            "short_title": "Anchor",
+            "image": "anchor.jpg",
+            "audio": 1,
+            "description": "An modern academic translation by Joseph Blenkinsopp",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u25b2\u00b6\u201cCome now, let us reason together,\u201d \/[It is Yahveh who speaks.] \/If your sins are colored scarlet, \/can they become white like snow? \/If dyed crimson red, \/can they become like pure wool?"
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Wherefore, the Lord God himself will give you a sign: See, the young woman is pregnant and about to give birth to a son; she will give him the name Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "For a child has been born for us, \/a son has been given to us, \/the emblems of sovereignty rest on his shoulders. \/His titles will be: Marvelous Counselor, \/Hero Warrior, Eternal Father, \/Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "The wolf will share its lodging with the lamb, \/the leopard will lie down beside the goat, \/the calf and the lion cub will feed together, \/even a small child will lead them;"
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up like a sapling in Yahveh\u2019s presence, \/rooted in the parched ground. \/He had no outward beauty, no distinction, \/we saw nothing in his appearance to attract us,"
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "He was despised, shunned by people, \/a man who suffered, no stranger to sickness, \/like one from whom people turn away their gaze. \/He was despised, and we held him of no account."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\/Yet it was he who bore our affliction, \/he who bore the burden of our sufferings. \/We reckoned him stricken, \/smitten by God and afflicted;"
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "yet he was wounded because of our transgressions, \/crushed on account of our iniquities. \/On him was laid the chastisement that made us whole; \/we found healing because of his wounds."
+                }
+            }
+        },
+        "NOG": {
+            "category": "version",
+            "shortcode": "NOG",
+            "title": "Names of God Bible",
+            "short_title": "NamesofGod",
+            "image": "nog.jpg",
+            "audio": 0,
+            "description": "Modern translation retaining orginal usages of divine names",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome on now, let\u2019s discuss this!\u201d says Yahweh.\/_\u201cThough your sins are bright red,\/_they will become as white as snow.\/_Though they are dark red,\/_they will become as white as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "So Adonay himself will give you this sign: A virgin will become pregnant and give birth to a son, and she will name him Immanuel [God Is With Us]."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/A child will be born for us.\/_A son will be given to us.\/_The government will rest on his shoulders.\/_He will be named:\/_Wonderful Counselor,\/_Mighty God,\/_Everlasting Father,\/_Sar Shalom."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6Wolves will live with lambs.\/_Leopards will lie down with goats.\/_Calves, young lions, and year-old lambs will be together,\/_and little children will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\u00b6He grew up in his presence like a young tree,\/_like a root out of dry ground.\/_He had no form or majesty that would make us look at him.\/_He had nothing in his appearance that would make us desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by people.\/_He was an Ish Makoboth, familiar with suffering.\/_He was despised like one from whom people turn their faces,\/_and we didn\u2019t consider him to be worth anything."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\/He certainly has taken upon himself our suffering\/_and carried our sorrows,\/_but we thought that Elohim had wounded him,\/_beat him, and punished him."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/He was wounded for our rebellious acts.\/_He was crushed for our sins.\/_He was punished so that we could have peace,\/_and we received healing from his wounds."
+                }
+            }
+        },
+        "NLV": {
+            "category": "version",
+            "shortcode": "NLV",
+            "title": "New Life Version",
+            "short_title": "NLV",
+            "image": "nlv.jpg",
+            "audio": 0,
+            "description": "Simplified English translation by Gleason and Kathryn Ledyard.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u201cCome now, let us think about this together,\u201d says the Lord. \u201cEven though your sins are bright red, they will be as white as snow. Even though they are dark red, they will be like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "So the Lord Himself will give you a special thing to see: A young woman, who has never had a man, will give birth to a son. She will give Him the name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "For to us a Child will be born. To us a Son will be given. And the rule of the nations will be on His shoulders. His name will be called Wonderful, Teacher, Powerful God, Father Who Lives Forever, Prince of Peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6The wolf will live with the lamb. The leopard will lie down with the baby goat. The calf and the young lion and the young fat animal will lie down together. And a little boy will lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "He grew up before Him like a young plant, and like a root out of dry ground. He has no beautiful body and when we see Him there is no beauty that we should desire Him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "He was hated and men would have nothing to do with Him, a man of sorrows and suffering, knowing sadness well. We hid, as it were, our faces from Him. He was hated, and we did not think well of Him."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6For sure He took on Himself our troubles and carried our sorrows. Yet we thought of Him as being punished and hurt by God, and made to suffer."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "But He was hurt for our wrong-doing. He was crushed for our sins. He was punished so we would have peace. He was beaten so we would be healed."
+                }
+            }
+        },
+        "GNT": {
+            "category": "version",
+            "shortcode": "GNT",
+            "title": "Good News Translation",
+            "short_title": "Good News",
+            "image": "gnt.jpg",
+            "audio": 0,
+            "description": "First published under the name Good News for Modern Man in 1966",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6The Lord says, \u201cNow, let\u2019s settle the matter. You are stained red with sin, but I will wash you as clean as snow. Although your stains are deep red, you will be as white as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Well then, the Lord himself will give you a sign: a young woman who is pregnant will have a son and will name him \u2018Immanuel.\u2019"
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/A child is born to us!\/_A son is given to us!\/_And he will be our ruler.\/He will be called, \u201cWonderful Counselor,\u201d\/_\u201cMighty God,\u201d \u201cEternal Father,\u201d\/_\u201cPrince of Peace.\u201d"
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6Wolves and sheep will live together in peace,\/_and leopards will lie down with young goats.\/Calves and lion cubs will feed together,\/_and little children will take care of them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/It was the will of the Lord that his servant\/_grow like a plant taking root in dry ground.\/He had no dignity or beauty\/_to make us take notice of him.\/There was nothing attractive about him,\/_nothing that would draw us to him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/We despised him and rejected him;\/_he endured suffering and pain.\/No one would even look at him\u2014\/_we ignored him as if he were nothing."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cBut he endured the suffering that should have been ours,\/_the pain that we should have borne.\/All the while we thought that his suffering\/_was punishment sent by God."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But because of our sins he was wounded,\/_beaten because of the evil we did.\/We are healed by the punishment he suffered,\/_made whole by the blows he received."
+                }
+            }
+        },
+        "NET": {
+            "category": "version",
+            "shortcode": "NET",
+            "title": "New English Translation",
+            "short_title": "New English",
+            "image": "net.jpg",
+            "audio": 0,
+            "description": "Initially conceived in November 1995 in Philadelphia.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\/Come, let\u2019s consider your options,\u201d says the Lord.\/\u201cThough your sins have stained you like the color red,\/you can become white like snow;\/though they are as easy to see as the color scarlet,\/you can become white like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "For this reason the sovereign master himself will give you a confirming sign. Look, this young woman is about to conceive and will give birth to a son. You, young woman, will name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For a child has been born to us,\/a son has been given to us.\/He shoulders responsibility\/and is called:\/Extraordinary Strategist,\/Mighty God,\/Everlasting Father,\/Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\/A wolf will reside with a lamb,\/and a leopard will lie down with a young goat;\/an ox and a young lion will graze together,\/as a small child leads them along."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He sprouted up like a twig before God,\/like a root out of parched soil;\/he had no stately form or majesty that might catch our attention,\/no special appearance that we should want to follow him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by people,\/one who experienced pain and was acquainted with illness;\/people hid their faces from him;\/he was despised, and we considered him insignificant."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\/But he lifted up our illnesses,\/he carried our pain;\/even though we thought he was being punished,\/attacked by God, and afflicted for something he had done."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/He was wounded because of our rebellious deeds,\/crushed because of our sins;\/he endured punishment that made us well;\/because of his wounds we have been healed."
+                }
+            }
+        },
+        "MEV": {
+            "category": "version",
+            "shortcode": "MEV",
+            "title": "Modern English Version",
+            "short_title": "Modern English",
+            "image": "mev.jpg",
+            "audio": 0,
+            "description": "An KJV-like translation of the Bible completed in 2014.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6Come now, and let us reason together,\/_says the Lord.\/Though your sins be as scarlet,\/_they shall be as white as snow;\/though they be red like crimson,\/_they shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord Himself shall give you a sign: The virgin shall conceive, and bear a son, and shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For unto us a child is born,\/_unto us a son is given,\/_and the government shall be upon his shoulder.\/And his name shall be called\/_Wonderful Counselor, Mighty God,\/_Eternal Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf also shall dwell with the lamb,\/_and the leopard shall lie down with the young goat,\/and the calf and the young lion and the fatling together;\/_and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For he grew up before Him as a tender plant\/_and as a root out of a dry ground.\/He has no form or majesty that we should look upon him\/_nor appearance that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected of men,\/_a man of sorrows and acquainted with grief.\/And we hid, as it were, our faces from him;\/_he was despised, and we did not esteem him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he has borne our grief\/_and carried our sorrows;\/Yet we esteemed him stricken,\/_smitten of God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was wounded for our transgressions,\/_he was bruised for our iniquities;\/the chastisement of our peace was upon him,\/_and by his stripes we are healed."
+                }
+            }
+        },
+        "ERV": {
+            "category": "version",
+            "shortcode": "ERV",
+            "title": "Easy-to-Read Version",
+            "short_title": "Easy-to-Read",
+            "image": "erv.jpg",
+            "audio": 0,
+            "description": "A major revision of the ERV finished in 2004.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6\u201cI, the Lord, am the one speaking to you. Come, let\u2019s discuss this. Even if your sins are as dark as red dye, that stain can be removed and you will be as pure as wool that is as white as snow."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "But the Lord will still show you this sign:\u00b6\u25bcThe young woman is pregnant\/_and will give birth to a son.\/_She will name him Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "This will happen when the special child is born. God will give us a son who will be responsible for leading the people. His name will be \u201cWonderful Counselor, Powerful God, Father Who Lives Forever, Prince of Peace.\u201d"
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6Then wolves will live at peace with lambs, and leopards will lie down in peace with young goats. Calves, lions, and bulls will all live together in peace. A little child will lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6He was always close to the Lord. He grew up like a young plant, like a root growing in dry ground. There was nothing special or impressive about the way he looked, nothing we could see that would cause us to like him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "People made fun of him, and even his friends left him. He was a man who suffered a lot of pain and sickness. We treated him like someone of no importance, like someone people will not even look at but turn away from in disgust."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6The fact is, it was our suffering he took on himself; he bore our pain. But we thought that God was punishing him, that God was beating him for something he did."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "But he was being punished for what we did. He was crushed because of our guilt. He took the punishment we deserved, and this brought us peace. We were healed because of his pain."
+                }
+            }
+        },
+        "ICB": {
+            "category": "version",
+            "shortcode": "ICB",
+            "title": "International Children\u2019s Bible",
+            "short_title": "Children\u2019s Bible",
+            "image": "icb.jpg",
+            "audio": 0,
+            "description": "From the original Hebrew and Greek published by Tommy Nelson",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6The Lord says,\/_\u201cCome, we will talk these things over.\/Your sins are red like deep red cloth.\/_But they can be as white as snow.\/Your sins are bright red.\/_But you can be white like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "But the Lord himself will give you a sign: The virgin will be pregnant. She will have a son, and she will name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/A child will be born to us.\/_God will give a son to us.\/_He will be responsible for leading the people.\/His name will be Wonderful Counselor, Powerful God,\/_Father Who Lives Forever, Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6Then wolves will live in peace with lambs.\/_And leopards will lie down to rest with goats.\/Calves, lions and young bulls will eat together.\/_And a little child will lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/He grew up like a small plant before the Lord.\/_He was like a root growing in a dry land.\/He had no special beauty or form to make us notice him.\/_There was nothing in his appearance to make us desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was hated and rejected by people.\/_He had much pain and suffering.\/People would not even look at him.\/_He was hated, and we didn\u2019t even notice him."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6But he took our suffering on him\/_and felt our pain for us.\/We saw his suffering.\/_We thought God was punishing him."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was wounded for the wrong things we did.\/_He was crushed for the evil things we did.\/The punishment, which made us well, was given to him.\/_And we are healed because of his wounds."
+                }
+            }
+        },
+        "CEV": {
+            "category": "version",
+            "shortcode": "CEV",
+            "title": "Contemporary English Version",
+            "short_title": "CEV",
+            "image": "cev.jpg",
+            "audio": 0,
+            "description": "Began as a result of studies conducted by Barclay Newman (1985)",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6I, the Lord, invite you\/_to come and talk it over.\/Your sins are scarlet red,\/but they will be whiter\/_than snow or wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "But the Lord will still give you proof. A virgin is pregnant; she will have a son and will name him Immanuel."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\u00a7\u00b6A child has been born for us.\/We have been given a son\/_who will be our ruler.\/His names will be\/Wonderful Advisor\/_and Mighty God,\/Eternal Father\/_and Prince of Peace."
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6Leopards will lie down\/_with young goats,\/and wolves will rest\/_with lambs.\/Calves and lions\/_will eat together\/and be cared for\/_by little children."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/Like a young plant or a root\/_that sprouts in dry ground,\/the servant grew up\/_obeying the Lord.\/He wasn\u2019t some handsome king.\/Nothing about the way he looked\/_made him attractive to us."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was hated and rejected;\/his life was filled with sorrow\/_and terrible suffering.\/No one wanted to look at him.\/We despised him and said,\/_\u201cHe is a nobody!\u201d"
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6He suffered and endured\/_great pain for us,\/but we thought his suffering\/_was punishment from God."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/He was wounded and crushed\/_because of our sins;\/by taking our punishment,\/_he made us completely well."
+                }
+            }
+        },
+        "ASV": {
+            "category": "version",
+            "shortcode": "ASV",
+            "title": "American Standard Version",
+            "short_title": "ASV",
+            "image": "asv.jpg",
+            "audio": 0,
+            "description": "A Bible translation into English that was completed in 1901.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6Come now, and let us reason together, saith Jehovah: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore the Lord himself will give you a sign: behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "\u00b6For unto us a child is born, unto us a son is given; and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, Mighty God, Everlasting Father, Prince of Peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6And the wolf shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6For he grew up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we see him, there is no beauty that we should desire him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He was despised, and rejected of men; a man of sorrows, and acquainted with grief: and as one from whom men hide their face he was despised; and we esteemed him not."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6Surely he hath borne our griefs, and carried our sorrows; yet we did esteem him stricken, smitten of God, and afflicted."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "\u00b6But he was wounded for our transgressions, he was bruised for our iniquities; the chastisement of our peace was upon him; and with his stripes we are healed."
+                }
+            }
+        },
+        "RSV": {
+            "category": "version",
+            "shortcode": "RSV",
+            "title": "Revised Standard Version",
+            "short_title": "Revised Standard",
+            "image": "rsv.jpg",
+            "audio": 0,
+            "description": "Published in several parts during the mid-20th century.",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "poetry",
+                    "text": "\u00b6\u201cCome now, let us reason together,\/_says the Lord:\/though your sins are like scarlet,\/_they shall be as white as snow;\/though they are red like crimson,\/_they shall become like wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "Therefore the Lord himself will give you a sign. Behold, a young woman shall conceive and bear a son, and shall call his name Imman\u2032u\u2011el."
+                },
+                "17836": {
+                    "format": "poetry",
+                    "text": "\/For to us a child is born,\/_to us a son is given;\/and the government will be upon his shoulder,\/_and his name will be called\/\u201cWonderful Counselor, Mighty God,\/_Everlasting Father, Prince of Peace.\u201d"
+                },
+                "17891": {
+                    "format": "poetry",
+                    "text": "\u00b6The wolf shall dwell with the lamb,\/_and the leopard shall lie down with the kid,\/and the calf and the lion and the fatling together,\/_and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "poetry",
+                    "text": "\/For he grew up before him like a young plant,\/_and like a root out of dry ground;\/he had no form or comeliness that we should look at him,\/_and no beauty that we should desire him."
+                },
+                "18715": {
+                    "format": "poetry",
+                    "text": "\/He was despised and rejected by men;\/_a man of sorrows, and acquainted with grief;\/and as one from whom men hide their faces\/_he was despised, and we esteemed him not."
+                },
+                "18716": {
+                    "format": "poetry",
+                    "text": "\u00b6Surely he has borne our griefs\/_and carried our sorrows;\/yet we esteemed him stricken,\/_smitten by God, and afflicted."
+                },
+                "18717": {
+                    "format": "poetry",
+                    "text": "\/But he was wounded for our transgressions,\/_he was bruised for our iniquities;\/upon him was the chastisement that made us whole,\/_and with his stripes we are healed."
+                }
+            }
+        },
+        "KJ21": {
+            "category": "version",
+            "shortcode": "KJ21",
+            "title": "21st Century King James Version",
+            "short_title": "KJ21",
+            "image": "kj21.jpg",
+            "audio": 0,
+            "description": "An Updating of the 1611 King James Version (KJV)",
+            "details": "",
+            "sample": {
+                "17673": {
+                    "format": "prose",
+                    "text": "\u00b6\u201cCome now, and let us reason together,\u201d saith the Lord. \u201cThough your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool."
+                },
+                "17797": {
+                    "format": "prose",
+                    "text": "\u00b6Therefore the Lord Himself shall give you a sign: Behold, a virgin shall conceive and bear a Son, and shall call His name Immanuel."
+                },
+                "17836": {
+                    "format": "prose",
+                    "text": "\u00b6For unto us a Child is born, unto us a Son is given; and the government shall be upon His shoulder. And His name shall be called Wonderful, Counselor, The Mighty God, The Everlasting Father, The Prince of Peace."
+                },
+                "17891": {
+                    "format": "prose",
+                    "text": "\u00b6\u201cThe wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them."
+                },
+                "18714": {
+                    "format": "prose",
+                    "text": "\u00b6For He shall grow up before Him as a tender plant, and as a root out of a dry ground. He hath no form nor comeliness, and when we shall see Him, there is no beauty that we should desire Him."
+                },
+                "18715": {
+                    "format": "prose",
+                    "text": "\u00b6He is despised and rejected of men, a Man of sorrows, and acquainted with grief. And we hid as it were our faces from Him; He was despised, and we esteemed Him not."
+                },
+                "18716": {
+                    "format": "prose",
+                    "text": "\u00b6Surely He hath borne our griefs and carried our sorrows; yet we did esteem Him stricken, smitten of God, and afflicted."
+                },
+                "18717": {
+                    "format": "prose",
+                    "text": "\u00b6But He was wounded for our transgressions; He was bruised for our iniquities. The chastisement of our peace was upon Him, and with His stripes we are healed."
+                }
+            }
+        }
+    },
+    "commentary": {
+        "gileadi": {
+            "category": "commentary",
+            "shortcode": "gileadi",
+            "title": "Apocalyptic Commentary of The Book of Isaiah",
+            "short_title": "Gileadi",
+            "image": "gilieadi.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "anchor": {
+            "category": "commentary",
+            "shortcode": "anchor",
+            "title": "Anchor Yale Bible Commentary Series",
+            "short_title": "Blenkinsopp",
+            "image": "anchor.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "mckenzie": {
+            "category": "commentary",
+            "shortcode": "mckenzie",
+            "title": "Second Isaiah",
+            "short_title": "McKenzie",
+            "image": "anchor.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "ldsces": {
+            "category": "commentary",
+            "shortcode": "ldsces",
+            "title": "LDS Institue Old Testament Manual",
+            "short_title": "LDS Institute",
+            "image": "anchor.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "barnes": {
+            "category": "commentary",
+            "shortcode": "barnes",
+            "title": "Albert Barnes\u2019 Notes on the Whole Bible",
+            "short_title": "Barnes",
+            "image": "barnes.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        }
+    },
+    "audiocom": {
+        "gileadi": {
+            "category": "audiocom",
+            "shortcode": "gileadi",
+            "title": "Analytical Commentary of Isaiah by Avraham Gileadi",
+            "short_title": "Analytical Commentary",
+            "image": "",
+            "audio": "",
+            "description": "A single companion for Judeo-Christian listeners desiring to know Isaiah\u2019s prophetic message for our day.",
+            "details": ""
+        },
+        "mcgee": {
+            "category": "audiocom",
+            "shortcode": "mcgee",
+            "title": "Thru the Bible with J. Vernon McGee",
+            "short_title": "Thru the Bible",
+            "image": "",
+            "audio": "",
+            "description": "A systematic study of each book of the Bible",
+            "details": ""
+        }
+    },
+    "nonSeq": {
+        "HBRS": {
+            "18459": 18440,
+            "18358": 18355,
+            "18412": 18397,
+            "18413": 18412,
+            "18304": 18300,
+            "18303": 18301,
+            "18279": 18274,
+            "18707": 18705
+        }
+    }
+}

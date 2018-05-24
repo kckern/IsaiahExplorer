@@ -1,0 +1,377 @@
+import React, { Component } from "react";
+import { globalData } from "../globals.js";
+import { Passage } from "./Passage.js";
+
+import sprocket_icon from '../img/interface/sprocket.png';
+import play_icon from '../img/interface/play.png';
+import comment_icon from '../img/interface/comment.png';
+import loading_img from '../img/interface/message.gif';
+
+export default class VerseColumn extends Component {
+	
+  constructor(props) {
+    super(props);
+    this.state = {  fullsize: false, spot:null, lastVersions:[]  };
+    this.lastVersions = [];
+    this.lastVerse = null;
+    this.lastTags = [];
+  }
+
+
+
+ componentDidMount () {
+	setTimeout(() => {
+		if(this.props.app.state.ready===false)
+		{
+			this.setState({ fullsize: true });
+			this.render();
+		}
+	}, 450)
+ }
+ 
+ 
+  render() {
+  	
+		    if(this.props.app.state.ready===false)
+		    {
+		    	var classes = ["loading"];
+		    	if(this.state.fullsize===true) classes.push("fullsize");
+		    	return(
+			      <div className="col col2">
+			        <div className="heading">
+			          <div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
+			          <div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
+			            <div className="heading_title" id="audio_heading">
+			            	<div id='audio_verse'><img alt="Play Audio" src={play_icon}/> Play Audio Verse</div>
+			            	<div id='audio_commentary'><img alt="Audio Commentary" src={play_icon}/> Play Commentary <img alt="Select" id='com_option' src={sprocket_icon}/></div>
+			            	<div  id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
+		
+			    		</div>
+			        </div>
+			        <div id="verse" className={classes.join(" ")}><img alt="Loading" src={loading_img}/><br/> Loading Verse Details...</div>
+			      </div>
+			    )
+		    }
+		    
+			if(this.props.app.state.active_verse_id==null) return false;
+			var heading = "□ "+globalData.index[this.props.app.state.active_verse_id].string;
+			
+			var versions = this.lastVersions;
+			if(!this.props.app.state.spotHover)
+			{
+				versions = this.props.app.state.top_versions.slice(0);
+				var pos = versions.indexOf(this.props.app.state.version);
+				if( pos >=0 ) versions.splice(pos,1);
+				if(versions.length>4) versions = versions.slice(0,4);
+				versions.push(this.props.app.state.version);
+				
+
+				
+				this.lastVersions = versions;
+			}
+
+			
+			var swap_imgs = versions.map((shortcode,key)=>{
+					var classes = [];
+					if(shortcode!==this.props.app.state.version) classes.push("alt");
+					return (<img alt="spot"
+					onMouseEnter={()=>this.props.app.spotVerse(shortcode)}
+					onMouseLeave={()=>this.props.app.spotVerse(this.props.app.state.version)}
+					onClick={()=>this.props.app.setActiveVersion(shortcode)}
+					className={classes.join(" ")}  
+					src={require('../img/versions/'+shortcode.toLowerCase()+'.jpg')} 
+					key={key} />) 
+			});
+		return(
+			    <div className="col col2">
+			    	<div className="heading">
+			            <div className="heading_subtitle">Verse Details</div>
+			    		<div className="heading_title" id="detail_heading">{heading}
+			    		<div className="swapverse" 
+			    		onClick={this.props.app.freezeSwap.bind(this.props.app)}
+			    		onMouseLeave={this.props.app.reOrderSwap.bind(this.props.app)}
+			    		>
+			    			{swap_imgs}
+			    		</div>
+			    		</div>
+			            <div className="heading_title" id="audio_heading">
+			            	<div id='audio_verse'><img alt="Play Audio" src={play_icon}/> Play Audio Verse</div>
+			            	<div id='audio_commentary'><img alt="Audio Commentary" src={play_icon}/> Play Commentary <img alt="Select" id='com_option' src={sprocket_icon}/></div>
+			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false})}><img alt="Commentary" src={comment_icon}/> Read Commentaries</div>
+		
+			    		</div>
+			    	</div>
+			    	<VersePanel  
+				    	app={this.props.app} 
+			    	/>
+			    </div>
+			     
+		)
+	}
+}
+
+
+
+
+class VersePanel extends Component {
+	
+		
+  constructor(props) {
+    super(props);
+    this.state = { passagesMore: false, sectionsMore: false  };
+  }
+  
+  seeMorePassages(){this.setState( {passagesMore: true});}
+  seeMoreSections(){this.setState( {sectionsMore: true});}
+  reset(){this.setState({ tagsMore: false, passagesMore: false, sectionsMore: false });}
+  resetTags(){this.setState({ tagsMore: false});}
+
+  
+  componentDidMount()
+  {
+  	this.props.app.spreadVerse();
+  }
+  componentDidUpdate()
+  {
+  	this.props.app.spreadVerse();
+  }
+  
+	render()  {
+		
+
+  	var seeMorePassages = this.seeMorePassages.bind(this);
+  	var seeMoreSections = this.seeMoreSections.bind(this);
+  	
+		return <div id="verse" >
+    <div className="verse_container">
+        <Passage app={this.props.app}  verses={this.props.app.state.active_verse_id}  spottable={true} wrapperId="verse_text"/>
+    </div>
+	<TagBox   app={this.props.app} />
+    <SeeMoreTags  app={this.props.app} />
+    <PassagesBox  app={this.props.app} showFull={this.state.passagesMore} resetter={this.reset.bind(this)} />
+    <SeeMore clicker={seeMorePassages} clicked={this.state.passagesMore} />
+	<SectionsBox  app={this.props.app} showFull={this.state.sectionsMore} resetter={this.reset.bind(this)} />
+    <SeeMore clicker={seeMoreSections} clicked={this.state.sectionsMore} />
+</div>
+	}
+}
+
+class SeeMoreTags extends Component {
+	
+
+	
+	render()
+	{
+		if(this.props.clicked) return null;
+		return(<div className="readmore" onClick={this.props.app.moreTags.bind(this.props.app)}>See More Tags...</div>)
+		
+	}
+	
+}
+
+
+class TagBox extends Component{ 
+	
+	
+  constructor(props) {
+    super(props);
+     this.state = { oversize: null };
+     this.tags = [];
+  }
+
+	
+	 componentDidUpdate() {
+
+	 	const height = this.divElement.clientHeight;
+	 	if(height>90 )
+	 	{
+	 	//	this.setState({oversize:true});
+	 	}
+	 	else if(height<=90)
+	 	{
+	 	//	this.setState({oversize:false});
+	 	}
+	 	 
+	 }
+	
+	
+	render()
+	{
+
+		this.tags = this.props.app.getVerseTags(this.props.app.state.active_verse_id);
+		var tagLinks = this.tags.map((tagName,key)=>{
+			return (<TagLink tagName={tagName}  app={this.props.app}  key={key}/>) 
+		});
+		
+		var classes = ["verse_info_box","tags"];
+		
+
+		return(    
+		<div className={classes.join(" ")} ref={ (divElement) => this.divElement = divElement} >
+			<h4>Verse Tags</h4>
+			{tagLinks}
+        </div>)
+	}
+}
+
+class TagLink extends Component{
+	render()
+	{
+
+		
+		    	var classes = ["taglink"];
+		    	if(this.props.app.state.selected_tag===this.props.tagName) classes.push("tag_highlighted");
+		    	
+		return(
+			<div 
+			className={classes.join(" ")}
+			onMouseEnter={()=>this.props.app.setPreviewedTag(this.props.tagName)}
+			onMouseLeave={()=>this.props.app.setPreviewedTag(null)}
+			onClick={()=>this.props.app.setActiveTag(this.props.tagName)}
+			>{this.props.tagName}</div>
+		)
+	}
+}
+
+
+class PassagesBox extends Component{
+	
+	render()
+	{
+		if(this.props.app.state.active_verse_id===null) return null;
+	    var entries = this.props.app.state.top_outlines.slice(0); for(var i in globalData["meta"]["outline"]) if(entries.indexOf(i)<0) entries.push(i); 
+	    const Passagelist = entries.map(
+	      (option, optionKey) => {
+	      	
+	      	var shortcode = option;
+	      	var index = parseInt(globalData["outlineIndex"][this.props.app.state.active_verse_id][shortcode],0);
+	      	var outline = globalData["outlines"][shortcode];
+	      	
+	      	if(typeof outline[index] === "undefined") return null;
+
+	      	
+	      	var heading = outline[index];
+	      	
+	      	var classes = []; //active first
+	      	if(shortcode===this.props.app.state.outline) classes.push("active");
+	      	
+	      	var item = {};
+	      	item['classes']  	= classes;
+	      	item['shortcode']  	= shortcode;
+	      	item['heading']  	= heading.heading;
+	      	
+	        return (
+	          <PassagesLink
+	            key={optionKey}
+	            item={item}
+	            app={this.props.app}
+	            resetter={this.props.resetter}
+	          />
+	        );
+	      }
+	    );
+	    var classes = ["verse_info_box","outline"];
+	    if(!this.props.showFull) classes.push("top5");
+		return(    
+		    <div className={classes.join(" ")}>
+        <h4>Encompassing Passages</h4>
+        <div>{Passagelist}</div>
+    </div>)
+	}
+}
+
+class PassagesLink extends Component{
+	render()
+	{
+		
+		return(
+		 <div 
+		 onClick={() => { this.props.app.setActiveOutline(this.props.item.shortcode); this.props.resetter(); }}
+			onMouseEnter={()=>this.props.app.setPreviewedPassage(this.props.item.shortcode)}
+			onMouseLeave={()=>this.props.app.setPreviewedPassage(null)}
+		 >
+            <div  className={this.props.item.classes.join(" ")} >
+            
+            <img   alt="Passage Version" src={require('../img/versions/'+this.props.item.shortcode+'.jpg')} /> <span>{this.props.item.heading}</span> </div>
+        </div>
+		)
+	}
+}
+
+
+class SectionsBox extends Component{
+	
+	render()
+	{
+		if(this.props.app.state.active_verse_id===null) return null;
+	    
+	    var entries = this.props.app.state.top_structures.slice(0); for(var i in globalData["meta"]["structure"]) if(entries.indexOf(i)<0) entries.push(i); 
+	    const Sectionlist = entries.map(
+	      (option, optionKey) => {
+	      	var shortcode = option;
+	      	var index = parseInt(globalData["structureIndex"][this.props.app.state.active_verse_id][shortcode],0);
+	      	var structure = globalData["structures"][shortcode];
+	      	var section = structure[index];
+	      	var count = "⦗"+(index+1)+"/"+structure.length+"⦘";
+	      	
+	      	var classes = []; //active first
+	      	if(shortcode===this.props.app.state.structure) classes.push("active");
+	      	
+	      	var item = {};
+	      	item['classes']  	= classes;
+	      	item['title']  		= globalData["meta"]["structure"][shortcode].title;
+	      	item['shortcode']  	= shortcode;
+	      	item['section']  	= count+" "+section.description;
+	      	
+	        return (
+	          <SectionsLink
+	            key={optionKey}
+	            item={item}
+	            app={this.props.app}
+	            resetter={this.props.resetter}
+	            
+	          />
+	        );
+	      }
+	    );
+
+	    var classes = ["verse_info_box","structure"];
+	    if(!this.props.showFull) classes.push("top5");
+		return(    
+		    <div className={classes.join(" ")}>
+	        <h4>Corresponding Structural Sections</h4>
+	        <div>{Sectionlist}</div>
+	    </div>)
+	}
+}
+
+class SectionsLink extends Component{
+	render()
+	{
+		return(
+	        <div 
+	        onClick={() => { this.props.app.setActiveStructure(this.props.item.shortcode); this.props.resetter(); }}
+			onMouseEnter={()=>this.props.app.setPreviewedSection(this.props.item.shortcode)}
+			onMouseLeave={()=>this.props.app.setPreviewedSection(null)}
+	        >
+	            <div  className={this.props.item.classes.join(" ")} >
+	                <div className="icon">{this.props.item.title}</div> 
+	                <span><img alt="Logo"  src={require('../img/structures/'+this.props.item.shortcode+'.png')}  />{this.props.item.section}</span> </div>
+	        </div>
+		)
+	}
+}
+
+
+
+class SeeMore extends Component {
+	
+	render()
+	{
+		
+		if(this.props.clicked) return null;
+		return(<div className="readmore" onClick={this.props.clicker}>See More...</div>)
+		
+	}
+	
+}
