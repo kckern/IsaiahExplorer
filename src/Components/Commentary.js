@@ -36,24 +36,80 @@ class CommentaryTabs extends Component {
   	this.props.app.setState({commentarySource:shortcode,commentaryID:id})	
   }
   
+  
+ mapOrder (array, order, key) {
+  array.sort( function (a, b) {
+    var A = a[key], B = b[key];
+    
+    if (order.indexOf(A)===-1 && order.indexOf(B) >=0 )  return 1;
+    if (order.indexOf(A) > order.indexOf(B))  return 1;
+    return -1;
+  });
+  return array;
+};
+
+	componentDidUpdate()
+	{
+		this.props.app.saveSettings()
+	}
+
   render() {
+
+  	var comSources = Object.values(globalData.commentary.comSources);
+
+	comSources = this.mapOrder(comSources, this.props.app.state.commentary_order, 'shortcode');
+
+  	var available =[];
   	
-  	var keys = Object.keys(globalData.commentary.comSources);
-  	var tabs = keys.map((shortcode,key)=>{
+  	//order from local storage?
+  	var tabs = comSources.map((source,key)=>{
   		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id]===undefined) return null;
-  		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][shortcode]===undefined) return null;
-  		
-		var source = globalData.commentary.comSources[shortcode];
+		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][source.shortcode]===undefined) return null;
+		available.push(source);
 		var classes = [];
-		if(shortcode===this.props.app.state.commentarySource) classes.push("selected");
-  		return <span className={classes.join(" ")} key={key} ref={source.shortcode} onClick={()=>this.handleClick(shortcode)}>{source.label}</span>;
+		if(source.shortcode===this.props.app.state.commentarySource) classes.push("selected");
+  		return <span className={classes.join(" ")} key={key} ref={source.shortcode} onClick={()=>this.handleClick(source.shortcode)}>{source.label}</span>;
   	});
   	
-  	return (<div className="src_tabs">{tabs}</div>)
+  	return (<div className="src_tabs"><MoreTab app={this.props.app} sources={available}/>{tabs}</div>)
   }
   
 }
 
+
+class MoreTab extends Component {
+	
+	state = {open:false}
+
+	selectOption(e)
+	{
+				
+		var shortcode = e.target.options[e.target.selectedIndex].attributes.shortcode.value;
+	  	var id = globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][shortcode][0]
+		
+		if(shortcode==="top") return false;
+		var new_order = this.props.app.state.commentary_order.slice(0);
+	    const index = new_order.indexOf(shortcode);
+	    if (index !== -1) {  new_order.splice(index, 1); }
+		new_order.unshift(shortcode);
+		this.setState({open:false},this.props.app.setState({commentary_order:new_order,commentarySource:shortcode,commentaryID:id},this.props.app.saveSettings()));
+	}
+
+	render()
+	{
+		if(this.state.open)
+		{
+			return (
+				<select  onChange={this.selectOption.bind(this)} >
+					<option val="top">⋯</option>
+					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ {source.name}</option> } ) }
+				</select>
+				)
+		}
+		
+		return <span className='more' onMouseEnter={()=>this.setState({open:true})}>⋯</span>;
+	}
+}
 
 class CommentaryContent extends Component {
 		
@@ -110,7 +166,7 @@ class CommentaryContentLoaded extends Component {
 
 			
 			var thisid = item.id;
-			var list = Object.keys(globalData.commentary.idIndex).map(Number);
+			var list = Object.keys(globalData.commentary.idIndex);
 			var index = list.indexOf(thisid);
 			var new_id = list[index+1];
 			
@@ -130,11 +186,12 @@ class CommentaryContentLoaded extends Component {
 			};
 			var setter = function(data){
 		      	globalData.commentary.comData[data.id] = data;
-			}.bind(this);
+			};
 			
 		  	fetch("/com/"+src+"."+new_id+".json")
 		  	.then(jsoner)
-		  	.then(setter);
+		  	.then(setter)
+		  	.then(this.props.app.setUrl.bind(this.props.app));
 	  }
 	  
 	  
@@ -185,19 +242,16 @@ class CommentaryContentLoaded extends Component {
 					    	if(domNode===undefined) return domNode;
 					        if (domNode.name && domNode.name === 'a') {
 					        
-					        	if(domNode.attribs.class=="ref") return <SGLink reference={domNode.children[0].data} app={this.props.app}/>;
+					        	if(domNode.children[0]===undefined) return null;
+					        	if(domNode.attribs.class==="ref") return <SGLink reference={domNode.children[0].data} app={this.props.app}/>;
 					        
-					        	if(domNode.attribs.class=="isa")
+					        	if(domNode.attribs.class==="isa")
 					        	{
 						        	var range = [];
 						        	if(domNode.attribs.verses!==undefined)
 						        	{
 						        		var obj = JSON.parse(atob(domNode.attribs.verses));
-						        		for(var i in obj)
-						        		{
-						        			var verse_id = parseInt(Object.keys(obj[i])[0],0);
-						        			for(var j=verse_id; j<=verse_id-1+(obj[i][verse_id]); j++) range.push(j);
-						        		}
+						        		range = this.props.app.verseDatatoArray(obj);
 						        	}
 					        		return <CommentaryTagLink reference={domNode.children[0].data} verses={range} app={this.props.app}/>;
 					        	}
@@ -229,17 +283,23 @@ class CommentaryTagLink extends Component {
 		
 		if(this.props.verses.length===1) //or consecutive?
 		{
-			this.props.app.setState({searchMode:false,comSearchMode:false},this.props.app.setActiveVerse.bind(this.props.app,this.props.verses[0],undefined,undefined,undefined,"versebox"));
+			this.props.app.setState({
+				searchMode:false,
+				selected_tag:null,
+				highlighted_tagged_verse_range:[],
+				comSearchMode:false},
+				this.props.app.setActiveVerse.bind(this.props.app,this.props.verses[0],undefined,undefined,undefined,"versebox"));
 		}
 		else
 		{
 			
 		this.props.app.setState({
 			searchMode:true,
+			selected_tag:null,
 			comSearchMode:true,
 			highlighted_tagged_verse_range:[],
 			highlighted_verse_range:this.props.verses},
-			this.props.app.setActiveVerse.bind(this.props.app,this.props.verses[0]));
+			this.props.app.setActiveVerse.bind(this.props.app,this.props.verses[0],undefined,undefined,undefined,"versebox"));
 		}
 		
 	}
@@ -282,10 +342,12 @@ class CommentaryContentLoading extends Component {
 				
 		      	
 			}.bind(this);
+			if(globalData.commentary.idIndex[comid]===undefined) return false;
 			var src = globalData.commentary.idIndex[comid].source;
 		  	fetch("/com/"+src+"."+comid+".json")
 		  	.then(jsoner)
-		  	.then(setter);
+		  	.then(setter)
+		  	.then(this.props.app.setUrl.bind(this.props.app));
 		  	
 		  	
 			

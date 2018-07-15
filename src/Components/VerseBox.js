@@ -17,7 +17,11 @@ export class VerseBox extends Component {
     return  parseInt(this.props.app.state.selected_verse_id,0) === parseInt(this.props.verse_id,0);
   }
   isActiveCommentary() {
-    return (  this.props.app.state.commentary_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 );
+    return (  
+    	this.props.app.state.commentary_audio_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 ||
+    	this.props.app.state.commentary_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1
+    
+    );
   }
 
   render() {

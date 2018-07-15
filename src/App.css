@@ -3,6 +3,7 @@
     src:  url('./img/fonts/Goudy-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+  	color:pink;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     src: url('./img/fonts/Goudy-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+  	color:pink!important;
 }
 @font-face {
     font-family: 'Goudy';
@@ -18,72 +20,20 @@
     font-style: italic;
 }
 
-
-
-/* latin-ext */
-@font-face {
-  font-family: 'Sorts Mill Goudy';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(https://fonts.gstatic.com/s/sortsmillgoudy/v7/Qw3GZR9MED_6PSuS_50nEaVrfzgEbHQEj6M7.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Sorts Mill Goudy';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Sorts Mill Goudy Regular'), local('SortsMillGoudy-Regular'), url(https://fonts.gstatic.com/s/sortsmillgoudy/v7/Qw3GZR9MED_6PSuS_50nEaVrfzgEbHoEjw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4QIFqPfE.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4SYFqPfE.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4ToFqPfE.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4QoFqPfE.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4Q4FqPfE.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
 /* latin */
 @font-face {
   font-family: 'Comfortaa';
   font-style: normal;
   font-weight: 400;
-  src: local('Comfortaa Regular'), local('Comfortaa-Regular'), url(https://fonts.gstatic.com/s/comfortaa/v12/1Ptsg8LJRfWJmhDAuUs4TYFq.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  color:'blue';
+  src: 	url('./img/fonts/Comfortaa.woff2') format('woff2'),
+	  	url('./img/fonts/Comfortaa.woff') format('woff');
 }
+
+
+
+
+
 
 /* Structure */
 html,body
@@ -131,6 +81,10 @@ html,body
     
 }
 
+.react-player
+{
+	width:0; height:0;
+}
 
 
 
@@ -390,6 +344,8 @@ div#text
 	transition: top 0.5s;
 }
 
+
+
 #approot:not(.commentaryMode) #commentary_text
 {
 	height:0px;
@@ -551,6 +507,7 @@ div.heading_title
 	text-align: center;
 	letter-spacing: 3px;
 	height:23px;
+	position:relative;
 }
 
 div#book h3
@@ -797,10 +754,45 @@ div.heading_grid_tag_highlighted
 
 
 
+
+
+
+
+
+
+/*  Commentary Highlight + active verse, black */
+.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary,
+.versebox.versebox_range_highlighted.versebox.active_commentary
+{
+	background-color:#73A8DA;
+	color:#FFF;
+}
+
+
+/*  Commentary Highlight, dark grey */
+.versebox.active_commentary
+{
+	background-color:#333;
+	color:#FFF;
+}
+
+/* med blue */
+
+.versebox.commentary_highlight,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox.commentary_highlight
+{
+	background-color:#73A8DA;
+	color:#FFF;
+}
+
+
 /* Yellow Highlight */
 .versebox.versebox_highlighted,
 .versebox.versebox_range_highlighted.versebox_highlighted,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted
+.versebox.versebox_range_highlighted.active_commentary.versebox_highlighted,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.active_commentary.versebox_highlighted,
+.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary.versebox_highlighted
 {
 	background-color:#FFA;
 	color:#000;
@@ -812,38 +804,30 @@ div.heading_grid_tag_highlighted
 .versebox.versebox_selected,
 .versebox.versebox_highlighted.versebox_selected,
 .versebox.versebox_range_highlighted.versebox_highlighted.versebox_selected,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.versebox_selected
+.versebox.versebox_range_highlighted.versebox_highlighted.active_commentary.versebox_selected,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.versebox_selected,
+.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary.versebox_selected,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.active_commentary.versebox_selected
 {
 	background-color:#fdd43a;
 	color:#000;
 }
 
-
-
-
-
-
-
-/*  Commentary Highlight, black */
-.versebox.active_commentary,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox.active_commentary
+#text span.poetry.versetext_com,
+#text .versetext_com 
 {
-	background-color:#000;
-	color:#FFF;
-	border-color:#000;
+	border-left:5px solid #DDD;
+	border-right:5px solid #DDD;
+	background-color:#DDD;
+	border-color:#DDD;
+	color:#666;
+	
 }
-
-/* med blue */
-
-.versebox.commentary_highlight,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox.commentary_highlight
+#text span.poetry.versebox_highlighted.versetext_com,
+#text .versetext_com.versebox_highlighted 
 {
-	background-color:#73A8DA;
-	color:#FFF;
-	border-color:#73A8DA;
+	color:#000;
 }
-
-
 
 
 
@@ -851,7 +835,6 @@ div#text.greyed_out span,
 div#text.greyed_out span.versebox_highlighted,
 div#text.greyed_out span.versebox_tag_highlighted,
 div#text.greyed_out span.versebox_tag_highlighted.versebox_highlighted
-
 {
 	color:#DDD;
 	background-color:#FFF;
@@ -1109,6 +1092,9 @@ div.verse_container
 {
 	line-height:30px;
 	float:left;
+	position: absolute;
+	top: 0px;
+	left: 5px;
 }
 
 .tagtitle
@@ -1146,6 +1132,7 @@ div.verse_container
 #text > table.parallel  .row td
 {
     padding:10px;
+    padding-bottom:0px;
     text-align:justify;
     letter-spacing:-0.7;
     font-size:14px;
@@ -1193,12 +1180,21 @@ table.parallel span.verse
 
 #text >table.parallel .readmore
 {
-
 	text-align: center;
     font-size: 14px;
     color: #999;
     font-style: italic;
 	height:30px;
+}
+#text >table.parallel .readmore td
+{
+	
+}
+
+#text >table.parallel .readmore.active
+{
+color:orange;
+background-color:#FFA;
 }
 
 #text  .readmore.active
@@ -1465,6 +1461,11 @@ div#text.chiasm.tagged .detail,
 div#text.blocks.tagged .detail
 {
     margin-top:-15px;
+}
+
+div#text.blocks.tagged .taggedblock .detail
+{
+    margin-top:0px;
 }
 
 div#text.chiasm.tagged .head {
@@ -2038,7 +2039,7 @@ div.meta > div.option:hover
 
 
 
-#version_meta div.option img
+#version_meta div.option>img
 {
 	float:left;
 	width:120px;
@@ -2282,7 +2283,7 @@ span.word_highlight
 	font-weight:bold;
 }
 
-#version_meta div.option .version_full_title img,
+#version_meta div.option .icon img,
 #user_prefs #version_prefs div.optionbox .version_full_title img
 {
 	width:16px;
@@ -2719,6 +2720,9 @@ img.play
 .src_tabs
 {
 	padding-left:10px;
+  	white-space: no-wrap;
+  	overflow:hidden;
+  	height:18px;
 }
 .src_tabs span
 {
@@ -2733,7 +2737,34 @@ img.play
 	padding-left:10px;
 	padding-right:10px;
 	margin-right:6px;
+  	white-space: no-wrap;
+  	float:left;
 }
+
+.src_tabs span.more
+{
+	float:right;
+	background-color:#FFF;
+	color:#333;
+	width:15px;
+	text-align:center;
+	padding-left:3px;
+	padding-right:3px;
+}
+.src_tabs span.more:hover
+{
+	color:#000;
+	
+}
+.src_tabs select
+{
+	float:right;
+  	font-family: 'Comfortaa';
+	width:30px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
 .src_tabs span.selected
 {
 	border:1px solid #555;
@@ -2817,12 +2848,22 @@ button#commentary
 
 #audio_commentary select
 {
-	width:95%;
+	width:165px;
+	border-radius:5px;
+	position:relative;
+	left:-5px;
+	top:1px;
+	background-color:#DDD;
+	color:#000;
+    font-family: 'Comfortaa';
 }
 
 .heading_subtitle.commentary img
 {
 	float:right;
+	position:absolute;
+	top:5px;
+	right:5px;
 }
 
 .nexttag
@@ -3188,3 +3229,112 @@ button#commentary
 	margin-left:20px;
 }
 
+#hebrew
+{
+	border-bottom:1px dotted #999;
+	overflow:hidden;
+	margin:20px;
+	margin-top:-20px;
+	position:relative;
+	text-align:justify;
+	letter-spacing:3px;
+	padding-top:25px;
+	margin-bottom:0;
+	animation-duration: 1s;
+	height:80px;
+	animation-name: slidein;
+	font-family:sans-serif;
+}
+
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#hebrew #hebrew_text
+{
+      word-wrap:break-word;
+}
+#hebrew span
+{
+	cursor:pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#hebrew span.space
+{
+   margin-right:10px;
+}
+
+#hebrew span.active,
+#verse_text .word_highlight
+{
+   color:orange;
+   background-color:#FFA;
+   border-color:#FFA;
+}
+
+.HebrewDef
+{
+	font-style:italic;
+	position:absolute;
+	top:3px;
+	left:50%;
+	z-index:99;
+	width:300px;
+	overflow:hidden;
+	margin-left:-150px;
+	text-align:center;
+   color:orange;
+   font-size:.8em;
+}
+.HebrewDef em
+{
+	color:#DDD;
+}
+
+a.strong
+{
+	  font-variant: small-caps;
+	color:#AAA;
+	border:1px solid #AAA;
+	background-color:#DDD;
+	float:right;
+	text-decoration:none;
+	border-radius:5px;
+	padding-left:10px;
+	padding-right:10px;
+	font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+	font-size:12px;
+	line-height:18px;
+	cursor:pointer;
+}
+a.strong:hover
+{
+	
+	color:#000;
+	border-color:#000;
+}
+
+.hword
+{
+	
+	font-family:sans-serif;
+	margin-left:10px;
+}
+
+.hphon
+{
+	
+	  font-variant: small-caps;
+}

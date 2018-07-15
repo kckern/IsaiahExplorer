@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+import pako from 'pako';
+import atob from 'atob';
 import settings_icon from './img/interface/settings.png';
 import video_icon from './img/interface/video.png';
 import StructureColumn from './Components/Structure.js';
 import SectionColumn from './Components/Section.js';
 import PassageColumn from './Components/Passage.js';
 import VerseColumn from './Components/Verse.js';
+import Audio from './Components/Audio.js';
 import Settings from './Components/Settings.js';
+import Mobile from './Mobile.js';
 import {TagFloater} from './Components/Tags.js';
 import {globalData} from './globals.js';
+import { isMobile } from "react-device-detect";
+
 import './App.css';
+
+
+
 
 class App extends Component {
 	
@@ -16,7 +25,6 @@ class App extends Component {
   
   state = {
     ready: false,
-    globalData: null,
     
     top_versions: [] ,
     top_outlines: [] ,
@@ -54,13 +62,26 @@ class App extends Component {
     preSearchMode:false,
     searchQuery: null,
     
+    hebrewReady:false,
+    hebrewMode:false,
+    hebrewStrongIndex:null,
+    hebrewSearch:false,
+    hebrewWord:0,
+    
+    arrowPointer: 0,
+    
+    audioState:null,
+    audioPointer:0,
+    commentaryAudioMode:false,
+    commentaryAudio:"gileadi",
+    commentary_audio_verse_range: [],
     
     commentaryMode: false,
     commentarySource: "gileadi",
     commentaryID: null,
     commentary_verse_id: null,
     commentary_verse_range: [],
-    commentary_verse_lookup: [],
+    commentary_order: [],
     
     
     ui_version_loading: false,
@@ -69,7 +90,7 @@ class App extends Component {
   }
   
 
-  load_queue = ["index","meta","outlines","structures","tags","version","com"];
+  load_queue = ["index","meta","outlines","structures","tags","version","com","com_audio"];
   pull(element) {
     const index = this.load_queue.indexOf(element);
     
@@ -103,7 +124,7 @@ class App extends Component {
 	
  render() {
  	
-
+	if(isMobile) return <Mobile/>;
 
 	var settingsPanel = null;
 	if(this.state.settings===true) settingsPanel = ( [<div key="shader" className='shader' onClick={() => this.closeSettings()}/>,<Settings key="settingbox" app={this}/>] );
@@ -117,7 +138,7 @@ class App extends Component {
 		var title = (<span>Isaiah Explorer</span>);
 
  	return (
-			<div id="approot" className={classes.join(" ")} onKeyDown={this.keyDown.bind(this)}>
+			<div id="approot" className={classes.join(" ")} > 
 				<h1>
 				<img alt="Settings" onClick={() => this.openSettings()} src={settings_icon} className='settings'/>
 				{title}
@@ -131,8 +152,90 @@ class App extends Component {
 				</div>
 				{settingsPanel}
 				<TagFloater app={this} floater={this.floater}/>
+				<Audio app={this}  />
 			</div>
     );
+  }
+  
+  
+  
+  getSettingsFromUrl(settings)
+  {
+  	settings.active_verse_id = 17656;
+	var path = this.props.location.pathname;
+	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
+	var matches =regex.exec(path);
+	var params = [null];
+	if(matches===null) return settings;
+	for(var i = 1; i<matches.length; i++) 
+	{
+		if(typeof matches[i] !== "string") params.push(null);
+		else params.push(matches[i].replace(/^\//,''));
+	}
+
+
+  	if(params[1] !== null && globalData.meta.structure[params[1]] !== undefined) settings.structure = params[1];
+  	if(params[2] !== null && globalData.meta.outline[params[2]] !== undefined) settings.outline = params[2];
+  	if(params[3] !== null && globalData.meta.version[params[3].toUpperCase()] !== undefined) settings.version = params[3].toUpperCase();
+  	if(params[4] !== null) settings.selected_tag = this.loadTagFromSlug(params[4].replace(/^tag\./,''));
+  	if(params[5] !== null && params[6] !== null) settings.active_verse_id = this.loadVerseId(params[5],params[6]);
+  	
+  	if(params[7] !== null)
+  	{
+  		settings.commentaryMode = true;
+  		settings.commentarySource = params[7].replace(/^commentary\./,'');
+  		settings.commentary_verse_id = settings.active_verse_id;
+  		if(params[8] !== null)
+  		{
+  			settings.commentaryID = params[8];
+  		}
+  	}
+  	
+  	
+  	return settings;
+  }
+  
+  loadVerseId(ch,vs)
+  {
+  	var index = globalData.index;
+  	for(var verse_id in index)
+  	{
+  		if(index[verse_id].chapter+":"+index[verse_id].verse === ch+":"+vs) return parseInt(verse_id,0);
+  	}
+  	return 17656;
+  }
+  
+  loadTagFromSlug(slug)
+  {
+  	var index = globalData.tags.tagIndex;
+  	for(var tagName in index)
+  	{
+  		if(index[tagName].slug === slug) return tagName;
+  	}
+  	return null;
+  }
+  
+  setUrl()
+  {
+  	
+  	var path = "";
+  	path = path + "/"+this.state.structure;
+  	path = path + "/"+this.state.outline;
+  	path = path + "/"+this.state.version;
+  	
+  	if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
+  	
+  	path = path + "/"+globalData.index[this.state.active_verse_id].chapter;
+  	path = path + "/"+globalData.index[this.state.active_verse_id].verse;
+  	
+  	
+  	if(this.state.commentaryMode && this.state.commentaryID!==null) path = path + "/commentary."+this.state.commentarySource+"/"+this.state.commentaryID;
+  	else if(this.state.commentaryMode) path = path + "/commentary."+this.state.commentarySource;
+  	
+  	//if(this.state.audioState !== null && !this.state.commentaryAudioMode) path = path + "/audio";
+  //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
+  	
+  	 this.props.history.push(path.toLowerCase());
   }
   
   initApp()
@@ -152,14 +255,20 @@ class App extends Component {
   		if(settings.top_outlines.length !== 5) 		settings.top_outlines = ["chapters","mev","nrsv","niv","msg"];
   		if(settings.top_structures.length !== 5) 	settings.top_structures = ["whole","bibleproject","bifid","authorship","wikipedia"];
   		
-	    if(settings.version===undefined) 	settings.version = settings.top_versions[0];
-	    if(settings.outline===undefined) 	settings.outline = settings.top_outlines[0];
-	    if(settings.structure===undefined)   settings.structure = settings.top_structures[0];
+	    if(settings.version===undefined || settings.version===null) 	settings.version = settings.top_versions[0];
+	    if(settings.outline===undefined || settings.outline===null) 	settings.outline = settings.top_outlines[0];
+	    if(settings.structure===undefined || settings.structure===null)   settings.structure = settings.top_structures[0];
+	    
+	    if(settings.commentary_order===undefined || settings.commentary_order===null)  settings.commentary_order = [];
+	    if(settings.commentary_order.length>0) 	settings.commentarySource = settings.commentary_order[0];
+	    
+	    //check url
 	    
 	    
   		this.setState(settings,function(){
 			  this.saveSettings();
 			  this.loadCore();
+			  
   		});
   }
   
@@ -167,28 +276,36 @@ class App extends Component {
   {
   	if(this.load_queue.length===0)
   	{
-  		this.setState({ ready: true, globalData: globalData });
-  		this.setActiveVerse(17656);
+  		var settings = {ready : true};
+	    settings = this.getSettingsFromUrl(settings);
+	    
+	    
+	    var callback = this.setActiveVerse.bind(this,settings.active_verse_id,undefined,undefined,true,"init");
+	    if(settings.selected_tag !== undefined && settings.selected_tag !== null) callback = this.setActiveTag.bind(this,settings.selected_tag,true);
+	    
+  		this.setState(settings,callback); // 17656
+  		
   		
   	}
   }
   
   keyDown(e)
   {
+  	if(typeof e.keyCode !== "number") return false;
+  	if(e.ctrlKey) return false;
   	if (e.keyCode === 27)
   	{
+  		if(this.state.audioState!==null) return false;
   		this.clearTag();
   		return false;
   	}
-  	if(!this.state.preSearchMode && !this.state.searchMode && e.keyCode >= 65 && e.keyCode <= 90)
-  	{
-  		this.setState({preSearchMode:true});
-  	}
+
+  	
   	
   	if(e.keyCode === 37) {e.preventDefault(); return this.left();}
   	if(e.keyCode === 38) {e.preventDefault(); return this.up();}
   	if(e.keyCode === 39) {e.preventDefault(); return this.right();}
-  	if(e.keyCode === 38) {e.preventDefault(); return this.down();}
+  	if(e.keyCode === 40) {e.preventDefault(); return this.down();}
   	
   	//page up/down: cycle versions
   	if(e.keyCode === 33) return this.cycleVersion(-1);
@@ -201,11 +318,18 @@ class App extends Component {
   	if(e.keyCode === 46) return this.cycleStructure(1);
   	
   	//tab: move to next section
-  	if(e.keyCode === 9) { e.preventDefault(); return this.cycleSection(1);}
+  	if(e.keyCode === 9) { return this.cycleSection(1);}
   	
   	//tilda opens commentary
   	if(e.keyCode === 192) { e.preventDefault(); return this.clickElementID("commentary");}
   	if(e.keyCode === 187) { e.preventDefault(); return this.clickElementID("tagIcon");}
+  	if(e.keyCode === 32 && !this.state.searchMode && !this.state.preSearchMode) { e.preventDefault(); return this.clickElementID("audio_verse");}
+  	if(e.keyCode === 32 && this.state.commentaryAudioMode) { e.preventDefault(); return this.clickElementID("audio_commentary");}
+  	
+  	if(!this.state.preSearchMode && !this.state.searchMode && e.keyCode >= 65 && e.keyCode <= 90)
+  	{
+  		this.setState({preSearchMode:true});
+  	}
   	
   }
   
@@ -222,16 +346,18 @@ class App extends Component {
   	if(incr===undefined) incr=1;
   	var index = parseInt(this.state.highlighted_section_index,0)+incr;
   	if (index >	globalData["structures"][this.state.structure].length-1) index = 0;
+  	if(globalData["structures"][this.state.structure][index]===undefined) return false;
   	var verse = globalData["structures"][this.state.structure][index].verses[0][0];
-  	this.setActiveVerse(verse,undefined,undefined,undefined,"versebox");
+  	this.setActiveVerse(verse,undefined,undefined,undefined,"arrow");
   }
   cycleHeading(incr)
   {
   	if(incr===undefined) incr=1;
   	var index = parseInt(this.state.highlighted_heading_index,0)+incr;
   	if (index >	globalData["outlines"][this.state.outline].length-1) index = 0;
-  	var verse = globalData["outlines"][this.state.outline][index].verses[0][0];
-  	this.setActiveVerse(verse,undefined,undefined,undefined,"versebox");
+  	if(globalData["outlines"][this.state.outline][index]===undefined) return false;
+  	var verse = globalData["outlines"][this.state.outline][index].verses[0];
+  	this.setActiveVerse(verse,undefined,undefined,undefined,"arrow");
   }
   
   
@@ -250,9 +376,30 @@ class App extends Component {
   up()
   {
   	
-  	var index = this.state.highlighted_verse_range.indexOf(this.state.active_verse_id)-1;
-  	if(index===-1) index = this.state.highlighted_verse_range.length-1;
-  	this.setActiveVerse(this.state.highlighted_verse_range[index],undefined,undefined,undefined,"versebox");
+  	if(this.state.commentaryAudioMode && !this.state.searchMode)
+  	{
+  		var keys = Object.keys(globalData.commentary_audio.files[this.state.commentaryAudio]);
+  		var prev_file = keys[this.state.audioPointer-1];
+  		if(prev_file===undefined) prev_file = keys[keys.length-1];
+  		var prev_vid = globalData.commentary_audio.files[this.state.commentaryAudio][prev_file][0]
+  		return this.setActiveVerse(prev_vid,undefined,undefined,true,"comaudio");
+  	}
+  	
+
+  	
+  	var index = -1
+  	var prev = 0;
+	for(var pointer = this.arrowPointer; index===-1 && pointer>=0; pointer--)
+		index = this.state.highlighted_verse_range.indexOf(this.state.active_verse_id,pointer);
+	index--;
+	if(index<0) index = this.state.highlighted_verse_range.length-1;
+	prev = this.state.highlighted_verse_range[index]; 
+	this.arrowPointer = index;
+  	this.setActiveVerse(prev,undefined,undefined,true,"arrow");
+  	
+  	
+  	
+  	
   }
   
   right()
@@ -267,11 +414,28 @@ class App extends Component {
   	this.cycleHeading(1);
   }
   
+  arrowPointer=0;
   down()
   {
-  	var index = this.state.highlighted_verse_range.indexOf(this.state.active_verse_id)+1;
-  	if(index===this.state.highlighted_verse_range.length) index = 0;
-  	this.setActiveVerse(this.state.highlighted_verse_range[index],undefined,undefined,undefined,"versebox");
+  	if(this.state.commentaryAudioMode && !this.state.searchMode)
+  	{
+  		var keys = Object.keys(globalData.commentary_audio.files[this.state.commentaryAudio]);
+  		var next_file = keys[this.state.audioPointer+1];
+  		if(next_file===undefined) next_file = keys[0];
+  		var next_vid = globalData.commentary_audio.files[this.state.commentaryAudio][next_file][0];
+  		return this.setActiveVerse(next_vid,undefined,undefined,undefined,"comaudio");
+  	}
+  	
+  	
+  	var index = -1
+  	var next = 0;
+	for(var pointer = this.arrowPointer; index===-1 && pointer>=0; pointer--)
+		index = this.state.highlighted_verse_range.indexOf(this.state.active_verse_id,pointer);
+	index++;
+	if(index>=this.state.highlighted_verse_range.length) index = 0;
+	next = this.state.highlighted_verse_range[index]; 
+	this.arrowPointer = index;
+  	this.setActiveVerse(next,undefined,undefined,undefined,"arrow");
   }
   
   setTagBlock(key,verseId)
@@ -303,7 +467,6 @@ class App extends Component {
 			selected_tag: 		null,
 			infoOpen: 		false,
 			tagMode: 		false,
-    		comSearchMode: false,
     		preSearchMode: false,
 			showcase_tag: 		null,
     		previewed_tag: null,
@@ -345,15 +508,30 @@ class App extends Component {
 	
 	selectVerse(verse_id)
 	{
+		//if(verse_id === this.state.active_verse_id) return false;
 		if(this.state.commentaryMode)
 		{
 			this.setState(
 			{commentaryID: this.loadCommentaryID(),commentary_verse_id:verse_id },
 			()=>this.setActiveVerse(verse_id,undefined,undefined,true)
 			);
-			if(verse_id!==this.state.active_verse_id) return true;
 			return true;
 		}
+		if(this.state.audioState !== null && verse_id !== this.state.active_verse_id){
+			this.setActiveVerse(verse_id,undefined,undefined,true,"audio");
+			return true;
+		}
+		else if(this.state.audioState !== null && this.state.commentaryAudioMode)
+		{
+			if(this.state.commentary_audio_verse_range.indexOf(verse_id)>-1) return false;
+			this.setState({    
+				selected_verse:null,
+				commentary_audio_verse_range: [verse_id],
+				audioState:"loading"},this.setActiveVerse.bind(this,verse_id,undefined,undefined,true,"comaudio"))
+			
+			return true;
+			
+		}else if (this.state.audioState !== null) return false;
 		
   		if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0) return ()=>{};
 		if(parseInt(this.state.selected_verse_id,0)===parseInt(verse_id,0)) return this.unSelectVerse();
@@ -384,7 +562,9 @@ class App extends Component {
   			structure:this.state.structure,
   			top_versions:this.state.top_versions,
   			top_outlines:this.state.top_outlines,
-  			top_structures:this.state.top_structures}));
+  			top_structures:this.state.top_structures,
+  			commentary_order:this.state.commentary_order
+  		}));
   	}
   	
   	setNewTop(list,value,new_index)
@@ -410,6 +590,24 @@ class App extends Component {
  	var line_height=0.9;
  	text.style.lineHeight = line_height+"em";
  	while(box_height-text.offsetHeight>15) 
+ 	{
+ 		var incr = 0.1;
+ 		if(box_height-text.offsetHeight<0) incr = -0.1;
+ 		line_height = line_height + incr;
+ 		text.style.lineHeight = line_height+"em";
+ 		if(line_height>3) break;
+ 	}
+ 	this.spreadHebrew();
+  }
+  spreadHebrew()
+  {
+  	var text = document.getElementById("hebrew_text");
+ 	if(text===null) return false;
+	var container = document.getElementById("verse").querySelectorAll("#hebrew")[0];
+ 	var box_height = container.offsetHeight;
+ 	var line_height=0.9;
+ 	text.style.lineHeight = line_height+"em";
+ 	while(box_height-text.offsetHeight>40) 
  	{
  		var incr = 0.1;
  		if(box_height-text.offsetHeight<0) incr = -0.1;
@@ -471,8 +669,9 @@ class App extends Component {
   	this.lastTags = [];
   	this.lastVerseId = null;
   	
-  	fetch("/core/meta.json").then(response => response.json()).then(data => {
-      	globalData["meta"] = data;
+  	
+  	fetch("/core/meta.txt").then(response => response.text()).then(data => {
+      	globalData["meta"] = this.unzipJSON(data);
       	this.pull("meta");
       	this.checkLoaded();
       	//Image Preloading
@@ -482,29 +681,61 @@ class App extends Component {
 		});
      });
      
-  	fetch("/text/verses_"+this.state.version.toUpperCase()+".json").then(response => response.json()).then(data => {
-      	globalData["text"][this.state.version] = data;
+  	fetch("/text/words_HEB.txt").then(response => response.text()).then(data => {
+  		
+      	globalData["hebrew"] = this.unzipJSON(data);
+      	this.setState({"hebrewReady":true});
+     });
+
+  	fetch("/text/verses_"+this.state.version.toUpperCase()+".txt").then(response => response.text()).then(data => {
+      	globalData["text"][this.state.version] =this.unzipJSON(data);
       	this.pull("version");
       	this.checkLoaded();
      });
-  	fetch("/core/index.json").then(response => response.json()).then(data => {
-      	globalData["index"] = data;
+  	fetch("/core/index.txt").then(response => response.text()).then(data => {
+      	globalData["index"] =this.unzipJSON(data);
       	this.pull("index");
       	this.checkLoaded();
      });
-  	fetch("/core/tags.json").then(response => response.json()).then(data => {
-      	globalData["tags"] = data;
+  	fetch("/core/tags.txt").then(response => response.text()).then(data => {
+      	globalData["tags"] =  this.unzipJSON(data);
       	for(var x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
+      	for(x in globalData["tags"]["tagIndex"])
+      	{
+      		globalData["tags"]["tagIndex"][x]["verses"] = this.verseDatatoArray(globalData["tags"]["tagIndex"][x]["verses"]);
+      	}
+      	for(x in globalData["tags"]["tagStructure"])
+      	{
+      		for(var y in globalData["tags"]["tagStructure"][x])
+      		{
+      			globalData["tags"]["tagStructure"][x][y]["verses"] = this.verseDatatoArray(globalData["tags"]["tagStructure"][x][y]["verses"]);	
+      		}
+      	}
+      	for(x in globalData["tags"]["superRefs"]) globalData["tags"]["superRefs"][x] = this.verseDatatoArray(globalData["tags"]["superRefs"][x]);
       	this.pull("tags");
       	this.checkLoaded();
-     });
+      	
+	     fetch("/core/tags_hl.txt").then(response => response.text()).then(base64 => {
+	     	var hdata = this.unzipJSON(base64);
+	      	for(x in hdata)
+	      	{
+	      		for(var y in hdata[x])
+	      		{
+	      			globalData["tags"]["tagStructure"][x][y]["highlights"] = hdata[x][y];
+	      		}
+	      	}
+	      	this.setState({"tagsHLReady":true});
+	     });
 
-  	fetch("/core/structures.json").then(response => response.json()).then(data => {
-      	globalData["structures"] = data;
+     });
+     
+  	fetch("/core/structures.txt").then(response => response.text()).then(data => {
+      	globalData["structures"] =  this.unzipJSON(data);
 		var structures = globalData["structures"];
 		for (var structure_id in structures) {
 		  for (var i in structures[structure_id]) {
 		    for (var seg in structures[structure_id][i].verses) {
+		  	structures[structure_id][i].verses[seg] = this.verseDatatoArray(structures[structure_id][i].verses[seg]);
 		      for (var j in structures[structure_id][i].verses[seg]) {
 		        var verse = structures[structure_id][i].verses[seg][j];
 		        if (!(verse in globalData["structureIndex"])) {
@@ -518,20 +749,19 @@ class App extends Component {
       	this.pull("structures");
       	this.checkLoaded();
      });
-  	fetch("/core/outlines.json").then(response => response.json()).then(data => {
-      	globalData["outlines"] = data;
+  	fetch("/core/outlines.txt").then(response => response.text()).then(data => {
+      	globalData["outlines"] = this.unzipJSON(data);
 		var outlines = globalData["outlines"];
 		for (var outline_id in outlines) {
 		  for (var i in outlines[outline_id]) {
-		    for (var seg in outlines[outline_id][i].verses) {
-		      for (var j in outlines[outline_id][i].verses[seg]) {
-		        var verse = outlines[outline_id][i].verses[seg][j];
+		  	globalData["outlines"][outline_id][i].verses = outlines[outline_id][i].verses = this.verseDatatoArray(outlines[outline_id][i].verses);  //convert to 
+		      for (var j in outlines[outline_id][i].verses) {
+		        var verse = outlines[outline_id][i].verses[j];
 		        if (!(verse in globalData["outlineIndex"])) {
 		          globalData["outlineIndex"][verse] = {};
 		        }
 		        globalData["outlineIndex"][verse][outline_id] = i;
 		      }
-		    }
 		  }
 		}
       	this.pull("outlines");
@@ -539,8 +769,8 @@ class App extends Component {
      });
      
      
-  	fetch("/core/commentary.json").then(response => response.json()).then(data => {
-      	globalData["commentary"] = data;
+  	fetch("/core/commentary.txt").then(response => response.text()).then(data => {
+      	globalData["commentary"] = this.unzipJSON(data);
       	globalData.commentary['idIndex'] = {};
 		var comIndex = globalData.commentary.comIndex;
 		
@@ -558,6 +788,30 @@ class App extends Component {
       	this.pull("com");
       	this.checkLoaded();
      });
+     
+  	fetch("/core/commentary_audio.txt").then(response => response.text()).then(data => {
+      	globalData["commentary_audio"] = {"files": this.unzipJSON(data)};
+      	globalData.commentary_audio['index'] = {};
+		var dirs = globalData.commentary_audio.files;
+		for(var shortcode in dirs)
+		{
+			for(var filename in dirs[shortcode])
+			{
+				var verses = this.verseDatatoArray(dirs[shortcode][filename]);
+				dirs[shortcode][filename] = verses;
+				for(var x in verses)
+				{
+					if(globalData.commentary_audio.index[verses[x]]===undefined)
+					globalData.commentary_audio.index[verses[x]] = {};
+					if(globalData.commentary_audio.index[verses[x]][shortcode]===undefined)
+					globalData.commentary_audio.index[verses[x]][shortcode] = [];
+					globalData.commentary_audio.index[verses[x]][shortcode].push(filename);
+				}
+			}
+		}
+      	this.pull("com_audio");
+      	this.checkLoaded();
+     });
 
 	//Load ALT
 	setTimeout(function() { 
@@ -566,8 +820,8 @@ class App extends Component {
 			var ver = this.state.top_versions[x];
 			if(ver===this.state.version) continue;
 			const const_ver = ver;
-				fetch("/text/verses_"+const_ver.toUpperCase()+".json").then((response) => response.json()).then((data) => {
-			      	globalData["text"][const_ver] = data;
+				fetch("/text/verses_"+const_ver.toUpperCase()+".txt").then((response) => response.text()).then((data) => {
+			      	globalData["text"][const_ver] = this.unzipJSON(data);
 			     });
 		}
 	}.bind(this), 3000);
@@ -575,17 +829,66 @@ class App extends Component {
   }
   
   
+  verseDatatoArray(versedata)
+  {
+  	var verses = [];
+	if(typeof versedata === "number") verses.push(versedata);
+	else if(Array.isArray(versedata))
+	{
+		if(typeof versedata[0] === "number") versedata = [{"singles":versedata}];
+		
+		for(var y in versedata)
+		{
+			var item = versedata[y]
+			for(var i in item)
+			{
+				if(i==="singles")
+				{
+					for(var z in versedata[y].singles)
+					{
+						verses.push(versedata[y].singles[z]);
+					}
+					continue;
+				}
+				var vid = parseInt(i,0);
+				for(var j = vid; j<vid+item[i]; j++)
+				{
+					verses.push(j);
+				}
+			}
+		}
+	}
+	else //object
+	{
+		for(i in versedata)
+		{
+			vid = parseInt(i,0);
+			for(j = vid; j<vid+versedata[i]; j++)
+			{
+				verses.push(j);
+			}
+		}
+	}
+	
+	if(verses.length===0)
+	{
+		debugger;
+	}
+	
+	return verses;
+  }
 
   
   loadVersion(shortcode)
   {
+  		if(shortcode===undefined) shortcode="KJV";
   	  	this.setState({ ui_version_loading: true });	   
   		let image = new Image()
 	    image.src = require('./img/versions/'+shortcode.toLowerCase()+'.jpg');
-  		return fetch("/text/verses_"+shortcode+".json")
-	      .then(response => response.json())
+  		return fetch("/text/verses_"+shortcode+".txt")
+	      .then(response => response.text())
 	      .then(data => {
-	      	globalData["text"][shortcode] = data;
+	      	globalData["text"][shortcode] = this.unzipJSON(data);
 	      	this.setState({ version: shortcode, ui_version_loading: false, spot:null },
 	      	function(){
 			this.saveSettings();
@@ -630,9 +933,12 @@ class App extends Component {
   
   setActiveVerse(verse_id,structure,outline,force,source)
   {
+  	if(verse_id===null || verse_id===undefined) return ()=>{};
+  	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
+  	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
   	if(this.state.selected_verse_id !== null && force===undefined) return ()=>{};
   	if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(verse_id)<0) return ()=>{};
-  	if(this.state.searchMode && this.state.highlighted_verse_range.indexOf(verse_id)<0 && source!=="newversion") return ()=>{};
+  	if(this.state.searchMode && this.state.highlighted_verse_range.indexOf(verse_id)<0 && source!=="newversion" && !this.state.commentaryAudioMode) return ()=>{};
   	
   	var searchMode = this.state.searchMode;
   	if(source==="closeSearch") searchMode=false;
@@ -641,15 +947,30 @@ class App extends Component {
   	if(source==="versebox") allCollapsed=false;
   	else this.floater = {};
   	
+  	var commentary_audio_verse_range = this.state.commentary_audio_verse_range;
+  	if(source==="comaudio") commentary_audio_verse_range=[];
+  	
+  	var audioState = this.state.audioState;
+  	if(audioState==="playing" && !this.state.commentaryAudioMode ) audioState = "loading";
+  	if(globalData.meta.version[this.state.version].audio!==1) audioState = null;
   	
   	outline 	= outline 	=== undefined ? this.state.outline 		: outline;
   	structure 	= structure === undefined ? this.state.structure 	: structure;
-	this.setState({ 
+  	
+  	var strong = this.state.hebrewStrongIndex;
+  	var word = this.state.hebrewWord;
+  	if(!this.state.hebrewSearch) strong = word = null;
+  	
+  	var vals = { 
 		active_verse_id: verse_id,
 		more_tags: false,
 		searchMode: searchMode,
     	previewed_tag: null,
+	    hebrewStrongIndex:strong,
+	    hebrewWord:word,
+    	audioState: audioState,
 		allCollapsed: allCollapsed,
+		commentary_audio_verse_range: commentary_audio_verse_range,
 		
 		highlighted_verse_range: 		this.getHighlightedVerseRange(verse_id,outline,source),
 		highlighted_section_verses: 	this.getSectionVerses(verse_id,structure),
@@ -657,24 +978,55 @@ class App extends Component {
 		highlighted_heading_index: 		this.getHeadingIndex(verse_id,outline),
 		highlighted_section_index: 		this.getSectionIndex(verse_id,structure),
 		highlighted_tagged_verse_range: this.getTagHighlightRange(verse_id,source)
-	},function(){
+	};
+	
+  	
+	this.setState(vals,function(){
 		//	this.spreadVerse();
 			this.tagOverflow();
 			this.scrollOutline(false,source);
 			this.scrollText(false,source);
 			this.checkFloater();
-			if(this.state.searchMode && source==="newversion")
+			this.highlightReadMore();
+			this.setUrl();
+			if(this.state.hebrewSearch && this.state.hebrewStrongIndex!==null)
+			{
+				this.searchHebrewWord(this.state.hebrewStrongIndex);
+			}
+			else if(this.state.searchMode && source==="newversion")
 			{
 				
 				this.search(this.state.searchQuery);
 			}
+			this.triggerAudio();
+			if(source==="init")this.setActiveVersion(this.state.version);
+
 	});
   }
   
+  triggerAudio()
+  {
+	if(this.state.triggerAudio)
+	{
+		this.setState({triggerAudio:false},function(){
+			
+			//document.getElementById("audio_verse").click();
+		});
+	}
+  }
+  
+  advanceCommentary(verse_id)
+  {
+  	 this.setState({
+  	 	
+  	 },this.setActiveVerse.bind(this,verse_id,undefined,undefined,undefined,"audio"));
+
+  }
   
   scrollText(reset,source)
   {
-  			if(source!=="versebox" && source!=="tag") return false;
+  			
+  			if(["versebox","arrow","tag","audio","init"].indexOf(source)===-1) return false;
   			
   			var time = 200;
   			if(source==="tag") time=0;
@@ -701,8 +1053,7 @@ class App extends Component {
   
   scrollOutline(reset,source)
   {
-  	
-  			if(source!=="versebox" || source!=="closeSearch") return false;
+  		if(["versebox","arrow","tag","audio","closeSearch","init"].indexOf(source)===-1) return false;
   	
 			var container = document.getElementById("outline");
 			var element = container.querySelectorAll(".heading_grid_highlighted")[0];
@@ -780,7 +1131,7 @@ class App extends Component {
 			var letter = x.replace(/[0-9]+/g,'');
 			var keys = this.filtering(tagStructure,letter);
 			for(var y in keys) verses = verses.concat(tagStructure[keys[y]].verses.map(Number));
-			if(source==="versebox") this.setActiveChiasm(letter,verses);
+			if(["versebox","audio","arrow"].indexOf(source)>=0) this.setActiveChiasm(letter,verses);
 			
 		}
 		if(tagMeta.type==="")
@@ -801,6 +1152,7 @@ class App extends Component {
   setPreviewedTag(tagName,parent,leaf)
   {
   	this.clearTimeouts("tag_meta");
+  	if(this.state.commentaryAudioMode) return false;
   	if(tagName===null){
 		this.setState({ 
 			showcase_tag:null,
@@ -827,6 +1179,7 @@ class App extends Component {
   
   setPreviewedSection(shortcode)
   {
+  	if(this.state.commentaryAudioMode) return false;
   	if(shortcode===null)
   	{
 		this.setState({ highlighted_tagged_verse_range:[],highlighted_tagged_parent_verse_range:[]});
@@ -839,6 +1192,7 @@ class App extends Component {
   }
   setPreviewedPassage(shortcode)
   {
+  	if(this.state.commentaryAudioMode) return false;
   	if(shortcode===null)
   	{
 		this.setState({ highlighted_tagged_verse_range:[],highlighted_tagged_parent_verse_range:[]});
@@ -852,6 +1206,28 @@ class App extends Component {
   	
   }
   
+  
+  highlightReadMore()
+  {
+  	if(this.state.selected_tag===null) return false;
+  	var tagMeta = globalData['tags']['tagIndex'][this.state.selected_tag];
+	if(["chiasm","parallel"].indexOf(tagMeta.type)>=0)
+	{
+		var mores = document.getElementById("text").querySelectorAll(".readmore");
+	  	for (var y = 0; y < mores.length; ++y)  mores[y].className = "readmore";
+	  	var yellowVerses = document.getElementById("text").querySelectorAll(".versebox_highlighted");
+	  	for (var x = 0; x < yellowVerses.length; ++x) 
+	  	{
+	  		var verse = yellowVerses[x];
+	  		var box = null;
+	  		if(tagMeta.type==="chiasm") box = this.findAncestor(verse,".verses");
+	  		if(tagMeta.type==="parallel") box = this.findAncestor(verse,".row");
+	  		var readmore = box.nextElementSibling;
+	  		if(!this.checkInView(box,verse)) if(readmore!==null) readmore.className = "readmore active";
+	  	}
+	  }
+
+  }
   
   setActiveChiasm(letter,verses)
   {
@@ -876,22 +1252,7 @@ class App extends Component {
 			var element = document.getElementById(list[x]);
 			var container = element.parentNode;
 			
-			//Highlight readmore if not visible and active
-			/*
-			if(half.indexOf(parseInt(this.state.active_verse_id,0))>-1)
-			{
-				
-		    	var allreads = document.getElementById("text").querySelectorAll(".readmore");
-		    	for(var i in allreads) if(/active/.exec(allreads[i].className)) allreads[i].className = "readmore";
-		    	var content = document.getElementById(list[x]+"content");
-				var active = document.getElementById("text").querySelectorAll(".v_"+this.state.active_verse_id)[0];
-		    	if(!this.checkInView(content,active))
-		    	{
-		    		var readmore = document.getElementById(list[x]+"readMore");
-		    		console.log([content,active,readmore])
-		    		if(readmore!==null) readmore.className = "readmore active";
-		    	}
-			}*/
+
 			
 			var parent = container.childNodes[0].getBoundingClientRect().y;
 			var child = element.getBoundingClientRect().y;
@@ -991,12 +1352,15 @@ class App extends Component {
 		}
 		var element = h[0];
 		
+		
+		var metaOpen = document.getElementById("version_meta").classList[1]==="visible"
+		
 		var blueBarisVisible = this.checkInView(container,element);
 		var textNotVisible = !this.checkInView(container,element.nextSibling,true);
 		
 		if(document.getElementById("floater")===undefined) return false;
 		if(document.getElementById("floater")===null) return false;
-		if(blueBarisVisible || textNotVisible || this.state.allCollapsed)
+		if(blueBarisVisible || textNotVisible  || metaOpen || this.state.allCollapsed)
 		{
 			document.getElementById("floater").style.display = "none";
 		}
@@ -1011,13 +1375,12 @@ class App extends Component {
 		this.setState({ 
 		    commentaryMode: false,
 		    selected_verse_id: null,
-		    commentarySource: null,
 		    commentary_verse_id: null,
 		    commentaryID: null,
 		    searchMode: false,
-		    comSearchMode: false,
+    		comSearchMode: false,
 		    commentary_verse_range: []
-		},this.clearTag.bind(this));
+		},this.setActiveVerse.bind(this,this.state.active_verse_id,undefined,undefined,true,"tag"));
 	}
 	
   showcaseTag(tagName)
@@ -1038,6 +1401,7 @@ class App extends Component {
 			tagMode: 		true,
     		searchMode: false,
     		comSearchMode: false,
+    		commentaryAudioMode: false,
     		preSearchMode: false,
     		previewed_tag: null,
     		showcase_tag: tagName,
@@ -1068,14 +1432,14 @@ class App extends Component {
   	
   }
 	
-  setActiveTag(tagName)
+  setActiveTag(tagName,force)
   {
   		if(tagName===null) return false;
 	  	var tagData = this.getTagData(tagName);
 	  	if(tagData===undefined) return false;
 	  	if(tagData.verses===undefined) return false;
 	  	
-	  	if(tagName===this.state.selected_tag) return this.clearTag();
+	  	if(tagName===this.state.selected_tag && force === undefined) return this.clearTag();
 	  	
 	  this.floater = {};
 	  
@@ -1083,9 +1447,12 @@ class App extends Component {
 	  	
 	  	var newVerseId = this.state.active_verse_id;
 	  	if(tagData.verses.indexOf(newVerseId)<0 && (this.selected_verse_id===null || this.selected_verse_id===undefined)) newVerseId = Math.min.apply(null, tagData.verses);
+		if(newVerseId===0)
+		{
+			debugger;
+		}
 
-
-		    
+		 this.arrowPointer = 0;
 		this.setState({ 
 			
 			active_verse_id: 		newVerseId,
@@ -1104,7 +1471,7 @@ class App extends Component {
 			chiasm_letter: 		null
 		},function(){
 			this.scrollText(true,"tag");
-			
+			this.setUrl()
 		});
   }
   
@@ -1113,7 +1480,6 @@ class App extends Component {
   
   clearTag()
   {
-  		
 	  if(this.state.selected_tag===null && this.state.tagMode===false &&  this.state.searchMode===false &&  this.state.preSearchMode===false) return false;
 	  this.floater = {};
 		this.setState({ 
@@ -1121,12 +1487,13 @@ class App extends Component {
 			infoOpen: 		false,
 			tagMode: 		false,
     		searchMode: false,
+    		hebrewSearch: false,
     		preSearchMode: false,
     		comSearchMode: false,
+    		searchQuery: null,
 			showcase_tag: 		null,
     		previewed_tag: null,
 			highlighted_verse_range: 		[],
-			commentary_verse_range: [],
 			highlighted_tagged_verse_range: 		[],
 			highlighted_tagged_parent_verse_range: []
 		},function(){
@@ -1182,9 +1549,9 @@ class App extends Component {
 		this.setState({ version: shortcode },
 		
 		function(){
-		this.saveSettings();
-		this.setActiveVerse(this.state.active_verse_id,undefined,undefined,undefined,"newversion");
-		this.spotDone();
+			this.saveSettings();
+			this.setActiveVerse(this.state.active_verse_id,undefined,undefined,undefined,"newversion");
+			this.spotDone();
 		});
 		
 
@@ -1220,12 +1587,14 @@ class App extends Component {
   {
   	if(verse_id===undefined) return [];
   	if(this.state.selected_tag!==null) return this.state.highlighted_verse_range;
-  	if(this.state.searchMode && source!=="closeSearch") return this.state.highlighted_verse_range;
+  	if(this.state.comSearchMode) return this.state.highlighted_verse_range;
+  	if(this.state.searchMode && ["closeSearch","audio"].indexOf(source)<0 && this.state.searchQuery!==null) return this.state.highlighted_verse_range;
+  	if(this.state.searchMode && this.state.searchQuery!==null) return this.state.highlighted_verse_range;
   	
   	if(globalData['outlineIndex'][verse_id.toString()]===undefined) { debugger; return []; }
   	
   	
-  	return globalData['outlines'][outline][globalData['outlineIndex'][verse_id.toString()][outline]].verses[0].map(Number);
+  	return globalData['outlines'][outline][globalData['outlineIndex'][verse_id.toString()][outline]].verses;
   }
   getHighlightedVerseSectionRange(verse_id,structure)
   {
@@ -1274,6 +1643,18 @@ class App extends Component {
             "verses": globalData["tags"]["superRefs"]["Structures"]
             
         };
+  	delete g.verses;
+  	if(g.verses===undefined)
+  	{
+  		var segments = globalData["tags"]["tagStructure"][tagName];
+  		if(segments!==undefined)
+  		{
+  			g.verses = [];
+  			if(typeof segments === 'object')segments = Object.keys(segments).map(function (key) {  return segments[key]; 	});
+  			for(var i in segments) g.verses = g.verses.concat( segments[i].verses);
+  		}
+
+  	}
   	if(g.verses===undefined) g.verses = globalData["tags"]["superRefs"][tagName];
   	if(g.verses===undefined)
   	{
@@ -1281,14 +1662,13 @@ class App extends Component {
   		g.verses = [];
   		var children = globalData["tags"]["tagChildren"][tagName];
   		var keys = Object.keys(children);
-  		for(var i in keys)
+  		for(i in keys)
   		{
   			var childTag = children[keys[i]];
   			var childObj = globalData["tags"]["tagIndex"][childTag];
   			g.verses = g.verses.concat(childObj.verses);
   		}
   	}
-  	
   	return g;
   	
   	
@@ -1336,8 +1716,101 @@ class App extends Component {
 
   }
   
+  findAncestor(el, sel) {
+    if (typeof el.closest === 'function') {
+        return el.closest(sel) || null;
+    }
+    while (el) {
+        if (el.matches(sel)) {
+            return el;
+        }
+        el = el.parentElement;
+    }
+    return null;
+	}
+  
+  
+  setHebrewWord(strong,word)
+  {
+  	this.setState({
+	    hebrewStrongIndex:strong,
+	    hebrewWord:word
+  	});
+  }
+  
+  
+  unzipJSON(base64)
+  {
+  	function atos(arr) {
+    for (var i=0, l=arr.length, s='', c; c = arr[i++];)
+        s += String.fromCharCode(
+            c > 0xdf && c < 0xf0 && i < l-1
+                ? (c & 0xf) << 12 | (arr[i++] & 0x3f) << 6 | arr[i++] & 0x3f
+            : c > 0x7f && i < l
+                ? (c & 0x1f) << 6 | arr[i++] & 0x3f
+            : c
+        );
+    return s
+	}
+	try {
+	  return JSON.parse(atos(pako.ungzip(atob(base64))));
+	} catch (err) {
+	  return ["Unzip Failure",err];
+	}
+  	
+  }
+  
+  searchHebrewWord(strong)
+  {
+  	var matches = [];
+  	var query= "";
+  	var verses = globalData.hebrew.verses;
+  	for(var verse_id in verses)
+  	{
+  		for(var word_id in verses[verse_id])
+  		{
+  			if(verses[verse_id][word_id].strong===strong)
+  			{
+  				matches.push(parseInt(verse_id,0));
+  				query= verses[verse_id][word_id].orig;
+  				//" ("+verses[verse_id][word_id].phon+")—"+verses[verse_id][word_id].eng;
+  			}
+  		}
+  	}
+  	
+  	  	this.setState({
+  			highlighted_verse_range: matches,
+	    	hebrewStrongIndex:strong,
+	    	hebrewSearch:true,
+			selected_tag: 		null,
+			infoOpen: 		false,
+			tagMode: 		false,
+    		preSearchMode: false,
+			showcase_tag: 		null,
+    		previewed_tag: null,
+    		
+			highlighted_tagged_verse_range: 		[],
+			highlighted_tagged_parent_verse_range: [],
+			searchMode:true,
+			searchQuery:query})
+  }
+  
+  
 }
-
+if (!Element.prototype.matches) {
+    Element.prototype.matches =
+        Element.prototype.matchesSelector ||
+        Element.prototype.mozMatchesSelector ||
+        Element.prototype.msMatchesSelector ||
+        Element.prototype.oMatchesSelector ||
+        Element.prototype.webkitMatchesSelector ||
+        function(s) {
+            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) {}
+            return i > -1;
+        };
+}
 export default App;
 
 

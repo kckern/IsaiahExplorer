@@ -1,7 +1,8 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import RouterShell from './Router';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<RouterShell />, document.getElementById('root'));
 registerServiceWorker();

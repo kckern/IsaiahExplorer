@@ -300,17 +300,17 @@ class TagBlocks extends Component {
 
 		var blocks = entries.map((entry,key)=>{
 			
-			
 			var classes=["verses"];
 			var desc_classes=["desc"]; 
 			var isFloater = false;
 			
+			var details = null;
 			if(!this.props.app.state.allCollapsed ){
-
 				if(this.props.app.state.selected_tag_block_index===key || (
-					entry.verses.map(Number).indexOf(this.props.app.state.active_verse_id)>-1 && this.props.app.state.selected_tag_block_index===null
+					entry.verses.indexOf(this.props.app.state.active_verse_id)>-1 && this.props.app.state.selected_tag_block_index===null
 					)){
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
+						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{this.props.app.addLinks(entry.details)}</div>)
 				}	
 			}
 			
@@ -327,6 +327,8 @@ class TagBlocks extends Component {
 			
 			showdesc = this.props.app.addLinks(showdesc);
 			
+			
+			
 			var item = (
 			        <div 
 			        className={desc_classes.join(" ")} 
@@ -339,7 +341,7 @@ class TagBlocks extends Component {
 			   	
 			 return (
 			    <div className="taggedblock" key={key} index={key}>
-			        {item}
+			        {item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			    </div>
 			   	);
@@ -384,7 +386,8 @@ class TagParallel extends Component {
  
  	readMore(i)
  	{
- 		document.getElementById(i+"readMore").remove();
+ 		var element = document.getElementById(i+"readMore");
+ 		element.parentNode.removeChild(element);
  		document.getElementById(i+"content").className = "row";
  	}
  
@@ -506,7 +509,8 @@ class ChiasticBlock extends Component {
 	
  	readMore(i)
  	{
- 		document.getElementById(i+"readMore").remove();
+ 		var element = document.getElementById(i+"readMore");
+ 		element.parentNode.removeChild(element);
  		document.getElementById(i+"content").className = "verses";
  	}
  	
@@ -518,7 +522,6 @@ class ChiasticBlock extends Component {
 	{
 		var label = null;
 		var desc = this.props.content.desc;
-		console.log(this.props.content);
 		var highlights = null;
 		if(this.props.content.highlight!==undefined) highlights = this.props.content.highlight;
 			
@@ -610,7 +613,7 @@ class TagChiasm extends Component {
 		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
 		var tagStructure = globalData['tags']['tagStructure'][this.props.app.state.selected_tag];
 
-		var chiastic_labels = [];
+		var chiastic_labels = [[],[]];
 		var keys = Object.keys(tagStructure);
 		var width = 100/keys.length;
 		var left_items = [];
@@ -620,17 +623,20 @@ class TagChiasm extends Component {
 		{
 			i = keys[i];
 			const letter = i.replace(/\d+/,"");
+			const number = /2/.test(i) ? 1 : 0;
 			const letter_verses = this.getLetterVerses(letter,tagStructure);
 			if(!i.match(/1$/)) right_items.push((<ChiasticBlock app={this.props.app} content={tagStructure[i]} letter_verses={letter_verses} key={i} side="right" index={i}/>));
 			if(!i.match(/2$/))  left_items.push((<ChiasticBlock app={this.props.app} content={tagStructure[i]} letter_verses={letter_verses} key={i} side="left" index={i}/>));
             
             var classes = ["chiastic_block","c_"+i];
 			if(letter===this.props.app.state.chiasm_letter) classes.push("chiastic_block_hover");
-			chiastic_labels.push((<div 
+			chiastic_labels[number].push((<div 
 			onMouseEnter={()=>this.props.app.setActiveChiasm(letter,letter_verses)} 
 			onClick={()=>{this.props.app.setActiveChiasm(letter,letter_verses); this.props.app.setActiveVerse(letter_verses[0]);}} 
 			className={classes.join(" ")} key={i} style={{width: width+'%'}}>{i}</div>));
 		}
+		right_items.reverse();
+		if(/A/.test(chiastic_labels[1][0].key)) chiastic_labels[1].reverse();
 		var head = null;
 		if(typeof tagMeta.details === "string" && tagMeta.details !== "")
 		{

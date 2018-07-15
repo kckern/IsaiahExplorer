@@ -6,7 +6,8 @@ import { Commentary } from "./Commentary.js";
 import loading_img from '../img/interface/typing.gif';
 import loading_version from '../img/interface/version_loading.gif';
 import tag_png from '../img/interface/tag.png';
-
+import audio from '../img/interface/audio.png';
+import {HebrewSearchHeading} from "./Hebrew.js";
 
 
 
@@ -108,6 +109,9 @@ export default class PassageColumn extends Component {
 	heading = <SearchHeading app={this.props.app} />; 
 	title=tagimg=null;
 	}
+	if(this.props.app.state.hebrewSearch===true) { 
+	heading = <HebrewSearchHeading app={this.props.app} />; 
+	}
 	if(this.props.app.state.preSearchMode===true) { title=tagimg=null;}
 	if(this.props.app.state.comSearchMode===true) { title="Referenced Verses";}
 	
@@ -116,7 +120,7 @@ export default class PassageColumn extends Component {
         <div className="heading">
         <Commentary app={this.props.app}/>
           <div className="heading_subtitle">{tagimg}{title}<SearchBox app={this.props.app}/></div>
-          <div className="heading_title"  onClick={this.props.app.cycleVersion.bind(this.props.app)}> 
+          <div className="heading_title"  onClick={this.props.app.cycleVersion.bind(this.props.app,1)}> 
             □ <span id="heading_title">{versionName}
              <img alt="Version"  src={version_img}  onClick={toggler}  /></span>
           </div>
@@ -286,6 +290,10 @@ export  class PassageLine extends Component {
 	  isActive() {
 	    return parseInt(this.props.app.state.active_verse_id,0) === parseInt(this.props.line.verse_id,0);
 	  }
+	  isCommentary() {
+	    return (this.props.app.state.commentary_audio_verse_range.indexOf(this.props.line.verse_id)>=0 ||
+	    this.props.app.state.commentary_verse_range.indexOf(this.props.line.verse_id)>=0)
+	  }
 	  isSelected() {
 	    return  parseInt(this.props.app.state.selected_verse_id,0) === parseInt(this.props.line.verse_id,0);
 	  }
@@ -302,6 +310,7 @@ export  class PassageLine extends Component {
 	  	this.props.line.classes.push("v_"+this.props.line.verse_id)
 	  	 if (this.isActive()) this.props.line.classes.push("versebox_highlighted");
 	  	 if (this.isSelected()) this.props.line.classes.push("versebox_selected");
+	  	 if (this.isCommentary()) this.props.line.classes.push("versetext_com");
 	
 	  	if(this.props.line.line==null) return null;
 		this.props.line.line =this.props.line.line.replace(/[{}]/gi,"");
@@ -377,6 +386,9 @@ class VersionOption extends Component
 		else if(this.props.optionKey===5) classes.push("other firstother"); 
 		else classes.push("other"); 
 		
+		var audioimg = null
+		if(globalData.meta.version[this.props.option.shortcode].audio===1) audioimg = <img alt="audio" src={audio} />
+		
 
     	return ( <div className={classes.join(" ")} onClick={() => {
     	this.props.toggle();
@@ -384,7 +396,7 @@ class VersionOption extends Component
     		
     	}}>
 			<img alt="Option" src={require('../img/versions/'+this.props.option.shortcode.toLowerCase()+'.jpg')} />
-		    <div className={"icon"}>{this.props.option.title}</div> 
+		    <div className={"icon"}>{audioimg}{this.props.option.title}</div> 
 		    <span>{this.props.option.description}</span> 
 		</div> )
 	}

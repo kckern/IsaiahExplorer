@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { globalData } from "../globals.js";
 import { Passage } from "./Passage.js";
+import { Hebrew } from "./Hebrew.js";
 
 import sprocket_icon from '../img/interface/sprocket.png';
 import play_icon from '../img/interface/play.png';
+import playing_icon from '../img/interface/audio.gif';
+import loading_icon from '../img/interface/audioload.gif';
 import comment_icon from '../img/interface/comment.png';
 import loading_img from '../img/interface/message.gif';
+import heb_png from '../img/interface/hebrew.png';
 
 export default class VerseColumn extends Component {
 	
@@ -42,7 +46,7 @@ export default class VerseColumn extends Component {
 			          <div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
 			          <div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
 			            <div className="heading_title" id="audio_heading">
-			            	<div id='audio_verse'><img alt="Play Audio" src={play_icon}/> Play Audio Verse</div>
+			            	<div id='audio_verse' className='active_audio'><img alt="Play Audio" src={loading_icon}/> Play Audio Verse</div>
 			            	<div id='audio_commentary'><img alt="Audio Commentary" src={play_icon}/> Play Commentary <img alt="Select" id='com_option' src={sprocket_icon}/></div>
 			            	<div  id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
 		
@@ -53,7 +57,7 @@ export default class VerseColumn extends Component {
 			    )
 		    }
 		    
-			if(this.props.app.state.active_verse_id==null) return false;
+			if(this.props.app.state.active_verse_id===null || this.props.app.state.active_verse_id===0) return false;
 			var heading = "□ "+globalData.index[this.props.app.state.active_verse_id].string;
 			
 			var versions = this.lastVersions;
@@ -70,6 +74,8 @@ export default class VerseColumn extends Component {
 				this.lastVersions = versions;
 			}
 
+			var hebimg = null;
+			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="tagIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false});}}/>
 			
 			var swap_imgs = versions.map((shortcode,key)=>{
 					var classes = [];
@@ -85,7 +91,7 @@ export default class VerseColumn extends Component {
 		return(
 			    <div className="col col2">
 			    	<div className="heading">
-			            <div className="heading_subtitle">Verse Details</div>
+			            <div className="heading_subtitle">{hebimg}Verse Details</div>
 			    		<div className="heading_title" id="detail_heading">{heading}
 			    		<div className="swapverse" 
 			    		onClick={this.props.app.freezeSwap.bind(this.props.app)}
@@ -95,9 +101,9 @@ export default class VerseColumn extends Component {
 			    		</div>
 			    		</div>
 			            <div className="heading_title" id="audio_heading">
-			            	<div id='audio_verse'><img alt="Play Audio" src={play_icon}/> Play Audio Verse</div>
-			            	<div id='audio_commentary'><img alt="Audio Commentary" src={play_icon}/> Play Commentary <img alt="Select" id='com_option' src={sprocket_icon}/></div>
-			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false})}><img alt="Commentary" src={comment_icon}/> Read Commentaries</div>
+			            	<AudioVerse app={this.props.app} />
+			            	<AudioCommentary app={this.props.app} />
+			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false},this.props.app.setUrl.bind(this.props.app))}><img alt="Commentary" src={comment_icon}/> Read Commentaries</div>
 		
 			    		</div>
 			    	</div>
@@ -111,6 +117,141 @@ export default class VerseColumn extends Component {
 }
 
 
+class AudioVerse extends Component {
+
+	startPlaying()
+	{
+		
+			this.props.app.setState({    
+				audioState:"loading",
+				audioPointer:0,
+				selected_verse_id:null,  
+				commentary_audio_verse_range:[],
+	    		commentaryAudioMode:false},this.props.app.setUrl.bind(this.props.app))
+	}
+
+	handleClick()
+	{
+		if(globalData.meta.version[this.props.app.state.version].audio!==1) return false;
+		if(this.props.app.state.audioState!==null)
+		{
+			this.props.app.setState({  audioState:null },function(){
+				if(this.props.app.state.commentaryAudioMode)	this.startPlaying();
+				this.props.app.setUrl();
+			}.bind(this))
+		}
+		else
+		{
+			this.startPlaying();
+			this.props.app.setUrl();
+		}
+	}
+
+
+
+	render()
+	{
+		var classes = [];
+		
+		if(globalData.meta.version[this.props.app.state.version].audio!==1) classes.push("noaudio");
+		
+		
+		var icon = play_icon;
+		var text = "Play Audio Verse";
+		if(this.props.app.state.commentaryAudioMode===false)
+		{
+			if(this.props.app.state.audioState==="loading") { icon=loading_icon; text="Loading Audio Verse"; classes.push("active_audio")}
+			if(this.props.app.state.audioState==="playing") { icon=playing_icon; text="Pause Audio Verse"; classes.push("active_audio")}
+		}
+		
+		return (<div className={classes.join(" ")} onClick={this.handleClick.bind(this)} id='audio_verse'><img alt="Play Audio" src={icon}/> {text}</div>)
+	}
+	
+}
+
+class AudioCommentary extends Component {
+
+	state= {options:false}
+	
+	startPlaying(shortcode)
+	{
+		
+		this.props.app.setState({    
+			audioState:"loading",
+			audioPointer:0,
+			tagMode:false,
+			selected_verse_id:null,  
+			commentaryAudio:shortcode,
+    		commentaryAudioMode:true})
+	}
+
+	handleClick(e)
+	{
+		if(e===undefined) return false;
+		if(e.target.id!=="audio_commentary") return false;
+		if(this.props.app.state.audioState!==null)
+		{
+			this.props.app.setState({  audioState:null, commentary_audio_verse_range:[] },function(){
+				if(!this.props.app.state.commentaryAudioMode)
+				{
+					this.startPlaying(this.props.app.state.commentaryAudio);
+				}else
+				{
+					this.props.app.setState({commentaryAudioMode:false },
+					this.props.app.setActiveVerse.bind(this.props.app,this.props.app.state.active_verse_id,undefined,undefined,undefined,"audio"));
+				}
+			}.bind(this))
+		}
+		else
+		{
+			this.startPlaying(this.props.app.state.commentaryAudio);
+		}
+	}
+		
+	handleOptions()
+	{
+		this.props.app.setState({  audioState:null },function(){this.setState({options:true});}.bind(this));
+	}
+	selectOption(e)
+	{
+		var shortcode = e.target.options[e.target.selectedIndex].attributes.shortcode.value;
+		
+		if(shortcode==="top") return false;
+		
+		this.startPlaying(shortcode);
+			this.setState({options:false});
+		
+	}
+
+	render()
+	{
+		
+		if(this.state.options)
+		{
+			var options = null;
+			options = (<select onChange={this.selectOption.bind(this)} id="com_selector">
+				<option key="top" shortcode="top">Make a selection:</option>
+				<option key="gileadi" shortcode="gileadi"> ⤷ Analytical Commentary of Isaiah by Avraham Gileadi</option>
+				<option key="mcgee" shortcode="mcgee"> ⤷ Thru the Bible with J. Vernon McGee</option>
+			</select>)
+			
+		return (<div id='audio_commentary'  onClick={this.handleClick.bind(this)} >{options}</div>)
+		}
+		
+		
+		var classes = [];
+		var icon = play_icon;
+		var text = "Play Commentary";
+		if(this.props.app.state.commentaryAudioMode)
+		{
+			if(this.props.app.state.audioState==="loading") { icon=loading_icon; text="Loading Commentary"; classes.push("active_audio")}
+			if(this.props.app.state.audioState==="playing") { icon=playing_icon; text="Pause Commentary"; classes.push("active_audio")}
+		}
+		
+		return (<div className={classes.join(" ")}  id='audio_commentary'  onClick={this.handleClick.bind(this)} ><img alt="Audio Commentary" src={icon}/> {text} <img onClick={this.handleOptions.bind(this)} alt="Select" id='com_option' src={sprocket_icon}/></div>)
+	}
+	
+}
 
 
 class VersePanel extends Component {
@@ -138,13 +279,21 @@ class VersePanel extends Component {
   
 	render()  {
 		
+	var highlights = [null];
+	if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null)
+	{
+		var tmp = globalData.hebrew.high;
+		if(tmp[this.props.app.state.hebrewStrongIndex]!==undefined)
+		highlights = tmp[this.props.app.state.hebrewStrongIndex].h;
+	}
 
   	var seeMorePassages = this.seeMorePassages.bind(this);
   	var seeMoreSections = this.seeMoreSections.bind(this);
   	
 		return <div id="verse" >
+		<Hebrew app={this.props.app}  />
     <div className="verse_container">
-        <Passage app={this.props.app}  verses={this.props.app.state.active_verse_id}  spottable={true} wrapperId="verse_text"/>
+        <Passage app={this.props.app}  verses={this.props.app.state.active_verse_id}  highlights={highlights}   spottable={true} wrapperId="verse_text"/>
     </div>
 	<TagBox   app={this.props.app} />
     <SeeMoreTags  app={this.props.app} />

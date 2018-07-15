@@ -47,13 +47,15 @@ export default class SectionColumn extends Component {
 		    
   	var toggler = this.toggleDrawer.bind(this);
   	
+  	
+  	
     return (
       <div className="col col2b">
         <div className="heading">
           <div className="heading_subtitle" id="outline_subtitle">
             Section Passages
           </div>
-          <div className="heading_title"  onClick={this.props.app.cycleOutline.bind(this.props.app)}> 
+          <div className="heading_title"  onClick={this.props.app.cycleOutline.bind(this.props.app,1)}> 
             □ <span id="outline_title">
             <img alt="outline_logo" src={require('../img/versions/'+this.props.app.state.outline.toLowerCase()+'.jpg')}  onClick={toggler}  />
             {globalData["meta"]["outline"][this.props.app.state.outline].short_title}</span>
@@ -74,7 +76,7 @@ class Outline extends Component {
 		if(this.props.app.state.searchMode) return true;
 		if(this.props.app.state.selected_tag!==null) return true;
 	    var section_verses = this.props.app.state.highlighted_section_verses;
-	    var heading_verses = heading.verses[0].map(Number);
+	    var heading_verses = heading.verses;
 	    var isec = heading_verses.filter(function(n) { return section_verses.indexOf(n) !== -1; });
 	    return isec.length > 0;
 	}
@@ -83,17 +85,18 @@ class Outline extends Component {
 	{
 		if(this.props.app.state.searchMode) return true;
 		if(this.props.app.state.selected_tag===null) return true;
-	    var tagged_verses = this.props.app.state.highlighted_verse_range.map(Number);
-	    var heading_verses = heading.verses[0].map(Number);
+	    var tagged_verses = this.props.app.state.highlighted_verse_range;
+	    var heading_verses = heading.verses;
 	    var isec = heading_verses.filter(function(n) { return tagged_verses.indexOf(n) !== -1; });
 	    return isec.length > 0;
 	}
 	
 	isInSearchRange(heading)
 	{
-		if(this.props.app.state.searchMode===false) return true;
-	    var tagged_verses = this.props.app.state.highlighted_verse_range.map(Number);
-	    var heading_verses = heading.verses[0].map(Number);
+		//if(this.props.app.state.commentaryAudioMode===true) return true;
+		if(this.props.app.state.searchMode===false  && !this.props.app.state.comSearchMode) return true;
+	    var tagged_verses = this.props.app.state.highlighted_verse_range;
+	    var heading_verses = heading.verses;
 	    var isec = heading_verses.filter(function(n) { return tagged_verses.indexOf(n) !== -1; });
 	    return isec.length > 0;
 	}
@@ -150,7 +153,7 @@ class Heading extends Component {
               onMouseEnter={() =>
                 {
                 	var dark_blue = this.props.app.state.highlighted_verse_range;
-                	var whole_row = this.props.heading.verses[0].map(Number);
+                	var whole_row = this.props.heading.verses;
                 	
                 	for(var i in whole_row)
                 	{
@@ -162,7 +165,7 @@ class Heading extends Component {
               }
               onClick={() =>
                 {
-                	var whole_row = this.props.heading.verses[0].map(Number);
+                	var whole_row = this.props.heading.verses;
                 	this.props.app.clearTag();
                 	this.props.app.setActiveVerse(whole_row[0],undefined,undefined,undefined,"versebox");
                 }
@@ -170,10 +173,10 @@ class Heading extends Component {
             >
               <h3>{this.props.heading.heading}</h3>
               <div className="verse_grid">
-                {this.props.heading.verses[0].map((verse_id, verseKey) => {
+                {this.props.heading.verses.map((verse_id, verseKey) => {
                   var box_num = index[verse_id.toString()].verse;
                   var classes = ["versebox", "v_" + verse_id];
-                  if (box_num === "1") {
+                  if (box_num === 1) {
                     box_num = index[verse_id.toString()].chapter;
                     classes.push("chapter");
                   }

@@ -766,7 +766,7 @@
             "title": "Christian Standard Bible",
             "short_title": "CSB",
             "image": "csb.jpg",
-            "audio": 0,
+            "audio": 1,
             "description": "2017 Revision of the HSCB",
             "details": "",
             "sample": {
@@ -1667,7 +1667,7 @@
             "shortcode": "mckenzie",
             "title": "Second Isaiah",
             "short_title": "McKenzie",
-            "image": "anchor.jpg",
+            "image": "mckenzie.jpg",
             "audio": "",
             "description": "",
             "details": ""
@@ -1677,7 +1677,27 @@
             "shortcode": "ldsces",
             "title": "LDS Institue Old Testament Manual",
             "short_title": "LDS Institute",
-            "image": "anchor.jpg",
+            "image": "ldsces.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "clarke": {
+            "category": "commentary",
+            "shortcode": "clarke",
+            "title": "Adam Clarke Commentary",
+            "short_title": "Clarke",
+            "image": "",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "calvin": {
+            "category": "commentary",
+            "shortcode": "calvin",
+            "title": "John Calvin Commentary",
+            "short_title": "Calvin",
+            "image": "",
             "audio": "",
             "description": "",
             "details": ""

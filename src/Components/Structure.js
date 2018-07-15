@@ -41,7 +41,8 @@ export default class StructureColumn extends Component {
 			      </div>
 			    )
 		    }
-		    
+		    var title = null;
+		    if(globalData["meta"]["structure"][this.props.app.state.structure]!==undefined) title = globalData["meta"]["structure"][this.props.app.state.structure].title;
 		    var toggler = this.toggleDrawer.bind(this);
              return (
 		      <div className="col col1">
@@ -49,13 +50,10 @@ export default class StructureColumn extends Component {
 		          <div className="heading_subtitle" id="structure_subtitle">
 		            Structural Sections
 		          </div>
-		          <div className="heading_title" onClick={this.props.app.cycleStructure.bind(this.props.app)}>
+		          <div className="heading_title" onClick={this.props.app.cycleStructure.bind(this.props.app,1)}>
 		            □{" "}
 		            <span id="structure_title">
-		              {
-		                globalData["meta"]["structure"][this.props.app.state.structure]
-		                  .title
-		              }
+		              {title}
 		            </span>{" "}
 		            <img
 		              alt="Icon"
@@ -99,9 +97,9 @@ class Structure extends Component {
 class Section extends Component {
   isActive(sectionKey) {
   	if(this.props.app.state.selected_tag !== null) return false;
-  	if(this.props.app.state.searchMode) return false;
+  	if(this.props.app.state.searchMode && !this.props.app.state.commentaryAudioMode) return false;
     return (
-      parseInt(this.props.app.state.highlighted_section_index,16) === sectionKey
+      parseInt(this.props.app.state.highlighted_section_index,0) === sectionKey
     );
   }
   render() {
@@ -159,7 +157,7 @@ class VerseGrid extends Component {
         {verses.map((verse_id, verseKey) => {
           var box_num = index[verse_id.toString()].verse;
           var classes = ["versebox", "v_" + verse_id];
-          if (box_num === "1") {
+          if (box_num === 1) {
             box_num = index[verse_id.toString()].chapter;
             classes.push("chapter");
           }
