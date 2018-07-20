@@ -38,14 +38,14 @@
 /* Structure */
 html,body
 {
-	
+
 	font-family: 'Goudy', 'Sorts Mill Goudy','Goudy', Times, Georgia, serif;
 	margin: 0;
     padding: 0;
 
 	width:100%;
 	height:100%;
-    
+
     background-color:#000;
 	cursor:pointer;
 }
@@ -78,7 +78,7 @@ html,body
     top: 40px;
     overflow: hidden;
     margin: 10px;
-    
+
 }
 
 .react-player
@@ -144,16 +144,16 @@ body.ie #text div.chiastic_column
 	color:#448;
 	overflow:hidden;
 	background-color:#C5EEF3;
-	border-radius: 3px; 
+	border-radius: 3px;
 	margin-top:3px;
 	margin-bottom:3px;
-	
+
 }
 
 .tipsyOutline
 {
 	max-width:100px;
-	
+
 }
 
 .tipsy-pedigree
@@ -193,7 +193,7 @@ h1 img.demo
 	margin-left:10px;
 	margin-top:1px;
 }
-                                                                                                          
+
 
 
 
@@ -234,13 +234,13 @@ h1
     min-width:400px;
 }
 .col2b {
-	
-	
-    width: 310px; float:left; 
+
+
+    width: 310px; float:left;
     /*
     left:625px;
     height:400px;
-    
+
     position:absolute;
     bottom:0px;
     width:310px;
@@ -294,7 +294,7 @@ div#version_meta.meta.visible
 
 .infoOpen .text_heading
 {
-	
+
 	height: 360px;
 	transition: height 0.5s;
 }
@@ -327,19 +327,19 @@ div#text
 
 #approot.infoOpen div#text
 {
-	
+
     top:437px;
 	transition: top 0.5s;
 }
 
 #approot.commentaryMode div#version_meta
 {
-	
+
     top:510px;
 }
 #approot.commentaryMode div#text
 {
-	
+
     top:583px;
 	transition: top 0.5s;
 }
@@ -427,8 +427,8 @@ div#verse
 
 div#verse
 {
-    
-    
+
+
 	cursor:text;
 }
 
@@ -466,7 +466,7 @@ div#verse.loading.fullsize
 {
    bottom:0px;
 	opacity:1;
-   
+
   -webkit-transition: all 0.0s ease-in-out;
   -moz-transition: all 0.0s ease-in-out;
   -o-transition: all 0.0s ease-in-out;
@@ -490,7 +490,7 @@ div.heading_title
 {
 	height:30px;
 	line-height:30px;
-	
+
 	padding-left:5px;
 	padding-top:3px;
 	word-wrap:nowrap;
@@ -537,23 +537,23 @@ span#drarrow
  div#outline h3
  {
  	text-align:left;
- 	
+
  	padding:0; margin:0;
 	font-size:15px;
  	margin-left:5px;
  	letter-spacing:-0.5px;
  }
- 
+
  div#outline h3 span
  {
  	float:right;
  	margin-right:25px;
  	color:#AAA;
  }
- 
+
   div#outline h3 span:hover
   {
-  	
+
  	color:#555;
   }
 
@@ -577,7 +577,7 @@ span#drarrow
 
  .chapter
 {
-	
+
 	color:black;
 }
 
@@ -586,7 +586,7 @@ span#drarrow
 	border-top:1px solid #AAA;
 	border-left:1px solid #AAA;
 	margin:3px;
-	
+
 	width:483px;
 	float:left;
 	cursor:pointer;
@@ -636,7 +636,7 @@ div.taglink
 	font-size:12px;
 	line-height:17px;
 	padding:0 3px;
-	
+
 	border:1px solid #103D50;
 	color:#103D50;
 	cursor:pointer;
@@ -647,7 +647,7 @@ div.taglink
 
 span.label
 {
-	
+
 	display:inline-block;
 	font-size:12px;
 	line-height:16px;
@@ -814,17 +814,17 @@ div.heading_grid_tag_highlighted
 }
 
 #text span.poetry.versetext_com,
-#text .versetext_com 
+#text .versetext_com
 {
 	border-left:5px solid #DDD;
 	border-right:5px solid #DDD;
 	background-color:#DDD;
 	border-color:#DDD;
 	color:#666;
-	
+
 }
 #text span.poetry.versebox_highlighted.versetext_com,
-#text .versetext_com.versebox_highlighted 
+#text .versetext_com.versebox_highlighted
 {
 	color:#000;
 }
@@ -844,13 +844,13 @@ div#text.greyed_out span.versebox_tag_highlighted.versebox_highlighted
 
 div#text  span.versebox_tag_highlighted
 {
-	
+
 	background-color:#C5EEF3;
 }
 
 div#text  span.versebox_tag_highlighted.versebox_highlighted
 {
-	
+
 	background-color:#FFA;
 	color:#448;
 	border-color:#C5EEF3;
@@ -875,7 +875,7 @@ div#text .textcontent
 
 #text, #verse
 {
-	 font-size:16px; cursor:pointer; 
+	 font-size:16px; cursor:pointer;
 	 line-height:1.15em;
 	background-color:white;
 	padding:15px;
@@ -908,16 +908,16 @@ div#text .textcontent
 }
 #verse blockquote:first-child,#verse p:first-child
 {
-	padding-top:0; margin-top:0; 
+	padding-top:0; margin-top:0;
 }
 #verse blockquote:last-child,#verse p:last-child
 {
-	padding-bottom:0; margin-bottom:0; 
+	padding-bottom:0; margin-bottom:0;
 }
 #verse blockquote,#verse p
 {
-	padding:0; margin:0; 
-	
+	padding:0; margin:0;
+
 }
 #verse
 {
@@ -925,7 +925,7 @@ div#text .textcontent
  padding-left:30px;
  letter-spacing:-0.3px;
 }
- 
+
 #verse span.poetry
 {
 	display:block;
@@ -934,7 +934,7 @@ div#text .textcontent
 
 #text span.poetry
 {
-	
+
 	display:inline-block;
 	margin-right:400px;
 	border-left:5px solid #FFF;
@@ -960,7 +960,7 @@ div#text .textcontent
 
 
 
-/*  Selected */ 
+/*  Selected */
 
 
 #text span.versebox_selected
@@ -972,15 +972,15 @@ div#text .textcontent
 	border-left:5px solid #fdd43a;
 	border-right:5px solid #fdd43a;
 }
- 
 
 
-/* */ 
+
+/* */
 .passage_section
 {
 	float:right;
 	border:1px solid blue;
-	
+
 }
 
 #structure_select,#outline_select,#version_select
@@ -993,7 +993,7 @@ div#text .textcontent
 select,option
 {
 	font-size:12px;
-	
+
 
 }
 
@@ -1028,7 +1028,7 @@ div.verse_container
 	border-bottom:1px dotted #999;
 	margin:0;
 	font-weight:800;
-	color:#999;    
+	color:#999;
 	padding-bottom:5px;
 	margin-bottom:5px;
 	overflow:hidden;
@@ -1069,13 +1069,13 @@ div.verse_container
 	float:left;
 	background-color:#FFF;
 	outline-color:#C5EEF3;
-	
+
 }
 
 .text_heading.search span.q
 {
 	font-variant: small-caps;
-	padding:5px; 
+	padding:5px;
 }
 
 #text div.desc.tag_desc_highlighted,#floater .tag_desc_highlighted
@@ -1105,7 +1105,7 @@ div.verse_container
     line-height: 45px;
     padding-right: 48px;
     white-space:nowrap;
-    
+
 	    margin-bottom: 7px;
 }
 .tagtitle img
@@ -1157,13 +1157,13 @@ div.verse_container
 	background-color:#FFF;
 	color:#AAA;
 	text-align:right;
-	
+
 	font-style:normal;
 	font-size:12px;
 }
 table.parallel span.verse
 {
-	padding-right:5px;    
+	padding-right:5px;
 }
 
 #text >table.parallel  tr.meta.parameta_highlighted td
@@ -1188,7 +1188,7 @@ table.parallel span.verse
 }
 #text >table.parallel .readmore td
 {
-	
+
 }
 
 #text >table.parallel .readmore.active
@@ -1243,9 +1243,9 @@ background-color:#FFA;
 	border-bottom:1px solid black;
 	margin-top:5px;
 	overflow:auto;
-	
+
 	width:442px;
-	
+
 }
 #text hr {
     border: 0;
@@ -1259,13 +1259,13 @@ background-color:#FFA;
 {
     float:right;
 	color:#CCC;
-	
+
 	font-style:normal;
 	font-size:12px;
 	max-width:250px;
 	text-align:right;
 	margin-left:10px;
-	
+
 }
 
 table.parallel
@@ -1352,7 +1352,7 @@ tr.metaref td div.meta + div.ref
 
 .chimeta .label
 {
-	
+
 	float:left;
 	overflow:hidden;
 	text-align:left;
@@ -1387,7 +1387,7 @@ tr.metaref td div.meta + div.ref
 .chimeta
 {
 	background-color:#FFF;
-	
+
 	overflow:auto;
 	margin-left:10px;
 	margin-right:5px;
@@ -1452,7 +1452,7 @@ tr.metaref td div.meta + div.ref
 	border-top:0;
 	margin:0 10px 10px 10px;
 	cursor:pointer;
-	
+
 }
 
 #text.no_top_padding
@@ -1470,7 +1470,7 @@ tr.metaref td div.meta + div.ref
 
 div#text.chiasm.tagged
 {
-	
+
     overflow-y:hidden;
 }
 
@@ -1505,12 +1505,12 @@ div#text.chiasm.tagged .growing-area {
 div#text.chiasm.tagged .head-content {
   border:1px solid blue;
   display:table-cell;
-}  
+}
 
 
 
 #text div.chiastic_column
-{ 
+{
 	width:238px;
 	border-top:1px solid #999;
 	border-bottom:1px solid #999;
@@ -1521,12 +1521,12 @@ div#text.chiasm.tagged .head-content {
 }
 
 #text div.chiastic_column.left
-{ 
+{
     left: 0;
 	border-left:1px solid #999;
 }
 #text div.chiastic_column.right
-{ 
+{
     right: 0;
 	border-right:1px solid #999;
 }
@@ -1543,20 +1543,20 @@ div#text.chiasm.tagged .head-content {
 	font-style:italic;
 	padding-left:15px;
 	margin-bottom:10px;
-	
+
 
 }
 
 #text div.chiastic_column .meta:hover
 {
-	
+
 	background-color:#555;
 }
 #text div.chiastic_column .meta.activeChiasm
 {
 	background-color:#448;
 	color:white;
-	
+
 }
 #text div.chiastic_column .buffer
 {
@@ -1579,10 +1579,10 @@ div#text.chiasm.tagged .head-content {
     line-height:14px;
 }
 
-    
+
 #text .chiastic_block
 {
-	
+
 	display:table-cell;
 	border-collapse:collapse;
 	color:#333;
@@ -1655,7 +1655,7 @@ tr.readmore:hover,
 .verse_info_box h4
 {
 	margin:0; padding:0;
-	
+
 }
 
 
@@ -1664,7 +1664,7 @@ tr.readmore:hover,
 
 
 
-.swapverse 
+.swapverse
 {
 	float:right;
 	margin-right:3px;
@@ -1701,8 +1701,8 @@ tr.readmore:hover,
   overflow:hidden;
   cursor:pointer;
   margin-bottom:0;
-  
-	
+
+
 }
 
 .verse_info_box.tags.oversize,
@@ -1738,10 +1738,10 @@ tr.readmore:hover,
 .verse_info_box.outline.top5
 {
 	height:203px;
-	
+
 }
 
-#verse .outline >div 
+#verse .outline >div
 {
 	padding-bottom:3px;
 }
@@ -1821,9 +1821,9 @@ tr.readmore:hover,
 .verse_info_box.structure.top5
 {
 	height:203px;
-	
+
 }
-#verse .structure >div 
+#verse .structure >div
 {
 	padding-bottom:3px;
 }
@@ -1834,7 +1834,7 @@ tr.readmore:hover,
     font-size: 16px;
     position: relative;
     margin-bottom: 3px;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 
@@ -1874,7 +1874,7 @@ tr.readmore:hover,
 
 
 #verse .structure >div div span
-{    
+{
 	height: 32px;
     line-height: 32px;
     position: absolute;
@@ -1903,7 +1903,7 @@ tr.readmore:hover,
 	height:30px;
 	width:90px;
 	border:1px solid black;
-	
+
 	overflow:hidden;
 	text-align:center;
 	line-height:14px;
@@ -1964,7 +1964,7 @@ div.meta > div.option:hover
 }
 
 
-/* section meta */ 
+/* section meta */
 
 
 #book_meta div.option div.icon
@@ -1995,7 +1995,7 @@ div.meta > div.option:hover
 
 
 
-/* heading meta */ 
+/* heading meta */
 
 
 
@@ -2057,7 +2057,7 @@ div.meta > div.option:hover
 }
 
 
-/* version meta */ 
+/* version meta */
 #version_meta
 {
 	overflow-y:scroll!important;
@@ -2169,7 +2169,7 @@ div.meta > div.option:hover
 
 #outline .overviewcontainer{height:100%;}
 
-#user_prefs div.optionbox
+#user_prefs div.optionbox, .option--dragging div.optionbox
 {
 	border:1px solid #444;
 	overflow:hidden;
@@ -2180,7 +2180,8 @@ div.meta > div.option:hover
 	font-style:italic;
 	background-color:#EEE;
 	font-size: 15px;
-	cursor: row-resize;
+	/* TODO: Check what cursor to use*/
+	/*cursor: row-resize;*/
 	position:relative;
 	z-index:1;
 	line-height:23px;
@@ -2191,7 +2192,8 @@ div.meta > div.option:hover
 	background-color:#DDD;
 }
 
-#user_prefs div.optionbox div.icon
+#user_prefs div.optionbox div.icon,
+.option--dragging div.optionbox div.icon
 {
 	float:left;
 	width:80px;
@@ -2245,7 +2247,7 @@ span.word_highlight
 	border-right:3px solid #C5EEF3;
 	border-top-left-radius:10px;
 	border-top-right-radius:10px;
-	border-collapse: separate; 
+	border-collapse: separate;
 }
 
 .versebox_highlighted span.word_highlight
@@ -2254,12 +2256,13 @@ span.word_highlight
 	border-color:orange;
 }
 
-#user_prefs .option .rank
+#user_prefs .option .rank,
+.option--dragging .rank
 {
 	border:1px solid black;
 	background-color:white;
 	text-align:center;
-	
+
 	line-height:20px;
 	width:20px;
 	height:20px;
@@ -2291,7 +2294,8 @@ span.word_highlight
 	letter-spacing:-0.5px
 }
 
-#user_prefs .outline_full_title
+#user_prefs .outline_full_title,
+.option--dragging .outline_full_title
 {
 	width:170px;
 }
@@ -2337,7 +2341,7 @@ span.word_highlight
 
 #user_prefs div.option.top div.optionbox .icon
 {
-	
+
 	background-color:#73A8DA;
 	color:white;
 }
@@ -2449,10 +2453,10 @@ div.meta > div.option.other.firstother
     width: 130px;
     text-align: right;
     color: #448;
-	
+
 	font-size:14px;
-	
-	
+
+
   }
 
  #prefs_example dd {
@@ -2501,7 +2505,7 @@ div.meta > div.option.other.firstother
 {
 	margin-left:20px;
 }
-#commentary_text .passage 
+#commentary_text .passage
 {
 	font-size:14px;
 	line-height:14px;
@@ -2548,7 +2552,7 @@ div.meta > div.option.other.firstother
   background-color: #DDD;  /* Default Color */
   -webkit-transition: .4s;
   transition: .4s;
-	
+
 	font-size:12px;
 	letter-spacing:0;
 	color:#666;
@@ -2571,19 +2575,19 @@ div.meta > div.option.other.firstother
 }
 
 input:checked + .slider {
-  background-color: #999; /* Toggled */ 
+  background-color: #999; /* Toggled */
   color:#DDD;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3; 
+  box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(143px);
   -ms-transform: translateX(143px);
   transform: translateX(143px);
-  background-color: #DDD; 
+  background-color: #DDD;
 }
 
 /* Rounded sliders */
@@ -2627,14 +2631,14 @@ img.play
 	padding:10px;
 	text-align:justify;
 	overflow:auto;
-	 
+
 }
 #commentary_text a
 {
 	border-radius:3px;
 	padding-left:3px;
 	padding-right:3px;
-    
+
     font-size: 12px;
     line-height: 17px;
     margin-left:3px;
@@ -2654,7 +2658,7 @@ img.play
     color: #103D50;
 }
 #commentary_text a.isa:hover
-{	
+{
 	background-color:#73A8DA;
 	color:#FFF;
 }
@@ -2692,7 +2696,7 @@ img.play
     background-color: #f2e5d9;
     border: 1px solid #552B1B;
     color: #552B1B;
-    
+
 	border-radius:5px;
 	font-style:normal;
 	font-size:12px;
@@ -2702,7 +2706,7 @@ img.play
 #text .detail a.ref
 {
 	font-size:10px;
-	
+
 }
 #commentary_text p
 {
@@ -2785,7 +2789,7 @@ img.play
 .src_tabs span.more:hover
 {
 	color:#000;
-	
+
 }
 .src_tabs select
 {
@@ -2810,7 +2814,7 @@ img.play
 
 button#commentary
 {
-	
+
 	font-family: 'Comfortaa';
 	position:relative;
 	bottom:7px;
@@ -2826,7 +2830,7 @@ button#commentary
 
 #audio_heading
 {
-	
+
 	line-height:20px;
 }
 
@@ -2835,7 +2839,7 @@ button#commentary
 	font-size:12px;
 	border:2px solid #000;
 	font-family:arial;
-	
+
 	line-height:20px;
 	padding-left:10px;
 	border-radius:10px;
@@ -2843,14 +2847,14 @@ button#commentary
 	display:inline;
 	width:165px;
 	height:22px;
-	
+
 	float:left;
 	margin-right:5px;
 }
 #audio_heading div:hover,
 #audio_heading div.active_audio
 {
-	
+
 	background-color:#333;
 }
 #audio_heading div img
@@ -3002,7 +3006,7 @@ button#commentary
 {
     height:20px;
 	text-align:center;
-	
+
 	border:1px solid black;
 	font-size:14px;
     line-height: 20px;
@@ -3061,12 +3065,12 @@ button#commentary
 {
   margin-left:20px;
   border-left:1px solid #999;
-  
+
   padding-bottom:15px;
   margin-bottom:-15px;
 }
 .tagtree .leaf,
-.tagtree .branch 
+.tagtree .branch
 {
   border-left:1px solid #999;
   margin-left:10px;
@@ -3084,22 +3088,22 @@ button#commentary
 
 #verse .taglink
 {
-	margin-right:6px; 
+	margin-right:6px;
 }
 .tagtree .leaf
 {
-	
+
   margin-left:20px;
-  
+
 }
 .tagtree .highlight .tagDesc
 {
 	background-color:#FFA;
-	color:black; 
+	color:black;
 }
 .tagtree .leaf.highlight .taglink
 {
-	cursor:not-allowed; 
+	cursor:not-allowed;
 	background-color: #467386;
     color: #FFF;
 }
@@ -3119,10 +3123,10 @@ button#commentary
 
 .tagtree .branch
 {
-	
+
   padding-bottom:0px;
-  
-  
+
+
 }
 .tagtree .branch .taglink
 {
@@ -3175,7 +3179,7 @@ button#commentary
 
 .tagtree .branch
 {
-	
+
   margin-left:-1px;
 }
 
@@ -3232,7 +3236,7 @@ button#commentary
     margin-top:-5px;
     font-weight:800;
     color:black;
-    
+
 }
 
 .tag_meta>div.taglink
@@ -3240,7 +3244,7 @@ button#commentary
 	line-height:16px;
 	position:relative;
 	top:-1px;
-	margin:0; 
+	margin:0;
 }
 
 .tag_meta>div.taglink:not(:last-child) + span
@@ -3363,21 +3367,28 @@ a.strong
 }
 a.strong:hover
 {
-	
+
 	color:#000;
 	border-color:#000;
 }
 
 .hword
 {
-	font-family: sans-serif;
-	
+
+	font-family:sans-serif;
 	letter-spacing:5px;
 	margin-left:10px;
 }
 
 .hphon
 {
+
+	  font-variant: small-caps;
+}
+
+.option--dragging .rank span {
+	/*hide index on dragged element*/
+	display: none;
 	
 	font-family: Helvetica, Arial, sans-serif;
 	color:#888;
