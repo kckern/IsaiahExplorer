@@ -8,7 +8,7 @@ import SectionColumn from './Components/Section.js';
 import PassageColumn from './Components/Passage.js';
 import VerseColumn from './Components/Verse.js';
 import Audio from './Components/Audio.js';
-import Settings from './Components/Settings.js';
+import Settings from './Components/Settings/Settings.js';
 import Mobile from './Mobile.js';
 import {TagFloater} from './Components/Tags.js';
 import {globalData} from './globals.js';
