@@ -35,13 +35,22 @@ export  class SearchBox extends Component {
 		if(document.getElementById("searchbox")!==null)
 		document.getElementById("searchbox").focus();
 	}
+	
+	componentDidMount()
+	{
+		if(document.getElementById("searchbox")===null) return false;
+		if(document.getElementById("searchbox").value.length>1) return false;
+		var q = this.props.app.state.searchQuery;
+		if(q===null) return false;
+		document.getElementById("searchbox").value = q;
+	}
 		
   render()
   {
   	if(this.props.app.state.comSearchMode) return null;
   	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)
   	return(
-  		<input defaultValue="" id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}  />
+  		<input defaultValue="" id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}   />
   		)
   		
   	return(

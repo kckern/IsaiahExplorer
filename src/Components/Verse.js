@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { globalData } from "../globals.js";
 import { Passage } from "./Passage.js";
 import { Hebrew } from "./Hebrew.js";
-
+import Tipsy from 'react-tipsy'
 import sprocket_icon from '../img/interface/sprocket.png';
 import play_icon from '../img/interface/play.png';
 import playing_icon from '../img/interface/audio.gif';
@@ -56,8 +56,8 @@ export default class VerseColumn extends Component {
 			      </div>
 			    )
 		    }
-		    
-			if(this.props.app.state.active_verse_id===null || this.props.app.state.active_verse_id===0) return false;
+		   if([null,0,undefined].indexOf(this.props.app.state.active_verse_id) > -1) return false;
+			
 			var heading = "□ "+globalData.index[this.props.app.state.active_verse_id].string;
 			
 			var versions = this.lastVersions;
@@ -75,7 +75,7 @@ export default class VerseColumn extends Component {
 			}
 
 			var hebimg = null;
-			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="tagIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false});}}/>
+			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false});}}/>
 			
 			var swap_imgs = versions.map((shortcode,key)=>{
 					var classes = [];
@@ -88,6 +88,8 @@ export default class VerseColumn extends Component {
 					src={require('../img/versions/'+shortcode.toLowerCase()+'.jpg')} 
 					key={key} />) 
 			});
+			var readhide = "Read Commentaries";
+			if(this.props.app.state.commentaryMode) readhide = "Hide Commentaries"
 		return(
 			    <div className="col col2">
 			    	<div className="heading">
@@ -103,7 +105,7 @@ export default class VerseColumn extends Component {
 			            <div className="heading_title" id="audio_heading">
 			            	<AudioVerse app={this.props.app} />
 			            	<AudioCommentary app={this.props.app} />
-			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false},this.props.app.setUrl.bind(this.props.app))}><img alt="Commentary" src={comment_icon}/> Read Commentaries</div>
+			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false},this.props.app.setUrl.bind(this.props.app))}><img alt="Commentary" src={comment_icon}/> {readhide}</div>
 		
 			    		</div>
 			    	</div>
@@ -364,20 +366,23 @@ class TagBox extends Component{
 }
 
 class TagLink extends Component{
+
 	render()
 	{
 
-		
-		    	var classes = ["taglink"];
-		    	if(this.props.app.state.selected_tag===this.props.tagName) classes.push("tag_highlighted");
-		    	
+    	var classes = ["taglink"];
+    	if(this.props.app.state.selected_tag===this.props.tagName) classes.push("tag_highlighted");
+    	var tagData = this.props.app.getTagData(this.props.tagName);
+    	var content = (<div><div className="pedigree"><span>{tagData.parents.filter(v => v !== 'root').reverse().join(" » ")}</span></div><div>{tagData.description}</div></div>);
+    	
 		return(
+			<Tipsy content={content} placement="top" trigger="hover focus touch" className="tagtip">
 			<div 
 			className={classes.join(" ")}
 			onMouseEnter={()=>this.props.app.setPreviewedTag(this.props.tagName)}
 			onMouseLeave={()=>this.props.app.setPreviewedTag(null)}
 			onClick={()=>this.props.app.setActiveTag(this.props.tagName)}
-			>{this.props.tagName}</div>
+			>{this.props.tagName}</div></Tipsy>
 		)
 	}
 }

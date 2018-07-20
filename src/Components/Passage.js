@@ -136,6 +136,48 @@ export default class PassageColumn extends Component {
 
 export  class Passage extends Component {
 	
+	
+		processSubs(text,verse_id,sub)
+		{
+			if(sub===undefined) return text;
+			if(sub[verse_id]===undefined) return text;
+			var letter_str = sub[verse_id];
+			var letters = [];
+			for (var i = 0; i < letter_str.length; i++) {
+			    letters.push(letter_str.charAt(i));
+			}
+			
+			var text = text.text;
+			var otext = text;
+			text = text.replace(/^[^a-z]/ig,"");
+			text = text.replace(/\/_/g," ");
+			
+			var array = [];
+			if(text.includes("/") && text.split(/[/¶]+/g).length<=5) array = text.split(/[/¶]+/g)
+			else
+			{
+				 var tmp = text.split(/([,;.:?!]+)/g);
+				 for(var i = 0; i<=tmp.length; i=i+2) array.push(tmp[i]+tmp[i+2]+" ");
+				//if too short merge lines
+			}
+			
+			//Divide text by letters
+			var lines = [];
+			for(var x in letters)
+			{
+				var key = letters[x].charCodeAt(0) - 97;
+				lines.push(array[key]);
+			}
+			text = lines.join("/");
+			console.log("\n\n=============== "+verse_id);
+			console.log(letters,otext,array,lines);
+			return {
+				format:text.format,
+				text: text
+			};
+		}
+	
+	
 	  render() {
 
 
@@ -155,7 +197,7 @@ export  class Passage extends Component {
 	  			source = globalData["meta"]["version"][thisVersion].sample;
 	  		}
 	  		var verse_id = range[x];
-	  		var verseObj = source[verse_id.toString()];
+	  		var verseObj = this.processSubs(source[verse_id.toString()],verse_id.toString(),this.props.sub);
 	  		
 	  		
   				

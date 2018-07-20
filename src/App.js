@@ -163,7 +163,7 @@ class App extends Component {
   {
   	settings.active_verse_id = 17656;
 	var path = this.props.location.pathname;
-	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
+	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
 	var matches =regex.exec(path);
 	var params = [null];
 	if(matches===null) return settings;
@@ -178,16 +178,17 @@ class App extends Component {
   	if(params[2] !== null && globalData.meta.outline[params[2]] !== undefined) settings.outline = params[2];
   	if(params[3] !== null && globalData.meta.version[params[3].toUpperCase()] !== undefined) settings.version = params[3].toUpperCase();
   	if(params[4] !== null) settings.selected_tag = this.loadTagFromSlug(params[4].replace(/^tag\./,''));
-  	if(params[5] !== null && params[6] !== null) settings.active_verse_id = this.loadVerseId(params[5],params[6]);
+  	if(params[5] !== null) { settings.searchQuery = params[5].replace(/^search\./,'').replace(/\+/g," "); settings.searchMode = true; }
+  	if(params[6] !== null && params[7] !== null) settings.active_verse_id = this.loadVerseId(params[6],params[7]);
   	
-  	if(params[7] !== null)
+  	if(params[8] !== null)
   	{
   		settings.commentaryMode = true;
-  		settings.commentarySource = params[7].replace(/^commentary\./,'');
+  		settings.commentarySource = params[8].replace(/^commentary\./,'');
   		settings.commentary_verse_id = settings.active_verse_id;
-  		if(params[8] !== null)
+  		if(params[9] !== null)
   		{
-  			settings.commentaryID = params[8];
+  			settings.commentaryID = params[9];
   		}
   	}
   	
@@ -224,6 +225,7 @@ class App extends Component {
   	path = path + "/"+this.state.version;
   	
   	if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
+  	if(this.state.searchQuery!==null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
   	
   	path = path + "/"+globalData.index[this.state.active_verse_id].chapter;
   	path = path + "/"+globalData.index[this.state.active_verse_id].verse;
@@ -282,6 +284,7 @@ class App extends Component {
 	    
 	    var callback = this.setActiveVerse.bind(this,settings.active_verse_id,undefined,undefined,true,"init");
 	    if(settings.selected_tag !== undefined && settings.selected_tag !== null) callback = this.setActiveTag.bind(this,settings.selected_tag,true);
+	    if(settings.searchQuery !== undefined && settings.searchQuery !== null) callback = this.search.bind(this,settings.searchQuery,true);
 	    
   		this.setState(settings,callback); // 17656
   		
@@ -299,7 +302,7 @@ class App extends Component {
   		this.clearTag();
   		return false;
   	}
-
+	 if(document.getElementById("searchbox")===document.activeElement) return false;
   	
   	
   	if(e.keyCode === 37) {e.preventDefault(); return this.left();}
@@ -318,11 +321,18 @@ class App extends Component {
   	if(e.keyCode === 46) return this.cycleStructure(1);
   	
   	//tab: move to next section
-  	if(e.keyCode === 9) { return this.cycleSection(1);}
+  	if(e.keyCode === 9) {e.preventDefault();  return this.cycleSection(1);}
+  	//tab: move to next verse tag
+  	if(e.keyCode === 96) {e.preventDefault();  return this.cycleTag(1);}
   	
   	//tilda opens commentary
   	if(e.keyCode === 192) { e.preventDefault(); return this.clickElementID("commentary");}
+  	
   	if(e.keyCode === 187) { e.preventDefault(); return this.clickElementID("tagIcon");}
+  	//Numbkey dot hebrew
+  	if(e.keyCode === 110) { e.preventDefault(); return this.clickElementID("hebIcon");}
+
+  	
   	if(e.keyCode === 32 && !this.state.searchMode && !this.state.preSearchMode) { e.preventDefault(); return this.clickElementID("audio_verse");}
   	if(e.keyCode === 32 && this.state.commentaryAudioMode) { e.preventDefault(); return this.clickElementID("audio_commentary");}
   	
@@ -332,6 +342,8 @@ class App extends Component {
   	}
   	
   }
+  
+  
   
   
   clickElementID(id)
@@ -360,9 +372,35 @@ class App extends Component {
   	this.setActiveVerse(verse,undefined,undefined,undefined,"arrow");
   }
   
+  cycleTag(incr)
+  {
+  	this.moreTags();
+  	var el = document.querySelectorAll(".tag_highlighted+.taglink")[0];
+  	if(el===undefined) el =  document.querySelectorAll(".taglink")[0];
+  	el.click();
+  }
+  
+  
+  
+  cycleHebrewWord(incr)
+  {
+  	var el;
+  	if(incr==1) el = document.querySelectorAll("#hebrew_text span.active + span.space + span")[0];
+	else
+	{
+		el = document.querySelectorAll("#hebrew_text span.active")[0];
+		if(typeof el === "object") el = el.previousElementSibling.previousElementSibling;
+	}
+  	if(typeof el !== "object") el = document.querySelectorAll("#hebrew_text span")[0];
+  	el.click();
+  	
+  }
+  
   
   left()
   {
+  	//if hebrew
+  	if(this.state.hebrewMode) return this.cycleHebrewWord(-1);
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_prev");
   	//if tag, hit next tag button
@@ -404,6 +442,8 @@ class App extends Component {
   
   right()
   {
+  	//if hebrew
+  	if(this.state.hebrewMode) return this.cycleHebrewWord(1);
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_next");
   	//if tag, hit next tag button
@@ -417,6 +457,16 @@ class App extends Component {
   arrowPointer=0;
   down()
   {
+  	/*
+  	if(this.state.showcase_tag !== null)
+  	{
+  		var index = Object.keys(globalData.tags.tagIndex); //globalData['tags']['tagSequence'];
+  		var pos = index.indexOf(this.state.showcase_tag);
+  		var newtag = index[pos+1]; 
+  		if(newtag==="root" || newtag === undefined) newtag = "Structures";
+  		return this.setPreviewedTag(newtag);
+  	}*/
+  	
   	if(this.state.commentaryAudioMode && !this.state.searchMode)
   	{
   		var keys = Object.keys(globalData.commentary_audio.files[this.state.commentaryAudio]);
@@ -702,6 +752,7 @@ class App extends Component {
       	for(var x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
       	for(x in globalData["tags"]["tagIndex"])
       	{
+      		
       		globalData["tags"]["tagIndex"][x]["verses"] = this.verseDatatoArray(globalData["tags"]["tagIndex"][x]["verses"]);
       	}
       	for(x in globalData["tags"]["tagStructure"])
@@ -714,19 +765,18 @@ class App extends Component {
       	for(x in globalData["tags"]["superRefs"]) globalData["tags"]["superRefs"][x] = this.verseDatatoArray(globalData["tags"]["superRefs"][x]);
       	this.pull("tags");
       	this.checkLoaded();
-      	
 	     fetch("/core/tags_hl.txt").then(response => response.text()).then(base64 => {
 	     	var hdata = this.unzipJSON(base64);
 	      	for(x in hdata)
 	      	{
 	      		for(var y in hdata[x])
 	      		{
-	      			globalData["tags"]["tagStructure"][x][y]["highlights"] = hdata[x][y];
+	      			globalData["tags"]["tagStructure"][x][y]["highlight"] = hdata[x][y];
 	      		}
 	      	}
 	      	this.setState({"tagsHLReady":true});
 	     });
-
+	  //   var g=globalData;	debugger;
      });
      
   	fetch("/core/structures.txt").then(response => response.text()).then(data => {
@@ -872,7 +922,7 @@ class App extends Component {
 	
 	if(verses.length===0)
 	{
-		debugger;
+	//	console.log("No Verses: ",versedata);
 	}
 	
 	return verses;
@@ -944,7 +994,7 @@ class App extends Component {
   	if(source==="closeSearch") searchMode=false;
   	
   	var allCollapsed = this.state.allCollapsed;
-  	if(source==="versebox") allCollapsed=false;
+  	if(source==="versebox" || source==="arrow" ) allCollapsed=false;
   	else this.floater = {};
   	
   	var commentary_audio_verse_range = this.state.commentary_audio_verse_range;
@@ -1071,8 +1121,8 @@ class App extends Component {
   
   scrollTagTree(reset,source)
   {
-  		
   			if(document.getElementsByClassName("tag_meta").length===0) return false;
+  			if(document.getElementsByClassName("tag_meta")[0].matches(':hover')) return false;
   		
 			var container = document.getElementsByClassName("tag_meta")[0];
 			var element = container.querySelectorAll(".leaf.highlight")[0];
@@ -1356,10 +1406,11 @@ class App extends Component {
 		var metaOpen = document.getElementById("version_meta").classList[1]==="visible"
 		
 		var blueBarisVisible = this.checkInView(container,element);
-		var textNotVisible = !this.checkInView(container,element.nextSibling,true);
+		var textNotVisible = !this.checkInView(container,element.parentNode.lastChild,true);
 		
 		if(document.getElementById("floater")===undefined) return false;
 		if(document.getElementById("floater")===null) return false;
+		//console.log({blueBarisVisible:blueBarisVisible,textNotVisible:textNotVisible,metaOpen:metaOpen,allCollapsed:this.state.allCollapsed});
 		if(blueBarisVisible || textNotVisible  || metaOpen || this.state.allCollapsed)
 		{
 			document.getElementById("floater").style.display = "none";
@@ -1386,6 +1437,9 @@ class App extends Component {
   showcaseTag(tagName)
   {
 		if(this.state.selected_tag !== null && (tagName===null || tagName===undefined)) tagName = this.state.selected_tag;
+		
+		//is tag a leaf?
+		if(globalData['tags'].tagChildren[tagName]===undefined && tagName!==null) return this.setActiveTag(tagName);
 
   		if(tagName===null || tagName===undefined) tagName = "Structures";
 	  	var tagData = this.getTagData(tagName);
@@ -1393,8 +1447,7 @@ class App extends Component {
 	  	
 	  	var newVerseId = this.state.active_verse_id;
 	  	if(tagData.verses[0]!==undefined) 	newVerseId = tagData.verses[0];
-	  	
-	    this.setState({ 
+	  	var newvals = { 
 			active_verse_id: 		newVerseId,
 			selected_tag: 		null,
 			infoOpen: 		false,
@@ -1409,9 +1462,10 @@ class App extends Component {
 			highlighted_verse_range: [],
 			highlighted_tagged_verse_range: 		[],
 			highlighted_tagged_parent_verse_range: tagData.verses
-		},function(){
+		};
+	    this.setState(newvals,function(){
 			//this.scrollText(true,"tag");
-			
+			this.setState({infoOpen:false});
 		});
   }
 	
@@ -1447,10 +1501,8 @@ class App extends Component {
 	  	
 	  	var newVerseId = this.state.active_verse_id;
 	  	if(tagData.verses.indexOf(newVerseId)<0 && (this.selected_verse_id===null || this.selected_verse_id===undefined)) newVerseId = Math.min.apply(null, tagData.verses);
-		if(newVerseId===0)
-		{
-			debugger;
-		}
+		if([null,0,undefined].indexOf(newVerseId) > -1)  debugger;
+
 
 		 this.arrowPointer = 0;
 		this.setState({ 
@@ -1478,15 +1530,17 @@ class App extends Component {
   
   
   
-  clearTag()
+  clearTag(tagMode)
   {
+  	if(tagMode!==true) tagMode = false;
 	  if(this.state.selected_tag===null && this.state.tagMode===false &&  this.state.searchMode===false &&  this.state.preSearchMode===false) return false;
 	  this.floater = {};
 		this.setState({ 
 			selected_tag: 		null,
 			infoOpen: 		false,
-			tagMode: 		false,
+			tagMode: 		tagMode,
     		searchMode: false,
+    		hebrewMode: false,
     		hebrewSearch: false,
     		preSearchMode: false,
     		comSearchMode: false,
@@ -1633,6 +1687,7 @@ class App extends Component {
   }
   getTagData(tagName)
   {
+  	//if(tagName==="Wicked Destroyed"){ var gb = globalData; 	debugger;  	}
   	var g =  globalData["tags"]["tagIndex"][tagName];
   	if(g===undefined) return {
             "parents": [],
@@ -1658,14 +1713,21 @@ class App extends Component {
   	if(g.verses===undefined) g.verses = globalData["tags"]["superRefs"][tagName];
   	if(g.verses===undefined)
   	{
+  			// No super refs, no verses, must be a parent
   		
   		g.verses = [];
-  		var children = globalData["tags"]["tagChildren"][tagName];
-  		var keys = Object.keys(children);
-  		for(i in keys)
+  		var t = globalData["tags"];
+  		var children = t["tagChildren"][tagName];
+  		
+  		if(children===undefined)
   		{
-  			var childTag = children[keys[i]];
-  			var childObj = globalData["tags"]["tagIndex"][childTag];
+  			//we have a problem, a leaf has no verses!
+  			debugger;
+  			return this.clearTag();
+  		}
+  		for(i in children)
+  		{
+  			var childObj = this.getTagData(children[i]);
   			g.verses = g.verses.concat(childObj.verses);
   		}
   	}
@@ -1684,21 +1746,44 @@ class App extends Component {
     return newArr;
 }
 
-	getReference(verses)
+	getReference(verse_ids)
 	{
-		var min = Math.min.apply(null, verses);
-		var max = Math.max.apply(null, verses);
+		verse_ids = verse_ids.sort();
+		var index = globalData['index'];
+		var obj = {};
+		var vs = {};
+		for(var i in verse_ids)
+		{
+			if(obj[index[verse_ids[i]].chapter]==undefined) obj[index[verse_ids[i]].chapter] = [];
+			obj[index[verse_ids[i]].chapter].push(index[verse_ids[i]].verse);
+		}
 		
-		var ref = globalData['index'][min].string;
-		
-		//var last_verse = 0;
-		//for(var i in verses)
-		//{
-			//figure our complex
-		//}
-		
-		ref = ref + "–" + globalData['index'][max].verse;
-		return ref;
+		for(var chapter in obj)
+		{
+			var verses = obj[chapter];
+			obj[chapter] = [];
+			var l = -1; var key = -1;
+			for(i in verses)
+			{
+				if(verses[i] !== l+1)  key++;
+				if(obj[chapter][key]===undefined)  obj[chapter][key] = [];
+				obj[chapter][key].push(verses[i]);
+				l = verses[i];
+			}
+		} 
+		var final = "Isaiah ";
+		for(chapter in obj)
+		{
+			var verse_groups = obj[chapter];
+			var v_arr = []
+			for(i in verse_groups)
+			{
+				if(verse_groups[i].length===1) v_arr.push(verse_groups[i][0]);
+				else v_arr.push(verse_groups[i][0]+"–"+verse_groups[i][verse_groups[i].length-1]);
+			}
+			final = final + chapter+":"+v_arr.join(",")+";";
+		}
+		return final.replace(/;$/g,"");
 	}
 	
    loadCommentaryID()
@@ -1732,7 +1817,23 @@ class App extends Component {
   
   setHebrewWord(strong,word)
   {
+
+  	
+  	var matches = [];
+  	var verses = globalData.hebrew.verses;
+  	for(var verse_id in verses)
+  	{
+  		for(var word_id in verses[verse_id])
+  		{
+  			if(verses[verse_id][word_id].strong===strong)
+  			{
+  				matches.push(parseInt(verse_id,0));
+  			}
+  		}
+  	}
+  	
   	this.setState({
+	    highlighted_tagged_verse_range:matches,
 	    hebrewStrongIndex:strong,
 	    hebrewWord:word
   	});

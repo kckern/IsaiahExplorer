@@ -1,4 +1,138 @@
 {
+    "Nephi": [
+        null,
+        [
+            ""
+        ],
+        [
+            "document",
+            "envelope",
+            "sealed",
+            "locked",
+            "scroll",
+            "book"
+        ],
+        [
+            "from the underworld",
+            "from the very earth",
+            "under the ground",
+            "from the ground",
+            "from the dirt",
+            "from the dust",
+            "on the ground",
+            "of the ground",
+            "of the dust",
+            "in the dust",
+            "by the dust",
+            "the earth",
+            "by dust"
+        ]
+    ],
+    "Jacob": [
+        null,
+        null,
+        null
+    ],
+    "Abinadi": [
+        [
+            "saving power",
+            "deliverance",
+            "salvation",
+            "victory",
+            "deliver",
+            "jehovah",
+            "yahweh",
+            "yahveh",
+            "saves",
+            "saved",
+            "save",
+            "lord",
+            "god"
+        ],
+        [
+            "meant for pains",
+            "suffering",
+            "suffered",
+            "sorrows",
+            "servant"
+        ],
+        [
+            "to take away the sin",
+            "for our wrongdoings",
+            "bring forgiveness",
+            "restitution",
+            "sacrifice",
+            "for guilt",
+            "offering",
+            "offered",
+            "for sin",
+            "guilt",
+            "gift"
+        ],
+        [
+            "the one proclaiming",
+            "the one publishing",
+            "who proclaims",
+            "who announces",
+            "who publishes",
+            "who proclaims",
+            "who proclaim",
+            "saving power",
+            "deliverance",
+            "publisheth",
+            "announcing",
+            "salvation",
+            "who tells",
+            "announces",
+            "messenger",
+            "announce",
+            "heralds",
+            "victory",
+            "someone",
+            "saved"
+        ]
+    ],
+    "Moroni": [
+        [
+            "wake up",
+            "awake",
+            "arise",
+            "dust",
+            "rise",
+            "dirt"
+        ]
+    ],
+    "Jesus": [
+        [
+            "repurchased",
+            "jerusalem",
+            "redeemed",
+            "protects",
+            "reclaim",
+            "rescue",
+            "saved",
+            "free"
+        ],
+        [
+            "set you free",
+            "bought back",
+            "repurchased",
+            "made free",
+            "",
+            "redeemed",
+            "set free",
+            "redeem",
+            "israel",
+            "saved"
+        ],
+        null,
+        [
+            "agreement",
+            "covenant",
+            "promised",
+            "promise"
+        ]
+    ],
     "Destruction": [
         [
             "demolished by foreigners",
@@ -2882,6 +3016,274 @@
             "lord"
         ]
     ],
+    "Matthew": [
+        [
+            "will get pregnant",
+            "shall conceive",
+            "will conceive",
+            "young woman",
+            "with child",
+            "pregnant",
+            "virgin",
+            "maiden"
+        ],
+        [
+            "wilderness",
+            "shouting",
+            "thunder",
+            "calling",
+            "desert",
+            "voice"
+        ],
+        [
+            "heavy hearts",
+            "in distress",
+            "obscureness",
+            "",
+            "darkness",
+            "dimness",
+            "trouble",
+            "in pain",
+            "gloom"
+        ],
+        [
+            "disfigurements",
+            "infirmities",
+            "affliction",
+            "sufferings",
+            "sicknesses",
+            "suffering",
+            "sickness",
+            "diseases",
+            "troubles",
+            "sorrows",
+            "griefs",
+            "pains",
+            "grief",
+            "pain"
+        ],
+        [
+            "servant",
+            "ebed"
+        ],
+        [
+            "neither shall he himself grow dim",
+            "will not be discouraged",
+            "wonu2019t be extinguished",
+            "not be disheartened",
+            "will not grow weak",
+            "will not falter",
+            "wonu2019t tire out",
+            "not grow faint",
+            "not grow dim",
+            "wonu2019t quit",
+            "not fail",
+            "hope"
+        ],
+        [
+            "listening",
+            "hearing",
+            "looking",
+            "seeing",
+            "listen",
+            "watch",
+            "look",
+            "hear",
+            "see"
+        ],
+        [
+            "worshiping",
+            "reverence",
+            "glorified",
+            "worship",
+            "honour",
+            "praise",
+            "piety",
+            "honor",
+            "fear"
+        ],
+        [
+            "house of worship",
+            "house of prayer",
+            "temple",
+            ""
+        ]
+    ],
+    "Mark": [
+        [
+            "wilderness",
+            "thunder",
+            "someone",
+            "desert",
+            "voice"
+        ],
+        [
+            "listening",
+            "hearing",
+            "looking",
+            "seeing",
+            "listen",
+            "watch",
+            "look",
+            "hear",
+            "see"
+        ],
+        [
+            "worshiping",
+            "reverence",
+            "worship",
+            "piety",
+            "honor",
+            "fear"
+        ],
+        [
+            "will never be put out",
+            "not be extinguished",
+            "never extinguished",
+            "will not die out",
+            "not be quenched",
+            "will not go out",
+            "will never stop",
+            "not be put out",
+            "endless supply",
+            "not quenched",
+            "never go out",
+            "never stops",
+            "quenched",
+            "fires",
+            "fire",
+            ""
+        ],
+        [
+            "house of worship",
+            "house of prayer",
+            "temple"
+        ],
+        [
+            "those who have sinned",
+            "those who sinned",
+            "transgressors",
+            "black sheep",
+            "rebels",
+            "sinner"
+        ]
+    ],
+    "Luke": [
+        [
+            "lighthouse",
+            "gentiles",
+            "nations",
+            "light"
+        ],
+        [
+            "wilderness",
+            "thunder",
+            "someone",
+            "desert",
+            "voice"
+        ],
+        [
+            "appointed",
+            "anointed",
+            "chosen"
+        ],
+        [
+            "listening",
+            "hearing",
+            "looking",
+            "seeing",
+            "listen",
+            "watch",
+            "hear",
+            "look",
+            "see"
+        ],
+        [
+            "house of worship",
+            "house of prayer",
+            "temple"
+        ],
+        [
+            "those who have sinned",
+            "those who sinned",
+            "transgressors",
+            "black sheep",
+            "rebellious",
+            "sinners",
+            "rebels",
+            "sinner"
+        ]
+    ],
+    "John": [
+        [
+            "wilderness",
+            "someone",
+            "desert",
+            "voice"
+        ],
+        [
+            "children",
+            "teacher",
+            "jehovah",
+            "yahweh",
+            "yahveh",
+            "people",
+            "taught",
+            "\ball",
+            "teach",
+            "lord",
+            "god",
+            ""
+        ],
+        [
+            "weu2019ve heard and seen",
+            "what we just heard",
+            "what we now report",
+            "what we have heard",
+            "thing heard by us",
+            "heard from us",
+            "what we heard",
+            "our message",
+            "revelation",
+            "our report",
+            "put faith",
+            "believed",
+            "believes",
+            "believe"
+        ],
+        [
+            "eyes",
+            "ears"
+        ]
+    ],
+    "Acts": [
+        [
+            "heavens",
+            "heaven",
+            "throne",
+            "skies"
+        ],
+        [
+            "to the slaughtering",
+            "to be put to death",
+            "to be slaughtered",
+            "to the slaughter",
+            "to the butcher",
+            "to slaughter",
+            "to be killed",
+            "sheep",
+            "lamb"
+        ],
+        [
+            "david"
+        ],
+        [
+            "the nations",
+            "gentiles",
+            "nations",
+            "light"
+        ]
+    ],
     "High to Low": [
         [
             "languishing",
@@ -4387,15 +4789,6 @@
             "recover",
             "acquire",
             "possess",
-            "take"
-        ],
-        [
-            "bring back",
-            "bring home",
-            "recover",
-            "reclaim",
-            "possess",
-            "acquire",
             "take"
         ]
     ],
@@ -8588,9 +8981,29 @@
         null,
         null
     ],
-    "(6\/7) Seraphs-Seraphim": {
-        "1": null,
-        "2": [
+    "(6\/7) Seraphs-Seraphim": [
+        [
+            "honored very much",
+            "highly honored",
+            "greatly honor",
+            "disfigurement",
+            "marked worse",
+            "disfigured",
+            "suffered",
+            "enslaved",
+            "damaged",
+            "servant",
+            "exalted",
+            "praise",
+            "raised",
+            "marred",
+            "beaten",
+            "slaves",
+            "slave",
+            ""
+        ],
+        null,
+        [
             "daughters of kings",
             "shall bring",
             "princesses",
@@ -8600,7 +9013,7 @@
             "return",
             "kings"
         ],
-        "3": [
+        [
             "men of israel who keep watch",
             "canu2019t see a thing",
             "watchdogs",
@@ -8611,7 +9024,7 @@
             "blind",
             ""
         ],
-        "4": [
+        [
             "man who had been made so that he could not have children",
             "men who are unable to become fathers",
             "physically mutilated person",
@@ -8620,7 +9033,7 @@
             "eunuchs",
             "eunuch"
         ],
-        "5": [
+        [
             "men to keep watch",
             "sentinels",
             "watchmen",
@@ -8630,8 +9043,8 @@
             "rulers",
             "kings"
         ],
-        "6": null,
-        "7": [
+        null,
+        [
             "",
             "strength",
             "moses",
@@ -8639,12 +9052,12 @@
             "arm",
             ""
         ],
-        "8": [
+        [
             "come back",
             "return",
             "reach"
         ],
-        "9": [
+        [
             "rolled up",
             "will show",
             "displayed",
@@ -8657,7 +9070,7 @@
             "bare",
             ""
         ],
-        "10": [
+        [
             "will be able to rise up",
             "will soar high on wings",
             "without getting tired",
@@ -8693,13 +9106,13 @@
             "wait",
             "hope"
         ],
-        "11": [
+        [
             "destroying",
             "destroys",
             "destroy",
             "ruin"
         ]
-    },
+    ],
     "(7\/7) Jehovah God of Israel": [
         [
             "evil things",
@@ -17070,29 +17483,10 @@
         ]
     ],
     "Apostasy": [
-        null,
         null
     ],
-    "Judgment": [
-        [
-            "stretch out his hand",
-            "extend his hand",
-            "take his people",
-            "offer his hand",
-            "raise his hand",
-            "lift his hand",
-            "use his power",
-            "set his hand",
-            "bring home",
-            "bring back",
-            "reach out",
-            "reclaim",
-            "recover",
-            "possess",
-            "acquire",
-            "deliver"
-        ],
-        [
+    "Judgment": {
+        "1": [
             "stretch out his hand",
             "put out his hand",
             "lift up his hand",
@@ -17113,28 +17507,22 @@
             "acquire",
             "deliver"
         ]
-    ],
-    "Restoration": [
-        [
-            "take his people",
+    },
+    "Restoration": {
+        "2": [
             "bring back",
-            "reach out",
-            "reclaim",
-            "recover",
-            "possess",
-            "acquire"
-        ],
-        [
-            "take his people",
-            "bring back",
-            "bring home",
-            "reclaim",
-            "recover",
-            "possess",
-            "acquire"
+            "restoring",
+            "returning",
+            "restorer",
+            "restores",
+            "returned",
+            "restore",
+            "go back",
+            "return"
         ]
-    ],
+    },
     "Trouble at Home": [
+        null,
         null
     ],
     "Exile Abroad": [
@@ -17149,6 +17537,22 @@
         ]
     ],
     "Happy Homecoming": [
+        null
+    ],
+    "Threat": [
+        null
+    ],
+    "War": [
+        [
+            "\bwar\b",
+            "battles",
+            "battle"
+        ]
+    ],
+    "Victory": [
+        null
+    ],
+    "Feast": [
         null
     ],
     "Covenant Curses": [
@@ -17167,25 +17571,146 @@
         null
     ],
     "Allegiance": [
-        null
+        null,
+        [
+            "king of assyria",
+            "assyrian king",
+            "assyrians",
+            "assyrian",
+            "assyria",
+            "kings",
+            "king\b"
+        ]
     ],
     "Idolatry": [
-        null
+        null,
+        [
+            "delivereth",
+            "worships",
+            "delivers",
+            "invested",
+            "deliver",
+            "rescues",
+            "rescue",
+            "blind",
+            "trust",
+            "save",
+            ""
+        ]
     ],
-    "Persecution": [
-        null
-    ],
+    "Persecution": {
+        "1": [
+            "reverently respond",
+            "the lord says",
+            "he has to say",
+            "shake in fear",
+            "what he says",
+            "trembling",
+            "vigilant",
+            "tremble",
+            "respect",
+            "hating",
+            "hated",
+            "words",
+            "abhor",
+            "hate",
+            "obey",
+            "word"
+        ],
+        "2": [
+            "insulted",
+            "insults",
+            "trouble",
+            "ashamed",
+            "shamed",
+            "shame"
+        ]
+    },
     "Old Jerusalem": [
         [
             "revolted",
             "rebelled",
             "justice",
             "turned"
+        ],
+        [
+            "foreign invaders",
+            "burned with fire",
+            "burnt with fire",
+            "eating it up",
+            "burned down",
+            "desolation",
+            "demolished",
+            "foreigners",
+            "overthrown",
+            "barbarians",
+            "strangers",
+            "devouring",
+            "outsiders",
+            "destroyed",
+            "desolate",
+            "stripped",
+            "devoured",
+            "in ashes",
+            "takeover",
+            "destroy",
+            "enemies",
+            "devour",
+            "ruined",
+            "burned",
+            "aliens",
+            "taken",
+            "take"
+        ],
+        [
+            "come to their finish",
+            "those who abandon",
+            "shall be consumed",
+            "will be finished",
+            "who turn against",
+            "will be consumed",
+            "transgressors",
+            "godu2010traitors",
+            "sinful ones",
+            "wrong-doers",
+            "annihilated",
+            "rebellious",
+            "be broken",
+            "shattered",
+            "criminals",
+            "destroyed",
+            "revolters",
+            "disappear",
+            "who sins",
+            "sinners",
+            "crushed",
+            "rebels",
+            "burned",
+            "flames",
+            "perish",
+            "crush",
+            "fire",
+            "burn"
         ]
     ],
     "New Jerusalem": [
         [
             "nations"
+        ],
+        [
+            "fighting between nations will end",
+            "will not take up the sword",
+            "will never again go to war",
+            "shall not lift up a sword",
+            "no more will nation fight",
+            "shall not lift up sword",
+            "shall take up the sword",
+            "will not lift the sword",
+            "will not lift up sword",
+            "will not take up sword",
+            "will no longer fight",
+            "will never make war",
+            "will never fight"
         ]
     ],
     "Isaiah\u2019s Vision": [
@@ -17193,94 +17718,56 @@
             "got to see",
             "vision",
             "saw"
-        ]
-    ],
-    "New Branch": [
-        [
-            "sprouts",
-            "branch",
-            "sprout",
-            "stock"
-        ]
-    ],
-    "Ahaz": [
-        [
-            "fallen",
-            "befall",
-            "falls",
-            "ahaz",
-            "fall\b"
         ],
         [
-            "\bking\b"
+            "contaminated",
+            "not pure",
+            "polluted",
+            "corrupt",
+            "unclean",
+            "sinful"
+        ],
+        [
+            "",
+            "transgressions",
+            "purged away",
+            "blotted out",
+            "wickedness",
+            "taken away",
+            "wiped out",
+            "iniquity",
+            "forgiven",
+            "departed",
+            "removed",
+            "erased",
+            "atoned",
+            "purged",
+            "guilt",
+            "error",
+            "ember",
+            "evil",
+            "gone",
+            "coal",
+            "sins",
+            "sin"
         ]
     ],
-    "Freedom from Opression": [
-        [
-            "oppressed and exploited your people",
-            "who made it hard for them",
-            "one driving them to work",
-            "who abused and enslaved",
-            "who subjected them",
-            "oppressors",
-            "oppressive",
-            "taskmaster",
-            "oppressor",
-            "enemy"
-        ]
-    ],
-    "Immanuel": [
-        [
-            "immanuel"
-        ]
-    ],
-    "Babylon\u2019s Fall": [
-        [
+    "Babylon\u2019s Fall": {
+        "0": [
             "ascend",
             "climb",
             "go up",
             "rise"
         ],
-        [
+        "1": [
             "brought down",
             "thrust down",
             "came down",
             "brought",
             "deep in"
         ],
-        null,
-        [
-            "weak in heart",
-            "disheartened",
-            "cry and weep",
-            "melted away",
-            "philistines",
-            "lose heart",
-            "frightened",
-            "palestina",
-            "philistia",
-            "dissolved",
-            "melt away",
-            "dissolve",
-            "tremble",
-            "killed",
-            "slain",
-            "fall",
-            "kill",
-            "melt",
-            ""
-        ],
-        [
-            "brought to silence",
-            "left in ruins",
-            "laid waste",
-            "devastated",
-            "destroyed",
-            "silenced",
-            "ruined",
-            "moab"
-        ],
-        [
+        "2": null,
+        "5": [
             "will lose its independence",
             "lose its kingdom",
             "destroyed",
@@ -17293,13 +17780,13 @@
             "ruins",
             "heap"
         ],
-        [
+        "6": [
             "wander about",
             "tremble",
             "egypt\b",
             "astray"
         ],
-        [
+        "7": [
             "lie in ruins",
             "destruction",
             "laid waste",
@@ -17309,7 +17796,7 @@
             "are gone",
             "tyre"
         ]
-    ],
+    },
     "Two Cities": [
         [
             "battered to destruction",
@@ -17337,9 +17824,6 @@
             "city",
             "ruin",
             "shut"
-        ],
-        [
-            "jerusalem"
         ]
     ],
     "Leaders Condemned": [
@@ -17433,76 +17917,9 @@
             "god"
         ]
     ],
-    "The Accusation": [
-        [
-            "doesnu2019t know your troubles or care",
-            "receive no justice",
-            "escapes the notice",
-            "does not think",
-            "does not care",
-            "not concerned",
-            "doesnu2019t care",
-            "passed over",
-            "disregarded",
-            "passed away",
-            "overlooked",
-            "cannot see",
-            "ignored",
-            "ignores",
-            "eludes"
-        ],
-        [
-            "jehovah",
-            "master",
-            "adonay",
-            "lord"
-        ]
-    ],
-    "God's Response": [
+    "Servant's Mission": [
         null,
-        null
-    ],
-    "The Right Conclusion": [
-        [
-            "jehovah",
-            "yahweh",
-            "yahveh",
-            "\bking",
-            "lord",
-            "god"
-        ],
-        [
-            "servant",
-            "ebed"
-        ]
-    ],
-    "Israel is Still Rebellious": [
-        [
-            "have fought against me",
-            "transgressor",
-            "not obey",
-            "rebelled",
-            "rebels",
-            "rebel"
-        ],
-        [
-            "just the beginning",
-            "new things",
-            "new events",
-            "secrets"
-        ]
-    ],
-    "Servant is Israel": [
         null,
-        [
-            "bring back",
-            "bring home",
-            "recover",
-            "reclaim",
-            "acquire",
-            "possess",
-            "take"
-        ],
         null
     ],
     "Servant is Rejected and Killed": [
@@ -17513,24 +17930,6 @@
     ],
     "Two Ways to Respond": [
         null,
-        null
-    ],
-    "The Wicked vs the Servants": [
-        [
-            "recover the second time with his hand",
-            "reach out his mighty arm",
-            "will put out his hand",
-            "stretch out his hand",
-            "lift up his hand",
-            "extend his hand",
-            "raise his hand",
-            "will reach out",
-            "offer his hand",
-            "use his power",
-            "lift his hand",
-            "set his hand",
-            "reach out"
-        ],
         null
     ],
     "\u24cd Announcing God\u2019s Kingdom": {
@@ -17993,5 +18392,492 @@
             "swoop",
             "fly\b"
         ]
-    }
+    },
+    "Davidic Structure": [
+        [
+            "kingdom",
+            "throne",
+            "david"
+        ],
+        [
+            "assyrian",
+            "assyria"
+        ],
+        null
+    ],
+    "David\u2194Assyria": {
+        "1A": [
+            "cudgels",
+            "cudgel",
+            "staff",
+            "whips",
+            "stick",
+            "power",
+            "rod"
+        ],
+        "1B": [
+            "wooden stick",
+            "wooden pole",
+            "scepter",
+            "hammer",
+            "cudgel",
+            "staff",
+            "stick",
+            "club",
+            "rod"
+        ],
+        "2A": [
+            "heavy load",
+            "cruelty",
+            "abused",
+            "abuse",
+            "yoke"
+        ],
+        "2B": [
+            "burden",
+            "yoke",
+            "load"
+        ]
+    },
+    "Eastern Figure=Righteousness": {
+        "1A": [
+            "long and rich history",
+            "long time ago",
+            "first events",
+            "of long ago",
+            "long past",
+            "antiquity",
+            "long ago",
+            "of old",
+            "past",
+            "ago"
+        ],
+        "1B": null,
+        "2A": null,
+        "2B": [
+            "decision",
+            "someone",
+            "counsel",
+            "planned",
+            "leader",
+            "\bone",
+            "plan",
+            "man"
+        ],
+        "3A": [
+            "from a distant land",
+            "from the east",
+            "from a far",
+            "from far",
+            "far"
+        ],
+        "3B": null,
+        "4A": null,
+        "4B": [
+            "righteousness",
+            "deliverance",
+            "justice",
+            "victory",
+            "right",
+            "save"
+        ]
+    },
+    "Cyrus\u2019s Name": [
+        [
+            "calling",
+            "summons",
+            "called",
+            "calls",
+            "call"
+        ],
+        [
+            "jacob",
+            "you\b"
+        ],
+        [
+            "servant"
+        ],
+        [
+            "cyrus"
+        ],
+        [
+            "passest through",
+            "walkest through",
+            "pass through",
+            "walk through",
+            "waters",
+            "cross",
+            "fire",
+            "sea",
+            "go"
+        ],
+        [
+            "israel",
+            "north",
+            "south",
+            "east",
+            "west"
+        ]
+    ],
+    "3 Redemptive Roles": [
+        [
+            "send my exiled people home",
+            "let my captives go",
+            "let my exiles go",
+            "set free",
+            "let go",
+            "free"
+        ],
+        [
+            "from the remote regions of the earth",
+            "from the ends of the earth",
+            "from the end of the earth",
+            "from the faraway places",
+            "from faraway places",
+            "from distant lands",
+            "from afar",
+            "from far",
+            "return",
+            "bring"
+        ],
+        null
+    ],
+    "Oracles Against Foreign Powers": [
+        [
+            "inspired prediction",
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "prophecy",
+            "babylon",
+            "message",
+            "oracle",
+            "burden",
+            "babel"
+        ],
+        [
+            "medes",
+            "media"
+        ],
+        [
+            "assyrians",
+            "assyrian",
+            "assyria"
+        ],
+        [
+            "philistines",
+            "oppressor",
+            "philistia",
+            "palestina"
+        ],
+        [
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "prediction",
+            "message",
+            "oracle",
+            "burden",
+            "moab"
+        ],
+        [
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "prediction",
+            "damascus",
+            "prophecy",
+            "message",
+            "oracle",
+            "burden"
+        ],
+        [
+            "ethiopia",
+            "sudan",
+            "cush",
+            "kush"
+        ],
+        [
+            "inspired prediction",
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "prophecy",
+            "message",
+            "oracle",
+            "burden",
+            "egypt"
+        ],
+        [
+            "egyptians",
+            "ethiopia",
+            "egypt",
+            "cush"
+        ],
+        [
+            "inspired prediction",
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "prophecy",
+            "message",
+            "oracle",
+            "burden",
+            "dumah",
+            "edom"
+        ],
+        [
+            "inspired prediction",
+            "divine revelation",
+            "pronouncement",
+            "desert plain",
+            "special word",
+            "prophecy",
+            "message",
+            "oracle",
+            "burden",
+            "arabia",
+            "desert",
+            "arabs"
+        ],
+        [
+            "inspired prediction",
+            "divine revelation",
+            "pronouncement",
+            "special word",
+            "tarshish",
+            "prophecy",
+            "message",
+            "oracle",
+            "burden",
+            "tyre"
+        ]
+    ],
+    "Babylon\u2019s Demise": {
+        "": [
+            "shall be as the destruction",
+            "shall be thrown down",
+            "will be devastated",
+            "will be destroyed",
+            "will overthrow",
+            "must become as",
+            "will be like",
+            "will destroy",
+            "shall be as",
+            "will end up",
+            "will be as",
+            "overthrown",
+            "babylon\b",
+            "overthrew",
+            "gomorrah",
+            "sodom"
+        ],
+        "1": [
+            "for generation after generation",
+            "from generation to generation",
+            "through all generations",
+            "all the people-to-come",
+            "for all generations",
+            "for ages to come",
+            "for generations",
+            "reinhabited",
+            "inhabited",
+            "resettled",
+            "resettle",
+            "settle",
+            "lived",
+            "live"
+        ],
+        "2": [
+            "animals from the desert",
+            "desert creatures",
+            "desert animals",
+            "wild animals",
+            "wild beasts",
+            "wild goats",
+            "wild dogs",
+            "babylonu2019s",
+            "ostriches",
+            "wildcats",
+            "jackals",
+            "dragons",
+            "babylon",
+            "palaces",
+            "coyotes",
+            "wolves",
+            "satyrs",
+            "hyenas",
+            ""
+        ],
+        "3": [
+            "",
+            "brought down",
+            "thrown away",
+            "thrown out",
+            "hewn down",
+            "discarded",
+            "cast away",
+            "",
+            "cast out",
+            "cut down",
+            "dumped",
+            "thrown"
+        ],
+        "4": [
+            "annihilation",
+            "destruction",
+            "babylonia",
+            "blot out",
+            "babylon",
+            "cut off",
+            "destroy",
+            "attack",
+            "babel",
+            "sweep"
+        ],
+        "5": null,
+        "6": [
+            "babylonians",
+            "laid waste",
+            "devastated",
+            "destroyed",
+            "despoiled",
+            "chaldeans",
+            "tarshish",
+            "ruins",
+            "ships",
+            "tyre"
+        ],
+        "7": [
+            "babylon",
+            "babel",
+            "dust",
+            "dirt"
+        ],
+        "8": [
+            "dry grass",
+            "consumes",
+            "stubble",
+            "burning",
+            "straws",
+            "straw",
+            "burns",
+            "burn",
+            "fire\b"
+        ]
+    },
+    "\u24cd Servant Figure": {
+        "A1": [
+            "servant",
+            "nations",
+            "ebed"
+        ],
+        "B1": null,
+        "C1": [
+            "break off",
+            "bruised",
+            "crushed",
+            "crush",
+            "break",
+            "dimly",
+            "reed",
+            "wick",
+            "flax",
+            "dim"
+        ],
+        "C2": [
+            "judgment",
+            "justice",
+            "right",
+            "just"
+        ],
+        "B2": [
+            "yahweh",
+            "jehovah",
+            "lord",
+            "god"
+        ],
+        "A2": [
+            "to the nations",
+            "to the people",
+            "the nations",
+            "the people",
+            ""
+        ]
+    },
+    "Glory\u2194Ignominy": [
+        [
+            "will not leave any of you alive",
+            "wipe you out",
+            "put to death",
+            "securely",
+            "security",
+            "will die",
+            "destroy",
+            "secure",
+            "safety",
+            "killed",
+            "slain",
+            "peace",
+            "kill",
+            "slay"
+        ],
+        [
+            "king of babylon",
+            "king of babel",
+            "israelites",
+            "israel"
+        ],
+        [
+            "heavenu2019s armies",
+            "this people",
+            "nation",
+            "world",
+            "zion"
+        ],
+        [
+            "thrown down",
+            "devastated",
+            "overthrown",
+            "destroyed",
+            "overthrew",
+            "babylonia",
+            "overthrow",
+            "gomorrah",
+            "finished",
+            "babylon",
+            "destroy",
+            "babel",
+            "sodom"
+        ],
+        null,
+        null
+    ],
+    "Components of Babylon": [
+        [
+            "babylonians",
+            "babylon",
+            "babel"
+        ],
+        [
+            "earth",
+            "world"
+        ],
+        [
+            "constellations",
+            "constellation",
+            "heavens",
+            "heaven",
+            "skies",
+            "stars",
+            "star",
+            "moon",
+            "sky",
+            "sun"
+        ],
+        [
+            "nations",
+            "\bnation"
+        ]
+    ]
 }

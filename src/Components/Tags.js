@@ -92,7 +92,7 @@ export class TaggedHeading extends Component {
 	{
 		var key_tag = this.props.app.state.selected_tag;
 		if(this.props.app.state.showcase_tag!==null)  key_tag = this.props.app.state.showcase_tag;
-		else if(this.props.app.state.previewed_tag!==null)  key_tag = this.props.app.state.previewed_tag;
+		//else if(this.props.app.state.previewed_tag!==null)  key_tag = this.props.app.state.previewed_tag;
 
 		var tagMeta = globalData['tags']['tagIndex'][key_tag];
 		if(tagMeta!==undefined) tagMeta["tagName"] = key_tag;
@@ -148,6 +148,7 @@ class ParentLinks extends Component {
 
 }
 
+
 export class TagTree extends Component {
 
 	state = {open:false}
@@ -156,9 +157,17 @@ export class TagTree extends Component {
 	{
 		//toggle children
 		this.setState({open:!this.state.open})
-		
-		this.props.app.setState({showcase_tag:null});
+		//if children
+		if(globalData['tags'].tagChildren[tag].indexOf(this.props.app.state.selected_tag)>=0)
+		{
+			this.props.app.showcaseTag(globalData['tags'].tagIndex[tag].parents[0]);
+		}else
+		{
+			
+			this.props.app.setState({showcase_tag:null});
+		}
 	}
+	
 	
 	openTree()
 	{
@@ -233,6 +242,7 @@ export class TagTree extends Component {
 
 }
 
+
 class TagTreeLeaf extends Component {
 	
 	handleClick(e)
@@ -293,10 +303,17 @@ class TagBlocks extends Component {
 		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
 		var entries = []; for(var i in globalData['tags']['tagStructure'][this.props.app.state.selected_tag])  entries.push(globalData['tags']['tagStructure'][this.props.app.state.selected_tag][i]); 
 		
+		var count = entries.length;
 
-		
 		var details = null;
-		if(tagMeta.details !== "")  details = (<div className="detail" >{this.props.app.addLinks(tagMeta.details)}</div>)
+		var cite_str = null;
+		if(typeof tagMeta.cite === "string" && tagMeta.cite !== "") cite_str = <div className='cite'>{tagMeta.cite}</div>;
+		var details_str = null;
+		if(typeof tagMeta.details === "string" && tagMeta.details !== "") details_str = <div>{this.props.app.addLinks(tagMeta.details)}</div>;
+		var descr_str = null;
+		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(tagMeta.description)}</h4>;
+		if(details_str!==null || descr_str!==null || cite_str!==null)
+		details = (<div className="detail">{descr_str}{details_str}{cite_str}</div>);
 
 		var blocks = entries.map((entry,key)=>{
 			
@@ -337,12 +354,15 @@ class TagBlocks extends Component {
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
 			   	
+			   if(count==1) { item = null; isFloater = false;}
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
+			   
+			   
 			   	
 			 return (
 			    <div className="taggedblock" key={key} index={key}>
 			        {item}{details}
-			        <Passage app={this.props.app} verses={entry.verses} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
+			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			    </div>
 			   	);
 		});
@@ -449,10 +469,10 @@ class TagParallel extends Component {
 		            ,
 		            <tr id={i+"content"} className="row" key={i+"iii"} onMouseEnter={()=>this.props.app.highlightTaggedVerses(verses)}>
 		              <td>
-						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"A"].verses} highlights={l_highlights} />
+						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"A"].verses} sub={tagStructure[i+"A"].sub} highlights={l_highlights} />
 					  </td>
 		              <td>
-						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"B"].verses} highlights={r_highlights} />
+						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"B"].verses} sub={tagStructure[i+"B"].sub} highlights={r_highlights} />
 					  </td>
 		            </tr>,
 		            <tr key={i+"iv"} id={i+"readMore"} className="readmore" onClick={()=>this.readMore(index)}><td colSpan={2}>Read More...</td></tr>
@@ -460,11 +480,16 @@ class TagParallel extends Component {
 		}
 
 		var details = null;
-		if(typeof tagMeta.details === "string" && tagMeta.details !== "")
-		{
-			details = (<div className="detail">{this.props.app.addLinks(tagMeta.details)}</div>);
-		}
+		var cite_str = null;
+		if(typeof tagMeta.cite === "string" && tagMeta.cite !== "") cite_str = <div className='cite'>{tagMeta.cite}</div>;
+		var details_str = null;
+		if(typeof tagMeta.details === "string" && tagMeta.details !== "") details_str = <div>{this.props.app.addLinks(tagMeta.details)}</div>;
+		var descr_str = null;
+		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(tagMeta.description)}</h4>;
 		
+		if(details_str!==null || descr_str!==null || cite_str!==null)
+		details = (<div className="detail">{descr_str}{details_str}{cite_str}</div>);
+
 		
 		classes = ["no_top_padding","tagged"];
 		
@@ -502,7 +527,7 @@ class ChiasticBlock extends Component {
     	if(!this.props.app.checkInView(container,element))
     	{
     		var readmore = document.getElementById(this.props.side+""+this.props.index+"readMore");
-    		readmore.className = "readmore active";
+    		if(readmore!==null) readmore.className = "readmore active";
     	}
 	}
 	
@@ -547,7 +572,7 @@ class ChiasticBlock extends Component {
 	              <div className="tagref">{this.props.content.ref}</div>
 	            </div>
 	            <div className={classes.join(" ")} >{desc}</div>
-	            <div id={this.props.side+this.props.index+"content"} className="verses"><Passage highlights={highlights} plain={1} app={this.props.app} verses={this.props.content.verses} /></div>
+	            <div id={this.props.side+this.props.index+"content"} className="verses"><Passage highlights={highlights} plain={1} app={this.props.app} verses={this.props.content.verses}  sub={this.props.content.sub} /></div>
 	            <div id={this.props.side+this.props.index+"readMore"}  className="readmore"  onClick={()=>this.readMore(this.props.side+this.props.index)} >Read More...</div>
             </div>
 		);
@@ -592,7 +617,6 @@ class TagChiasm extends Component {
  				return x;
  			}
  		}
- 		debugger;
  		return null;
 		
 	}
@@ -637,12 +661,21 @@ class TagChiasm extends Component {
 		}
 		right_items.reverse();
 		if(/A/.test(chiastic_labels[1][0].key)) chiastic_labels[1].reverse();
-		var head = null;
-		if(typeof tagMeta.details === "string" && tagMeta.details !== "")
-		{
-			head = (<div className="head"><div className="detail">{this.props.app.addLinks(tagMeta.details)}</div></div>);
-		}
 		
+		
+		var head = null;
+		var details = null;
+		var cite_str = null;
+		if(typeof tagMeta.cite === "string" && tagMeta.cite !== "") cite_str = <div className='cite'>{tagMeta.cite}</div>;
+		var details_str = null;
+		if(typeof tagMeta.details === "string" && tagMeta.details !== "") details_str = <div>{this.props.app.addLinks(tagMeta.details)}</div>;
+		var descr_str = null;
+		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(tagMeta.description)}</h4>;
+		
+		if(details_str!==null || descr_str!==null || cite_str!==null)
+		{
+			head = (<div className="head"><div className="detail">{descr_str}{details_str}{cite_str}</div></div>);
+		}
 		
 		classes = ["chiasm","tagged"];
 		
