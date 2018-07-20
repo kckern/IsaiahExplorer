@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { globalData } from "../globals.js";
+import Tipsy from 'react-tipsy';
 
 
 export  class Hebrew extends Component {
@@ -11,7 +12,7 @@ export  class Hebrew extends Component {
 		var words = hebrew.map((val,key)=>{
 			return <HebrewWord  key={key}  app={this.props.app} val={val} />
 		});
-		return (<div key={1} id="hebrew" dir="rtl"><div id="hebrew_text">{words}</div><HebrewDef app={this.props.app} key={2}/></div>)
+		return (<div key={1} id="hebrew" dir="rtl"><div id="hebrew_text">{words}</div></div>)
 	}
 	
 }
@@ -38,7 +39,11 @@ class HebrewWord extends Component {
 	}
 	handleMouseLeave()
 	{
-		//this.props.app.setHebrewWord(null)
+		  	//get verse ids
+	
+	  	return this.props.app.setState({
+		    highlighted_tagged_verse_range:[],
+	  	});
 	}
 
 	render()
@@ -46,11 +51,22 @@ class HebrewWord extends Component {
 		var classes = [];
 		if(this.props.val.strong===this.props.app.state.hebrewStrongIndex) classes.push("active");
 		var punct = null;
-		return [<span key="v" className={classes.join(" ")}
+		var heb = globalData.hebrew;
+		var worddata = null;
+		for(var word in heb.verses[this.props.app.state.active_verse_id])
+		{
+			if(heb.verses[this.props.app.state.active_verse_id][word].strong===this.props.val.strong)
+			{
+				worddata = heb.verses[this.props.app.state.active_verse_id][word];
+				break;
+			}
+		}
+		return [<Tipsy content={worddata.eng.replace(/[\[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
+			<span key="v" className={classes.join(" ")}
 			onClick={this.handleClick.bind(this)}
 			onMouseEnter={this.handleMouseEnter.bind(this)}
 			onMouseLeave={this.handleMouseLeave.bind(this)}
-		>{this.props.val.orig}</span>,punct,<span key="s" className="space" />]
+		>{this.props.val.orig}</span></Tipsy>,punct,<span key="s" className="space" />]
 	}
 	
 }
@@ -60,6 +76,7 @@ class HebrewDef extends Component {
 	
 	render()
 	{
+		return null;
 		var heb = globalData.hebrew;
 		var worddata = null;
 		for(var word in heb.verses[this.props.app.state.active_verse_id])
@@ -73,7 +90,7 @@ class HebrewDef extends Component {
 		
 		if(worddata===undefined || worddata===null) return null;
 		
-		return <div className="HebrewDef">{worddata.eng}</div>;
+		return <div className="HebrewDef"><span>{worddata.eng.replace(/[\[\]]/g,"")}</span></div>;
 		
 	}
 	
@@ -93,7 +110,7 @@ export class HebrewSearchHeading extends Component {
 			<div className="text_heading search">
 			<span className="section_tile" ><StrongLink app={this.props.app} strong={this.props.app.state.hebrewStrongIndex}/>▽ {count} Matching Verses</span><br />
 			<span id="drarrow">⤷</span>▷ 
-			<span className="hword">{w}</span>—(<span className="hphon">{p}</span>)
+			<span className="hword">{w}</span><span className="hphon"> • {p}</span>
 			</div>
 		)
 	}

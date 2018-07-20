@@ -132,7 +132,7 @@
                     "18354": 68
                 }
             ],
-            "tag": "Righteous Delivered",
+            "tag": "Davidic King Intercedes",
             "details": ""
         },
         {
@@ -143,7 +143,7 @@
                     "18422": 526
                 }
             ],
-            "tag": "Davidic King Intercedes",
+            "tag": "Righteous Delivered",
             "details": ""
         }
     ],
@@ -237,7 +237,7 @@
                     "17656": 196
                 }
             ],
-            "tag": "",
+            "tag": "Threat",
             "details": ""
         },
         {
@@ -248,7 +248,7 @@
                     "17852": 470
                 }
             ],
-            "tag": "",
+            "tag": "War",
             "details": ""
         },
         {
@@ -259,7 +259,7 @@
                     "18322": 501
                 }
             ],
-            "tag": "",
+            "tag": "Victory",
             "details": ""
         },
         {
@@ -270,7 +270,7 @@
                     "18823": 125
                 }
             ],
-            "tag": "",
+            "tag": "Feast",
             "details": ""
         }
     ],
@@ -353,7 +353,7 @@
                     "17656": 766
                 }
             ],
-            "tag": "Curses-Blessings",
+            "tag": "Covenant Curses",
             "details": ""
         },
         {
@@ -364,7 +364,7 @@
                     "18422": 526
                 }
             ],
-            "tag": "Curses-Blessings",
+            "tag": "Covenant Blessings",
             "details": ""
         }
     ],
@@ -616,7 +616,7 @@
                     "18638": 117
                 }
             ],
-            "tag": "Servant\u2019s Mission",
+            "tag": "The Servant",
             "details": ""
         },
         {

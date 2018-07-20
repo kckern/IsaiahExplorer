@@ -306,7 +306,7 @@ div#version_meta.meta.visible
 }
 
 div.verse_grid,
-h1,h2,h3,h4,h5
+h1,h2,h3,h4,h5,.heading
 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1419,6 +1419,32 @@ tr.metaref td div.meta + div.ref
 	cursor:text;
 }
 
+#text .detail h4
+{
+	margin:0;
+	font-style:normal;
+	text-align:center;
+	 font-variant: small-caps;
+	 font-size:1.2em;
+	 letter-spacing:1px;
+}
+
+
+#text .detail .cite
+{
+	text-align:right;
+	font-family: Helvetica;
+	font-size:.7em;
+	font-style:normal;
+	margin-top:1em;
+}
+#text .detail h4 + div
+{
+	
+	 margin-top:1em;
+}
+
+
 #text  div.detail
 {
 	border-top-left-radius:0px;
@@ -2487,6 +2513,11 @@ div.meta > div.option.other.firstother
 	color:#777;
 }
 
+#commentary_text em:first-child
+{
+	line-height:2em;
+}
+
 .shader
 {
 	position:absolute;
@@ -3274,10 +3305,12 @@ button#commentary
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  white-space:nowrap;
 }
 #hebrew span.space
 {
    margin-right:10px;
+  white-space:normal;
 }
 
 #hebrew span.active,
@@ -3290,9 +3323,8 @@ button#commentary
 
 .HebrewDef
 {
-	font-style:italic;
 	position:absolute;
-	top:3px;
+	top:.5em;
 	left:50%;
 	z-index:99;
 	width:300px;
@@ -3300,7 +3332,17 @@ button#commentary
 	margin-left:-150px;
 	text-align:center;
    color:orange;
-   font-size:.8em;
+   white-space:nowrap;
+   font-size:.6em;
+   font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+}
+
+.HebrewDef span
+{
+	background-color:#FFA;
+	border-left:5px solid #FFA;
+	border-right:5px solid #FFA;
+	border-radius:5px;
 }
 .HebrewDef em
 {
@@ -3309,7 +3351,7 @@ button#commentary
 
 a.strong
 {
-	  font-variant: small-caps;
+	 font-variant: small-caps;
 	color:#AAA;
 	border:1px solid #AAA;
 	background-color:#DDD;
@@ -3334,6 +3376,7 @@ a.strong:hover
 {
 
 	font-family:sans-serif;
+	letter-spacing:5px;
 	margin-left:10px;
 }
 
@@ -3342,7 +3385,129 @@ a.strong:hover
 
 	  font-variant: small-caps;
 }
+
 .option--dragging .rank span {
 	/*hide index on dragged element*/
 	display: none;
+	
+	font-family: Helvetica, Arial, sans-serif;
+	color:#888;
+	font-size:.6em;
+	letter-spacing:1px;
+	font-weight:400;
+}
+
+
+
+/**
+ * React Tipsy
+ * ===========
+ */
+.Tipsy {
+  display: block;
+  position: absolute;
+  z-index: 1070;
+  font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 12px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.Tipsy.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.Tipsy.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+.Tipsy.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+.Tipsy.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+.Tipsy.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+.Tipsy-inner {
+  background-color: #467386;
+  border-radius: 4px;
+  color: #FFFFFF;
+  max-width: 200px;
+  padding: 3px 8px;
+  text-align: center;
+}
+.Tipsy-arrow {
+  border-color: transparent;
+  border-style: solid;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.Tipsy.top .Tipsy-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #467386;
+}
+.Tipsy.right .Tipsy-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #467386;
+}
+.Tipsy.left .Tipsy-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #467386;
+}
+.Tipsy.bottom .Tipsy-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #467386;
+}
+
+.pedigree
+{
+	font-size:10px;
+	color:#FFF;
+	opacity:0.5;
+	letter-spacing:-.3px;
+	white-space: nowrap;
+}
+
+.hebdef .Tipsy-inner
+{
+	color:orange;
+	background-color:#FFA;
+	border:3px solid orange;
+	font-weight:bold;
+	line-height:2em;
+    box-shadow: 0px 0px 7px 1px #000;
+}
+.hebdef.Tipsy.top .Tipsy-arrow {
+    border-top-color: orange;
 }
