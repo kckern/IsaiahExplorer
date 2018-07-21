@@ -2122,6 +2122,12 @@ div.meta > div.option:hover
 	padding:20px;
 }
 
+
+#user_prefs .option
+{
+	cursor:row-resize;
+}
+
 #user_prefs > img:hover
 {
 	opacity:0.6;
@@ -2169,7 +2175,8 @@ div.meta > div.option:hover
 
 #outline .overviewcontainer{height:100%;}
 
-#user_prefs div.optionbox, .option--dragging div.optionbox
+#user_prefs div.optionbox, 
+.option--dragging div.optionbox
 {
 	border:1px solid #444;
 	overflow:hidden;
@@ -2185,6 +2192,13 @@ div.meta > div.option:hover
 	position:relative;
 	z-index:1;
 	line-height:23px;
+}
+
+
+#user_prefs .option--dragging div.optionbox
+{
+	border:1px solid red;
+	margin-left:0;
 }
 
 #user_prefs div.optionbox:hover
@@ -3016,7 +3030,6 @@ button#commentary
 	color:#103D50;
 	border-radius:4px;
 	font-weight:400;
-	padding-top: 2px;
 }
 
 .infoOpen .tag_meta
