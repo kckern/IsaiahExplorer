@@ -2154,12 +2154,13 @@ div.meta > div.option:hover
 	font-style:italic;
 	background-color:#EEE;
 	font-size: 15px;
-	/* TODO: Check what cursor to use*/
-	/*cursor: row-resize;*/
 	position:relative;
 	z-index:1;
 	line-height:23px;
 }
+
+#user_prefs div.optionbox {cursor: row-resize; }
+
 
 #user_prefs div.optionbox:hover
 {
@@ -2188,7 +2189,8 @@ div.meta > div.option:hover
 
 
 #user_prefs #outline_prefs div.optionbox img,
-#user_prefs #version_prefs div.optionbox img
+#user_prefs #version_prefs div.optionbox img,
+.option--dragging div.optionbox img
 {
 	float:left;
 	width:120px;
@@ -2230,8 +2232,7 @@ span.word_highlight
 	border-color:orange;
 }
 
-#user_prefs .option .rank,
-.option--dragging .rank
+#user_prefs .option .rank
 {
 	border:1px solid black;
 	background-color:white;
@@ -2250,7 +2251,9 @@ span.word_highlight
     border:2px solid #448;
     z-index:99;
 }
-
+.option--dragging .rank {
+	display: none;
+}
 
 #user_prefs .option.other .rank
 {
@@ -2274,7 +2277,8 @@ span.word_highlight
 	width:170px;
 }
 
-#user_prefs .version_full_title
+#user_prefs .version_full_title,
+.option--dragging .version_full_title
 {
 	overflow:hidden;
 	height:22px;
@@ -2288,7 +2292,8 @@ span.word_highlight
 }
 
 #version_meta div.option .icon img,
-#user_prefs #version_prefs div.optionbox .version_full_title img
+#user_prefs #version_prefs div.optionbox .version_full_title img,
+.option--dragging div.optionbox .version_full_title img
 {
 	width:16px;
 	height:16px;
@@ -2296,7 +2301,8 @@ span.word_highlight
 	border:0;
 }
 
-#user_prefs .version_description
+#user_prefs .version_description,
+.option--dragging  .version_description
 {
 	color:#999;
 }
