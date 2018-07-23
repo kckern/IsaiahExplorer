@@ -17,6 +17,7 @@ class StructureSetting extends Component {
     return (
       <div key={this.props.option.shortcode}  title={this.props.option.title} className={classes.join(" ")}
            onMouseEnter={() => {
+        // eslint-disable-next-line
              dragging
                ? noop // do not display preview while dragging. Saves a log of repaints;
                : this.props.settings.setState({preview:"structure",shortcode:this.props.option.shortcode})}}>

@@ -3,7 +3,6 @@ import VersionSetting from "./Settings/Version";
 import {globalData} from "../../globals";
 import SortableList from './SortableList'
 import {arrayMove} from 'react-sortable-hoc';
-import StructureSetting from "./Settings/Structure";
 
 class VersionSettings extends Component {
   state = {entries: [], full: false, dragging: false}

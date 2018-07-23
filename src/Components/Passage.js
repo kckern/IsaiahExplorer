@@ -147,7 +147,7 @@ export  class Passage extends Component {
 			    letters.push(letter_str.charAt(i));
 			}
 			
-			var text = text.text;
+			text = text.text;
 			var otext = text;
 			text = text.replace(/^[^a-z]/ig,"");
 			text = text.replace(/\/_/g," ");
@@ -157,7 +157,7 @@ export  class Passage extends Component {
 			else
 			{
 				 var tmp = text.split(/([,;.:?!]+)/g);
-				 for(var i = 0; i<=tmp.length; i=i+2) array.push(tmp[i]+tmp[i+2]+" ");
+				 for(i = 0; i<=tmp.length; i=i+2) array.push(tmp[i]+tmp[i+2]+" ");
 				//if too short merge lines
 			}
 			

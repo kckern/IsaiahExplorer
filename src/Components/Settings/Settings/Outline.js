@@ -16,6 +16,7 @@ class OutlineSetting extends Component {
     return (
       <div title={this.props.option.title} className={classes.join(" ")}
         onMouseEnter={() => {
+        // eslint-disable-next-line
           dragging
             ? noop // do not display preview while dragging. Saves a log of repaints;
             : this.props.settings.setState({preview:"outline",shortcode:this.props.option.shortcode})

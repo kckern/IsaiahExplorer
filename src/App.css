@@ -3218,8 +3218,6 @@ button#commentary
 .tag_meta>div.taglink
 {
 	line-height:16px;
-	position:relative;
-	top:-1px;
 	margin:0;
 }
 
@@ -3244,12 +3242,9 @@ button#commentary
 {
 	border-bottom:1px dotted #999;
 	overflow:hidden;
-	margin:20px;
-	margin-top:-20px;
 	position:relative;
 	text-align:justify;
 	letter-spacing:3px;
-	padding-top:25px;
 	margin-bottom:0;
 	animation-duration: 1s;
 	height:80px;
@@ -3271,6 +3266,7 @@ button#commentary
 #hebrew #hebrew_text
 {
       word-wrap:break-word;
+      margin:20px;
 }
 #hebrew span
 {
@@ -3339,17 +3335,217 @@ a.strong:hover
 
 .hword
 {
-
-	font-family:sans-serif;
+	font-family: sans-serif;
+	
+	letter-spacing:5px;
 	margin-left:10px;
 }
 
 .hphon
 {
-
-	  font-variant: small-caps;
+	
+	font-family: Helvetica, Arial, sans-serif;
+	color:#888;
+	font-size:.6em;
+	letter-spacing:1px;
+	font-weight:400;
 }
+
+
 .option--dragging .rank span {
 	/*hide index on dragged element*/
 	display: none;
 }
+
+
+/**
+ * React Tipsy
+ * ===========
+ */
+.Tipsy {
+  display: block;
+  position: absolute;
+  z-index: 1070;
+  font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 12px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.Tipsy.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.Tipsy.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+.Tipsy.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+.Tipsy.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+.Tipsy.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+.Tipsy-inner {
+  background-color: #467386;
+  border-radius: 4px;
+  color: #FFFFFF;
+  max-width: 200px;
+  padding: 3px 8px;
+  text-align: center;
+}
+.Tipsy-arrow {
+  border-color: transparent;
+  border-style: solid;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.Tipsy.top .Tipsy-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #467386;
+}
+.Tipsy.right .Tipsy-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #467386;
+}
+.Tipsy.left .Tipsy-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #467386;
+}
+.Tipsy.bottom .Tipsy-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #467386;
+}
+
+.pedigree
+{
+	font-size:10px;
+	color:#FFF;
+	opacity:0.5;
+	letter-spacing:-.3px;
+	white-space: nowrap;
+}
+
+.hebdef .Tipsy-inner
+{
+	color:orange;
+	background-color:#FFA;
+	border:3px solid orange;
+	font-weight:bold;
+	line-height:2em;
+    box-shadow: 0px 0px 7px 1px #000;
+}
+.hebdef.Tipsy.top .Tipsy-arrow {
+    border-top-color: orange;
+}
+
+#hebrew
+{
+	height:100px;
+	width:558px;
+	margin-left:-30px;
+	margin-top:-15px;
+}
+#hebrew.fax
+{
+	height:520px;
+	width:558px;
+	margin-left:-30px;
+	margin-top:-15px;
+	transition: height 0.3s ease-in;
+}
+#hebrew_text_box
+{
+	height:100px;
+	margin:0;
+}
+.faxBox
+{
+	background-color:black;
+}
+.faxNav
+{
+	border-top:3px solid #222;
+	border-bottom:1px solid #000;
+	height:200px;
+	background-size: 100% auto;
+	background-repeat:no-repeat;
+	cursor:zoom-in;
+}
+.faxZoom
+{
+	height:220px;
+	cursor:crosshair;
+	background-repeat:no-repeat;
+	background-position:100px 100px;
+}
+
+
+#seefax
+{
+	float:left;
+	font-size:8px;
+	letter-spacing:0;
+	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+	font-size:12px;
+	line-height:17px;
+	padding:0 3px;
+
+	border-bottom:1px solid #AAA;
+	border-right:1px solid #AAA;
+	color:#AAA;
+	cursor:pointer;
+	border-bottom-right-radius:3px;
+	background-color:#EEE;
+	white-space:nowrap;
+}
+#seefax:hover
+{
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	color:#000;
+	background-color:#DDD;
+	
+}
+
+.faxBox.none div
+{
+	line-height:100px;
+	background-color:#999;
+	color:#AAA;
+	text-align:center;
+	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+}
+

@@ -67,6 +67,7 @@ class App extends Component {
     hebrewStrongIndex:null,
     hebrewSearch:false,
     hebrewWord:0,
+    hebrewFax:false,
     
     arrowPointer: 0,
     
@@ -385,7 +386,7 @@ class App extends Component {
   cycleHebrewWord(incr)
   {
   	var el;
-  	if(incr==1) el = document.querySelectorAll("#hebrew_text span.active + span.space + span")[0];
+  	if(incr===1) el = document.querySelectorAll("#hebrew_text span.active + span.space + span")[0];
 	else
 	{
 		el = document.querySelectorAll("#hebrew_text span.active")[0];
@@ -653,7 +654,7 @@ class App extends Component {
   {
   	var text = document.getElementById("hebrew_text");
  	if(text===null) return false;
-	var container = document.getElementById("verse").querySelectorAll("#hebrew")[0];
+	var container = document.getElementById("verse").querySelectorAll("#hebrew_text_box")[0];
  	var box_height = container.offsetHeight;
  	var line_height=0.9;
  	text.style.lineHeight = line_height+"em";
@@ -1751,10 +1752,9 @@ class App extends Component {
 		verse_ids = verse_ids.sort();
 		var index = globalData['index'];
 		var obj = {};
-		var vs = {};
 		for(var i in verse_ids)
 		{
-			if(obj[index[verse_ids[i]].chapter]==undefined) obj[index[verse_ids[i]].chapter] = [];
+			if(obj[index[verse_ids[i]].chapter]===undefined) obj[index[verse_ids[i]].chapter] = [];
 			obj[index[verse_ids[i]].chapter].push(index[verse_ids[i]].verse);
 		}
 		
@@ -1843,11 +1843,14 @@ class App extends Component {
   unzipJSON(base64)
   {
   	function atos(arr) {
+        // eslint-disable-next-line
     for (var i=0, l=arr.length, s='', c; c = arr[i++];)
         s += String.fromCharCode(
             c > 0xdf && c < 0xf0 && i < l-1
+        // eslint-disable-next-line
                 ? (c & 0xf) << 12 | (arr[i++] & 0x3f) << 6 | arr[i++] & 0x3f
             : c > 0x7f && i < l
+        // eslint-disable-next-line
                 ? (c & 0x1f) << 6 | arr[i++] & 0x3f
             : c
         );

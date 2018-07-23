@@ -12,11 +12,144 @@ export  class Hebrew extends Component {
 		var words = hebrew.map((val,key)=>{
 			return <HebrewWord  key={key}  app={this.props.app} val={val} />
 		});
-		return (<div key={1} id="hebrew" dir="rtl"><div id="hebrew_text">{words}</div></div>)
+		var cls = "";
+		if(this.props.app.state.hebrewFax) cls = "fax";
+		return (<div id="hebrew" className={cls} dir="rtl"><HebrewFax app={this.props.app} /><div id="hebrew_text_box" ><div id="hebrew_text" >{words}</div></div></div>)
 	}
 	
 }
 
+class HebrewFax extends Component{
+	
+  constructor(props) {
+    super(props);
+    this.state = { x: 0, y: 0 };
+  }
+  
+  defaultPan()
+  {
+  	
+	var pos = globalData.hebrew.fax[this.props.app.state.active_verse_id];
+	if(pos===null) return false;
+ 
+    this.setState({ x: -pos[0]/2, y: -pos[1]/2 });
+  }
+  
+  moveNav(e)
+  {
+  	this._onMouseMove(e,"faxNav");
+  }
+  
+  moveZoom(e)
+  {
+  	this._onMouseMove(e,"faxZoom");
+  }
+  
+
+  _onMouseMove(e,classname) {
+  	var bounds = document.getElementsByClassName(classname)[0].getBoundingClientRect();
+  	
+    var m_posx = 0, m_posy = 0, e_posx = 0, e_posy = 0,
+           obj = document.getElementsByClassName(classname)[0];
+    //get mouse position on document crossbrowser
+    if (!e){e = window.event;}
+    if (e.pageX || e.pageY){
+        m_posx = e.pageX;
+        m_posy = e.pageY;
+    } else if (e.clientX || e.clientY){
+        m_posx = e.clientX + document.body.scrollLeft
+                 + document.documentElement.scrollLeft;
+        m_posy = e.clientY + document.body.scrollTop
+                 + document.documentElement.scrollTop;
+    }
+    //get parent element position in document
+    if (obj.offsetParent){
+        do { 
+            e_posx += obj.offsetLeft;
+            e_posy += obj.offsetTop;
+        // eslint-disable-next-line
+        } while (obj = obj.offsetParent);
+    }
+    
+    var x = m_posx-e_posx;
+    var y = m_posy-e_posy
+    
+    x = x/bounds.width;
+    y = y/bounds.height;
+    
+    var size = globalData.hebrew.fax[this.props.app.state.active_verse_id];
+    
+    if(classname==="faxNav")
+    {
+	    x = -x * size[0];
+	    y = -y * size[1];
+	    
+    	bounds = document.getElementsByClassName("faxZoom")[0].getBoundingClientRect();
+	    x = x + (bounds.width/2);
+	    y = y + (bounds.height/2);
+    }
+    else
+    {	
+	    x = -x * (size[0]-bounds.width);
+	    y = -y * (size[1]-bounds.height);
+    }
+    
+    this.setState({x:x,y:y});
+    
+  }
+  
+  resizeViewers()
+  {
+  	if(document.getElementsByClassName("faxNav")[0]===undefined) return false;
+  	var bounds = document.getElementsByClassName("faxNav")[0].getBoundingClientRect();
+  	var size = globalData.hebrew.fax[this.props.app.state.active_verse_id];
+  	if(size===null) return false;
+  	var multiple = size[0]/bounds.width;
+  	var h = size[1]/multiple;
+  	document.getElementsByClassName("faxNav")[0].style.height = h+"px";
+  	document.getElementsByClassName("faxZoom")[0].style.height = 400-h+"px";
+  }
+  
+  componentDidMount()
+  {
+  	this.resizeViewers();
+	this.defaultPan();
+
+  }
+	
+  componentDidUpdate()
+  {
+  	this.resizeViewers();
+  }
+	
+	render()
+	{
+		if(this.props.app.state.hebrewFax===false)
+		{
+			if(globalData.hebrew.fax[this.props.app.state.active_verse_id]===null) return null;
+			return <div id="seefax" onClick={()=>this.props.app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">📜</span> </div>
+		}
+		
+		
+		if(globalData.hebrew.fax[this.props.app.state.active_verse_id]===null) return (<div className="faxBox none">
+			<div className="faxZoom" > No Facsimile </div>
+			<div className="faxNav"> No Facsimile </div>
+		</div>)
+		//http://old.isaiah.scripture.guide/img/scroll/verses/18658.jpg
+		//return null;
+		var faxNavStyle = {
+		  backgroundImage: "url(/scroll/"+this.props.app.state.active_verse_id+".jpg)"
+		};
+		var faxZoomStyle = {
+			backgroundPosition: this.state.x+"px "+this.state.y+"px",
+		  backgroundImage: "url(/scroll/"+this.props.app.state.active_verse_id+".jpg)"
+		};
+		return (<div className="faxBox">
+			<div className="faxZoom"  onMouseMove={this.moveZoom.bind(this)}   style={faxZoomStyle}></div>
+			<div onMouseMove={this.moveNav.bind(this)} onMouseLeave={this.defaultPan.bind(this)} className="faxNav" style={faxNavStyle}></div>
+		</div>)
+	}
+}
 
 
 class HebrewWord extends Component {
@@ -61,8 +194,8 @@ class HebrewWord extends Component {
 				break;
 			}
 		}
-		return [<Tipsy content={worddata.eng.replace(/[\[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
-			<span key="v" className={classes.join(" ")}
+		return [<Tipsy  key="a" content={worddata.eng.replace(/[[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
+			<span className={classes.join(" ")}
 			onClick={this.handleClick.bind(this)}
 			onMouseEnter={this.handleMouseEnter.bind(this)}
 			onMouseLeave={this.handleMouseLeave.bind(this)}
@@ -71,30 +204,7 @@ class HebrewWord extends Component {
 	
 }
 
-class HebrewDef extends Component {
-	
-	
-	render()
-	{
-		return null;
-		var heb = globalData.hebrew;
-		var worddata = null;
-		for(var word in heb.verses[this.props.app.state.active_verse_id])
-		{
-			if(heb.verses[this.props.app.state.active_verse_id][word].strong===this.props.app.state.hebrewStrongIndex)
-			{
-				worddata = heb.verses[this.props.app.state.active_verse_id][word];
-				break;
-			}
-		}
-		
-		if(worddata===undefined || worddata===null) return null;
-		
-		return <div className="HebrewDef"><span>{worddata.eng.replace(/[\[\]]/g,"")}</span></div>;
-		
-	}
-	
-}
+
 
 
 export class HebrewSearchHeading extends Component {

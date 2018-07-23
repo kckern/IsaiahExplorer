@@ -354,7 +354,7 @@ class TagBlocks extends Component {
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
 			   	
-			   if(count==1) { item = null; isFloater = false;}
+			   if(count===1) { item = null; isFloater = false;}
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
 			   
 			   
@@ -664,7 +664,6 @@ class TagChiasm extends Component {
 		
 		
 		var head = null;
-		var details = null;
 		var cite_str = null;
 		if(typeof tagMeta.cite === "string" && tagMeta.cite !== "") cite_str = <div className='cite'>{tagMeta.cite}</div>;
 		var details_str = null;
