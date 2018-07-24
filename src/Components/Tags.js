@@ -92,7 +92,7 @@ export class TaggedHeading extends Component {
 	{
 		var key_tag = this.props.app.state.selected_tag;
 		if(this.props.app.state.showcase_tag!==null)  key_tag = this.props.app.state.showcase_tag;
-		//else if(this.props.app.state.previewed_tag!==null)  key_tag = this.props.app.state.previewed_tag;
+		if(this.props.app.state.tagMode && key_tag===null) key_tag = this.props.app.state.previewed_tag;
 
 		var tagMeta = globalData['tags']['tagIndex'][key_tag];
 		if(tagMeta!==undefined) tagMeta["tagName"] = key_tag;

@@ -956,13 +956,15 @@ div#text .textcontent
 {
 	border-left:5px solid #FFA;
 	border-right:5px solid #FFA;
+	background-color:#FFA;
 }
 
 
 
 /*  Selected */
 
-
+#text span.poetry.versebox_highlighted.versebox_selected,
+#text span.versebox_highlighted.versebox_selected,
 #text span.versebox_selected
 {
 	background-color: #fdd43a;
@@ -2979,21 +2981,7 @@ button#commentary
 	margin:3px;
 }
 
-.tag_meta
-{
-    height:20px;
-	text-align:center;
 
-	border:1px solid black;
-	font-size:14px;
-    line-height: 20px;
-	white-space:nowrap;
-	overflow:hidden;
-	background-color:#FFF;
-	color:#103D50;
-	border-radius:4px;
-	font-weight:400;
-}
 
 .infoOpen .tag_meta
 {
@@ -3178,12 +3166,7 @@ button#commentary
 	background-color:#FFA;
 }
 
-#text .tag_meta
-{
-	height:100%;
-	overflow-y:auto;
-	border:0;
-}
+
 #text.tagContainer .base_root
 {
 	margin-top:-3px;
@@ -3214,22 +3197,44 @@ button#commentary
     color:black;
 
 }
-
-.tag_meta>div.taglink
+.tag_meta
 {
+    height:20px;
+	text-align:center;
+
+	border:1px solid black;
+	font-size:14px;
 	line-height:16px;
-	margin:0;
+	white-space:nowrap;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#103D50;
+	border-radius:4px;
+	font-weight:400;
+	padding-top:1px;
+}
+
+.tag_meta>div.taglink:not(:first-child)
+{
+	margin-left:15px;
 }
 
 .tag_meta>div.taglink:not(:last-child) + span
 {
-	font-size:30px;
 	color:#999;
 	line-height:10px;
-	padding-left:1px;
-	padding-right:1px;
+	font-size:30px;
+	position:absolute;
+	text-align:center;
+	width:15px;
+	height:16px;
 }
-
+#text .tag_meta
+{
+	height:100%;
+	overflow-y:auto;
+	border:0;
+}
 .tagTaxFooter
 {
 	border-top:1px solid #999;
@@ -3549,3 +3554,46 @@ a.strong:hover
 	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
 }
 
+.noresults
+{
+	text-align:center;
+	margin-top:5em;
+	font-style:italic;
+	
+	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+	letter-spacing:4px;
+}
+
+div#text.nores
+{
+	background-color:#CCC;
+	overflow-y:hidden;
+}
+
+.detail .cite
+{
+	
+	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+	font-size:9px;
+	text-align:right;
+	margin-top:1.2em;
+	font-style:normal;
+}
+
+.detail h4
+{
+	text-align:center;
+	font-style:normal;
+	margin:0;
+	font-size:1.2em;
+	margin-bottom:1em;
+}
+.detail h4:last-child,
+{
+	margin-bottom:0em;
+}
+.detail .cite:first-child
+{
+	margin-top:0em;
+	text-align:center;
+}

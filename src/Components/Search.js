@@ -50,7 +50,7 @@ export  class SearchBox extends Component {
   	if(this.props.app.state.comSearchMode) return null;
   	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)
   	return(
-  		<input defaultValue="" id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}   />
+  		<input defaultValue="" id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}  value={this.props.app.state.searchQuery}  />
   		)
   		
   	return(
@@ -120,7 +120,7 @@ export class SearchResults extends Component {
 				highlights = tmp[this.props.app.state.hebrewStrongIndex].h;
 			}
 			
-      		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.setActiveVerse(groups[k][0],undefined,undefined,undefined,"closeSearch")}>{h_text}</span></h3>],
+      		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.clearTag(null,groups[k][0])}>{h_text}</span></h3>],
       		[<Passage
       			  key={2}
 				  app={this.props.app}
@@ -130,10 +130,12 @@ export class SearchResults extends Component {
 		}
 		
 		this.result_count = results.length;
+		var nores = "";
+		if(results.length===0){ nores = " nores"; results = <div className="noresults"> No Matching Verses </div>; }
 
     return (
 
-      		<div id="text" className="search" >
+      		<div id="text" className={"search"+nores} >
       		{results}
 			</div>
 		)

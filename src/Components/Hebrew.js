@@ -127,7 +127,7 @@ class HebrewFax extends Component{
 		if(this.props.app.state.hebrewFax===false)
 		{
 			if(globalData.hebrew.fax[this.props.app.state.active_verse_id]===null) return null;
-			return <div id="seefax" onClick={()=>this.props.app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">📜</span> </div>
+			return <div id="seefax" onClick={()=>this.props.app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">&#x1F4DC;</span> </div>
 		}
 		
 		
@@ -214,7 +214,7 @@ export class HebrewSearchHeading extends Component {
 		var verses = this.props.app.state.highlighted_verse_range;
 		var data = globalData.hebrew.high[this.props.app.state.hebrewStrongIndex];
 		var w,p = null;
-		if(data!==undefined){w=data.w; p=data.p;}
+		if(data!==undefined){w=data.w; p=data.p.normalize('NFD').replace(/[^A-z]/g, "");}
 		var count = verses.length;
 		return(
 			<div className="text_heading search">

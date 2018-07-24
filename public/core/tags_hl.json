@@ -17763,7 +17763,48 @@
         [
             "immanuel"
         ],
-        null
+        null,
+        [
+            "branches",
+            "branch",
+            "family",
+            "shoot",
+            "stock",
+            "stump",
+            "twig",
+            "rod"
+        ],
+        [
+            "who have much trouble",
+            "those who suffer",
+            "uprightness",
+            "poor fairly",
+            "meek ones",
+            "oppressed",
+            "afflicted",
+            "fairness",
+            "justice",
+            "humble",
+            "equity",
+            "lowly",
+            "fair",
+            "poor",
+            "meek"
+        ],
+        [
+            "",
+            "turn inquiringly",
+            "come to\b",
+            "gather in",
+            "\bcome\b",
+            "inquire",
+            "rally\b",
+            "sought",
+            "resort",
+            "seek",
+            "look",
+            "turn"
+        ]
     ],
     "Babylon\u2019s Fall": {
         "0": [
@@ -17808,10 +17849,29 @@
             "despoiled",
             "are gone",
             "tyre"
+        ],
+        "8": [
+            "damascus"
+        ],
+        "9": [
+            "ethiopian",
+            "ethiopia",
+            "egypt\b",
+            "cush",
+            "kush"
+        ],
+        "10": [
+            "laid waste",
+            "devastated",
+            "destroyed",
+            "despoiled",
+            "ruins",
+            "tyre",
+            "gone"
         ]
     },
-    "Two Cities": [
-        [
+    "Two Cities": {
+        "0": [
             "battered to destruction",
             "left desolation",
             "broken down",
@@ -17837,8 +17897,11 @@
             "city",
             "ruin",
             "shut"
+        ],
+        "": [
+            "jerusalem"
         ]
-    ],
+    },
     "Leaders Condemned": [
         null,
         [
@@ -17880,8 +17943,8 @@
         ],
         null
     ],
-    "Hezekiah\u2019s Fall": [
-        [
+    "Hezekiah\u2019s Fall": {
+        "0": [
             "received",
             "babylon",
             "showing",
@@ -17889,8 +17952,9 @@
             "shewed",
             "babel",
             "show"
-        ]
-    ],
+        ],
+        "2": null
+    },
     "Comfort, Comfort My People": [
         [
             "compulsory service",
@@ -17928,6 +17992,56 @@
             "come",
             "lord",
             "god"
+        ]
+    ],
+    "The Trial": [
+        [
+            "escapes the notice",
+            "receive no justice",
+            "does not think",
+            "does not care",
+            "not concerned",
+            "doesnu2019t know",
+            "doesnu2019t care",
+            "passed over",
+            "disregarded",
+            "passed away",
+            "overlooked",
+            "cannot see",
+            "ignored",
+            "ignores",
+            "eludes"
+        ],
+        [
+            "graven image",
+            "false god",
+            "statues",
+            "statue",
+            "image",
+            "idols",
+            "idol",
+            ""
+        ],
+        [
+            "joyful outcry",
+            "shout for joy",
+            "shouts of joy",
+            "shout of joy",
+            "set him free",
+            "repurchased",
+            "ringing cry",
+            "reclaimed",
+            "redeemed",
+            "protects",
+            "rescued",
+            "singing",
+            "praises",
+            "saving",
+            "sinned",
+            "saved",
+            "sins",
+            "song",
+            "sing"
         ]
     ],
     "Servant's Mission": [

@@ -1068,10 +1068,10 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. New York: Hebraeus Press, 1994.",
             "type": "parallel",
             "slug": "david-assyria",
-            "next": "Chaos\/Creation",
+            "next": "Chaos vs Creation",
             "prev": "Davidic Ascention\u2194Return from Exhile"
         },
-        "Chaos\/Creation": {
+        "Chaos vs Creation": {
             "parents": [
                 "Davidic Figure",
                 "Bifid III",
@@ -1083,7 +1083,7 @@
             "details": "A structure consisting of alternating motifs of a return to chaos and a new creation underscores the Davidic figure\u2019s victory over Assyria. ",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. New York: Hebraeus Press, 1994.",
             "type": "",
-            "slug": "chaos-creation",
+            "slug": "chaos-vs-creation",
             "next": "\u24cd Chaos\u2194Creation",
             "prev": "David\u2194Assyria"
         },
@@ -1100,7 +1100,7 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. New York: Hebraeus Press, 1994.",
             "type": "chiasm",
             "slug": "chaos-creation",
-            "prev": "Chaos\/Creation"
+            "prev": "Chaos vs Creation"
         },
         "Eastern Figure=Righteousness": {
             "parents": [
@@ -24961,7 +24961,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation"
         ],
         "Righteous Warrior Figure": [
@@ -36645,7 +36645,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation",
             "Eastern Figure=Righteousness",
             "\u24cd Servant Figure",
@@ -36961,7 +36961,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation",
             "Eastern Figure=Righteousness",
             "\u24cd Servant Figure",
@@ -37180,7 +37180,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation",
             "Eastern Figure=Righteousness",
             "\u24cd Servant Figure",
@@ -37259,7 +37259,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation",
             "Eastern Figure=Righteousness",
             "\u24cd Servant Figure",
@@ -37272,7 +37272,7 @@
             "Coronation Psalm",
             "Davidic Ascention\u2194Return from Exhile",
             "David\u2194Assyria",
-            "Chaos\/Creation",
+            "Chaos vs Creation",
             "\u24cd Chaos\u2194Creation"
         ],
         "Righteous Warrior Figure": [

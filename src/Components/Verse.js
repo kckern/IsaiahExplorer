@@ -75,7 +75,7 @@ export default class VerseColumn extends Component {
 			}
 
 			var hebimg = null;
-			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false,hebrewFax:false});}}/>
+			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false,hebrewFax:false},this.props.app.setUrl.bind(this.props.app));}}/>
 			
 			var swap_imgs = versions.map((shortcode,key)=>{
 					var classes = [];
@@ -155,7 +155,7 @@ class AudioVerse extends Component {
 	{
 		var classes = [];
 		
-		if(globalData.meta.version[this.props.app.state.version].audio!==1) classes.push("noaudio");
+		if(globalData.meta.version[this.props.app.state.version].audio!==1 && this.props.app.state.hebrewMode===false) classes.push("noaudio");
 		
 		
 		var icon = play_icon;
@@ -282,7 +282,7 @@ class VersePanel extends Component {
 	render()  {
 		
 	var highlights = [null];
-	if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null)
+	if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewReady)
 	{
 		var tmp = globalData.hebrew.high;
 		if(tmp[this.props.app.state.hebrewStrongIndex]!==undefined)

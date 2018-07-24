@@ -164,7 +164,7 @@ class App extends Component {
   {
   	settings.active_verse_id = 17656;
 	var path = this.props.location.pathname;
-	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
+	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/hebrew.[0-9]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
 	var matches =regex.exec(path);
 	var params = [null];
 	if(matches===null) return settings;
@@ -179,17 +179,18 @@ class App extends Component {
   	if(params[2] !== null && globalData.meta.outline[params[2]] !== undefined) settings.outline = params[2];
   	if(params[3] !== null && globalData.meta.version[params[3].toUpperCase()] !== undefined) settings.version = params[3].toUpperCase();
   	if(params[4] !== null) settings.selected_tag = this.loadTagFromSlug(params[4].replace(/^tag\./,''));
-  	if(params[5] !== null) { settings.searchQuery = params[5].replace(/^search\./,'').replace(/\+/g," "); settings.searchMode = true; }
-  	if(params[6] !== null && params[7] !== null) settings.active_verse_id = this.loadVerseId(params[6],params[7]);
+  	if(params[5] !== null) { settings.searchQuery = params[5].replace(/^search\./,'').replace(/\+/g," "); settings.searchMode = false; }
+  	if(params[6] !== null) { settings.hebrewStrongIndex = parseInt(params[6].replace(/^hebrew\./,''),0); }
+  	if(params[7] !== null && params[8] !== null) settings.active_verse_id = this.loadVerseId(params[7],params[8]);
   	
-  	if(params[8] !== null)
+  	if(params[9] !== null)
   	{
   		settings.commentaryMode = true;
-  		settings.commentarySource = params[8].replace(/^commentary\./,'');
+  		settings.commentarySource = params[9].replace(/^commentary\./,'');
   		settings.commentary_verse_id = settings.active_verse_id;
-  		if(params[9] !== null)
+  		if(params[10] !== null)
   		{
-  			settings.commentaryID = params[9];
+  			settings.commentaryID = params[10];
   		}
   	}
   	
@@ -226,7 +227,8 @@ class App extends Component {
   	path = path + "/"+this.state.version;
   	
   	if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
-  	if(this.state.searchQuery!==null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
+  	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
+  	else if(this.state.hebrewStrongIndex!==null) 	path = path + "/hebrew."+this.state.hebrewStrongIndex;
   	
   	path = path + "/"+globalData.index[this.state.active_verse_id].chapter;
   	path = path + "/"+globalData.index[this.state.active_verse_id].verse;
@@ -286,6 +288,7 @@ class App extends Component {
 	    var callback = this.setActiveVerse.bind(this,settings.active_verse_id,undefined,undefined,true,"init");
 	    if(settings.selected_tag !== undefined && settings.selected_tag !== null) callback = this.setActiveTag.bind(this,settings.selected_tag,true);
 	    if(settings.searchQuery !== undefined && settings.searchQuery !== null) callback = this.search.bind(this,settings.searchQuery,true);
+	    if(settings.hebrewStrongIndex !== undefined) callback = this.searchHebrewWord.bind(this,settings.hebrewStrongIndex,true);
 	    
   		this.setState(settings,callback); // 17656
   		
@@ -305,6 +308,13 @@ class App extends Component {
   	}
 	 if(document.getElementById("searchbox")===document.activeElement) return false;
   	
+  	if(e.keyCode === 13) {
+  		e.preventDefault(); 
+  		if(this.state.selected_verse_id===null)
+  		{this.selectVerse(this.state.active_verse_id)}
+  		else
+  		{this.selectVerse(null)}
+  	}
   	
   	if(e.keyCode === 37) {e.preventDefault(); return this.left();}
   	if(e.keyCode === 38) {e.preventDefault(); return this.up();}
@@ -312,14 +322,14 @@ class App extends Component {
   	if(e.keyCode === 40) {e.preventDefault(); return this.down();}
   	
   	//page up/down: cycle versions
-  	if(e.keyCode === 33) return this.cycleVersion(-1);
-  	if(e.keyCode === 34) return this.cycleVersion(1);
+  	if(e.keyCode === 33) { e.preventDefault(); return this.cycleVersion(-1);}
+  	if(e.keyCode === 34) { e.preventDefault(); return this.cycleVersion(1); }
   	//home end: cycle outlines
-  	if(e.keyCode === 36) return this.cycleOutline(-1);
-  	if(e.keyCode === 35) return this.cycleOutline(1);
+  	if(e.keyCode === 36) { e.preventDefault(); return this.cycleOutline(-1); }
+  	if(e.keyCode === 35) { e.preventDefault(); return this.cycleOutline(1); }
   	//ins/del: cycle structures
-  	if(e.keyCode === 45) return this.cycleStructure(-1);
-  	if(e.keyCode === 46) return this.cycleStructure(1);
+  	if(e.keyCode === 45) { e.preventDefault(); return this.cycleStructure(-1); }
+  	if(e.keyCode === 46) { e.preventDefault(); return this.cycleStructure(1); }
   	
   	//tab: move to next section
   	if(e.keyCode === 9) {e.preventDefault();  return this.cycleSection(1);}
@@ -329,9 +339,20 @@ class App extends Component {
   	//tilda opens commentary
   	if(e.keyCode === 192) { e.preventDefault(); return this.clickElementID("commentary");}
   	
-  	if(e.keyCode === 187) { e.preventDefault(); return this.clickElementID("tagIcon");}
+  	//equal sign
+  	if(e.keyCode === 187) { e.preventDefault(); 
+    	if(this.state.tagMode) return this.clearTag();
+    	else{
+    		var recent = globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"];
+    		if(recent===undefined) return  this.showcaseTag(null);
+    		return this.setActiveTag(recent[recent.length-1]);
+    	}
+  	}
   	//Numbkey dot hebrew
-  	if(e.keyCode === 110) { e.preventDefault(); return this.clickElementID("hebIcon");}
+  	if(e.keyCode === 110) { e.preventDefault(); 
+	  	if(!this.state.hebrewFax && this.state.hebrewMode) return this.clickElementID("seefax"); 
+	  	return this.clickElementID("hebIcon");
+  	}
 
   	
   	if(e.keyCode === 32 && !this.state.searchMode && !this.state.preSearchMode) { e.preventDefault(); return this.clickElementID("audio_verse");}
@@ -434,6 +455,7 @@ class App extends Component {
 	if(index<0) index = this.state.highlighted_verse_range.length-1;
 	prev = this.state.highlighted_verse_range[index]; 
 	this.arrowPointer = index;
+	if(this.state.selected_verse_id!==null) return this.selectVerse(prev);
   	this.setActiveVerse(prev,undefined,undefined,true,"arrow");
   	
   	
@@ -486,6 +508,7 @@ class App extends Component {
 	if(index>=this.state.highlighted_verse_range.length) index = 0;
 	next = this.state.highlighted_verse_range[index]; 
 	this.arrowPointer = index;
+	if(this.state.selected_verse_id!==null) return this.selectVerse(next);
   	this.setActiveVerse(next,undefined,undefined,undefined,"arrow");
   }
   
@@ -720,6 +743,9 @@ class App extends Component {
   	this.lastTags = [];
   	this.lastVerseId = null;
   	
+	
+  	if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)  this.load_queue.push("hebrew");
+  	
   	
   	fetch("/core/meta.txt").then(response => response.text()).then(data => {
       	globalData["meta"] = this.unzipJSON(data);
@@ -735,7 +761,13 @@ class App extends Component {
   	fetch("/text/words_HEB.txt").then(response => response.text()).then(data => {
   		
       	globalData["hebrew"] = this.unzipJSON(data);
-      	this.setState({"hebrewReady":true});
+      		if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)
+      		{
+      			
+      			this.pull("hebrew");
+      			this.checkLoaded();
+      		}
+      		this.setState({"hebrewReady":true});
      });
 
   	fetch("/text/verses_"+this.state.version.toUpperCase()+".txt").then(response => response.text()).then(data => {
@@ -991,8 +1023,10 @@ class App extends Component {
   	if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(verse_id)<0) return ()=>{};
   	if(this.state.searchMode && this.state.highlighted_verse_range.indexOf(verse_id)<0 && source!=="newversion" && !this.state.commentaryAudioMode) return ()=>{};
   	
+  	var searchQuery = this.state.searchQuery;
   	var searchMode = this.state.searchMode;
-  	if(source==="closeSearch") searchMode=false;
+  	var hebrewSearch = this.state.hebrewSearch;
+  	if(source==="closeSearch"){ searchMode=false; hebrewSearch=false; searchQuery=null; }
   	
   	var allCollapsed = this.state.allCollapsed;
   	if(source==="versebox" || source==="arrow" ) allCollapsed=false;
@@ -1010,12 +1044,14 @@ class App extends Component {
   	
   	var strong = this.state.hebrewStrongIndex;
   	var word = this.state.hebrewWord;
-  	if(!this.state.hebrewSearch) strong = word = null;
+  	if(!this.state.hebrewSearch || source==="closeSearch") strong = word = null;
   	
   	var vals = { 
 		active_verse_id: verse_id,
 		more_tags: false,
 		searchMode: searchMode,
+		searchQuery: searchQuery,
+		hebrewSearch: hebrewSearch,
     	previewed_tag: null,
 	    hebrewStrongIndex:strong,
 	    hebrewWord:word,
@@ -1051,6 +1087,7 @@ class App extends Component {
 			}
 			this.triggerAudio();
 			if(source==="init")this.setActiveVersion(this.state.version);
+			
 
 	});
   }
@@ -1531,13 +1568,14 @@ class App extends Component {
   
   
   
-  clearTag(tagMode)
+  clearTag(tagMode,forceverse)
   {
   	if(tagMode!==true) tagMode = false;
 	  if(this.state.selected_tag===null && this.state.tagMode===false &&  this.state.searchMode===false &&  this.state.preSearchMode===false) return false;
 	  this.floater = {};
 		this.setState({ 
 			selected_tag: 		null,
+			selected_verse_id: 		null,
 			infoOpen: 		false,
 			tagMode: 		tagMode,
     		searchMode: false,
@@ -1552,7 +1590,9 @@ class App extends Component {
 			highlighted_tagged_verse_range: 		[],
 			highlighted_tagged_parent_verse_range: []
 		},function(){
-			this.setActiveVerse(this.state.active_verse_id,undefined,undefined,true,"tag");
+			var verse = forceverse;
+			if(verse===undefined) verse = this.state.active_verse_id
+			this.setActiveVerse(verse,undefined,undefined,true,"tag");
     
 		});
   }
@@ -1886,6 +1926,7 @@ class App extends Component {
   			highlighted_verse_range: matches,
 	    	hebrewStrongIndex:strong,
 	    	hebrewSearch:true,
+	    	hebrewMode:true,
 			selected_tag: 		null,
 			infoOpen: 		false,
 			tagMode: 		false,
@@ -1896,7 +1937,7 @@ class App extends Component {
 			highlighted_tagged_verse_range: 		[],
 			highlighted_tagged_parent_verse_range: [],
 			searchMode:true,
-			searchQuery:query})
+			searchQuery:query},this.setUrl.bind(this))
   }
   
   

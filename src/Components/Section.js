@@ -110,25 +110,39 @@ class Outline extends Component {
  }
 	
   render() {
+  	
+  	var outline = globalData["outlines"][this.props.app.state.outline];
+  	var headings = [];
+  	for(var x in outline)
+  	{
+  		var heading = outline[x];
+  		if(this.isInSection(heading) && this.isInTagRange(heading) && this.isInSearchRange(heading))
+  			headings.push(<Heading
+                  app={this.props.app}
+                  heading={heading}
+                  id={x}
+                  key={x}
+                />);
+  	}
+  	
+  	if(headings.length===0)
+  	{
+	  	for( x in outline)
+	  	{
+	  		 heading = outline[x];
+	  			headings.push(<Heading
+	                  app={this.props.app}
+	                  heading={heading}
+	                  id={x}
+	                  key={x}
+	                />);
+	  	}
+  	}
+  	
 
     return (
       <div id="outline"   onMouseEnter={this.props.app.clearTagIndex.bind(this.props.app)} >
-        <div className="overviewcontainer">
-          {globalData["outlines"][this.props.app.state.outline].map(
-            (heading, headingKey) => {
-            if(this.isInSection(heading) && this.isInTagRange(heading) && this.isInSearchRange(heading))
-              return (
-                <Heading
-                  app={this.props.app}
-                  heading={heading}
-                  id={headingKey}
-                  key={headingKey}
-                />
-              );
-              else return null;
-            }
-          )}
-        </div>
+        <div className="overviewcontainer"> {headings} </div>
       </div>
     );
   }
