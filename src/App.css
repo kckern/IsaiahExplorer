@@ -813,8 +813,7 @@ div.heading_grid_tag_highlighted
 	color:#000;
 }
 
-#text span.poetry.versetext_com,
-#text .versetext_com
+#text span.poetry.versetext_com
 {
 	border-left:5px solid #DDD;
 	border-right:5px solid #DDD;
@@ -3275,6 +3274,8 @@ button#commentary
 {
       word-wrap:break-word;
       margin:20px;
+      
+     margin-left: 5em;
 }
 #hebrew span
 {
@@ -3286,9 +3287,17 @@ button#commentary
   -ms-user-select: none;
   user-select: none;
 }
+
+
+#hebrew span
+{
+	white-space: nowrap;
+}
+
 #hebrew span.space
 {
    margin-right:10px;
+   white-space: normal;
 }
 
 #hebrew span.active,
