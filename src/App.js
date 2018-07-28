@@ -14,7 +14,7 @@ import {TagFloater} from './Components/Tags.js';
 import {globalData} from './globals.js';
 import { isMobile } from "react-device-detect";
 
-import './App.css';
+import './App.css'; 
 
 
 
