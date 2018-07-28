@@ -3275,6 +3275,8 @@ button#commentary
       word-wrap:break-word;
       margin:20px;
      margin-left: 5em;
+     
+    text-align: right;
 }
 #hebrew span
 {

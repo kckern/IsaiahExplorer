@@ -530,12 +530,13 @@ class App extends Component {
   processRef(q)
   {
   	var matches = [];
-  	q = q.replace(/[—–−-]+/g,"-");
+  	q = q.replace(/[—–−–-]+/g,"-");
   	q = q.replace(/[^0-9]+$/,"");
   	q = q.replace(/^[^0-9]/,"");
   	q = q.replace(/[^0-9,.;:-]/,"");
   	//split by semicolon
   	var colon_segs = q.split(/\s*;\s*/g);
+  	
   	
   	//determine if chapter or not by .: 
 	for(var x in colon_segs){
@@ -598,7 +599,7 @@ class App extends Component {
   	query = query.replace(/[[\]]/g,'');
   	var refSearch = this.state.refSearch;
   	
-  	var numreg = new RegExp("^[0-9:.;,-]+$");
+  	var numreg = new RegExp("^[0-9:.;,—–−–-]+$");
   	
   	if(query.match(numreg))
   	{
@@ -1101,7 +1102,6 @@ class App extends Component {
   
   setActiveVerse(verse_id,structure,outline,force,source)
   {
-  	console.log(source);
   	if(verse_id===null || verse_id===undefined) return ()=>{};
   	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
   	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
