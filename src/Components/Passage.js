@@ -147,6 +147,8 @@ export  class Passage extends Component {
 			    letters.push(letter_str.charAt(i));
 			}
 			
+			var format = text.format;
+			var otext = text.text+"";
 			text = text.text;
 			text = text.replace(/^[^a-z]/ig,"");
 			text = text.replace(/\/_/g," ");
@@ -168,10 +170,14 @@ export  class Passage extends Component {
 				lines.push(array[key]);
 			}
 			text = lines.join("/");
-			return {
-				format:text.format,
+			
+			if(text.match(/[a-z]/ig)===null) text = otext;
+			
+			var r = {
+				format:format,
 				text: text
 			};
+			return r;
 		}
 	
 	
@@ -363,7 +369,7 @@ export  class PassageLine extends Component {
 				var regex = null
 				if(this.props.highlights[0]==="partialmatch")
 				{
-					regex = new RegExp("("+this.props.highlights.slice(1).join("|").replace(/[^A-z|]/,"")+")",'ig');
+					regex = new RegExp("("+this.props.highlights.slice(1).join("|").replace(/[^A-z| ]/,"")+")",'ig');
 				}else regex = new RegExp("\\b("+this.props.highlights.join("|")+")\\b",'ig');
 				var parts = this.props.line.line.split(regex);
 				line = parts.map((val,key)=>{

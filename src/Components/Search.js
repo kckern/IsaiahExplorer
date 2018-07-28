@@ -12,7 +12,7 @@ export  class SearchBox extends Component {
 		var query = event.target.value;
 		var keycode = event.keyCode;
 		if(keycode===8 && query.length<3) { return this.props.app.clearTag();}
-		if(query.length<3) {return false};
+		if(query.length<3 && this.props.app.state.refSearch!==true) {return false};
 		
     
 		
@@ -48,9 +48,12 @@ export  class SearchBox extends Component {
   render()
   {
   	if(this.props.app.state.comSearchMode) return null;
+  	var val = this.props.app.state.searchQuery;
+  	if(this.props.app.state.urlSearch!==true) val="";
+  	
   	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)
   	return(
-  		<input defaultValue="" id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}  value={this.props.app.state.searchQuery}  />
+  		<input defaultValue={val} id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}   />
   		)
   		
   	return(
@@ -111,7 +114,7 @@ export class SearchResults extends Component {
 			if(groups[k].length===1) heading = globalData['index'][groups[k][0]].string;
 			else heading = this.props.app.getReference(groups[k]);
 			
-			var highlights = ["partialmatch",this.props.app.state.searchQuery];
+			var highlights = ["partialmatch",this.props.app.state.searchQuery.replace(/[^A-z]+/g," ")];
 			
 			if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewSearch)
 			{
@@ -119,6 +122,9 @@ export class SearchResults extends Component {
 				if(tmp[this.props.app.state.hebrewStrongIndex]!==undefined)
 				highlights = tmp[this.props.app.state.hebrewStrongIndex].h;
 			}
+			
+			if(this.props.app.state.refSearch===true) highlights = null;
+			
 			
       		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.clearTag(null,groups[k][0])}>{h_text}</span></h3>],
       		[<Passage

@@ -296,6 +296,7 @@ class CommentaryTagLink extends Component {
 		this.props.app.setState({
 			searchMode:true,
 			selected_tag:null,
+			searchQuery:null,
 			comSearchMode:true,
 			highlighted_tagged_verse_range:[],
 			highlighted_verse_range:this.props.verses},

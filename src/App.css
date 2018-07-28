@@ -1468,6 +1468,7 @@ div#text.blocks.tagged .detail
 div#text.blocks.tagged .taggedblock .detail
 {
     margin-top:0px;
+    margin-right:20px;
 }
 
 div#text.chiasm.tagged .head {
@@ -2012,7 +2013,8 @@ div.meta > div.option:hover
 	top:-1px;
 }
 
-.structure_title_icon
+.structure_title_icon,
+div.option.top.option--dragging > div.optionbox > img.structure_title_icon
 {
 	height:25px;
 	width: 25px;
@@ -2193,8 +2195,7 @@ div.meta > div.option:hover
 
 #user_prefs #outline_prefs div.optionbox img,
 #user_prefs #version_prefs div.optionbox img,
-#user_prefs #outline_prefs .option--dragging div.optionbox img,
-#user_prefs #version_prefs .option--dragging div.optionbox img
+div.option.top.option--dragging > div.optionbox > img
 {
 	float:left;
 	width:120px;
@@ -2202,6 +2203,8 @@ div.meta > div.option:hover
 	border:1px solid black;
 	margin-right:5px;
 }
+
+
 
 
 #user_prefs #structure_prefs div.optionbox img
@@ -3575,7 +3578,7 @@ div#text.nores
 	
 	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
 	font-size:9px;
-	text-align:right;
+	text-align:center;
 	margin-top:1.2em;
 	font-style:normal;
 }
@@ -3587,6 +3590,7 @@ div#text.nores
 	margin:0;
 	font-size:1.2em;
 	margin-bottom:1em;
+	font-variant: small-caps;
 }
 .detail h4:last-child,
 {

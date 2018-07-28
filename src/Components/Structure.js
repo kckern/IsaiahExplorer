@@ -90,7 +90,7 @@ class Structure extends Component {
       }
     );
 
-    return <div id="book"  onMouseEnter={this.props.app.clearTag.bind(this.props.app)}>{sections}</div>;
+    return <div id="book" >{sections}</div>;
   }
 }
 
@@ -115,12 +115,12 @@ class Section extends Component {
           var grids = [];
           for (var x in section.verses) {
             grids.push(
+            <div onMouseEnter={this.props.app.clearTag.bind(this.props.app)}  key={x}>
               <VerseGrid
             	app={this.props.app}
                 count={section.verses.length}
                 verses={section.verses[x]}
-                key={x}
-              />
+              /></div>
             );
           }
           

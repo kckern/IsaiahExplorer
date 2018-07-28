@@ -267,8 +267,11 @@ class App extends Component {
 	    if(settings.commentary_order===undefined || settings.commentary_order===null)  settings.commentary_order = [];
 	    if(settings.commentary_order.length>0) 	settings.commentarySource = settings.commentary_order[0];
 	    
-	    //check url
-	    
+	    //check url for version
+			var regex = new RegExp("^/[^/]+/[^/]+/([^/]+)","ig");
+			var matches =regex.exec(this.props.location.pathname);
+			if(matches!==null) if(matches[1].length>1)	settings.version = matches[1].toUpperCase();
+			
 	    
   		this.setState(settings,function(){
 			  this.saveSettings();
@@ -300,13 +303,14 @@ class App extends Component {
   {
   	if(typeof e.keyCode !== "number") return false;
   	if(e.ctrlKey) return false;
+  	if(e.metaKey) return false;
   	if (e.keyCode === 27)
   	{
   		if(this.state.audioState!==null) return false;
   		this.clearTag();
   		return false;
   	}
-	 if(document.getElementById("searchbox")===document.activeElement) return false;
+	 if(document.getElementById("searchbox")===document.activeElement && [38,40,35,36,45,46,33,34,9].indexOf(e.keyCode)===-1) return false;
   	
   	if(e.keyCode === 13) {
   		e.preventDefault(); 
@@ -334,7 +338,7 @@ class App extends Component {
   	//tab: move to next section
   	if(e.keyCode === 9) {e.preventDefault();  return this.cycleSection(1);}
   	//tab: move to next verse tag
-  	if(e.keyCode === 96) {e.preventDefault();  return this.cycleTag(1);}
+  	if(e.keyCode === 107) {e.preventDefault();  return this.cycleTag(1);}
   	
   	//tilda opens commentary
   	if(e.keyCode === 192) { e.preventDefault(); return this.clickElementID("commentary");}
@@ -348,8 +352,8 @@ class App extends Component {
     		return this.setActiveTag(recent[recent.length-1]);
     	}
   	}
-  	//Numbkey dot hebrew
-  	if(e.keyCode === 110) { e.preventDefault(); 
+  	//Numbkey nimus hebrew
+  	if(e.keyCode === 109) { e.preventDefault(); 
 	  	if(!this.state.hebrewFax && this.state.hebrewMode) return this.clickElementID("seefax"); 
 	  	return this.clickElementID("hebIcon");
   	}
@@ -361,6 +365,10 @@ class App extends Component {
   	if(!this.state.preSearchMode && !this.state.searchMode && e.keyCode >= 65 && e.keyCode <= 90)
   	{
   		this.setState({preSearchMode:true});
+  	}
+  	if( (e.keyCode >= 48 && e.keyCode <= 57) ||  (e.keyCode >= 96 && e.keyCode <= 105) || [110,190,186].indexOf(e.keyCode)!==-1 )
+  	{
+  		this.setState({preSearchMode:true,refSearch:true});
   	}
   	
   }
@@ -524,24 +532,103 @@ class App extends Component {
 	
   }
   
+  processRef(q)
+  {
+  	var matches = [];
+  	q = q.replace(/[—–−-]+/g,"-");
+  	q = q.replace(/[^0-9]+$/,"");
+  	q = q.replace(/^[^0-9]/,"");
+  	q = q.replace(/[^0-9,.;:-]/,"");
+  	//split by semicolon
+  	var colon_segs = q.split(/\s*;\s*/g);
+  	
+  	//determine if chapter or not by .: 
+	for(var x in colon_segs){
+	  var ref = colon_segs[x];
+	  var chapter = true;
+	  if(ref.match(/[.:]/)===null) chapter = false;
+	  
+  		//fill range into commas
+		ref = ref.replace(/([0-9]+)-([0-9]+)/g, function replacer(match, p1, p2, offset, string) {
+			var vs = [];
+			for (var i = p1; i <= p2; i++) {
+			   vs.push(i);
+			}
+		  return vs.join(',');
+		});
+
+	  var g = globalData;
+	  if(chapter)
+	  {
+	  	 var parts = ref.match(/(.*?)[.:](.*)/);
+	  	 var ch = parseInt(parts[1],0);
+	  	 var vs = parts[2].split(/\s*,\s*/g);
+		  	for(x in vs)
+		  	{
+		  		var v = parseInt(vs[x],0);
+				  for(var verse_id in g.index)
+				  {
+				  	 if(g.index[verse_id].chapter===ch && g.index[verse_id].verse===v) matches.push(parseInt(verse_id,0));
+	
+				  }
+		  	}
+	  	 console.log("chapter with vs",ch,vs,matches);
+	  }
+	  else
+	  {
+	  	var chs = ref.split(/\s*,\s*/g);
+		  	for(x in chs)
+		  	{
+		  		ch = parseInt(chs[x],0);
+				  for(verse_id in g.index)
+				  {
+				  	 if(g.index[verse_id].chapter===ch)  matches.push(parseInt(verse_id,0));
+	
+				  }
+		  	}
+	  	 console.log("chapter range",chs,matches);
+	  }
+	  
+	}
+  	
+  		
+  		
+  		
+  	 return matches;
+  }
+  
   search(query)
   {
-  	var regex = new RegExp(''+query+'','igm');
-  	var matches = [];
-  	for(var x in globalData["text"][this.state.version])
-  	{
-  		if(globalData["text"][this.state.version][x].text.match(regex))
-  		{
-  			matches.push(parseInt(x,0));
-  		}
-  	}
+	  	var matches = [];
+  	query = query.replace(/[[\]]/g,'');
+  	var refSearch = this.state.refSearch;
   	
+  	var numreg = new RegExp("^[0-9:.;,-]+$");
+  	
+  	if(query.match(numreg))
+  	{
+  		
+  		matches = this.processRef(query);	
+  		refSearch = true;
+  	}
+  	else
+  	{
+	  	var regex = new RegExp(''+query+'','igm');
+	  	for(var x in globalData["text"][this.state.version])
+	  	{
+	  		if(globalData["text"][this.state.version][x].text.match(regex))
+	  		{
+	  			matches.push(parseInt(x,0));
+	  		}
+	  	}	
+  	}
   	this.setState({
   			highlighted_verse_range: matches,
 			selected_tag: 		null,
 			infoOpen: 		false,
 			tagMode: 		false,
     		preSearchMode: false,
+    		refSearch: refSearch,
 			showcase_tag: 		null,
     		previewed_tag: null,
     		
@@ -751,6 +838,15 @@ class App extends Component {
       	globalData["meta"] = this.unzipJSON(data);
       	this.pull("meta");
       	this.checkLoaded();
+      	var s = this.state;
+      	var m = globalData["meta"];
+      	if(m.version[s.top_versions[0]]===undefined)
+      	{
+      		var t = s.top_versions;
+      		t[0] = "KJV";
+      		this.setState({top_versions:t},this.setActiveVersion.bind(this,"KJV"));
+      	}
+      	
       	//Image Preloading
 	 	(new Image()).src = require('./img/interface/version_loading.gif');
 		Object.keys(globalData["meta"]["version"]).map(version => {
@@ -912,27 +1008,22 @@ class App extends Component {
   }
   
   
-  verseDatatoArray(versedata)
+
+  verseDatatoArray(versedata,src)
   {
   	var verses = [];
 	if(typeof versedata === "number") verses.push(versedata);
 	else if(Array.isArray(versedata))
 	{
-		if(typeof versedata[0] === "number") versedata = [{"singles":versedata}];
-		
+		if(typeof versedata[0] === "number") versedata = [versedata];
 		for(var y in versedata)
 		{
-			var item = versedata[y]
+			var item = versedata[y];
+			//singles
+			if(Array.isArray(item)) { verses = verses.concat(item); continue; }
+			//ranges
 			for(var i in item)
 			{
-				if(i==="singles")
-				{
-					for(var z in versedata[y].singles)
-					{
-						verses.push(versedata[y].singles[z]);
-					}
-					continue;
-				}
 				var vid = parseInt(i,0);
 				for(var j = vid; j<vid+item[i]; j++)
 				{
@@ -957,7 +1048,6 @@ class App extends Component {
 	{
 	//	console.log("No Verses: ",versedata);
 	}
-	
 	return verses;
   }
 
@@ -1016,6 +1106,7 @@ class App extends Component {
   
   setActiveVerse(verse_id,structure,outline,force,source)
   {
+  	console.log(source);
   	if(verse_id===null || verse_id===undefined) return ()=>{};
   	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
   	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
@@ -1055,6 +1146,7 @@ class App extends Component {
     	previewed_tag: null,
 	    hebrewStrongIndex:strong,
 	    hebrewWord:word,
+	    urlSearch: false,
     	audioState: audioState,
 		allCollapsed: allCollapsed,
 		commentary_audio_verse_range: commentary_audio_verse_range,
@@ -1113,8 +1205,8 @@ class App extends Component {
   
   scrollText(reset,source)
   {
-  			
-  			if(["versebox","arrow","tag","audio","init"].indexOf(source)===-1) return false;
+  	//console.log("scroll "+ source);
+  			if(["versebox","arrow","tag","audio","init","search"].indexOf(source)===-1) return false;
   			
   			var time = 200;
   			if(source==="tag") time=0;
@@ -1224,7 +1316,7 @@ class App extends Component {
 		}
 		if(tagMeta.type==="")
 		{
-			if(source==="versebox") this.setState({selected_tag_block_index:null});
+			if(source==="versebox" || source==="arrow" ) this.setState({selected_tag_block_index:null});
 		}
 	 	return verses;
 	 }
@@ -1561,7 +1653,9 @@ class App extends Component {
 			chiasm_letter: 		null
 		},function(){
 			this.scrollText(true,"tag");
-			this.setUrl()
+			this.setUrl();
+			
+			this.setActiveVersion(this.state.version);
 		});
   }
   
@@ -1580,9 +1674,11 @@ class App extends Component {
 			tagMode: 		tagMode,
     		searchMode: false,
     		hebrewMode: false,
+    		refSearch:false,
     		hebrewSearch: false,
     		preSearchMode: false,
     		comSearchMode: false,
+    		urlSearch: false,
     		searchQuery: null,
 			showcase_tag: 		null,
     		previewed_tag: null,
@@ -1876,6 +1972,8 @@ class App extends Component {
 	    highlighted_tagged_verse_range:matches,
 	    hebrewStrongIndex:strong,
 	    hebrewWord:word
+  	},function(){
+  		this.scrollText(false,"search");
   	});
   }
   
@@ -1937,7 +2035,11 @@ class App extends Component {
 			highlighted_tagged_verse_range: 		[],
 			highlighted_tagged_parent_verse_range: [],
 			searchMode:true,
-			searchQuery:query},this.setUrl.bind(this))
+			searchQuery:query},function(){
+				
+				this.setUrl();
+				this.scrollText(false,"search");
+			})
   }
   
   

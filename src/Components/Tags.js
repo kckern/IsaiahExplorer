@@ -314,7 +314,7 @@ class TagBlocks extends Component {
 		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(tagMeta.description)}</h4>;
 		if(details_str!==null || descr_str!==null || cite_str!==null)
 		details = (<div className="detail">{descr_str}{details_str}{cite_str}</div>);
-
+ 		const app = this.props.app;
 		var blocks = entries.map((entry,key)=>{
 			
 			var classes=["verses"];
@@ -322,12 +322,12 @@ class TagBlocks extends Component {
 			var isFloater = false;
 			
 			var details = null;
-			if(!this.props.app.state.allCollapsed ){
-				if(this.props.app.state.selected_tag_block_index===key || (
-					entry.verses.indexOf(this.props.app.state.active_verse_id)>-1 && this.props.app.state.selected_tag_block_index===null
+			if(app.state.allCollapsed!==true){
+				if(app.state.selected_tag_block_index===key || (
+					entry.verses.indexOf(app.state.active_verse_id)>-1 && app.state.selected_tag_block_index===null
 					)){
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
-						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{this.props.app.addLinks(entry.details)}</div>)
+						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
 				}	
 			}
 			
@@ -585,7 +585,6 @@ class TagChiasm extends Component {
 	
 	componentDidMount(){
 		
-
     	
 	}
 
