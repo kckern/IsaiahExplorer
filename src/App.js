@@ -9,10 +9,8 @@ import PassageColumn from './Components/Passage.js';
 import VerseColumn from './Components/Verse.js';
 import Audio from './Components/Audio.js';
 import Settings from './Components/Settings/Settings.js';
-import Mobile from './Mobile.js';
 import {TagFloater} from './Components/Tags.js';
 import {globalData} from './globals.js';
-import { isMobile } from "react-device-detect";
 
 import './App.css'; 
  
@@ -123,7 +121,6 @@ class App extends Component {
 	
  render() {
  	
-	if(isMobile) return <Mobile/>;
 
 	var settingsPanel = null;
 	if(this.state.settings===true) settingsPanel = ( [<div key="shader" className='shader' onClick={() => this.closeSettings()}/>,<Settings key="settingbox" app={this}/>] );
