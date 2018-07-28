@@ -17,8 +17,6 @@ import { isMobile } from "react-device-detect";
 import './App.css'; 
 
 
-
-
 class App extends Component {
 	
   floater = {};
