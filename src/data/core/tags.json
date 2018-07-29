@@ -1596,6 +1596,18 @@
             "slug": "peacesalvation",
             "prev": "Universal Salvation"
         },
+        "Fleeing Babylon": {
+            "parents": [
+                "Themes",
+                "root"
+            ],
+            "description": "Leaving the world behind",
+            "details": "",
+            "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. San Diego, CA: Hebraeus Press, 2015.",
+            "type": "",
+            "slug": "fleeing-babylon",
+            "next": "Zion"
+        },
         "Disloyalty": {
             "parents": [
                 "Bifid VI",
@@ -2141,7 +2153,8 @@
             "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. San Diego, CA: Hebraeus Press, 2015.",
             "type": "",
             "slug": "zion",
-            "next": "Knowing God"
+            "next": "Knowing God",
+            "prev": "Fleeing Babylon"
         },
         "Knowing God": {
             "parents": [
@@ -2192,21 +2205,8 @@
             "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. San Diego, CA: Hebraeus Press, 2015.",
             "type": "",
             "slug": "reversal-of-circumstances",
-            "next": "Fleeing Babylon",
-            "prev": "Father\u2013Son"
-        },
-        "Fleeing Babylon": {
-            "parents": [
-                "Themes",
-                "root"
-            ],
-            "description": "Leaving the world behind",
-            "details": "",
-            "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. San Diego, CA: Hebraeus Press, 2015.",
-            "type": "",
-            "slug": "fleeing-babylon",
             "next": "Avenge\/Reward",
-            "prev": "Reversal of Circumstances"
+            "prev": "Father\u2013Son"
         },
         "Avenge\/Reward": {
             "parents": [
@@ -2219,7 +2219,7 @@
             "type": "",
             "slug": "avenge-reward",
             "next": "Watchmen\/Prophets",
-            "prev": "Fleeing Babylon"
+            "prev": "Reversal of Circumstances"
         },
         "Watchmen\/Prophets": {
             "parents": [
@@ -25320,28 +25320,6 @@
                 "oref": "Isaiah 1"
             }
         ],
-        "Zion vs. Rival": {
-            "": {
-                "desc": "",
-                "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
-            }
-        },
-        "Ideal Agent of Redemption": {
-            "": {
-                "desc": "",
-                "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
-            }
-        },
         "\u29b7 Righteous vs. the World": {
             "1A": {
                 "desc": "[Earth] The grape vines of the earth languish",
@@ -26863,65 +26841,72 @@
             {
                 "desc": "Those who comply with Jehovah\u2019s admonition to flee Babylon",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18635
+                ],
+                "ref": "48:20",
+                "oref": "Isaiah 48:20"
             },
             {
                 "desc": "And come out of her",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18708
+                ],
+                "ref": "52:11",
+                "oref": "Isaiah 52:11"
             },
             {
                 "desc": "For example, participate in a new exodus",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18636,
+                    18709
+                ],
+                "ref": "48:21;  52:12",
+                "oref": "Isaiah 48:21; Isaiah 52:12"
             },
             {
                 "desc": "It involves Jehovah\u2019s people exiting Babylon when the announcement goes forth to the end of the earth that Jehovah has redeemed his servant Jacob",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    [
+                        18635
+                    ],
+                    {
+                        "18706": 3
+                    }
+                ],
+                "ref": "48:20;  52:9\u201311",
+                "oref": "Isaiah 48:20; Isaiah 52:9-11"
             },
             {
                 "desc": "The expression \u201cend of the earth\u201d qeseh ha\u2019ares",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18635
+                ],
+                "ref": "48:20",
+                "oref": "Isaiah 48:20"
             },
             {
                 "desc": "Denotes the universal nature of this call257 and thus the universality of both Babylon and the exodus",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18649,
+                    18659
+                ],
+                "ref": "49:12,22",
+                "oref": "Isaiah 49:12, 22"
             },
             {
-                "desc": "Jehovah\u2019s salvation, in other words, extends to the \u201cend of the earth\u201d qeseh ha\u2019ares",
+                "desc": "Jehovah\u2019s salvation, in other words, extends to the \u201cend of the earth\u201d and no one is excluded who responds to his call.",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah"
+                "verses": [
+                    18643
+                ],
+                "ref": "49:6",
+                "oref": "Isaiah 49:6"
             }
         ],
         "Peace \u21cc Salvation": [
@@ -27607,13 +27592,10 @@
                     },
                     {
                         "18164": 2
-                    },
-                    {
-                        "17656": 31
                     }
                 ],
-                "ref": "24:13\u201316,23;  25:1,4\u20139;  26:1\u20134,6\u20139,12\u201313,15\u201316,19\u201320;  27:2\u20139,12\u201313;  1",
-                "oref": "Isaiah 24:13-16, 23; Isaiah 25:1, 4-9; Isaiah 26:1-4, 6-9, 12-13, 15-16, 19-20; Isaiah 27:2-9, 12-13; "
+                "ref": "24:13\u201316,23;  25:1,4\u20139;  26:1\u20134,6\u20139,12\u201313,15\u201316,19\u201320;  27:2\u20139,12\u201313",
+                "oref": "Isaiah 24:13-16, 23; Isaiah 25:1, 4-9; Isaiah 26:1-4, 6-9, 12-13, 15-16, 19-20; Isaiah 27:2-9, 12-13"
             },
             {
                 "desc": "No hope for the rest of humanity,",
@@ -27806,11 +27788,14 @@
             {
                 "desc": "In that context appears the statement, \u201cFrom a sector of the earth we hear singing: \u2018Glory to the righteous\/righteous one!\u2019\u201d (sebi lassaddiq)",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah 24:l 6 Ab"
+                "verses": [
+                    18112
+                ],
+                "ref": "24:16",
+                "oref": "Isaiah 24:16ab",
+                "sub": {
+                    "18112": "ab"
+                }
             },
             {
                 "desc": "The juxtaposition of the pronouns \u201cwe\u201d and \u201cthey\u201d (hose at home and those abroad) in this passage implies that some who are abroad in the earth have converted to the God of Israel.",
@@ -28057,7 +28042,8 @@
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation",
-            "Peace \u21cc Salvation"
+            "Peace \u21cc Salvation",
+            "Fleeing Babylon"
         ],
         "\u2602 Cumulative Themes I \u2013 V": [
             "Cumulative Themes I \u2013 V",
@@ -28451,14 +28437,16 @@
             "\u29b7 To Listen\u2194Babylon",
             "Restoration",
             "Covenant Blessings",
-            "Righteous Delivered"
+            "Righteous Delivered",
+            "Fleeing Babylon"
         ],
         "18636": [
             "Nephi",
             "Jehovah God of Israel",
             "(2\/7) Babylon\u2013Chaldea",
             "Israel\u2019s Wandering in the Wilderness",
-            "\u29b7 To Listen\u2194Babylon"
+            "\u29b7 To Listen\u2194Babylon",
+            "Fleeing Babylon"
         ],
         "18637": [
             "Nephi",
@@ -28514,6 +28502,7 @@
             "\u29b7 Servant\u2019s Empowerment",
             "\ud83c\udd85 Suffering",
             "\ud83c\udd85 Salvation",
+            "Fleeing Babylon",
             "Peace \u21cc Salvation"
         ],
         "18644": [
@@ -28589,7 +28578,8 @@
             "Covenant Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18650": [
             "Nephi",
@@ -28698,7 +28688,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "\ud83c\udd85 Suffering",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18660": [
             "Nephi",
@@ -32182,7 +32173,8 @@
             "Righteous Delivered",
             "\ud83c\udd85 Suffering",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18707": [
             "Abinadi",
@@ -32194,7 +32186,8 @@
             "\u24cd Awake",
             "Cumulative Themes I \u2013 V",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18713": [
             "Abinadi",
@@ -32357,7 +32350,8 @@
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd Awake",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18709": [
             "Jesus",
@@ -32367,7 +32361,8 @@
             "Jehovah\u2019s Protective Cloud",
             "\u24cd Awake",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Fleeing Babylon"
         ],
         "18710": [
             "Jesus",
@@ -32643,10 +32638,6 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17663": [
@@ -32659,11 +32650,7 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17664": [
@@ -32678,11 +32665,7 @@
             "Covenant Curses",
             "Wicked Destroyed",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17665": [
@@ -32692,10 +32675,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17666": [
@@ -32704,10 +32683,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17667": [
@@ -32716,10 +32691,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17668": [
@@ -32728,10 +32699,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17669": [
@@ -32740,10 +32707,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17670": [
@@ -32752,10 +32715,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17671": [
@@ -32764,10 +32723,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17672": [
@@ -32776,10 +32731,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17673": [
@@ -32788,10 +32739,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17674": [
@@ -32800,10 +32747,6 @@
             "Apostasy",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17675": [
@@ -32816,10 +32759,6 @@
             "Threat",
             "Covenant Curses",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18226": [
@@ -32921,11 +32860,7 @@
             "Covenant Curses",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18154": [
@@ -33136,10 +33071,6 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17658": [
@@ -33150,10 +33081,6 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18565": [
@@ -35080,10 +35007,6 @@
             "Narrative Characters",
             "Visionaries",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18073": [
@@ -36435,11 +36358,7 @@
             "Allegiance",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18030": [
@@ -36632,11 +36551,7 @@
             "Apostasy",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17682": [
@@ -36650,11 +36565,7 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18023": [
@@ -37238,11 +37149,7 @@
             "Covenant Curses",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18311": [
@@ -37341,10 +37248,6 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17661": [
@@ -37354,10 +37257,6 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17683": [
@@ -37369,11 +37268,7 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17679": [
@@ -37386,11 +37281,7 @@
             "Allegiance",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
             "The Composite City",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18323": [
@@ -37570,10 +37461,6 @@
             "Trouble at Home",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18448": [
@@ -38011,10 +37898,6 @@
             "Covenant Curses",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18121": [
@@ -38098,10 +37981,6 @@
             "Old Jerusalem",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17996": [
@@ -39432,10 +39311,6 @@
             "\u29b7 Justice\u2194Punishments",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "17685": [
@@ -39443,10 +39318,6 @@
             "Threat",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Zion vs. Rival",
-            "Ideal Agent of Redemption",
-            "Fleeing Babylon",
-            "Universal Suffering",
             "Universal Salvation"
         ],
         "18097": [
@@ -40213,6 +40084,7 @@
             "Universal Suffering",
             "Universal Salvation",
             "Peace \u21cc Salvation",
+            "Fleeing Babylon",
             "Disloyalty",
             "Loyalty",
             "Didactic",
@@ -40258,7 +40130,6 @@
             "Destruction",
             "Father\u2013Son",
             "Reversal of Circumstances",
-            "Fleeing Babylon",
             "Avenge\/Reward",
             "Watchmen\/Prophets",
             "Visionaries",
@@ -40907,6 +40778,17 @@
             "\ud83c\udd85 Suffering",
             "Curse Reversals"
         ],
+        "Themes": [
+            "Fleeing Babylon",
+            "Zion",
+            "Knowing God",
+            "Destruction",
+            "Father\u2013Son",
+            "Reversal of Circumstances",
+            "Avenge\/Reward",
+            "Watchmen\/Prophets",
+            "Visionaries"
+        ],
         "Bifid VI": [
             "Disloyalty",
             "Loyalty",
@@ -40957,17 +40839,6 @@
             "War",
             "Victory",
             "Feast"
-        ],
-        "Themes": [
-            "Zion",
-            "Knowing God",
-            "Destruction",
-            "Father\u2013Son",
-            "Reversal of Circumstances",
-            "Fleeing Babylon",
-            "Avenge\/Reward",
-            "Watchmen\/Prophets",
-            "Visionaries"
         ],
         "Ancient Types": [
             "Israel\u2019s Apostasy",
