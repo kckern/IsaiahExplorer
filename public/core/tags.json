@@ -1831,7 +1831,7 @@
                 "root"
             ],
             "description": "Israel in its Homeland Rebels against God",
-            "details": "Isaiah 1\u201339",
+            "details": "",
             "cite": "Adapted from Gileadi, Avraham. \"Isaiah\u2019s Layered Literary Structures.\" IsaiahExplained.com.",
             "type": "",
             "slug": "trouble-at-home",
@@ -1844,7 +1844,7 @@
                 "root"
             ],
             "description": "God Disperses Israel among the Nations",
-            "details": "Isaiah 40\u201354",
+            "details": "",
             "cite": "Adapted from Gileadi, Avraham. \"Isaiah\u2019s Layered Literary Structures.\" IsaiahExplained.com.",
             "type": "",
             "slug": "exile-abroad",
@@ -1858,11 +1858,67 @@
                 "root"
             ],
             "description": "Israel\u2019s Elect Remnant Returns from Exile",
-            "details": "Isaiah 55\u201366",
+            "details": "",
             "cite": "Adapted from Gileadi, Avraham. \"Isaiah\u2019s Layered Literary Structures.\" IsaiahExplained.com.",
             "type": "",
             "slug": "happy-homecoming",
+            "next": "Remnant of Israel",
             "prev": "Exile Abroad"
+        },
+        "Remnant of Israel": {
+            "parents": [
+                "Home, Exhile, Return",
+                "Structures",
+                "root"
+            ],
+            "description": "Nationalism, Universalism, Individualism",
+            "details": "",
+            "cite": "Adapted from Gileadi, Avraham. The Apocalyptic Book of Isaiah. Hebraeus Press, 1982.",
+            "type": "",
+            "slug": "remnant-of-israel",
+            "next": "A National Entity",
+            "prev": "Happy Homecoming"
+        },
+        "A National Entity": {
+            "parents": [
+                "Home, Exhile, Return",
+                "Structures",
+                "root"
+            ],
+            "description": "",
+            "details": "",
+            "cite": "",
+            "type": "",
+            "slug": "a-national-entity",
+            "next": "A Universal Entity",
+            "prev": "Remnant of Israel"
+        },
+        "A Universal Entity": {
+            "parents": [
+                "Home, Exhile, Return",
+                "Structures",
+                "root"
+            ],
+            "description": "",
+            "details": "",
+            "cite": "",
+            "type": "",
+            "slug": "a-universal-entity",
+            "next": "Individual Entities",
+            "prev": "A National Entity"
+        },
+        "Individual Entities": {
+            "parents": [
+                "Home, Exhile, Return",
+                "Structures",
+                "root"
+            ],
+            "description": "",
+            "details": "",
+            "cite": "",
+            "type": "",
+            "slug": "individual-entities",
+            "prev": "A Universal Entity"
         },
         "Ugaritic": {
             "parents": [
@@ -27896,6 +27952,145 @@
                 "ref": "26:1\u20132",
                 "oref": "Isaiah 26:1-2"
             }
+        ],
+        "Remnant of Israel": [
+            {
+                "desc": "In the last days, the Israel that returns home at divine bidding is a nation of awakened individuals",
+                "details": 0,
+                "verses": {
+                    "18742": 6
+                },
+                "ref": "55:1\u20136",
+                "oref": "Isaiah 55:1-6"
+            },
+            {
+                "desc": "...who had merged and become identified with the world at large.",
+                "details": 0,
+                "verses": [
+                    {
+                        "18460": 2
+                    },
+                    {
+                        "18590": 6
+                    }
+                ],
+                "ref": "41:8\u20139;  46:3\u20138",
+                "oref": "Isaiah 41:8-9; Isaiah 46:3-8"
+            },
+            {
+                "desc": "Those who return from the four durections are thoe who respond to a universal call to repent.",
+                "details": 0,
+                "verses": [
+                    18556,
+                    18584
+                ],
+                "ref": "44:22;  45:22",
+                "oref": "Isaiah 44:22; Isaiah 45:22"
+            },
+            {
+                "desc": "Upong being proven, they particiate in a dramatic even in which a new nation is born.",
+                "details": 0,
+                "verses": {
+                    "18927": 5
+                },
+                "ref": "66:4\u20138",
+                "oref": "Isaiah 66:4-8"
+            }
+        ],
+        "A National Entity": [
+            {
+                "desc": "",
+                "details": 0,
+                "verses": [
+                    17659,
+                    17662,
+                    17791,
+                    17816,
+                    17949,
+                    18000,
+                    18005,
+                    18088,
+                    18299
+                ],
+                "ref": "1:4,7;  7:8;  8:8;  14:20;  18:2,7;  23:10;  33:19",
+                "oref": "Isaiah 1:4, 7; Isaiah 7:8; Isaiah 8:8; Isaiah 14:20; Isaiah 18:2, 7; Isaiah 23:10; Isaiah 33:19"
+            }
+        ],
+        "A Universal Entity": [
+            {
+                "desc": "",
+                "details": 0,
+                "verses": [
+                    [
+                        18433
+                    ],
+                    {
+                        "18442": 4
+                    },
+                    [
+                        18449,
+                        18457,
+                        18461
+                    ],
+                    {
+                        "18485": 2
+                    },
+                    [
+                        18491,
+                        18512
+                    ],
+                    {
+                        "18557": 2
+                    },
+                    {
+                        "18570": 2
+                    },
+                    [
+                        18574
+                    ],
+                    {
+                        "18579": 2
+                    },
+                    [
+                        18584,
+                        18628,
+                        18635,
+                        18643,
+                        18650,
+                        18680,
+                        18687,
+                        18690,
+                        18707,
+                        18729,
+                        18733
+                    ]
+                ],
+                "ref": "40:12,21\u201324,28;  41:5,9;  42:4\u20135,10;  43:6;  44:23\u201324;  45:8\u20139,12,17\u201318,22;  48:13,20;  49:6,13;  51:6,13,16;  52:10;  54:5,9",
+                "oref": "Isaiah 40:12, 21-24, 28; Isaiah 41:5, 9; Isaiah 42:4-5, 10; Isaiah 43:6; Isaiah 44:23-24; Isaiah 45:8-9, 12, 17-18, 22; Isaiah 48:13, 20; Isaiah 49:6, 13; Isaiah 51:6, 13, 16; Isaiah 52:10; Isaiah 54:5, 9"
+            }
+        ],
+        "Individual Entities": [
+            {
+                "desc": "",
+                "details": 0,
+                "verses": [
+                    [
+                        18760,
+                        18884
+                    ],
+                    {
+                        "18906": 2
+                    },
+                    {
+                        "18911": 3
+                    },
+                    [
+                        18937
+                    ]
+                ],
+                "ref": "56:6;  63:17;  65:8\u20139,13\u201315;  66:14",
+                "oref": "Isaiah 56:6; Isaiah 63:17; Isaiah 65:8-9, 13-15; Isaiah 66:14"
+            }
         ]
     },
     "parentTagIndex": {
@@ -28085,7 +28280,11 @@
         "Home, Exhile, Return": [
             "Trouble at Home",
             "Exile Abroad",
-            "Happy Homecoming"
+            "Happy Homecoming",
+            "Remnant of Israel",
+            "A National Entity",
+            "A Universal Entity",
+            "Individual Entities"
         ],
         "Ugaritic": [
             "Apostasy",
@@ -28380,7 +28579,8 @@
             "Nephi",
             "Jehovah\u2019s End\u2013Time Servant",
             "\u29b7 To Listen\u2194Babylon",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "A Universal Entity"
         ],
         "18629": [
             "Nephi",
@@ -28438,7 +28638,8 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "Fleeing Babylon"
+            "Fleeing Babylon",
+            "A Universal Entity"
         ],
         "18636": [
             "Nephi",
@@ -28503,7 +28704,8 @@
             "\ud83c\udd85 Suffering",
             "\ud83c\udd85 Salvation",
             "Fleeing Babylon",
-            "Peace \u21cc Salvation"
+            "Peace \u21cc Salvation",
+            "A Universal Entity"
         ],
         "18644": [
             "Nephi",
@@ -28591,7 +28793,8 @@
             "Cumulative Themes I \u2013 V",
             "\ud83c\udd85 Suffering",
             "Curse Reversals",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "A Universal Entity"
         ],
         "18651": [
             "Nephi",
@@ -29749,7 +29952,8 @@
             "Rebellion\u2014Ahaz",
             "Cumulative Themes I \u2013 II",
             "\u24cd Asking for a Sign",
-            "Ahaz and the Shoot"
+            "Ahaz and the Shoot",
+            "A National Entity"
         ],
         "17792": [
             "Nephi",
@@ -30008,7 +30212,8 @@
             "Cumulative Themes I \u2013 II",
             "Apostasy",
             "Coronation Psalm",
-            "Zion Ideology"
+            "Zion Ideology",
+            "A National Entity"
         ],
         "17817": [
             "Nephi",
@@ -31495,7 +31700,8 @@
             "Cyrus\u2019 Universal Conquests",
             "\u24cd Lucifer",
             "Babylon \u21cc Universal",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "A National Entity"
         ],
         "17950": [
             "Nephi",
@@ -31930,7 +32136,8 @@
             "Righteous Delivered",
             "Zion Ideology",
             "Cumulative Themes I \u2013 V",
-            "\ud83c\udd85 Ruin"
+            "\ud83c\udd85 Ruin",
+            "A Universal Entity"
         ],
         "18681": [
             "Jacob",
@@ -32010,7 +32217,8 @@
             "Jacob",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Awake",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "A Universal Entity"
         ],
         "18688": [
             "Jacob",
@@ -32031,7 +32239,8 @@
             "\u24cd Awake",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "A Universal Entity"
         ],
         "18691": [
             "Jacob",
@@ -32124,13 +32333,15 @@
             "Jacob",
             "Home, Exhile, Return",
             "\u24cd Equality to the Gentiles",
-            "Two Ways to Respond"
+            "Two Ways to Respond",
+            "Remnant of Israel"
         ],
         "18743": [
             "Jacob",
             "Home, Exhile, Return",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "Remnant of Israel"
         ],
         "18704": [
             "Abinadi",
@@ -32187,7 +32398,8 @@
             "Cumulative Themes I \u2013 V",
             "Curse Reversals",
             "\ud83c\udd85 Salvation",
-            "Fleeing Babylon"
+            "Fleeing Babylon",
+            "A Universal Entity"
         ],
         "18713": [
             "Abinadi",
@@ -32430,7 +32642,8 @@
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "\ud83c\udd85 Suffering",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "A Universal Entity"
         ],
         "18730": [
             "Jesus",
@@ -32473,7 +32686,8 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "\ud83c\udd85 Suffering"
+            "\ud83c\udd85 Suffering",
+            "A Universal Entity"
         ],
         "18734": [
             "Jesus",
@@ -32638,7 +32852,8 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Universal Salvation",
+            "A National Entity"
         ],
         "17663": [
             "Destruction",
@@ -34370,7 +34585,8 @@
             "The Davidic Monarchy",
             "\u24cd A New Song",
             "The Trial",
-            "\u24cd Servant Figure"
+            "\u24cd Servant Figure",
+            "A Universal Entity"
         ],
         "18486": [
             "\u24cd Chaos\u2194Creation",
@@ -34378,7 +34594,8 @@
             "The Creation",
             "\u24cd A New Song",
             "The Trial",
-            "\u24cd Servant Figure"
+            "\u24cd Servant Figure",
+            "A Universal Entity"
         ],
         "18487": [
             "\u24cd Chaos\u2194Creation",
@@ -34543,7 +34760,8 @@
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
-            "3 Redemptive Roles"
+            "3 Redemptive Roles",
+            "A Universal Entity"
         ],
         "18513": [
             "\u24cd Chaos\u2194Creation",
@@ -34738,7 +34956,8 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "The Trial"
+            "The Trial",
+            "Remnant of Israel"
         ],
         "18557": [
             "\u24cd Chaos\u2194Creation",
@@ -34747,14 +34966,16 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "The Trial"
+            "The Trial",
+            "A Universal Entity"
         ],
         "18558": [
             "\u24cd Chaos\u2194Creation",
             "The Davidic Monarchy",
             "Rebuilding of the Temple",
             "\u24cd Idolatry",
-            "Righteous Delivered"
+            "Righteous Delivered",
+            "A Universal Entity"
         ],
         "18561": [
             "\u24cd Chaos\u2194Creation",
@@ -34797,14 +35018,16 @@
             "Jehovah\u2019s End\u2013Time Servant",
             "The Davidic Monarchy",
             "The Creation",
-            "\u24cd Woe"
+            "\u24cd Woe",
+            "A Universal Entity"
         ],
         "18571": [
             "\u24cd Chaos\u2194Creation",
             "Jehovah\u2019s End\u2013Time Servant",
             "The End\u2013Time King of Assyria\/Babylon",
             "The Davidic Monarchy",
-            "\u24cd Woe"
+            "\u24cd Woe",
+            "A Universal Entity"
         ],
         "18572": [
             "\u24cd Chaos\u2194Creation",
@@ -34824,7 +35047,8 @@
             "Jehovah\u2019s End\u2013Time Servant",
             "The Davidic Monarchy",
             "The Creation",
-            "\u24cd Woe"
+            "\u24cd Woe",
+            "A Universal Entity"
         ],
         "18575": [
             "\u24cd Chaos\u2194Creation",
@@ -34846,13 +35070,15 @@
             "Jehovah God of Israel",
             "(7\/7) Jehovah God of Israel",
             "The Davidic Monarchy",
-            "\u24cd Woe"
+            "\u24cd Woe",
+            "A Universal Entity"
         ],
         "18580": [
             "\u24cd Chaos\u2194Creation",
             "The Davidic Monarchy",
             "The Creation",
-            "\u24cd Creation by the Lord"
+            "\u24cd Creation by the Lord",
+            "A Universal Entity"
         ],
         "18581": [
             "\u24cd Chaos\u2194Creation",
@@ -34886,7 +35112,8 @@
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Idolatry"
+            "Idolatry",
+            "Remnant of Israel"
         ],
         "18591": [
             "\u24cd Chaos\u2194Creation",
@@ -34894,7 +35121,8 @@
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Idolatry"
+            "Idolatry",
+            "Remnant of Israel"
         ],
         "18597": [
             "\u24cd Chaos\u2194Creation",
@@ -35357,7 +35585,8 @@
             "The Davidic Monarchy",
             "Jehovah\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "Remnant of Israel"
         ],
         "18808": [
             "Romans",
@@ -35500,7 +35729,8 @@
             "The Creation",
             "\u24cd You Don\u2019t Know",
             "\u29b7 Isaiah\u2194Seraph",
-            "Hezekiah\u2019s Ascent"
+            "Hezekiah\u2019s Ascent",
+            "A Universal Entity"
         ],
         "18435": [
             "Knowing God",
@@ -35522,13 +35752,15 @@
             "\u29b7 Prophet\u2194People",
             "3 Sons",
             "Israel\u2019s Rise and Fall",
-            "Hezekiah\u2019s Ascent"
+            "Hezekiah\u2019s Ascent",
+            "A Universal Entity"
         ],
         "18443": [
             "Knowing God",
             "Primordial Chaos",
             "\u24cd You Don\u2019t Know",
-            "Hezekiah\u2019s Ascent"
+            "Hezekiah\u2019s Ascent",
+            "A Universal Entity"
         ],
         "18446": [
             "Knowing God",
@@ -35784,7 +36016,8 @@
             "\u24cd Hear What I Have Done",
             "Judgment",
             "War",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "A National Entity"
         ],
         "18300": [
             "Inheritance",
@@ -35862,19 +36095,22 @@
             "The Davidic Monarchy",
             "Jehovah\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "Remnant of Israel"
         ],
         "18746": [
             "Home, Exhile, Return",
             "The Davidic Monarchy",
             "Jehovah\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "Remnant of Israel"
         ],
         "18747": [
             "Home, Exhile, Return",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings"
+            "Covenant Blessings",
+            "Remnant of Israel"
         ],
         "18460": [
             "Home, Exhile, Return",
@@ -35886,7 +36122,8 @@
             "Comfort, Comfort My People",
             "4 Agents",
             "Chaos & Creation",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Remnant of Israel"
         ],
         "18461": [
             "Home, Exhile, Return",
@@ -35897,21 +36134,25 @@
             "Comfort, Comfort My People",
             "4 Agents",
             "Chaos & Creation",
-            "\ud83c\udd85 Salvation"
+            "\ud83c\udd85 Salvation",
+            "Remnant of Israel",
+            "A Universal Entity"
         ],
         "18592": [
             "Home, Exhile, Return",
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Idolatry"
+            "Idolatry",
+            "Remnant of Israel"
         ],
         "18593": [
             "Home, Exhile, Return",
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Idolatry"
+            "Idolatry",
+            "Remnant of Israel"
         ],
         "18594": [
             "Home, Exhile, Return",
@@ -35919,26 +36160,31 @@
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
             "Covenant Blessings",
-            "Righteous Delivered"
+            "Righteous Delivered",
+            "Remnant of Israel"
         ],
         "18595": [
             "Home, Exhile, Return",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
             "Covenant Blessings",
-            "Righteous Delivered"
+            "Righteous Delivered",
+            "Remnant of Israel"
         ],
         "18584": [
             "Home, Exhile, Return",
             "The Davidic Monarchy",
-            "\u24cd Creation by the Lord"
+            "\u24cd Creation by the Lord",
+            "Remnant of Israel",
+            "A Universal Entity"
         ],
         "18927": [
             "Home, Exhile, Return",
             "\u24cd Satisfaction",
             "Salvation",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Remnant of Israel"
         ],
         "18928": [
             "Home, Exhile, Return",
@@ -35949,7 +36195,8 @@
             "Covenant Blessings",
             "Persecution",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Remnant of Israel"
         ],
         "18929": [
             "Home, Exhile, Return",
@@ -35959,7 +36206,8 @@
             "Salvation",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Remnant of Israel"
         ],
         "18930": [
             "Home, Exhile, Return",
@@ -35969,7 +36217,8 @@
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Remnant of Israel"
         ],
         "18931": [
             "Home, Exhile, Return",
@@ -35979,7 +36228,8 @@
             "Salvation",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Remnant of Israel"
         ],
         "18009": [
             "Afro\u2013Egyptian Pharaoh",
@@ -36011,7 +36261,8 @@
             "(6\/7) Seraphs\u2013Seraphim",
             "\u24cd Equality to the Gentiles",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Nations Invited"
+            "Nations Invited",
+            "Individual Entities"
         ],
         "18822": [
             "Covenant of Peace",
@@ -36292,7 +36543,8 @@
             "Jehovah\u2019s End\u2013Time Servant",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd You Don\u2019t Know",
-            "\u29b7 Ch 40\u2194Chs 36\u201337"
+            "\u29b7 Ch 40\u2194Chs 36\u201337",
+            "A Universal Entity"
         ],
         "18468": [
             "Jehovah\u2019s End\u2013Time Servant",
@@ -36453,7 +36705,8 @@
             "Feast",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Individual Entities"
         ],
         "18320": [
             "Jehovah\u2019s End\u2013Time Servant",
@@ -37461,7 +37714,8 @@
             "Trouble at Home",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Universal Salvation",
+            "A National Entity"
         ],
         "18448": [
             "(3\/7) Jacob\u2013Israel",
@@ -37771,14 +38025,16 @@
             "\u29b7 Call\u2194Answer",
             "Feast",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Individual Entities"
         ],
         "18912": [
             "(6\/7) Seraphs\u2013Seraphim",
             "The Davidic Monarchy",
             "\u29b7 Call\u2194Answer",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Individual Entities"
         ],
         "18913": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -37786,7 +38042,8 @@
             "\u29b7 Call\u2194Answer",
             "Covenantal Naming",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Individual Entities"
         ],
         "18452": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -37802,14 +38059,16 @@
             "The Reign of the Judges",
             "\u29b7 Call\u2194Answer",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Individual Entities"
         ],
         "18907": [
             "(6\/7) Seraphs\u2013Seraphim",
             "Lot\u2019s Deliverance from Sodom",
             "\u29b7 Call\u2194Answer",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Wicked vs. Servants"
+            "Wicked vs. Servants",
+            "Individual Entities"
         ],
         "18874": [
             "(7\/7) Jehovah God of Israel",
@@ -38004,7 +38263,8 @@
             "Babylon \u21cc Universal",
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
-            "Zion Ideology"
+            "Zion Ideology",
+            "A National Entity"
         ],
         "18811": [
             "Assyria\u2019s Invasion of the Promised Land",
@@ -38349,7 +38609,8 @@
             "\u29b7 Destruction\u2194Strong Nation",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon \u21cc Universal"
+            "Babylon \u21cc Universal",
+            "A National Entity"
         ],
         "18003": [
             "Cyrus\u2019 Universal Conquests",
@@ -38807,7 +39068,8 @@
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon \u21cc Universal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "A National Entity"
         ],
         "18090": [
             "Cyrus\u2019 Universal Conquests",
@@ -38936,7 +39198,8 @@
             "The Davidic Monarchy",
             "\u24cd I Am the Lord, Your God",
             "Righteous Delivered",
-            "Chaos & Creation"
+            "Chaos & Creation",
+            "A Universal Entity"
         ],
         "18458": [
             "The Davidic Monarchy",
@@ -38973,7 +39236,8 @@
         ],
         "18491": [
             "The Davidic Monarchy",
-            "\u24cd A New Song"
+            "\u24cd A New Song",
+            "A Universal Entity"
         ],
         "18492": [
             "The Davidic Monarchy",
@@ -39254,7 +39518,8 @@
             "The Reign of the Judges",
             "\u29b7 My People\u2194Your Name",
             "\u24cd Announcing God\u2019s Kingdom",
-            "Prayers of Repentance"
+            "Prayers of Repentance",
+            "Individual Entities"
         ],
         "18885": [
             "The Reign of the Judges",
@@ -39601,7 +39866,8 @@
         ],
         "18444": [
             "\u24cd You Don\u2019t Know",
-            "\u29b7 Ch 40\u2194Chs 36\u201337"
+            "\u29b7 Ch 40\u2194Chs 36\u201337",
+            "A Universal Entity"
         ],
         "18449": [
             "\u24cd You Don\u2019t Know",
@@ -39609,7 +39875,8 @@
             "\u29b7 Prophet\u2194People",
             "3 Sons",
             "Israel\u2019s Rise and Fall",
-            "The Trial"
+            "The Trial",
+            "A Universal Entity"
         ],
         "18450": [
             "\u24cd You Don\u2019t Know",
@@ -40104,6 +40371,10 @@
             "Trouble at Home",
             "Exile Abroad",
             "Happy Homecoming",
+            "Remnant of Israel",
+            "A National Entity",
+            "A Universal Entity",
+            "Individual Entities",
             "Ugaritic",
             "Apostasy",
             "Judgment",
@@ -40426,6 +40697,10 @@
             "Trouble at Home",
             "Exile Abroad",
             "Happy Homecoming",
+            "Remnant of Israel",
+            "A National Entity",
+            "A Universal Entity",
+            "Individual Entities",
             "Ugaritic",
             "Apostasy",
             "Judgment",
@@ -40812,7 +41087,11 @@
         "Home, Exhile, Return": [
             "Trouble at Home",
             "Exile Abroad",
-            "Happy Homecoming"
+            "Happy Homecoming",
+            "Remnant of Israel",
+            "A National Entity",
+            "A Universal Entity",
+            "Individual Entities"
         ],
         "Ugaritic": [
             "Apostasy",

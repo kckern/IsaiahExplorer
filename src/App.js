@@ -305,7 +305,7 @@ class App extends Component {
   		this.clearTag();
   		return false;
   	}
-	 if(document.getElementById("searchbox")===document.activeElement && [38,40,35,36,45,46,33,34,9].indexOf(e.keyCode)===-1) return false;
+	 if(document.getElementById("searchbox")===document.activeElement && [37,39,35,36,46,9].indexOf(e.keyCode)!==-1) return false;
   	
   	if(e.keyCode === 13) {
   		e.preventDefault(); 
@@ -343,7 +343,7 @@ class App extends Component {
   	if(e.keyCode === 107 || e.keyCode === 187) {e.preventDefault();  return this.cycleTag(1);}
   	
   	//minus toggle
-  	if(e.keyCode === 109 || e.keyCode === 189) { e.preventDefault(); 
+  	if(e.keyCode === 111) { e.preventDefault(); 
     	if(this.state.tagMode) return this.clearTag();
     	else{
     		var recent = globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"];
