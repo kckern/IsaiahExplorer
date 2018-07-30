@@ -1315,7 +1315,7 @@ class App extends Component {
 		}
 		if(tagMeta.type==="")
 		{
-			if(source==="versebox" || source==="arrow" ) this.setState({selected_tag_block_index:null});
+			if(source==="versebox" || source==="arrow"  || source==="audio" ) this.setState({selected_tag_block_index:null});
 		}
 	 	return verses;
 	 }
