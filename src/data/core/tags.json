@@ -27880,11 +27880,14 @@
             {
                 "desc": "Those whom the text identifies as we (a local entity of Jehovah\u2019s people)",
                 "details": 0,
-                "verses": {
-                    "17656": 31
-                },
-                "ref": 1,
-                "oref": "Isaiah 24:l 6a"
+                "verses": [
+                    18112
+                ],
+                "ref": "24:16",
+                "oref": "Isaiah 24:16a",
+                "sub": {
+                    "18112": "a"
+                }
             },
             {
                 "desc": "anticipate nothing but treachery from the nations of the earth, from among whom they are gleaned",
@@ -32852,7 +32855,6 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Universal Salvation",
             "A National Entity"
         ],
         "17663": [
@@ -32865,8 +32867,7 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "17664": [
             "Destruction",
@@ -32880,8 +32881,7 @@
             "Covenant Curses",
             "Wicked Destroyed",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "17665": [
             "Forms of Speech",
@@ -32889,80 +32889,70 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17666": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17667": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17668": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17669": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17670": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17671": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17672": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17673": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17674": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17675": [
             "Forms of Speech",
@@ -32973,8 +32963,7 @@
             "Apostasy",
             "Threat",
             "Covenant Curses",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "18226": [
             "Forms of Speech",
@@ -33075,8 +33064,7 @@
             "Covenant Curses",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "18154": [
             "Forms of Speech",
@@ -33285,8 +33273,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17658": [
             "Forms of Speech",
@@ -33295,8 +33282,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "18565": [
             "Forms of Speech",
@@ -35234,8 +35220,7 @@
         "17656": [
             "Narrative Characters",
             "Visionaries",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "18073": [
             "Narrative Characters",
@@ -36610,8 +36595,7 @@
             "Allegiance",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "18030": [
             "Jehovah\u2019s End\u2013Time Servant",
@@ -36804,8 +36788,7 @@
             "Apostasy",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "17682": [
             "Jehovah\u2019s End\u2013Time Servant",
@@ -36818,8 +36801,7 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "18023": [
             "Jehovah\u2019s End\u2013Time Servant",
@@ -37402,8 +37384,7 @@
             "Covenant Curses",
             "Allegiance",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "18311": [
             "Ruin\u2014National",
@@ -37500,8 +37481,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17661": [
             "Ruin",
@@ -37509,8 +37489,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17683": [
             "Ruin",
@@ -37521,8 +37500,7 @@
             "Apostasy",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "17679": [
             "Rebirth",
@@ -37534,8 +37512,7 @@
             "Allegiance",
             "Zion Ideology",
             "Cumulative Themes I \u2013 IV",
-            "The Composite City",
-            "Universal Salvation"
+            "The Composite City"
         ],
         "18323": [
             "Rebirth",
@@ -37714,7 +37691,6 @@
             "Trouble at Home",
             "Old Jerusalem",
             "Cumulative Themes I \u2013 IV",
-            "Universal Salvation",
             "A National Entity"
         ],
         "18448": [
@@ -38156,8 +38132,7 @@
             "Apostasy",
             "Covenant Curses",
             "Allegiance",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "18121": [
             "The Tower of Babel",
@@ -38239,8 +38214,7 @@
             "Threat",
             "Old Jerusalem",
             "Zion Ideology",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17996": [
             "The Flood",
@@ -39575,15 +39549,13 @@
         "17684": [
             "\u29b7 Justice\u2194Punishments",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "17685": [
             "\u29b7 Justice\u2194Punishments",
             "Threat",
             "Old Jerusalem",
-            "Cumulative Themes I \u2013 IV",
-            "Universal Salvation"
+            "Cumulative Themes I \u2013 IV"
         ],
         "18097": [
             "\u24cd Transgression",
