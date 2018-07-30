@@ -340,7 +340,7 @@ class App extends Component {
   	
   	//TAGS 
   	//plus: cycle
-  	if(e.keyCode === 107) {e.preventDefault();  return this.cycleTag(1);}
+  	if(e.keyCode === 107 || e.keyCode === 187) {e.preventDefault();  return this.cycleTag(1);}
   	
   	//minus toggle
   	if(e.keyCode === 109 || e.keyCode === 189) { e.preventDefault(); 
@@ -352,7 +352,7 @@ class App extends Component {
     	}
   	}
   	//Numbkey nimus hebrew
-  	if(e.keyCode === 106 || e.keyCode === 187) { e.preventDefault(); 
+  	if(e.keyCode === 106 || e.keyCode === 220) { e.preventDefault(); 
 	  	if(!this.state.hebrewFax && this.state.hebrewMode) return this.clickElementID("seefax"); 
 	  	return this.clickElementID("hebIcon");
   	}
