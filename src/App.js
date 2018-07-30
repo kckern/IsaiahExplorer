@@ -321,25 +321,29 @@ class App extends Component {
   	if(e.keyCode === 40) {e.preventDefault(); return this.down();}
   	
   	//page up/down: cycle versions
-  	if(e.keyCode === 33) { e.preventDefault(); return this.cycleVersion(-1);}
-  	if(e.keyCode === 34) { e.preventDefault(); return this.cycleVersion(1); }
+  	if(e.keyCode === 33 || e.keyCode === 219) { e.preventDefault(); return this.cycleVersion(-1);}
+  	if(e.keyCode === 34 || e.keyCode === 221) { e.preventDefault(); return this.cycleVersion(1); }
   	//home end: cycle outlines
   	if(e.keyCode === 36) { e.preventDefault(); return this.cycleOutline(-1); }
-  	if(e.keyCode === 35) { e.preventDefault(); return this.cycleOutline(1); }
+  	if(e.keyCode === 35 || e.keyCode === 222) { e.preventDefault(); return this.cycleOutline(1); }
   	//ins/del: cycle structures
   	if(e.keyCode === 45) { e.preventDefault(); return this.cycleStructure(-1); }
   	if(e.keyCode === 46) { e.preventDefault(); return this.cycleStructure(1); }
   	
   	//tab: move to next section
   	if(e.keyCode === 9) {e.preventDefault();  return this.cycleSection(1);}
-  	//tab: move to next verse tag
-  	if(e.keyCode === 107) {e.preventDefault();  return this.cycleTag(1);}
+  	
   	
   	//tilda opens commentary
   	if(e.keyCode === 192) { e.preventDefault(); return this.clickElementID("commentary");}
   	
-  	//equal sign
-  	if(e.keyCode === 187) { e.preventDefault(); 
+  	
+  	//TAGS 
+  	//plus: cycle
+  	if(e.keyCode === 107) {e.preventDefault();  return this.cycleTag(1);}
+  	
+  	//minus toggle
+  	if(e.keyCode === 109 || e.keyCode === 189) { e.preventDefault(); 
     	if(this.state.tagMode) return this.clearTag();
     	else{
     		var recent = globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"];
@@ -348,7 +352,7 @@ class App extends Component {
     	}
   	}
   	//Numbkey nimus hebrew
-  	if(e.keyCode === 109) { e.preventDefault(); 
+  	if(e.keyCode === 106 || e.keyCode === 187) { e.preventDefault(); 
 	  	if(!this.state.hebrewFax && this.state.hebrewMode) return this.clickElementID("seefax"); 
 	  	return this.clickElementID("hebIcon");
   	}
