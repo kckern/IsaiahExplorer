@@ -2850,7 +2850,7 @@
             "cite": "",
             "type": "",
             "slug": "bible-project",
-            "next": "Chiastic Patterns",
+            "next": "Local Literary Designs",
             "prev": "Ugaritic 2"
         },
         "Judgement\u2014Jersualem": {
@@ -3253,7 +3253,7 @@
             "slug": "poems-announcing-gods-kingdom",
             "prev": "Prayers of Repentance"
         },
-        "Chiastic Patterns": {
+        "Local Literary Designs": {
             "parents": [
                 "Structures",
                 "root"
@@ -3262,12 +3262,12 @@
             "details": "",
             "cite": "Adapted from Murai, Hajime. \"Literary Structure of the Bible.\"",
             "type": "",
-            "slug": "chiastic-patterns",
+            "slug": "local-literary-designs",
             "prev": "Bible Project"
         },
         "\u24cd Useless Rituals": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3280,7 +3280,7 @@
         },
         "\u29b7 Justice\u2194Punishments": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3294,7 +3294,7 @@
         },
         "\u29b7 High\/low\u2194Terror of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3308,7 +3308,7 @@
         },
         "\u24cd Judgement of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3322,7 +3322,7 @@
         },
         "\u24cd Jerusalem": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3336,7 +3336,7 @@
         },
         "\u29b7 A Vineyard\u2194Judgement": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3350,7 +3350,7 @@
         },
         "\u29b7 Woe\u2194Therefore": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3364,7 +3364,7 @@
         },
         "\u24cd Attacks": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3378,7 +3378,7 @@
         },
         "\u24cd Sending": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3392,7 +3392,7 @@
         },
         "\u24cd Asking for a Sign": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3406,7 +3406,7 @@
         },
         "\u24cd With Us Is God": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3420,7 +3420,7 @@
         },
         "\u29b7 Darkness\u2194Glory": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3434,7 +3434,7 @@
         },
         "\u29b7 To Eat\u2194Orphans\/widows": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3448,7 +3448,7 @@
         },
         "\u24cd Punishment": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3462,7 +3462,7 @@
         },
         "\u29b7 Escape\u2194Judgement of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3476,7 +3476,7 @@
         },
         "\u29b7 Stump\u2194Root": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3490,7 +3490,7 @@
         },
         "\u24cd Saving Waters": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3504,7 +3504,7 @@
         },
         "\u24cd Coming Day of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3518,7 +3518,7 @@
         },
         "\u24cd Lucifer": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3532,7 +3532,7 @@
         },
         "\u29b7 Philistia\u2194Salvation": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3546,7 +3546,7 @@
         },
         "\u24cd Salvation of Moab": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3560,7 +3560,7 @@
         },
         "\u29b7 Glory As the Israelites\u2194Branches": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3574,7 +3574,7 @@
         },
         "\u24cd Overwatching God": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3588,7 +3588,7 @@
         },
         "\u29b7 Destruction\u2194Strong Nation": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3602,7 +3602,7 @@
         },
         "\u24cd Egyptian Drought": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3616,7 +3616,7 @@
         },
         "On That Day": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3630,7 +3630,7 @@
         },
         "\u24cd Walking Naked and Barefoot": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3644,7 +3644,7 @@
         },
         "\u24cd A Chariot, a Pair of Horses": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3658,7 +3658,7 @@
         },
         "\u29b7 The Oracles\u2194The End Will Come": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3672,7 +3672,7 @@
         },
         "\u24cd The Day of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3686,7 +3686,7 @@
         },
         "\u24cd Expulsion \/ Glory": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3700,7 +3700,7 @@
         },
         "\u24cd Divine Plan": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3714,7 +3714,7 @@
         },
         "\u24cd Transgression": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3728,7 +3728,7 @@
         },
         "\u24cd Sins": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3742,7 +3742,7 @@
         },
         "\u24cd The Sound of Terror": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3756,7 +3756,7 @@
         },
         "\u24cd Judgement and Glory": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3770,7 +3770,7 @@
         },
         "\u24cd Tears Wiped": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3784,7 +3784,7 @@
         },
         "\u24cd Peace": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3798,7 +3798,7 @@
         },
         "\u24cd Atonement": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3812,7 +3812,7 @@
         },
         "\u24cd Blooms": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3826,7 +3826,7 @@
         },
         "\u29b7 Teach\u2194Command": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3840,7 +3840,7 @@
         },
         "\u24cd Covenant With Death": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3854,7 +3854,7 @@
         },
         "\u24cd Instruction of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3868,7 +3868,7 @@
         },
         "\u24cd Visited by the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3882,7 +3882,7 @@
         },
         "\u24cd Sealed Scroll": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3896,7 +3896,7 @@
         },
         "\u29b7 The Wicked\u2194The Holy One": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3910,7 +3910,7 @@
         },
         "\u24cd To Take Refuge in Egypt\u2019s Shadow": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3924,7 +3924,7 @@
         },
         "\u24cd The Words of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3938,7 +3938,7 @@
         },
         "\u24cd To Defile Idols": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3952,7 +3952,7 @@
         },
         "\u24cd The Mountain of the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3966,7 +3966,7 @@
         },
         "\u29b7 Look Not\u2194Utterly Deserted": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3980,7 +3980,7 @@
         },
         "\u24cd Complacent": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -3994,7 +3994,7 @@
         },
         "\u24cd Hear What I Have Done": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4008,7 +4008,7 @@
         },
         "\u24cd Vengeance": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4022,7 +4022,7 @@
         },
         "\u24cd Recovery": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4036,7 +4036,7 @@
         },
         "\u29b7 Messages to Hezekiah": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4050,7 +4050,7 @@
         },
         "\u24cd Song of Hezekiah": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4064,7 +4064,7 @@
         },
         "\u24cd A Voice Cries": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4078,7 +4078,7 @@
         },
         "\u24cd You Don\u2019t Know": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4092,7 +4092,7 @@
         },
         "\u24cd I Am the Lord, Your God": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4106,7 +4106,7 @@
         },
         "\u24cd A New Song": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4120,7 +4120,7 @@
         },
         "\u24cd I Am the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4134,7 +4134,7 @@
         },
         "\u24cd Idolatry": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4148,7 +4148,7 @@
         },
         "\u24cd Woe": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4162,7 +4162,7 @@
         },
         "\u24cd Creation by the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4176,7 +4176,7 @@
         },
         "\u24cd Evils": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4190,7 +4190,7 @@
         },
         "\u24cd Hidden Events.": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4204,7 +4204,7 @@
         },
         "\u29b7 To Listen\u2194Babylon": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4218,7 +4218,7 @@
         },
         "\u24cd My Reward Is With the Lord": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4232,7 +4232,7 @@
         },
         "\u24cd Gathering": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4246,7 +4246,7 @@
         },
         "\u24cd Upholding": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4260,7 +4260,7 @@
         },
         "\u24cd Awake": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4274,7 +4274,7 @@
         },
         "\u24cd Love": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4288,7 +4288,7 @@
         },
         "\u24cd Equality to the Gentiles": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4302,7 +4302,7 @@
         },
         "\u29b7 Enter Into Peace\u2194No Peace": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4316,7 +4316,7 @@
         },
         "\u24cd Consciousness of Sins": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4330,7 +4330,7 @@
         },
         "\u24cd Glory": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4344,7 +4344,7 @@
         },
         "\u24cd Everlasting": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4353,12 +4353,26 @@
             "cite": "Adapted from Murai, Hajime. \"Literary Structure of the Bible.\"",
             "type": "chiasm",
             "slug": "everlasting",
-            "next": "\u29b7 Silence\u2194Not to Be Forsaken",
+            "next": "\u29b7 Jerusalem\u2194Forsaken",
             "prev": "\u24cd Glory"
+        },
+        "\u29b7 Jerusalem\u2194Forsaken": {
+            "parents": [
+                "Local Literary Designs",
+                "Structures",
+                "root"
+            ],
+            "description": "",
+            "details": "",
+            "cite": "Adapted from Murai, Hajime. \"Literary Structure of the Bible.\"",
+            "type": "parallel",
+            "slug": "jerusalem-forsaken",
+            "next": "\u29b7 Silence\u2194Not to Be Forsaken",
+            "prev": "\u24cd Everlasting"
         },
         "\u29b7 Silence\u2194Not to Be Forsaken": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4368,11 +4382,11 @@
             "type": "parallel",
             "slug": "silence-not-to-be-forsaken",
             "next": "\u29b7 My People\u2194Your Name",
-            "prev": "\u24cd Everlasting"
+            "prev": "\u29b7 Jerusalem\u2194Forsaken"
         },
         "\u29b7 My People\u2194Your Name": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4386,7 +4400,7 @@
         },
         "\u29b7 Call\u2194Answer": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4400,7 +4414,7 @@
         },
         "\u24cd Satisfaction": {
             "parents": [
-                "Chiastic Patterns",
+                "Local Literary Designs",
                 "Structures",
                 "root"
             ],
@@ -4409,21 +4423,7 @@
             "cite": "Adapted from Murai, Hajime. \"Literary Structure of the Bible.\"",
             "type": "chiasm",
             "slug": "satisfaction",
-            "next": "\u29b7 Jerusalem\u2194Forsaken",
             "prev": "\u29b7 Call\u2194Answer"
-        },
-        "\u29b7 Jerusalem\u2194Forsaken": {
-            "parents": [
-                "Chiastic Patterns",
-                "Structures",
-                "root"
-            ],
-            "description": "",
-            "details": "",
-            "cite": "Adapted from Murai, Hajime. \"Literary Structure of the Bible.\"",
-            "type": "parallel",
-            "slug": "jerusalem-forsaken",
-            "prev": "\u24cd Satisfaction"
         }
     },
     "tagStructure": {
@@ -28142,7 +28142,7 @@
             "Three Tests",
             "Ugaritic 2",
             "Bible Project",
-            "Chiastic Patterns"
+            "Local Literary Designs"
         ],
         "Bifid": [
             "Bifid I",
@@ -28421,7 +28421,7 @@
             "\u24cd Narrative Structure",
             "\u24cd Announcing God\u2019s Kingdom"
         ],
-        "Chiastic Patterns": [
+        "Local Literary Designs": [
             "\u24cd Useless Rituals",
             "\u29b7 Justice\u2194Punishments",
             "\u29b7 High\/low\u2194Terror of the Lord",
@@ -28500,11 +28500,11 @@
             "\u24cd Consciousness of Sins",
             "\u24cd Glory",
             "\u24cd Everlasting",
+            "\u29b7 Jerusalem\u2194Forsaken",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
-            "\u24cd Satisfaction",
-            "\u29b7 Jerusalem\u2194Forsaken"
+            "\u24cd Satisfaction"
         ]
     },
     "verseTagIndex": {
@@ -40446,7 +40446,7 @@
             "Wicked vs. Servants",
             "Prayers of Repentance",
             "Poems Announcing God\u2019s Kingdom",
-            "Chiastic Patterns",
+            "Local Literary Designs",
             "\u24cd Useless Rituals",
             "\u29b7 Justice\u2194Punishments",
             "\u29b7 High\/low\u2194Terror of the Lord",
@@ -40525,11 +40525,11 @@
             "\u24cd Consciousness of Sins",
             "\u24cd Glory",
             "\u24cd Everlasting",
+            "\u29b7 Jerusalem\u2194Forsaken",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
-            "\u24cd Satisfaction",
-            "\u29b7 Jerusalem\u2194Forsaken"
+            "\u24cd Satisfaction"
         ],
         "Textual Compositions": [
             "Narrative Characters",
@@ -40723,7 +40723,7 @@
             "Wicked vs. Servants",
             "Prayers of Repentance",
             "Poems Announcing God\u2019s Kingdom",
-            "Chiastic Patterns",
+            "Local Literary Designs",
             "\u24cd Useless Rituals",
             "\u29b7 Justice\u2194Punishments",
             "\u29b7 High\/low\u2194Terror of the Lord",
@@ -40802,11 +40802,11 @@
             "\u24cd Consciousness of Sins",
             "\u24cd Glory",
             "\u24cd Everlasting",
+            "\u29b7 Jerusalem\u2194Forsaken",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
-            "\u24cd Satisfaction",
-            "\u29b7 Jerusalem\u2194Forsaken"
+            "\u24cd Satisfaction"
         ],
         "Bifid": [
             "Bifid I",
@@ -41213,7 +41213,7 @@
             "Prayers of Repentance",
             "Poems Announcing God\u2019s Kingdom"
         ],
-        "Chiastic Patterns": [
+        "Local Literary Designs": [
             "\u24cd Useless Rituals",
             "\u29b7 Justice\u2194Punishments",
             "\u29b7 High\/low\u2194Terror of the Lord",
@@ -41292,11 +41292,11 @@
             "\u24cd Consciousness of Sins",
             "\u24cd Glory",
             "\u24cd Everlasting",
+            "\u29b7 Jerusalem\u2194Forsaken",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
-            "\u24cd Satisfaction",
-            "\u29b7 Jerusalem\u2194Forsaken"
+            "\u24cd Satisfaction"
         ]
     },
     "superRefs": {
