@@ -358,8 +358,8 @@ class App extends Component {
   	}
 
   	
+  	if(e.keyCode === 32 && this.state.commentaryAudioMode) { e.preventDefault(); return  this.setState({commentaryAudioMode:true},this.clickElementID("audio_commentary"));}
   	if(e.keyCode === 32 && !this.state.searchMode && !this.state.preSearchMode) { e.preventDefault(); return this.clickElementID("audio_verse");}
-  	if(e.keyCode === 32 && this.state.commentaryAudioMode) { e.preventDefault(); return this.clickElementID("audio_commentary");}
   	
   	if(!this.state.preSearchMode && !this.state.searchMode && e.keyCode >= 65 && e.keyCode <= 90)
   	{
