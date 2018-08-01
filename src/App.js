@@ -352,7 +352,7 @@ class App extends Component {
     	}
   	}
   	//Numbkey nimus hebrew
-  	if(e.keyCode === 106 || e.keyCode === 220) { e.preventDefault(); 
+  	if(e.keyCode === 106) { e.preventDefault(); 
 	  	if(!this.state.hebrewFax && this.state.hebrewMode) return this.clickElementID("seefax"); 
 	  	return this.clickElementID("hebIcon");
   	}
