@@ -9,16 +9,17 @@ export default class Audio extends Component {
 	
 	render()
 	{
+		
 		if(this.props.app.state.audioState===null) return null;
-		if(this.props.app.state.commentaryAudioMode) return <AudioCommentary app={this.props.app} />
-		return <AudioVerse app={this.props.app} />
+		if(this.props.app.state.commentaryAudioMode) return <AudioCommentaryPlayer app={this.props.app} />
+		return <AudioVersePlayer app={this.props.app} />
 		
 	}
 	
 }
 	
 
-class AudioVerse extends Component {
+class AudioVersePlayer extends Component {
 	
 	
 	audioPointer=0;
@@ -29,7 +30,6 @@ class AudioVerse extends Component {
 	}
 	render()
 	{
-		
 		if(globalData.meta.version[this.props.app.state.version].audio!==1 && !this.props.app.state.version.hebrewMode) return null;
 		
 		//Queue Management
@@ -72,7 +72,7 @@ class AudioVerse extends Component {
 		return [<ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
-			key={1}
+			key={11}
 			url={url}
 			playing={true} 
 			onStart={onStart}
@@ -80,7 +80,7 @@ class AudioVerse extends Component {
 		/>,<ReactPlayer  className='react-player'
           	width='0%'
           	height='0%'
-			key={2}
+			key={12}
 			url={next_url}
 			playing={true}
 			volume={0}
@@ -91,7 +91,7 @@ class AudioVerse extends Component {
 }
 
 
-class AudioCommentary extends Component {
+class AudioCommentaryPlayer extends Component {
 	
 	
 	lookupVerses(verses)
@@ -162,10 +162,11 @@ class AudioCommentary extends Component {
 		  	this.props.app.setActiveVerse(next,undefined,undefined,undefined,"comaudio");
 		}
 		
+		console.log(url,next_url,this);
 		return [<ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
-			key={1}
+			key={21}
 			url={url}
 			playing={true} 
 			onStart={onStart}
@@ -173,7 +174,7 @@ class AudioCommentary extends Component {
 		/>,<ReactPlayer  className='react-player'
           	width='0%'
           	height='0%'
-			key={2}
+			key={22}
 			url={next_url}
 			playing={true}
 			volume={0}

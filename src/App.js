@@ -1127,7 +1127,7 @@ class App extends Component {
   	
   	var audioState = this.state.audioState;
   	if(audioState==="playing" && !this.state.commentaryAudioMode ) audioState = "loading";
-  	if(globalData.meta.version[this.state.version].audio!==1) audioState = null;
+  	if(globalData.meta.version[this.state.version].audio!==1  && !this.state.commentaryAudioMode ) audioState = null;
   	
   	outline 	= outline 	=== undefined ? this.state.outline 		: outline;
   	structure 	= structure === undefined ? this.state.structure 	: structure;
