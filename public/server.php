@@ -1,5 +1,28 @@
 <?
 
+require_once( "/var/www/kckern.info/core/bootstrap.php");
+
+$pattern = "/^(\/[^\/]+)(\/[^\/]+)(\/[^\/]+)(\/tag.[^\/]+)*(\/search.[^\/]+)*(\/hebrew.[0-9]+)*(\/[0-9]+)(\/[0-9]+)(\/commentary.[^\/]+)*(\/[0-9]+)*/i";
+
+preg_match_all($pattern,$_SERVER['REQUEST_URI'],$matches);
+
+
+$structure 	= substr($matches[1][0], 1);
+$outline 	= substr($matches[2][0], 1);
+$version 	= substr($matches[3][0], 1);
+$tag 		= substr($matches[4][0], 1);
+$search 	= substr($matches[5][0], 1);
+$hebrew 	= substr($matches[6][0], 1);
+$chapter 	= substr($matches[7][0], 1);
+$verse  	= substr($matches[8][0], 1);
+$comment  	= substr($matches[9][0], 1);
+$commid  	= substr($matches[10][0], 1);
+
+
+$r = scriptures::lookup("Isaiah $chapter:$verse",["version"=>["$version"=>"$outline"]]);
+
+//puke($r);
+
 
 $ref = "Isaiah 45:12";
 $heading = "The Mountain of the Lord";
