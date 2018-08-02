@@ -386,14 +386,15 @@ class TagParallel extends Component {
 		
 	componentDidMount(){
 		
+		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
 		if(document.getElementById("text").querySelectorAll(".versebox_highlighted").length===0) return false;
     	document.getElementById("text").querySelectorAll(".versebox_highlighted")[0].parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling.scrollIntoView();
 
     	for(var i=1; i<=[document.getElementById("parTable").getAttribute('count')].map(Number)[0]; i++ )
     	{
-    		var left 	=	document.getElementById(i+"content").querySelectorAll("td>div")[0].offsetHeight;
-    		var right 	=	document.getElementById(i+"content").querySelectorAll("td>div")[1].offsetHeight;
-    		if(left>144 || right>144)  document.getElementById(i+"content").className = "row parallel_mini";
+    		var left 	=	document.getElementById(i+"content"+tagstr).querySelectorAll("td>div")[0].offsetHeight;
+    		var right 	=	document.getElementById(i+"content"+tagstr).querySelectorAll("td>div")[1].offsetHeight;
+    		if(left>144 || right>144)  document.getElementById(i+"content"+tagstr).className = "row parallel_mini";
     		else this.readMore(i)
     	}
 	}
@@ -406,16 +407,19 @@ class TagParallel extends Component {
  
  	readMore(i)
  	{
- 		var element = document.getElementById(i+"readMore");
- 		element.parentNode.removeChild(element);
- 		document.getElementById(i+"content").className = "row";
+		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
+ 		var element = document.getElementById(i+"readMore"+tagstr);
+ 		element.style.display = 'none';
+ 		document.getElementById(i+"content"+tagstr).className = "row";
+ 
  	}
  
 	render()
 	{
+		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
 		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
 		var tagStructure = globalData['tags']['tagStructure'][this.props.app.state.selected_tag];
-		var items = [];
+		const items = [];
 		for(var i = 1; i<=Object.keys(tagStructure).length/2; i++ )
 		{
 
@@ -452,7 +456,7 @@ class TagParallel extends Component {
 			
 			
 			items.push([
-		            <tr className="metaref" key={i+"i"} onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
+		            <tr className="metaref" id={i+"i"+tagstr} key={i+"i"} onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
 		              <td>
 		              	{left_label}
 		                <div className="ref">{tagStructure[i+"A"].ref}</div>
@@ -462,20 +466,20 @@ class TagParallel extends Component {
 		                <div className="ref">{tagStructure[i+"B"].ref}</div>
 		              </td>
 		            </tr>,
-		            <tr className={classes.join(" ")} key={i+"ii"}  onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
+		            <tr className={classes.join(" ")} id={i+"ii"+tagstr} key={i+"ii"}  onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
 		              <td>{l_desc}</td>
 		              <td>{r_desc}</td>
 		            </tr>
 		            ,
-		            <tr id={i+"content"} className="row" key={i+"iii"} onMouseEnter={()=>this.props.app.highlightTaggedVerses(verses)}>
+		            <tr id={i+"content"+tagstr} className="row" key={i+"iii"} onMouseEnter={()=>this.props.app.highlightTaggedVerses(verses)}>
 		              <td>
-						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"A"].verses} sub={tagStructure[i+"A"].sub} highlights={l_highlights} />
+						<Passage wrapperId={i+"AA"+tagstr} plain={1} app={this.props.app} verses={tagStructure[i+"A"].verses} sub={tagStructure[i+"A"].sub} highlights={l_highlights} />
 					  </td>
 		              <td>
-						<Passage plain={1} app={this.props.app} verses={tagStructure[i+"B"].verses} sub={tagStructure[i+"B"].sub} highlights={r_highlights} />
+						<Passage wrapperId={i+"BB"+tagstr} plain={1} app={this.props.app} verses={tagStructure[i+"B"].verses} sub={tagStructure[i+"B"].sub} highlights={r_highlights} />
 					  </td>
 		            </tr>,
-		            <tr key={i+"iv"} id={i+"readMore"} className="readmore" onClick={()=>this.readMore(index)}><td colSpan={2}>Read More...</td></tr>
+		            <tr key={i+"iv"+tagstr} id={i+"readMore"+tagstr} className="readmore" onClick={()=>this.readMore(index)}><td colSpan={2}>Read More...</td></tr>
 				]);
 		}
 
@@ -498,7 +502,7 @@ class TagParallel extends Component {
 		      <div id="text" className={classes.join(" ")} style={{overflowY: 'scroll'}}>
 		        {details}
 		        <table className="parallel" id="parTable" count={items.length}>
-		          <tbody>
+		          <tbody id={tagstr}>
 		            {items}
 		          </tbody>
 		        </table>

@@ -10,7 +10,7 @@
     "html-react-parser": "^0.4.6",
     "jsoncomp": "^1.6.1",
     "pako": "^1.0.6",
-    "react": "^16.4.1",
+    "react": "^16.4.2",
     "react-device-detect": "^1.5.8",
     "react-dom": "^16.4.1",
     "react-player": "^1.6.4",
