@@ -306,7 +306,7 @@ div#version_meta.meta.visible
 }
 
 div.verse_grid,
-h1,h2,h3,h4,h5
+h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.verse_info_box ,.readmore, #seefax
 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
