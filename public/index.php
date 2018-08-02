@@ -8,11 +8,14 @@ if(
 
 	echo file_get_contents("mobile.html"); exit;
 }
-
-if (
+if(preg_match("/^\/cover/ui",$_SERVER['REQUEST_URI']))
+{
+	require("image.php"); exit;
+}
+else if (
     stripos($useragent, "facebookexternalhit/") !== false ||          
     stripos($useragent, "Facebot") !== false ||          
-    stripos($useragent, "twitter") !== false
+    stripos($useragent, "twitter") !== false 
 ) {
     // it is probably Facebook's bot
     require("server.php");
