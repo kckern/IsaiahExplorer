@@ -379,7 +379,13 @@ class App extends Component {
   {
   	var el = document.getElementById(id);
   	if(el===null) return false;
-  	el.click();
+	try {
+	    el.click();
+	}
+	catch(err) {
+	    return false;
+	}
+  	
   }
   
   cycleSection(incr)
@@ -477,7 +483,7 @@ class App extends Component {
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_next");
   	//if tag, hit next tag button
-  	if(this.state.selected_tag!==null) return this.clickElementID("tag_next");
+  	if(this.state.selected_tag!==null){ debugger; return this.clickElementID("tag_next"); }
   	//if search do nothing
   	if(this.state.searchMode) return false;
   	//if normal move outline
