@@ -287,7 +287,8 @@ class App extends Component {
 	    if(settings.selected_tag !== undefined && settings.selected_tag !== null) callback = this.setActiveTag.bind(this,settings.selected_tag,true);
 	    if(settings.searchQuery !== undefined && settings.searchQuery !== null) callback = this.search.bind(this,settings.searchQuery,true);
 	    if(settings.hebrewStrongIndex !== undefined) callback = this.searchHebrewWord.bind(this,settings.hebrewStrongIndex,true);
-	    
+	    //var g = globalData;   debugger;
+	  
   		this.setState(settings,callback); // 17656
   		
   		

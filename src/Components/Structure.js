@@ -194,6 +194,7 @@ class StructureMeta extends Component {
      var entries = this.props.app.state.top_structures.slice(0); for(var i in globalData["meta"]["structure"]) if(entries.indexOf(i)<0) entries.push(i); 
 	    const options = entries.map(
       (shortcode, optionKey) => {
+      	
         return (
           <StructureOption
             app={this.props.app}
@@ -217,6 +218,7 @@ class StructureMeta extends Component {
 
 class StructureOption extends Component {
   render() {
+  	if(this.props.option===undefined) return null;
     var classes = ["option"];
     if (this.props.optionKey === 0) classes.push("first top");
     else if (this.props.optionKey < 5) classes.push("top");
