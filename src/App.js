@@ -787,10 +787,22 @@ class App extends Component {
 	var count = grids.length;
 	var sum_height = 0; for (var i=0; i < count; i++) { sum_height +=grids[i].offsetHeight}
 	var box_height = outline.getBoundingClientRect().height;
+	var hs = outline.querySelectorAll("h4,h5");
+	for(var x = 0; x<=hs.length; x++) box_height = box_height-this.outerHeight(hs[x]);
 	var val = (box_height-sum_height-10)/count;
 	if(box_height<sum_height){	val=0;	}
     for (i=0; i < count; i++) { grids[i].style.marginBottom = val+"px";}
   }
+  
+  outerHeight(el) {
+  	if(el===undefined) return 0;
+  var height = el.offsetHeight;
+  var style = getComputedStyle(el);
+
+  height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+  return height+0;
+	}
+  
   
   tagOverflow()
   {

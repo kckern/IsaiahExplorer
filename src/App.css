@@ -544,6 +544,53 @@ span#drarrow
  	letter-spacing:-0.5px;
  }
 
+ div#outline h4
+ {
+	margin:0;
+	font-size:18px;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align:center;
+	background-color:#DDD;
+	border-top:2px solid #999;
+	color:#999;
+	border-bottom:1px dotted #999;
+	width:100%;
+	white-space:nowrap;
+ }
+  div#outline h4:first-child
+  {
+  	margin-top:0;
+	border-top:0;
+  }
+ 
+ div#outline h5
+ {
+	font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+	margin:0;
+	font-size:13px;
+	letter-spacing:2px;
+	line-height:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	text-align:center;
+	background-color:#DDD;
+	border-top:2px solid #999;
+	color:#999;
+	border-bottom:1px dotted #999;
+	width:100%;
+	color:#333;
+ }
+
+
+ div#outline h4 + h5
+ {
+ 	
+  	margin-top:-10px;
+	border-top:0;
+ }
+
+
  div#outline h3 span
  {
  	float:right;

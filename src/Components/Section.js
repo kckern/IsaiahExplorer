@@ -112,21 +112,51 @@ class Outline extends Component {
   render() {
   	
   	var outline = globalData["outlines"][this.props.app.state.outline];
+  	var sections = globalData["structures"];
+  	var section_index =  globalData["structureIndex"];
   	var headings = [];
+  	var lastheading = null;
+  	var lastunit = null;
   	for(var x in outline)
   	{
   		var heading = outline[x];
   		if(this.isInSection(heading) && this.isInTagRange(heading) && this.isInSearchRange(heading))
+  		{
+  			var section_i = parseInt(section_index[heading.verses[0]][this.props.app.state.structure],0);
+  			var section = sections[this.props.app.state.structure][section_i];
+  			if(section_i!==lastheading)
+  			{
+  			headings.push(<h4 key={"h"+x}>{section.description}</h4>);
+  			lastunit = null;
+  			}
+  			
+  			if(section.verses.length>1)
+  			{
+  				for(var y in section.verses)
+  				{
+  					if(section.verses[y].indexOf(heading.verses[0]) >= 0  && y!==lastunit)
+  					{
+  						headings.push(<h5 key={"u"+x}>Unit {parseInt(y,0)+1}</h5>);
+  						lastunit = y;
+  					}
+  				}
+  				
+  			}
+  			
   			headings.push(<Heading
                   app={this.props.app}
                   heading={heading}
                   id={x}
                   key={x}
                 />);
+                
+  			lastheading = section_i+0;
+  		}
   	}
   	
   	if(headings.length===0)
   	{
+  		
 	  	for( x in outline)
 	  	{
 	  		 heading = outline[x];
