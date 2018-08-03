@@ -418,6 +418,8 @@ class App extends Component {
 	else
 	{
 		el = document.querySelectorAll("#hebrew_text span.active")[0];
+		if(el===undefined || el===null) return false;
+		if(el.previousElementSibling===undefined || el.previousElementSibling===null) return false;
 		if(typeof el === "object") el = el.previousElementSibling.previousElementSibling;
 	}
   	if(typeof el !== "object") el = document.querySelectorAll("#hebrew_text span")[0];
