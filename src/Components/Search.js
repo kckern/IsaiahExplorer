@@ -142,6 +142,9 @@ export class SearchResults extends Component {
 		{
 			reference = this.props.app.getReference(verses);
 			reference = <div className="SearchReference">{reference}</div>
+			
+			if(groups[k].length===1) reference=null;
+			if(verses.length>100) reference=null;
 		}
 
     return (
