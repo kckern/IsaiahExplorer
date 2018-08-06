@@ -65,7 +65,20 @@ class AudioVersePlayer extends Component {
 		  	{
 		  		return this.props.app.setState({  audioState:null },this.props.app.setUrl.bind(this.props.app));
 		  	}
-		  	else this.props.app.setActiveVerse(next,undefined,undefined,undefined,"audio");
+		  	else{
+		  		
+		  		  	var index = -1
+				  	var next = 0;
+					for(var pointer = this.props.app.arrowPointer; index===-1 && pointer>=0; pointer--)
+						index = this.props.app.state.highlighted_verse_range.indexOf(this.props.app.state.active_verse_id,pointer);
+					index++;
+					if(index>=this.props.app.state.highlighted_verse_range.length) index = 0;
+					next = this.props.app.state.highlighted_verse_range[index]; 
+					this.props.app.arrowPointer = index;
+		  		
+		  			this.props.app.setActiveVerse(next,undefined,undefined,undefined,"audio");
+		  		
+		  	} 
 		  	
 		}
 		

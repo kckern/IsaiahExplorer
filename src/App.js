@@ -1140,6 +1140,8 @@ class App extends Component {
   	if(source==="versebox" || source==="arrow" ) allCollapsed=false;
   	else this.floater = {};
   	
+  	if(source!=="arrow" && source!=="audio") this.arrowPointer=null;
+  	
   	var commentary_audio_verse_range = this.state.commentary_audio_verse_range;
   	if(source==="comaudio") commentary_audio_verse_range=[];
   	

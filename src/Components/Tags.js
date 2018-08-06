@@ -121,9 +121,6 @@ export class TaggedHeading extends Component {
 				<div className="tagtitle">
 					<img src={tag_png} alt="tag"/>
 					<span>{key_tag}</span>
-					<span className="debug"> Index:{this.props.app.state.selected_tag_block_index}</span>
-					<span className="debug"> Point:{this.props.app.arrowPointer}</span>
-					<span className="debug"> Mouse:{this.props.app.state.mouseBlockIndex}</span>
 				</div>
 			</div>
 			)
@@ -311,7 +308,13 @@ class TagBlocks extends Component {
 		this.props.app.setState({allCollapsed:false,selected_tag_block_index:this.active_block_index},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
 	}
 	
-	
+	getAllIndexes(arr, val) {
+    var indexes = [], i = -1;
+    while ((i = arr.indexOf(val, i+1)) !== -1){
+        indexes.push(i);
+    }
+    return indexes;
+}
 
 	render()
 	{
@@ -332,34 +335,25 @@ class TagBlocks extends Component {
  		const app = this.props.app;
  		var done = false;
  		
- 		var blockverses = [];
- 		var inblocks = {};
- 		for(var x in entries)
+ 		
+ 		var pointerTagBlockIndex = null;
+ 		if(app.arrowPointer!==null && app.arrowPointer!==undefined)
  		{
- 			blockverses.push(entries[x].verses);
- 			if(entries[x].verses.indexOf(app.state.active_verse_id)>-1) inblocks[x] = [1+entries[x].verses.indexOf(app.state.active_verse_id),entries[x].verses.length];
+		 		var inblocks = []
+		 		for(var x in entries)
+		 		{
+		 			if(entries[x].verses.indexOf(app.state.active_verse_id)>-1) 
+		 			inblocks.push(parseInt(x,0));
+		 		}
+		 		var all_verses = app.state.highlighted_verse_range;
+		 		var verse_indeces = this.getAllIndexes(all_verses,app.state.active_verse_id);
+		 		var pointer = app.arrowPointer;
+		 		var instanceIndex = verse_indeces.indexOf(pointer);
+		 		pointerTagBlockIndex = inblocks[instanceIndex];
+		 		
  		}
+		const forceIndex = pointerTagBlockIndex;
  		
-		 		console.log("==============");
- 		console.log("Active ID: "+app.state.active_verse_id);
- 		console.log(blockverses);
- 		console.log(inblocks);
- 		
- 		//determine which block you are in
- 		if(document.querySelector(".verses.active")!==null)
- 		{
- 		
- 			console.log("which one is currently open?");
- 			var openedIndex = document.querySelector(".verses.active").parentElement.getAttribute("index");
- 			console.log(openedIndex);
- 			
- 			
- 			console.log("Where in the block is the cursor?");
- 			console.log(inblocks[openedIndex]);
- 			
- 			//where was it last?
- 		}
-
  		
 		var blocks = entries.map((entry,key)=>{
 			
@@ -368,9 +362,13 @@ class TagBlocks extends Component {
 			var isFloater = false;
 			
 			var details = null;
+			
+			var selected_tag_block_index = app.state.selected_tag_block_index;
+			if(forceIndex!==null) selected_tag_block_index = forceIndex;
+			
 			if(app.state.allCollapsed!==true && done===false){
-				if(app.state.selected_tag_block_index===key || (
-					entry.verses.indexOf(app.state.active_verse_id)>-1 && app.state.selected_tag_block_index===null
+				if(selected_tag_block_index===key || (
+					entry.verses.indexOf(app.state.active_verse_id)>-1 && selected_tag_block_index===null
 					)){
 						
 						done = true;
