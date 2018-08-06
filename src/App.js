@@ -34,6 +34,7 @@ class App extends Component {
     
     settings: null,
     
+    mouseBlockIndex: null,
     selected_verse_id: null,
     active_verse_id: null,
     selected_tag: null,
@@ -1693,6 +1694,7 @@ class App extends Component {
 			tagMode: 		tagMode,
     		searchMode: false,
     		hebrewMode: false,
+    		mouseBlockIndex: null,
     		refSearch:false,
     		hebrewSearch: false,
     		preSearchMode: false,

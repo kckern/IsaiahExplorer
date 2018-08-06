@@ -121,6 +121,9 @@ export class TaggedHeading extends Component {
 				<div className="tagtitle">
 					<img src={tag_png} alt="tag"/>
 					<span>{key_tag}</span>
+					<span className="debug"> Index:{this.props.app.state.selected_tag_block_index}</span>
+					<span className="debug"> Point:{this.props.app.state.arrowPointer}</span>
+					<span className="debug"> Mouse:{this.props.app.state.mouseBlockIndex}</span>
 				</div>
 			</div>
 			)
@@ -275,6 +278,10 @@ class TagTreeLeaf extends Component {
 class TagBlocks extends Component {
 	
 
+	  constructor(props) {
+	 super(props);
+	    this.active_block_index = null
+  	}
 
 	handleDescClick(verseId,classes,index)
 	{
@@ -286,7 +293,7 @@ class TagBlocks extends Component {
 		else
 		{
 			
-			this.props.app.setState({allCollapsed:true}, this.props.app.checkFloater.bind(this.props.app));
+			this.props.app.setState({allCollapsed:true,selected_tag_block_index:null}, this.props.app.checkFloater.bind(this.props.app));
 		}
 	}
 	
@@ -296,6 +303,13 @@ class TagBlocks extends Component {
 		var fn = this.props.app.checkFloater.bind(this.props.app);
 		fn();
 	}
+	
+	
+	componentDidMount()
+	{
+		this.props.app.setState({allCollapsed:false},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
+	}
+	
 	
 
 	render()
@@ -326,6 +340,7 @@ class TagBlocks extends Component {
 				if(app.state.selected_tag_block_index===key || (
 					entry.verses.indexOf(app.state.active_verse_id)>-1 && app.state.selected_tag_block_index===null
 					)){
+						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
 						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
 				}	
@@ -360,7 +375,7 @@ class TagBlocks extends Component {
 			   
 			   	
 			 return (
-			    <div className="taggedblock" key={key} index={key}>
+			    <div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
 			        {item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			    </div>

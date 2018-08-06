@@ -3673,3 +3673,9 @@ div#text.nores
 	cursor: text;
 	word-break: break-all;
 }
+span.debug
+{
+	font-family:monospace;
+	font-size:10px;
+	font-weight:400;
+}
