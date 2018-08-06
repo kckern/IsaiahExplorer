@@ -619,8 +619,8 @@
         "Law & Word",
         "How Jehovah conveys his law and word"
     ],
-    "univeral-appeal": [
-        "\u24cd Univeral Appeal",
+    "universal-appeal": [
+        "\u24cd Universal Appeal",
         "A universal appeal to hear Jehovah\u2019s word"
     ],
     "covenantal-allegiance": [
@@ -651,9 +651,9 @@
         "New Covenant",
         "The New Covenant"
     ],
-    "covenant-of-peace": [
-        "Covenant of Peace",
-        ""
+    "covenantal-peace": [
+        "Covenantal Peace",
+        "The Covenant of Peace"
     ],
     "contrasting-fortunes": [
         "Contrasting Fortunes",
@@ -1005,6 +1005,10 @@
     ],
     "afro-egyptian-pharaoh": [
         "Afro\u2013Egyptian Pharaoh",
+        ""
+    ],
+    "covenant-of-peace": [
+        "Covenant of Peace",
         ""
     ],
     "jehovahs-wife": [
