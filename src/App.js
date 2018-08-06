@@ -1665,7 +1665,13 @@ class App extends Component {
 	  	
 	  	var newVerseId = this.state.active_verse_id;
 	  	if(tagData.verses.indexOf(newVerseId)<0 && (this.selected_verse_id===null || this.selected_verse_id===undefined)) newVerseId = Math.min.apply(null, tagData.verses);
-	  	if(top===true) newVerseId = Math.min.apply(null, tagData.verses);
+	  	
+	  	if(top===true)
+	  	{
+	  		newVerseId = tagData.verses[0];
+	  	}
+		
+		
 		if([null,0,undefined].indexOf(newVerseId) > -1)  debugger;
 
 
