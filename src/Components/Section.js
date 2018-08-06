@@ -171,7 +171,7 @@ class Outline extends Component {
   	
 
     return (
-      <div id="outline"   onMouseEnter={this.props.app.clearTagIndex.bind(this.props.app)} >
+      <div id="outline"   >
         <div className="overviewcontainer"> {headings} </div>
       </div>
     );

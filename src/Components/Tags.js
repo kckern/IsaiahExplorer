@@ -122,7 +122,7 @@ export class TaggedHeading extends Component {
 					<img src={tag_png} alt="tag"/>
 					<span>{key_tag}</span>
 					<span className="debug"> Index:{this.props.app.state.selected_tag_block_index}</span>
-					<span className="debug"> Point:{this.props.app.state.arrowPointer}</span>
+					<span className="debug"> Point:{this.props.app.arrowPointer}</span>
 					<span className="debug"> Mouse:{this.props.app.state.mouseBlockIndex}</span>
 				</div>
 			</div>
@@ -301,13 +301,14 @@ class TagBlocks extends Component {
 	{
 		
 		var fn = this.props.app.checkFloater.bind(this.props.app);
-		fn();
+		fn(this);
 	}
 	
 	
 	componentDidMount()
 	{
-		this.props.app.setState({allCollapsed:false},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
+		console.log(this.active_block_index);
+		this.props.app.setState({allCollapsed:false,selected_tag_block_index:this.active_block_index},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
 	}
 	
 	
@@ -329,6 +330,37 @@ class TagBlocks extends Component {
 		if(details_str!==null || descr_str!==null || cite_str!==null)
 		details = (<div className="detail">{descr_str}{details_str}{cite_str}</div>);
  		const app = this.props.app;
+ 		var done = false;
+ 		
+ 		var blockverses = [];
+ 		var inblocks = {};
+ 		for(var x in entries)
+ 		{
+ 			blockverses.push(entries[x].verses);
+ 			if(entries[x].verses.indexOf(app.state.active_verse_id)>-1) inblocks[x] = [1+entries[x].verses.indexOf(app.state.active_verse_id),entries[x].verses.length];
+ 		}
+ 		
+		 		console.log("==============");
+ 		console.log("Active ID: "+app.state.active_verse_id);
+ 		console.log(blockverses);
+ 		console.log(inblocks);
+ 		
+ 		//determine which block you are in
+ 		if(document.querySelector(".verses.active")!==null)
+ 		{
+ 		
+ 			console.log("which one is currently open?");
+ 			var openedIndex = document.querySelector(".verses.active").parentElement.getAttribute("index");
+ 			console.log(openedIndex);
+ 			
+ 			
+ 			console.log("Where in the block is the cursor?");
+ 			console.log(inblocks[openedIndex]);
+ 			
+ 			//where was it last?
+ 		}
+
+ 		
 		var blocks = entries.map((entry,key)=>{
 			
 			var classes=["verses"];
@@ -336,10 +368,12 @@ class TagBlocks extends Component {
 			var isFloater = false;
 			
 			var details = null;
-			if(app.state.allCollapsed!==true){
+			if(app.state.allCollapsed!==true && done===false){
 				if(app.state.selected_tag_block_index===key || (
 					entry.verses.indexOf(app.state.active_verse_id)>-1 && app.state.selected_tag_block_index===null
 					)){
+						
+						done = true;
 						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
 						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
@@ -372,7 +406,7 @@ class TagBlocks extends Component {
 			   if(count===1) { item = null; isFloater = false;}
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
 			   
-			   
+			 
 			   	
 			 return (
 			    <div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
@@ -381,7 +415,6 @@ class TagBlocks extends Component {
 			    </div>
 			   	);
 		});
-		
 				
 		var classes = ["blocks","tagged"];
 		

@@ -521,6 +521,8 @@ class App extends Component {
 	this.arrowPointer = index;
 	if(this.state.selected_verse_id!==null) return this.selectVerse(next);
   	this.setActiveVerse(next,undefined,undefined,undefined,"arrow");
+  	
+  	
   }
   
   setTagBlock(key,verseId)
@@ -1533,7 +1535,7 @@ class App extends Component {
 		return blocks;
 	}
 	
-	checkFloater()
+	checkFloater(TagBlocks)
 	{
 		if(this.state.selected_tag===null) return false;
 		var container = document.getElementById("text");
@@ -1563,6 +1565,12 @@ class App extends Component {
 		else
 		{
 			document.getElementById("floater").style.display = "block";
+		}
+		
+		if(TagBlocks!==undefined)
+		{
+			//if(this.state.selected_tag_block_index!==TagBlocks.active_block_index)
+			//this.setState({selected_tag_block_index:TagBlocks.active_block_index});
 		}
 	}
 	
@@ -1664,10 +1672,10 @@ class App extends Component {
 			tagMode: 		false,
     		showcase_tag: null,
     		previewed_tag: null,
+    		selected_tag_block_index: null,
     		searchMode: false,
     		comSearchMode: false,
     		preSearchMode: false,
-    		selected_tag_block_index: null,
 			highlighted_verse_range: 		tagData.verses,
 			highlighted_tagged_verse_range: 		[],
 			chiasm_letter: 		null
@@ -1712,13 +1720,6 @@ class App extends Component {
 			this.setActiveVerse(verse,undefined,undefined,true,"tag");
     
 		});
-  }
-  clearTagIndex()
-  {
-		this.setState({ 
-			selected_tag_block_index: 		null
-		});
-  	
   }
   setActiveStructure(shortcode)
   {
