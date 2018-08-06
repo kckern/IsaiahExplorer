@@ -1230,8 +1230,13 @@ class App extends Component {
   			var time = 200;
   			if(source==="tag") time=0;
   	
-			var container = document.getElementById("text");
-			var element = container.querySelectorAll(".versebox_highlighted")[0];
+  			var container = document.getElementById("text");
+  	
+  			var base = document.querySelectorAll("#text .verses.active")[0];
+			if(base===undefined) base = document.getElementById("text");
+			
+			
+			var element = base.querySelectorAll(".versebox_highlighted")[0]; //what about multiples?
 			if(element===undefined) return false;
 			if(container===undefined) return false;
 			
