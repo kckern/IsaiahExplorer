@@ -3658,3 +3658,18 @@ div#text.nores
 	margin-top:0em;
 	text-align:center;
 }
+
+.SearchReference
+{
+	font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+	text-align:center;
+	margin:0;
+	font-weight:bold;
+	font-size:13px;
+	letter-spacing:0px;
+	line-height:13px;
+	text-align:center;
+	color:#AAA;
+	cursor: text;
+	word-break: break-all;
+}

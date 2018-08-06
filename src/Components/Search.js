@@ -134,14 +134,20 @@ export class SearchResults extends Component {
 				  highlights={highlights}
 				/>]);
 		}
-		
+		var reference = null;
 		this.result_count = results.length;
 		var nores = "";
 		if(results.length===0){ nores = " nores"; results = <div className="noresults"> No Matching Verses </div>; }
+		else
+		{
+			reference = this.props.app.getReference(verses);
+			reference = <div className="SearchReference">{reference}</div>
+		}
 
     return (
 
       		<div id="text" className={"search"+nores} >
+      		{reference}
       		{results}
 			</div>
 		)

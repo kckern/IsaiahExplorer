@@ -1902,9 +1902,19 @@ class App extends Component {
     return newArr;
 }
 
+ArrNoDupe(a) {
+    var temp = {};
+    for (var i = 0; i < a.length; i++)
+        temp[a[i]] = true;
+    var r = [];
+    for (var k in temp)
+        r.push(k);
+    return r;
+}
+
 	getReference(verse_ids)
 	{
-		verse_ids = verse_ids.sort();
+		verse_ids = this.ArrNoDupe(verse_ids.sort());
 		var index = globalData['index'];
 		var obj = {};
 		for(var i in verse_ids)
@@ -1936,9 +1946,9 @@ class App extends Component {
 				if(verse_groups[i].length===1) v_arr.push(verse_groups[i][0]);
 				else v_arr.push(verse_groups[i][0]+"–"+verse_groups[i][verse_groups[i].length-1]);
 			}
-			final = final + chapter+":"+v_arr.join(",")+";";
+			final = final + chapter+":"+v_arr.join(",")+"; ";
 		}
-		return final.replace(/;$/g,"");
+		return final.replace(/;\s*$/g,"");
 	}
 	
    loadCommentaryID()
