@@ -74,7 +74,7 @@ export class TaggedHeading extends Component {
 		var tagData = this.props.app.getTagData(newTag);
 		if(typeof tagData !== "undefined")
 		{
-			this.props.app.setActiveTag(newTag);
+			this.props.app.setActiveTag(newTag,null,true);
 		}
 	}
 	

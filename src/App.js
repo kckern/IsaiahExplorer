@@ -1626,11 +1626,15 @@ class App extends Component {
   	
   	//add tag as child
   	if(globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"].indexOf(tagName)<0)
-  	globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"].push(tagName);
+  	globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"].unshift(tagName);
+  	
+  	globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"] = globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"].slice(0,10)
+  	
+  	
   	
   }
 	
-  setActiveTag(tagName,force)
+  setActiveTag(tagName,force,top)
   {
   		if(tagName===null) return false;
 	  	var tagData = this.getTagData(tagName);
@@ -1645,6 +1649,7 @@ class App extends Component {
 	  	
 	  	var newVerseId = this.state.active_verse_id;
 	  	if(tagData.verses.indexOf(newVerseId)<0 && (this.selected_verse_id===null || this.selected_verse_id===undefined)) newVerseId = Math.min.apply(null, tagData.verses);
+	  	if(top===true) newVerseId = Math.min.apply(null, tagData.verses);
 		if([null,0,undefined].indexOf(newVerseId) > -1)  debugger;
 
 
