@@ -531,7 +531,7 @@ class App extends Component {
   		
   		
 	 	this.checkFloater();
-	 	this.setActiveVerse(verseId);
+	 	this.setActiveVerse(verseId,undefined,undefined,undefined,"tag");
   		
 	});
 	
@@ -1224,7 +1224,7 @@ class App extends Component {
   
   scrollText(reset,source)
   {
-  	//console.log("scroll "+ source);
+
   			if(["versebox","arrow","tag","audio","init","search"].indexOf(source)===-1) return false;
   			
   			var time = 200;
@@ -1765,6 +1765,7 @@ class App extends Component {
   
   setActiveVersion(shortcode)
   {
+  	if(shortcode===this.state.version) return false;
   	if(typeof globalData['text'][shortcode] === "undefined")
   	{
   		//set state to loading....
