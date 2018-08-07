@@ -304,7 +304,6 @@ class TagBlocks extends Component {
 	
 	componentDidMount()
 	{
-		console.log(this.active_block_index);
 		this.props.app.setState({allCollapsed:false,selected_tag_block_index:this.active_block_index},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
 	}
 	
@@ -329,7 +328,8 @@ class TagBlocks extends Component {
 		var details_str = null;
 		if(typeof tagMeta.details === "string" && tagMeta.details !== "") details_str = <div>{this.props.app.addLinks(tagMeta.details)}</div>;
 		var descr_str = null;
-		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(tagMeta.description)}</h4>;
+		var desc = tagMeta.description.trim().replace(/\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)$/g,"\u00a0$1\u00a0$2\u00a0$3");
+		if(typeof tagMeta.description === "string" && tagMeta.description !== "") descr_str = <h4>{this.props.app.addLinks(desc)}</h4>;
 		if(details_str!==null || descr_str!==null || cite_str!==null)
 		details = (<div className="detail">{descr_str}{details_str}{cite_str}</div>);
  		const app = this.props.app;
@@ -434,6 +434,9 @@ class TagParallel extends Component {
 		
 		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
 		if(document.getElementById("text").querySelectorAll(".versebox_highlighted").length===0) return false;
+		
+		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
+		if(tagMeta.verses[0]!==this.props.app.state.active_verse_id)
     	document.getElementById("text").querySelectorAll(".versebox_highlighted")[0].parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling.scrollIntoView();
 
     	for(var i=1; i<=[document.getElementById("parTable").getAttribute('count')].map(Number)[0]; i++ )

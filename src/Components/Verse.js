@@ -373,7 +373,7 @@ class TagLink extends Component{
     	var classes = ["taglink"];
     	if(this.props.app.state.selected_tag===this.props.tagName) classes.push("tag_highlighted");
     	var tagData = this.props.app.getTagData(this.props.tagName);
-    	var content = (<div><div className="pedigree"><span>{tagData.parents.filter(v => v !== 'root').reverse().join(" » ")}</span></div><div>{tagData.description}</div></div>);
+    	var content = (<div><div className="pedigree"><span>{tagData.parents.filter(v => v !== 'root').reverse().join(" » ")}</span></div><div>{tagData.description.trim().replace(/\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)$/g,"\u00a0$1\u00a0$2\u00a0$3")}</div></div>);
     	
 		return(
 			<Tipsy content={content} placement="top" trigger="hover focus touch" className="tagtip">

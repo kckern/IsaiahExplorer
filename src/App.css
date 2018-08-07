@@ -1452,7 +1452,7 @@ tr.metaref td div.meta + div.ref
 	display:block;
 }
 
-#text .detail
+#text .detail 
 {
 	font-style:italic;
 	margin:0 30px 10px 30px;
@@ -1465,6 +1465,12 @@ tr.metaref td div.meta + div.ref
 	line-height:14px;
 	background-color:#EEE;
 	cursor:text;
+}
+
+#text .detail div:first-child
+{
+	
+	text-align:center;
 }
 
 #text  div.detail
@@ -3645,9 +3651,12 @@ div#text.nores
 	text-align:center;
 	font-style:normal;
 	margin:0;
-	font-size:1.2em;
+	font-size:1.4em;
+	letter-spacing:0.6px;
+	line-height:0.9em;
 	margin-bottom:1em;
-	font-variant: small-caps;
+	color:#000;
+	 widows: 3; 
 }
 .detail h4:last-child,
 {

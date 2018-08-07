@@ -59,6 +59,7 @@ class AudioVersePlayer extends Component {
 		}
 		var onEnded = (next)=>{
 
+
 		  	if(next===null || 
 		  	this.props.app.state.highlighted_verse_range.indexOf(this.props.app.state.active_verse_id)<0 || 
 		  	this.props.app.state.highlighted_verse_range.indexOf(next)<0)
@@ -68,20 +69,20 @@ class AudioVersePlayer extends Component {
 		  	else{
 		  		
 		  		  	var index = -1
-				  	var next = 0;
+				  	var nexter = 0;
+				  	if(this.props.app.arrowPointer===null) this.props.app.arrowPointer = 0;
 					for(var pointer = this.props.app.arrowPointer; index===-1 && pointer>=0; pointer--)
 						index = this.props.app.state.highlighted_verse_range.indexOf(this.props.app.state.active_verse_id,pointer);
 					index++;
 					if(index>=this.props.app.state.highlighted_verse_range.length) index = 0;
-					next = this.props.app.state.highlighted_verse_range[index]; 
-					this.props.app.arrowPointer = index;
+					nexter = this.props.app.state.highlighted_verse_range[index]; 
+					this.props.app.arrowPointer = this.audioPointer = index;
 		  		
-		  			this.props.app.setActiveVerse(next,undefined,undefined,undefined,"audio");
+		  			this.props.app.setActiveVerse(nexter,undefined,undefined,true,"audio");
 		  		
 		  	} 
 		  	
-		}
-		
+		} 
 		return [<ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
