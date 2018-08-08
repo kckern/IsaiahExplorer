@@ -455,6 +455,10 @@
         "\u24cd Individual Servant",
         "The servant is a single individual"
     ],
+    "redemption": [
+        "Redemption",
+        "Redemption enacted by the Suffering Figure"
+    ],
     "redemptive-intervention": [
         "Redemptive Intervention",
         "Redemption requires divine intervention"
@@ -495,8 +499,8 @@
         "\u24cd Peace",
         ""
     ],
-    "redemption": [
-        "Redemption",
+    "redemptive-elements": [
+        "Redemptive Elements",
         "Redemption is defined by many components"
     ],
     "suffering-figure": [
@@ -563,6 +567,10 @@
         "Didactics",
         "The first unit  of Part VI is homiletic or didactic in nature"
     ],
+    "a-covenant-with-death": [
+        "A Covenant with Death",
+        "Covenant theology on the negative side"
+    ],
     "4-woes": [
         "4 Woes",
         "Unit 1\u2019s chapters each begin with a \u201cwoe\u201d"
@@ -594,6 +602,10 @@
     "cursed-covenant-people": [
         "Cursed Covenant People",
         "The disloyal are those who perish"
+    ],
+    "a-covenant-with-life": [
+        "A Covenant with Life",
+        "Covenant theology on the positive side"
     ],
     "redeemed-covenant-people": [
         "Redeemed Covenant People",
@@ -699,6 +711,10 @@
         "Nations\u21ccSinners",
         "The \u201cnations\u201d are \u201cfar,\u201d the \u201csinners in Zion\u201d are \u201cnear\u201d"
     ],
+    "covenentalseparation": [
+        "Covenental Separation",
+        "A growing dichotomy between the righteous and the wicked"
+    ],
     "disparate-fates": [
         "Disparate Fates",
         "Humanity is split based on their inheritance"
@@ -754,6 +770,10 @@
     "two-functions": [
         "Two Functions",
         "The ideal vassal functions in two capacities"
+    ],
+    "ascension-theology": [
+        "Ascension Theology",
+        "Righteous entities are elevated on the spiritual ladder"
     ],
     "annointed-vassal": [
         "Annointed Vassal",
