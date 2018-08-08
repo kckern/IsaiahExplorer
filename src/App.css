@@ -362,9 +362,16 @@ div#text
 	transition: height 0.5s;
 }
 
-#approot.commentaryMode #commentary_text p
+#approot.commentaryMode #commentary_text p,
+.tagref
 {
 	cursor:text;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }#approot.commentaryMode #commentary_text a
 {
 	cursor:pointer;

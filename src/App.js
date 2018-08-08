@@ -614,6 +614,8 @@ class App extends Component {
   	if(query.match(numreg))
   	{
   		
+  		query = query.replace(/^Isa(iah)\s*/ig,'');
+  		query = query.replace(/\s*/g,'');
   		matches = this.processRef(query);	
   		refSearch = true;
   	}
@@ -1703,8 +1705,9 @@ class App extends Component {
   
   
   
-  clearTag(tagMode,forceverse)
+  clearTag(tagMode,forceverse,src)
   {
+  	if(src==="structure" && (this.state.searchMode)) return false;
   	if(tagMode!==true) tagMode = false;
 	  if(this.state.selected_tag===null && this.state.tagMode===false &&  this.state.searchMode===false &&  this.state.preSearchMode===false) return false;
 	  this.floater = {};
