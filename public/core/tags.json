@@ -292,7 +292,7 @@
         "An Assyrian threat appears amid a Davidic reign"
     ],
     "hand-ensign": [
-        "\u29b7 Hand \u2194 Ensign",
+        "\u29b7 Hand\u2194Ensign",
         "\u201cHand\u201d parallels the Davidic \u201censign\u201d"
     ],
     "3-linked-events": [
@@ -303,20 +303,24 @@
         "Coronation Psalm",
         "A psalm of Davidic royal accession indicates impending release from exhile"
     ],
-    "davidic-ascention-return-from-exhile": [
-        "Davidic Ascention\u2194Return from Exhile",
+    "davidic-accession-return-from-exhile": [
+        "Davidic Accession\u2194Return from Exhile",
         "David Accession coincides with a return from exhile"
     ],
-    "david-assyria": [
-        "David\u2194Assyria",
+    "davidic-rise-assyrian-fall": [
+        "Davidic Rise\u2194Assyrian Fall",
         "Davidic ascent coincides with Assyrian defeath"
+    ],
+    "new-creation": [
+        "New Creation",
+        "Davidic ascent brings about a new creation"
     ],
     "a-righteous-warrior-figure": [
         "A Righteous Warrior Figure",
         "An ideal agent of punishment and deliverance appears as righteous warrior"
     ],
     "eastern-figure-righteousness": [
-        "Eastern Figure \u21cc Righteousness",
+        "Eastern Figure\u21ccRighteousness",
         "\u201cRighteousness\u201d is a code name for the warrior from the east"
     ],
     "chaos-before-creation": [
@@ -360,7 +364,7 @@
         "Babylon is embodied by many entities"
     ],
     "babylon-universal": [
-        "Babylon \u21cc Universal",
+        "Babylon\u21ccUniversal",
         "Babylon is a universal general symbol"
     ],
     "tyre-babylon": [
@@ -392,7 +396,7 @@
         "The exalted city typifies the traits of the wicked and their fall"
     ],
     "city-moab": [
-        "\u29b7 City \u21cc Moab",
+        "\u29b7 City\u21ccMoab",
         "Zion ideology links the exalted city with Moab"
     ],
     "city-moabs-agression": [
@@ -400,15 +404,15 @@
         "The city is typified by Moab\u2019s aggression"
     ],
     "city-earth": [
-        "City \u21cc Earth",
+        "City\u21ccEarth",
         "The city is typified universally by \u201cthe earth\u201d"
     ],
     "city-nations": [
-        "City \u21cc Nations",
+        "City\u21ccNations",
         "The city is typified by heathen nations"
     ],
     "city-jacob-israel": [
-        "City \u21cc Jacob\/Israel",
+        "City\u21ccJacob\/Israel",
         "The city is typified by reprobate Israel"
     ],
     "the-composite-city": [
@@ -428,7 +432,7 @@
         "Salvation occurs at a universal level"
     ],
     "peacesalvation": [
-        "Peace \u21cc Salvation",
+        "Peace\u21ccSalvation",
         "Peace is a code word for \u201csalvation\u201d"
     ],
     "fleeing-babylon": [
@@ -436,7 +440,7 @@
         "Leaving the world behind"
     ],
     "law-wordservants-mission": [
-        "Law\/Word \u21cc Servant's Mission",
+        "Law\/Word\u21ccServant's Mission",
         "The mission of the servant is typified by \u201claw\u201d and \u201cwords\u201d"
     ],
     "suffering-hope": [
@@ -476,7 +480,7 @@
         "Arm is code word for both \u201crighteousness\u201d and \u201csalvation\u201d"
     ],
     "righteousness-hand-arm": [
-        "Righteousness \u21cc Hand \u21cc Arm",
+        "Righteousness\u21ccHand\u21ccArm",
         "Arm is a code word for \u201crighteous(ness),\u201d \u201csalvation,\u201d and \u201cright hand\u201d"
     ],
     "kings-of-babylon-zion": [
@@ -484,7 +488,7 @@
         "Zion and its leaders stands in contrast to Babylon and theirs"
     ],
     "suffering-figure-jehovah": [
-        "Suffering Figure \u21cc Jehovah",
+        "Suffering Figure\u21ccJehovah",
         "Jehovah himself is the suffering figure"
     ],
     "peace": [
@@ -508,7 +512,7 @@
         "Jehovah\u2019s royal accession is implied based on the inverse of the king of Babylon\u2019s deposition"
     ],
     "ideal-vassal-people": [
-        "Ideal Vassal \u2194 People",
+        "Ideal Vassal\u2194People",
         "The Ideal Vassal serves as Proxy for the People"
     ],
     "fate-of-babylons-king": [
@@ -628,7 +632,7 @@
         "Word pairs illustrate the loyalty of who gather from the nations"
     ],
     "ideal-vassal-living-oracle": [
-        "Ideal Vassal \u21cc Living Oracle",
+        "Ideal Vassal\u21ccLiving Oracle",
         "The ideal vassal functions as Jehovah\u2019s living oracle"
     ],
     "response-dichotomy": [
@@ -692,7 +696,7 @@
         "The climactic nature of the 7-part structure is illustrated by superlatives"
     ],
     "nationssinners": [
-        "Nations \u21cc Sinners",
+        "Nations\u21ccSinners",
         "The \u201cnations\u201d are \u201cfar,\u201d the \u201csinners in Zion\u201d are \u201cnear\u201d"
     ],
     "disparate-fates": [
