@@ -578,7 +578,7 @@ class App extends Component {
 	
 				  }
 		  	}
-	  	 console.log("chapter with vs",ch,vs,matches);
+	  	 //console.log("chapter with vs",ch,vs,matches);
 	  }
 	  else
 	  {
@@ -609,12 +609,12 @@ class App extends Component {
   	query = query.replace(/[[\]]/g,'');
   	var refSearch = this.state.refSearch;
   	
-  	var numreg = new RegExp("^[0-9:.;,—–−–-]+$");
+  	var numreg = new RegExp("[0-9:.;, —–−–-]+$");
   	
   	if(query.match(numreg))
   	{
   		
-  		query = query.replace(/^Isa(iah)\s*/ig,'');
+  		query = query.replace(/^[^0-9:.;, —–−–-]+/ig,'');
   		query = query.replace(/\s*/g,'');
   		matches = this.processRef(query);	
   		refSearch = true;
