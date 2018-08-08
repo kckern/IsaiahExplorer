@@ -171,8 +171,8 @@
         "\u29b7 Ruin\u2194Rebirth Motifs",
         "Units 1 and 2 contain parallel ruin\/rebirth motifs"
     ],
-    "maledictory-motifs": [
-        "\u29b7 Maledictory Motifs",
+    "israel-nations-motifs": [
+        "\u29b7 Israel\u2194Nations Motifs",
         "Israel and the nations  share the same judgement"
     ],
     "zions-rebirth-non-zion-ruin": [
@@ -245,23 +245,23 @@
     ],
     "zion-ideology": [
         "Zion Ideology",
-        "Punishment, Accession, Deliverance"
+        "Punishment and deliverance, combined with royal accession, make up a Zion ideology"
     ],
     "4-agents": [
         "4 Agents",
-        "Four Agents of Punishment and\/or Deliverance"
+        "Four archetypal agents carry out either punishment or deliverance"
     ],
     "3-redemptive-roles": [
         "3 Redemptive Roles",
-        "Release, Gather, Enable"
+        "Deliverance is characterized by: releasing, gathering, and enabling redemptive events"
     ],
     "3-redemptive-events": [
         "\u29b7 3 Redemptive Events",
-        "A new exodus, new wandering in the wilderness, and new conquest"
+        "Three redemptive events include: a new exodus, new wandering in the wilderness, and new conquest"
     ],
-    "davidicstructure": [
-        "Davidic Structure",
-        "Davidic Structure"
+    "agents-redemptive-roles": [
+        "Agents\u2019 Redemptive Roles",
+        "Each agent enables the roles of redemption"
     ],
     "davidic-figure": [
         "\ud83d\udc64 Davidic Figure",
@@ -278,6 +278,14 @@
     "servant-figure": [
         "\u24cd Servant Figure",
         "Universal justice \/ Servant figure"
+    ],
+    "a-davidic-figure": [
+        "A Davidic Figure",
+        ""
+    ],
+    "davidic-king-assyrian-king": [
+        "Davidic King \ud83c\udd9a Assyrian King",
+        "An Assyrian threat appears amid a Davidic reign"
     ],
     "hand-ensign": [
         "\u29b7 Hand \u2194 Ensign",
@@ -299,13 +307,29 @@
         "David\u2194Assyria",
         "Davidic Rise \/ Defeat of Assyria"
     ],
+    "chaos-before-creation": [
+        "Chaos Before Creation",
+        "Chaos precedes creation"
+    ],
     "chaos-creation": [
         "\u24cd Chaos\u2194Creation",
         "Chiastic Chaos \/ Creation Motifs"
     ],
+    "a-righteous-warrior-figure": [
+        "A Righteous Warrior Figure",
+        ""
+    ],
     "eastern-figure-righteousness": [
         "Eastern Figure \u21cc Righteousness",
         "the figure from the east  \u21cc  Jehovah\u2019s \u201crighteousness\u201d"
+    ],
+    "aservant-figure": [
+        "A Servant Figure",
+        ""
+    ],
+    "a-cyrus-figure": [
+        "A Cyrus Figure",
+        ""
     ],
     "cyruss-name": [
         "Cyrus\u2019s Name",
@@ -375,8 +399,8 @@
         "City \u21cc Earth",
         "The city is typified universally by \u201cthe earth\u201d"
     ],
-    "city-heathen": [
-        "City \u21cc Heathen",
+    "city-nations": [
+        "City \u21cc Nations",
         "The city is typified by heathen nations"
     ],
     "city-jacob-israel": [
@@ -683,8 +707,8 @@
         "King and Servants",
         "The \u201cking\u201d personifies the protective ideal vassal and servants"
     ],
-    "light-vs-dark": [
-        "Light vs. Dark",
+    "light-dark": [
+        "Light \ud83c\udd9a Dark",
         "Opposing light and dark motifs illustrate a reversal of circumstance"
     ],
     "separation": [
@@ -699,8 +723,8 @@
         "Servants\u2194Ideal Vassal",
         "Certain \u201cServants\u201d follow the vassal\u2019s example of ascension"
     ],
-    "enemies": [
-        "Enemies",
+    "enemiesservants": [
+        "Enemies \ud83c\udd9a Servants",
         "Jehovah\u2019s enemies incur loss, his servants enjoy gains"
     ],
     "sum-of-redemption": [
