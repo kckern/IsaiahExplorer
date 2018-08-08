@@ -1474,6 +1474,14 @@ tr.metaref td div.meta + div.ref
 	cursor:text;
 }
 
+
+#text .SearchReference + .detail 
+{
+	border:0;
+	border-radius:0;
+	background-color:#FFF;
+}
+
 #text .detail div:first-child
 {
 	
