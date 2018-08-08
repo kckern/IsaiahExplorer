@@ -253,7 +253,7 @@
     ],
     "4-agents": [
         "4 Agents",
-        "Four archetypal agents carry out either punishment or deliverance"
+        "Four archetypal agents (typifying a single, ideal vassal) carry out either punishment or deliverance"
     ],
     "3-redemptive-roles": [
         "3 Redemptive Roles",
@@ -517,7 +517,7 @@
     ],
     "ideal-vassal-people": [
         "Ideal Vassal\u2194People",
-        "The Ideal Vassal serves as Proxy for the People"
+        "The ideal vassal serves as Proxy for the People"
     ],
     "fate-of-babylons-king": [
         "Fate of Babylon\u2019s King",
@@ -555,13 +555,13 @@
         "Jehovah\u2019s Ascent",
         "Jehovah emerges from his suffering to become the Most High God"
     ],
-    "disloyalty": [
-        "Disloyalty",
-        "Examples of Disloyalty"
-    ],
     "loyalty": [
         "Loyalty",
         "Examples of Loyatly"
+    ],
+    "disloyalty": [
+        "Disloyalty",
+        "Examples of Disloyalty"
     ],
     "didactics": [
         "Didactics",
@@ -655,13 +655,17 @@
         "Response to Vassal",
         "Responses to the vassal are split"
     ],
+    "the-new-covenant": [
+        "The New Covenant",
+        "Jehovah makes a new covenant with a righteous remnant of his people"
+    ],
     "covenant-theology": [
         "Covenant Theology",
         "Covenant theology distills to the empowerment of the loyal"
     ],
     "4-biblical-covenants": [
         "4 Biblical Covenants",
-        "The new covenant echos past biblical Covenants"
+        "The New covenant echos past biblical Covenants"
     ],
     "new-covenant": [
         "New Covenant",
