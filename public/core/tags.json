@@ -247,6 +247,10 @@
         "Zion Ideology",
         "Punishment and deliverance, combined with royal accession, make up a Zion ideology"
     ],
+    "chaos-creation": [
+        "\u24cd Chaos\u2194Creation",
+        "New creation rising from chaos typifes punishment and deliverance"
+    ],
     "4-agents": [
         "4 Agents",
         "Four archetypal agents carry out either punishment or deliverance"
@@ -276,12 +280,12 @@
         "Conqueror of nations and deliverer of captives"
     ],
     "servant-figure": [
-        "\u24cd Servant Figure",
-        "Universal justice \/ Servant figure"
+        "\ud83d\udc64 Servant Figure",
+        "Establisher of universal justice"
     ],
     "a-davidic-figure": [
         "A Davidic Figure",
-        ""
+        "A Davidic figures embodies past Davidic kings"
     ],
     "davidic-king-assyrian-king": [
         "Davidic King \ud83c\udd9a Assyrian King",
@@ -289,7 +293,7 @@
     ],
     "hand-ensign": [
         "\u29b7 Hand \u2194 Ensign",
-        "\u201cHand\u201d parallels Jehovah\u2019s raising an \u201censign\u201d"
+        "\u201cHand\u201d parallels the Davidic \u201censign\u201d"
     ],
     "3-linked-events": [
         "3 Linked Events",
@@ -297,43 +301,43 @@
     ],
     "coronation-psalm": [
         "Coronation Psalm",
-        "A psalm of Davidic royal accession"
+        "A psalm of Davidic royal accession indicates impending release from exhile"
     ],
     "davidic-ascention-return-from-exhile": [
         "Davidic Ascention\u2194Return from Exhile",
-        "David Ascention  \/  return from exile"
+        "David Accession coincides with a return from exhile"
     ],
     "david-assyria": [
         "David\u2194Assyria",
-        "Davidic Rise \/ Defeat of Assyria"
-    ],
-    "chaos-before-creation": [
-        "Chaos Before Creation",
-        "Chaos precedes creation"
-    ],
-    "chaos-creation": [
-        "\u24cd Chaos\u2194Creation",
-        "Chiastic Chaos \/ Creation Motifs"
+        "Davidic ascent coincides with Assyrian defeath"
     ],
     "a-righteous-warrior-figure": [
         "A Righteous Warrior Figure",
-        ""
+        "An ideal agent of punishment and deliverance appears as righteous warrior"
     ],
     "eastern-figure-righteousness": [
         "Eastern Figure \u21cc Righteousness",
-        "the figure from the east  \u21cc  Jehovah\u2019s \u201crighteousness\u201d"
+        "\u201cRighteousness\u201d is a code name for the warrior from the east"
+    ],
+    "chaos-before-creation": [
+        "Chaos Before Creation",
+        "Chaos precedes creation in the context of the warrior\u2019s role"
     ],
     "aservant-figure": [
         "A Servant Figure",
-        ""
+        "A \u201cservant\u201d is called to enact God\u2019s will"
+    ],
+    "servant-justice": [
+        "\u24cd Servant\u2194Justice",
+        "The Servant Figure's missionn centers on universal justice"
     ],
     "a-cyrus-figure": [
         "A Cyrus Figure",
-        ""
+        "Cyrus, the Persian Emperor, conquers Babylon and deliverers its captives"
     ],
     "cyruss-name": [
         "Cyrus\u2019s Name",
-        "Cyrus\u2019s Name"
+        "Calling Cyrus\u2019s by name is significant in a redemptive context"
     ],
     "oracles-against-foreign-powers": [
         "Oracles Against Foreign Powers",
