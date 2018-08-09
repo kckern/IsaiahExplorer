@@ -1017,6 +1017,7 @@ class App extends Component {
 	      	this.setState({"tagsHLReady":true});
 	     });
 	  //   var g=globalData;	debugger;
+	  console.log(globalData["tags"]);
      });
      
   	fetch("/core/structures.txt").then(response => response.text()).then(data => {
@@ -1696,9 +1697,11 @@ class App extends Component {
   showcaseTag(tagName,src)
   {
 		if(this.state.selected_tag !== null && (tagName===null || tagName===undefined)) tagName = this.state.selected_tag;
-		
+  		var children = globalData['tags']["tagChildren"][tagName];
+		if(children===undefined) children = globalData['tags']["parentTagIndex"][tagName];
+
 		//is tag a leaf?
-		if(globalData['tags'].tagChildren[tagName]===undefined && tagName!==null) return this.setActiveTag(tagName);
+		if(children===undefined && tagName!==null)return this.setActiveTag(tagName);
 
   		if(tagName===null || tagName===undefined) tagName = "Structures";
 	  	var tagData = this.getTagData(tagName);
@@ -1760,6 +1763,7 @@ class App extends Component {
 	  	if(tagData.verses===undefined) return false;
 	  	
 	  	if(globalData.tags.tagChildren[tagName]!==undefined) return this.showcaseTag(tagName);
+	  	if(globalData.tags.parentTagIndex[tagName]!==undefined) return this.showcaseTag(tagName);
 	  	
 	  	
 	  	if(tagName===this.state.selected_tag && force === undefined) return this.clearTag();
@@ -1998,6 +2002,13 @@ class App extends Component {
   		g.verses = [];
   		var t = globalData["tags"];
   		var children = t["tagChildren"][tagName];
+  		
+  		
+  		if(children===undefined)
+  		{
+  			children = t["parentTagIndex"][tagName];
+  		}
+  		
   		
   		if(children===undefined)
   		{
