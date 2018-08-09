@@ -147,6 +147,42 @@
         "Local Literary Designs",
         "A parallel\/chiastic breakdown of the text"
     ],
+    "oracles-against-judah": [
+        "Oracles Against Judah",
+        "Early: Oracles Against Judah"
+    ],
+    "oracles-against-foreign-powers": [
+        "Oracles Against Foreign Powers",
+        "Part IV consists almost entriely of orancles against foreign powers"
+    ],
+    "isaiah-apocalypse": [
+        "Isaiah Apocalypse",
+        "Late: The \u201cIsaiah Apocalypse\u201d"
+    ],
+    "late-oracles": [
+        "Late Oracles",
+        "Late: Oracles from Isaiah\u2019s Ministry"
+    ],
+    "vision-of-zion": [
+        "Vision of Zion",
+        "A Vision of Zion"
+    ],
+    "stories-of-isaiah": [
+        "Stories of Isaiah",
+        "Stories of Isaiah\u2019s life"
+    ],
+    "israel": [
+        "Israel",
+        "Messages to Israel"
+    ],
+    "zion-and-jerusalem": [
+        "Zion and Jerusalem",
+        "Prophecies of Zion and Jerusalem"
+    ],
+    "post-exhile": [
+        "Post-Exhile",
+        "Anonymous Oracles Post\u2013Exhile"
+    ],
     "bifid-i": [
         "Bifid I",
         "Ruin and Rebirth"
@@ -378,10 +414,6 @@
     "cyruss-name": [
         "Cyrus\u2019s Name",
         "Calling Cyrus\u2019s by name is significant in a redemptive context"
-    ],
-    "oracles-against-foreign-powers": [
-        "Oracles Against Foreign Powers",
-        "Middle: Oracles Against Foreign Nations"
     ],
     "babylons-demise": [
         "Babylon\u2019s Demise",
@@ -839,6 +871,10 @@
         "Vassal Ascends",
         "The vassal ascends to a higher spiritual plane"
     ],
+    "cumulative-themes": [
+        "Cumulative Themes",
+        ""
+    ],
     "cumulative-themes-i-ii": [
         "Cumulative Themes I \u2013 II",
         ""
@@ -861,10 +897,6 @@
     ],
     "cumulative-themes-i-vii": [
         "Cumulative Themes I \u2013 VII",
-        ""
-    ],
-    "cumulative-themes": [
-        "Cumulative Themes",
         ""
     ],
     "1-7-perdition": [
@@ -958,38 +990,6 @@
     "righteous-delivered": [
         "Righteous Delivered",
         "God Delivers the Righteous of his People and the Nations"
-    ],
-    "oracles-against-judah": [
-        "Oracles Against Judah",
-        "Early: Oracles Against Judah"
-    ],
-    "isaiah-apocalypse": [
-        "Isaiah Apocalypse",
-        "Late: The \u201cIsaiah Apocalypse\u201d"
-    ],
-    "late-oracles": [
-        "Late Oracles",
-        "Late: Oracles from Isaiah\u2019s Ministry"
-    ],
-    "vision-of-zion": [
-        "Vision of Zion",
-        "A Vision of Zion"
-    ],
-    "stories-of-isaiah": [
-        "Stories of Isaiah",
-        "Stories of Isaiah\u2019s life"
-    ],
-    "israel": [
-        "Israel",
-        "Israel"
-    ],
-    "zion-and-jerusalem": [
-        "Zion and Jerusalem",
-        "Zion and Jerusalem"
-    ],
-    "post-exhile": [
-        "Post-Exhile",
-        "Anonymous Oracles Post\u2013Exhile"
     ],
     "allegiance": [
         "Allegiance",

@@ -400,8 +400,7 @@ class TagBlocks extends Component {
 			        onClick={()=>this.handleDescClick(entry.verses.map(Number)[0],classes,key) }
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
-			   	
-			   if(count===1 && showdesc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
+			   if(count===1 && entry.desc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
 			   
 			 
