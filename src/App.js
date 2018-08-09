@@ -483,7 +483,7 @@ class App extends Component {
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_next");
   	
-  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null)  return this.showcaseTag("Structures");
+  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null && this.state.tagMode)  return this.showcaseTag("Structures");
   	//if tag, hit next tag button
   	if(this.state.selected_tag!==null || this.state.tagMode) return this.tagRight();
   	//if search do nothing
@@ -573,7 +573,7 @@ class App extends Component {
   {
   	
   	
-  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null)  return this.showcaseTag("Structures");
+  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null && this.state.tagMode)  return this.showcaseTag("Structures");
 
   	if(this.state.showcase_tag !== null) return this.tagDown();
   	
