@@ -677,6 +677,12 @@ class App extends Component {
 	
 	selectVerse(verse_id)
 	{
+		//if searchmode and not in 
+		if(this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0 && (this.state.searchMode || this.state.selected_tag !== null) )
+		{
+			return this.clearTag(undefined,verse_id);
+		}
+		
 		//if(verse_id === this.state.active_verse_id) return false;
 		if(this.state.commentaryMode)
 		{
@@ -1768,7 +1774,7 @@ class App extends Component {
   
   setActiveVersion(shortcode)
   {
-  	if(shortcode===this.state.version) return false;
+  	if(shortcode===this.state.version) return this.setActiveVerse(this.state.active_verse_id,undefined,undefined,undefined,"tag");
   	if(typeof globalData['text'][shortcode] === "undefined")
   	{
   		//set state to loading....

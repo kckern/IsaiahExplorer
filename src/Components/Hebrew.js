@@ -158,7 +158,9 @@ class HebrewWord extends Component {
 	{
 		if(this.props.app.state.hebrewSearch && this.props.val.strong===this.props.app.state.hebrewStrongIndex)
 		{
-			this.props.app.setState({hebrewSearch:false,hebrewStrongIndex:null,searchMode:false});
+			this.props.app.setState({hebrewSearch:false,hebrewStrongIndex:null,searchMode:false},function(){
+				this.props.app.setActiveVerse(this.props.app.state.active_verse_id,undefined,undefined,undefined,"tag");
+			});
 			return false;
 		}
 		this.props.app.searchHebrewWord(this.props.val.strong)
