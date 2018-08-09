@@ -438,7 +438,7 @@ class App extends Component {
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_prev");
   	//if tag, hit next tag button
-  	if(this.state.selected_tag!==null) return this.clickElementID("tag_prev");
+  	if(this.state.selected_tag!==null || this.state.tagMode) this.tagLeft();
   	//if search do nothing
   	if(this.state.searchMode) return false;
   	//if normal move outline
@@ -482,8 +482,10 @@ class App extends Component {
   	if(this.state.hebrewMode) return this.cycleHebrewWord(1);
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_next");
+  	
+  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null)  return this.showcaseTag("Structures");
   	//if tag, hit next tag button
-  	if(this.state.selected_tag!==null || this.state.tagMode) this.tagRight();
+  	if(this.state.selected_tag!==null || this.state.tagMode) return this.tagRight();
   	//if search do nothing
   	if(this.state.searchMode) return false;
   	//if normal move outline
@@ -514,11 +516,9 @@ class App extends Component {
 	var g = globalData;
   	if(this.state.tagMode)
   	{
-  		this.state.showcase_tag; //find last child, find most recent tag
   		var r = g.tags.parentTagIndex["Recently Viewed Tags"]; if(r===undefined) r = ["root"];
   		var c = g.tags.tagChildren[this.state.showcase_tag];
   		if(g.tags.tagIndex[this.state.showcase_tag]===undefined) return false;
-  		var p = g.tags.tagIndex[this.state.showcase_tag].parents;
   		
   		if(r[0] === c[c.length-1])
   		{
@@ -537,29 +537,21 @@ class App extends Component {
 	  	this.showcaseTag(parent);
   	}
   }
-  
-  
-  findBranchSibling(branch,pos)
+  tagLeft()
   {
-
-		//any children that are dark blue?
-		
-			//yes
-			
-				//showcase the first one
-			
-			//no
-			
-				// showcase your next dark blue sibling (or parent)
-			
-
-		var g = globalData;
-  		var bs = g.tags.tagBranches;
-  		var index = bs.indexOf(branch);
-  		var b = bs[index+pos];
-  		if(b === undefined) return "Structures";
-  		return b;
+  	if(!this.state.tagMode && document.getElementById("tag_prev")!==null) return this.clickElementID("tag_prev");
+	var g = globalData;
+  	if(this.state.tagMode)
+  	{
+  		this.tagUp();
+  	}
+  	else
+  	{
+	  	var parent = g.tags.tagIndex[this.state.selected_tag].parents[0];
+	  	this.showcaseTag(parent);
+  	}
   }
+  
   
   
   
@@ -579,6 +571,9 @@ class App extends Component {
   arrowPointer=0;
   down()
   {
+  	
+  	
+  	if(this.state.previewed_tag !== null && this.state.showcase_tag===null)  return this.showcaseTag("Structures");
 
   	if(this.state.showcase_tag !== null) return this.tagDown();
   	
@@ -1388,14 +1383,10 @@ class App extends Component {
 			
 			var parent = container.getBoundingClientRect().y;
 			var child = element.getBoundingClientRect().y;
-			const to = child-parent+container.scrollTop+150;
+			const to = child-parent+container.scrollTop-150;
 			if(reset===true) container.scrollTop=0;
 			
 			
-			console.log("======="+parent);
-			console.log("Parent: "+parent);
-			console.log("Child: "+child);
-			console.log("To: "+to);
 			
 			this.scrollBoxTo("tag_meta",container,to,500);
   }
