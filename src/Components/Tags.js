@@ -158,12 +158,12 @@ export class TagTree extends Component {
 		//toggle children
 		this.setState({open:!this.state.open})
 		//if children
-		if(globalData['tags'].tagChildren[tag].indexOf(this.props.app.state.selected_tag)>=0)
+		if(!this.state.open)
 		{
-			this.props.app.showcaseTag(globalData['tags'].tagIndex[tag].parents[0]);
-		}else
+			this.props.app.showcaseTag(tag);
+		}
+		else
 		{
-			
 			this.props.app.setState({showcase_tag:null});
 		}
 	}

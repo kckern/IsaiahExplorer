@@ -222,8 +222,8 @@ class App extends Component {
   	path = path + "/"+this.state.outline;
   	path = path + "/"+this.state.version;
   	
-  	if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
-  	else if(this.state.showcase_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
+  	if(this.state.showcase_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
+  	else if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
   	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
   	else if(this.state.hebrewStrongIndex!==null) 	path = path + "/hebrew."+this.state.hebrewStrongIndex;
   	
@@ -753,6 +753,7 @@ class App extends Component {
 	
 	selectVerse(verse_id)
 	{
+		if(verse_id===null) return this.unSelectVerse();
 		//if searchmode and not in 
 		if(this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0 && (this.state.searchMode || this.state.selected_tag !== null) )
 		{
@@ -784,8 +785,8 @@ class App extends Component {
 			
 		}else if (this.state.audioState !== null) return false;
 		
-  		if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0) return ()=>{};
 		if(parseInt(this.state.selected_verse_id,0)===parseInt(verse_id,0)) return this.unSelectVerse();
+  		if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0) return ()=>{};
 		this.setState(
 			{selected_verse_id: verse_id },
 			()=>this.setActiveVerse(verse_id,undefined,undefined,true)
@@ -1726,6 +1727,7 @@ class App extends Component {
 			this.scrollTagTree();
 			
 			this.setState({infoOpen:false});
+			this.setUrl();
 		});
   }
 	
