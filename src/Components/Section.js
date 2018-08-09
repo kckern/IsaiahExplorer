@@ -180,9 +180,10 @@ class Outline extends Component {
 
 class Heading extends Component {
   isActive() {
+    //console.log(parseInt(this.props.app.state.highlighted_heading_index,0),this.props.id);
     return (
     //	this.props.heading.verses[0].indexOf(this.props.app.state.active_verse_id) >= 0
-      parseInt(this.props.app.state.highlighted_heading_index,0) === this.props.id
+      parseInt(this.props.app.state.highlighted_heading_index,0) === parseInt(this.props.id,0)
     );
   }
 

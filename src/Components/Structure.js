@@ -115,7 +115,7 @@ class Section extends Component {
           var grids = [];
           for (var x in section.verses) {
             grids.push(
-            <div onMouseEnter={this.props.app.clearTag.bind(this.props.app,undefined,undefined,"structure")}  key={x}>
+            <div key={x}>
               <VerseGrid
             	app={this.props.app}
                 count={section.verses.length}
