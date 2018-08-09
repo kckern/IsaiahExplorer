@@ -187,17 +187,17 @@
         "Post-Exhile",
         "Anonymous Oracles Post\u2013Exhile"
     ],
-    "separation": [
-        "Separation",
-        "The separation of the righteous and wicked becomes more pronounced"
+    "departure": [
+        "Departure",
+        "The hero leaves an ordinary setting"
     ],
     "initiation": [
         "Initiation",
-        ""
+        "The hero enters a challenging, unknown realm"
     ],
     "return": [
         "Return",
-        ""
+        "The hero returns, having undergone a transformation"
     ],
     "bifid-i": [
         "Bifid I",
@@ -822,6 +822,10 @@
     "light-dark": [
         "Light \ud83c\udd9a Dark",
         "Opposing light and dark motifs illustrate a reversal of circumstance"
+    ],
+    "separation": [
+        "Separation",
+        "The separation of the righteous and wicked becomes more pronounced"
     ],
     "brethren": [
         "Brethren",
