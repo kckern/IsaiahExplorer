@@ -401,7 +401,7 @@ class TagBlocks extends Component {
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
 			   	
-			   if(count===1) { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
+			   if(count===1 && showdesc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
 			   
 			 

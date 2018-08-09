@@ -43,8 +43,8 @@
         "Forms of Speech",
         "Functional styles and patterns of prose"
     ],
-    "bookofmormon": [
-        "BookofMormon",
+    "book-of-mormon": [
+        "Book of Mormon",
         "Book of Mormon Citations of Isaiah"
     ],
     "nephi": [
@@ -67,8 +67,8 @@
         "Moroni",
         "Moroni\u2019s Citations of Isaiah"
     ],
-    "newtestament": [
-        "NewTestament",
+    "new-testament": [
+        "New Testament",
         "New Testment Citations of Isaiah"
     ],
     "matthew": [
@@ -103,13 +103,49 @@
         "Peter",
         "Citations of Isaiah from Peter"
     ],
-    "othernewtestament": [
-        "OtherNewTestament",
+    "new-testament-other": [
+        "New Testament\u2013Other",
         "Citations of Isaiah from Other New Testament Books"
     ],
     "bifid": [
         "Bifid",
         "Isaiah\u2019s Seven\u2013Part Chiastic Structure"
+    ],
+    "bible-project": [
+        "Bible Project",
+        "Strucutre Suggested by The Bible Project"
+    ],
+    "home-exhile-return": [
+        "Home, Exhile, Return",
+        "A structure resembling Egyptian narratives"
+    ],
+    "ugaritic": [
+        "Ugaritic",
+        "A pattern in the Ugaritic myth of Baal and Anath"
+    ],
+    "ugaritic-2": [
+        "Ugaritic 2",
+        "A pattern in the Ugaritic myth of Baal and Anath"
+    ],
+    "three-tests": [
+        "Three Tests",
+        "Three major tests try the loyalties of God\u2019s end\u2013time people"
+    ],
+    "zion-ideologicalstructure": [
+        "Zion Ideological Structure",
+        "A literary pattern possessing Jebusite roots"
+    ],
+    "curses-blessings": [
+        "Curses\/Blessings",
+        "Curses and blessings of Hittite and Assyrian emperor"
+    ],
+    "wikipedia-outline": [
+        "Wikipedia Outline",
+        "Wikipedia's Outline of the Book of Isaiah"
+    ],
+    "local-literary-designs": [
+        "Local Literary Designs",
+        "A parallel\/chiastic breakdown of the text"
     ],
     "bifid-i": [
         "Bifid I",
@@ -345,7 +381,7 @@
     ],
     "oracles-against-foreign-powers": [
         "Oracles Against Foreign Powers",
-        "Part IV consists almost entriely of orancles against foreign powers"
+        "Middle: Oracles Against Foreign Nations"
     ],
     "babylons-demise": [
         "Babylon\u2019s Demise",
@@ -859,10 +895,6 @@
         "(7\/7) Yaweh God of Israel",
         "A savior God"
     ],
-    "home-exhile-return": [
-        "Home, Exhile, Return",
-        "A structure resembling Egyptian narratives"
-    ],
     "trouble-at-home": [
         "Trouble at Home",
         "Israel in its Homeland Rebels against God"
@@ -891,10 +923,6 @@
         "Individual Entities",
         ""
     ],
-    "ugaritic": [
-        "Ugaritic",
-        "A pattern in the Ugaritic myth of Baal and Anath"
-    ],
     "apostasy": [
         "Apostasy",
         "God\u2019s People Break His Law and Word"
@@ -911,10 +939,6 @@
         "Salvation",
         "God\u2019s Elect People Inherit the Millennial Age"
     ],
-    "curses-blessings": [
-        "Curses\/Blessings",
-        "Curses and blessings of Hittite and Assyrian emperor"
-    ],
     "covenant-curses": [
         "Covenant Curses",
         "God\u2019s People Suffer the Consequences of Wickedness"
@@ -922,10 +946,6 @@
     "covenant-blessings": [
         "Covenant Blessings",
         "God\u2019s People Enjoy the Fruits of Righteousness"
-    ],
-    "zion-ideologicalstructure": [
-        "Zion Ideological Structure",
-        "A literary pattern possessing Jebusite roots"
     ],
     "wicked-destroyed": [
         "Wicked Destroyed",
@@ -939,9 +959,37 @@
         "Righteous Delivered",
         "God Delivers the Righteous of his People and the Nations"
     ],
-    "three-tests": [
-        "Three Tests",
-        "Three major tests try the loyalties of God\u2019s end\u2013time people"
+    "oracles-against-judah": [
+        "Oracles Against Judah",
+        "Early: Oracles Against Judah"
+    ],
+    "isaiah-apocalypse": [
+        "Isaiah Apocalypse",
+        "Late: The \u201cIsaiah Apocalypse\u201d"
+    ],
+    "late-oracles": [
+        "Late Oracles",
+        "Late: Oracles from Isaiah\u2019s Ministry"
+    ],
+    "vision-of-zion": [
+        "Vision of Zion",
+        "A Vision of Zion"
+    ],
+    "stories-of-isaiah": [
+        "Stories of Isaiah",
+        "Stories of Isaiah\u2019s life"
+    ],
+    "israel": [
+        "Israel",
+        "Israel"
+    ],
+    "zion-and-jerusalem": [
+        "Zion and Jerusalem",
+        "Zion and Jerusalem"
+    ],
+    "post-exhile": [
+        "Post-Exhile",
+        "Anonymous Oracles Post\u2013Exhile"
     ],
     "allegiance": [
         "Allegiance",
@@ -954,10 +1002,6 @@
     "persecution": [
         "Persecution",
         "Ecclesiastical Leaders Persecute God\u2019s Servants"
-    ],
-    "ugaritic-2": [
-        "Ugaritic 2",
-        "A pattern in the Ugaritic myth of Baal and Anath"
     ],
     "threat": [
         "Threat",
@@ -1199,10 +1243,6 @@
         "City of Tyre",
         ""
     ],
-    "bible-project": [
-        "Bible Project",
-        "Strucutre Suggested by The Bible Project"
-    ],
     "judgement-jersualem": [
         "Judgement\u2014Jersualem",
         "Local Warnings and Condemnations"
@@ -1314,10 +1354,6 @@
     "poems-announcing-gods-kingdom": [
         "Poems Announcing God\u2019s Kingdom",
         "The New Jerusalem emits God\u2019s justice and mercy into the world"
-    ],
-    "local-literary-designs": [
-        "Local Literary Designs",
-        "A parallel\/chiastic breakdown of the text"
     ],
     "useless-rituals": [
         "\u24cd Useless Rituals",
