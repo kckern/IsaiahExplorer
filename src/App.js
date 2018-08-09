@@ -223,6 +223,7 @@ class App extends Component {
   	path = path + "/"+this.state.version;
   	
   	if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
+  	else if(this.state.showcase_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
   	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
   	else if(this.state.hebrewStrongIndex!==null) 	path = path + "/hebrew."+this.state.hebrewStrongIndex;
   	
@@ -447,6 +448,7 @@ class App extends Component {
   up()
   {
   	
+  	if(this.state.showcase_tag !== null) return this.tagUp();
   	if(this.state.commentaryAudioMode && !this.state.searchMode)
   	{
   		var keys = Object.keys(globalData.commentary_audio.files[this.state.commentaryAudio]);
@@ -481,25 +483,104 @@ class App extends Component {
   	//if commentary hit next commentary button
   	if(this.state.commentaryMode) return this.clickElementID("com_next");
   	//if tag, hit next tag button
-  	if(this.state.selected_tag!==null) return this.clickElementID("tag_next");
+  	if(this.state.selected_tag!==null || this.state.tagMode) this.tagRight();
   	//if search do nothing
   	if(this.state.searchMode) return false;
   	//if normal move outline
   	this.cycleHeading(1);
   }
   
+  
+  tagDown()
+  {
+		var list = Array.prototype.slice.call(document.querySelectorAll(".parentTag")).map(function(e){return e.innerText});
+	  	var i = list.indexOf(this.state.showcase_tag);
+	  	if(list[i+1]===undefined) return this.showcaseTag("Structures");
+	  	 this.showcaseTag(list[i+1]);	
+  }
+  
+  tagUp()
+  {
+		var list = Array.prototype.slice.call(document.querySelectorAll(".parentTag")).map(function(e){return e.innerText});
+	  	var i = list.indexOf(this.state.showcase_tag);
+	  	if(list[i-1]===undefined) return this.showcaseTag("Structures");
+	  	 this.showcaseTag(list[i-1]);	
+  }
+  
+  
+  tagRight()
+  {
+  	if(!this.state.tagMode && document.getElementById("tag_next")!==null) return this.clickElementID("tag_next");
+	var g = globalData;
+  	if(this.state.tagMode)
+  	{
+  		this.state.showcase_tag; //find last child, find most recent tag
+  		var r = g.tags.parentTagIndex["Recently Viewed Tags"]; if(r===undefined) r = ["root"];
+  		var c = g.tags.tagChildren[this.state.showcase_tag];
+  		if(g.tags.tagIndex[this.state.showcase_tag]===undefined) return false;
+  		var p = g.tags.tagIndex[this.state.showcase_tag].parents;
+  		
+  		if(r[0] === c[c.length-1])
+  		{
+  			//go to sibling
+  			var sibling = this.findTagSibling(this.state.showcase_tag,1);
+  			this.setActiveTag(sibling);
+  		}else
+  		{
+  			//go to first child
+  			this.setActiveTag(c[0]);
+  		}
+  	}
+  	else
+  	{
+	  	var parent = g.tags.tagIndex[this.state.selected_tag].parents[0];
+	  	this.showcaseTag(parent);
+  	}
+  }
+  
+  
+  findBranchSibling(branch,pos)
+  {
+
+		//any children that are dark blue?
+		
+			//yes
+			
+				//showcase the first one
+			
+			//no
+			
+				// showcase your next dark blue sibling (or parent)
+			
+
+		var g = globalData;
+  		var bs = g.tags.tagBranches;
+  		var index = bs.indexOf(branch);
+  		var b = bs[index+pos];
+  		if(b === undefined) return "Structures";
+  		return b;
+  }
+  
+  
+  
+  findTagSibling(tag,pos)
+  {
+		var g = globalData;
+  		if(g.tags.tagIndex[tag]===undefined) return "Structures";
+  		var p = g.tags.tagIndex[tag].parents[0];
+  		var ss = g.tags.tagSiblings[p];
+  		var index = ss.indexOf(tag);
+  		var s = ss[index+pos];
+  		if(s === undefined) return this.findTagSibling(p,pos);
+  		return s;
+  }
+  
+  
   arrowPointer=0;
   down()
   {
-  	/*
-  	if(this.state.showcase_tag !== null)
-  	{
-  		var index = Object.keys(globalData.tags.tagIndex); //globalData['tags']['tagSequence'];
-  		var pos = index.indexOf(this.state.showcase_tag);
-  		var newtag = index[pos+1]; 
-  		if(newtag==="root" || newtag === undefined) newtag = "Structures";
-  		return this.setPreviewedTag(newtag);
-  	}*/
+
+  	if(this.state.showcase_tag !== null) return this.tagDown();
   	
   	if(this.state.commentaryAudioMode && !this.state.searchMode)
   	{
@@ -904,11 +985,19 @@ class App extends Component {
      });
   	fetch("/core/tags.txt").then(response => response.text()).then(data => {
       	globalData["tags"] =  this.unzipJSON(data);
+      	globalData["tags"]["tagSiblings"] = {};
+      	globalData["tags"]["tagBranches"] = [];
       	for(var x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
       	for(x in globalData["tags"]["tagIndex"])
       	{
-      		
       		globalData["tags"]["tagIndex"][x]["verses"] = this.verseDatatoArray(globalData["tags"]["tagIndex"][x]["verses"]);
+      		
+      		var p = globalData["tags"]["tagIndex"][x]["parents"][0];
+      		if(globalData["tags"]["tagSiblings"][p] ===undefined) globalData["tags"]["tagSiblings"][p] = [];
+      		globalData["tags"]["tagSiblings"][p].push(x);
+      		
+      		
+      		
       	}
       	for(x in globalData["tags"]["tagStructure"])
       	{
@@ -1286,18 +1375,28 @@ class App extends Component {
   			if(document.getElementsByClassName("tag_meta").length===0) return false;
   			if(document.getElementsByClassName("tag_meta")[0].matches(':hover')) return false;
   		
-			var container = document.getElementsByClassName("tag_meta")[0];
-			var element = container.querySelectorAll(".leaf.highlight")[0];
+  			var m = document.getElementsByClassName("tag_meta");
+			var container = m[m.length-1];
+			var b =  container.querySelectorAll(".branch.highlight")
+			var element = b[b.length-1];
 			
 			if(element===undefined) return false;
 			if(container===undefined) return false;
 			
-			if(this.checkInView(container,element)===true) return false;
+		//	if(this.checkInView(container,element)===true) return false;
+		
 			
-			var parent = container.childNodes[0].getBoundingClientRect().y;
+			var parent = container.getBoundingClientRect().y;
 			var child = element.getBoundingClientRect().y;
-			const to = child-parent-150;
+			const to = child-parent+container.scrollTop+150;
 			if(reset===true) container.scrollTop=0;
+			
+			
+			console.log("======="+parent);
+			console.log("Parent: "+parent);
+			console.log("Child: "+child);
+			console.log("To: "+to);
+			
 			this.scrollBoxTo("tag_meta",container,to,500);
   }
   
@@ -1602,7 +1701,7 @@ class App extends Component {
 		},this.setActiveVerse.bind(this,this.state.active_verse_id,undefined,undefined,true,"tag"));
 	}
 	
-  showcaseTag(tagName)
+  showcaseTag(tagName,src)
   {
 		if(this.state.selected_tag !== null && (tagName===null || tagName===undefined)) tagName = this.state.selected_tag;
 		
@@ -1632,7 +1731,9 @@ class App extends Component {
 			highlighted_tagged_parent_verse_range: tagData.verses
 		};
 	    this.setState(newvals,function(){
-			//this.scrollText(true,"tag");
+			//this.scrollText(true,src);
+			this.scrollTagTree();
+			
 			this.setState({infoOpen:false});
 		});
   }
@@ -1664,6 +1765,9 @@ class App extends Component {
 	  	var tagData = this.getTagData(tagName);
 	  	if(tagData===undefined) return false;
 	  	if(tagData.verses===undefined) return false;
+	  	
+	  	if(globalData.tags.tagChildren[tagName]!==undefined) return this.showcaseTag(tagName);
+	  	
 	  	
 	  	if(tagName===this.state.selected_tag && force === undefined) return this.clearTag();
 	  	
@@ -1699,6 +1803,7 @@ class App extends Component {
     		preSearchMode: false,
 			highlighted_verse_range: 		tagData.verses,
 			highlighted_tagged_verse_range: 		[],
+			highlighted_tagged_parent_verse_range: [],
 			chiasm_letter: 		null
 		},function(){
 			this.scrollText(true,"tag");
