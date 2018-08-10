@@ -222,8 +222,8 @@ class App extends Component {
   	path = path + "/"+this.state.outline;
   	path = path + "/"+this.state.version;
   	
-  	if(this.state.showcase_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
-  	else if(this.state.selected_tag!==null) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
+  	if(this.state.showcase_tag!==null && globalData.tags.tagIndex[this.state.showcase_tag]!==undefined) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
+  	else if(this.state.selected_tag!==null && globalData.tags.tagIndex[this.state.selected_tag]!==undefined) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
   	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
   	else if(this.state.hebrewStrongIndex!==null) 	path = path + "/hebrew."+this.state.hebrewStrongIndex;
   	
