@@ -988,10 +988,10 @@ class App extends Component {
 		
 		var outlines = globalData["outlines"];
 		for (var outline_id in outlines) {
-		  for (var i in outlines[outline_id]) {
+		  for ( i in outlines[outline_id]) {
 		  	globalData["outlines"][outline_id][i].verses = outlines[outline_id][i].verses = this.verseDatatoArray(outlines[outline_id][i].verses);  //convert to 
-		      for (var j in outlines[outline_id][i].verses) {
-		        var verse = outlines[outline_id][i].verses[j];
+		      for ( j in outlines[outline_id][i].verses) {
+		         verse = outlines[outline_id][i].verses[j];
 		        if (!(verse in globalData["outlineIndex"])) {
 		          globalData["outlineIndex"][verse] = {};
 		        }
@@ -1032,7 +1032,7 @@ class App extends Component {
 		
 		for (var verse_id in comIndex) {
 		  for (var source in comIndex[verse_id]) {
-		    for (var i in comIndex[verse_id][source]) {
+		    for ( i in comIndex[verse_id][source]) {
 		    	var thisid = comIndex[verse_id][source][i];
 		    	if(globalData.commentary.idIndex[thisid] === undefined) globalData.commentary.idIndex[thisid] = {source:null,verse_ids:[]};
 		    	globalData.commentary.idIndex[thisid]["source"] = source;
@@ -1046,7 +1046,7 @@ class App extends Component {
       	
       	      	globalData["tags"]["tagSiblings"] = {};
       	globalData["tags"]["tagBranches"] = [];
-      	for(var x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
+      	for(x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
       	for(x in globalData["tags"]["tagIndex"])
       	{
       		globalData["tags"]["tagIndex"][x]["verses"] = this.verseDatatoArray(globalData["tags"]["tagIndex"][x]["verses"]);
@@ -1080,8 +1080,6 @@ class App extends Component {
 	      	this.setState({"tagsHLReady":true});
 	     });
 		
-		var g = globalData;
-		debugger;
   		
       	this.pull("core");
       	this.checkLoaded();

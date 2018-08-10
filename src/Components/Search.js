@@ -113,8 +113,9 @@ export class SearchResults extends Component {
 			var heading = null;
 			if(groups[k].length===1) heading = globalData['index'][groups[k][0]].string;
 			else heading = this.props.app.getReference(groups[k]);
-			
-			var highlights = ["partialmatch",this.props.app.state.searchQuery.replace(/[^A-z]+/g," ")];
+			var q = this.props.app.state.searchQuery;
+			if(q===null) q = "";
+			var highlights = ["partialmatch",q.replace(/[^A-z]+/g," ")];
 			
 			if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewSearch)
 			{
