@@ -441,6 +441,8 @@ class App extends Component {
   	if(this.state.selected_tag!==null || this.state.tagMode) this.tagLeft();
   	//if search do nothing
   	if(this.state.searchMode) return false;
+  	//if playing commentary
+  	if(this.state.commentaryAudioMode) return this.up();
   	//if normal move outline
   	this.cycleHeading(-1);
   }
@@ -488,6 +490,8 @@ class App extends Component {
   	if(this.state.selected_tag!==null || this.state.tagMode) return this.tagRight();
   	//if search do nothing
   	if(this.state.searchMode) return false;
+  	//if playing commentary
+  	if(this.state.commentaryAudioMode) return this.down();
   	//if normal move outline
   	this.cycleHeading(1);
   }
