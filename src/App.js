@@ -1796,6 +1796,10 @@ class App extends Component {
 			
 			active_verse_id: 		newVerseId,
 			selected_tag: 		tagName,
+    		searchMode: false,
+    		hebrewMode: false,
+    		hebrewSearch: false,
+    		hebrewStrongIndex: null,
 			infoOpen: 		false,
 			allCollapsed: 		false,
 			tagMode: 		false,
