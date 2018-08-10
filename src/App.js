@@ -88,7 +88,7 @@ class App extends Component {
   }
   
 
-  load_queue = ["index","meta","outlines","structures","tags","version","com","com_audio"];
+  load_queue = ["core","version"];
   pull(element) {
     const index = this.load_queue.indexOf(element);
     
@@ -937,10 +937,14 @@ class App extends Component {
   	if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)  this.load_queue.push("hebrew");
   	
   	
-  	fetch("/core/meta.txt").then(response => response.text()).then(data => {
-      	globalData["meta"] = this.unzipJSON(data);
-      	this.pull("meta");
-      	this.checkLoaded();
+  	
+  	fetch("/core/core.txt").then(response => response.text()).then(data => {
+  		var unzipped = this.unzipJSON(data);
+  		for(var k in unzipped) globalData[k] = unzipped[k];
+  		
+  		// META
+  		
+  		
       	var s = this.state;
       	var m = globalData["meta"];
       	if(m.version[s.top_versions[0]]===undefined)
@@ -955,33 +959,92 @@ class App extends Component {
 		Object.keys(globalData["meta"]["version"]).map(version => {
 		  return  (new Image()).src = require('./img/versions/'+version.toLowerCase()+'.jpg');
 		});
-     });
-     
-  	fetch("/text/words_HEB.txt").then(response => response.text()).then(data => {
-  		
-      	globalData["hebrew"] = this.unzipJSON(data);
-      		if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)
-      		{
-      			
-      			this.pull("hebrew");
-      			this.checkLoaded();
-      		}
-      		this.setState({"hebrewReady":true});
-     });
-
-  	fetch("/text/verses_"+this.state.version.toUpperCase()+".txt").then(response => response.text()).then(data => {
-      	globalData["text"][this.state.version] =this.unzipJSON(data);
-      	this.pull("version");
-      	this.checkLoaded();
-     });
-  	fetch("/core/index.txt").then(response => response.text()).then(data => {
-      	globalData["index"] =this.unzipJSON(data);
-      	this.pull("index");
-      	this.checkLoaded();
-     });
-  	fetch("/core/tags.txt").then(response => response.text()).then(data => {
-      	globalData["tags"] =  this.unzipJSON(data);
-      	globalData["tags"]["tagSiblings"] = {};
+		
+		
+		//STRUCTURES
+		
+		
+		
+		var structures = globalData["structures"];
+		for (var structure_id in structures) {
+		  for (var i in structures[structure_id]) {
+		    for (var seg in structures[structure_id][i].verses) {
+		  	structures[structure_id][i].verses[seg] = this.verseDatatoArray(structures[structure_id][i].verses[seg]);
+		      for (var j in structures[structure_id][i].verses[seg]) {
+		        var verse = structures[structure_id][i].verses[seg][j];
+		        if (!(verse in globalData["structureIndex"])) {
+		          globalData["structureIndex"][verse] = {};
+		        }
+		        globalData["structureIndex"][verse][structure_id] = i;
+		      }
+		    }
+		  }
+		}
+		
+		
+		
+		//OUTLINES
+		
+		
+		var outlines = globalData["outlines"];
+		for (var outline_id in outlines) {
+		  for (var i in outlines[outline_id]) {
+		  	globalData["outlines"][outline_id][i].verses = outlines[outline_id][i].verses = this.verseDatatoArray(outlines[outline_id][i].verses);  //convert to 
+		      for (var j in outlines[outline_id][i].verses) {
+		        var verse = outlines[outline_id][i].verses[j];
+		        if (!(verse in globalData["outlineIndex"])) {
+		          globalData["outlineIndex"][verse] = {};
+		        }
+		        globalData["outlineIndex"][verse][outline_id] = i;
+		      }
+		  }
+		}
+		
+		
+		// COM AUDIO
+		
+		
+      	globalData.commentary_audio['index'] = {};
+		var dirs = globalData.commentary_audio.files;
+		for(var shortcode in dirs)
+		{
+			for(var filename in dirs[shortcode])
+			{
+				var verses = this.verseDatatoArray(dirs[shortcode][filename]);
+				dirs[shortcode][filename] = verses;
+				for(var x in verses)
+				{
+					if(globalData.commentary_audio.index[verses[x]]===undefined)
+					globalData.commentary_audio.index[verses[x]] = {};
+					if(globalData.commentary_audio.index[verses[x]][shortcode]===undefined)
+					globalData.commentary_audio.index[verses[x]][shortcode] = [];
+					globalData.commentary_audio.index[verses[x]][shortcode].push(filename);
+				}
+			}
+		}
+		
+		// COMMENTARY
+		
+		
+		
+      	globalData.commentary['idIndex'] = {};
+		var comIndex = globalData.commentary.comIndex;
+		
+		for (var verse_id in comIndex) {
+		  for (var source in comIndex[verse_id]) {
+		    for (var i in comIndex[verse_id][source]) {
+		    	var thisid = comIndex[verse_id][source][i];
+		    	if(globalData.commentary.idIndex[thisid] === undefined) globalData.commentary.idIndex[thisid] = {source:null,verse_ids:[]};
+		    	globalData.commentary.idIndex[thisid]["source"] = source;
+		    	globalData.commentary.idIndex[thisid].verse_ids.push(parseInt(verse_id,0));
+		    }
+		  }
+		}
+      	
+      	
+      	//TAGS
+      	
+      	      	globalData["tags"]["tagSiblings"] = {};
       	globalData["tags"]["tagBranches"] = [];
       	for(var x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
       	for(x in globalData["tags"]["tagIndex"])
@@ -1016,93 +1079,35 @@ class App extends Component {
 	      	}
 	      	this.setState({"tagsHLReady":true});
 	     });
-	  //   var g=globalData;	debugger;
-	  console.log(globalData["tags"]);
-     });
-     
-  	fetch("/core/structures.txt").then(response => response.text()).then(data => {
-      	globalData["structures"] =  this.unzipJSON(data);
-		var structures = globalData["structures"];
-		for (var structure_id in structures) {
-		  for (var i in structures[structure_id]) {
-		    for (var seg in structures[structure_id][i].verses) {
-		  	structures[structure_id][i].verses[seg] = this.verseDatatoArray(structures[structure_id][i].verses[seg]);
-		      for (var j in structures[structure_id][i].verses[seg]) {
-		        var verse = structures[structure_id][i].verses[seg][j];
-		        if (!(verse in globalData["structureIndex"])) {
-		          globalData["structureIndex"][verse] = {};
-		        }
-		        globalData["structureIndex"][verse][structure_id] = i;
-		      }
-		    }
-		  }
-		}
-      	this.pull("structures");
-      	this.checkLoaded();
-     });
-  	fetch("/core/outlines.txt").then(response => response.text()).then(data => {
-      	globalData["outlines"] = this.unzipJSON(data);
-		var outlines = globalData["outlines"];
-		for (var outline_id in outlines) {
-		  for (var i in outlines[outline_id]) {
-		  	globalData["outlines"][outline_id][i].verses = outlines[outline_id][i].verses = this.verseDatatoArray(outlines[outline_id][i].verses);  //convert to 
-		      for (var j in outlines[outline_id][i].verses) {
-		        var verse = outlines[outline_id][i].verses[j];
-		        if (!(verse in globalData["outlineIndex"])) {
-		          globalData["outlineIndex"][verse] = {};
-		        }
-		        globalData["outlineIndex"][verse][outline_id] = i;
-		      }
-		  }
-		}
-      	this.pull("outlines");
-      	this.checkLoaded();
-     });
-     
-     
-  	fetch("/core/commentary.txt").then(response => response.text()).then(data => {
-      	globalData["commentary"] = this.unzipJSON(data);
-      	globalData.commentary['idIndex'] = {};
-		var comIndex = globalData.commentary.comIndex;
 		
-		for (var verse_id in comIndex) {
-		  for (var source in comIndex[verse_id]) {
-		    for (var i in comIndex[verse_id][source]) {
-		    	var thisid = comIndex[verse_id][source][i];
-		    	if(globalData.commentary.idIndex[thisid] === undefined) globalData.commentary.idIndex[thisid] = {source:null,verse_ids:[]};
-		    	globalData.commentary.idIndex[thisid]["source"] = source;
-		    	globalData.commentary.idIndex[thisid].verse_ids.push(parseInt(verse_id,0));
-		    }
-		  }
-		}
-      	
-      	this.pull("com");
+		var g = globalData;
+		debugger;
+  		
+      	this.pull("core");
+      	this.checkLoaded();
+  		
+  	});
+  	
+
+  	fetch("/text/words_HEB.txt").then(response => response.text()).then(data => {
+  		
+      	globalData["hebrew"] = this.unzipJSON(data);
+      		if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)
+      		{
+      			
+      			this.pull("hebrew");
+      			this.checkLoaded();
+      		}
+      		this.setState({"hebrewReady":true});
+     });
+
+  	fetch("/text/verses_"+this.state.version.toUpperCase()+".txt").then(response => response.text()).then(data => {
+      	globalData["text"][this.state.version] =this.unzipJSON(data);
+      	this.pull("version");
       	this.checkLoaded();
      });
      
-  	fetch("/core/commentary_audio.txt").then(response => response.text()).then(data => {
-      	globalData["commentary_audio"] = {"files": this.unzipJSON(data)};
-      	globalData.commentary_audio['index'] = {};
-		var dirs = globalData.commentary_audio.files;
-		for(var shortcode in dirs)
-		{
-			for(var filename in dirs[shortcode])
-			{
-				var verses = this.verseDatatoArray(dirs[shortcode][filename]);
-				dirs[shortcode][filename] = verses;
-				for(var x in verses)
-				{
-					if(globalData.commentary_audio.index[verses[x]]===undefined)
-					globalData.commentary_audio.index[verses[x]] = {};
-					if(globalData.commentary_audio.index[verses[x]][shortcode]===undefined)
-					globalData.commentary_audio.index[verses[x]][shortcode] = [];
-					globalData.commentary_audio.index[verses[x]][shortcode].push(filename);
-				}
-			}
-		}
-      	this.pull("com_audio");
-      	this.checkLoaded();
-     });
+     
 
 	//Load ALT
 	setTimeout(function() { 
