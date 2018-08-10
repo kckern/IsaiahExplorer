@@ -75,7 +75,11 @@ export default class VerseColumn extends Component {
 			}
 
 			var hebimg = null;
-			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{this.props.app.setState({hebrewMode:!this.props.app.state.hebrewMode,searchMode:false,hebrewFax:false},this.props.app.setUrl.bind(this.props.app));}}/>
+			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{
+				if(this.props.app.state.hebrewMode) return this.props.app.clearTag();
+				this.props.app.setState({hebrewMode:true},this.props.app.setUrl.bind(this.props.app));
+				
+			}}/>
 			
 			var swap_imgs = versions.map((shortcode,key)=>{
 					var classes = [];
