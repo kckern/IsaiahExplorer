@@ -1347,7 +1347,7 @@ class App extends Component {
 			
 			var parent = container.childNodes[0].getBoundingClientRect().y;
 			var child = element.getBoundingClientRect().y;
-			const to = child-parent-200;
+			const to = child-parent-100;
 			if(reset===true) container.scrollTop=0;
 			this.scrollBoxTo("text",container,to,time);
   }
