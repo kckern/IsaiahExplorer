@@ -102,7 +102,7 @@ class MoreTab extends Component {
 			return (
 				<select  onChange={this.selectOption.bind(this)} >
 					<option val="top">⋯</option>
-					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ {source.name}</option> } ) }
+					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> } ) }
 				</select>
 				)
 		}
