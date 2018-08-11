@@ -5,6 +5,6 @@
     "verse_count": 1,
     "reference": "65:20",
     "title": "",
-    "html": "<p><em>Thence \"There\"\u2014<\/em> For<span class=\"greek-hebrew\"> \u05de\u05e9\u05dd<\/span><span class=\"translit\"> mishsham<\/span> , thence, the Septuagint, Syriac, and Vulgate, read<span class=\"greek-hebrew\"> \u05e9\u05dd<\/span><span class=\"translit\"> sham<\/span> , there.<\/p> ",
+    "html": " <p> <em>Thence \"There\"\u2014 <\/em>,For <span class=\"greek-hebrew\">,\u05de\u05e9\u05dd <\/span> <span class=\"translit\">,mishsham <\/span>,, thence, the Septuagint, Syriac, and Vulgate, read <span class=\"greek-hebrew\">,\u05e9\u05dd <\/span> <span class=\"translit\">,sham <\/span>,, there. <\/p>,",
     "audit": null
 }
