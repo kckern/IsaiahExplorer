@@ -99,6 +99,7 @@ class MoreTab extends Component {
 	{
 		if(this.state.open)
 		{
+			
 			return (
 				<select  onChange={this.selectOption.bind(this)} >
 					<option val="top">⋯</option>
