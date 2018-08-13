@@ -1806,7 +1806,6 @@ class App extends Component {
     		showcase_tag: null,
     		previewed_tag: null,
     		selected_tag_block_index: null,
-    		searchMode: false,
     		comSearchMode: false,
     		preSearchMode: false,
 			highlighted_verse_range: 		tagData.verses,
