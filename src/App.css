@@ -393,7 +393,10 @@ div#text
 	display:none;
 }
 
-
+#approot.commentaryMode #commentary_text blockquote p
+{
+	margin:0;
+}
 
 div#verse
 {
