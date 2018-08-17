@@ -397,6 +397,10 @@ div#text
 {
 	margin:0;
 }
+#approot.commentaryMode #commentary_text td
+{
+    vertical-align: top;
+}
 
 div#verse
 {
