@@ -59,13 +59,13 @@ class CommentaryTabs extends Component {
 
 	comSources = this.mapOrder(comSources, this.props.app.state.commentary_order, 'shortcode');
 
-  	var available =[];
+  	var available ={};
   	
   	//order from local storage?
   	var tabs = comSources.map((source,key)=>{
   		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id]===undefined) return null;
 		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][source.shortcode]===undefined) return null;
-		available.push(source);
+		available[source.shortcode] = source;
 		var classes = [];
 		if(source.shortcode===this.props.app.state.commentarySource) classes.push("selected");
   		return <span className={classes.join(" ")} key={key} ref={source.shortcode} onClick={()=>this.handleClick(source.shortcode)}>{source.label}</span>;
@@ -99,11 +99,17 @@ class MoreTab extends Component {
 	{
 		if(this.state.open)
 		{
-			
+			const sources = this.props.sources;
+			const order = globalData.commentary.comOrder;
 			return (
 				<select  onChange={this.selectOption.bind(this)} >
 					<option val="top">⋯</option>
-					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> } ) }
+					{ order.map((shortcode,key)=>{ 
+					var source = sources[shortcode];  
+					if(source===undefined) return null;
+					return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> 
+						
+					} ) }
 				</select>
 				)
 		}
