@@ -1632,7 +1632,8 @@ class App extends Component {
   
 	sgshow(e){ 
 		e.preventDefault();
-		this.props.app.PopupCenter("http://scripture.guide/"+this.props.reference.replace(/\s+/g,".").toLowerCase(),"Scripture Guide",1000,750);
+		var ref = this.props.reference.replace(/[\s.]+/g,".").toLowerCase();
+		this.props.app.PopupCenter("http://scripture.guide/"+ref,"Scripture Guide",1000,750);
 		e.stopPropagation();
 		}  
     
@@ -2106,7 +2107,8 @@ ArrNoDupe(a) {
   		var sources = Object.keys(globalData.commentary.comIndex[this.state.active_verse_id]);
   		id = globalData.commentary.comIndex[this.state.active_verse_id][sources[0]][0];
   	}
-  	if(id===null) id = globalData.commentary.comIndex[this.state.active_verse_id][this.state.commentarySource][0];
+  	var candidates = globalData.commentary.comIndex[this.state.active_verse_id][this.state.commentarySource];
+  	if(id===null) id = candidates[candidates.length-1];
   	return id
 
   }
