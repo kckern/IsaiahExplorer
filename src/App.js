@@ -160,8 +160,23 @@ class App extends Component {
   {
   	settings.active_verse_id = 17656;
 	var path = this.props.location.pathname;
+	
+	var matches =(new RegExp("^/([0-9]+)/([0-9]+)$","ig")).exec(path)
+	if(matches!==null)
+	{
+		path = settings.active_verse_id = this.loadVerseId(matches[1],matches[2]);
+	}
+	matches =(new RegExp("^/([0-9]+)$","ig")).exec(path)
+	if(matches!==null)
+	{
+		path = settings.active_verse_id = this.loadVerseId(matches[1],1);
+	}
+	
+	
+	
+	
 	var regex = new RegExp("^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/hebrew.[0-9]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*","ig");
-	var matches =regex.exec(path);
+	matches =regex.exec(path);
 	var params = [null];
 	if(matches===null) return settings;
 	for(var i = 1; i<matches.length; i++) 
@@ -190,6 +205,7 @@ class App extends Component {
   		}
   	}
   	
+
   	
   	return settings;
   }
