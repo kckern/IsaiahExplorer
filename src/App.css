@@ -721,6 +721,7 @@ span.label
 	background-color:#EEE;
 	font-weight:bold;
 	white-space:nowrap;
+	word-break: break-all;
 	float:left;
 	margin-right:15px;
 }
@@ -1434,6 +1435,7 @@ tr.metaref td div.meta + div.ref
 	border-bottom:0;
 	letter-spacing:-0.5px;
 	font-size:10px;
+	word-break: break-all;
 }
 
 .chimeta .tagref
