@@ -48,6 +48,17 @@ class CommentaryTabs extends Component {
   return array;
 };
 
+ ksort(obj){
+  var keys = Object.keys(obj).sort()
+    , sortedObj = {};
+
+  for(var i in keys) {
+    sortedObj[keys[i]] = obj[keys[i]];
+  }
+
+  return sortedObj;
+}
+
 	componentDidUpdate()
 	{
 		this.props.app.saveSettings()
@@ -65,12 +76,13 @@ class CommentaryTabs extends Component {
   	var tabs = comSources.map((source,key)=>{
   		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id]===undefined) return null;
 		if(globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][source.shortcode]===undefined) return null;
-		available[source.shortcode] = source;
+		available[source.year+source.shortcode]=source;
 		var classes = [];
 		if(source.shortcode===this.props.app.state.commentarySource) classes.push("selected");
   		return <span className={classes.join(" ")} key={key} ref={source.shortcode} onClick={()=>this.handleClick(source.shortcode)}>{source.label}</span>;
   	});
-  	
+  
+  	available = Object.values(this.ksort(available)).reverse();
   	return (<div className="src_tabs"><MoreTab app={this.props.app} sources={available}/>{tabs}</div>)
   }
   
@@ -99,17 +111,11 @@ class MoreTab extends Component {
 	{
 		if(this.state.open)
 		{
-			const sources = this.props.sources;
-			const order = globalData.commentary.comOrder;
+			
 			return (
 				<select  onChange={this.selectOption.bind(this)} >
 					<option val="top">⋯</option>
-					{ order.map((shortcode,key)=>{ 
-					var source = sources[shortcode];  
-					if(source===undefined) return null;
-					return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> 
-						
-					} ) }
+					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> } ) }
 				</select>
 				)
 		}
