@@ -6,7 +6,6 @@ $pattern = "/^(\/[^\/]+)(\/[^\/]+)(\/[^\/]+)(\/tag.[^\/]+)*(\/search.[^\/]+)*(\/
 
 preg_match_all($pattern,$_SERVER['REQUEST_URI'],$matches);
 
-
 $structure 	= substr($matches[1][0], 1);
 $outline 	= substr($matches[2][0], 1);
 $version 	= substr($matches[3][0], 1);
@@ -17,6 +16,21 @@ $chapter 	= substr($matches[7][0], 1);
 $verse  	= substr($matches[8][0], 1);
 $comment  	= substr($matches[9][0], 1);
 $commid  	= substr($matches[10][0], 1);
+
+$pattern = "/^\/(\d+)/i";
+preg_match_all($pattern,$_SERVER['REQUEST_URI'],$matches);
+if(!empty($matches[1]))
+{
+	$chapter 	= substr($matches[1][0], 0);
+	$verse  	= 1;
+}
+$pattern = "/^\/(\d+)\/(\d+)/i";
+preg_match_all($pattern,$_SERVER['REQUEST_URI'],$matches);
+if(!empty($matches[1]))
+{
+	$chapter 	= substr($matches[1][0], 0);
+	$verse  	= substr($matches[2][0], 0);
+}
 
 
 if(empty($chapter)) $chapter = 2;
