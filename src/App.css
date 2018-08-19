@@ -2899,8 +2899,8 @@ button#commentary
 {
 	font-size:12px;
 	border:2px solid #000;
-	font-family:arial;
-
+	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
+	word-break: break-all;
 	line-height:20px;
 	padding-left:10px;
 	border-radius:10px;
@@ -2912,6 +2912,12 @@ button#commentary
 	float:left;
 	margin-right:5px;
 }
+
+.safari #audio_heading div
+{
+	letter-spacing:-1px;
+}
+
 #audio_heading div:hover,
 #audio_heading div.active_audio
 {

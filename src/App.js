@@ -120,6 +120,11 @@ class App extends Component {
  	fn();
  }
 	
+IsSafari() {
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+}
+	
  render() {
  	
 
@@ -131,6 +136,7 @@ class App extends Component {
 		var classes = [];  
 		if(this.state.infoOpen===true)  classes.push("infoOpen"); 
 		if(this.state.commentaryMode===true)  classes.push("commentaryMode"); 
+		if(this.IsSafari())  classes.push("safari"); 
 		
 		var title = (<span>Isaiah Explorer</span>);
 
