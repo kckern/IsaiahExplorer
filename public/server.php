@@ -31,6 +31,12 @@ if(!empty($matches[1]))
 	$chapter 	= substr($matches[1][0], 0);
 	$verse  	= substr($matches[2][0], 0);
 }
+$pattern = "/^\/(tag.[^\/]+)/i";
+preg_match_all($pattern,$_SERVER['REQUEST_URI'],$matches);
+if(!empty($matches[1]))
+{
+	$tag 	= substr($matches[1][0], 0);
+}
 
 
 if(empty($chapter)) $chapter = 2;
@@ -53,8 +59,8 @@ if(!empty($search)) $heading = "Search: ".ucwords($search);
 if(!empty($hebrew)) $heading = "Hebrew Word Search";
 if(!empty($tag))
 {
-	$tagdata = json_decode(file_get_contents("./core/tags.json"),1);
-	$tagdata = $tagdata[substr($tag,4)]; 
+	$tags = json_decode(file_get_contents("./core/tags.json"),1);
+	$tagdata = $tags['slugmap'][substr($tag,4)]; 
 	$heading = "Tag—".$tagdata[0];
 	$description = $tagdata[1];
 }

@@ -1,6 +1,7 @@
 <?
 
-
+$ip = @$_SERVER['HTTP_CLIENT_IP'] ?: @$_SERVER['HTTP_X_FORWARDED_FOR'] ?: @$_SERVER['REMOTE_ADDR'];
+echo $ip; exit;
 $useragent=$_SERVER['HTTP_USER_AGENT'];
 if(
 	preg_match('/Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/i',$useragent))
@@ -15,7 +16,8 @@ if(preg_match("/^\/cover/ui",$_SERVER['REQUEST_URI']))
 else if (
     stripos($useragent, "facebookexternalhit/") !== false ||          
     stripos($useragent, "Facebot") !== false ||          
-    stripos($useragent, "twitter") !== false 
+    stripos($useragent, "twitter") !== false  ||          
+    $ip == "54.65.251.27" 
 ) {
     // it is probably Facebook's bot
     require("server.php");

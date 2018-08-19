@@ -32,7 +32,8 @@ class CommentaryTabs extends Component {
 		
   handleClick(shortcode)
   {
-  	var id = globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][shortcode][0]
+  	var list = globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][shortcode];
+  	var id = list[list.length-1];
   	this.props.app.setState({commentarySource:shortcode,commentaryID:id})	
   }
   

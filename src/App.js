@@ -179,14 +179,21 @@ IsSafari() {
 	var matches =(new RegExp("^/([0-9]+)/([0-9]+)$","ig")).exec(path)
 	if(matches!==null)
 	{
-		path = settings.active_verse_id = this.loadVerseId(matches[1],matches[2]);
+		settings.active_verse_id = this.loadVerseId(matches[1],matches[2]);
 	}
 	matches =(new RegExp("^/([0-9]+)$","ig")).exec(path)
 	if(matches!==null)
 	{
-		path = settings.active_verse_id = this.loadVerseId(matches[1],1);
+		settings.active_verse_id = this.loadVerseId(matches[1],1);
 	}
 	
+	matches =(new RegExp("^/tag.([^/]+)","ig")).exec(path)
+	if(matches!==null)
+	{
+		settings.selected_tag = this.loadTagFromSlug(matches[1].replace(/^tag\./,''));
+		var tagd = this.getTagData(settings.selected_tag);
+		settings.active_verse_id = tagd.verses[0];
+	}
 	
 	
 	
@@ -205,7 +212,7 @@ IsSafari() {
   	if(params[2] !== null && globalData.meta.outline[params[2]] !== undefined) settings.outline = params[2];
   	if(params[3] !== null && globalData.meta.version[params[3].toUpperCase()] !== undefined) settings.version = params[3].toUpperCase();
   	if(params[4] !== null) settings.selected_tag = this.loadTagFromSlug(params[4].replace(/^tag\./,''));
-  	if(params[5] !== null) { settings.searchQuery = params[5].replace(/^search\./,'').replace(/\+/g," "); settings.searchMode = false; }
+  	if(params[5] !== null) { settings.searchQuery = params[5].replace(/^search\./,'').replace(/\+/g," "); settings.searchMode = false; settings.urlSearch = true; }
   	if(params[6] !== null) { settings.hebrewStrongIndex = parseInt(params[6].replace(/^hebrew\./,''),0); }
   	if(params[7] !== null && params[8] !== null) settings.active_verse_id = this.loadVerseId(params[7],params[8]);
   	
@@ -247,28 +254,59 @@ IsSafari() {
   
   setUrl()
   {
-  	
+  	var title = ""
   	var path = "";
   	path = path + "/"+this.state.structure;
   	path = path + "/"+this.state.outline;
   	path = path + "/"+this.state.version;
   	
-  	if(this.state.showcase_tag!==null && globalData.tags.tagIndex[this.state.showcase_tag]!==undefined) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
-  	else if(this.state.selected_tag!==null && globalData.tags.tagIndex[this.state.selected_tag]!==undefined) 	path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
-  	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null) 	path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
-  	else if(this.state.hebrewStrongIndex!==null) 	path = path + "/hebrew."+this.state.hebrewStrongIndex;
+  	if(this.state.showcase_tag!==null && globalData.tags.tagIndex[this.state.showcase_tag]!==undefined)
+  	{
+  		path = path + "/tag."+globalData.tags.tagIndex[this.state.showcase_tag].slug
+  		
+  		title = this.state.showcase_tag + " | ";
+  	}
+  	else if(this.state.selected_tag!==null && globalData.tags.tagIndex[this.state.selected_tag]!==undefined)
+  	{
+  		path = path + "/tag."+globalData.tags.tagIndex[this.state.selected_tag].slug
+  		title = this.state.selected_tag + " | ";
+  	} 	
+  	else if(this.state.searchQuery!==null && this.state.hebrewStrongIndex===null)
+  	{
+  		path = path + "/search."+this.state.searchQuery.replace(/\s+/g,"+").toLowerCase();
+  		title = "“"+ this.state.searchQuery + "” | ";
+  	} 	
+  	else if(this.state.hebrewStrongIndex!==null)
+  	{
+  		path = path + "/hebrew."+this.state.hebrewStrongIndex;
+  		title = "Hebrew H"+ this.state.hebrewStrongIndex + " | ";
+  	} 	
   	
   	path = path + "/"+globalData.index[this.state.active_verse_id].chapter;
   	path = path + "/"+globalData.index[this.state.active_verse_id].verse;
   	
+  	title = title + "Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse;
   	
-  	if(this.state.commentaryMode && this.state.commentaryID!==null) path = path + "/commentary."+this.state.commentarySource+"/"+this.state.commentaryID;
-  	else if(this.state.commentaryMode) path = path + "/commentary."+this.state.commentarySource;
+  	
+  	if(this.state.commentaryMode && this.state.commentaryID!==null)
+  	{
+  		path = path + "/commentary."+this.state.commentarySource+"/"+this.state.commentaryID;
+  		title = globalData.commentary.comSources[this.state.commentarySource].name + " | Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse;
+  	}  
+  	else if(this.state.commentaryMode)
+  	{
+  		path = path + "/commentary."+this.state.commentarySource;
+  		title = globalData.commentary.comSources[this.state.commentarySource].name + " | Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse;
+
+  	}  
   	
   	//if(this.state.audioState !== null && !this.state.commentaryAudioMode) path = path + "/audio";
   //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
   	
   	 this.props.history.push(path.toLowerCase());
+  	 
+  	 document.title = title;
+  	 
   }
   
   initApp()
