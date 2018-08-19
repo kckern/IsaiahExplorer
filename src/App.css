@@ -2859,6 +2859,8 @@ img.play
 	width:30px;
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
+	height:15px;
+	line-height:15px;
 }
 
 .src_tabs span.selected
