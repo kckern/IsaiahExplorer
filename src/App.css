@@ -135,6 +135,11 @@ body.ie #text div.chiastic_column
 .tipsy-w .tipsy-arrow { top: 50%; margin-top: -4px; left: 0; width: 5px; height: 9px; }
 
 
+.Tipsy.right, .Tipsy.left
+{
+	background-color: #444;
+}
+
 .tipsyOutline,
 .tipsyVersion,
 .tipsyStructure
@@ -2168,6 +2173,18 @@ div.option.top.option--dragging > div.optionbox > img.structure_title_icon
 	top:-1px;
 }
 
+ 
+#videobox
+{
+	background-color:black;
+	position:absolute;
+	top:50px;
+	left:50%;
+	margin-left:-640px;
+	width:1280px;
+	height:720px;
+	border:3px solid #777;
+}
 
 
 #user_prefs
@@ -3472,6 +3489,13 @@ a.strong:hover
  * React Tipsy
  * ===========
  */
+ 
+ .right .Tipsy-inner, .left .Tipsy-inner
+ {
+ 	
+  background-color: #111;
+ }
+ 
 .Tipsy {
   display: block;
   position: absolute;
@@ -3523,6 +3547,9 @@ a.strong:hover
   padding: 3px 8px;
   text-align: center;
 }
+.Tipsy-inner.right {
+  background-color: #444;
+}
 .Tipsy-arrow {
   border-color: transparent;
   border-style: solid;
@@ -3542,14 +3569,14 @@ a.strong:hover
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #467386;
+  border-right-color: #111;
 }
 .Tipsy.left .Tipsy-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #467386;
+  border-left-color: #111;
 }
 .Tipsy.bottom .Tipsy-arrow {
   top: 0;

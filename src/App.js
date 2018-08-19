@@ -11,6 +11,8 @@ import Audio from './Components/Audio.js';
 import Settings from './Components/Settings/Settings.js';
 import {TagFloater} from './Components/Tags.js';
 import {globalData} from './globals.js';
+import VideoBox from './Components/VideoBox.js';
+import Tipsy from 'react-tipsy'
 
 import './App.css'; 
  
@@ -131,6 +133,10 @@ IsSafari() {
 	var settingsPanel = null;
 	if(this.state.settings===true) settingsPanel = ( [<div key="shader" className='shader' onClick={() => this.closeSettings()}/>,<Settings key="settingbox" app={this}/>] );
 	else settingsPanel = null;
+
+	var videoPanel = null;
+	if(this.state.video===true) videoPanel = ( [<div key="shader" className='shader' onClick={() => this.closeVideo()}/>,<VideoBox key="videobox" app={this}/>] );
+	else videoPanel = null;
 	
 	
 		var classes = [];  
@@ -143,9 +149,11 @@ IsSafari() {
  	return (
 			<div id="approot" className={classes.join(" ")} > 
 				<h1>
-				<img alt="Settings" onClick={() => this.openSettings()} src={settings_icon} className='settings'/>
+				<Tipsy content="Settings" placement="left" trigger="hover focus touch" className="topper">
+				<img alt="Settings" onClick={() => this.openSettings()} src={settings_icon} className='settings'/></Tipsy>
 				{title}
-				<img  alt="Video" src={video_icon} className='demo'/>
+				<Tipsy content="Video Tutorial" placement="right" trigger="hover focus touch" className="topper">
+				<img  alt="Video" onClick={() => this.openVideo()}  src={video_icon} className='demo'/></Tipsy>
 				</h1>
 				<div className="wrapper">
 					<StructureColumn  	app={this}/>
@@ -154,6 +162,7 @@ IsSafari() {
 					<PassageColumn 		app={this}/> 
 				</div>
 				{settingsPanel}
+				{videoPanel}
 				<TagFloater app={this} floater={this.floater}/>
 				<Audio app={this}  />
 			</div>
@@ -826,6 +835,15 @@ IsSafari() {
 	openSettings()
 	{
 		this.setState({ settings: true });
+	}
+  
+	openVideo()
+	{
+		this.setState({ video: true });
+	}
+	closeVideo()
+	{
+		this.setState({ video: false });
 	}
 	closeSettings()
 	{
