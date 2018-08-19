@@ -1665,6 +1665,10 @@ div#text.chiasm.tagged .head-content {
 	color:#FFFFFF;
 }
 
+.safari #text .chiastic_block
+{
+		letter-spacing:-1px;
+}
 
 .chiastic_mini
 {
@@ -3380,7 +3384,7 @@ button#commentary
 
 #hebrew span
 {
-	white-space: nowrap;
+
 }
 
 #hebrew span.space
