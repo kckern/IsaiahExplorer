@@ -211,16 +211,16 @@ class Heading extends Component {
 	                
                 }
               }
+            >
+            <span className="ref">{ref}</span>
+              <h3
               onClick={() =>
                 {
                 	var whole_row = this.props.heading.verses;
                 	this.props.app.clearTag();
                 	this.props.app.setActiveVerse(whole_row[0],undefined,undefined,undefined,"versebox");
                 }
-              }
-            >
-            <span className="ref">{ref}</span>
-              <h3>{this.props.heading.heading}</h3>
+              }>{this.props.heading.heading}</h3>
               <div className="verse_grid">
                 {this.props.heading.verses.map((verse_id, verseKey) => {
                   var box_num = index[verse_id.toString()].verse;

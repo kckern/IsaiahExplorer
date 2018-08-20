@@ -381,6 +381,8 @@ class TagBlocks extends Component {
 			var showdesc = entry.desc;
 			var highlights = null;
 			if(entry.highlight!==undefined) highlights = entry.highlight;
+			
+			//Add Label
 			var label = null;
 			var match = /\s*\[(.*?)\]\s*(.*)/g.exec(entry.desc);
 			if(match!==null && label===null)
@@ -389,6 +391,7 @@ class TagBlocks extends Component {
 				showdesc = match[2];
 			}
 			
+			//Add Links 
 			showdesc = this.props.app.addLinks(showdesc);
 			
 			
@@ -401,6 +404,7 @@ class TagBlocks extends Component {
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
 			   if(count===1 && entry.desc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
+			   else if(count===1) { 	classes.push("active");  }
 			   if(isFloater) this.props.app.saveFloater(this.props.app.state.selected_tag+key,item);
 			   
 			 
@@ -414,7 +418,6 @@ class TagBlocks extends Component {
 		});
 				
 		var classes = ["blocks","tagged"];
-		
     return (
 
       		<div id="text" className={classes.join(" ")} >
