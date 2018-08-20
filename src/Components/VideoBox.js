@@ -9,6 +9,7 @@ export default class VideoBox extends Component {
 	
 		return <div id="videobox">
 		<iframe 
+			title="tutorial"
 			width="1280" 
 			height="720" 
 			src="https://www.youtube.com/embed/?listType=playlist&list=PLDC0nTbURSOpgH_MVnAX63fjtXidqVwvn&rel=0&autoplay=1" 
