@@ -291,12 +291,12 @@ IsSafari() {
   	if(this.state.commentaryMode && this.state.commentaryID!==null)
   	{
   		path = path + "/commentary."+this.state.commentarySource+"/"+this.state.commentaryID;
-  		title = globalData.commentary.comSources[this.state.commentarySource].name + " | Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse;
+  		title = "Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse+ " | " + globalData.commentary.comSources[this.state.commentarySource].name;
   	}  
   	else if(this.state.commentaryMode)
   	{
   		path = path + "/commentary."+this.state.commentarySource;
-  		title = globalData.commentary.comSources[this.state.commentarySource].name + " | Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse;
+  		title = "Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse+ " | " + globalData.commentary.comSources[this.state.commentarySource].name;
 
   	}  
   	
@@ -1950,14 +1950,14 @@ IsSafari() {
   setActiveOutline(shortcode)
   {
 	this.setState({ 
+		selected_verse: null,
 		outline: shortcode,
 		highlighted_heading_index: 		this.getHeadingIndex(this.state.active_verse_id,shortcode)
 		},
 		function(){
 			this.saveSettings();
-			this.setActiveVerse(this.state.active_verse_id,undefined,shortcode);
 			this.scrollOutline(null,"versebox");
-			this.scrollText(false,"versebox");
+			this.setActiveVerse(this.state.active_verse_id,undefined,undefined,undefined,"versebox");
 		}
 	);
   }
