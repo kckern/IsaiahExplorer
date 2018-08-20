@@ -192,6 +192,9 @@ class Heading extends Component {
           const index = globalData["index"];
           var classes = ["heading_grid"]; 
           if (this.isActive()) classes.push("heading_grid_highlighted");
+          
+          var ref = this.props.app.getReference(this.props.heading.verses).replace(/^Isaiah /i,"");
+          
           return (
             <div
               className={classes.join(" ")}
@@ -216,6 +219,7 @@ class Heading extends Component {
                 }
               }
             >
+            <span className="ref">{ref}</span>
               <h3>{this.props.heading.heading}</h3>
               <div className="verse_grid">
                 {this.props.heading.verses.map((verse_id, verseKey) => {

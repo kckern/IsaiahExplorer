@@ -1957,6 +1957,7 @@ IsSafari() {
 			this.saveSettings();
 			this.setActiveVerse(this.state.active_verse_id,undefined,shortcode);
 			this.scrollOutline(null,"versebox");
+			this.scrollText(false,"versebox");
 		}
 	);
   }
