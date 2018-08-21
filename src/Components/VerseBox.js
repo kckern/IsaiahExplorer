@@ -37,7 +37,7 @@ export class VerseBox extends Component {
 
             <div
               onMouseEnter={() => this.props.app.setActiveVerse(this.props.verse_id,undefined,undefined,undefined,"versebox")}
-              onClick={() => this.props.app.selectVerse(this.props.verse_id)}
+              onClick={() => this.props.app.selectVerse(this.props.verse_id,"versebox")}
               className={this.props.class.join(" ")}
               verse_id={this.props.verse_id}
               title={this.props.title}  >

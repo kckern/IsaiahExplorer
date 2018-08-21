@@ -824,7 +824,7 @@ IsSafari() {
 		this.setState({ spotHover: true });
 	}
 	
-	selectVerse(verse_id)
+	selectVerse(verse_id,src)
 	{
 		if(verse_id===null) return this.unSelectVerse();
 		//if searchmode and not in 
@@ -862,7 +862,7 @@ IsSafari() {
   		if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(parseInt(verse_id,0))<0) return ()=>{};
 		this.setState(
 			{selected_verse_id: verse_id },
-			()=>this.setActiveVerse(verse_id,undefined,undefined,true)
+			()=>this.setActiveVerse(verse_id,undefined,undefined,true,src)
 		);
 	}
 	unSelectVerse()
@@ -1307,6 +1307,7 @@ IsSafari() {
   	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
   	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
   	if(this.state.selected_verse_id !== null && force===undefined) return ()=>{};
+  	
   	if(this.state.selected_tag !== null && this.state.highlighted_verse_range.indexOf(verse_id)<0) return ()=>{};
   	if(this.state.searchMode && this.state.highlighted_verse_range.indexOf(verse_id)<0 && source!=="newversion" && !this.state.commentaryAudioMode) return ()=>{};
   	
@@ -1403,7 +1404,6 @@ IsSafari() {
   
   scrollText(reset,source)
   {
-
   			if(["versebox","arrow","tag","audio","init","search"].indexOf(source)===-1) return false;
   			
   			var time = 200;
