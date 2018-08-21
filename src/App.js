@@ -755,6 +755,7 @@ IsSafari() {
   search(query)
   {
 	  	var matches = [];
+	if(query===undefined || query===null) query = "";
   	query = query.replace(/[[\]]/g,'');
   	var refSearch = this.state.refSearch;
   	
@@ -1262,8 +1263,8 @@ IsSafari() {
 	      	this.setState({ version: shortcode, ui_version_loading: false, spot:null },
 	      	function(){
 			this.saveSettings();
-	      	this.setActiveVerse(this.state.active_verse_id);
-			if(this.state.searchMode) this.search(this.state.searchQuery);
+	      	this.setActiveVerse(this.state.active_verse_id,undefined,undefined,true,"version");
+			if(this.state.searchMode && this.state.searchQuery!==null) this.search(this.state.searchQuery);
 	      	});
 	      });
   }
@@ -1303,6 +1304,7 @@ IsSafari() {
   
   setActiveVerse(verse_id,structure,outline,force,source)
   {
+  	console.log("setActiveVerse "+source);
   	if(verse_id===null || verse_id===undefined) return ()=>{};
   	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
   	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
@@ -1978,6 +1980,7 @@ IsSafari() {
 		
 		function(){
 			this.saveSettings();
+			if(!(this.state.searchMode && this.state.searchQuery===null))
 			this.setActiveVerse(this.state.active_verse_id,undefined,undefined,undefined,"newversion");
 			this.spotDone();
 		});

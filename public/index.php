@@ -17,7 +17,7 @@ else if (
     stripos($useragent, "facebookexternalhit/") !== false ||          
     stripos($useragent, "Facebot") !== false ||          
     stripos($useragent, "twitter") !== false  ||          
-    $ip == "54.65.251.27x" 
+    $_SERVER['HTTP_HOST'] == "seo.isaiah.scripture.guide" 
 ) {
     // it is probably Facebook's bot
     require("server.php");
