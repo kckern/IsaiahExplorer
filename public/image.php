@@ -50,7 +50,8 @@ $ref = "Isaiah $chapter:$verse";
 if(!empty($tag))
 {
 	$tagdata = json_decode(file_get_contents("./core/tags.json"),1);
-	$tagdata = $tagdata[substr($tag,4)]; 
+	$slugmap = $tagdata['slugmap'];
+	$tagdata = $slugmap[substr($tag,4)]; 
 	$ref = "Tag—".trim(preg_replace("/[^A-z0-9()\[\]]+/"," ",$tagdata[0]));
 	$description = $tagdata[1];
 }
