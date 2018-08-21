@@ -312,8 +312,8 @@ div#version_meta.meta.visible
 
 div.verse_grid,
 h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.verse_info_box ,.readmore, #seefax,
-#user_prefs div,#user_prefs span,#user_prefs p,
-#approot.commentaryMode #commentary_text p
+#user_prefs div,#user_prefs span,#user_prefs p, #approot.commentaryMode #commentary_text p
+
 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -321,8 +321,13 @@ h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.vers
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor:context-menu;
   
+}
+
+#approot.commentaryMode #commentary_text p
+{
+  cursor:context-menu;
+	
 }
 
 
