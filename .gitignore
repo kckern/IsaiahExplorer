@@ -6,11 +6,14 @@
 # testing
 /coverage
 
-# production
+# test
 /build
 
 # production
 /prod
+
+
+# admin
 /admin
 
 # misc
@@ -23,6 +26,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 
 .idea/*
