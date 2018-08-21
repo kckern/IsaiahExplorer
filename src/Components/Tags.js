@@ -280,14 +280,14 @@ class TagBlocks extends Component {
 	    this.active_block_index = null
   	}
 
-	handleDescClick(verseId,classes,index)
+	handleDescClick(verseId,classes,index,count)
 	{
 		if(classes.indexOf("active")<0)
 		{
 			//collapse
 			this.props.app.setState({allCollapsed:false},this.props.app.setTagBlock(index,verseId));
 		}
-		else
+		else if(count>1)
 		{
 			
 			this.props.app.setState({allCollapsed:true,selected_tag_block_index:null}, this.props.app.checkFloater.bind(this.props.app));
@@ -400,7 +400,7 @@ class TagBlocks extends Component {
 			        <div 
 			        className={desc_classes.join(" ")} 
 			        onMouseEnter={()=>this.props.app.highlightTaggedVerses(entry.verses.map(Number))}
-			        onClick={()=>this.handleDescClick(entry.verses.map(Number)[0],classes,key) }
+			        onClick={()=>this.handleDescClick(entry.verses.map(Number)[0],classes,key,count) }
 			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
 			   	);
 			   if(count===1 && entry.desc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}

@@ -312,7 +312,8 @@ div#version_meta.meta.visible
 
 div.verse_grid,
 h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.verse_info_box ,.readmore, #seefax,
-#user_prefs div,#user_prefs span,#user_prefs p
+#user_prefs div,#user_prefs span,#user_prefs p,
+#approot.commentaryMode #commentary_text p
 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -320,7 +321,7 @@ h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.vers
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  
+  cursor:context-menu;
   
 }
 
@@ -361,7 +362,7 @@ div#text
 	padding:0;
 	border:0;
 	margin:0;
-	cursor:default;
+	cursor:context-menu;
 }
 #approot.commentaryMode #commentary_text
 {
@@ -370,7 +371,6 @@ div#text
 	transition: height 0.5s;
 }
 
-#approot.commentaryMode #commentary_text p,
 .tagref
 {
 	cursor:text;
@@ -2824,11 +2824,13 @@ img.play
 #commentary_text h3 .prev
 {
 	float:left;
+	cursor:pointer;
 }
 
 #commentary_text h3 .next
 {
 	float:right;
+	cursor:pointer;
 }
 
 #commentary_text h3 div
@@ -2869,6 +2871,7 @@ img.play
 	margin-right:6px;
   	white-space: no-wrap;
   	float:left;
+	cursor:pointer;
 }
 
 .src_tabs span.more
