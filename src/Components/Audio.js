@@ -176,7 +176,6 @@ class AudioCommentaryPlayer extends Component {
 		  	this.props.app.setActiveVerse(next,undefined,undefined,undefined,"comaudio");
 		}
 		
-		console.log(url,next_url,this);
 		return [<ReactPlayer className='react-player'
           	width='0%'
           	height='0%'

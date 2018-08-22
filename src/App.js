@@ -1304,7 +1304,6 @@ IsSafari() {
   
   setActiveVerse(verse_id,structure,outline,force,source)
   {
-  	console.log("setActiveVerse "+source);
   	if(verse_id===null || verse_id===undefined) return ()=>{};
   	if(["newversion"].indexOf(source)>-1 && this.state.commentaryAudioMode)  return ()=>{};
   	if(["audio","arrow","newversion","init"].indexOf(source)===-1 && this.state.audioState!==null && !this.state.commentaryAudioMode)  return ()=>{};
