@@ -171,6 +171,7 @@ export class SearchHeading extends Component {
 		var count = verses.length;
 		
 		var disQ = this.props.app.state.searchQuery;
+		if(disQ===null) disQ = "";
 		
 		disQ = disQ.replace(/[-]+/g,"–");
 		disQ = disQ.replace(/[;]+/g,"; ");
