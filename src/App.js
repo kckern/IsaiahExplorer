@@ -689,10 +689,8 @@ IsSafari() {
   processRef(q)
   {
   	var matches = [];
-  	q = q.replace(/[—–−–-]+/g,"-");
-  	q = q.replace(/[^0-9]+$/,"");
-  	q = q.replace(/^[^0-9]/,"");
-  	q = q.replace(/[^0-9,.;:-]/,"");
+  	
+  	
   	//split by semicolon
   	var colon_segs = q.split(/\s*;\s*/g);
   	
@@ -748,7 +746,6 @@ IsSafari() {
   	
   		
   		
-  		
   	 return matches;
   }
   
@@ -764,10 +761,16 @@ IsSafari() {
   	if(query.match(numreg))
   	{
   		
-  		query = query.replace(/^[^0-9:.;, —–−–-]+/ig,'');
-  		query = query.replace(/\s*/g,'');
-  		matches = this.processRef(query);	
+  		var q = query.replace(/^[^0-9:.;, —–−–-]+/ig,'');
+  		q = q.replace(/\s*/g,'');
+	  	q = q.replace(/[—–−–-]+/g,"-");
+	  	q = q.replace(/[^0-9]+$/g,"");
+	  	q = q.replace(/^[^0-9]/g,"");
+	  	q = q.replace(/[^0-9,.;:-]+/g,";");
+	  	q = q.replace(/[;]+/g,";");
+  		matches = this.processRef(q);	
   		refSearch = true;
+  		query = q;
   	}
   	else
   	{

@@ -70,7 +70,7 @@ if($_SERVER['REQUEST_URI']=="/")
 {
 	$ref = "Isaiah Explorer";
 	$heading = "Welcome";
-	$description = "Interactive Scripture Tools";
+	$description = "An interactive tool designed to explore the text, structure, composition, patterns, and message of the Book of Isaiah";
 }
 
 

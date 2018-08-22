@@ -170,6 +170,11 @@ export class SearchHeading extends Component {
 		//if(this.props.app.state.commentaryAudioMode) verses = this.props.app.state.highlighted_tagged_verse_range;
 		var count = verses.length;
 		
+		var disQ = this.props.app.state.searchQuery;
+		
+		disQ = disQ.replace(/[-]+/g,"–");
+		disQ = disQ.replace(/[;]+/g,"; ");
+		
 		if(this.props.app.state.comSearchMode && this.props.app.state.commentaryAudioMode && this.props.app.state.audioState!==null)
 		{
 			var name = "Multi‑verse Audio Commentary"
@@ -191,7 +196,7 @@ export class SearchHeading extends Component {
 		}
 		
 		return (
-			<div className="text_heading search"><span className="section_tile" >▽ {count} Search Results</span><br /><span id="drarrow">⤷</span>▷ “<span className='q'>{this.props.app.state.searchQuery}</span>”</div>
+			<div className="text_heading search"><span className="section_tile" >▽ {count} Search Results</span><br /><span id="drarrow">⤷</span>▷ “<span className='q'>{disQ}</span>”</div>
 			)
 	}
 	
