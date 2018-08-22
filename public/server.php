@@ -66,7 +66,12 @@ if(!empty($tag))
 }
 if(!empty($comment)) $heading = "Commentary";
 
-
+if($_SERVER['REQUEST_URI']=="/")
+{
+	$ref = "Isaiah Explorer";
+	$heading = "Welcome";
+	$description = "Interactive Scripture Tools";
+}
 
 
 

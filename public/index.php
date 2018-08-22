@@ -16,7 +16,8 @@ if(preg_match("/^\/cover/ui",$_SERVER['REQUEST_URI']))
 else if (
     stripos($useragent, "facebookexternalhit/") !== false ||          
     stripos($useragent, "Facebot") !== false ||          
-    stripos($useragent, "twitter") !== false  ||          
+    stripos($useragent, "twitter") !== false  ||       
+    stripos($useragent, "googlebot") !== false  ||          
     $_SERVER['HTTP_HOST'] == "seo.isaiah.scripture.guide" 
 ) {
     // it is probably Facebook's bot
