@@ -48,6 +48,7 @@ html,body
 
     background-color:#000;
 	cursor:pointer;
+	transform-origin: 0 0;
 }
 #root
 {
@@ -66,6 +67,7 @@ html,body
     color: #000000;
     background-color: #333;
     position: relative;
+	transform-origin: 0 0;
 }
 
 .wrapper
@@ -78,7 +80,6 @@ html,body
     top: 40px;
     overflow: hidden;
     margin: 10px;
-
 }
 
 .react-player
