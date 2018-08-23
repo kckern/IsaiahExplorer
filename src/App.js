@@ -1013,6 +1013,19 @@ IsSafari() {
   	this.setState({more_tags:true});
   }
   
+  
+  loadCustoms(key,data)
+  {
+  	 if(data[key]===undefined) key = "default";
+  	 var output;
+  	 if(data[key].base!==undefined) output = this.loadCustoms(data[key].base,data);
+  	
+  	 return output;
+  	 
+  	 
+  }
+  
+  
   loadCore()
   {
   	
@@ -1023,10 +1036,21 @@ IsSafari() {
   	if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)  this.load_queue.push("hebrew");
   	
   	
+  	var subsite = "christian";
   	
   	fetch("/core/core.txt").then(response => response.text()).then(data => {
   		var unzipped = this.unzipJSON(data);
   		for(var k in unzipped) globalData[k] = unzipped[k];
+  		
+  		
+  		//CUSTOMIZE
+  		var c = this.loadCustoms(subsite,globalData["custom"])
+  		
+  		debugger;
+  		
+  		
+  		
+  		
   		
   		// META
   		
@@ -1130,7 +1154,7 @@ IsSafari() {
       	
       	//TAGS
       	
-      	      	globalData["tags"]["tagSiblings"] = {};
+      	globalData["tags"]["tagSiblings"] = {};
       	globalData["tags"]["tagBranches"] = [];
       	for(x in globalData["tags"]["verseTagIndex"]) globalData["tags"]["verseTagIndex"][x] = this.shuffle(globalData["tags"]["verseTagIndex"][x]);
       	for(x in globalData["tags"]["tagIndex"])
