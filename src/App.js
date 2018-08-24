@@ -325,7 +325,7 @@ IsSafari() {
 	    if(settings.top_structures===undefined) settings.top_structures = [];
 	    
   		if(settings.top_versions.length !== 5) 		settings.top_versions = ["KJV","HBRS","NRSV","NIV","NASB"];
-  		if(settings.top_outlines.length !== 5) 		settings.top_outlines = ["chapters","mev","nrsv","niv","msg"];
+  		if(settings.top_outlines.length !== 5) 		settings.top_outlines = ["chapters","mev","nrsv","niv","nasb"];
   		if(settings.top_structures.length !== 5) 	settings.top_structures = ["whole","bibleproject","bifid","authorship","wikipedia"];
   		
 	    if(settings.version===undefined || settings.version===null) 	settings.version = settings.top_versions[0];
@@ -1064,6 +1064,7 @@ IsSafari() {
   		var unzipped = this.unzipJSON(data);
   		for(var k in unzipped) globalData[k] = unzipped[k];
   		
+      	var s = this.state;
   		
   		//CUSTOMIZE
   		var c = this.loadCustoms(subsite,globalData["custom"]);
@@ -1094,16 +1095,22 @@ IsSafari() {
 	  			if(key==="version")
 	  			{
 					delete globalData.meta.version[shortcode.toUpperCase()];
+					index =s.top_versions.indexOf(shortcode); 
+		  			if(index>=0) s.top_versions.splice(index,1); 
 	  			}
 	  			if(key==="outline")
 	  			{
 					delete globalData.meta.outline[shortcode];
 					delete globalData.outlines[shortcode];
+					index =s.top_outlines.indexOf(shortcode); 
+		  			if(index>=0) s.top_outlines.splice(index,1); 
 	  			}
 	  			if(key==="structure")
 	  			{
 					delete globalData.meta.structure[shortcode];
 					delete globalData.structures[shortcode];
+					index =s.top_structures.indexOf(shortcode); 
+		  			if(index>=0) s.top_structures.splice(index,1); 
 	  			}
 	  			if(key==="tag")
 	  			{
@@ -1145,14 +1152,10 @@ IsSafari() {
   		}
   		
   		
-
-  		
-  		
   		
   		// META
   		
   		
-      	var s = this.state;
       	var m = globalData["meta"];
       	if(m.version[s.top_versions[0]]===undefined)
       	{

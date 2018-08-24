@@ -235,11 +235,15 @@ class AudioCommentary extends Component {
 		if(this.state.options)
 		{
 			var options = null;
-			options = (<select onChange={this.selectOption.bind(this)} id="com_selector">
-				<option key="top" shortcode="top">Make a selection:</option>
-				<option key="gileadi" shortcode="gileadi"> ⤷ Analytical Commentary of Isaiah by Avraham Gileadi</option>
-				<option key="mcgee" shortcode="mcgee"> ⤷ Thru the Bible with J. Vernon McGee</option>
-			</select>)
+			var items = [<option key="top" shortcode="top">Make a selection:</option>];
+			
+			for(var i in globalData.meta.audiocom)
+			{
+				var it = globalData.meta.audiocom[i];
+				items.push(<option key={it.shortcode} shortcode={it.shortcode}> ⤷ {it.title}</option>);
+			}
+			
+			options = (<select onChange={this.selectOption.bind(this)} id="com_selector">{items}</select>)
 			
 		return (<div id='audio_commentary'  onClick={this.handleClick.bind(this)} >{options}</div>)
 		}
