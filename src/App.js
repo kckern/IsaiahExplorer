@@ -291,11 +291,13 @@ IsSafari() {
   	if(this.state.commentaryMode && this.state.commentaryID!==null)
   	{
   		path = path + "/commentary."+this.state.commentarySource+"/"+this.state.commentaryID;
+  		if(globalData.commentary.comSources[this.state.commentarySource]!==undefined)
   		title = "Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse+ " | " + globalData.commentary.comSources[this.state.commentarySource].name;
   	}  
   	else if(this.state.commentaryMode)
   	{
   		path = path + "/commentary."+this.state.commentarySource;
+  		if(globalData.commentary.comSources[this.state.commentarySource]!==undefined)
   		title = "Isaiah "+globalData.index[this.state.active_verse_id].chapter+":"+globalData.index[this.state.active_verse_id].verse+ " | " + globalData.commentary.comSources[this.state.commentarySource].name;
 
   	}  
@@ -1016,9 +1018,26 @@ IsSafari() {
   
   loadCustoms(key,data)
   {
+  	
   	 if(data[key]===undefined) key = "default";
   	 var output;
-  	 if(data[key].base!==undefined) output = this.loadCustoms(data[key].base,data);
+  	 if(data[key].base!==undefined)
+  	 {
+  	 	output = this.loadCustoms(data[key].base,data);
+  	 	//add extras
+  	 	for(var x in data[key])
+  	 	{
+  	 		if(Array.isArray(data[key][x]))
+  	 		{
+  	 			if(output[x]===undefined) output[x] = data[key][x];
+  	 			else output[x] = output[x].concat(data[key][x]);
+  	 		}
+  	 	}
+  	 }
+  	 else
+  	 {
+  	 	output = data[key];
+  	 }
   	
   	 return output;
   	 
@@ -1036,7 +1055,7 @@ IsSafari() {
   	if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)  this.load_queue.push("hebrew");
   	
   	
-  	var subsite = "christian";
+  	var subsite = window.location.host.match(/^(.*?).isaiah/)[1];
   	
   	fetch("/core/core.txt").then(response => response.text()).then(data => {
   		var unzipped = this.unzipJSON(data);
@@ -1044,11 +1063,72 @@ IsSafari() {
   		
   		
   		//CUSTOMIZE
-  		var c = this.loadCustoms(subsite,globalData["custom"])
+  		var c = this.loadCustoms(subsite,globalData["custom"]);
   		
-  		debugger;
+  		if(c.type==="blacklist")
+  		for(var key in c)
+  		{
+  	 		if(!Array.isArray(c[key])) continue;
+	  		for(var y in c[key])
+	  		{
+	  			var shortcode = c[key][y];
+	  			if(key==="com")
+	  			{
+	  				//comIndex
+	  				for(var verse_id in globalData.commentary.comIndex) delete globalData.commentary.comIndex[verse_id][shortcode];
+	  				//comOrder
+                    var index = globalData.commentary.comOrder.indexOf(shortcode); globalData.commentary.comOrder.splice(index,1);
+	  				//comOrder
+					delete globalData.commentary.comSources[shortcode];
+					
+					
+	  			}
+	  			if(key==="comaudio")
+	  			{
+					delete globalData.commentary_audio.files[shortcode];
+					delete globalData.meta.audiocom[shortcode];
+	  			}
+	  			if(key==="tag")
+	  			{
+	  				var list = [shortcode];
+	  				var children = globalData.tags.tagChildren[shortcode];
+	  				if(Array.isArray(children)) list = list.concat(children);
+	  				for(var a in list)
+	  				{
+	  					var tagName = list[a];
+		  				for(verse_id in globalData.tags.verseTagIndex) { 
+		  					index = globalData.tags.verseTagIndex[verse_id].indexOf(tagName); 
+		  					if(index>=0) globalData.tags.verseTagIndex[verse_id].splice(index,1); 
+		  					
+		  				}
+		  				for(var parentTag in globalData.tags.tagChildren) { 
+		  					index = globalData.tags.tagChildren[parentTag].indexOf(tagName); 
+		  					if(index>=0) globalData.tags.tagChildren[parentTag].splice(index,1); 
+		  				}
+		  				
+		  				for( parentTag in globalData.tags.parentTagIndex) { 
+		  					index = globalData.tags.parentTagIndex[parentTag].indexOf(tagName); 
+		  					if(index>=0) globalData.tags.parentTagIndex[parentTag].splice(index,1); 
+		  				}
+		  				
+		  				for(var sibTag in globalData.tags.tagIndex) { 
+		  					if(globalData.tags.tagIndex[sibTag].prev === tagName) delete globalData.tags.tagIndex[sibTag].prev;
+		  					if(globalData.tags.tagIndex[sibTag].next === tagName) delete globalData.tags.tagIndex[sibTag].next;
+		  				}
+		  				
+						delete globalData.tags.tagIndex[tagName];
+						delete globalData.tags.tagStructure[tagName];
+						delete globalData.tags.tagChildren[tagName];
+						delete globalData.tags.superRefs[tagName];
+						delete globalData.tags.parentTagIndex[tagName];
+						
+	  				}
+	  			}
+	  		}
+  		}
   		
   		
+
   		
   		
   		
@@ -1116,7 +1196,7 @@ IsSafari() {
 		
       	globalData.commentary_audio['index'] = {};
 		var dirs = globalData.commentary_audio.files;
-		for(var shortcode in dirs)
+		for(shortcode in dirs)
 		{
 			for(var filename in dirs[shortcode])
 			{
@@ -1140,7 +1220,7 @@ IsSafari() {
       	globalData.commentary['idIndex'] = {};
 		var comIndex = globalData.commentary.comIndex;
 		
-		for (var verse_id in comIndex) {
+		for (verse_id in comIndex) {
 		  for (var source in comIndex[verse_id]) {
 		    for ( i in comIndex[verse_id][source]) {
 		    	var thisid = comIndex[verse_id][source][i];
@@ -1170,7 +1250,7 @@ IsSafari() {
       	}
       	for(x in globalData["tags"]["tagStructure"])
       	{
-      		for(var y in globalData["tags"]["tagStructure"][x])
+      		for(y in globalData["tags"]["tagStructure"][x])
       		{
       			globalData["tags"]["tagStructure"][x][y]["verses"] = this.verseDatatoArray(globalData["tags"]["tagStructure"][x][y]["verses"]);	
       		}
@@ -1184,6 +1264,7 @@ IsSafari() {
 	      	{
 	      		for(var y in hdata[x])
 	      		{
+	      			if(globalData["tags"]["tagStructure"][x]!==undefined)
 	      			globalData["tags"]["tagStructure"][x][y]["highlight"] = hdata[x][y];
 	      		}
 	      	}
