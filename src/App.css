@@ -121,65 +121,63 @@ body.ie #text div.chiastic_column
 
 }
 
-
-.tipsy { padding: 5px; font-size: 12px; position: absolute; z-index: 100000;  font-weight:400;}
-.tipsy-inner { padding: 5px 8px 4px 8px; background-color: #448; border:1px solid black; color: white; max-width: 1500px; text-align: center; }
-.tipsy-inner { border-radius: 3px; -moz-border-radius:3px; -webkit-border-radius:3px; }
-.tipsy-arrow { position: absolute; background: url('/img/tipsy.gif') no-repeat top left; width: 9px; height: 5px; }
-.tipsy-n .tipsy-arrow { top: 0; left: 50%; margin-left: -4px; }
-.tipsy-nw .tipsy-arrow { top: 0; left: 10px; }
-.tipsy-ne .tipsy-arrow { top: 0; right: 10px; }
-.tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -4px; background-position: bottom left; }
-.tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; background-position: bottom left; }
-.tipsy-se .tipsy-arrow { bottom: 0; right: 10px; background-position: bottom left; }
-.tipsy-e .tipsy-arrow { top: 50%; margin-top: -4px; right: 0; width: 5px; height: 9px; background-position: top right; }
-.tipsy-w .tipsy-arrow { top: 50%; margin-top: -4px; left: 0; width: 5px; height: 9px; }
-
-
-.Tipsy.right, .Tipsy.left
+.sbs .Tipsy-inner
 {
-	background-color: #444;
+	color:white;
+	max-width:1000px;
+	background-color:#555;
 }
-
-.tipsyOutline,
-.tipsyVersion,
-.tipsyStructure
+.vernum
 {
-	max-width:180px;
-	max-height:45px;
-	color:#448;
-	overflow:hidden;
-	background-color:#C5EEF3;
-	border-radius: 3px;
-	margin-top:3px;
-	margin-bottom:3px;
-
-}
-
-.tipsyOutline
-{
-	max-width:100px;
-
-}
-
-.tipsy-pedigree
-{
-	text-align:left;
-	background-color:#C5EEF3;
-	color:#448;
-	padding:5px;
-	border-radius:5px;
-	margin-top:5px;
 	border:1px solid black;
+	float:right;
+	position:relative;
+	top:-10px;
+	height:15px;
+	line-height:15px;
+	background-color:#DDD;
+	color:#000;
+	font-weight:bold;
+	padding-left:10px;
+	padding-right:10px;
+	font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
+	font-size:10px;
+	cursor:pointer;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+	
 }
-.tipsy-tagdesc
+.extraversions
+{
+	border-bottom: 3px double #999;
+	padding-bottom:15px;
+}
+.extraversions table
+{
+	border-collapse: collapse;
+	width:497px;
+} 
+.extraversions tr.cells td
+{
+	vertical-align: text-top;
+	font-size:16px;
+	line-height:16px;
+	width:2000px;
+	border:1px solid #BBB;
+	padding:10px;
+	letter-spacing:-0.5px;
+}
+
+.extraversions tr.head td
 {
 	text-align:center;
-	font-style:italic;
-	margin-top:10px;
-	font-size:14px;
-	max-width:200px;
 }
+.extraversions tr.head td img
+{
+	border:1px solid #777;
+	max-width: 95px;
+}
+
 
 h1
 {

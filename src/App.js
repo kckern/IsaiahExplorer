@@ -70,6 +70,8 @@ class App extends Component {
     
     arrowPointer: 0,
     
+    version_views: 1,
+    
     audioState:null,
     audioPointer:0,
     commentaryAudioMode:false,
@@ -483,6 +485,13 @@ IsSafari() {
   	el.click();
   }
   
+  cycleVersionViews()
+  {
+  	var i = this.state.version_views+1;
+  	if(i>5) i=1;
+  	this.setState({version_views:i},this.saveSettings.bind(this));
+  	
+  }
   
   
   cycleHebrewWord(incr)
@@ -903,6 +912,7 @@ IsSafari() {
   			top_versions:this.state.top_versions,
   			top_outlines:this.state.top_outlines,
   			top_structures:this.state.top_structures,
+  			version_views:this.state.version_views,
   			commentary_order:this.state.commentary_order
   		}));
   	}
@@ -1329,6 +1339,7 @@ IsSafari() {
 			const const_ver = ver;
 				fetch("/text/verses_"+const_ver.toUpperCase()+".txt").then((response) => response.text()).then((data) => {
 			      	globalData["text"][const_ver] = this.unzipJSON(data);
+			      	this.setActiveVerse(this.state.active_verse_id,undefined,undefined,true,"init");
 			     });
 		}
 	}.bind(this), 3000);

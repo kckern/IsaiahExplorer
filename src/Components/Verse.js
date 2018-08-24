@@ -305,6 +305,7 @@ class VersePanel extends Component {
     <div className="verse_container">
         <Passage app={this.props.app}  verses={this.props.app.state.active_verse_id}  highlights={highlights}   spottable={true} wrapperId="verse_text"/>
     </div>
+    <ExtraVersions  app={this.props.app}  highlights={highlights} />
 	<TagBox   app={this.props.app} />
     <SeeMoreTags  app={this.props.app} />
     <PassagesBox  app={this.props.app} showFull={this.state.passagesMore} resetter={this.reset.bind(this)} />
@@ -313,6 +314,47 @@ class VersePanel extends Component {
     <SeeMore clicker={seeMoreSections} clicked={this.state.sectionsMore} />
 </div>
 	}
+}
+
+class ExtraVersions extends Component {
+	
+	render()
+	{
+		var cells = [];
+		var heads = [];
+		for(var i in this.props.app.state.top_versions)
+		{
+			if(i>=this.props.app.state.version_views) continue;
+			var ver = this.props.app.state.top_versions[i];
+			cells.push(<td  key={i}>
+				<Passage 
+				app={this.props.app}  
+				plain={1}
+				verses={this.props.app.state.active_verse_id} 
+				version={ver} 
+				highlights={this.props.highlights} />
+				</td>);
+			heads.push(<td key={i}>{<img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.jpg')} />}</td>);
+		}
+		
+		var extra = null;
+		var heading = null;
+		
+		if(this.props.app.state.version_views>1)
+		{
+		extra = <div key={2} className={"extraversions count"+this.props.app.state.version_views}>
+			<table><tbody><tr className="head">{heads}</tr><tr className="cells">{cells}</tr></tbody></table>
+		</div>;
+		heading = <h4 key={3}>{this.props.app.state.version_views} Side-by-side Translations</h4>;
+		}
+		return [
+			<Tipsy  key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
+			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{this.props.app.state.version_views}</span></Tipsy>,
+			heading,
+			extra
+			]
+	}
+	
 }
 
 class SeeMoreTags extends Component {
