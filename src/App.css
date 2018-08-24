@@ -3450,7 +3450,8 @@ button#commentary
 }
 
 #hebrew span.active,
-#verse_text .word_highlight
+#verse_text .word_highlight,
+.extraversions .versebox_highlighted span.word_highlight
 {
    color:orange;
    background-color:#FFA;
