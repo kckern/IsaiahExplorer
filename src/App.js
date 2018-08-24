@@ -927,6 +927,7 @@ IsSafari() {
   			saveme[list] = tops.slice(0,5);
   			this.setState(saveme,function(){
   				this.saveSettings();
+  				this.loadTopVersions();
   			});
   			
   	}
@@ -1328,9 +1329,15 @@ IsSafari() {
       	this.checkLoaded();
      });
      
-     
+     this.loadTopVersions();
 
-	//Load ALT
+
+  }
+  
+  
+  loadTopVersions()
+  {
+  		//Load ALT
 	setTimeout(function() { 
 		for(var x in this.state.top_versions )
 		{
@@ -1345,7 +1352,6 @@ IsSafari() {
 	}.bind(this), 3000);
 	
   }
-  
   
 
   verseDatatoArray(versedata,src)
