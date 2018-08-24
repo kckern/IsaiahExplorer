@@ -322,9 +322,10 @@ class ExtraVersions extends Component {
 	{
 		var cells = [];
 		var heads = [];
+		var num = this.props.app.state.version_views;
 		for(var i in this.props.app.state.top_versions)
 		{
-			if(i>=this.props.app.state.version_views) continue;
+			if(i>=num) continue;
 			var ver = this.props.app.state.top_versions[i];
 			
 			if(globalData["text"][ver]===undefined) 	cells.push(<td  key={i}>Loading...</td>);
@@ -342,16 +343,16 @@ class ExtraVersions extends Component {
 		var extra = null;
 		var heading = null;
 		
-		if(this.props.app.state.version_views>1)
+		if(num>1)
 		{
-		extra = <div key={2} className={"extraversions count"+this.props.app.state.version_views}>
+		extra = <div key={2} className={"extraversions count"+num}>
 			<table><tbody><tr className="head">{heads}</tr><tr className="cells">{cells}</tr></tbody></table>
 		</div>;
-		heading = <h4 key={3}>{this.props.app.state.version_views} Side-by-side Translations</h4>;
+		heading = <h4 key={3}>{num} Side-by-side Translations</h4>;
 		}
 		return [
 			<Tipsy  key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
-			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{this.props.app.state.version_views}</span></Tipsy>,
+			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{num}</span></Tipsy>,
 			heading,
 			extra
 			]

@@ -162,7 +162,6 @@ body.ie #text div.chiastic_column
 	vertical-align: text-top;
 	font-size:16px;
 	line-height:16px;
-	width:2000px;
 	border:1px solid #BBB;
 	padding:10px;
 	letter-spacing:-0.5px;
@@ -178,6 +177,10 @@ body.ie #text div.chiastic_column
 	max-width: 95px;
 }
 
+.extraversions.count2 td{ width:50%; }
+.extraversions.count3 td{ width:33%; }
+.extraversions.count4 td{ width:25%; text-align:left }
+.extraversions.count5 td{ width:20%; text-align:left;}
 
 h1
 {
