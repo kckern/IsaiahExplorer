@@ -1018,6 +1018,7 @@ IsSafari() {
   
   loadCustoms(key,data)
   {
+  	if(data===undefined) return {};
   	
   	 if(data[key]===undefined) key = "default";
   	 var output;
@@ -1057,6 +1058,8 @@ IsSafari() {
   	
   	var subsite = window.location.host.match(/^(.*?).isaiah/)[1];
   	
+  	if(subsite==="dev") subsite="spu";
+  	
   	fetch("/core/core.txt").then(response => response.text()).then(data => {
   		var unzipped = this.unzipJSON(data);
   		for(var k in unzipped) globalData[k] = unzipped[k];
@@ -1087,6 +1090,20 @@ IsSafari() {
 	  			{
 					delete globalData.commentary_audio.files[shortcode];
 					delete globalData.meta.audiocom[shortcode];
+	  			}
+	  			if(key==="version")
+	  			{
+					delete globalData.meta.version[shortcode.toUpperCase()];
+	  			}
+	  			if(key==="outline")
+	  			{
+					delete globalData.meta.outline[shortcode];
+					delete globalData.outlines[shortcode];
+	  			}
+	  			if(key==="structure")
+	  			{
+					delete globalData.meta.structure[shortcode];
+					delete globalData.structures[shortcode];
 	  			}
 	  			if(key==="tag")
 	  			{
