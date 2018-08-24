@@ -1056,7 +1056,9 @@ IsSafari() {
   	if(this.props.location.pathname.match(/\/hebrew\.[0-9]+/)!==null)  this.load_queue.push("hebrew");
   	
   	
-  	var subsite = window.location.host.match(/^(.*?).isaiah/)[1];
+  	var subsite = "default";
+  	var arr = window.location.host.match(/^(.*?).isaiah/);
+  	if(arr[1]!==undefined) subsite = arr[1];
   	
   	if(subsite==="dev") subsite="spu";
   	
