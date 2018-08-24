@@ -126,6 +126,7 @@ body.ie #text div.chiastic_column
 	color:white;
 	max-width:1000px;
 	background-color:#555;
+	
 }
 .vernum
 {
@@ -145,6 +146,13 @@ body.ie #text div.chiastic_column
 	cursor:pointer;
 	border-top-left-radius:10px;
 	border-bottom-left-radius:10px;
+	
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 	
 }
 .extraversions
