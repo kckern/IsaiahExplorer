@@ -326,7 +326,9 @@ class ExtraVersions extends Component {
 		{
 			if(i>=this.props.app.state.version_views) continue;
 			var ver = this.props.app.state.top_versions[i];
-			cells.push(<td  key={i}>
+			
+			if(globalData["text"][ver]===undefined) 	cells.push(<td  key={i}>Loading...</td>);
+			else cells.push(<td  key={i}>
 				<Passage 
 				app={this.props.app}  
 				plain={1}
