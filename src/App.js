@@ -1058,7 +1058,7 @@ IsSafari() {
   	
   	var subsite = "default";
   	var arr = window.location.host.match(/^(.*?).isaiah/);
-  	if(arr[1]!==undefined) subsite = arr[1];
+  	if(arr!==null) subsite = arr[1];
   	
   	if(subsite==="dev") subsite="spu";
   	
