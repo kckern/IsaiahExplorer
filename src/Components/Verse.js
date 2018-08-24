@@ -337,7 +337,8 @@ class ExtraVersions extends Component {
 				version={ver} 
 				highlights={this.props.highlights} />
 				</td>);
-			heads.push(<td key={i}>{<img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.jpg')} />}</td>);
+			heads.push(<td key={i}><img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.jpg')} 
+			 onClick={this.props.app.setActiveVersion.bind(this.props.app,ver)} /></td>);
 		}
 		
 		var extra = null;

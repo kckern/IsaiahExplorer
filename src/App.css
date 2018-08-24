@@ -179,11 +179,13 @@ body.ie #text div.chiastic_column
 .extraversions tr.head td
 {
 	text-align:center;
+	cursor:pointer;
 }
 .extraversions tr.head td img
 {
 	border:1px solid #777;
 	max-width: 95px;
+	cursor:pointer;
 }
 
 .extraversions.count2 td div{ width:227px; }
