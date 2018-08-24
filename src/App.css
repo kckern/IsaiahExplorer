@@ -173,6 +173,7 @@ body.ie #text div.chiastic_column
 	border:1px solid #BBB;
 	padding:10px;
 	letter-spacing:-0.5px;
+	overflow:hidden;
 }
 
 .extraversions tr.head td
@@ -185,10 +186,11 @@ body.ie #text div.chiastic_column
 	max-width: 95px;
 }
 
-.extraversions.count2 td{ width:50%; }
-.extraversions.count3 td{ width:33%; }
-.extraversions.count4 td{ width:25%; text-align:left }
-.extraversions.count5 td{ width:20%; text-align:left;}
+.extraversions.count2 td div{ width:227px; }
+.extraversions.count3 td div{ width:145px; }
+.extraversions.count4 td div{ width:103px; text-align:left; }
+.extraversions.count5 td div{ width:79px;text-align:left;  }
+
 
 h1
 {
