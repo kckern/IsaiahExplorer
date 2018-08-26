@@ -2799,6 +2799,7 @@ class App extends Component {
 
   checkZoom() {
     return false
+    /*
     var h = this.getHeight()
     var w = this.getWidth()
     var appw = 1920
@@ -2809,7 +2810,7 @@ class App extends Component {
       document.getElementById("approot").style.height = (h + 15) / ratio + "px"
       var nw = document.getElementById("approot").style.width
       if (nw <= w) document.body.style.overflow = "hidden"
-    }
+    }*/
   }
 }
 if (!Element.prototype.matches) {
