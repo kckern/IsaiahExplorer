@@ -266,8 +266,47 @@ class App extends Component {
         settings.commentaryID = params[10]
       }
     }
+    
 
-    return settings
+    return settings;
+  }
+  
+  validateSettings(settings)
+  {
+  	
+  	//get default
+  	
+    //Check for non existent
+    var g = globalData;
+    
+    	//structure
+    	if(g.meta.structure[settings.structure]===undefined)
+    		settings.structure = Object.keys(g.meta.structure)[0];
+    	
+    	//outline
+    	if(g.meta.structure[settings.outline]===undefined)
+    		settings.outline = Object.keys(g.meta.outline)[0];
+    		
+    	//version
+    	if(g.meta.structure[settings.version]===undefined)
+    		settings.version = Object.keys(g.meta.version)[0];
+    		
+    	//commentary
+    	if(g.meta.commentary[settings.commentarySource]===undefined)
+    		settings.commentarySource = Object.keys(g.meta.commentary)[0];
+    		
+    	//audiocom
+    	if(g.meta.audiocom[settings.commentaryAudio]===undefined)
+    		settings.commentaryAudio = Object.keys(g.meta.audiocom)[0];
+    		
+			  
+			//top_versions
+			//top_outlines
+			//top_structures
+    	
+    	
+    
+  	return settings;
   }
 
   loadVerseId(ch, vs) {
@@ -456,7 +495,7 @@ class App extends Component {
         )
       //var g = globalData;   debugger;
 
-      this.setState(settings, callback) // 17656
+      this.setState(this.validateSettings(settings), callback) // 17656
     }
   }
 
@@ -1248,6 +1287,7 @@ class App extends Component {
                 globalData.commentary.comOrder.splice(index, 1)
                 //comOrder
                 delete globalData.commentary.comSources[shortcode]
+                delete globalData.meta.commentary[shortcode]
               }
               if (key === "comaudio") {
                 delete globalData.commentary_audio.files[shortcode]
