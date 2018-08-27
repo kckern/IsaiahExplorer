@@ -287,7 +287,7 @@ class App extends Component {
     		settings.outline = Object.keys(g.meta.outline)[0];
     		
     	//version
-    	if(settings.version===undefined);
+    	if(settings.version===undefined)
     		settings.version = Object.keys(g.meta.version)[0];
     	if(g.meta.version[settings.version.toUpperCase()]===undefined)
     		settings.version = Object.keys(g.meta.version)[0];
@@ -304,7 +304,6 @@ class App extends Component {
 			//top_versions
 			//top_outlines
 			//top_structures
-    	
     
   	return settings;
   }
