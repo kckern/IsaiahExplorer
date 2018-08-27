@@ -114,6 +114,7 @@ export default class PassageColumn extends Component {
 	}
 	if(this.props.app.state.preSearchMode===true) { title=tagimg=null;}
 	if(this.props.app.state.comSearchMode===true) { title="Referenced Verses";}
+	if(this.props.app.state.hebrewSearch===true) { title="Hebrew Word Matches";}
 	
     return (
       <div className="col col3">
