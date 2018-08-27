@@ -148,7 +148,6 @@ class ParentLinks extends Component {
 
 }
 
-
 export class TagTree extends Component {
 
 	state = {open:false}
@@ -242,7 +241,6 @@ export class TagTree extends Component {
 
 }
 
-
 class TagTreeLeaf extends Component {
 	
 	handleClick(e)
@@ -304,7 +302,10 @@ class TagBlocks extends Component {
 	
 	componentDidMount()
 	{
-		this.props.app.setState({allCollapsed:false,selected_tag_block_index:this.active_block_index},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
+		this.props.app.setState( {
+			allCollapsed:false,
+			selected_tag_block_index:this.active_block_index
+		},this.props.app.setTagBlock(this.active_block_index,this.props.app.state.active_verse_id));
 	}
 	
 	getAllIndexes(arr, val) {
@@ -349,6 +350,7 @@ class TagBlocks extends Component {
 		 		var verse_indeces = this.getAllIndexes(all_verses,app.state.active_verse_id);
 		 		var pointer = app.arrowPointer;
 		 		var instanceIndex = verse_indeces.indexOf(pointer);
+		 		if(instanceIndex===-1) instanceIndex=0;
 		 		pointerTagBlockIndex = inblocks[instanceIndex];
 		 		
  		}

@@ -1659,7 +1659,7 @@ class App extends Component {
     if (["newversion"].indexOf(source) > -1 && this.state.commentaryAudioMode)
       return () => {}
     if (
-      ["audio", "arrow", "newversion", "init"].indexOf(source) === -1 &&
+      ["audio", "arrow", "newversion", "init","tag"].indexOf(source) === -1 &&
       this.state.audioState !== null &&
       !this.state.commentaryAudioMode
     )
@@ -2292,6 +2292,7 @@ class App extends Component {
   }
 
   setActiveTag(tagName, force, top) {
+  	debugger;
     if (tagName === null) return false
     var tagData = this.getTagData(tagName)
     if (tagData === undefined) return false
