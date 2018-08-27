@@ -273,7 +273,6 @@ class App extends Component {
   
   validateSettings(settings)
   {
-  	
   	//get default
   	
     //Check for non existent
@@ -284,11 +283,13 @@ class App extends Component {
     		settings.structure = Object.keys(g.meta.structure)[0];
     	
     	//outline
-    	if(g.meta.structure[settings.outline]===undefined)
+    	if(g.meta.outline[settings.outline]===undefined)
     		settings.outline = Object.keys(g.meta.outline)[0];
     		
     	//version
-    	if(g.meta.structure[settings.version]===undefined)
+    	if(settings.version===undefined);
+    		settings.version = Object.keys(g.meta.version)[0];
+    	if(g.meta.version[settings.version.toUpperCase()]===undefined)
     		settings.version = Object.keys(g.meta.version)[0];
     		
     	//commentary
@@ -303,7 +304,6 @@ class App extends Component {
 			//top_versions
 			//top_outlines
 			//top_structures
-    	
     	
     
   	return settings;
@@ -1758,7 +1758,8 @@ class App extends Component {
       } else if (this.state.searchMode && source === "newversion") {
         this.search(this.state.searchQuery)
       }
-      this.triggerAudio()
+      this.triggerAudio();
+      //debugger;
       if (source === "init") this.setActiveVersion(this.state.version)
     })
   }
@@ -2432,7 +2433,12 @@ class App extends Component {
   }
 
   setActiveVersion(shortcode) {
-    if (shortcode === this.state.version)
+  	
+    if (typeof globalData["text"][shortcode] === "undefined") {
+      //set state to loading....
+      this.loadVersion(shortcode)
+    }
+    else if (shortcode === this.state.version)
       return this.setActiveVerse(
         this.state.active_verse_id,
         undefined,
@@ -2440,10 +2446,7 @@ class App extends Component {
         undefined,
         "tag"
       )
-    if (typeof globalData["text"][shortcode] === "undefined") {
-      //set state to loading....
-      this.loadVersion(shortcode)
-    } else {
+    else {
       this.setState(
         {version: shortcode},
 
