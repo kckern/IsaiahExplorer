@@ -1027,6 +1027,22 @@ class App extends Component {
   freezeSwap() {
     this.setState({spotHover: true})
   }
+  
+  doubleClickVerse(verse_id, src)
+  {
+  	
+    if (this.state.commentaryMode) {
+      this.setState(
+        {commentaryID: this.loadCommentaryID(), commentary_verse_id: verse_id},
+        () => this.selectVerse(verse_id, src)
+      )
+      return true
+    }
+    else
+    {
+    	this.setState({commentaryMode:false},this.unSelectVerse.bind(this));
+    }
+  }
 
   selectVerse(verse_id, src) {
     if (verse_id === null) return this.unSelectVerse()
@@ -1039,7 +1055,7 @@ class App extends Component {
     }
 
     //if(verse_id === this.state.active_verse_id) return false;
-    if (this.state.commentaryMode) {
+    if (this.state.commentaryMode && false) {
       this.setState(
         {commentaryID: this.loadCommentaryID(), commentary_verse_id: verse_id},
         () => this.setActiveVerse(verse_id, undefined, undefined, true)
