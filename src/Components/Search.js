@@ -48,7 +48,9 @@ export  class SearchBox extends Component {
   render()
   {
   	if(this.props.app.state.comSearchMode) return null;
-  	var val = this.props.app.state.searchQuery.replace(/[\\]b/g,"/");
+  	var val = this.props.app.state.searchQuery;
+  	if(val===null) val = "";
+  	val = val.replace(/([\\]b|[｢｣])/g,"/");
   	if(this.props.app.state.urlSearch!==true) val="";
   	
   	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)

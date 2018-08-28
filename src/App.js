@@ -225,7 +225,6 @@ class App extends Component {
       if (typeof matches[i] !== "string") params.push(null)
       else params.push(matches[i].replace(/^\//, ""))
     }
-
     if (
       params[1] !== null &&
       globalData.meta.structure[params[1]] !== undefined
@@ -246,7 +245,7 @@ class App extends Component {
       settings.searchQuery = params[5]
         .replace(/^search\./, "")
         .replace(/[｢｣]/g, "/")
-        .replace(/\+/g, " ")
+        .replace(/\+/g, " ");
       settings.searchMode = false
       settings.urlSearch = true
     }
