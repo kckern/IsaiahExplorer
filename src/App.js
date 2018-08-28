@@ -245,6 +245,7 @@ class App extends Component {
     if (params[5] !== null) {
       settings.searchQuery = params[5]
         .replace(/^search\./, "")
+        .replace(/[｢｣]/g, "/")
         .replace(/\+/g, " ")
       settings.searchMode = false
       settings.urlSearch = true

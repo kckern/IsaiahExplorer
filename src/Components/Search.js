@@ -48,7 +48,7 @@ export  class SearchBox extends Component {
   render()
   {
   	if(this.props.app.state.comSearchMode) return null;
-  	var val = this.props.app.state.searchQuery;
+  	var val = this.props.app.state.searchQuery.replace(/[\\]b/g,"/");
   	if(this.props.app.state.urlSearch!==true) val="";
   	
   	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)
@@ -115,7 +115,9 @@ export class SearchResults extends Component {
 			else heading = this.props.app.getReference(groups[k]);
 			var q = this.props.app.state.searchQuery;
 			if(q===null) q = "";
-			var highlights = ["partialmatch",q.replace(/[^A-z]+/g," ")];
+			q = q.replace(/[\\]b/g,"");
+			q = q.split("|");
+			var highlights = ["partialmatch"].concat(q);
 			
 			if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewSearch)
 			{
