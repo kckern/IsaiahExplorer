@@ -964,7 +964,8 @@ class App extends Component {
   search(query) {
     var matches = []
     if (query === undefined || query === null) query = ""
-    query = query.replace(/[[\]]/g, "")
+    query = query.replace(/[[\]]/g, "");
+    query = query.replace(/\//g, "\\b");
     var refSearch = this.state.refSearch
 
     var numreg = new RegExp("[0-9:.;, —–−–-]+$")
