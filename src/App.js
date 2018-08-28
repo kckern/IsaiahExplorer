@@ -758,7 +758,7 @@ class App extends Component {
     if (index < 0) index = this.state.highlighted_verse_range.length - 1
     prev = this.state.highlighted_verse_range[index]
     this.arrowPointer = index
-    if (this.state.selected_verse_id !== null) return this.selectVerse(prev)
+    if (this.state.selected_verse_id !== null) return this.selectVerse(prev,"arrow")
     this.setActiveVerse(prev, undefined, undefined, true, "arrow")
   }
 
@@ -898,7 +898,7 @@ class App extends Component {
     if (index >= this.state.highlighted_verse_range.length) index = 0
     next = this.state.highlighted_verse_range[index]
     this.arrowPointer = index
-    if (this.state.selected_verse_id !== null) return this.selectVerse(next)
+    if (this.state.selected_verse_id !== null) return this.selectVerse(next,"arrow")
     this.setActiveVerse(next, undefined, undefined, undefined, "arrow")
   }
 
