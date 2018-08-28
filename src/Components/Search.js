@@ -175,6 +175,8 @@ export class SearchHeading extends Component {
 		
 		disQ = disQ.replace(/[-]+/g,"–");
 		disQ = disQ.replace(/[;]+/g,"; ");
+		disQ = disQ.replace(/[\\]b([a-z])/g,"｢$1");
+		disQ = disQ.replace(/([a-z])[\\]b/g,"$1｣");
 		
 		if(this.props.app.state.comSearchMode && this.props.app.state.commentaryAudioMode && this.props.app.state.audioState!==null)
 		{

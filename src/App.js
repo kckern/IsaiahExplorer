@@ -354,11 +354,18 @@ class App extends Component {
       this.state.searchQuery !== null &&
       this.state.hebrewStrongIndex === null
     ) {
+    	var disQ = this.state.searchQuery;
+		disQ = disQ.replace(/[-]+/g,"–");
+		disQ = disQ.replace(/[;]+/g,"; ");
+		disQ = disQ.replace(/[\\]b([a-z])/g,"｢$1");
+		disQ = disQ.replace(/([a-z])[\\]b/g,"$1｣");
+		
+		
       path =
         path +
         "/search." +
-        this.state.searchQuery.replace(/\s+/g, "+").toLowerCase()
-      title = "“" + this.state.searchQuery + "” | "
+        disQ.replace(/\s+/g, "+").replace(/[/]b/,"").toLowerCase()
+      title = "“" + disQ + "” | "
     } else if (this.state.hebrewStrongIndex !== null) {
       path = path + "/hebrew." + this.state.hebrewStrongIndex
       title = "Hebrew H" + this.state.hebrewStrongIndex + " | "
