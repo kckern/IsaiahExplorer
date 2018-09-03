@@ -416,7 +416,7 @@
                 "Structures",
                 "root"
             ],
-            "description": "",
+            "description": "A universal motif of adventure and transformation",
             "details": "",
             "cite": "",
             "type": "",
@@ -1531,12 +1531,13 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "glory-ignominy",
-            "next": "\u29b7 Servant\u2194Tyrant",
+            "next": "Components of Babylon",
             "prev": "Babylon\u2019s Demise"
         },
         "\u29b7 Servant\u2194Tyrant": {
             "parents": [
-                "Bifid IV",
+                "Redemption",
+                "Bifid V",
                 "Bifid",
                 "Structures",
                 "root"
@@ -1546,8 +1547,7 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "parallel",
             "slug": "servant-tyrant",
-            "next": "Components of Babylon",
-            "prev": "Glory\u2194Ignominy"
+            "next": "Redemptive Intervention"
         },
         "Components of Babylon": {
             "parents": [
@@ -1562,7 +1562,7 @@
             "type": "",
             "slug": "components-of-babylon",
             "next": "Babylon\u21ccUniversal",
-            "prev": "\u29b7 Servant\u2194Tyrant"
+            "prev": "Glory\u2194Ignominy"
         },
         "Babylon\u21ccUniversal": {
             "parents": [
@@ -1938,7 +1938,8 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "redemptive-intervention",
-            "next": "Divine Attributes"
+            "next": "Divine Attributes",
+            "prev": "\u29b7 Servant\u2194Tyrant"
         },
         "Divine Attributes": {
             "parents": [
@@ -2033,8 +2034,72 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "righteousness-hand-arm",
-            "next": "\u29b7 Kings of Babylon & Zion",
+            "next": "Fourth Servant Song of Isaiah",
             "prev": "Two Arms"
+        },
+        "Fourth Servant Song of Isaiah": {
+            "parents": [
+                "Redemption",
+                "Bifid V",
+                "Bifid",
+                "Structures",
+                "root"
+            ],
+            "description": "Narrator shifts within the servant song",
+            "details": "Scholars generally regard as a unified passage, but the text identifies more than one subject. Neglect of that point has created many of the difficulties scholars have with this passage.",
+            "cite": "",
+            "type": "",
+            "slug": "fourthservantsong-of-isaiah",
+            "next": "I\/Me\/My\u2014Servant Role",
+            "prev": "Righteousness\u21ccHand\u21ccArm"
+        },
+        "I\/Me\/My\u2014Servant Role": {
+            "parents": [
+                "Redemption",
+                "Bifid V",
+                "Bifid",
+                "Structures",
+                "root"
+            ],
+            "description": "The Servant as the Ideal Vassal",
+            "details": "Verses in which Jehovah speaks, identify the subject as Jehovah\u2019s ideal vassal, who is here represented by the Servant figure",
+            "cite": "",
+            "type": "",
+            "slug": "i-me-myservant-role",
+            "next": "We\/Us\/Our\u2014Another Role",
+            "prev": "Fourth Servant Song of Isaiah"
+        },
+        "We\/Us\/Our\u2014Another Role": {
+            "parents": [
+                "Redemption",
+                "Bifid V",
+                "Bifid",
+                "Structures",
+                "root"
+            ],
+            "description": "The Servant as Yahweh himself",
+            "details": "The part of Isaiah 53 that \u201cwe\/us\u201d narrates, on the other hand, doesn\u2019t identify its subject except by way of descriptive imagery. That descriptive imagery possesses but few literary interconnections in the Book of Isaiah that would enable us to identify the subject of Isaiah 53:1\u201310",
+            "cite": "",
+            "type": "",
+            "slug": "we-us-our-another-role",
+            "next": "\u29b7 Three Subjects",
+            "prev": "I\/Me\/My\u2014Servant Role"
+        },
+        "\u29b7 Three Subjects": {
+            "parents": [
+                "Redemption",
+                "Bifid V",
+                "Bifid",
+                "Structures",
+                "root"
+            ],
+            "description": "Three Subjects of the Servant Song",
+            "details": "The location of Isaiah 53:1\u201310 within the Servant\u2013Tyrant parallelism, suggests that it is not Jehovah\u2019s ideal vassal who is its subject but Yahweh himself. That becomes evident from the way the Servant\u2013Tyrant Parallelism structurally juxtaposes the king of Babylon with three distinguishable subjects: ",
+            "cite": "",
+            "type": "parallel",
+            "slug": "threesubjects",
+            "next": "\u29b7 Kings of Babylon & Zion",
+            "prev": "We\/Us\/Our\u2014Another Role"
         },
         "\u29b7 Kings of Babylon & Zion": {
             "parents": [
@@ -2050,7 +2115,7 @@
             "type": "parallel",
             "slug": "kings-of-babylon-zion",
             "next": "Suffering Figure\u21ccYahweh",
-            "prev": "Righteousness\u21ccHand\u21ccArm"
+            "prev": "\u29b7 Three Subjects"
         },
         "Suffering Figure\u21ccYahweh": {
             "parents": [
@@ -38122,7 +38187,246 @@
                 "ref": "55:1;  60:15",
                 "oref": "Isaiah 55:1; Isaiah 60:15"
             }
-        ]
+        ],
+        "Fourth Servant Song of Isaiah": [
+            {
+                "desc": "Narrator: I\/Me\/My",
+                "details": 0,
+                "verses": {
+                    "18710": 3
+                },
+                "ref": "52:13\u201315",
+                "oref": "Isaiah 52:13-15"
+            },
+            {
+                "desc": "Narrator: We\/Us\/Our",
+                "details": 0,
+                "verses": {
+                    "18713": 10
+                },
+                "ref": "53:1\u201310",
+                "oref": "Isaiah 53:1-10"
+            },
+            {
+                "desc": "Narrator: I\/Me\/My",
+                "details": 0,
+                "verses": {
+                    "18723": 2
+                },
+                "ref": "53:11\u201312",
+                "oref": "Isaiah 53:11-12"
+            }
+        ],
+        "I\/Me\/My\u2014Servant Role": [
+            {
+                "desc": "Those verses in which Jehovah speaks identify their subject as \u201cmy servant\u201d (\u2018abdi)",
+                "details": 0,
+                "verses": [
+                    18710
+                ],
+                "ref": "52:13",
+                "oref": "Isaiah 52:13"
+            },
+            {
+                "desc": "and \u201cmy servant saddiq\u201d.",
+                "details": 0,
+                "verses": [
+                    18723
+                ],
+                "ref": "53:11",
+                "oref": "Isaiah 53:11"
+            },
+            {
+                "desc": "The latter\u2019s mission encompasses many nations and kings,",
+                "details": 0,
+                "verses": [
+                    18712
+                ],
+                "ref": "52:15",
+                "oref": "Isaiah 52:15"
+            },
+            {
+                "desc": "identifying  him, cumulatively, as Jehovah\u2019s ideal vassal, who is here represented by the Servant figure.",
+                "details": 0,
+                "verses": [
+                    18482,
+                    18644
+                ],
+                "ref": "42:1;  49:7",
+                "oref": "Isaiah 42:1; Isaiah 49:7"
+            },
+            {
+                "desc": "Because righteousness is a precondition of salvation, the Servant figure\u2019s \u201cvindicating many\u201d or \u201cmaking many righteous\u201d (yasdiq . . . larabbim) accords with his role as a paradigm and proxy savior of Jehovah\u2019s people in which he seeks and obtains their temporal salvation.",
+                "details": 0,
+                "verses": [
+                    18723
+                ],
+                "ref": "53:11",
+                "oref": "Isaiah 53:11"
+            },
+            {
+                "desc": "Two parallel statements\u2014\u201cby bearing their iniquities\u201d and \u201cbecause of his knowledge\u201d \u2014reflect the Servant figure\u2019s role of proxy savior.",
+                "details": "Because the term \u201cknowledge\u201d (da\u2018at) expresses a covenant relationship, the Servant figure considers himself answerable\u2014as a vassal to his suzerain\u2014for the terms of the Davidic Covenant and its protection clause. To obtain the suzerain\u2019s protection of himself and his people, in other words, the Servant figure is willing to answer for his people\u2019s disloyalties to the suzerain. His \u201cknowledge\u201d consists of the fact that, under the terms of the Davidic Covenant, if he takes upon himself the curses of Jehovah\u2019s covenant with his people\u2014curses that are rightfully theirs, not his\u2014he may obtain Jehovah\u2019s protection of his people. His intercessory role as his people\u2019s proxy savior\u2014in the interim before they are in a position to answer for themselves by keeping the terms of the Sinai Covenant\u2014thus involves \u201cbearing their iniquities\u201d as an essential component of his individual covenant with Jehovah. ",
+                "verses": [
+                    18723
+                ],
+                "ref": "53:11",
+                "oref": "Isaiah 53:11"
+            },
+            {
+                "desc": "In the pattern of King Hezekiah, who suffers grievously almost to death before Jehovah delivers his people",
+                "details": 0,
+                "verses": {
+                    "18392": 6
+                },
+                "ref": "38:1\u20136",
+                "oref": "Isaiah 38:1-6"
+            },
+            {
+                "desc": "The Servant figure is \u201cmarred beyond human likeness\u201d before Jehovah reverses his and his people\u2019s circumstances and they return in a new exodus to Zion",
+                "details": 0,
+                "verses": [
+                    {
+                        "18708": 5
+                    },
+                    {
+                        "18723": 2
+                    }
+                ],
+                "ref": "52:11\u201315;  53:11\u201312",
+                "oref": "Isaiah 52:11-15; Isaiah 53:11-12"
+            }
+        ],
+        "We\/Us\/Our\u2014Another Role": [
+            {
+                "desc": "Depictions such as \u201csapling\u201d (yonek) \u201cstalk\u201d (sores), \u201cman of grief\u201d (\u2019is mak\u2019obot), \u201clamb\u201d (seh) and \u201csheep\u201d (rahel), lack identifying characteristics that allow us to link them to any person.",
+                "details": 0,
+                "verses": [
+                    {
+                        "18714": 2
+                    },
+                    [
+                        18719
+                    ]
+                ],
+                "ref": "53:2\u20133,7",
+                "oref": "Isaiah 53:2, 3, 7"
+            },
+            {
+                "desc": "Rhetorical use of the pronouns we and us in the Book of Isaiah, on the other hand, associates them with Jehovah\u2019s people and with the nations",
+                "details": 0,
+                "verses": [
+                    17664,
+                    17689,
+                    17759,
+                    17789,
+                    17836
+                ],
+                "ref": "1:9;  2:3;  5:19;  7:6;  9:6",
+                "oref": "Isaiah 1:9; Isaiah 2:3; Isaiah 5:19; Isaiah 7:6; Isaiah 9:6"
+            },
+            {
+                "desc": "We confirm that association by means of the additional identifying marks of \u201cmy people\u201d (\u2018ammi)",
+                "details": 0,
+                "verses": [
+                    18720
+                ],
+                "ref": "53:8",
+                "oref": "Isaiah 53:8"
+            },
+            {
+                "desc": "an expression that elsewhere denotes Jehovah\u2019s people (\u2018ammi)\u2014",
+                "details": 0,
+                "verses": [
+                    18057
+                ],
+                "ref": "22:4",
+                "oref": "Isaiah 22:4"
+            },
+            {
+                "desc": "and \u201csheep\/flock\u201d (s\u2019on),",
+                "details": 0,
+                "verses": [
+                    18718
+                ],
+                "ref": "53:6",
+                "oref": "Isaiah 53:6"
+            },
+            {
+                "desc": "which term describes the peoples of the earth (s\u2019on).",
+                "details": 0,
+                "verses": [
+                    17921
+                ],
+                "ref": "13:14",
+                "oref": "Isaiah 13:14"
+            },
+            {
+                "desc": "These rhetorical identities suggest that the subject of Isaiah 53:1\u201310 provokes interest among both Jehovah\u2019s people and the nations.",
+                "details": 0,
+                "verses": {
+                    "18713": 10
+                },
+                "ref": "53:1\u201310",
+                "oref": "Isaiah 53:1-10"
+            }
+        ],
+        "\u29b7 Three Subjects": {
+            "1A": {
+                "desc": "Jehovah, the God of Israel and King of Zion",
+                "details": 0,
+                "verses": {
+                    "18704": 6
+                },
+                "ref": "52:7\u201312",
+                "oref": "Isaiah 52:7-12"
+            },
+            "1B": {
+                "desc": "Oracles of Calamity",
+                "details": 0,
+                "verses": {
+                    "17933": 6
+                },
+                "ref": "14:4\u20139",
+                "oref": "Isaiah 14:4-9"
+            },
+            "2A": {
+                "desc": "The Servant figure",
+                "details": 0,
+                "verses": {
+                    "18710": 3
+                },
+                "ref": "52:13\u201315",
+                "oref": "Isaiah 52:13-15"
+            },
+            "2B": {
+                "desc": "Reversal of circumstance",
+                "details": 0,
+                "verses": {
+                    "17939": 3
+                },
+                "ref": "14:10\u201312",
+                "oref": "Isaiah 14:10-12"
+            },
+            "3A": {
+                "desc": "The Suffering figure",
+                "details": 0,
+                "verses": {
+                    "18713": 10
+                },
+                "ref": "53:1\u201310",
+                "oref": "Isaiah 53:1-10"
+            },
+            "3B": {
+                "desc": "Final judgement",
+                "details": 0,
+                "verses": {
+                    "17942": 8
+                },
+                "ref": "14:13\u201320",
+                "oref": "Isaiah 14:13-20"
+            }
+        }
     },
     "parentTagIndex": {
         "root": [
@@ -38317,6 +38621,11 @@
             "Righteousness \u27a4 Salvation",
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
+            "\u29b7 Servant\u2194Tyrant",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Peace",
@@ -38944,7 +39253,8 @@
             "Servants\u2194Ideal Vassal",
             "Servants Ascend",
             "Vassal Ascends",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18645": [
             "Nephi",
@@ -39229,7 +39539,8 @@
             "New Jerusalem",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "Ugaric Cycle 2"
+            "Ugaric Cycle 2",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17690": [
             "Nephi",
@@ -39831,7 +40142,8 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Covenant Curses",
-            "Wicked Destroyed"
+            "Wicked Destroyed",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17760": [
             "Nephi",
@@ -40181,7 +40493,8 @@
             "\u24cd Asking for a Sign",
             "Covenant Curses",
             "Ahaz and the Shoot",
-            "Oracles Against Judah"
+            "Oracles Against Judah",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17790": [
             "Nephi",
@@ -40718,7 +41031,8 @@
             "Davidic King \ud83c\udd9a Assyrian King",
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
-            "A Davidic Figure"
+            "A Davidic Figure",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17837": [
             "Nephi",
@@ -41626,7 +41940,8 @@
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17922": [
             "Nephi",
@@ -41772,7 +42087,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Personified Covenants",
             "Woman Figure",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "\u29b7 Three Subjects"
         ],
         "17934": [
             "Nephi",
@@ -41784,7 +42100,8 @@
             "\u29b7 Zion\u2194Babylon",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
-            "Personified Covenants"
+            "Personified Covenants",
+            "\u29b7 Three Subjects"
         ],
         "17935": [
             "Nephi",
@@ -41796,7 +42113,8 @@
             "\u29b7 Zion\u2194Babylon",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
-            "Personified Covenants"
+            "Personified Covenants",
+            "\u29b7 Three Subjects"
         ],
         "17936": [
             "Nephi",
@@ -41807,7 +42125,8 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
-            "Cumulative Themes I \u2013 IV"
+            "Cumulative Themes I \u2013 IV",
+            "\u29b7 Three Subjects"
         ],
         "17937": [
             "Nephi",
@@ -41817,7 +42136,8 @@
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "\u29b7 Kings of Babylon & Zion"
+            "\u29b7 Kings of Babylon & Zion",
+            "\u29b7 Three Subjects"
         ],
         "17938": [
             "Nephi",
@@ -41825,7 +42145,8 @@
             "\u24cd Lucifer",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Kings of Babylon & Zion"
+            "\u29b7 Kings of Babylon & Zion",
+            "\u29b7 Three Subjects"
         ],
         "17939": [
             "Nephi",
@@ -41834,7 +42155,8 @@
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "\u29b7 Kings of Babylon & Zion",
-            "Royal Accession"
+            "Royal Accession",
+            "\u29b7 Three Subjects"
         ],
         "17940": [
             "Nephi",
@@ -41847,7 +42169,8 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
             "Royal Accession",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "\u29b7 Three Subjects"
         ],
         "17941": [
             "Nephi",
@@ -41862,7 +42185,8 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
             "Royal Accession",
-            "Cumulative Themes I \u2013 IV"
+            "Cumulative Themes I \u2013 IV",
+            "\u29b7 Three Subjects"
         ],
         "17942": [
             "Nephi",
@@ -41877,7 +42201,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Fate of Babylon\u2019s King",
-            "Woman Figure"
+            "Woman Figure",
+            "\u29b7 Three Subjects"
         ],
         "17943": [
             "Nephi",
@@ -41892,7 +42217,8 @@
             "Suffering Figure\u21ccYahweh",
             "Fate of Babylon\u2019s King",
             "Yahweh\u2019s Ascent",
-            "Woman Figure"
+            "Woman Figure",
+            "\u29b7 Three Subjects"
         ],
         "17944": [
             "Nephi",
@@ -41904,7 +42230,8 @@
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "\u29b7 Kings of Babylon & Zion",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "\u29b7 Three Subjects"
         ],
         "17945": [
             "Nephi",
@@ -41917,7 +42244,8 @@
             "Babylon\u2019s Humiliation",
             "\u29b7 Kings of Babylon & Zion",
             "Fate of Babylon\u2019s King",
-            "Personified Covenants"
+            "Personified Covenants",
+            "\u29b7 Three Subjects"
         ],
         "17946": [
             "Nephi",
@@ -41929,7 +42257,8 @@
             "Babylon\u21ccUniversal",
             "\u29b7 Kings of Babylon & Zion",
             "Fate of Babylon\u2019s King",
-            "Personified Covenants"
+            "Personified Covenants",
+            "\u29b7 Three Subjects"
         ],
         "17947": [
             "Nephi",
@@ -41937,7 +42266,8 @@
             "\u24cd Lucifer",
             "Babylon\u21ccUniversal",
             "\u29b7 Kings of Babylon & Zion",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "\u29b7 Three Subjects"
         ],
         "17948": [
             "Nephi",
@@ -41948,7 +42278,8 @@
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "\u29b7 Kings of Babylon & Zion",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "\u29b7 Three Subjects"
         ],
         "17949": [
             "Nephi",
@@ -41960,7 +42291,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Ideal Vassal\u2194People",
             "Fate of Babylon\u2019s King",
-            "Woman Figure"
+            "Woman Figure",
+            "\u29b7 Three Subjects"
         ],
         "17950": [
             "Nephi",
@@ -42757,7 +43089,8 @@
             "Annointed Vassal",
             "Children of Zion",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "\u29b7 Three Subjects"
         ],
         "18705": [
             "Abinadi",
@@ -42778,7 +43111,8 @@
             "Universal Mission",
             "Children of Zion",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "\u29b7 Three Subjects"
         ],
         "18706": [
             "Abinadi",
@@ -42793,7 +43127,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
             "Suffering and Deliverance",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "\u29b7 Three Subjects"
         ],
         "18707": [
             "Abinadi",
@@ -42810,7 +43145,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
             "Suffering and Deliverance",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "\u29b7 Three Subjects"
         ],
         "18713": [
             "Abinadi",
@@ -42824,7 +43160,10 @@
             "Righteousness\u21ccHand\u21ccArm",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18714": [
             "Abinadi",
@@ -42836,7 +43175,10 @@
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "\u24cd Suffering Figure",
-            "Fate of Babylon\u2019s King"
+            "Fate of Babylon\u2019s King",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18715": [
             "Abinadi",
@@ -42850,7 +43192,10 @@
             "Fate of Babylon\u2019s King",
             "Yahweh\u2019s Descent",
             "Yahweh\u2019s Ascent",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18716": [
             "Abinadi",
@@ -42869,7 +43214,10 @@
             "Suffering and Deliverance",
             "3 Roles",
             "Cumulative Themes I \u2013 V",
-            "Initiation"
+            "Initiation",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18717": [
             "Abinadi",
@@ -42893,7 +43241,10 @@
             "Servant Word Links",
             "Covenantal Peace",
             "Cumulative Themes I \u2013 V",
-            "Initiation"
+            "Initiation",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18718": [
             "Abinadi",
@@ -42909,7 +43260,10 @@
             "Yahweh\u2019s Descent",
             "Comparative Suffering",
             "Suffering and Deliverance",
-            "Initiation"
+            "Initiation",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18719": [
             "Abinadi",
@@ -42925,7 +43279,10 @@
             "\u24cd Suffering Figure",
             "Yahweh\u2019s Descent",
             "Comparative Suffering",
-            "Initiation"
+            "Initiation",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18720": [
             "Abinadi",
@@ -42940,7 +43297,10 @@
             "\u24cd Suffering Figure",
             "Ideal Vassal\u2194People",
             "Yahweh\u2019s Descent",
-            "Initiation"
+            "Initiation",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18721": [
             "Abinadi",
@@ -42954,7 +43314,10 @@
             "\u24cd Suffering Figure",
             "Ideal Vassal\u2194People",
             "Yahweh\u2019s Descent",
-            "3 Roles"
+            "3 Roles",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18722": [
             "Abinadi",
@@ -42971,7 +43334,10 @@
             "\u24cd Suffering Figure",
             "Proxy Roles",
             "Yahweh\u2019s Descent",
-            "3 Roles"
+            "3 Roles",
+            "Fourth Servant Song of Isaiah",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects"
         ],
         "18723": [
             "Abinadi",
@@ -42988,7 +43354,9 @@
             "Proxy Roles",
             "Comparative Suffering",
             "3 Roles",
-            "Servant Word Links"
+            "Servant Word Links",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18724": [
             "Abinadi",
@@ -43005,7 +43373,9 @@
             "Vassal\u2019s Redemption",
             "Comparative Suffering",
             "3 Roles",
-            "Servant Word Links"
+            "Servant Word Links",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18726": [
             "Moroni",
@@ -43060,7 +43430,9 @@
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
             "Suffering and Deliverance",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "I\/Me\/My\u2014Servant Role",
+            "\u29b7 Three Subjects"
         ],
         "18709": [
             "Jesus",
@@ -43074,7 +43446,9 @@
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
             "Suffering and Deliverance",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "I\/Me\/My\u2014Servant Role",
+            "\u29b7 Three Subjects"
         ],
         "18710": [
             "Jesus",
@@ -43089,7 +43463,10 @@
             "Ideal Vassal\u2194People",
             "Vassal\u2019s Redemption",
             "Vassal Ascends",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "\u29b7 Three Subjects"
         ],
         "18711": [
             "Jesus",
@@ -43104,7 +43481,10 @@
             "Royal Accession",
             "Fate of Babylon\u2019s King",
             "Vassal\u2019s Redemption",
-            "Vassal Ascends"
+            "Vassal Ascends",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "\u29b7 Three Subjects"
         ],
         "18712": [
             "Jesus",
@@ -43118,7 +43498,10 @@
             "\u24cd Suffering Figure",
             "Royal Accession",
             "Vassal\u2019s Redemption",
-            "Vassal Ascends"
+            "Vassal Ascends",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "\u29b7 Three Subjects"
         ],
         "18725": [
             "Jesus",
@@ -43446,7 +43829,8 @@
             "Apostasy",
             "Covenant Curses",
             "Wicked Destroyed",
-            "The Composite City"
+            "The Composite City",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "17665": [
             "Forms of Speech",
@@ -44650,7 +45034,8 @@
             "Hezekiah\u2019s Ascent",
             "Davidic King Intercedes",
             "Vassal\u2019s Redemption",
-            "Stories of Isaiah"
+            "Stories of Isaiah",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18393": [
             "Biographical Material",
@@ -44663,7 +45048,8 @@
             "King as Exemplar",
             "Hezekiah\u2019s Ascent",
             "Davidic King Intercedes",
-            "Vassal\u2019s Redemption"
+            "Vassal\u2019s Redemption",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18394": [
             "Biographical Material",
@@ -44678,7 +45064,8 @@
             "Hezekiah\u2019s Ascent",
             "Davidic King Intercedes",
             "Allegiance",
-            "Vassal\u2019s Redemption"
+            "Vassal\u2019s Redemption",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18395": [
             "Biographical Material",
@@ -44694,7 +45081,8 @@
             "Allegiance",
             "The Composite City",
             "Vassal\u2019s Redemption",
-            "Stories of Isaiah"
+            "Stories of Isaiah",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18396": [
             "Biographical Material",
@@ -44710,7 +45098,8 @@
             "Davidic King Intercedes",
             "Allegiance",
             "The Composite City",
-            "Vassal\u2019s Redemption"
+            "Vassal\u2019s Redemption",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18397": [
             "Biographical Material",
@@ -44728,7 +45117,8 @@
             "Allegiance",
             "The Composite City",
             "Redemptive Roles",
-            "Vassal\u2019s Redemption"
+            "Vassal\u2019s Redemption",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18398": [
             "Biographical Material",
@@ -45230,7 +45620,8 @@
             "Servant Word Links",
             "Servants\u2194Ideal Vassal",
             "Annointed Vassal",
-            "A Servant Figure"
+            "A Servant Figure",
+            "I\/Me\/My\u2014Servant Role"
         ],
         "18483": [
             "\u24cd Chaos\u2194Creation",
@@ -50302,7 +50693,8 @@
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
-            "Woman Figure"
+            "Woman Figure",
+            "We\/Us\/Our\u2014Another Role"
         ],
         "18058": [
             "\u24cd The Day of the Lord",
@@ -51671,6 +52063,10 @@
             "Righteousness \u27a4 Salvation",
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Peace",
@@ -52117,6 +52513,10 @@
             "Righteousness \u27a4 Salvation",
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Peace",
@@ -52358,7 +52758,6 @@
             "Oracles Against Foreign Powers",
             "Babylon\u2019s Demise",
             "Glory\u2194Ignominy",
-            "\u29b7 Servant\u2194Tyrant",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Tyre\u2194Babylon",
@@ -52462,6 +52861,10 @@
             "Righteousness \u27a4 Salvation",
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Peace",
@@ -52636,7 +53039,34 @@
             "A Cyrus Figure",
             "Cyrus\u2019s Name"
         ],
+        "Redemption": [
+            "\u29b7 Servant\u2194Tyrant",
+            "Redemptive Intervention",
+            "Divine Attributes",
+            "Deliverance\u2194Ideal Vassal",
+            "Redemptive Roles",
+            "Righteousness \u27a4 Salvation",
+            "Two Arms",
+            "Righteousness\u21ccHand\u21ccArm",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
+            "\u29b7 Kings of Babylon & Zion",
+            "Suffering Figure\u21ccYahweh",
+            "Peace",
+            "Redemptive Elements",
+            "\u24cd Suffering Figure",
+            "Proxy Roles",
+            "Royal Accession",
+            "Ideal Vassal\u2194People",
+            "Fate of Babylon\u2019s King",
+            "Vassal\u2019s Redemption",
+            "Yahweh\u2019s Descent",
+            "\u24cd Vindication"
+        ],
         "Bifid V": [
+            "\u29b7 Servant\u2194Tyrant",
             "\ud83c\udff0 The City",
             "City Attributes",
             "\u29b7 City\u21ccMoab",
@@ -52661,6 +53091,10 @@
             "Righteousness \u27a4 Salvation",
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
+            "Fourth Servant Song of Isaiah",
+            "I\/Me\/My\u2014Servant Role",
+            "We\/Us\/Our\u2014Another Role",
+            "\u29b7 Three Subjects",
             "\u29b7 Kings of Babylon & Zion",
             "Suffering Figure\u21ccYahweh",
             "Peace",
@@ -52699,27 +53133,6 @@
             "Avenge\/Reward",
             "Watchmen\/Prophets",
             "Visionaries"
-        ],
-        "Redemption": [
-            "Redemptive Intervention",
-            "Divine Attributes",
-            "Deliverance\u2194Ideal Vassal",
-            "Redemptive Roles",
-            "Righteousness \u27a4 Salvation",
-            "Two Arms",
-            "Righteousness\u21ccHand\u21ccArm",
-            "\u29b7 Kings of Babylon & Zion",
-            "Suffering Figure\u21ccYahweh",
-            "Peace",
-            "Redemptive Elements",
-            "\u24cd Suffering Figure",
-            "Proxy Roles",
-            "Royal Accession",
-            "Ideal Vassal\u2194People",
-            "Fate of Babylon\u2019s King",
-            "Vassal\u2019s Redemption",
-            "Yahweh\u2019s Descent",
-            "\u24cd Vindication"
         ],
         "Bifid VI": [
             "Loyalty",
@@ -53429,7 +53842,7 @@
         ],
         "hero-journey": [
             "Hero Journey",
-            ""
+            "A universal motif of adventure and transformation"
         ],
         "zion-ideologicalstructure": [
             "Zion Ideological Structure",
@@ -53866,6 +54279,22 @@
         "righteousness-hand-arm": [
             "Righteousness\u21ccHand\u21ccArm",
             "Arm is a code word for \u201crighteous(ness),\u201d \u201csalvation,\u201d and \u201cright hand\u201d"
+        ],
+        "fourthservantsong-of-isaiah": [
+            "Fourth Servant Song of Isaiah",
+            "Narrator shifts within the servant song"
+        ],
+        "i-me-myservant-role": [
+            "I\/Me\/My\u2014Servant Role",
+            "The Servant as the Ideal Vassal"
+        ],
+        "we-us-our-another-role": [
+            "We\/Us\/Our\u2014Another Role",
+            "The Servant as Yahweh himself"
+        ],
+        "threesubjects": [
+            "\u29b7 Three Subjects",
+            "Three Subjects of the Servant Song"
         ],
         "kings-of-babylon-zion": [
             "\u29b7 Kings of Babylon & Zion",
