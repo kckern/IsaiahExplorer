@@ -920,7 +920,7 @@ class App extends Component {
       var ref = colon_segs[x]
       var chapter = true
       if (ref.match(/[.:]/) === null) chapter = false
-
+      
       //fill range into commas
       ref = ref.replace(/([0-9]+)-([0-9]+)/g, function replacer(
         match,
@@ -929,6 +929,8 @@ class App extends Component {
         offset,
         string
       ) {
+      	p1 = parseInt(p1,0);
+      	p2 = parseInt(p2,0);
         var vs = []
         for (var i = p1; i <= p2; i++) {
           vs.push(i)
@@ -961,7 +963,7 @@ class App extends Component {
               matches.push(parseInt(verse_id, 0))
           }
         }
-        console.log("chapter range", chs, matches)
+        //console.log("chapter range", chs, matches)
       }
     }
 
