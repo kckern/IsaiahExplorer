@@ -1285,7 +1285,7 @@ class App extends Component {
     var arr = window.location.host.match(/^(.*?).isaiah/)
     if (arr !== null) subsite = arr[1]
 
-    if (subsite === "dev") subsite = "spu"
+    //if (subsite === "dev") subsite = "spu"
 
     fetch("/core/core.txt")
       .then(response => response.text())

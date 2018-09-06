@@ -3585,7 +3585,9 @@ a.strong:hover
   background-color: #467386;
   border-radius: 4px;
   color: #FFFFFF;
-  max-width: 200px;
+  overflow:hidden;
+  max-height:45px;
+  max-width: 250px;
   padding: 3px 8px;
   text-align: center;
 }
