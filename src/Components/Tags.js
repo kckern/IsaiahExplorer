@@ -283,12 +283,12 @@ class TagBlocks extends Component {
 		if(classes.indexOf("active")<0)
 		{
 			//collapse
-			this.props.app.setState({allCollapsed:false},this.props.app.setTagBlock(index,verseId));
+			this.props.app.setState({allCollapsed:false,selected_verse_id:null},this.props.app.setTagBlock(index,verseId));
 		}
 		else if(count>1)
 		{
 			
-			this.props.app.setState({allCollapsed:true,selected_tag_block_index:null}, this.props.app.checkFloater.bind(this.props.app));
+			this.props.app.setState({allCollapsed:true,selected_verse_id:null,selected_tag_block_index:null}, this.props.app.checkFloater.bind(this.props.app));
 		}
 	}
 	

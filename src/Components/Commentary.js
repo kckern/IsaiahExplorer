@@ -300,6 +300,7 @@ class CommentaryTagLink extends Component {
 			this.props.app.setState({
 				searchMode:false,
 				selected_tag:null,
+				selected_verse_id:null,
 				highlighted_tagged_verse_range:[],
 				comSearchMode:false},
 				this.props.app.setActiveVerse.bind(this.props.app,this.props.verses[0],undefined,undefined,undefined,"versebox"));
@@ -310,6 +311,7 @@ class CommentaryTagLink extends Component {
 		this.props.app.setState({
 			searchMode:true,
 			selected_tag:null,
+			selected_verse_id:null,
 			searchQuery:null,
 			comSearchMode:true,
 			highlighted_tagged_verse_range:[],

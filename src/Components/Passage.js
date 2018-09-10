@@ -386,6 +386,7 @@ export  class PassageLine extends Component {
 		  			<span 
               		onMouseEnter={() => {  this.props.app.setActiveVerse(this.props.line.verse_id) }}
               		onClick={() => this.props.app.selectVerse(this.props.line.verse_id)}
+              		onContextMenu={(e) => { e.preventDefault(); this.props.app.doubleClickVerse(this.props.line.verse_id,"versebox")}}
 		  			className={this.props.line.classes.join(" ")}>
 		  			{line}{' '}</span>
 		  		)

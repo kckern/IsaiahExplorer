@@ -39,6 +39,7 @@ export class VerseBox extends Component {
               onMouseEnter={() => this.props.app.setActiveVerse(this.props.verse_id,undefined,undefined,undefined,"versebox")}
               onClick={() => this.props.app.selectVerse(this.props.verse_id,"versebox")}
               onDoubleClick={() => this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}
+              onContextMenu={(e) => { e.preventDefault(); this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}}
               className={this.props.class.join(" ")}
               verse_id={this.props.verse_id}
               title={this.props.title}  >
