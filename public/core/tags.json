@@ -40104,8 +40104,8 @@
                 "oref": "Isaiah 1:1"
             }
         ],
-        "The Servant": [
-            {
+        "The Servant": {
+            "1": {
                 "desc": "Placeholder",
                 "details": 0,
                 "verses": [
@@ -40114,7 +40114,7 @@
                 "ref": "1:1",
                 "oref": "Isaiah 1:1"
             }
-        ],
+        },
         "Righteousness and Salvation": [
             {
                 "desc": "Placeholder",
