@@ -92,7 +92,19 @@
             "cite": "",
             "type": "",
             "slug": "textual-compositions",
+            "next": "Mini-Studies",
             "prev": "Code Words"
+        },
+        "Mini-Studies": {
+            "parents": [
+                "root"
+            ],
+            "description": "Passage lookup excercised from \"Isaiah Made Simple\"",
+            "details": "",
+            "cite": "",
+            "type": "",
+            "slug": "ministudies",
+            "prev": "Textual Compositions"
         },
         "Narrative Characters": {
             "parents": [
@@ -1848,7 +1860,7 @@
             "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. Hebraeus Press, 2015.",
             "type": "",
             "slug": "fleeing-babylon",
-            "next": "Zion"
+            "next": "Knowing God"
         },
         "Law\/Word\u21ccServant\u2019s Mission": {
             "parents": [
@@ -3658,22 +3670,20 @@
             "cite": "Adapted from Gileadi, Avraham. \u201cIsaiah\u2019s Layered Literary Structures.\u201d IsaiahExplained.com.",
             "type": "",
             "slug": "restoration",
-            "next": "Salvation",
+            "next": "Local Ugaritic Structures",
             "prev": "Judgment"
         },
         "Salvation": {
             "parents": [
-                "Ugaritic",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
-            "description": "God\u2019s Elect People Inherit the Millennial Age",
-            "details": "",
-            "cite": "Adapted from Gileadi, Avraham. \u201cIsaiah\u2019s Layered Literary Structures.\u201d IsaiahExplained.com.",
+            "description": "Mini-Study: Word Links\u2014Salvation",
+            "details": "Because the most consistent character trait of Israel\u2019s God Jehovah is salvation, Isaiah uses that term as a pseudonym of him. Israel\u2019s God, in other words, personifes salvation. (Incidentally, the name Jesus [yeshua] also means \u201csalvation,\u201d and Isaiah\u2019s own name [yeshayahu] means \u201cJehovah is salvation.\u201d) At the same time, by using the terms righteousness and salvation as pseudonyms of Jehovah and his servant, Isaiah shows their close interaction.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
             "type": "",
             "slug": "salvation",
-            "next": "Local Ugaritic Structures",
-            "prev": "Restoration"
+            "next": "Zion"
         },
         "Local Ugaritic Structures": {
             "parents": [
@@ -3686,7 +3696,7 @@
             "cite": "Adapted from Darryl Alder.  \u201cFour Keys to Interpreting Isaiah\u201d",
             "type": "",
             "slug": "local-ugariticstructures",
-            "prev": "Salvation"
+            "prev": "Restoration"
         },
         "Ugaric Cycle 1": {
             "parents": [
@@ -3746,7 +3756,7 @@
             "slug": "ugaric-cycle-4",
             "prev": "Ugaric Cycle 3"
         },
-        "Covenant Curses": {
+        "Covenantal Curses": {
             "parents": [
                 "Curses\/Blessings",
                 "Structures",
@@ -3756,10 +3766,10 @@
             "details": "",
             "cite": "Adapted from Gileadi, Avraham. \u201cIsaiah\u2019s Layered Literary Structures.\u201d IsaiahExplained.com.",
             "type": "",
-            "slug": "covenant-curses",
-            "next": "Covenant Blessings"
+            "slug": "covenantal-curses",
+            "next": "Covenantal Blessings"
         },
-        "Covenant Blessings": {
+        "Covenantal Blessings": {
             "parents": [
                 "Curses\/Blessings",
                 "Structures",
@@ -3769,8 +3779,8 @@
             "details": "",
             "cite": "Adapted from Gileadi, Avraham. \u201cIsaiah\u2019s Layered Literary Structures.\u201d IsaiahExplained.com.",
             "type": "",
-            "slug": "covenant-blessings",
-            "prev": "Covenant Curses"
+            "slug": "covenantal-blessings",
+            "prev": "Covenantal Curses"
         },
         "Wicked Destroyed": {
             "parents": [
@@ -3908,16 +3918,16 @@
         },
         "Zion": {
             "parents": [
-                "Themes",
+                "Mini-Studies",
                 "root"
             ],
-            "description": "The emergence of a city of God",
-            "details": "",
-            "cite": "Adapted from Gileadi, Avraham. Windows on the Prophecy of Isaiah: Study Tools for Understanding Isaiah. Hebraeus Press, 2015.",
+            "description": "Mini-Study: Codenames\u2014Zion",
+            "details": "Israel\u2019s prophets use the name Zion when describing God\u2019s residence and the residence of his righteous people. Isaiah uses the name Zion as a codename of an endtime Zion that retains its ancient character but that incorporates all the principles of a sanctifed people.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
             "type": "",
             "slug": "zion",
-            "next": "Knowing God",
-            "prev": "Fleeing Babylon"
+            "next": "The Servant",
+            "prev": "Salvation"
         },
         "Knowing God": {
             "parents": [
@@ -3930,7 +3940,7 @@
             "type": "",
             "slug": "knowing-god",
             "next": "Destruction",
-            "prev": "Zion"
+            "prev": "Fleeing Babylon"
         },
         "Destruction": {
             "parents": [
@@ -4690,22 +4700,21 @@
             "cite": "",
             "type": "",
             "slug": "annoucement-of-hope",
-            "next": "The Servant",
+            "next": "Servants\u2019 Inheritance",
             "prev": "Rise & Fall of Jerusalem"
         },
         "The Servant": {
             "parents": [
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
-            "description": "The Role of a Davidic Servant",
-            "details": "",
-            "cite": "",
+            "description": "Mini-Study: Synonymous Parallels\u2014The Servant",
+            "details": "Because Hebrew poetry consists mostly of writing in parallel lines, Isaiah uses it to add more meanings to his prophecies. Synonymous parallel lines, for example, may identify one person or thing with another. Two pseudonyms appearing in parallel, in other words, could refer to the same person or thing while at the same time revealing additional character traits.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
             "type": "",
             "slug": "theservant",
-            "next": "Servants\u2019 Inheritance",
-            "prev": "Annoucement of Hope"
+            "next": "Endtime Participants",
+            "prev": "Zion"
         },
         "Servants\u2019 Inheritance": {
             "parents": [
@@ -4718,7 +4727,7 @@
             "cite": "",
             "type": "",
             "slug": "servants-inheritance",
-            "prev": "The Servant"
+            "prev": "Annoucement of Hope"
         },
         "Old Jerusalem": {
             "parents": [
@@ -4895,8 +4904,7 @@
         "Servant\u2019s Mission": {
             "parents": [
                 "The Servant",
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
             "description": "The Servant Fulfills God\u2019s Mission",
@@ -4909,8 +4917,7 @@
         "\u29b7 Servant\u2019s Empowerment": {
             "parents": [
                 "The Servant",
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
             "description": "The Suffering Servant",
@@ -4924,8 +4931,7 @@
         "Servant is Rejected and Killed": {
             "parents": [
                 "The Servant",
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
             "description": "Servant is Rejected and Killed",
@@ -4939,8 +4945,7 @@
         "Servant Lives Again": {
             "parents": [
                 "The Servant",
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
             "description": "His days are prolonged",
@@ -4954,8 +4959,7 @@
         "Two Ways to Respond": {
             "parents": [
                 "The Servant",
-                "Bible Project",
-                "Structures",
+                "Mini-Studies",
                 "root"
             ],
             "description": "Acceptance and Rejection",
@@ -6197,6 +6201,486 @@
             "type": "chiasm",
             "slug": "satisfaction",
             "prev": "\u29b7 Call\u2194Answer"
+        },
+        "Endtime Participants": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Characters\u2014Endtime Participants",
+            "details": "The Book of Isaiah\u2019s unique structural features require us to read it on two levels to get the full meaning: (1) relating to Isaiah\u2019s day; and (2) relating to the \u201clast days\u201d or endtime. From the start, therefore, we should adjust our thinking to this book\u2019s two-dimensional nature. When we read what he is saying about his own day, in other words, we can apply it simultaneously to our day and see how it may relate to things already starting to happen.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "endtime-participants",
+            "next": "Endtime Servants",
+            "prev": "The Servant"
+        },
+        "Endtime Servants": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Characters\u2014Endtime Servants",
+            "details": "A category of righteous servants of God emerges at the end of the world who restore God\u2019s covenant people Israel. Inspired by their ancient counterparts who delivered and restored his people, they resemble them in their service to God as they labor on behalf of Zion.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "endtimeservants",
+            "next": "Babylon",
+            "prev": "Endtime Participants"
+        },
+        "Babylon": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Codenames\u2014Babylon",
+            "details": "Isaiah, and also John in the Book of Revelation, use the name of the ancient Babylonian Empire as a codename of an endtime Babylon. By viewing all instances of Isaiah\u2019s mention of Babylon, we get an overview of who and what Babylon is and what happens to it.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "babylon",
+            "next": "Egypt",
+            "prev": "Endtime Servants"
+        },
+        "Egypt": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Codenames\u2014Egypt",
+            "details": "The nation of Egypt\u2014the ancient world\u2019s great superpower\u2014was a refuge for outcasts from other nations, including Abraham. In Isaiah\u2019s day, however, Egypt su\ufb00ered from political, economic, and spiritual decline. Isaiah therefore uses the name Egypt as a codename of the world\u2019s endtime superpower many nations still look up to as protection against Assyria.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "egypt",
+            "next": "Assyria",
+            "prev": "Babylon"
+        },
+        "Assyria": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Codenames\u2014Assyria",
+            "details": "The nation of Assyria in Isaiah\u2019s day\u2014a militaristic world power from the North\u2014conquered and destroyed much of the ancient world. Isaiah therefore uses the name Assyria as a codename of an endtime militaristic world power and its alliance that repeats this scenario.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "assyria",
+            "next": "The Servant (Word Link)",
+            "prev": "Egypt"
+        },
+        "The Servant (Word Link)": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Word Links\u2014The Servant",
+            "details": "God\u2019s servant acts as a forerunner to the coming of Israel\u2019s God to reign on the earth by preparing the way before him among his covenant people. From viewing all instances of the servant\u2019s mention in the Book of Isaiah, we gain an overview of his endtime mission.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "theservant-word-link",
+            "next": "Righteousness",
+            "prev": "Assyria"
+        },
+        "Righteousness": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Word Links\u2014Righteousness",
+            "details": "Once Isaiah uses an alias or pseudonym to identify a person, that pseudonym can refer to the same person whenever it appears in the Book of Isaiah. Besides creating a double meaning of the terms Isaiah uses as pseudonyms, therefore\u2014one literal, the other fgurative\u2014they reveal a lot about the character traits of the person Isaiah portrays in that manner.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "righteousness",
+            "next": "Peace\/Healing",
+            "prev": "The Servant (Word Link)"
+        },
+        "Peace\/Healing": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Word Links\u2014Peace\/Healing",
+            "details": "Like the terms righteousness and salvation, many terms Isaiah has embedded throughout his book weave his prophecy together into a unifed fabric. Using these simple literary techniques for encoding his book, Isaiah develops ways of incorporating additional layers of meaning. Doing word studies in the Book of Isaiah brings out these deeper meanings.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "peace-healing",
+            "next": "Righteousness and Salvation",
+            "prev": "Righteousness"
+        },
+        "Righteousness and Salvation": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Complementary Parallels\u2014Righteousness and Salvation",
+            "details": "Isaiah uses complementary parallel lines to show how two persons or things operate in harmony with one another. Distinct from synonymous or antithetical parallel lines, they reveal a close relationship of one person or thing to the other as they fulfll their roles.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "righteousness-andsalvation",
+            "next": "Mountains",
+            "prev": "Peace\/Healing"
+        },
+        "Mountains": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Synonymous Chiasms\u2014Mountains",
+            "details": "A form of Hebrew poetry called chiasms consists of increasing the number of parallel lines to include related concepts or ideas, usually with an important idea in the center. It too, however, may use synonymous parallel lines to identify one person or thing with another.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "mountains",
+            "next": "Humanity\u2019s Maker",
+            "prev": "Righteousness and Salvation"
+        },
+        "Humanity\u2019s Maker": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Synonymous Chiasms\u2014Humanity\u2019s Maker",
+            "details": "The use of extended synonymous parallel lines called a chiasm adds embedded meanings that may even reveal key theological concepts when we \u201cread between the lines.\u201d",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "humanitys-maker",
+            "next": "The Servant and the Tyrant",
+            "prev": "Mountains"
+        },
+        "The Servant and the Tyrant": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Antithetical Parallels\u2014The Servant and the Tyrant",
+            "details": "A fnal instance of Hebrew poetry using parallel lines\u2014in addition to expressing the literal meanings of terms\u2014defnes the character traits of one person as the opposite of the other\u2019s through the use of pseudonyms. It also identifes those persons as contemporaries of each other who compete for people\u2019s souls, dividing the world into two endtime categories of people.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "theservant-and-the-tyrant",
+            "next": "The King of Babylon and the King of Zion",
+            "prev": "Humanity\u2019s Maker"
+        },
+        "The King of Babylon and the King of Zion": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Antithetical Structure\u2014The King of Babylon and the King of Zion",
+            "details": "A literary pattern that depicts the king of Babylon in Isaiah 14 as the opposite of the King of Zion in Isaiah 52\u201353 transforms these king fgures into archetypes of good and evil. They show that a brief period of enduring undeserved su\ufb00ering comes before an eternity of divine enthronement; and the contrary, that tyranny ultimately leads to ruination. In addition, they portray the two king fgures as humanity\u2019s exemplars of two con\ufb02icting ideologies.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "the-king-of-babylon-and-the-king-of-zion",
+            "next": "The Servant (Type)",
+            "prev": "The Servant and the Tyrant"
+        },
+        "The Servant (Type)": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Types\/Precedents\u2014The Servant",
+            "details": "Because the endtime role of God\u2019s servant resembles the individual roles of many heroes of ancient Israel, no single type or precedent exists for all the tasks God appoints his servant. And because the Book of Isaiah describes an endtime as well as historical scenario, the names of Israel\u2019s ancient heroes that Isaiah mentions function as codenames of God\u2019s endtime servant. Even in instances where Isaiah doesn\u2019t mention the actual names of Israel\u2019s ancient heroes, only their roles, actions, or character traits, they still foreshadow God\u2019s servant.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "theservant-type",
+            "next": "The Tyrant",
+            "prev": "The King of Babylon and the King of Zion"
+        },
+        "The Tyrant": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Types\/Precedents\u2014The Tyrant",
+            "details": "The counterpart and contemporary of God\u2019s endtime servant on the world stage is the king of Assyria\/Babylon. Types and precedents of this endtime archtyrant are the ancient kings of Assyria and Babylon that Isaiah draws on to foreshadow his evil actions and attributes.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "the-tyrant",
+            "next": "Hand\/Ensign",
+            "prev": "The Servant (Type)"
+        },
+        "Hand\/Ensign": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Hand\/Ensign",
+            "details": "Like the terms righteousness, salvation, arm, light, and darkness, many other keywords identify God\u2019s endtime servant and the tyrannical king of Assyria\/Babylon. Revealing a prophecy within a prophecy, they depict many of these persons\u2019 actions and character traits.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "hand-ensign",
+            "next": "Rod\/Staff",
+            "prev": "The Tyrant"
+        },
+        "Rod\/Staff": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Rod\/Staff",
+            "details": "Isaiah uses many pseudonyms of the king of Assyria\/Babylon to describe his destructive work in the earth and his role as God\u2019s instrument of punishing humanity\u2019s wicked. Although God\u2019s servant also appears as his rod\/sta\ufb00, most punitive keywords apply to the tyrant.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "rodstaff",
+            "next": "Anger\/Wrath",
+            "prev": "Hand\/Ensign"
+        },
+        "Anger\/Wrath": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Anger\/Wrath",
+            "details": "While many keywords that Isaiah uses as aliases or pseudonyms apply to both the king of Assyria\/ Babylon and God\u2019s endtime servant, several apply only to the archtyrant.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "anger-wrath",
+            "next": "Sea\/River 1",
+            "prev": "Rod\/Staff"
+        },
+        "Sea\/River 1": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Sea\/River",
+            "details": "Isaiah draws on ancient Near Eastern mythology to depict the world\u2019s archtyrant as a power of chaos and a false god. Isaiah compares his conquest of the world to a new Flood.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "sea-river-1",
+            "next": "Sea\/River 2",
+            "prev": "Anger\/Wrath"
+        },
+        "Sea\/River 2": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Sea\/River",
+            "details": "Just as the false god Sea\/River of ancient myth is overthrown, so is the world\u2019s archtyrant after he has served God\u2019s purpose of punishing the wicked who refuse to repent.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "sea-river-2",
+            "next": "Sword\/Fire",
+            "prev": "Sea\/River 1"
+        },
+        "Sword\/Fire": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Sword\/Fire",
+            "details": "Although the world\u2019s endtime destruction is by fre, that fre is engineered by a person who personifes God\u2019s fre. God nevertheless empowers another fre\/sword to counter him.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "sword-fire",
+            "next": "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "prev": "Sea\/River 2"
+        },
+        "Voice\/Mouth\/Lips\/Tongue\/Breath": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "details": "Many keywords that act as pseudonyms of the servant and the tyrant fll out Isaiah\u2019s endtime scenario in instances where Israel\u2019s history lacks actual types or precedents.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "voice-mouth-lips-tongue-breath",
+            "next": "Light\/Darkness",
+            "prev": "Sword\/Fire"
+        },
+        "Light\/Darkness": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Keywords\u2014Light\/Darkness",
+            "details": "By continuing to explore keywords in the Book of Isaiah, we sense how pertinent Isaiah\u2019s prophecy is to our day. While comprehending it prepares us to wade through the dark days ahead, it also awakens us to the new day that begins dawning at the very same time.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "light-darkness",
+            "next": "Endtime Events",
+            "prev": "Voice\/Mouth\/Lips\/Tongue\/Breath"
+        },
+        "Endtime Events": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Domino Effect\u2014Endtime Events",
+            "details": "We discover Isaiah\u2019s endtime sequence of events by linking up events domino fashion with the event of a new exodus. Because Isaiah predicts many new versions of ancient events, as we connect them up a complete scenario emerges. When they start to unfold, they behave like falling dominos also: as soon as the frst is set in motion, the rest follow rapidly.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "endtime-events",
+            "next": "Ladder to Heaven",
+            "prev": "Light\/Darkness"
+        },
+        "Ladder to Heaven": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Spiritual Levels\u2014Ladder to Heaven",
+            "details": "People or persons who appear in the Book of Isaiah aren\u2019t just incidental to Isaiah\u2019s prophecy. They also represent distinct spiritual levels, some higher, some lower. By examining their characters traits, we can discover a hierarchy or ladder that leads to heaven; or, alternately, that leads to hell. Each level within this ascending hierarchy corresponds to a particular covenant and its laws God has ordained that people are willing or unwilling to keep.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "ladder-to-heaven",
+            "next": "Re-Creation",
+            "prev": "Endtime Events"
+        },
+        "Re-Creation": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Spiritual Levels\u2014Re-Creation",
+            "details": "As people ascend the spiritual ladder by keeping the laws of God\u2019s covenants pertaining to each level, God re-creates them closer to his own image and likeness. By keeping the laws God has decreed, they grow more like God and acquire his divine attributes. Isaiah\u2019s creation theme shows that God continues to create or re-create candidates ascending on each level of the ladder. Even the heavens and the earth participate in this creation and re-creation.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "re-creation",
+            "next": "De-Creation",
+            "prev": "Ladder to Heaven"
+        },
+        "De-Creation": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Spiritual Levels\u2014De-Creation",
+            "details": "Souls who choose the opposite of keeping God\u2019s laws atrophy to where they no longer resemble who they used to be. Isaiah uses imagery of physical impairments, vegetation, and the spirits of beasts to portray people who lose the light they once had. Their destruction in God\u2019s Day of Judgment that is coming upon the world shows what happens to them in the end.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "de-creation",
+            "next": "Conditional Covenants",
+            "prev": "Re-Creation"
+        },
+        "Conditional Covenants": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Conditional Covenants",
+            "details": "Covenants or agreements God makes with his people or with individuals are both conditional and unconditional. Laws pertaining to each covenant correspond to the blessings God promises those who keep them. Not only do all covenants that God makes beneft those who keep their laws, but he deals with all of humanity only within the framework of his covenants",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "conditional-covenants",
+            "next": "Unconditional Covenants",
+            "prev": "De-Creation"
+        },
+        "Unconditional Covenants": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Unconditional Covenants",
+            "details": "Once a person or people with whom God makes a covenant keep its laws and prove faithful to him under all conditions pertaining to that covenant, God\u2019s covenant with them becomes unconditional. From that point on, the covenant and its blessings become permanent.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "unconditional-covenants",
+            "next": "Individual and Collective Covenants",
+            "prev": "Conditional Covenants"
+        },
+        "Individual and Collective Covenants": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Individual and Collective Covenants",
+            "details": "The covenants God made in the past with his people Israel and with individuals continue to operate into the present\u2014they have never been annulled. Those covenants function for the good of all who choose to renew them with Israel\u2019s God provided they keep the laws of God that pertain to each covenant. Isaiah shows that this applies in a special way to the endtime.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "individual-and-collective-covenants",
+            "next": "Covenant Blessings",
+            "prev": "Unconditional Covenants"
+        },
+        "Covenant Blessings": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Covenant Blessings",
+            "details": "The blessings and curses that are an integral part of the covenants God makes defne the benefts of keeping the laws of God\u2019s covenants on the one hand and the evil e\ufb00ects of breaking them on the other. That covenant framework provides the optimum incentive for people to keep the laws of God\u2019s covenants and forms the only way to free them from bondage to sin.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "covenant-blessings",
+            "next": "Covenant Curses",
+            "prev": "Individual and Collective Covenants"
+        },
+        "Covenant Curses": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Covenant Curses",
+            "details": "The purpose of covenant curses isn\u2019t simply to punish o\ufb00enders who break the laws of God\u2019s covenants but to remind them of their agreement with God and motivate them to repent and renew their covenant with him. Although God is merciful and may give o\ufb00enders time and space to repent, curses or misfortunes inevitably follow upon people\u2019s failing to repent.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "covenant-curses",
+            "next": "Millennial Covenant",
+            "prev": "Covenant Blessings"
+        },
+        "Millennial Covenant": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Millennial Covenant",
+            "details": "All covenants God has made with his people and with individuals ancient and endtime come together in his millennial covenant. That is the covenant God makes with his elect people who survive into the earth\u2019s paradisiacal age. The millennial covenant, in other words, is a compound of all the types and precedents of God\u2019s former covenants, and it is made with those who prove faithful under all conditions as they keep the laws of all covenants God has made.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "millennial-covenant",
+            "next": "Believers\u2019 Descent Phase",
+            "prev": "Covenant Curses"
+        },
+        "Believers\u2019 Descent Phase": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Believers\u2019 Descent Phase",
+            "details": "Because each ascent to a higher spiritual level involves a person\u2019s rebirth or re-creation, God\u2019s testing of those who keep the laws of his covenant precedes their ascent. That trial period forms a descent phase in which those with whom God makes the covenant must prove faithful under all conditions. Accordingly, with each ascent God\u2019s tests become greater. The blessings of his higher covenants and their laws, on the other hand, increase exponentially.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "believers-descent-phase",
+            "next": "Believers\u2019 Ascent Phase",
+            "prev": "Millennial Covenant"
+        },
+        "Believers\u2019 Ascent Phase": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Believers\u2019 Ascent Phase",
+            "details": "Because ascent on the spiritual ladder consists of rebirth or re-creation to a higher spiritual reality closer to God\u2019s image and likeness, a person who ascends must qualify for rebirth by keeping God\u2019s laws pertaining to his level of the ladder and proving faithful under all conditions. Whether God\u2019s people ascend as a nation or as individuals, the process is the same. While a descent phase involves humbling, an ascent phase involves joy and exultation.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "believers-ascent-phase",
+            "next": "Jehovah\u2019s Descent Phase",
+            "prev": "Believers\u2019 Descent Phase"
+        },
+        "Jehovah\u2019s Descent Phase": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Jehovah\u2019s Descent Phase",
+            "details": "Even Israel\u2019s God Jehovah undergoes a descent phase in the course of redeeming his people from the curses of their breaking the laws of his covenants. As their divine King, he is bound under the terms of his covenants to deliver them from death when they keep his covenants\u2019 laws. His paying the price of God\u2019s justice on their behalf allows God to extend his mercy to those who repent who renew their covenants with him. Within the terms of God\u2019s covenants with his people Israel, therefore, all humanity may be freed from bondage to sin and ascend to glory.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "jehovahs-descent-phase",
+            "next": "Jehovah\u2019s Ascent Phase",
+            "prev": "Believers\u2019 Ascent Phase"
+        },
+        "Jehovah\u2019s Ascent Phase": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Covenants\u2014Jehovah\u2019s Ascent Phase",
+            "details": "Jehovah\u2019s ascent to glory, being proportional to his descent to humiliation and death, was assured when he proved faithful under all conditions on his own level of the spiritual ladder. He it is, therefore, who establishes the pattern of humanity\u2019s descent before ascent all may follow who seek to ascend to higher realms of glory, advancing from one level to the next.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "jehovahs-ascent-phase",
+            "prev": "Jehovah\u2019s Descent Phase"
         }
     },
     "tagStructure": {
@@ -12127,6 +12611,171 @@
                 ],
                 "ref": "1:27;  2:3;  4:3",
                 "oref": "Isaiah 1:27; Isaiah 2:3; Isaiah 4:3"
+            },
+            {
+                "desc": "God\u2019s servant brings good tidings to Zion",
+                "details": 0,
+                "verses": [
+                    18479,
+                    18704
+                ],
+                "ref": "41:27;  52:7",
+                "oref": "Isaiah 41:27; Isaiah 52:7"
+            },
+            {
+                "desc": "The land of Zion is invaded by Assyria",
+                "details": 0,
+                "verses": [
+                    {
+                        "17662": 3
+                    },
+                    [
+                        17883,
+                        18202
+                    ]
+                ],
+                "ref": "1:7\u20139;  10:32;  29:8",
+                "oref": "Isaiah 1:7-9; Isaiah 10:32; Isaiah 29:8"
+            },
+            {
+                "desc": "Israel\u2019s God saves Zion from destruction",
+                "details": 0,
+                "verses": [
+                    18312,
+                    18385,
+                    18600,
+                    18677
+                ],
+                "ref": "34:8;  37:32;  46:13;  51:3",
+                "oref": "Isaiah 34:8; Isaiah 37:32; Isaiah 46:13; Isaiah 51:3"
+            },
+            {
+                "desc": "God clothes Zion with divine power",
+                "details": 0,
+                "verses": [
+                    {
+                        "18698": 2
+                    },
+                    {
+                        "18738": 4
+                    },
+                    [
+                        18836,
+                        18847
+                    ]
+                ],
+                "ref": "52:1\u20132;  54:14\u201317;  60:14;  61:3",
+                "oref": "Isaiah 52:1-2; Isaiah 54:14-17; Isaiah 60:14; Isaiah 61:3"
+            },
+            {
+                "desc": "Zion is a refuge for God\u2019s holy people",
+                "details": 0,
+                "verses": [
+                    [
+                        17737,
+                        17961
+                    ],
+                    {
+                        "18285": 2
+                    },
+                    [
+                        18690
+                    ],
+                    {
+                        "18866": 2
+                    }
+                ],
+                "ref": "4:3;  14:32;  33:5\u20136;  51:16;  62:11\u201312",
+                "oref": "Isaiah 4:3; Isaiah 14:32; Isaiah 33:5-6; Isaiah 51:16; Isaiah 62:11-12"
+            },
+            {
+                "desc": "Israel\u2019s returnees from exile fnd joy in Zion",
+                "details": 0,
+                "verses": [
+                    [
+                        17907,
+                        18331,
+                        18685
+                    ],
+                    {
+                        "18825": 7
+                    },
+                    [
+                        18837
+                    ]
+                ],
+                "ref": "12:6;  35:10;  51:11;  60:3\u20139,15",
+                "oref": "Isaiah 12:6; Isaiah 35:10; Isaiah 51:11; Isaiah 60:3-9, 15"
+            },
+            {
+                "desc": "God appoints his people Zion as a herald of good tidings",
+                "details": 0,
+                "verses": [
+                    {
+                        "17905": 3
+                    },
+                    [
+                        18430,
+                        18705
+                    ]
+                ],
+                "ref": "12:4\u20136;  40:9;  52:8",
+                "oref": "Isaiah 12:4-6; Isaiah 40:9; Isaiah 52:8"
+            },
+            {
+                "desc": "Israel\u2019s God comes to reign on earth in Zion",
+                "details": 0,
+                "verses": [
+                    18119,
+                    18704,
+                    18821,
+                    18866
+                ],
+                "ref": "24:23;  52:7;  59:20;  62:11",
+                "oref": "Isaiah 24:23; Isaiah 52:7; Isaiah 59:20; Isaiah 62:11"
+            },
+            {
+                "desc": "Zion is the place where Israel\u2019s God dwells",
+                "details": 0,
+                "verses": [
+                    17826,
+                    17907,
+                    18005,
+                    18821,
+                    18836
+                ],
+                "ref": "8:18;  12:6;  18:7;  59:20;  60:14",
+                "oref": "Isaiah 8:18; Isaiah 12:6; Isaiah 18:7; Isaiah 59:20; Isaiah 60:14"
+            },
+            {
+                "desc": "God\u2019s cloud of glory rests as a canopy over Zion",
+                "details": 0,
+                "verses": [
+                    {
+                        "17739": 2
+                    },
+                    [
+                        18823
+                    ],
+                    {
+                        "18856": 2
+                    }
+                ],
+                "ref": "4:5\u20136;  60:1;  62:1\u20132",
+                "oref": "Isaiah 4:5-6; Isaiah 60:1; Isaiah 62:1-2"
+            },
+            {
+                "desc": "God turns Zion into Paradise, a city of peace",
+                "details": 0,
+                "verses": [
+                    18300,
+                    18304,
+                    18677,
+                    18835,
+                    18839
+                ],
+                "ref": "33:20,24;  51:3;  60:13,17",
+                "oref": "Isaiah 33:20, 24; Isaiah 51:3; Isaiah 60:13, 17"
             }
         ],
         "\u29b7 Ruin\u2194Rebirth Motifs": {
@@ -21188,8 +21837,36 @@
                 "oref": "Isaiah 35:1-10; Isaiah 37:7; Isaiah 37:34-37; Isaiah 38:17; Isaiah 40:6; Isaiah 41:14; Isaiah 43:1-4; Isaiah 43:14; Isaiah 44:6-23; Isaiah 47:4-6; Isaiah 48:17-20; Isaiah 49:5-7; Isaiah 49:8-26; Isaiah 50:2; Isaiah 51:10-11; Isaiah 52:3-9; Isaiah 53:12; Isaiah 54:5-11; Isaiah 55:7-11; Isaiah 57:13; Isaiah 58:12; Isaiah 59:20"
             }
         },
-        "Salvation": {
-            "3": {
+        "Salvation": [
+            {
+                "desc": "Salvation is Israel\u2019s God, a fortress",
+                "details": 0,
+                "verses": [
+                    17994
+                ],
+                "ref": "17:10",
+                "oref": "Isaiah 17:10"
+            },
+            {
+                "desc": "Salvation is a wall against enemies",
+                "details": 0,
+                "verses": [
+                    18132,
+                    18840
+                ],
+                "ref": "26:1;  60:18",
+                "oref": "Isaiah 26:1; Isaiah 60:18"
+            },
+            {
+                "desc": "Salvation is an arm of strength in troubled times",
+                "details": 0,
+                "verses": [
+                    18282
+                ],
+                "ref": "33:2",
+                "oref": "Isaiah 33:2"
+            },
+            {
                 "desc": "",
                 "details": 0,
                 "verses": [
@@ -21218,8 +21895,91 @@
                 ],
                 "ref": "60:1\u201319;  61:3\u201310;  62;  63:4\u20136,9\u201312;  65:10,20;  66:1\u201319",
                 "oref": "Isaiah 60:1-19; Isaiah 61:3-10; Isaiah 62:1-12; Isaiah 63:4-6; Isaiah 63:9-12; Isaiah 65:10; Isaiah 65:20; Isaiah 66:1-19"
+            },
+            {
+                "desc": "Righteousness and salvation are two arms of God",
+                "details": 0,
+                "verses": [
+                    18679
+                ],
+                "ref": "51:5",
+                "oref": "Isaiah 51:5"
+            },
+            {
+                "desc": "Righteousness and salvation operate as one",
+                "details": 0,
+                "verses": [
+                    18570,
+                    18682,
+                    18818,
+                    18856
+                ],
+                "ref": "45:8;  51:8;  59:17;  62:1",
+                "oref": "Isaiah 45:8; Isaiah 51:8; Isaiah 59:17; Isaiah 62:1"
+            },
+            {
+                "desc": "Righteousness comes ahead of salvation",
+                "details": 0,
+                "verses": [
+                    18600,
+                    18679,
+                    18755,
+                    18817
+                ],
+                "ref": "46:13;  51:5;  56:1;  59:16",
+                "oref": "Isaiah 46:13; Isaiah 51:5; Isaiah 56:1; Isaiah 59:16"
+            },
+            {
+                "desc": "The arm of righteousness occasions salvation",
+                "details": 0,
+                "verses": [
+                    18707,
+                    18817,
+                    18872
+                ],
+                "ref": "52:10;  59:16;  63:5",
+                "oref": "Isaiah 52:10; Isaiah 59:16; Isaiah 63:5"
+            },
+            {
+                "desc": "God\u2019s messenger announces the coming of salvation",
+                "details": 0,
+                "verses": [
+                    18704
+                ],
+                "ref": "52:7",
+                "oref": "Isaiah 52:7"
+            },
+            {
+                "desc": "Salvation reaches to the very end of the earth",
+                "details": 0,
+                "verses": [
+                    18643,
+                    18707
+                ],
+                "ref": "49:6;  52:10",
+                "oref": "Isaiah 49:6; Isaiah 52:10"
+            },
+            {
+                "desc": "Israel\u2019s God Salvation comes to Zion",
+                "details": 0,
+                "verses": [
+                    18866
+                ],
+                "ref": "62:11",
+                "oref": "Isaiah 62:11"
+            },
+            {
+                "desc": "Salvation is everlasting",
+                "details": 0,
+                "verses": [
+                    18579,
+                    18680,
+                    18682
+                ],
+                "ref": "45:17;  51:6,8",
+                "oref": "Isaiah 45:17; Isaiah 51:6, 8"
             }
-        },
+        ],
         "Trouble at Home": [
             {
                 "desc": "Domestic Turmoil",
@@ -21534,6 +22294,15 @@
                 ],
                 "ref": "1:7\u201324;  2:10;  3:6\u201311;  4:4;  5:6,8\u201327;  6:5\u201311;  7:4\u20136;  8:15;  9:5;  10:5,23\u201334;  12:1;  13:3\u201322;  15:1\u20137;  17:1\u201313;  18:1;  19:5;  21:2\u20139,15;  22:4\u201325;  23:11\u201314;  24:12\u201318;  25:2\u201312;  26:5\u201321;  27:4;  28:1\u201322;  29:1\u201315;  30:1\u201327;  31:1\u20138;  32:7;  33:1\u20138;  34:3\u20137;  36:10;  37:3\u201312,18\u201319",
                 "oref": "Isaiah 1:7-24; Isaiah 2:10; Isaiah 3:6-11; Isaiah 4:4; Isaiah 5:6; Isaiah 5:8-27; Isaiah 6:5-11; Isaiah 7:4-6; Isaiah 8:15; Isaiah 9:5; Isaiah 10:5; Isaiah 10:23-34; Isaiah 12:1; Isaiah 13:3-23; Isaiah 15:1-7; Isaiah 17:1-13; Isaiah 18:1; Isaiah 19:5; Isaiah 21:2-9; Isaiah 21:15; Isaiah 22:4-25; Isaiah 23:11-14; Isaiah 24:12-18; Isaiah 25:2-12; Isaiah 26:5-21; Isaiah 27:4; Isaiah 28:1-22; Isaiah 29:1-15; Isaiah 30:1-27; Isaiah 31:1-8; Isaiah 32:7; Isaiah 33:1-8; Isaiah 34:3-7; Isaiah 36:10; Isaiah 37:3-12; Isaiah 37:18-19"
+            },
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
             }
         ],
         "Covenant Blessings": [
@@ -21620,6 +22389,15 @@
                 ],
                 "ref": "40:2;  41:14\u201325;  42:11;  43:1\u201312,14\u201317;  44:3,6\u201323;  46:7\u201313;  47:4\u201315;  48:13\u201320;  49:5\u201326;  50:2;  51:2\u201311;  53:8;  54:5\u201317;  55:2\u201312;  56:1\u20132;  57:13;  58:12;  59:1\u201320;  60:1\u201318;  61:7\u201310;  62\u201363:5;  65:16,18\u201323;  66:5",
                 "oref": "Isaiah 40:2; Isaiah 41:14-25; Isaiah 42:11; Isaiah 43:1-12; Isaiah 43:14-17; Isaiah 44:3; Isaiah 44:6-23; Isaiah 46:7-13; Isaiah 47:4-15; Isaiah 48:13-20; Isaiah 49:5-7; Isaiah 49:8-26; Isaiah 50:2; Isaiah 51:2-11; Isaiah 53:8; Isaiah 54:5-17; Isaiah 55:2-12; Isaiah 56:1-2; Isaiah 57:13; Isaiah 58:12; Isaiah 59:1-20; Isaiah 60:1-18; Isaiah 61:7-10; Isaiah 62:1-12; Isaiah 63:1-5; Isaiah 65:16; Isaiah 65:18-23; Isaiah 66:5"
+            },
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
             }
         ],
         "Wicked Destroyed": [
@@ -38426,7 +39204,1214 @@
                 "ref": "14:13\u201320",
                 "oref": "Isaiah 14:13-20"
             }
-        }
+        },
+        "Endtime Participants": [
+            {
+                "desc": "God\u2019s people apostatize through their love of idols",
+                "details": 0,
+                "verses": [
+                    [
+                        17659
+                    ],
+                    {
+                        "18498": 4
+                    }
+                ],
+                "ref": "1:4;  42:17\u201320",
+                "oref": "Isaiah 1:4; Isaiah 42:17-20"
+            },
+            {
+                "desc": "Idolatrous nations of the world become godless",
+                "details": 0,
+                "verses": [
+                    {
+                        "18543": 3
+                    },
+                    {
+                        "18582": 2
+                    }
+                ],
+                "ref": "44:9\u201311;  45:20\u201321",
+                "oref": "Isaiah 44:9-11; Isaiah 45:20-21"
+            },
+            {
+                "desc": "False teachers and blind prophets fail to warn the people",
+                "details": 0,
+                "verses": [
+                    [
+                        18266
+                    ],
+                    {
+                        "18764": 3
+                    }
+                ],
+                "ref": "32:6;  56:10\u201312",
+                "oref": "Isaiah 32:6; Isaiah 56:10-12"
+            },
+            {
+                "desc": "Oppressive leaders of nations enslave their peoples",
+                "details": 0,
+                "verses": [
+                    {
+                        "17875": 4
+                    },
+                    {
+                        "18144": 2
+                    }
+                ],
+                "ref": "10:24\u201327;  26:13\u201314",
+                "oref": "Isaiah 10:24-27; Isaiah 26:13-14"
+            },
+            {
+                "desc": "God appoints his servant to restore his covenant people",
+                "details": 0,
+                "verses": [
+                    {
+                        "18642": 2
+                    },
+                    {
+                        "18645": 6
+                    },
+                    {
+                        "18744": 3
+                    }
+                ],
+                "ref": "49:5\u20136,8\u201313;  55:3\u20135",
+                "oref": "Isaiah 49:5-6, 8-13; Isaiah 55:3-5"
+            },
+            {
+                "desc": "Assyria, a militaristic world power, destroys all nations",
+                "details": 0,
+                "verses": [
+                    {
+                        "17911": 2
+                    },
+                    [
+                        18371
+                    ]
+                ],
+                "ref": "13:4\u20135;  37:18",
+                "oref": "Isaiah 13:4-5; Isaiah 37:18"
+            },
+            {
+                "desc": "The king of Assyria\/Babylon conquers the world",
+                "details": 0,
+                "verses": [
+                    {
+                        "17856": 3
+                    },
+                    {
+                        "17863": 3
+                    },
+                    {
+                        "17933": 3
+                    }
+                ],
+                "ref": "10:5\u20137,12\u201314;  14:4\u20136",
+                "oref": "Isaiah 10:5-7, 12-14; Isaiah 14:4-6"
+            },
+            {
+                "desc": "Egypt, the world\u2019s superpower, proves ine\ufb00ective",
+                "details": 0,
+                "verses": [
+                    {
+                        "18033": 4
+                    },
+                    {
+                        "18252": 3
+                    }
+                ],
+                "ref": "20:3\u20136;  31:1\u20133",
+                "oref": "Isaiah 20:3-6; Isaiah 31:1-3"
+            },
+            {
+                "desc": "God\u2019s servants help restore his dispersed people",
+                "details": 0,
+                "verses": [
+                    {
+                        "18659": 2
+                    },
+                    {
+                        "18856": 7
+                    }
+                ],
+                "ref": "49:22\u201323;  62:1\u20137",
+                "oref": "Isaiah 49:22-23; Isaiah 62:1-7"
+            },
+            {
+                "desc": "God\u2019s people are gathered and restored",
+                "details": 0,
+                "verses": [
+                    {
+                        "18460": 3
+                    },
+                    {
+                        "18642": 2
+                    },
+                    {
+                        "18645": 6
+                    }
+                ],
+                "ref": "41:8\u201310;  49:5\u20136,8\u201313",
+                "oref": "Isaiah 41:8-10; Isaiah 49:5-6, 8-13"
+            },
+            {
+                "desc": "Jehovah, the God of Israel, comes to reign on earth",
+                "details": 0,
+                "verses": [
+                    {
+                        "18704": 2
+                    },
+                    [
+                        18866
+                    ]
+                ],
+                "ref": "52:7\u20138;  62:11",
+                "oref": "Isaiah 52:7-8; Isaiah 62:11"
+            }
+        ],
+        "Endtime Servants": [
+            {
+                "desc": "They serve Israel\u2019s God and hold fast to his covenant",
+                "details": 0,
+                "verses": [
+                    18760
+                ],
+                "ref": "56:6",
+                "oref": "Isaiah 56:6"
+            },
+            {
+                "desc": "They keep the Sabbath Day holy and love his name",
+                "details": 0,
+                "verses": [
+                    18760
+                ],
+                "ref": "56:6",
+                "oref": "Isaiah 56:6"
+            },
+            {
+                "desc": "They o\ufb00er up acceptable o\ufb00erings and sacrifces to God",
+                "details": 0,
+                "verses": [
+                    18761
+                ],
+                "ref": "56:7",
+                "oref": "Isaiah 56:7"
+            },
+            {
+                "desc": "They operate under the ministration of God\u2019s right hand",
+                "details": 0,
+                "verses": [
+                    18937
+                ],
+                "ref": "66:14",
+                "oref": "Isaiah 66:14"
+            },
+            {
+                "desc": "They receive a new name from Israel\u2019s God in his temple",
+                "details": 0,
+                "verses": [
+                    18759,
+                    18913
+                ],
+                "ref": "56:5;  65:15",
+                "oref": "Isaiah 56:5; Isaiah 65:15"
+            },
+            {
+                "desc": "They serve as Zion\u2019s watchmen who herald Jehovah\u2019s coming",
+                "details": 0,
+                "verses": [
+                    18705
+                ],
+                "ref": "52:8",
+                "oref": "Isaiah 52:8"
+            },
+            {
+                "desc": "They act as saviors to his people who have gone astray",
+                "details": 0,
+                "verses": [
+                    {
+                        "18884": 3
+                    },
+                    {
+                        "18906": 2
+                    }
+                ],
+                "ref": "63:17\u201319;  65:8\u20139",
+                "oref": "Isaiah 63:17-19; Isaiah 65:8-9"
+            },
+            {
+                "desc": "They intercede with God on behalf of his people Zion\/Jerusalem",
+                "details": 0,
+                "verses": {
+                    "18861": 2
+                },
+                "ref": "62:6\u20137",
+                "oref": "Isaiah 62:6-7"
+            },
+            {
+                "desc": "They are kings and queens who gather God\u2019s elect people",
+                "details": 0,
+                "verses": [
+                    {
+                        "18659": 2
+                    },
+                    {
+                        "18825": 2
+                    }
+                ],
+                "ref": "49:22\u201323;  60:3\u20134",
+                "oref": "Isaiah 49:22-23; Isaiah 60:3-4"
+            },
+            {
+                "desc": "They receive divine protection against enemies and accusers",
+                "details": 0,
+                "verses": {
+                    "18739": 3
+                },
+                "ref": "54:15\u201317",
+                "oref": "Isaiah 54:15-17"
+            },
+            {
+                "desc": "They are chosen servants of God who inherit his mountains",
+                "details": 0,
+                "verses": {
+                    "18907": 2
+                },
+                "ref": "65:9\u201310",
+                "oref": "Isaiah 65:9-10"
+            }
+        ],
+        "Babylon": [
+            {
+                "desc": "Babylon makes and worships idols",
+                "details": 0,
+                "verses": [
+                    [
+                        18045
+                    ],
+                    {
+                        "18543": 3
+                    }
+                ],
+                "ref": "21:9;  44:9\u201311",
+                "oref": "Isaiah 21:9; Isaiah 44:9-11"
+            },
+            {
+                "desc": "Babylon rules as Mistress of Kingdoms",
+                "details": 0,
+                "verses": [
+                    18605,
+                    18607
+                ],
+                "ref": "47:5,7",
+                "oref": "Isaiah 47:5, 7"
+            },
+            {
+                "desc": "The Harlot Babylon oppresses the people of God",
+                "details": 0,
+                "verses": [
+                    18606
+                ],
+                "ref": "47:6",
+                "oref": "Isaiah 47:6"
+            },
+            {
+                "desc": "God\u2019s arm has power over Babylon",
+                "details": 0,
+                "verses": [
+                    {
+                        "18629": 2
+                    },
+                    [
+                        18683
+                    ]
+                ],
+                "ref": "48:14\u201315;  51:9",
+                "oref": "Isaiah 48:14-15; Isaiah 51:9"
+            },
+            {
+                "desc": "The prophet pronounces an oracle concerning Babylon",
+                "details": 0,
+                "verses": [
+                    17908
+                ],
+                "ref": "13:1",
+                "oref": "Isaiah 13:1"
+            },
+            {
+                "desc": "God\u2019s elect people \ufb02ee Babylon in a new exodus",
+                "details": 0,
+                "verses": {
+                    "18635": 2
+                },
+                "ref": "48:20\u201321",
+                "oref": "Isaiah 48:20-21"
+            },
+            {
+                "desc": "God destroys Babylon just as he did Sodom and Gomorrah",
+                "details": 0,
+                "verses": [
+                    17908
+                ],
+                "ref": "13:1",
+                "oref": "Isaiah 13:1"
+            },
+            {
+                "desc": "The earth\/the world, sinners\/the wicked are destroyed",
+                "details": 0,
+                "verses": [
+                    17908,
+                    17916
+                ],
+                "ref": "13:1,9",
+                "oref": "Isaiah 13:9, 1"
+            },
+            {
+                "desc": "Babylon is invaded by foreign armies and falls in war",
+                "details": 0,
+                "verses": {
+                    "18037": 9
+                },
+                "ref": "21:1\u20139",
+                "oref": "Isaiah 21:1-9"
+            },
+            {
+                "desc": "Babylon is swept by the broom of destruction",
+                "details": 0,
+                "verses": [
+                    17952
+                ],
+                "ref": "14:23",
+                "oref": "Isaiah 14:23"
+            },
+            {
+                "desc": "The Harlot Babylon descends into the dust",
+                "details": 0,
+                "verses": [
+                    18601
+                ],
+                "ref": "47:1",
+                "oref": "Isaiah 47:1"
+            }
+        ],
+        "Egypt": [
+            {
+                "desc": "Egypt\u2019s leaders mislead Egypt",
+                "details": 0,
+                "verses": {
+                    "18016": 5
+                },
+                "ref": "19:11\u201315",
+                "oref": "Isaiah 19:11-15"
+            },
+            {
+                "desc": "Civil war overtakes the nation of Egypt",
+                "details": 0,
+                "verses": [
+                    18007
+                ],
+                "ref": "19:2",
+                "oref": "Isaiah 19:2"
+            },
+            {
+                "desc": "Egypt\u2019s inhabitants are oppressed by a harsh ruler",
+                "details": 0,
+                "verses": [
+                    18009
+                ],
+                "ref": "19:4",
+                "oref": "Isaiah 19:4"
+            },
+            {
+                "desc": "The people of Egypt resort to idols and witchcraft",
+                "details": 0,
+                "verses": [
+                    18008
+                ],
+                "ref": "19:3",
+                "oref": "Isaiah 19:3"
+            },
+            {
+                "desc": "Egypt\u2019s lakes and waterways dry up and its industries fail",
+                "details": 0,
+                "verses": {
+                    "18010": 6
+                },
+                "ref": "19:5\u201310",
+                "oref": "Isaiah 19:5-10"
+            },
+            {
+                "desc": "Assyria invades Egypt and takes its people captive",
+                "details": 0,
+                "verses": [
+                    [
+                        18034
+                    ],
+                    {
+                        "18376": 3
+                    }
+                ],
+                "ref": "20:4;  37:23\u201325",
+                "oref": "Isaiah 20:4; Isaiah 37:23-25"
+            },
+            {
+                "desc": "Egypt\u2019s vast military proves no match for Assyria",
+                "details": 0,
+                "verses": [
+                    {
+                        "18220": 6
+                    },
+                    {
+                        "18252": 3
+                    },
+                    {
+                        "18337": 4
+                    }
+                ],
+                "ref": "30:2\u20137;  31:1\u20133;  36:6\u20139",
+                "oref": "Isaiah 30:2-7; Isaiah 31:1-3; Isaiah 36:6-9"
+            },
+            {
+                "desc": "The great superpower nations had looked up to fails them",
+                "details": 0,
+                "verses": [
+                    {
+                        "18035": 2
+                    },
+                    {
+                        "18220": 4
+                    }
+                ],
+                "ref": "20:5\u20136;  30:2\u20135",
+                "oref": "Isaiah 20:5-6; Isaiah 30:2-5"
+            },
+            {
+                "desc": "Certain covenanters worship Israel\u2019s God by sacrifces and o\ufb00erings",
+                "details": 0,
+                "verses": {
+                    "18023": 4
+                },
+                "ref": "19:18\u201321",
+                "oref": "Isaiah 19:18-21"
+            },
+            {
+                "desc": "God manifests himself to Egypt\u2019s covenanters and heals them",
+                "details": 0,
+                "verses": {
+                    "18026": 2
+                },
+                "ref": "19:21\u201322",
+                "oref": "Isaiah 19:21-22"
+            },
+            {
+                "desc": "God delivers a remnant of his people out of Egypt",
+                "details": 0,
+                "verses": [
+                    [
+                        17896
+                    ],
+                    {
+                        "18164": 2
+                    }
+                ],
+                "ref": "11:11;  27:12\u201313",
+                "oref": "Isaiah 11:11; Isaiah 27:12-13"
+            }
+        ],
+        "Assyria": [
+            {
+                "desc": "God uses Assyria to punish his unrepentant people",
+                "details": 0,
+                "verses": [
+                    {
+                        "17800": 9
+                    },
+                    {
+                        "17852": 6
+                    }
+                ],
+                "ref": "7:17\u201325;  10:1\u20136",
+                "oref": "Isaiah 7:17-29; Isaiah 10:1-6"
+            },
+            {
+                "desc": "Assyria conquers the whole world",
+                "details": 0,
+                "verses": [
+                    {
+                        "17864": 2
+                    },
+                    {
+                        "17879": 5
+                    },
+                    {
+                        "18374": 5
+                    }
+                ],
+                "ref": "10:13\u201314,28\u201332;  37:21\u201325",
+                "oref": "Isaiah 10:13-14, 28-32; Isaiah 37:21-25"
+            },
+            {
+                "desc": "Assyria invades the nation of Egypt and takes it captive",
+                "details": 0,
+                "verses": [
+                    18034
+                ],
+                "ref": "20:4",
+                "oref": "Isaiah 20:4"
+            },
+            {
+                "desc": "Assyria oppresses and enslaves God\u2019s people",
+                "details": 0,
+                "verses": [
+                    17875
+                ],
+                "ref": "10:24",
+                "oref": "Isaiah 10:24"
+            },
+            {
+                "desc": "Assyria commits worldwide genocide",
+                "details": 0,
+                "verses": [
+                    17858,
+                    18371
+                ],
+                "ref": "10:7;  37:18",
+                "oref": "Isaiah 10:7; Isaiah 37:18"
+            },
+            {
+                "desc": "An angel of God slays Assyria\u2019s invading army",
+                "details": 0,
+                "verses": [
+                    18389
+                ],
+                "ref": "37:36",
+                "oref": "Isaiah 37:36"
+            },
+            {
+                "desc": "God smashes Assyria\u2019s power in his own land",
+                "details": 0,
+                "verses": [
+                    [
+                        17954
+                    ],
+                    {
+                        "18385": 4
+                    }
+                ],
+                "ref": "14:25;  37:32\u201335",
+                "oref": "Isaiah 14:25; Isaiah 37:32-35"
+            },
+            {
+                "desc": "Assyria is overthrown after serving God\u2019s purpose",
+                "details": 0,
+                "verses": [
+                    [
+                        17863
+                    ],
+                    {
+                        "17877": 2
+                    }
+                ],
+                "ref": "10:12,26\u201327",
+                "oref": "Isaiah 10:12, 26-27"
+            },
+            {
+                "desc": "The Assyrians are fought in mortal combat and perish",
+                "details": 0,
+                "verses": [
+                    {
+                        "18248": 3
+                    },
+                    {
+                        "18259": 2
+                    }
+                ],
+                "ref": "30:30\u201332;  31:8\u20139",
+                "oref": "Isaiah 30:30-32; Isaiah 31:8-9"
+            },
+            {
+                "desc": "God saves a remnant of his people out of Assyria",
+                "details": 0,
+                "verses": [
+                    [
+                        17896,
+                        17901
+                    ],
+                    {
+                        "18164": 2
+                    },
+                    [
+                        18397
+                    ]
+                ],
+                "ref": "11:11,16;  27:12\u201313;  38:6",
+                "oref": "Isaiah 11:11, 16; Isaiah 27:12-13; Isaiah 38:6"
+            },
+            {
+                "desc": "Those left of Assyria becomes a righteous covenant people of God",
+                "details": 0,
+                "verses": [
+                    [
+                        17870
+                    ],
+                    {
+                        "18028": 3
+                    }
+                ],
+                "ref": "10:19;  19:23\u201325",
+                "oref": "Isaiah 10:19; Isaiah 19:23-25"
+            }
+        ],
+        "The Servant (Word Link)": [
+            {
+                "desc": "The servant is destined by God to restore Israel",
+                "details": 0,
+                "verses": [
+                    18642
+                ],
+                "ref": "49:5",
+                "oref": "Isaiah 49:5"
+            },
+            {
+                "desc": "The servant restores justice among the Gentiles",
+                "details": 0,
+                "verses": [
+                    18482
+                ],
+                "ref": "42:1",
+                "oref": "Isaiah 42:1"
+            },
+            {
+                "desc": "The servant heralds the coming of salvation",
+                "details": 0,
+                "verses": [
+                    18643,
+                    18704,
+                    18707
+                ],
+                "ref": "49:6;  52:7,10",
+                "oref": "Isaiah 49:6; Isaiah 52:7, 10"
+            },
+            {
+                "desc": "Few people give heed the words of the servant",
+                "details": 0,
+                "verses": {
+                    "18667": 8
+                },
+                "ref": "50:4\u201311",
+                "oref": "Isaiah 50:4-11"
+            },
+            {
+                "desc": "The servant is accused and incriminated",
+                "details": 0,
+                "verses": [
+                    [
+                        18644
+                    ],
+                    {
+                        "18671": 2
+                    },
+                    [
+                        18724
+                    ]
+                ],
+                "ref": "49:7;  50:8\u20139;  53:12",
+                "oref": "Isaiah 49:7; Isaiah 50:8-9; Isaiah 53:12"
+            },
+            {
+                "desc": "The servant is smitten and marred by enemies",
+                "details": 0,
+                "verses": [
+                    18668,
+                    18711
+                ],
+                "ref": "50:5;  52:14",
+                "oref": "Isaiah 50:5; Isaiah 52:14"
+            },
+            {
+                "desc": "The servant\u2019s prophecies to his people come true",
+                "details": 0,
+                "verses": [
+                    18560,
+                    18631
+                ],
+                "ref": "44:26;  48:16",
+                "oref": "Isaiah 44:26; Isaiah 48:16"
+            },
+            {
+                "desc": "The servant declares that Jerusalem must be rebuilt",
+                "details": 0,
+                "verses": [
+                    18560,
+                    18562
+                ],
+                "ref": "44:26,28",
+                "oref": "Isaiah 44:26, 28"
+            },
+            {
+                "desc": "The servant restores God\u2019s people Israel and their land",
+                "details": 0,
+                "verses": {
+                    "18642": 2
+                },
+                "ref": "49:5\u20136",
+                "oref": "Isaiah 49:5-6"
+            },
+            {
+                "desc": "Spiritual kings and queens honor the servant",
+                "details": 0,
+                "verses": [
+                    18644,
+                    18712
+                ],
+                "ref": "49:7;  52:15",
+                "oref": "Isaiah 49:7; Isaiah 52:15"
+            },
+            {
+                "desc": "The servant gains prominence and is exalted of God",
+                "details": 0,
+                "verses": [
+                    18710
+                ],
+                "ref": "52:13",
+                "oref": "Isaiah 52:13"
+            }
+        ],
+        "Righteousness": [
+            {
+                "desc": "Righteousness is a light",
+                "details": 0,
+                "verses": [
+                    18856
+                ],
+                "ref": "62:1",
+                "oref": "Isaiah 62:1"
+            },
+            {
+                "desc": "The servant is a light",
+                "details": 0,
+                "verses": [
+                    18487,
+                    18643
+                ],
+                "ref": "42:6;  49:6",
+                "oref": "Isaiah 42:6; Isaiah 49:6"
+            },
+            {
+                "desc": "Righteousness is a person of power",
+                "details": 0,
+                "verses": [
+                    18454
+                ],
+                "ref": "41:2",
+                "oref": "Isaiah 41:2"
+            },
+            {
+                "desc": "Salvation comes after righteousness",
+                "details": 0,
+                "verses": [
+                    18755
+                ],
+                "ref": "56:1",
+                "oref": "Isaiah 56:1"
+            },
+            {
+                "desc": "Righteousness and salvation are two arms",
+                "details": 0,
+                "verses": [
+                    18679
+                ],
+                "ref": "51:5",
+                "oref": "Isaiah 51:5"
+            },
+            {
+                "desc": "God\u2019s arm of righteousness intervenes",
+                "details": 0,
+                "verses": [
+                    18817
+                ],
+                "ref": "59:16",
+                "oref": "Isaiah 59:16"
+            },
+            {
+                "desc": "God\u2019s arm has power over Babylon",
+                "details": 0,
+                "verses": [
+                    {
+                        "18629": 2
+                    },
+                    [
+                        18683
+                    ]
+                ],
+                "ref": "48:14\u201315;  51:9",
+                "oref": "Isaiah 48:14-15; Isaiah 51:9"
+            },
+            {
+                "desc": "Righteousness makes known God\u2019s law",
+                "details": 0,
+                "verses": [
+                    18502,
+                    18755
+                ],
+                "ref": "42:21;  56:1",
+                "oref": "Isaiah 42:21; Isaiah 56:1"
+            },
+            {
+                "desc": "Some are called followers\/oaks of righteousness",
+                "details": 0,
+                "verses": [
+                    18675,
+                    18847
+                ],
+                "ref": "51:1;  61:3",
+                "oref": "Isaiah 51:1; Isaiah 61:3"
+            },
+            {
+                "desc": "The arm of righteousness leads a new exodus",
+                "details": 0,
+                "verses": [
+                    {
+                        "18683": 3
+                    },
+                    [
+                        18795
+                    ]
+                ],
+                "ref": "51:9\u201311;  58:8",
+                "oref": "Isaiah 51:9-11; Isaiah 58:8"
+            },
+            {
+                "desc": "Righteousness builds a city called City of Righteousness",
+                "details": 0,
+                "verses": [
+                    17681,
+                    18023
+                ],
+                "ref": "1:26;  19:18",
+                "oref": "Isaiah 1:26; Isaiah 19:18"
+            }
+        ],
+        "Peace\/Healing": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "The Servant": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Righteousness and Salvation": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Mountains": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Humanity\u2019s Maker": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "The Servant and the Tyrant": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "The King of Babylon and the King of Zion": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "The Servant (Type)": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "The Tyrant": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Hand\/Ensign": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Rod\/Staff": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Anger\/Wrath": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Sea\/River 1": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Sea\/River 2": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Sword\/Fire": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Voice\/Mouth\/Lips\/Tongue\/Breath": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Light\/Darkness": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Endtime Events": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Ladder to Heaven": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Re-Creation": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "De-Creation": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Conditional Covenants": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Unconditional Covenants": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Individual and Collective Covenants": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Millennial Covenant": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Believers\u2019 Descent Phase": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Believers\u2019 Ascent Phase": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Jehovah\u2019s Descent Phase": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ],
+        "Jehovah\u2019s Ascent Phase": [
+            {
+                "desc": "Placeholder",
+                "details": 0,
+                "verses": [
+                    17656
+                ],
+                "ref": "1:1",
+                "oref": "Isaiah 1:1"
+            }
+        ]
     },
     "parentTagIndex": {
         "root": [
@@ -38437,7 +40422,8 @@
             "Ancient Types",
             "Major Chiasms",
             "Code Words",
-            "Textual Compositions"
+            "Textual Compositions",
+            "Mini-Studies"
         ],
         "Textual Compositions": [
             "Narrative Characters",
@@ -38760,8 +40746,8 @@
             "Ugaric Cycle 4"
         ],
         "Curses\/Blessings": [
-            "Covenant Curses",
-            "Covenant Blessings"
+            "Covenantal Curses",
+            "Covenantal Blessings"
         ],
         "Zion Ideological Structure": [
             "Wicked Destroyed",
@@ -38976,6 +40962,48 @@
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
             "\u24cd Satisfaction"
+        ],
+        "Mini-Studies": [
+            "Endtime Participants",
+            "Endtime Servants",
+            "Babylon",
+            "Zion",
+            "Egypt",
+            "Assyria",
+            "The Servant (Word Link)",
+            "Righteousness",
+            "Salvation",
+            "Peace\/Healing",
+            "The Servant",
+            "Righteousness and Salvation",
+            "Mountains",
+            "Humanity\u2019s Maker",
+            "The Servant and the Tyrant",
+            "The King of Babylon and the King of Zion",
+            "The Servant (Type)",
+            "The Tyrant",
+            "Hand\/Ensign",
+            "Rod\/Staff",
+            "Anger\/Wrath",
+            "Sea\/River 1",
+            "Sea\/River 2",
+            "Sword\/Fire",
+            "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "Light\/Darkness",
+            "Endtime Events",
+            "Ladder to Heaven",
+            "Re-Creation",
+            "De-Creation",
+            "Conditional Covenants",
+            "Unconditional Covenants",
+            "Individual and Collective Covenants",
+            "Covenant Blessings",
+            "Covenant Curses",
+            "Millennial Covenant",
+            "Believers\u2019 Descent Phase",
+            "Believers\u2019 Ascent Phase",
+            "Jehovah\u2019s Descent Phase",
+            "Jehovah\u2019s Ascent Phase"
         ]
     },
     "verseTagIndex": {
@@ -39068,7 +41096,9 @@
             "Deliverance\u2194Ideal Vassal",
             "Two Arms",
             "Proxy Roles",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Babylon",
+            "Righteousness"
         ],
         "18630": [
             "Nephi",
@@ -39078,7 +41108,9 @@
             "Law\/Word\u21ccServant\u2019s Mission",
             "Deliverance\u2194Ideal Vassal",
             "Two Arms",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Babylon",
+            "Righteousness"
         ],
         "18631": [
             "Nephi",
@@ -39087,7 +41119,8 @@
             "\u29b7 To Listen\u2194Babylon",
             "Covenant Blessings",
             "Law\/Word\u21ccServant\u2019s Mission",
-            "Ideal Vassal\u21ccLiving Oracle"
+            "Ideal Vassal\u21ccLiving Oracle",
+            "The Servant (Word Link)"
         ],
         "18632": [
             "Nephi",
@@ -39135,7 +41168,8 @@
             "A Universal Entity",
             "Suffering \u27a4 Hope",
             "Redemptive Intervention",
-            "Redemptive Elements"
+            "Redemptive Elements",
+            "Babylon"
         ],
         "18636": [
             "Nephi",
@@ -39145,7 +41179,8 @@
             "\u29b7 To Listen\u2194Babylon",
             "Fleeing Babylon",
             "Suffering \u27a4 Hope",
-            "Redemptive Intervention"
+            "Redemptive Intervention",
+            "Babylon"
         ],
         "18637": [
             "Nephi",
@@ -39207,7 +41242,9 @@
             "Two Arms",
             "Royal Accession",
             "Servant Word Links",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants",
+            "The Servant (Word Link)"
         ],
         "18643": [
             "Nephi",
@@ -39233,7 +41270,11 @@
             "Proxy Roles",
             "Vassal\u2019s Redemption",
             "Servant Word Links",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants",
+            "The Servant (Word Link)",
+            "Righteousness",
+            "Salvation"
         ],
         "18644": [
             "Nephi",
@@ -39254,7 +41295,8 @@
             "Servants Ascend",
             "Vassal Ascends",
             "Cumulative Themes I \u2013 V",
-            "I\/Me\/My\u2014Servant Role"
+            "I\/Me\/My\u2014Servant Role",
+            "The Servant (Word Link)"
         ],
         "18645": [
             "Nephi",
@@ -39275,7 +41317,8 @@
             "Royal Accession",
             "Vassal\u2019s Redemption",
             "Servant Word Links",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18646": [
             "Nephi",
@@ -39291,7 +41334,8 @@
             "Proxy Roles",
             "Vassal\u2019s Redemption",
             "Annointed Vassal",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18647": [
             "Nephi",
@@ -39302,7 +41346,8 @@
             "Covenant Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Vassal\u2019s Redemption",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18648": [
             "Nephi",
@@ -39314,7 +41359,8 @@
             "\u29b7 Servant\u2019s Empowerment",
             "\u29b7 Zion\u2194Babylon",
             "Vassal\u2019s Redemption",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18649": [
             "Nephi",
@@ -39327,7 +41373,8 @@
             "Fleeing Babylon",
             "Vassal\u2019s Redemption",
             "Yahweh\u2019s Ascent",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18650": [
             "Nephi",
@@ -39337,7 +41384,8 @@
             "\u29b7 Zion\u2194Babylon",
             "A Universal Entity",
             "Suffering Before Salvation",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants"
         ],
         "18651": [
             "Nephi",
@@ -39443,7 +41491,9 @@
             "Servant Word Links",
             "Servants Ascend",
             "Children of Zion",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants",
+            "Endtime Servants"
         ],
         "18660": [
             "Nephi",
@@ -39462,7 +41512,9 @@
             "Suffering Before Salvation",
             "Servant Word Links",
             "Children of Zion",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Participants",
+            "Endtime Servants"
         ],
         "18661": [
             "Nephi",
@@ -39952,7 +42004,8 @@
             "\u24cd Jerusalem",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "Woman Figure"
+            "Woman Figure",
+            "Zion"
         ],
         "17740": [
             "Nephi",
@@ -39964,7 +42017,8 @@
             "\u24cd Jerusalem",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "Woman Figure"
+            "Woman Figure",
+            "Zion"
         ],
         "17741": [
             "Nephi",
@@ -40610,7 +42664,8 @@
             "Apostasy",
             "Threat",
             "Coronation Psalm",
-            "Oracles Against Judah"
+            "Oracles Against Judah",
+            "Assyria"
         ],
         "17801": [
             "Nephi",
@@ -40622,7 +42677,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17802": [
             "Nephi",
@@ -40632,7 +42688,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17803": [
             "Nephi",
@@ -40646,7 +42703,8 @@
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
             "Threat",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17804": [
             "Nephi",
@@ -40655,7 +42713,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17805": [
             "Nephi",
@@ -40663,7 +42722,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17806": [
             "Nephi",
@@ -40674,7 +42734,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17807": [
             "Nephi",
@@ -40684,7 +42745,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17808": [
             "Nephi",
@@ -40694,7 +42756,8 @@
             "\u24cd Asking for a Sign",
             "King as Exemplar",
             "Cumulative Themes I \u2013 II",
-            "Coronation Psalm"
+            "Coronation Psalm",
+            "Assyria"
         ],
         "17809": [
             "Nephi",
@@ -40907,7 +42970,8 @@
             "\u24cd With Us Is God",
             "3 Sons",
             "Cumulative Themes I \u2013 II",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Zion"
         ],
         "17827": [
             "Nephi",
@@ -41188,21 +43252,24 @@
             "\u29b7 To Eat\u2194Orphans\/widows",
             "Trouble at Home",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "17853": [
             "Nephi",
             "Rebellion\u2014People",
             "\u29b7 To Eat\u2194Orphans\/widows",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "17854": [
             "Nephi",
             "Rebellion\u2014People",
             "\u29b7 To Eat\u2194Orphans\/widows",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "17855": [
             "Nephi",
@@ -41210,7 +43277,8 @@
             "Rebellion\u2014People",
             "\u29b7 To Eat\u2194Orphans\/widows",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "17856": [
             "Nephi",
@@ -41227,7 +43295,9 @@
             "Davidic Rise\u2194Assyrian Fall",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Personified Covenants",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17857": [
             "Nephi",
@@ -41242,7 +43312,9 @@
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
             "Personified Covenants",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17858": [
             "Nephi",
@@ -41254,7 +43326,9 @@
             "Wicked Destroyed",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "Personified Covenants"
+            "Personified Covenants",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17859": [
             "Nephi",
@@ -41292,7 +43366,9 @@
             "War",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17864": [
             "Nephi",
@@ -41302,7 +43378,9 @@
             "\u24cd Punishment",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17865": [
             "Nephi",
@@ -41312,7 +43390,9 @@
             "\u24cd Punishment",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17866": [
             "Nephi",
@@ -41367,7 +43447,8 @@
             "Rebellion\u2014People",
             "\u24cd Punishment",
             "Allegiance",
-            "Davidic King \ud83c\udd9a Assyrian King"
+            "Davidic King \ud83c\udd9a Assyrian King",
+            "Assyria"
         ],
         "17871": [
             "Nephi",
@@ -41427,7 +43508,9 @@
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Zion Ideology",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17876": [
             "Nephi",
@@ -41436,7 +43519,8 @@
             "\u29b7 Escape\u2194Judgment of the Lord",
             "Covenant Curses",
             "Allegiance",
-            "Davidic King \ud83c\udd9a Assyrian King"
+            "Davidic King \ud83c\udd9a Assyrian King",
+            "Endtime Participants"
         ],
         "17877": [
             "Nephi",
@@ -41450,7 +43534,9 @@
             "Coronation Psalm",
             "Davidic King \ud83c\udd9a Assyrian King",
             "Zion Ideology",
-            "Assyrian Flood"
+            "Assyrian Flood",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17878": [
             "Nephi",
@@ -41464,7 +43550,9 @@
             "Davidic King \ud83c\udd9a Assyrian King",
             "Davidic Rise\u2194Assyrian Fall",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Endtime Participants",
+            "Assyria"
         ],
         "17879": [
             "Nephi",
@@ -41473,7 +43561,8 @@
             "\u29b7 Escape\u2194Judgment of the Lord",
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Assyria"
         ],
         "17880": [
             "Nephi",
@@ -41482,7 +43571,8 @@
             "\u29b7 Escape\u2194Judgment of the Lord",
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Assyria"
         ],
         "17881": [
             "Nephi",
@@ -41491,7 +43581,8 @@
             "\u29b7 Escape\u2194Judgment of the Lord",
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Assyria"
         ],
         "17882": [
             "Nephi",
@@ -41500,7 +43591,8 @@
             "\u29b7 Escape\u2194Judgment of the Lord",
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Assyria"
         ],
         "17883": [
             "Nephi",
@@ -41511,7 +43603,9 @@
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Zion Ideology",
-            "Woman Figure"
+            "Woman Figure",
+            "Zion",
+            "Assyria"
         ],
         "17884": [
             "Nephi",
@@ -41657,7 +43751,9 @@
             "\u29b7 Righteous vs. the World",
             "Two Arms",
             "Cumulative Themes I \u2013 III",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Egypt",
+            "Assyria"
         ],
         "17897": [
             "Nephi",
@@ -41727,7 +43823,8 @@
             "Zion Ideology",
             "Righteousness \u27a4 Salvation",
             "Cumulative Themes I \u2013 III",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Assyria"
         ],
         "17902": [
             "Nephi",
@@ -41774,7 +43871,8 @@
             "\u24cd Saving Waters",
             "3 Linked Events",
             "Zion Ideology",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Zion"
         ],
         "17906": [
             "Nephi",
@@ -41783,7 +43881,8 @@
             "Judgment",
             "3 Linked Events",
             "Zion Ideology",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Zion"
         ],
         "17907": [
             "Nephi",
@@ -41795,7 +43894,8 @@
             "3 Linked Events",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Zion"
         ],
         "17908": [
             "Nephi",
@@ -41808,7 +43908,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Visionaries",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Babylon"
         ],
         "17909": [
             "Nephi",
@@ -41831,7 +43932,8 @@
             "\u24cd Coming Day of the Lord",
             "Covenant Curses",
             "Wicked Destroyed",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Endtime Participants"
         ],
         "17912": [
             "Nephi",
@@ -41842,7 +43944,8 @@
             "Covenant Curses",
             "Wicked Destroyed",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Endtime Participants"
         ],
         "17913": [
             "Nephi",
@@ -41885,7 +43988,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
-            "Personified Covenants"
+            "Personified Covenants",
+            "Babylon"
         ],
         "17917": [
             "Nephi",
@@ -42088,7 +44192,8 @@
             "Personified Covenants",
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Endtime Participants"
         ],
         "17934": [
             "Nephi",
@@ -42101,7 +44206,8 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
             "Personified Covenants",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Endtime Participants"
         ],
         "17935": [
             "Nephi",
@@ -42114,7 +44220,8 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "\u29b7 Kings of Babylon & Zion",
             "Personified Covenants",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Endtime Participants"
         ],
         "17936": [
             "Nephi",
@@ -42330,7 +44437,8 @@
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
             "Redemptive Elements",
-            "Woman Figure"
+            "Woman Figure",
+            "Babylon"
         ],
         "17953": [
             "Nephi",
@@ -42350,7 +44458,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "17955": [
             "Nephi",
@@ -42415,7 +44524,8 @@
             "Glory\u2194Ignominy",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Zion"
         ],
         "18197": [
             "Nephi",
@@ -42475,7 +44585,8 @@
             "Covenant Curses",
             "Zion Ideology",
             "The Composite City",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Zion"
         ],
         "18203": [
             "Nephi",
@@ -42660,7 +44771,8 @@
             "Law\/Word\u21ccServant\u2019s Mission",
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
-            "Ideal Vassal\u21ccLiving Oracle"
+            "Ideal Vassal\u21ccLiving Oracle",
+            "The Servant (Word Link)"
         ],
         "18668": [
             "Jacob",
@@ -42668,7 +44780,8 @@
             "\u24cd Upholding",
             "Servant is Rejected and Killed",
             "\u24cd Vindication",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "The Servant (Word Link)"
         ],
         "18669": [
             "Jacob",
@@ -42678,7 +44791,8 @@
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
             "Servants\u2194Ideal Vassal",
-            "Servants Ascend"
+            "Servants Ascend",
+            "The Servant (Word Link)"
         ],
         "18670": [
             "Jacob",
@@ -42688,7 +44802,8 @@
             "Royal Accession",
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
-            "Servants\u2194Ideal Vassal"
+            "Servants\u2194Ideal Vassal",
+            "The Servant (Word Link)"
         ],
         "18671": [
             "Jacob",
@@ -42698,7 +44813,8 @@
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
             "Servants\u2194Ideal Vassal",
-            "Servants Ascend"
+            "Servants Ascend",
+            "The Servant (Word Link)"
         ],
         "18672": [
             "Jacob",
@@ -42710,7 +44826,8 @@
             "\u24cd Vindication",
             "Servant Word Links",
             "Servants\u2194Ideal Vassal",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "The Servant (Word Link)"
         ],
         "18673": [
             "Jacob",
@@ -42721,7 +44838,8 @@
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
             "Servant Word Links",
-            "Ideal Vassal\u21ccLiving Oracle"
+            "Ideal Vassal\u21ccLiving Oracle",
+            "The Servant (Word Link)"
         ],
         "18674": [
             "Jacob",
@@ -42731,7 +44849,8 @@
             "Vassal\u2019s Redemption",
             "\u24cd Vindication",
             "Servant Word Links",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "The Servant (Word Link)"
         ],
         "18675": [
             "Jacob",
@@ -42748,7 +44867,8 @@
             "Proxy Roles",
             "Deliverance Criteria",
             "4 Biblical Covenants",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Righteousness"
         ],
         "18676": [
             "Jacob",
@@ -42774,7 +44894,8 @@
             "Suffering Before Salvation",
             "4 Biblical Covenants",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "Zion"
         ],
         "18678": [
             "Jacob",
@@ -42797,7 +44918,9 @@
             "Redemptive Roles",
             "Righteousness \u27a4 Salvation",
             "Two Arms",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Righteousness",
+            "Salvation"
         ],
         "18680": [
             "Jacob",
@@ -42813,7 +44936,8 @@
             "A Universal Entity",
             "Redemptive Roles",
             "Righteousness \u27a4 Salvation",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Salvation"
         ],
         "18681": [
             "Jacob",
@@ -42842,7 +44966,8 @@
             "Zion Ideology",
             "Suffering Before Salvation",
             "Righteousness \u27a4 Salvation",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Salvation"
         ],
         "18683": [
             "Jacob",
@@ -42859,7 +44984,9 @@
             "Two Arms",
             "Proxy Roles",
             "Deliverance Criteria",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Babylon",
+            "Righteousness"
         ],
         "18684": [
             "Jacob",
@@ -42876,7 +45003,8 @@
             "Two Arms",
             "Proxy Roles",
             "Deliverance Criteria",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Righteousness"
         ],
         "18685": [
             "Jacob",
@@ -42894,7 +45022,9 @@
             "Deliverance Criteria",
             "4 Biblical Covenants",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "Zion",
+            "Righteousness"
         ],
         "18686": [
             "Jacob",
@@ -42934,7 +45064,8 @@
             "A Universal Entity",
             "4 Biblical Covenants",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "Zion"
         ],
         "18691": [
             "Jacob",
@@ -43017,7 +45148,8 @@
             "Woman Figure",
             "Universal Mission",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "Zion"
         ],
         "18699": [
             "Jacob",
@@ -43040,7 +45172,8 @@
             "Woman Figure",
             "Universal Mission",
             "Cumulative Themes I \u2013 V",
-            "Zion and Jerusalem"
+            "Zion and Jerusalem",
+            "Zion"
         ],
         "18742": [
             "Jacob",
@@ -43090,7 +45223,11 @@
             "Children of Zion",
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Endtime Participants",
+            "Zion",
+            "The Servant (Word Link)",
+            "Salvation"
         ],
         "18705": [
             "Abinadi",
@@ -43112,7 +45249,10 @@
             "Children of Zion",
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Endtime Participants",
+            "Endtime Servants",
+            "Zion"
         ],
         "18706": [
             "Abinadi",
@@ -43146,7 +45286,9 @@
             "Redemptive Elements",
             "Suffering and Deliverance",
             "Cumulative Themes I \u2013 V",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "The Servant (Word Link)",
+            "Salvation"
         ],
         "18713": [
             "Abinadi",
@@ -43375,7 +45517,8 @@
             "3 Roles",
             "Servant Word Links",
             "Fourth Servant Song of Isaiah",
-            "I\/Me\/My\u2014Servant Role"
+            "I\/Me\/My\u2014Servant Role",
+            "The Servant (Word Link)"
         ],
         "18726": [
             "Moroni",
@@ -43466,7 +45609,8 @@
             "Cumulative Themes I \u2013 V",
             "Fourth Servant Song of Isaiah",
             "I\/Me\/My\u2014Servant Role",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "The Servant (Word Link)"
         ],
         "18711": [
             "Jesus",
@@ -43484,7 +45628,8 @@
             "Vassal Ascends",
             "Fourth Servant Song of Isaiah",
             "I\/Me\/My\u2014Servant Role",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "The Servant (Word Link)"
         ],
         "18712": [
             "Jesus",
@@ -43501,7 +45646,8 @@
             "Vassal Ascends",
             "Fourth Servant Song of Isaiah",
             "I\/Me\/My\u2014Servant Role",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "The Servant (Word Link)"
         ],
         "18725": [
             "Jesus",
@@ -43677,7 +45823,8 @@
             "Righteousness \u27a4 Salvation",
             "New Covenant",
             "Woman Figure",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Zion"
         ],
         "18739": [
             "Jesus",
@@ -43688,7 +45835,9 @@
             "Suffering Before Salvation",
             "New Covenant",
             "Servants\u2194Ideal Vassal",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Servants",
+            "Zion"
         ],
         "18740": [
             "Jesus",
@@ -43700,7 +45849,9 @@
             "Suffering Before Salvation",
             "New Covenant",
             "Servants\u2194Ideal Vassal",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Servants",
+            "Zion"
         ],
         "18741": [
             "Jesus",
@@ -43715,7 +45866,9 @@
             "Suffering Before Salvation",
             "New Covenant",
             "Servants\u2194Ideal Vassal",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Endtime Servants",
+            "Zion"
         ],
         "18279": [
             "Destruction",
@@ -43804,7 +45957,8 @@
             "Covenant Curses",
             "Wicked Destroyed",
             "Old Jerusalem",
-            "A National Entity"
+            "A National Entity",
+            "Zion"
         ],
         "17663": [
             "Destruction",
@@ -43816,7 +45970,8 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "The Composite City",
-            "Woman Figure"
+            "Woman Figure",
+            "Zion"
         ],
         "17664": [
             "Destruction",
@@ -43830,7 +45985,8 @@
             "Covenant Curses",
             "Wicked Destroyed",
             "The Composite City",
-            "We\/Us\/Our\u2014Another Role"
+            "We\/Us\/Our\u2014Another Role",
+            "Zion"
         ],
         "17665": [
             "Forms of Speech",
@@ -44097,7 +46253,8 @@
             "Universal Salvation",
             "Redemptive Roles",
             "Righteousness \u27a4 Salvation",
-            "Isaiah Apocalypse"
+            "Isaiah Apocalypse",
+            "Salvation"
         ],
         "18133": [
             "Forms of Speech",
@@ -44223,7 +46380,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Servant Types",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Endtime Participants"
         ],
         "18034": [
             "Forms of Speech",
@@ -44233,14 +46391,19 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "Endtime Participants",
+            "Egypt",
+            "Assyria"
         ],
         "18035": [
             "Forms of Speech",
             "\u24cd Walking Naked and Barefoot",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Endtime Participants",
+            "Egypt"
         ],
         "18036": [
             "Forms of Speech",
@@ -44250,7 +46413,9 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
-            "Redemptive Roles"
+            "Redemptive Roles",
+            "Endtime Participants",
+            "Egypt"
         ],
         "17657": [
             "Forms of Speech",
@@ -44348,7 +46513,8 @@
             "\u29b7 Messages to Hezekiah",
             "3 Sons",
             "Hezekiah\u2019s Ascent",
-            "Allegiance"
+            "Allegiance",
+            "Egypt"
         ],
         "18338": [
             "Biographical Material",
@@ -44359,7 +46525,8 @@
             "\u29b7 Messages to Hezekiah",
             "3 Sons",
             "Hezekiah\u2019s Ascent",
-            "Allegiance"
+            "Allegiance",
+            "Egypt"
         ],
         "18339": [
             "Biographical Material",
@@ -44371,7 +46538,8 @@
             "3 Sons",
             "Hezekiah\u2019s Ascent",
             "Victory",
-            "Allegiance"
+            "Allegiance",
+            "Egypt"
         ],
         "18340": [
             "Biographical Material",
@@ -44382,7 +46550,8 @@
             "\u29b7 Messages to Hezekiah",
             "3 Sons",
             "Hezekiah\u2019s Ascent",
-            "Allegiance"
+            "Allegiance",
+            "Egypt"
         ],
         "18341": [
             "Biographical Material",
@@ -44775,7 +46944,9 @@
             "Cumulative Themes I \u2013 II",
             "Victory",
             "Covenant Curses",
-            "Hezekiah\u2019s Rise"
+            "Hezekiah\u2019s Rise",
+            "Endtime Participants",
+            "Assyria"
         ],
         "18372": [
             "Biographical Material",
@@ -44818,7 +46989,8 @@
             "\u29b7 Messages to Hezekiah",
             "Cumulative Themes I \u2013 II",
             "Davidic King Intercedes",
-            "Stories of Isaiah"
+            "Stories of Isaiah",
+            "Assyria"
         ],
         "18375": [
             "Biographical Material",
@@ -44834,7 +47006,8 @@
             "Cumulative Themes I \u2013 II",
             "Zion Ideology",
             "Woman Figure",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Assyria"
         ],
         "18376": [
             "Biographical Material",
@@ -44845,7 +47018,9 @@
             "(1\/7) Perdition",
             "Assyria\u2019s World Conquest",
             "\u29b7 Messages to Hezekiah",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Egypt",
+            "Assyria"
         ],
         "18377": [
             "Biographical Material",
@@ -44856,7 +47031,9 @@
             "Assyria\u2019s World Conquest",
             "\u29b7 Messages to Hezekiah",
             "Cumulative Themes I \u2013 II",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Egypt",
+            "Assyria"
         ],
         "18378": [
             "Biographical Material",
@@ -44867,7 +47044,9 @@
             "Assyria\u2019s World Conquest",
             "\u29b7 Messages to Hezekiah",
             "Cumulative Themes I \u2013 II",
-            "\u29b7 King of Assyria\u2194King of Babylon"
+            "\u29b7 King of Assyria\u2194King of Babylon",
+            "Egypt",
+            "Assyria"
         ],
         "18379": [
             "Biographical Material",
@@ -44947,7 +47126,9 @@
             "Cumulative Themes I \u2013 II",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Zion",
+            "Assyria"
         ],
         "18386": [
             "Biographical Material",
@@ -44960,7 +47141,8 @@
             "Victory",
             "Hezekiah\u2019s Rise",
             "\u29b7 Zion\u2194Babylon",
-            "The Composite City"
+            "The Composite City",
+            "Assyria"
         ],
         "18387": [
             "Biographical Material",
@@ -44972,7 +47154,8 @@
             "Cumulative Themes I \u2013 II",
             "Restoration",
             "\u29b7 Zion\u2194Babylon",
-            "The Composite City"
+            "The Composite City",
+            "Assyria"
         ],
         "18388": [
             "Biographical Material",
@@ -44990,7 +47173,8 @@
             "Redemptive Roles",
             "Servant Types",
             "Servants\u2194Ideal Vassal",
-            "Woman Figure"
+            "Woman Figure",
+            "Assyria"
         ],
         "18389": [
             "Biographical Material",
@@ -45005,7 +47189,8 @@
             "Restoration",
             "Victory",
             "Zion Ideology",
-            "Cumulative Themes I \u2013 II"
+            "Cumulative Themes I \u2013 II",
+            "Assyria"
         ],
         "18390": [
             "Biographical Material",
@@ -45118,7 +47303,8 @@
             "The Composite City",
             "Redemptive Roles",
             "Vassal\u2019s Redemption",
-            "I\/Me\/My\u2014Servant Role"
+            "I\/Me\/My\u2014Servant Role",
+            "Assyria"
         ],
         "18398": [
             "Biographical Material",
@@ -45495,7 +47681,8 @@
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
             "Upward Movement",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Zion"
         ],
         "18454": [
             "\u24cd Chaos\u2194Creation",
@@ -45513,7 +47700,8 @@
             "Vassal\u2019s Redemption",
             "Deliverance Criteria",
             "Agents\u2019 Redemptive Roles",
-            "A Righteous Warrior Figure"
+            "A Righteous Warrior Figure",
+            "Righteousness"
         ],
         "18467": [
             "\u24cd Chaos\u2194Creation",
@@ -45621,7 +47809,8 @@
             "Servants\u2194Ideal Vassal",
             "Annointed Vassal",
             "A Servant Figure",
-            "I\/Me\/My\u2014Servant Role"
+            "I\/Me\/My\u2014Servant Role",
+            "The Servant (Word Link)"
         ],
         "18483": [
             "\u24cd Chaos\u2194Creation",
@@ -45668,7 +47857,8 @@
             "\u24cd Servant\u2194Justice",
             "Peace\u21ccSalvation",
             "Servant Word Links",
-            "Agents\u2019 Redemptive Roles"
+            "Agents\u2019 Redemptive Roles",
+            "Righteousness"
         ],
         "18494": [
             "\u24cd Chaos\u2194Creation",
@@ -45699,7 +47889,8 @@
             "(3\/7) Jacob\u2013Israel",
             "Israel\u2019s Apostasy",
             "\u24cd A New Song",
-            "Idolatry"
+            "Idolatry",
+            "Endtime Participants"
         ],
         "18502": [
             "\u24cd Chaos\u2194Creation",
@@ -45707,7 +47898,8 @@
             "(3\/7) Jacob\u2013Israel",
             "\u24cd A New Song",
             "Righteous Delivered",
-            "Idolatry"
+            "Idolatry",
+            "Righteousness"
         ],
         "18503": [
             "\u24cd Chaos\u2194Creation",
@@ -45990,7 +48182,9 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "Idolatry"
+            "Idolatry",
+            "Endtime Participants",
+            "Babylon"
         ],
         "18554": [
             "\u24cd Chaos\u2194Creation",
@@ -46090,7 +48284,8 @@
             "The Creation",
             "\u24cd Woe",
             "A Universal Entity",
-            "Righteousness \u27a4 Salvation"
+            "Righteousness \u27a4 Salvation",
+            "Salvation"
         ],
         "18571": [
             "\u24cd Chaos\u2194Creation",
@@ -46143,7 +48338,8 @@
             "\u24cd Woe",
             "A Universal Entity",
             "Redemptive Roles",
-            "Israel"
+            "Israel",
+            "Salvation"
         ],
         "18580": [
             "\u24cd Chaos\u2194Creation",
@@ -46160,7 +48356,8 @@
         "18582": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd Creation by the Lord",
-            "Idolatry"
+            "Idolatry",
+            "Endtime Participants"
         ],
         "18588": [
             "\u24cd Chaos\u2194Creation",
@@ -46232,7 +48429,9 @@
             "Zion Ideology",
             "Redemptive Roles",
             "Righteousness \u27a4 Salvation",
-            "Israel"
+            "Israel",
+            "Zion",
+            "Salvation"
         ],
         "18601": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46250,7 +48449,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
-            "Cumulative Themes I \u2013 IV"
+            "Cumulative Themes I \u2013 IV",
+            "Babylon"
         ],
         "18602": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46315,7 +48515,38 @@
         "17656": [
             "Narrative Characters",
             "Visionaries",
-            "Oracles Against Judah"
+            "Oracles Against Judah",
+            "Peace\/Healing",
+            "The Servant",
+            "Righteousness and Salvation",
+            "Mountains",
+            "Humanity\u2019s Maker",
+            "The Servant and the Tyrant",
+            "The King of Babylon and the King of Zion",
+            "The Servant (Type)",
+            "The Tyrant",
+            "Hand\/Ensign",
+            "Rod\/Staff",
+            "Anger\/Wrath",
+            "Sea\/River 1",
+            "Sea\/River 2",
+            "Sword\/Fire",
+            "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "Light\/Darkness",
+            "Endtime Events",
+            "Ladder to Heaven",
+            "Re-Creation",
+            "De-Creation",
+            "Conditional Covenants",
+            "Unconditional Covenants",
+            "Individual and Collective Covenants",
+            "Covenant Blessings",
+            "Covenant Curses",
+            "Millennial Covenant",
+            "Believers\u2019 Descent Phase",
+            "Believers\u2019 Ascent Phase",
+            "Jehovah\u2019s Descent Phase",
+            "Jehovah\u2019s Ascent Phase"
         ],
         "18073": [
             "Narrative Characters",
@@ -46380,7 +48611,9 @@
             "Leaders Condemned",
             "4 Woes",
             "Reprobates",
-            "Late Oracles"
+            "Late Oracles",
+            "Endtime Participants",
+            "Egypt"
         ],
         "18219": [
             "Disloyalty",
@@ -46434,7 +48667,8 @@
             "Reprobates",
             "Covenant with Death",
             "Cursed Covenant People",
-            "Ideal Vassal\u21ccLiving Oracle"
+            "Ideal Vassal\u21ccLiving Oracle",
+            "Egypt"
         ],
         "18221": [
             "Disloyalty",
@@ -46443,7 +48677,8 @@
             "Covenant Curses",
             "Leaders Condemned",
             "Reprobates",
-            "Cursed Covenant People"
+            "Cursed Covenant People",
+            "Egypt"
         ],
         "18222": [
             "Disloyalty",
@@ -46452,7 +48687,8 @@
             "Covenant Curses",
             "Leaders Condemned",
             "Reprobates",
-            "Cursed Covenant People"
+            "Cursed Covenant People",
+            "Egypt"
         ],
         "18223": [
             "Disloyalty",
@@ -46462,7 +48698,8 @@
             "Leaders Condemned",
             "Reprobates",
             "Cursed Covenant People",
-            "Cumulative Themes I \u2013 VI"
+            "Cumulative Themes I \u2013 VI",
+            "Egypt"
         ],
         "18224": [
             "Disloyalty",
@@ -46471,7 +48708,8 @@
             "Judgment",
             "Covenant Curses",
             "Visionaries",
-            "Reprobates"
+            "Reprobates",
+            "Egypt"
         ],
         "18225": [
             "Disloyalty",
@@ -46479,13 +48717,16 @@
             "Judgment",
             "Covenant Curses",
             "Leaders Condemned",
-            "Reprobates"
+            "Reprobates",
+            "Egypt"
         ],
         "18253": [
             "Disloyalty",
             "Didactics",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses"
+            "Covenant Curses",
+            "Endtime Participants",
+            "Egypt"
         ],
         "18254": [
             "Disloyalty",
@@ -46494,7 +48735,9 @@
             "Covenant Curses",
             "Zion Ideology",
             "Reprobates",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Endtime Participants",
+            "Egypt"
         ],
         "18180": [
             "Disloyalty",
@@ -46698,7 +48941,8 @@
             "Response Dichotomy",
             "Contrasting Fortunes",
             "Servants Ascend",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants"
         ],
         "18947": [
             "Mark",
@@ -46754,7 +48998,8 @@
             "Righteous Response",
             "\u24cd Universal Appeal",
             "Covenantal Allegiance",
-            "Opposite Responses"
+            "Opposite Responses",
+            "Endtime Participants"
         ],
         "18808": [
             "Romans",
@@ -46811,7 +49056,8 @@
             "Righteous Response",
             "Response to Vassal",
             "Covenant Theology",
-            "Post-Exhile"
+            "Post-Exhile",
+            "Zion"
         ],
         "18161": [
             "Romans",
@@ -46877,7 +49123,8 @@
             "Redemptive Roles",
             "Response to Vassal",
             "Covenant Theology",
-            "Great Division"
+            "Great Division",
+            "Salvation"
         ],
         "18075": [
             "New Testament\u2013Other",
@@ -46967,7 +49214,8 @@
             "On That Day",
             "Hezekiah\u2019s Ascent",
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18046": [
             "Knowing God",
@@ -47015,7 +49263,8 @@
             "Wicked Superlatives",
             "Israel\u2019s Apostasy",
             "\u24cd Complacent",
-            "The Composite City"
+            "The Composite City",
+            "Endtime Participants"
         ],
         "18267": [
             "Wicked Superlatives",
@@ -47113,7 +49362,8 @@
             "Redemptive Roles",
             "Two Arms",
             "Yahweh\u2019s Ascent",
-            "Cumulative Themes I \u2013 VII"
+            "Cumulative Themes I \u2013 VII",
+            "Salvation"
         ],
         "18286": [
             "Righteous Superlatives",
@@ -47125,7 +49375,8 @@
             "Allegiance",
             "Leaders Condemned",
             "Zion Ideology",
-            "Redemptive Roles"
+            "Redemptive Roles",
+            "Zion"
         ],
         "18295": [
             "Righteous Superlatives",
@@ -47159,7 +49410,8 @@
             "Paradise",
             "\u24cd Hear What I Have Done",
             "\u29b7 Zion\u2194Babylon",
-            "Disparate Fates"
+            "Disparate Fates",
+            "Zion"
         ],
         "18281": [
             "Disinheritance",
@@ -47244,7 +49496,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "The Composite City",
-            "Disparate Fates"
+            "Disparate Fates",
+            "Zion"
         ],
         "18301": [
             "Inheritance",
@@ -47330,7 +49583,8 @@
             "Servant Word Links",
             "\u24cd Universal Appeal",
             "Covenantal Allegiance",
-            "Contrasting Fortunes"
+            "Contrasting Fortunes",
+            "Endtime Participants"
         ],
         "18746": [
             "Home, Exhile, Return",
@@ -47342,7 +49596,8 @@
             "Servant Word Links",
             "\u24cd Universal Appeal",
             "Covenantal Allegiance",
-            "Great Division"
+            "Great Division",
+            "Endtime Participants"
         ],
         "18747": [
             "Home, Exhile, Return",
@@ -47368,7 +49623,8 @@
             "Cumulative Themes I \u2013 V",
             "Agents\u2019 Redemptive Roles",
             "A Servant Figure",
-            "Israel"
+            "Israel",
+            "Endtime Participants"
         ],
         "18461": [
             "Home, Exhile, Return",
@@ -47383,7 +49639,8 @@
             "Servant Word Links",
             "Cumulative Themes I \u2013 V",
             "Agents\u2019 Redemptive Roles",
-            "A Servant Figure"
+            "A Servant Figure",
+            "Endtime Participants"
         ],
         "18592": [
             "Home, Exhile, Return",
@@ -47496,7 +49753,8 @@
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18101": [
             "Covenant of Peace",
@@ -47535,7 +49793,8 @@
             "Contrasting Fortunes",
             "Separation",
             "Servants Ascend",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants"
         ],
         "18822": [
             "Covenant of Peace",
@@ -47607,7 +49866,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Redemptive Roles",
-            "Yahweh\u2019s Ascent"
+            "Yahweh\u2019s Ascent",
+            "Salvation"
         ],
         "18542": [
             "Yahweh God of Israel",
@@ -47631,7 +49891,10 @@
             "Redemptive Roles",
             "Separation",
             "Universal Mission",
-            "Vassal Ascends"
+            "Vassal Ascends",
+            "Endtime Participants",
+            "Zion",
+            "Righteousness"
         ],
         "17975": [
             "Yahweh God of Israel",
@@ -47701,7 +49964,9 @@
             "Response Dichotomy",
             "Covenantal Disloyalty",
             "Cumulative Themes I \u2013 VI",
-            "Post-Exhile"
+            "Post-Exhile",
+            "Righteousness",
+            "Salvation"
         ],
         "18812": [
             "Yahweh God of Israel",
@@ -47726,7 +49991,9 @@
             "Two Arms",
             "Righteousness\u21ccHand\u21ccArm",
             "Condemnations",
-            "Response to Vassal"
+            "Response to Vassal",
+            "Righteousness",
+            "Salvation"
         ],
         "18840": [
             "Yahweh God of Israel",
@@ -47773,7 +50040,9 @@
             "Yahweh\u2019s Ascent",
             "Universal Mission",
             "Vassal Ascends",
-            "Cumulative Themes I \u2013 VII"
+            "Cumulative Themes I \u2013 VII",
+            "Endtime Participants",
+            "Zion"
         ],
         "18872": [
             "Yahweh God of Israel",
@@ -47796,7 +50065,8 @@
             "Yahweh\u2019s Descent on the Mount",
             "\u24cd The Mountain of the Lord",
             "Zion Ideology",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Assyria"
         ],
         "18260": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47804,7 +50074,8 @@
             "\u29b7 Look Not\u2194Utterly Deserted",
             "Leaders Condemned",
             "Zion Ideology",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Assyria"
         ],
         "18795": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47815,7 +50086,8 @@
             "Righteousness \u27a4 Salvation",
             "Righteous Response",
             "Response Dichotomy",
-            "Covenantal Disloyalty"
+            "Covenantal Disloyalty",
+            "Righteousness"
         ],
         "18797": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47849,7 +50121,8 @@
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
             "Light \ud83c\udd9a Dark",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18825": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47864,7 +50137,9 @@
             "Two Arms",
             "Servant Word Links",
             "Blessings",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants",
+            "Zion"
         ],
         "17997": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47935,7 +50210,8 @@
             "Deliverance\u2194Ideal Vassal",
             "4 Biblical Covenants",
             "Agents\u2019 Redemptive Roles",
-            "A Righteous Warrior Figure"
+            "A Righteous Warrior Figure",
+            "Endtime Participants"
         ],
         "18465": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -47967,7 +50243,8 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "On That Day",
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Assyria"
         ],
         "18129": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48041,7 +50318,8 @@
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
             "Servants Ascend",
-            "Cumulative Themes I \u2013 VII"
+            "Cumulative Themes I \u2013 VII",
+            "Endtime Participants"
         ],
         "18925": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48067,7 +50345,8 @@
             "Servants\u2194Ideal Vassal",
             "Enemies \ud83c\udd9a Servants",
             "Servants Ascend",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants"
         ],
         "18320": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48110,7 +50389,9 @@
             "Separation",
             "Blessings",
             "Universal Mission",
-            "Vassal Ascends"
+            "Vassal Ascends",
+            "Endtime Participants",
+            "Zion"
         ],
         "18110": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48129,7 +50410,8 @@
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd The Mountain of the Lord",
             "Zion Ideology",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Assyria"
         ],
         "18788": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48192,7 +50474,8 @@
             "Allegiance",
             "The Composite City",
             "Woman Figure",
-            "Ugaric Cycle 1"
+            "Ugaric Cycle 1",
+            "Righteousness"
         ],
         "17682": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48214,7 +50497,9 @@
             "Allegiance",
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
-            "Redemptive Roles"
+            "Redemptive Roles",
+            "Egypt",
+            "Righteousness"
         ],
         "18140": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48252,13 +50537,15 @@
             "Judgment",
             "Covenant Curses",
             "Leaders Condemned",
-            "Zion Ideology"
+            "Zion Ideology",
+            "Zion"
         ],
         "18583": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Creation by the Lord",
             "Redemptive Roles",
-            "Yahweh\u2019s Ascent"
+            "Yahweh\u2019s Ascent",
+            "Endtime Participants"
         ],
         "18789": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48302,7 +50589,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Peace",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18847": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48316,7 +50604,9 @@
             "Zion Ideology",
             "Righteousness \u27a4 Salvation",
             "Two Functions",
-            "Hierarchy"
+            "Hierarchy",
+            "Zion",
+            "Righteousness"
         ],
         "18855": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48375,7 +50665,9 @@
             "Two Cities",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
-            "Universal Salvation"
+            "Universal Salvation",
+            "Egypt",
+            "Assyria"
         ],
         "18586": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48395,14 +50687,16 @@
             "Covenant Curses",
             "Leaders Condemned",
             "Zion Ideology",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Assyria"
         ],
         "18250": [
             "Yahweh\u2019s End\u2013Time Servant",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd The Mountain of the Lord",
             "Zion Ideology",
-            "Assyria Destroyed"
+            "Assyria Destroyed",
+            "Assyria"
         ],
         "18779": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48540,7 +50834,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18878": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48588,7 +50883,8 @@
             "Babylon\u21ccUniversal",
             "Zion Ideology",
             "Annointed Vassal",
-            "Vision of Zion"
+            "Vision of Zion",
+            "Zion"
         ],
         "18871": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48671,7 +50967,9 @@
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation",
-            "Isaiah Apocalypse"
+            "Isaiah Apocalypse",
+            "Egypt",
+            "Assyria"
         ],
         "18255": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48784,7 +51082,8 @@
             "Covenant Blessings",
             "Righteous Delivered",
             "Components of Babylon",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Babylon"
         ],
         "18893": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48821,7 +51120,8 @@
             "Restoration",
             "Zion Ideology",
             "Cumulative Themes I \u2013 III",
-            "Vision of Zion"
+            "Vision of Zion",
+            "Zion"
         ],
         "18322": [
             "Rebirth\u2014National",
@@ -49042,7 +51342,9 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Universal Mission",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Participants",
+            "Endtime Servants"
         ],
         "18764": [
             "Watchmen\/Prophets",
@@ -49053,14 +51355,16 @@
             "Wicked vs. Servants",
             "Wicked Response",
             "Response Dichotomy",
-            "Contrasting Fortunes"
+            "Contrasting Fortunes",
+            "Endtime Participants"
         ],
         "18479": [
             "Watchmen\/Prophets",
             "\u24cd A New Song",
             "Zion Ideology",
             "Ideal Vassal\u21ccLiving Oracle",
-            "Annointed Vassal"
+            "Annointed Vassal",
+            "Zion"
         ],
         "18251": [
             "(1\/7) Perdition",
@@ -49075,7 +51379,8 @@
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
-            "Universal Salvation"
+            "Universal Salvation",
+            "Endtime Participants"
         ],
         "18145": [
             "(1\/7) Perdition",
@@ -49084,7 +51389,8 @@
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
-            "Universal Salvation"
+            "Universal Salvation",
+            "Endtime Participants"
         ],
         "18607": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49093,7 +51399,8 @@
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "Babylon"
         ],
         "18608": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49139,7 +51446,8 @@
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Universal Mission"
+            "Universal Mission",
+            "Babylon"
         ],
         "18043": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49147,7 +51455,8 @@
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Universal Mission"
+            "Universal Mission",
+            "Babylon"
         ],
         "18044": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49155,7 +51464,8 @@
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Universal Mission"
+            "Universal Mission",
+            "Babylon"
         ],
         "18045": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49170,7 +51480,8 @@
             "Babylon\u2019s Humiliation",
             "Woman Figure",
             "Universal Mission",
-            "Cumulative Themes I \u2013 III"
+            "Cumulative Themes I \u2013 III",
+            "Babylon"
         ],
         "17659": [
             "(2\/7) Babylon\u2013Chaldea",
@@ -49179,7 +51490,8 @@
             "Apostasy",
             "Trouble at Home",
             "Old Jerusalem",
-            "A National Entity"
+            "A National Entity",
+            "Endtime Participants"
         ],
         "18448": [
             "(3\/7) Jacob\u2013Israel",
@@ -49197,7 +51509,8 @@
             "Israel\u2019s Apostasy",
             "\u24cd A New Song",
             "Idolatry",
-            "Servant Word Links"
+            "Servant Word Links",
+            "Endtime Participants"
         ],
         "18500": [
             "(3\/7) Jacob\u2013Israel",
@@ -49206,14 +51519,16 @@
             "Idolatry",
             "4 Agents",
             "Servant Word Links",
-            "A Servant Figure"
+            "A Servant Figure",
+            "Endtime Participants"
         ],
         "18501": [
             "(3\/7) Jacob\u2013Israel",
             "Israel\u2019s Apostasy",
             "\u24cd A New Song",
             "Idolatry",
-            "Servant Word Links"
+            "Servant Word Links",
+            "Endtime Participants"
         ],
         "17987": [
             "(3\/7) Jacob\u2013Israel",
@@ -49300,7 +51615,9 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Universal Mission",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Participants",
+            "Endtime Servants"
         ],
         "18859": [
             "(4\/7) Zion\u2013Jerusalem",
@@ -49313,7 +51630,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Blessings",
-            "Universal Mission"
+            "Universal Mission",
+            "Endtime Participants"
         ],
         "18932": [
             "(4\/7) Zion\u2013Jerusalem",
@@ -49349,7 +51667,8 @@
             "Zion Ideology",
             "The Composite City",
             "Light \ud83c\udd9a Dark",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18138": [
             "(5\/7) Sons\u2013Servants",
@@ -49378,7 +51697,9 @@
             "Two Arms",
             "Servant Word Links",
             "Blessings",
-            "Servants Ascend"
+            "Servants Ascend",
+            "Endtime Servants",
+            "Zion"
         ],
         "18860": [
             "(5\/7) Sons\u2013Servants",
@@ -49390,7 +51711,8 @@
             "Poems Announcing God\u2019s Kingdom",
             "Woman Figure",
             "Universal Mission",
-            "Servants Ascend"
+            "Servants Ascend",
+            "Endtime Participants"
         ],
         "18117": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49442,7 +51764,8 @@
             "Wicked vs. Servants",
             "Wicked Response",
             "Response Dichotomy",
-            "Contrasting Fortunes"
+            "Contrasting Fortunes",
+            "Endtime Participants"
         ],
         "18766": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49451,7 +51774,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Response Dichotomy",
-            "Contrasting Fortunes"
+            "Contrasting Fortunes",
+            "Endtime Participants"
         ],
         "18757": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49473,7 +51797,8 @@
             "Contrasting Fortunes",
             "Separation",
             "Servants Ascend",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants"
         ],
         "18850": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49577,7 +51902,8 @@
             "Brethren",
             "Servants\u2194Ideal Vassal",
             "Servants Ascend",
-            "Children of Zion"
+            "Children of Zion",
+            "Endtime Servants"
         ],
         "18452": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49599,7 +51925,8 @@
             "Light \ud83c\udd9a Dark",
             "Servants\u2194Ideal Vassal",
             "Servants Ascend",
-            "Post-Exhile"
+            "Post-Exhile",
+            "Endtime Servants"
         ],
         "18907": [
             "(6\/7) Seraphs\u2013Seraphim",
@@ -49610,7 +51937,8 @@
             "Individual Entities",
             "Light \ud83c\udd9a Dark",
             "Servants\u2194Ideal Vassal",
-            "Servants Ascend"
+            "Servants Ascend",
+            "Endtime Servants"
         ],
         "18874": [
             "(7\/7) Yahweh God of Israel",
@@ -49663,7 +51991,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Blessings",
-            "Return"
+            "Return",
+            "Zion"
         ],
         "18838": [
             "(7\/7) Yahweh God of Israel",
@@ -49834,7 +52163,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
             "Zion Ideology",
-            "A National Entity"
+            "A National Entity",
+            "Zion"
         ],
         "18811": [
             "Assyria\u2019s Invasion of the Promised Land",
@@ -49874,7 +52204,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18829": [
             "Israel\u2019s Pilgrimage to Zion",
@@ -49884,7 +52215,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18152": [
             "The Passover",
@@ -49934,7 +52266,8 @@
             "Two Cities",
             "Zion Ideology",
             "Universal Suffering",
-            "Universal Salvation"
+            "Universal Salvation",
+            "Zion"
         ],
         "18463": [
             "Israel\u2019s Conquest of the Promised Land",
@@ -50067,7 +52400,8 @@
             "Two Functions",
             "Cumulative Themes I \u2013 V",
             "Agents\u2019 Redemptive Roles",
-            "A Cyrus Figure"
+            "A Cyrus Figure",
+            "The Servant (Word Link)"
         ],
         "18564": [
             "Cyrus\u2019 Universal Conquests",
@@ -50105,7 +52439,8 @@
             "\u24cd Idolatry",
             "Redemptive Intervention",
             "Servant Types",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "The Servant (Word Link)"
         ],
         "17974": [
             "The Davidic Monarchy",
@@ -50128,7 +52463,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "The Composite City",
-            "Universal Mission"
+            "Universal Mission",
+            "Zion"
         ],
         "18784": [
             "The Davidic Monarchy",
@@ -50251,21 +52587,24 @@
             "King and Servants",
             "Light \ud83c\udd9a Dark",
             "Servants\u2194Ideal Vassal",
-            "Servants Ascend"
+            "Servants Ascend",
+            "Endtime Servants"
         ],
         "18885": [
             "The Reign of the Judges",
             "\u29b7 My People\u2194Your Name",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
-            "Light \ud83c\udd9a Dark"
+            "Light \ud83c\udd9a Dark",
+            "Endtime Servants"
         ],
         "18886": [
             "The Reign of the Judges",
             "\u29b7 My People\u2194Your Name",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
-            "Light \ud83c\udd9a Dark"
+            "Light \ud83c\udd9a Dark",
+            "Endtime Servants"
         ],
         "18835": [
             "Zion as Yahweh\u2019s Residence",
@@ -50276,7 +52615,8 @@
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
             "The Composite City",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18436": [
             "The Creation",
@@ -50507,13 +52847,15 @@
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18008": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18010": [
             "\u24cd Egyptian Drought",
@@ -50521,39 +52863,45 @@
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Egypt"
         ],
         "18011": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Egypt"
         ],
         "18012": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Egypt"
         ],
         "18013": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18014": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18015": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18016": [
             "\u24cd Egyptian Drought",
@@ -50561,19 +52909,22 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Self\u2013Exalation",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "Egypt"
         ],
         "18017": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18018": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18019": [
             "\u24cd Egyptian Drought",
@@ -50581,13 +52932,15 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Self\u2013Exalation",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "Egypt"
         ],
         "18020": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18022": [
             "On That Day",
@@ -50599,7 +52952,8 @@
             "On That Day",
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
-            "Redemptive Roles"
+            "Redemptive Roles",
+            "Egypt"
         ],
         "18025": [
             "On That Day",
@@ -50607,50 +52961,58 @@
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
             "Redemptive Roles",
-            "Vassal Ascends"
+            "Vassal Ascends",
+            "Egypt"
         ],
         "18028": [
             "On That Day",
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Assyria"
         ],
         "18029": [
             "On That Day",
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Assyria"
         ],
         "18037": [
             "\u24cd A Chariot, a Pair of Horses",
             "Babylon\u21ccUniversal",
-            "Visionaries"
+            "Visionaries",
+            "Babylon"
         ],
         "18038": [
             "\u24cd A Chariot, a Pair of Horses",
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Visionaries"
+            "Visionaries",
+            "Babylon"
         ],
         "18039": [
             "\u24cd A Chariot, a Pair of Horses",
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Babylon"
         ],
         "18040": [
             "\u24cd A Chariot, a Pair of Horses",
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Babylon"
         ],
         "18041": [
             "\u24cd A Chariot, a Pair of Horses",
             "Covenant Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Babylon\u2019s Humiliation"
+            "Babylon\u2019s Humiliation",
+            "Babylon"
         ],
         "18048": [
             "\u29b7 The Oracles\u2194The End Will Come",
@@ -51305,14 +53667,18 @@
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "Idolatry"
+            "Idolatry",
+            "Endtime Participants",
+            "Babylon"
         ],
         "18545": [
             "\u24cd Idolatry",
             "Restoration",
             "Covenant Blessings",
             "Righteous Delivered",
-            "Idolatry"
+            "Idolatry",
+            "Endtime Participants",
+            "Babylon"
         ],
         "18546": [
             "\u24cd Idolatry",
@@ -51389,7 +53755,8 @@
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
-            "Woman Figure"
+            "Woman Figure",
+            "Babylon"
         ],
         "18612": [
             "\u24cd Evils",
@@ -51699,7 +54066,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18831": [
             "\u24cd Glory",
@@ -51708,7 +54076,8 @@
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
-            "Blessings"
+            "Blessings",
+            "Zion"
         ],
         "18834": [
             "\u24cd Glory",
@@ -51792,7 +54161,8 @@
             "Salvation",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
-            "Light \ud83c\udd9a Dark"
+            "Light \ud83c\udd9a Dark",
+            "Endtime Servants"
         ],
         "18909": [
             "\u29b7 Call\u2194Answer",
@@ -51905,7 +54275,8 @@
         ],
         "18027": [
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Egypt"
         ],
         "18898": [
             "\u24cd Announcing God\u2019s Kingdom",
@@ -51929,6 +54300,7 @@
             "Major Chiasms",
             "Code Words",
             "Textual Compositions",
+            "Mini-Studies",
             "Narrative Characters",
             "Forms of Speech",
             "Book of Mormon",
@@ -52177,8 +54549,8 @@
             "Ugaric Cycle 2",
             "Ugaric Cycle 3",
             "Ugaric Cycle 4",
-            "Covenant Curses",
-            "Covenant Blessings",
+            "Covenantal Curses",
+            "Covenantal Blessings",
             "Wicked Destroyed",
             "Davidic King Intercedes",
             "Righteous Delivered",
@@ -52355,7 +54727,44 @@
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "\u29b7 My People\u2194Your Name",
             "\u29b7 Call\u2194Answer",
-            "\u24cd Satisfaction"
+            "\u24cd Satisfaction",
+            "Endtime Participants",
+            "Endtime Servants",
+            "Babylon",
+            "Egypt",
+            "Assyria",
+            "The Servant (Word Link)",
+            "Righteousness",
+            "Peace\/Healing",
+            "Righteousness and Salvation",
+            "Mountains",
+            "Humanity\u2019s Maker",
+            "The Servant and the Tyrant",
+            "The King of Babylon and the King of Zion",
+            "The Servant (Type)",
+            "The Tyrant",
+            "Hand\/Ensign",
+            "Rod\/Staff",
+            "Anger\/Wrath",
+            "Sea\/River 1",
+            "Sea\/River 2",
+            "Sword\/Fire",
+            "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "Light\/Darkness",
+            "Endtime Events",
+            "Ladder to Heaven",
+            "Re-Creation",
+            "De-Creation",
+            "Conditional Covenants",
+            "Unconditional Covenants",
+            "Individual and Collective Covenants",
+            "Covenant Blessings",
+            "Covenant Curses",
+            "Millennial Covenant",
+            "Believers\u2019 Descent Phase",
+            "Believers\u2019 Ascent Phase",
+            "Jehovah\u2019s Descent Phase",
+            "Jehovah\u2019s Ascent Phase"
         ],
         "Textual Compositions": [
             "Narrative Characters",
@@ -52614,14 +55023,13 @@
             "Apostasy",
             "Judgment",
             "Restoration",
-            "Salvation",
             "Local Ugaritic Structures",
             "Ugaric Cycle 1",
             "Ugaric Cycle 2",
             "Ugaric Cycle 3",
             "Ugaric Cycle 4",
-            "Covenant Curses",
-            "Covenant Blessings",
+            "Covenantal Curses",
+            "Covenantal Blessings",
             "Wicked Destroyed",
             "Davidic King Intercedes",
             "Righteous Delivered",
@@ -52636,7 +55044,6 @@
             "Judgment\u2014Nations",
             "Rise & Fall of Jerusalem",
             "Annoucement of Hope",
-            "The Servant",
             "Servants\u2019 Inheritance",
             "Old Jerusalem",
             "New Jerusalem",
@@ -52650,11 +55057,6 @@
             "Comfort, Comfort My People",
             "The Trial",
             "A \u201cNew Thing\u201d",
-            "Servant\u2019s Mission",
-            "\u29b7 Servant\u2019s Empowerment",
-            "Servant is Rejected and Killed",
-            "Servant Lives Again",
-            "Two Ways to Respond",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
             "Wicked vs. Servants",
@@ -53125,7 +55527,6 @@
         ],
         "Themes": [
             "Fleeing Babylon",
-            "Zion",
             "Knowing God",
             "Destruction",
             "Father\u2013Son",
@@ -53278,12 +55679,58 @@
             "Apostasy",
             "Judgment",
             "Restoration",
-            "Salvation",
             "Local Ugaritic Structures",
             "Ugaric Cycle 1",
             "Ugaric Cycle 2",
             "Ugaric Cycle 3",
             "Ugaric Cycle 4"
+        ],
+        "Mini-Studies": [
+            "Salvation",
+            "Zion",
+            "The Servant",
+            "Servant\u2019s Mission",
+            "\u29b7 Servant\u2019s Empowerment",
+            "Servant is Rejected and Killed",
+            "Servant Lives Again",
+            "Two Ways to Respond",
+            "Endtime Participants",
+            "Endtime Servants",
+            "Babylon",
+            "Egypt",
+            "Assyria",
+            "The Servant (Word Link)",
+            "Righteousness",
+            "Peace\/Healing",
+            "Righteousness and Salvation",
+            "Mountains",
+            "Humanity\u2019s Maker",
+            "The Servant and the Tyrant",
+            "The King of Babylon and the King of Zion",
+            "The Servant (Type)",
+            "The Tyrant",
+            "Hand\/Ensign",
+            "Rod\/Staff",
+            "Anger\/Wrath",
+            "Sea\/River 1",
+            "Sea\/River 2",
+            "Sword\/Fire",
+            "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "Light\/Darkness",
+            "Endtime Events",
+            "Ladder to Heaven",
+            "Re-Creation",
+            "De-Creation",
+            "Conditional Covenants",
+            "Unconditional Covenants",
+            "Individual and Collective Covenants",
+            "Covenant Blessings",
+            "Covenant Curses",
+            "Millennial Covenant",
+            "Believers\u2019 Descent Phase",
+            "Believers\u2019 Ascent Phase",
+            "Jehovah\u2019s Descent Phase",
+            "Jehovah\u2019s Ascent Phase"
         ],
         "Local Ugaritic Structures": [
             "Ugaric Cycle 1",
@@ -53292,8 +55739,8 @@
             "Ugaric Cycle 4"
         ],
         "Curses\/Blessings": [
-            "Covenant Curses",
-            "Covenant Blessings"
+            "Covenantal Curses",
+            "Covenantal Blessings"
         ],
         "Zion Ideological Structure": [
             "Wicked Destroyed",
@@ -53381,7 +55828,6 @@
             "Judgment\u2014Nations",
             "Rise & Fall of Jerusalem",
             "Annoucement of Hope",
-            "The Servant",
             "Servants\u2019 Inheritance",
             "Old Jerusalem",
             "New Jerusalem",
@@ -53395,11 +55841,6 @@
             "Comfort, Comfort My People",
             "The Trial",
             "A \u201cNew Thing\u201d",
-            "Servant\u2019s Mission",
-            "\u29b7 Servant\u2019s Empowerment",
-            "Servant is Rejected and Killed",
-            "Servant Lives Again",
-            "Two Ways to Respond",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
             "Wicked vs. Servants",
@@ -53661,10 +56102,10 @@
         "Salvation": {
             "18823": 125
         },
-        "Covenant Curses": {
+        "Covenantal Curses": {
             "17656": 766
         },
-        "Covenant Blessings": {
+        "Covenantal Blessings": {
             "18422": 526
         },
         "Wicked Destroyed": {
@@ -53739,6 +56180,10 @@
         "textual-compositions": [
             "Textual Compositions",
             "Elements of prose and literature"
+        ],
+        "ministudies": [
+            "Mini-Studies",
+            "Passage lookup excercised from \"Isaiah Made Simple\""
         ],
         "n-a": [
             "",
@@ -54089,8 +56534,8 @@
             "An Assyrian threat appears amid a Davidic reign"
         ],
         "hand-ensign": [
-            "\u29b7 Hand\u2194Ensign",
-            "\u201cHand\u201d parallels the Davidic \u201censign\u201d"
+            "Hand\/Ensign",
+            "Mini-Study: Keywords\u2014Hand\/Ensign"
         ],
         "3-linked-events": [
             "3 Linked Events",
@@ -54714,7 +57159,7 @@
         ],
         "salvation": [
             "Salvation",
-            "God\u2019s Elect People Inherit the Millennial Age"
+            "Mini-Study: Word Links\u2014Salvation"
         ],
         "local-ugariticstructures": [
             "Local Ugaritic Structures",
@@ -54736,12 +57181,12 @@
             "Ugaric Cycle 4",
             ""
         ],
-        "covenant-curses": [
-            "Covenant Curses",
+        "covenantal-curses": [
+            "Covenantal Curses",
             "God\u2019s People Suffer the Consequences of Wickedness"
         ],
-        "covenant-blessings": [
-            "Covenant Blessings",
+        "covenantal-blessings": [
+            "Covenantal Blessings",
             "God\u2019s People Enjoy the Fruits of Righteousness"
         ],
         "wicked-destroyed": [
@@ -54786,7 +57231,7 @@
         ],
         "zion": [
             "Zion",
-            "The emergence of a city of God"
+            "Mini-Study: Codenames\u2014Zion"
         ],
         "knowing-god": [
             "Knowing God",
@@ -55026,7 +57471,7 @@
         ],
         "theservant": [
             "The Servant",
-            "The Role of a Davidic Servant"
+            "Mini-Study: Synonymous Parallels\u2014The Servant"
         ],
         "servants-inheritance": [
             "Servants\u2019 Inheritance",
@@ -55439,6 +57884,150 @@
         "satisfaction": [
             "\u24cd Satisfaction",
             ""
+        ],
+        "endtime-participants": [
+            "Endtime Participants",
+            "Mini-Study: Characters\u2014Endtime Participants"
+        ],
+        "endtimeservants": [
+            "Endtime Servants",
+            "Mini-Study: Characters\u2014Endtime Servants"
+        ],
+        "babylon": [
+            "Babylon",
+            "Mini-Study: Codenames\u2014Babylon"
+        ],
+        "egypt": [
+            "Egypt",
+            "Mini-Study: Codenames\u2014Egypt"
+        ],
+        "assyria": [
+            "Assyria",
+            "Mini-Study: Codenames\u2014Assyria"
+        ],
+        "theservant-word-link": [
+            "The Servant (Word Link)",
+            "Mini-Study: Word Links\u2014The Servant"
+        ],
+        "righteousness": [
+            "Righteousness",
+            "Mini-Study: Word Links\u2014Righteousness"
+        ],
+        "peace-healing": [
+            "Peace\/Healing",
+            "Mini-Study: Word Links\u2014Peace\/Healing"
+        ],
+        "righteousness-andsalvation": [
+            "Righteousness and Salvation",
+            "Mini-Study: Complementary Parallels\u2014Righteousness and Salvation"
+        ],
+        "mountains": [
+            "Mountains",
+            "Mini-Study: Synonymous Chiasms\u2014Mountains"
+        ],
+        "humanitys-maker": [
+            "Humanity\u2019s Maker",
+            "Mini-Study: Synonymous Chiasms\u2014Humanity\u2019s Maker"
+        ],
+        "theservant-and-the-tyrant": [
+            "The Servant and the Tyrant",
+            "Mini-Study: Antithetical Parallels\u2014The Servant and the Tyrant"
+        ],
+        "the-king-of-babylon-and-the-king-of-zion": [
+            "The King of Babylon and the King of Zion",
+            "Mini-Study: Antithetical Structure\u2014The King of Babylon and the King of Zion"
+        ],
+        "theservant-type": [
+            "The Servant (Type)",
+            "Mini-Study: Types\/Precedents\u2014The Servant"
+        ],
+        "the-tyrant": [
+            "The Tyrant",
+            "Mini-Study: Types\/Precedents\u2014The Tyrant"
+        ],
+        "rodstaff": [
+            "Rod\/Staff",
+            "Mini-Study: Keywords\u2014Rod\/Staff"
+        ],
+        "anger-wrath": [
+            "Anger\/Wrath",
+            "Mini-Study: Keywords\u2014Anger\/Wrath"
+        ],
+        "sea-river-1": [
+            "Sea\/River 1",
+            "Mini-Study: Keywords\u2014Sea\/River"
+        ],
+        "sea-river-2": [
+            "Sea\/River 2",
+            "Mini-Study: Keywords\u2014Sea\/River"
+        ],
+        "sword-fire": [
+            "Sword\/Fire",
+            "Mini-Study: Keywords\u2014Sword\/Fire"
+        ],
+        "voice-mouth-lips-tongue-breath": [
+            "Voice\/Mouth\/Lips\/Tongue\/Breath",
+            "Mini-Study: Keywords\u2014Voice\/Mouth\/Lips\/Tongue\/Breath"
+        ],
+        "light-darkness": [
+            "Light\/Darkness",
+            "Mini-Study: Keywords\u2014Light\/Darkness"
+        ],
+        "endtime-events": [
+            "Endtime Events",
+            "Mini-Study: Domino Effect\u2014Endtime Events"
+        ],
+        "ladder-to-heaven": [
+            "Ladder to Heaven",
+            "Mini-Study: Spiritual Levels\u2014Ladder to Heaven"
+        ],
+        "re-creation": [
+            "Re-Creation",
+            "Mini-Study: Spiritual Levels\u2014Re-Creation"
+        ],
+        "de-creation": [
+            "De-Creation",
+            "Mini-Study: Spiritual Levels\u2014De-Creation"
+        ],
+        "conditional-covenants": [
+            "Conditional Covenants",
+            "Mini-Study: Covenants\u2014Conditional Covenants"
+        ],
+        "unconditional-covenants": [
+            "Unconditional Covenants",
+            "Mini-Study: Covenants\u2014Unconditional Covenants"
+        ],
+        "individual-and-collective-covenants": [
+            "Individual and Collective Covenants",
+            "Mini-Study: Covenants\u2014Individual and Collective Covenants"
+        ],
+        "covenant-blessings": [
+            "Covenant Blessings",
+            "Mini-Study: Covenants\u2014Covenant Blessings"
+        ],
+        "covenant-curses": [
+            "Covenant Curses",
+            "Mini-Study: Covenants\u2014Covenant Curses"
+        ],
+        "millennial-covenant": [
+            "Millennial Covenant",
+            "Mini-Study: Covenants\u2014Millennial Covenant"
+        ],
+        "believers-descent-phase": [
+            "Believers\u2019 Descent Phase",
+            "Mini-Study: Covenants\u2014Believers\u2019 Descent Phase"
+        ],
+        "believers-ascent-phase": [
+            "Believers\u2019 Ascent Phase",
+            "Mini-Study: Covenants\u2014Believers\u2019 Ascent Phase"
+        ],
+        "jehovahs-descent-phase": [
+            "Jehovah\u2019s Descent Phase",
+            "Mini-Study: Covenants\u2014Jehovah\u2019s Descent Phase"
+        ],
+        "jehovahs-ascent-phase": [
+            "Jehovah\u2019s Ascent Phase",
+            "Mini-Study: Covenants\u2014Jehovah\u2019s Ascent Phase"
         ]
     }
 }
