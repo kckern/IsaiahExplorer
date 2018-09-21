@@ -2851,6 +2851,12 @@
       <priority>0.8</priority>
    </url>
    <url>
+      <loc>https://isaiah.scripture.guide/tag.questions-answers</loc>
+      <lastmod>2018-09-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
       <loc>https://isaiah.scripture.guide/1</loc>
       <lastmod>2018-09-21</lastmod>
       <changefreq>monthly</changefreq>
