@@ -382,7 +382,7 @@ class TagBlocks extends Component {
 				}	
 			}
 			
-			var showdesc = entry.desc;
+			var showdesc = entry.desc; 
 			var highlights = null;
 			if(entry.highlight!==undefined) highlights = entry.highlight;
 			
