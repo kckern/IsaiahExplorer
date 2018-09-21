@@ -378,7 +378,6 @@ class TagBlocks extends Component {
 						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
 						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
-						debugger;
 						if(entry.post_details !== "" && entry.post_details !== 0)   post_details = (<div className="post_detail" >{app.addLinks(entry.post_details)}</div>)
 				}	
 			}
