@@ -363,6 +363,7 @@ class TagBlocks extends Component {
 			var desc_classes=["desc"]; 
 			var isFloater = false;
 			
+			var heading = null;
 			var details = null;
 			var post_details = null;
 			
@@ -377,8 +378,9 @@ class TagBlocks extends Component {
 						done = true;
 						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
-						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
-						if(entry.post_details !== "" && entry.post_details !== 0)   post_details = (<div className="post_detail" >{app.addLinks(entry.post_details)}</div>)
+						if(entry.heading !== undefined)  heading = <h3>{entry.heading}</h3>;
+						if(entry.details !== undefined)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
+						if(entry.post_details !== undefined)   post_details = (<div className="post_detail" >{app.addLinks(entry.post_details)}</div>)
 				}	
 			}
 			
@@ -415,7 +417,7 @@ class TagBlocks extends Component {
 			   	
 			 return (
 			    <div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
-			        {item}{details}
+			        {heading}{item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			        {post_details}
 			    </div>
