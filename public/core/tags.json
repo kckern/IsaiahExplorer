@@ -20995,7 +20995,7 @@
                 "oref": "Isaiah 60:16; Isaiah 61:6; Isaiah 62:8-9; Isaiah 65:4, 11, 13, 21-22, 25; Isaiah 66:11, 17"
             }
         ],
-        "Covenant Curses": [
+        "Covenantal Curses": [
             {
                 "desc": "",
                 "verses": [
@@ -21102,22 +21102,9 @@
                 ],
                 "ref": "1:7\u201324;  2:10;  3:6\u201311;  4:4;  5:6,8\u201327;  6:5\u201311;  7:4\u20136;  8:15;  9:5;  10:5,23\u201334;  12:1;  13:3\u201322;  15:1\u20137;  17:1\u201313;  18:1;  19:5;  21:2\u20139,15;  22:4\u201325;  23:11\u201314;  24:12\u201318;  25:2\u201312;  26:5\u201321;  27:4;  28:1\u201322;  29:1\u201315;  30:1\u201327;  31:1\u20138;  32:7;  33:1\u20138;  34:3\u20137;  36:10;  37:3\u201312,18\u201319",
                 "oref": "Isaiah 1:7-24; Isaiah 2:10; Isaiah 3:6-11; Isaiah 4:4; Isaiah 5:6; Isaiah 5:8-27; Isaiah 6:5-11; Isaiah 7:4-6; Isaiah 8:15; Isaiah 9:5; Isaiah 10:5; Isaiah 10:23-34; Isaiah 12:1; Isaiah 13:3-23; Isaiah 15:1-7; Isaiah 17:1-13; Isaiah 18:1; Isaiah 19:5; Isaiah 21:2-9; Isaiah 21:15; Isaiah 22:4-25; Isaiah 23:11-14; Isaiah 24:12-18; Isaiah 25:2-12; Isaiah 26:5-21; Isaiah 27:4; Isaiah 28:1-22; Isaiah 29:1-15; Isaiah 30:1-27; Isaiah 31:1-8; Isaiah 32:7; Isaiah 33:1-8; Isaiah 34:3-7; Isaiah 36:10; Isaiah 37:3-12; Isaiah 37:18-19"
-            },
-            {
-                "desc": "Covenant Curses",
-                "verses": [
-                    {
-                        "18101": 2
-                    },
-                    [
-                        17764
-                    ]
-                ],
-                "ref": "24:5\u20136;  5:24",
-                "oref": "Isaiah 24:5-6; Isaiah Isaiah 5:24"
             }
         ],
-        "Covenant Blessings": [
+        "Covenantal Blessings": [
             {
                 "desc": "",
                 "verses": [
@@ -21200,21 +21187,6 @@
                 ],
                 "ref": "40:2;  41:14\u201325;  42:11;  43:1\u201312,14\u201317;  44:3,6\u201323;  46:7\u201313;  47:4\u201315;  48:13\u201320;  49:5\u201326;  50:2;  51:2\u201311;  53:8;  54:5\u201317;  55:2\u201312;  56:1\u20132;  57:13;  58:12;  59:1\u201320;  60:1\u201318;  61:7\u201310;  62\u201363:5;  65:16,18\u201323;  66:5",
                 "oref": "Isaiah 40:2; Isaiah 41:14-25; Isaiah 42:11; Isaiah 43:1-12; Isaiah 43:14-17; Isaiah 44:3; Isaiah 44:6-23; Isaiah 46:7-13; Isaiah 47:4-15; Isaiah 48:13-20; Isaiah 49:5-7; Isaiah 49:8-26; Isaiah 50:2; Isaiah 51:2-11; Isaiah 53:8; Isaiah 54:5-17; Isaiah 55:2-12; Isaiah 56:1-2; Isaiah 57:13; Isaiah 58:12; Isaiah 59:1-20; Isaiah 60:1-18; Isaiah 61:7-10; Isaiah 62:1-12; Isaiah 63:1-5; Isaiah 65:16; Isaiah 65:18-23; Isaiah 66:5"
-            },
-            {
-                "desc": "Covenant Blessings",
-                "verses": [
-                    {
-                        "18277": 2
-                    },
-                    [
-                        18280,
-                        18537,
-                        17718
-                    ]
-                ],
-                "ref": "32:17\u201318,20;  44:3;  3:10",
-                "oref": "Isaiah 32:17-18, 20; Isaiah Isaiah 44:3; Isaiah Isaiah 3:10"
             }
         ],
         "Wicked Destroyed": [
@@ -37479,7 +37451,7 @@
         ],
         "Sea\/River 1": [
             {
-                "desc": "Sea\/River 1",
+                "desc": "Sea\/River",
                 "verses": [
                     17815,
                     17803,
@@ -37493,7 +37465,7 @@
         ],
         "Sea\/River 2": [
             {
-                "desc": "Sea\/River 2",
+                "desc": "Sea\/River",
                 "verses": [
                     {
                         "18683": 2
@@ -37588,6 +37560,38 @@
                 ],
                 "ref": "54:10;  59:21;  61:8\u20139",
                 "oref": "Isaiah 54:10; Isaiah Isaiah 59:21; Isaiah Isaiah 61:8-9"
+            }
+        ],
+        "Covenant Blessings": [
+            {
+                "desc": "Covenant Blessings",
+                "verses": [
+                    {
+                        "18277": 2
+                    },
+                    [
+                        18280,
+                        18537,
+                        17718
+                    ]
+                ],
+                "ref": "32:17\u201318,20;  44:3;  3:10",
+                "oref": "Isaiah 32:17-18, 20; Isaiah Isaiah 44:3; Isaiah Isaiah 3:10"
+            }
+        ],
+        "Covenant Curses": [
+            {
+                "desc": "Covenant Curses",
+                "verses": [
+                    {
+                        "18101": 2
+                    },
+                    [
+                        17764
+                    ]
+                ],
+                "ref": "24:5\u20136;  5:24",
+                "oref": "Isaiah 24:5-6; Isaiah Isaiah 5:24"
             }
         ],
         "Believers\u2019 Descent Phase": [
@@ -39979,7 +39983,7 @@
             "Nephi",
             "Yahweh\u2019s End\u2013Time Servant",
             "\u29b7 To Listen\u2194Babylon",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "A Universal Entity",
             "Servant",
             "Righteousness and Salvation",
@@ -39990,7 +39994,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "(6\/7) Seraphs\u2013Seraphim",
             "\u29b7 To Listen\u2194Babylon",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Deliverance\u2194Ideal Vassal",
             "Two Arms",
@@ -40005,7 +40009,7 @@
             "Nephi",
             "(6\/7) Seraphs\u2013Seraphim",
             "\u29b7 To Listen\u2194Babylon",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Deliverance\u2194Ideal Vassal",
             "Two Arms",
@@ -40020,7 +40024,7 @@
             "Watchmen\/Prophets",
             "The Davidic Monarchy",
             "\u29b7 To Listen\u2194Babylon",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Ideal Vassal\u21ccLiving Oracle",
             "The Servant\u2014Word Link"
@@ -40029,7 +40033,7 @@
             "Nephi",
             "\u29b7 To Listen\u2194Babylon",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Redemptive Intervention",
@@ -40042,7 +40046,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u29b7 To Listen\u2194Babylon",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "A \u201cNew Thing\u201d",
             "Law\/Word\u21ccServant\u2019s Mission",
@@ -40056,7 +40060,7 @@
             "Nephi",
             "\u29b7 To Listen\u2194Babylon",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Suffering \u27a4 Hope",
             "Redemptive Intervention",
@@ -40070,7 +40074,7 @@
             "Israel\u2019s Exodus out of Egypt",
             "\u29b7 To Listen\u2194Babylon",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Fleeing Babylon",
             "A Universal Entity",
@@ -40146,7 +40150,7 @@
             "The Davidic Monarchy",
             "\u24cd My Reward Is With the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Servant\u2019s Mission",
             "\u24cd Individual Servant",
             "Deliverance\u2194Ideal Vassal",
@@ -40171,7 +40175,7 @@
             "The Davidic Monarchy",
             "\u24cd My Reward Is With the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Servant\u2019s Mission",
             "\u29b7 Servant\u2019s Empowerment",
             "Fleeing Babylon",
@@ -40200,7 +40204,7 @@
             "The Davidic Monarchy",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Servant\u2019s Empowerment",
             "\u29b7 Zion\u2194Babylon",
@@ -40227,7 +40231,7 @@
             "The Creation",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "\u24cd Individual Servant",
             "Redemptive Intervention",
@@ -40252,7 +40256,7 @@
             "\u24cd Gathering",
             "Restoration",
             "Exile Abroad",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Deliverance\u2194Ideal Vassal",
             "Proxy Roles",
@@ -40271,7 +40275,7 @@
             "The Creation",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Vassal\u2019s Redemption",
             "Cumulative Themes I \u2013 V",
@@ -40286,7 +40290,7 @@
             "The Creation",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Servant\u2019s Empowerment",
             "\u29b7 Zion\u2194Babylon",
             "Vassal\u2019s Redemption",
@@ -40301,7 +40305,7 @@
             "The Creation",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Fleeing Babylon",
             "Vassal\u2019s Redemption",
@@ -40315,7 +40319,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "A Universal Entity",
             "Suffering Before Salvation",
@@ -40327,7 +40331,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40338,7 +40342,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Servant\u2019s Empowerment",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology"
@@ -40347,7 +40351,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology"
         ],
@@ -40355,7 +40359,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40365,7 +40369,7 @@
             "Nephi",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40377,7 +40381,7 @@
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40389,7 +40393,7 @@
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40400,7 +40404,7 @@
             "(5\/7) Sons\u2013Servants",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40417,7 +40421,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Servant\u2019s Empowerment",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
@@ -40449,7 +40453,7 @@
             "\u24cd Gathering",
             "Israel\u2019s Rise and Fall",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -40470,7 +40474,7 @@
             "\u24cd Gathering",
             "Restoration",
             "Exile Abroad",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Zion Ideology",
             "Redemptive Intervention",
             "Servant Word Links",
@@ -40485,7 +40489,7 @@
             "\u24cd Gathering",
             "Restoration",
             "Exile Abroad",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Redemptive Intervention",
@@ -40503,7 +40507,7 @@
             "\u24cd Gathering",
             "Restoration",
             "Exile Abroad",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Redemptive Intervention",
@@ -40597,7 +40601,7 @@
             "\u29b7 High\/low\u2194Terror of the Lord",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "17697": [
             "Nephi",
@@ -40733,7 +40737,7 @@
             "Ruin\u2014National",
             "\u24cd Judgment of the Lord",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17715": [
@@ -40744,7 +40748,7 @@
             "Ruin",
             "\u24cd Judgment of the Lord",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17716": [
@@ -40756,7 +40760,7 @@
             "\u24cd Judgment of the Lord",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Oracles Against Judah"
         ],
@@ -40769,7 +40773,7 @@
             "\u24cd Judgment of the Lord",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Questions\/Answers"
         ],
@@ -40779,7 +40783,7 @@
             "Rebirth",
             "\u24cd Judgment of the Lord",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Universal Salvation",
             "Covenant Blessings"
@@ -40791,7 +40795,7 @@
             "\u24cd Judgment of the Lord",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17720": [
@@ -40948,7 +40952,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Avenge\/Reward",
             "\u24cd Jerusalem",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology"
         ],
         "17739": [
@@ -41027,7 +41031,7 @@
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "\u29b7 A Vineyard\u2194Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World"
         ],
         "17747": [
@@ -41045,7 +41049,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17749": [
@@ -41056,7 +41060,7 @@
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17750": [
@@ -41066,7 +41070,7 @@
             "Ruin",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17751": [
@@ -41076,7 +41080,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17752": [
@@ -41087,7 +41091,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17753": [
@@ -41098,7 +41102,7 @@
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17754": [
@@ -41108,7 +41112,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17755": [
@@ -41117,7 +41121,7 @@
             "Forms of Speech",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17756": [
@@ -41127,7 +41131,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17757": [
@@ -41137,7 +41141,7 @@
             "Ruin",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17758": [
@@ -41147,7 +41151,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17759": [
@@ -41156,7 +41160,7 @@
             "Forms of Speech",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "We\/Us\/Our\u2014Another Role"
         ],
@@ -41169,7 +41173,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "The Servant and the Tyrant",
             "Parallel Statements"
@@ -41181,7 +41185,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17762": [
@@ -41191,7 +41195,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17763": [
@@ -41201,7 +41205,7 @@
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17764": [
@@ -41213,8 +41217,9 @@
             "Primordial Chaos",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
+            "Covenant Curses",
             "Parallel Statements",
             "De-Creation"
         ],
@@ -41229,7 +41234,7 @@
             "Primordial Chaos",
             "\u29b7 Woe\u2194Therefore",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Hand\/Ensign",
             "Anger\/Wrath",
@@ -41244,7 +41249,7 @@
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd Attacks",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Parallel Statements"
         ],
@@ -41256,7 +41261,7 @@
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd Attacks",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed"
         ],
         "17768": [
@@ -41345,7 +41350,7 @@
             "Prophetic Paradigm",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17776": [
@@ -41357,7 +41362,7 @@
             "\u24cd Sending",
             "Prophetic Paradigm",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17777": [
@@ -41371,7 +41376,7 @@
             "\u29b7 Prophet\u2194People",
             "Prophetic Paradigm",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17778": [
@@ -41383,7 +41388,7 @@
             "\u24cd Sending",
             "\u29b7 Isaiah\u2194Seraph",
             "Prophetic Paradigm",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17779": [
@@ -41399,7 +41404,7 @@
             "\u24cd Sending",
             "\u29b7 Prophet\u2194People",
             "Prophetic Paradigm",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17780": [
@@ -41414,7 +41419,7 @@
             "Prophetic Paradigm",
             "3 Sons",
             "Israel\u2019s Rise and Fall",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Isaiah\u2019s Vision"
         ],
         "17781": [
@@ -41428,7 +41433,7 @@
             "\u29b7 Prophet\u2194People",
             "Prophetic Paradigm",
             "Cumulative Themes I \u2013 II",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Isaiah\u2019s Vision"
         ],
@@ -41491,7 +41496,7 @@
             "Rebellion\u2014Ahaz",
             "\u24cd Asking for a Sign",
             "King as Exemplar",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Ahaz and the Shoot"
         ],
         "17788": [
@@ -41503,7 +41508,7 @@
             "Rebellion\u2014Ahaz",
             "Rebellion\u2014People",
             "\u24cd Asking for a Sign",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Ahaz and the Shoot"
         ],
         "17789": [
@@ -41515,7 +41520,7 @@
             "Rebellion\u2014Ahaz",
             "Rebellion\u2014People",
             "\u24cd Asking for a Sign",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Ahaz and the Shoot",
             "Oracles Against Judah",
             "We\/Us\/Our\u2014Another Role"
@@ -41915,7 +41920,7 @@
             "\u24cd With Us Is God",
             "Cumulative Themes I \u2013 II",
             "Apostasy",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "17824": [
             "Nephi",
@@ -42059,7 +42064,7 @@
             "Rebellion\u2014People",
             "The Davidic Monarchy",
             "\u29b7 Darkness\u2194Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Ahaz and the Shoot",
             "Coronation Psalm",
             "Davidic King \ud83c\udd9a Assyrian King",
@@ -42278,7 +42283,7 @@
             "(1\/7) Perdition",
             "Assyria\u2019s World Conquest",
             "\u24cd Punishment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
@@ -42501,7 +42506,7 @@
             "Rebellion\u2014People",
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
             "Zion Ideology",
@@ -42514,7 +42519,7 @@
             "Rebellion\u2014People",
             "The Egyptian Bondage",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Coronation Psalm",
             "Davidic King \ud83c\udd9a Assyrian King",
@@ -42530,7 +42535,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Rebellion\u2014People",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Davidic King \ud83c\udd9a Assyrian King",
             "Endtime Participants",
@@ -42543,7 +42548,7 @@
             "Rebellion\u2014People",
             "Israel\u2019s Victory over Midian",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Coronation Psalm",
             "Davidic King \ud83c\udd9a Assyrian King",
@@ -42559,7 +42564,7 @@
             "Rebellion\u2014People",
             "The Egyptian Bondage",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Coronation Psalm",
             "Davidic King \ud83c\udd9a Assyrian King",
@@ -42575,7 +42580,7 @@
             "Rebellion\u2014People",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Assyria",
@@ -42586,7 +42591,7 @@
             "Rebellion\u2014People",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Assyria",
@@ -42597,7 +42602,7 @@
             "Rebellion\u2014People",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Assyria",
@@ -42608,7 +42613,7 @@
             "Rebellion\u2014People",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Assyria",
@@ -42619,7 +42624,7 @@
             "Rebellion\u2014People",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Zion Ideology",
@@ -42632,14 +42637,14 @@
             "Nephi",
             "Rebellion\u2014People",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King"
         ],
         "17885": [
             "Nephi",
             "Rebellion\u2014People",
             "\u29b7 Escape\u2194Judgment of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King \ud83c\udd9a Assyrian King"
         ],
         "17886": [
@@ -42877,7 +42882,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "(7\/7) Yahweh God of Israel",
             "\u24cd Saving Waters",
-            "Covenant Curses",
+            "Covenantal Curses",
             "3 Linked Events",
             "Zion Ideology",
             "Righteousness \u27a4 Salvation",
@@ -42973,7 +42978,7 @@
             "Nephi",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "Anger\/Wrath",
             "Parallel Statements"
@@ -42983,7 +42988,7 @@
             "Destruction",
             "Assyria\u2019s World Conquest",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "Endtime Participants",
@@ -42996,7 +43001,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Assyria\u2019s World Conquest",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43008,7 +43013,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -43018,7 +43023,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -43028,7 +43033,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -43043,7 +43048,7 @@
             "Cosmic Disturbance",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43059,7 +43064,7 @@
             "Destruction",
             "Cosmic Disturbance",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43072,7 +43077,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43086,7 +43091,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -43098,7 +43103,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Cosmic Disturbance",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43110,7 +43115,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -43123,7 +43128,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Assyria\u2019s World Conquest",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon"
@@ -43133,7 +43138,7 @@
             "Destruction",
             "Assyria\u2019s World Conquest",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon"
@@ -43144,7 +43149,7 @@
             "Assyria\u2019s World Conquest",
             "Cyrus\u2019 Universal Conquests",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Oracles Against Foreign Powers",
             "Babylon\u21ccUniversal",
@@ -43156,7 +43161,7 @@
             "Destruction",
             "Assyria\u2019s World Conquest",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon"
@@ -43168,7 +43173,7 @@
             "The Destruction of Sodom and Gomorrah",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
@@ -43187,7 +43192,7 @@
             "Destruction",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
@@ -43199,7 +43204,7 @@
             "Destruction",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
@@ -43211,7 +43216,7 @@
             "Destruction",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Coming Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
@@ -43650,7 +43655,7 @@
             "Nephi",
             "Destruction",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "The Composite City"
         ],
@@ -43660,7 +43665,7 @@
             "Didactics",
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "The Composite City"
@@ -43670,7 +43675,7 @@
             "Destruction",
             "Primordial Chaos",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "The Composite City",
@@ -43684,7 +43689,7 @@
             "Destruction",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "The Composite City",
@@ -43695,7 +43700,7 @@
         "18201": [
             "Nephi",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Visionaries",
             "The Composite City",
@@ -43704,7 +43709,7 @@
         "18202": [
             "Nephi",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "The Composite City",
             "Assyria Destroyed",
@@ -43714,7 +43719,7 @@
             "Nephi",
             "Disloyalty",
             "\u24cd Sealed Scroll",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18204": [
             "Nephi",
@@ -43723,7 +43728,7 @@
             "Watchmen\/Prophets",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd Sealed Scroll",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Visionaries",
             "Divine Guidance"
         ],
@@ -43731,7 +43736,7 @@
             "Nephi",
             "Didactics",
             "\u24cd Sealed Scroll",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Visionaries",
             "Divine Guidance"
         ],
@@ -43739,7 +43744,7 @@
             "Nephi",
             "Didactics",
             "\u24cd Sealed Scroll",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance"
         ],
         "18207": [
@@ -43751,7 +43756,7 @@
             "Mark",
             "The Davidic Monarchy",
             "\u24cd Sealed Scroll",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance",
             "Cumulative Themes I \u2013 VI",
             "Questions\/Answers"
@@ -43762,7 +43767,7 @@
             "Didactics",
             "Corinthians",
             "\u24cd Sealed Scroll",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Cursed Covenant People",
             "Divine Guidance",
             "Questions\/Answers"
@@ -43773,7 +43778,7 @@
             "Didactics",
             "\u29b7 The Wicked\u2194The Holy One",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Covenant with Death",
@@ -43872,7 +43877,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Gathering",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Redemptive Intervention",
             "Redemptive Roles",
@@ -44010,7 +44015,7 @@
             "Forms of Speech",
             "The Call of Abraham",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Suffering Before Salvation",
             "4 Biblical Covenants",
@@ -44022,7 +44027,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "Paradise",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
@@ -44040,7 +44045,7 @@
             "Jacob",
             "Forms of Speech",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Proxy Roles",
             "Cumulative Themes I \u2013 V",
@@ -44052,7 +44057,7 @@
             "Yahweh God of Israel",
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Redemptive Roles",
@@ -44072,7 +44077,7 @@
             "(7\/7) Yahweh God of Israel",
             "Cosmic Disturbance",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "A Universal Entity",
@@ -44089,7 +44094,7 @@
             "(5\/7) Sons\u2013Servants",
             "The Davidic Monarchy",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Suffering Before Salvation",
@@ -44105,7 +44110,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "(5\/7) Sons\u2013Servants",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Suffering Before Salvation",
@@ -44123,7 +44128,7 @@
             "Israel\u2019s Exodus out of Egypt",
             "Yahweh\u2019s Covenant",
             "\u24cd Awake",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Deliverance\u2194Ideal Vassal",
@@ -44145,7 +44150,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Awake",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Zion Ideology",
             "Redemptive Intervention",
@@ -44165,7 +44170,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Awake",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Redemptive Intervention",
@@ -44354,7 +44359,7 @@
             "Jacob",
             "Home, Exhile, Return",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Remnant of Israel",
             "Law & Word",
             "\u24cd Universal Appeal",
@@ -44612,7 +44617,7 @@
             "The Passover",
             "The Davidic Monarchy",
             "\u24cd Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Servant is Rejected and Killed",
             "\u29b7 Kings of Babylon & Zion",
             "\u24cd Suffering Figure",
@@ -44884,7 +44889,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "A Universal Entity",
@@ -44905,7 +44910,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
@@ -44920,7 +44925,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
@@ -44935,7 +44940,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
@@ -44952,7 +44957,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "A Universal Entity",
             "Suffering Before Salvation",
@@ -44968,7 +44973,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Peace\u21ccSalvation",
             "Suffering Before Salvation",
@@ -44985,7 +44990,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Suffering Before Salvation",
             "Cumulative Themes I \u2013 V",
@@ -44995,7 +45000,7 @@
             "Jesus",
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Suffering Before Salvation",
             "Cumulative Themes I \u2013 V",
@@ -45006,7 +45011,7 @@
             "John",
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Suffering Before Salvation",
@@ -45023,7 +45028,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Love",
             "Exile Abroad",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u29b7 Zion\u2194Babylon",
             "Law\/Word\u21ccServant\u2019s Mission",
@@ -45040,7 +45045,7 @@
             "Jesus",
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd Love",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
             "New Covenant",
@@ -45055,7 +45060,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd Love",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
             "New Covenant",
@@ -45073,7 +45078,7 @@
             "(6\/7) Seraphs\u2013Seraphim",
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd Love",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Two Ways to Respond",
             "\u29b7 Zion\u2194Babylon",
             "Suffering Before Salvation",
@@ -45100,7 +45105,7 @@
         "18196": [
             "Destruction",
             "\u24cd Visited by the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "The Composite City"
         ],
@@ -45114,7 +45119,7 @@
             "Primordial Chaos",
             "\u24cd Covenant With Death",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "Covenant with Death",
@@ -45128,7 +45133,7 @@
             "Avenge\/Reward",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Covenant With Death",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "Covenant with Death",
@@ -45141,7 +45146,7 @@
             "Avenge\/Reward",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Covenant With Death",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Zion Ideology",
             "Covenant with Death",
@@ -45151,7 +45156,7 @@
         "18185": [
             "Destruction",
             "\u24cd Covenant With Death",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Assyria Destroyed"
         ],
@@ -45168,7 +45173,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Old Jerusalem",
             "A National Entity",
@@ -45182,7 +45187,7 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "Old Jerusalem",
             "The Composite City",
@@ -45200,7 +45205,7 @@
             "Lot\u2019s Deliverance from Sodom",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Wicked Destroyed",
             "The Composite City",
             "We\/Us\/Our\u2014Another Role",
@@ -45213,7 +45218,7 @@
             "The Destruction of Sodom and Gomorrah",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Questions\/Answers",
             "The Tyrant",
             "Ladder to Heaven"
@@ -45222,7 +45227,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45230,7 +45235,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45238,7 +45243,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45246,7 +45251,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45254,7 +45259,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45262,7 +45267,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45270,7 +45275,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Questions\/Answers",
             "The Tyrant",
             "Ladder to Heaven"
@@ -45279,7 +45284,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Tyrant",
             "Ladder to Heaven"
         ],
@@ -45287,7 +45292,7 @@
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Conditional Covenants",
             "The Tyrant",
             "Ladder to Heaven"
@@ -45299,7 +45304,7 @@
             "\u29b7 Israel\u2194Nations Motifs",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Woman Figure",
             "Ugaric Cycle 1",
             "Conditional Covenants",
@@ -45312,7 +45317,7 @@
             "Didactics",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Divine Guidance",
             "Great Division"
@@ -45324,7 +45329,7 @@
             "Father\u2013Son",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "Assyria Destroyed",
@@ -45337,7 +45342,7 @@
             "Didactics",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "Visionaries",
@@ -45351,7 +45356,7 @@
             "Loyalty",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "Assyria Destroyed",
@@ -45365,7 +45370,7 @@
             "Didactics",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "Assyria Destroyed",
@@ -45381,7 +45386,7 @@
             "Didactics",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Assyria Destroyed",
@@ -45394,7 +45399,7 @@
             "Forms of Speech",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Reprobates",
             "Assyria Destroyed",
             "Cursed Covenant People",
@@ -45408,7 +45413,7 @@
             "Loyalty",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Redemptive Roles",
             "Reprobates",
             "Assyria Destroyed"
@@ -45418,7 +45423,7 @@
             "Disloyalty",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Reprobates",
             "Assyria Destroyed"
         ],
@@ -45427,7 +45432,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Reprobates",
             "Righteous Remnant",
@@ -45442,7 +45447,7 @@
             "\u29b7 Justice\u2194Punishments",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "The Composite City",
             "Woman Figure",
@@ -45471,7 +45476,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Atonement",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering"
         ],
@@ -45554,7 +45559,7 @@
             "Forms of Speech",
             "The Tower of Babel",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Two Cities",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
@@ -45568,7 +45573,7 @@
             "Forms of Speech",
             "The Tower of Babel",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "City\u2194Moab\u2019s Agression",
@@ -45591,7 +45596,7 @@
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
             "Feast",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -45831,7 +45836,7 @@
             "\u29b7 Messages to Hezekiah",
             "3 Sons",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance"
         ],
         "18342": [
@@ -46018,7 +46023,7 @@
             "3 Sons",
             "Hezekiah\u2019s Ascent",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes",
             "Woman Figure"
         ],
@@ -46030,7 +46035,7 @@
             "\u29b7 Messages to Hezekiah",
             "King as Exemplar",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes",
             "Cumulative Themes I \u2013 II"
         ],
@@ -46041,7 +46046,7 @@
             "Compliance\u2014Hezekiah",
             "\u29b7 Messages to Hezekiah",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes",
             "Stories of Isaiah"
         ],
@@ -46052,7 +46057,7 @@
             "Compliance\u2014Hezekiah",
             "\u29b7 Messages to Hezekiah",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes",
             "Stories of Isaiah"
         ],
@@ -46065,7 +46070,7 @@
             "\u29b7 Messages to Hezekiah",
             "Hezekiah\u2019s Ascent",
             "Restoration",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes"
         ],
         "18361": [
@@ -46074,7 +46079,7 @@
             "\u24cd Narrative Structure",
             "\u29b7 Messages to Hezekiah",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes"
         ],
         "18362": [
@@ -46084,7 +46089,7 @@
             "Assyria\u2019s Siege of Jerusalem",
             "\u29b7 Messages to Hezekiah",
             "Hezekiah\u2019s Ascent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes"
         ],
         "18363": [
@@ -46097,7 +46102,7 @@
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
             "Victory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Davidic King Intercedes",
             "Allegiance",
             "\u29b7 King of Assyria\u2194King of Babylon"
@@ -46113,7 +46118,7 @@
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
             "Victory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Redemptive Roles"
         ],
@@ -46128,7 +46133,7 @@
             "\u29b7 Ch 40\u2194Chs 36\u201337",
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Redemptive Roles"
         ],
@@ -46212,7 +46217,7 @@
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
             "Victory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Hezekiah\u2019s Rise",
             "Endtime Participants",
             "Assyria"
@@ -46232,7 +46237,7 @@
             "\u29b7 Ch 40\u2194Chs 36\u201337",
             "Hezekiah\u2019s Ascent",
             "Cumulative Themes I \u2013 II",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Hezekiah\u2019s Rise"
         ],
         "18373": [
@@ -46877,7 +46882,7 @@
             "\u29b7 Isaiah\u2194Seraph",
             "\u29b7 Prophet\u2194People",
             "Cumulative Themes I \u2013 II",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Comfort, Comfort My People",
             "Woman Figure",
             "Ladder to Heaven"
@@ -46996,7 +47001,7 @@
             "Primordial Chaos",
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Redemptive Intervention",
             "Deliverance\u2194Ideal Vassal",
@@ -47010,7 +47015,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "Israel\u2019s Wandering in the Wilderness",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Deliverance\u2194Ideal Vassal",
             "Agents\u2019 Redemptive Roles",
@@ -47022,7 +47027,7 @@
             "Israel\u2019s Wandering in the Wilderness",
             "Paradise",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Deliverance\u2194Ideal Vassal",
             "Agents\u2019 Redemptive Roles",
@@ -47034,7 +47039,7 @@
             "Israel\u2019s Wandering in the Wilderness",
             "Paradise",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Deliverance\u2194Ideal Vassal",
             "Agents\u2019 Redemptive Roles",
@@ -47047,7 +47052,7 @@
             "Israel\u2019s Wandering in the Wilderness",
             "Paradise",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Deliverance\u2194Ideal Vassal",
             "Agents\u2019 Redemptive Roles",
@@ -47057,25 +47062,25 @@
         "18473": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation"
         ],
         "18474": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation"
         ],
         "18475": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation"
         ],
         "18476": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation"
         ],
         "18477": [
@@ -47083,7 +47088,7 @@
             "Primordial Chaos",
             "Cyrus\u2019 Universal Conquests",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Zion Ideology",
             "Chaos Before Creation"
         ],
@@ -47249,7 +47254,7 @@
             "Covenantal Naming",
             "Hezekiah\u2019s Ascent",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47265,7 +47270,7 @@
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd I Am the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47278,7 +47283,7 @@
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47293,7 +47298,7 @@
             "\u24cd Chaos\u2194Creation",
             "\u24cd I Am the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "The Trial",
@@ -47306,7 +47311,7 @@
             "(5\/7) Sons\u2013Servants",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47326,7 +47331,7 @@
             "Israel\u2019s Exodus out of Egypt",
             "The Creation",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47345,7 +47350,7 @@
             "(5\/7) Sons\u2013Servants",
             "The Creation",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -47360,7 +47365,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd I Am the Lord",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Redemptive Intervention",
@@ -47373,7 +47378,7 @@
             "\u24cd Chaos\u2194Creation",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "The Trial",
             "Redemptive Intervention",
             "Cumulative Themes I \u2013 V",
@@ -47385,7 +47390,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "The Trial",
             "Redemptive Intervention",
             "Cumulative Themes I \u2013 V",
@@ -47397,7 +47402,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "Israel\u2019s Exodus out of Egypt",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "The Trial",
             "Redemptive Intervention",
             "Cumulative Themes I \u2013 V",
@@ -47499,6 +47504,7 @@
             "\u24cd Chaos\u2194Creation",
             "Israel\u2019s Pilgrimage to Zion",
             "\u24cd Idolatry",
+            "Covenantal Blessings",
             "Covenant Blessings"
         ],
         "18538": [
@@ -47511,7 +47517,7 @@
             "\u24cd Chaos\u2194Creation",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "Endtime Participants",
@@ -47522,7 +47528,7 @@
             "The Creation",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "Redemptive Roles"
@@ -47532,7 +47538,7 @@
             "The Creation",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "The Trial",
@@ -47548,7 +47554,7 @@
             "The Creation",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Remnant of Israel",
@@ -47560,7 +47566,7 @@
             "\u24cd Chaos\u2194Creation",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "A Universal Entity",
@@ -47734,7 +47740,7 @@
         "18597": [
             "\u24cd Chaos\u2194Creation",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Eastern Figure\u21ccRighteousness",
             "Questions\/Answers"
@@ -47745,7 +47751,7 @@
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Eastern Figure\u21ccRighteousness",
             "Parallel Statements"
@@ -47756,7 +47762,7 @@
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Eastern Figure\u21ccRighteousness",
             "Parallel Statements"
@@ -47768,7 +47774,7 @@
             "(3\/7) Jacob\u2013Israel",
             "The Davidic Monarchy",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Eastern Figure\u21ccRighteousness",
             "Self\u2013Exalation",
@@ -47833,7 +47839,7 @@
             "\u29b7 Servant\u2194Tyrant",
             "\u24cd Evils",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "Self\u2013Exalation",
@@ -47875,7 +47881,7 @@
         "18073": [
             "Narrative Characters",
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City",
             "Servant Types",
@@ -47904,7 +47910,7 @@
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Teach\u2194Command",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Questions\/Answers"
         ],
         "18172": [
@@ -47913,7 +47919,7 @@
             "Israel\u2019s Apostasy",
             "\u24cd Blooms",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Visionaries",
             "Covenant with Death",
             "Divine Guidance",
@@ -47925,7 +47931,7 @@
             "Loyalty",
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Questions\/Answers"
         ],
         "18252": [
@@ -47933,7 +47939,7 @@
             "Loyalty",
             "\u29b7 Look Not\u2194Utterly Deserted",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "4 Woes",
@@ -47950,7 +47956,7 @@
             "\u24cd To Take Refuge in Egypt\u2019s Shadow",
             "Judgment",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "4 Woes",
             "Reprobates",
@@ -47964,7 +47970,7 @@
             "Didactics",
             "Israel\u2019s Apostasy",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18178": [
             "Disloyalty",
@@ -47972,7 +47978,7 @@
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Teach\u2194Command",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance",
             "Questions\/Answers"
         ],
@@ -47980,7 +47986,7 @@
             "Disloyalty",
             "\u24cd Blooms",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "4 Woes",
             "Late Oracles"
@@ -47991,7 +47997,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd To Take Refuge in Egypt\u2019s Shadow",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Covenant with Death",
@@ -48003,7 +48009,7 @@
             "Disloyalty",
             "\u24cd To Take Refuge in Egypt\u2019s Shadow",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Cursed Covenant People",
@@ -48013,7 +48019,7 @@
             "Disloyalty",
             "\u24cd To Take Refuge in Egypt\u2019s Shadow",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Cursed Covenant People",
@@ -48023,7 +48029,7 @@
             "Disloyalty",
             "\u24cd To Take Refuge in Egypt\u2019s Shadow",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Cursed Covenant People",
@@ -48035,7 +48041,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Visionaries",
             "Reprobates",
             "Egypt"
@@ -48044,7 +48050,7 @@
             "Disloyalty",
             "\u24cd The Words of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Reprobates",
             "Egypt"
@@ -48053,7 +48059,7 @@
             "Disloyalty",
             "Didactics",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Endtime Participants",
             "Egypt",
             "Characterizations"
@@ -48062,7 +48068,7 @@
             "Disloyalty",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Reprobates",
             "Assyria Destroyed",
@@ -48077,7 +48083,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Covenant With Death",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Covenant with Death",
             "Assyrian Flood",
             "Cursed Covenant People",
@@ -48089,7 +48095,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Covenant With Death",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Covenant with Death",
             "Cursed Covenant People",
             "Divine Guidance",
@@ -48098,7 +48104,7 @@
         "18187": [
             "Disloyalty",
             "\u24cd Covenant With Death",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Covenant with Death",
             "Assyria Destroyed",
             "Cursed Covenant People",
@@ -48112,7 +48118,7 @@
             "Israel\u2019s Apostasy",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18181": [
             "Loyalty",
@@ -48123,7 +48129,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Covenant With Death",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Covenant with Death",
@@ -48136,7 +48142,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Righteous Remnant",
             "Covenant with Death",
@@ -48151,7 +48157,7 @@
             "\u24cd The Words of the Lord",
             "Israel\u2019s Rise and Fall",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Righteous Remnant",
@@ -48162,7 +48168,7 @@
             "Loyalty",
             "\u24cd Visited by the Lord",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "The Composite City",
@@ -48189,7 +48195,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Cursed Covenant People",
             "Questions\/Answers"
         ],
@@ -48211,7 +48217,7 @@
             "Israel\u2019s Apostasy",
             "\u29b7 Teach\u2194Command",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance",
             "Great Division",
             "Questions\/Answers"
@@ -48233,7 +48239,7 @@
             "\u24cd To Defile Idols",
             "Hezekiah\u2019s Ascent",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Questions\/Answers",
             "Characterizations"
@@ -48243,7 +48249,7 @@
             "Israel\u2019s Apostasy",
             "\u29b7 Teach\u2194Command",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance",
             "Questions\/Answers"
         ],
@@ -48252,13 +48258,13 @@
             "Israel\u2019s Apostasy",
             "\u24cd Blooms",
             "Judgment",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18171": [
             "Didactics",
             "\u24cd Blooms",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Assyria Destroyed",
             "Covenantal Loyalty"
         ],
@@ -48336,7 +48342,7 @@
             "The Davidic Monarchy",
             "Yahweh\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Remnant of Israel",
             "Servant Word Links",
             "Righteous Response",
@@ -48350,7 +48356,7 @@
         "18808": [
             "Romans",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -48359,7 +48365,7 @@
         "18809": [
             "Romans",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -48391,7 +48397,7 @@
             "(7\/7) Yahweh God of Israel",
             "\u24cd Consciousness of Sins",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -48435,14 +48441,14 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Teach\u2194Command",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Divine Guidance",
             "Questions\/Answers"
         ],
         "18066": [
             "Corinthians",
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
@@ -48453,7 +48459,7 @@
             "The Davidic Monarchy",
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation"
@@ -48464,7 +48470,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -48478,7 +48484,7 @@
         "18075": [
             "New Testament\u2013Other",
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City",
             "Cumulative Themes I \u2013 III",
@@ -48628,7 +48634,7 @@
             "Wicked Superlatives",
             "Israel\u2019s Apostasy",
             "\u24cd Complacent",
-            "Covenant Curses",
+            "Covenantal Curses",
             "The Composite City"
         ],
         "18269": [
@@ -48718,7 +48724,7 @@
             "Yahweh God of Israel",
             "\u24cd Hear What I Have Done",
             "Israel\u2019s Rise and Fall",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Redemptive Roles",
             "Two Arms",
@@ -48734,7 +48740,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u24cd Hear What I Have Done",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Leaders Condemned",
             "Zion Ideology",
@@ -48785,7 +48791,7 @@
             "Disinheritance",
             "\u24cd Hear What I Have Done",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Disparate Fates",
             "Personified Covenants",
@@ -48795,7 +48801,7 @@
             "Disinheritance",
             "\u24cd Hear What I Have Done",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Peace",
             "Disparate Fates",
@@ -48823,7 +48829,7 @@
             "Disinheritance",
             "\u24cd Hear What I Have Done",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Peace",
             "Disparate Fates"
@@ -48957,7 +48963,7 @@
             "The Davidic Monarchy",
             "Yahweh\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Law\/Word\u21ccServant\u2019s Mission",
             "Remnant of Israel",
             "Suffering Figure\u21ccYahweh",
@@ -48973,7 +48979,7 @@
             "The Davidic Monarchy",
             "Yahweh\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Remnant of Israel",
             "Servant Word Links",
             "\u24cd Universal Appeal",
@@ -48984,7 +48990,7 @@
         "18747": [
             "Home, Exhile, Return",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Remnant of Israel",
             "Righteous Response",
             "Law & Word",
@@ -49044,7 +49050,7 @@
             "Home, Exhile, Return",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Remnant of Israel",
             "Redemptive Roles"
@@ -49052,7 +49058,7 @@
         "18595": [
             "Home, Exhile, Return",
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Remnant of Israel",
             "Questions\/Answers"
@@ -49082,7 +49088,7 @@
             "The Davidic Monarchy",
             "\u24cd Satisfaction",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Persecution",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
@@ -49215,7 +49221,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Everlasting",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49230,7 +49236,7 @@
         "18078": [
             "Evil End\u2013Time Servant",
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City"
         ],
@@ -49262,7 +49268,7 @@
         "17994": [
             "Yahweh God of Israel",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -49275,7 +49281,7 @@
             "Yahweh God of Israel",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Redemptive Intervention"
         ],
@@ -49285,7 +49291,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49327,7 +49333,7 @@
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Tears Wiped",
             "Israel\u2019s Rise and Fall",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
@@ -49343,13 +49349,13 @@
             "Yahweh God of Israel",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering"
         ],
         "18518": [
             "Yahweh God of Israel",
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Redemptive Roles",
@@ -49360,7 +49366,7 @@
             "Yahweh God of Israel",
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
@@ -49382,7 +49388,7 @@
         "18812": [
             "Yahweh God of Israel",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -49394,7 +49400,7 @@
             "Yahweh God of Israel",
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -49416,7 +49422,7 @@
             "Paradise",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49430,7 +49436,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Everlasting",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49447,7 +49453,7 @@
             "The Davidic Monarchy",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49469,7 +49475,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
             "Zion Ideology",
@@ -49527,7 +49533,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -49541,7 +49547,7 @@
             "(5\/7) Sons\u2013Servants",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -49558,7 +49564,7 @@
             "The Davidic Monarchy",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -49575,7 +49581,7 @@
             "Primordial Chaos",
             "The Flood",
             "\u29b7 Destruction\u2194Strong Nation",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -49595,7 +49601,7 @@
             "Primordial Chaos",
             "Israel\u2019s Conquest of the Promised Land",
             "\u24cd I Am the Lord, Your God",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Chaos Before Creation",
             "Redemptive Intervention",
             "Deliverance\u2194Ideal Vassal",
@@ -49694,7 +49700,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "\u29b7 City\u21ccMoab",
@@ -49707,7 +49713,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Universal Suffering",
             "Universal Salvation",
@@ -49730,7 +49736,7 @@
         "18802": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -49757,7 +49763,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49808,7 +49814,7 @@
             "\u24cd Equality to the Gentiles",
             "Restoration",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Law & Word",
             "Covenantal Allegiance",
             "Ideal Vassal\u21ccLiving Oracle"
@@ -49829,7 +49835,7 @@
             "\u29b7 Jerusalem\u2194Forsaken",
             "Covenantal Naming",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -49850,7 +49856,7 @@
             "\u24cd The Sound of Terror",
             "\u24cd Judgment and Glory",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation",
@@ -49890,7 +49896,7 @@
         "18076": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City",
             "Cumulative Themes I \u2013 III",
@@ -49965,7 +49971,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "(5\/7) Sons\u2013Servants",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Universal Suffering",
             "Universal Salvation",
@@ -49975,7 +49981,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Universal Suffering",
             "Universal Salvation",
@@ -49996,7 +50002,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Hear What I Have Done",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Zion"
@@ -50021,7 +50027,7 @@
         "18805": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50031,7 +50037,7 @@
         "18815": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50044,7 +50050,7 @@
             "Paradise",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -50084,7 +50090,7 @@
         "18868": [
             "Yahweh\u2019s End\u2013Time Servant",
             "\u29b7 Silence\u2194Not to Be Forsaken",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50116,7 +50122,7 @@
             "The Davidic Monarchy",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -50149,7 +50155,7 @@
             "Yahweh\u2019s End\u2013Time Servant",
             "Assyria\u2019s Invasion of the Promised Land",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Assyria Destroyed",
@@ -50169,7 +50175,7 @@
             "Primordial Chaos",
             "\u29b7 Enter Into Peace\u2194No Peace",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
@@ -50194,7 +50200,7 @@
             "(7\/7) Yahweh God of Israel",
             "Yahweh\u2019s Protective Cloud",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Characterizations"
@@ -50204,7 +50210,7 @@
             "(7\/7) Yahweh God of Israel",
             "Yahweh\u2019s Protective Cloud",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering",
             "Characterizations"
         ],
@@ -50213,7 +50219,7 @@
             "Avenge\/Reward",
             "\u24cd The Mountain of the Lord",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Reprobates",
             "Prevailing Falsehoods",
@@ -50222,7 +50228,7 @@
         "18614": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Babylon\u2019s Demise",
             "Components of Babylon",
@@ -50283,7 +50289,7 @@
             "Yahweh\u2019s Protective Cloud",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -50306,7 +50312,7 @@
             "Israel\u2019s Pilgrimage to Zion",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -50331,7 +50337,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "(7\/7) Yahweh God of Israel",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50370,7 +50376,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Silence\u2194Not to Be Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50394,7 +50400,7 @@
         "18804": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50404,7 +50410,7 @@
         "18051": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 The Oracles\u2194The End Will Come",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon"
         ],
@@ -50418,7 +50424,7 @@
             "Cosmic Disturbance",
             "\u24cd Vengeance",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "Zion Ideology"
         ],
@@ -50431,7 +50437,7 @@
             "\u29b7 Ruin\u2194Rebirth Motifs",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u24cd Vengeance",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "De-Creation"
         ],
@@ -50459,7 +50465,7 @@
             "(4\/7) Zion\u2013Jerusalem",
             "Yahweh\u2019s Descent on the Mount",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Righteous Remnant",
@@ -50468,7 +50474,7 @@
         "18283": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Hear What I Have Done",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Personified Covenants",
@@ -50477,7 +50483,7 @@
         "18819": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50505,7 +50511,7 @@
         "18870": [
             "The End\u2013Time King of Assyria\/Babylon",
             "\u29b7 Silence\u2194Not to Be Forsaken",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -50527,7 +50533,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "The Passover",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering",
             "Suffering and Deliverance"
         ],
@@ -50544,7 +50550,7 @@
             "The End\u2013Time King of Assyria\/Babylon",
             "City of Tyre",
             "\u24cd Divine Plan",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
             "Components of Babylon",
@@ -50556,7 +50562,7 @@
             "Avenge\/Reward",
             "The Flood",
             "\u24cd Blooms",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Assyrian Flood",
             "Assyria Destroyed",
             "Questions\/Answers"
@@ -50566,7 +50572,7 @@
             "The Babylonian Captivity",
             "\u24cd Evils",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -50656,7 +50662,7 @@
             "Israel\u2019s Apostasy",
             "\u29b7 Justice\u2194Punishments",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "The Composite City",
             "Woman Figure",
@@ -50672,7 +50678,7 @@
             "\u29b7 Ruin\u2194Rebirth Motifs",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u24cd Vengeance",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "De-Creation"
         ],
@@ -50694,7 +50700,7 @@
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Cosmic Disturbance",
             "\u24cd Vengeance",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18308": [
             "Ruin\u2014Universal",
@@ -50704,7 +50710,7 @@
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Cosmic Disturbance",
             "\u24cd Vengeance",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal"
         ],
         "18313": [
@@ -50794,7 +50800,7 @@
             "\u29b7 Justice\u2194Punishments",
             "Apostasy",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Zion Ideology",
             "The Composite City",
@@ -50851,7 +50857,7 @@
             "(6\/7) Seraphs\u2013Seraphim",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -50891,7 +50897,7 @@
         "18144": [
             "(1\/7) Perdition",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
@@ -50901,7 +50907,7 @@
         "18145": [
             "(1\/7) Perdition",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
@@ -50911,7 +50917,7 @@
         "18607": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -50922,7 +50928,7 @@
         "18608": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -50931,7 +50937,7 @@
         "18609": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Tyre\u2194Babylon",
@@ -50941,7 +50947,7 @@
         "18610": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon"
@@ -50949,7 +50955,7 @@
         "18611": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Babylon\u2019s Demise",
             "Components of Babylon",
@@ -50960,7 +50966,7 @@
         "18042": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Universal Mission",
@@ -50969,7 +50975,7 @@
         "18043": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Universal Mission",
@@ -50978,7 +50984,7 @@
         "18044": [
             "(2\/7) Babylon\u2013Chaldea",
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Universal Mission",
@@ -50988,7 +50994,7 @@
             "(2\/7) Babylon\u2013Chaldea",
             "Cyrus\u2019 Universal Conquests",
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Oracles Against Foreign Powers",
             "Babylon\u2019s Demise",
             "Components of Babylon",
@@ -51061,7 +51067,7 @@
         "17987": [
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -51071,7 +51077,7 @@
         "17988": [
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -51080,7 +51086,7 @@
         "17989": [
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -51088,7 +51094,7 @@
         "17990": [
             "(3\/7) Jacob\u2013Israel",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -51097,7 +51103,7 @@
             "(3\/7) Jacob\u2013Israel",
             "Israel\u2019s Apostasy",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -51106,7 +51112,7 @@
             "(3\/7) Jacob\u2013Israel",
             "Israel\u2019s Apostasy",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -51115,19 +51121,19 @@
             "(4\/7) Zion\u2013Jerusalem",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18242": [
             "(4\/7) Zion\u2013Jerusalem",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18256": [
             "(4\/7) Zion\u2013Jerusalem",
             "The Passover",
             "\u29b7 Look Not\u2194Utterly Deserted",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "Zion Ideology",
             "Redemptive Roles",
@@ -51138,7 +51144,7 @@
             "(6\/7) Seraphs\u2013Seraphim",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -51153,7 +51159,7 @@
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -51188,7 +51194,7 @@
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
@@ -51201,7 +51207,7 @@
         "18138": [
             "(5\/7) Sons\u2013Servants",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering",
             "Universal Salvation",
             "Questions\/Answers"
@@ -51209,7 +51215,7 @@
         "18139": [
             "(5\/7) Sons\u2013Servants",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering",
             "Universal Salvation",
             "Questions\/Answers"
@@ -51221,7 +51227,7 @@
             "\u24cd Glory",
             "Salvation",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -51237,7 +51243,7 @@
             "(5\/7) Sons\u2013Servants",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -51361,7 +51367,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Everlasting",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Persecution",
             "\u24cd Announcing God\u2019s Kingdom",
@@ -51381,7 +51387,7 @@
             "\u24cd Glory",
             "Salvation",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Blessings",
@@ -51392,7 +51398,7 @@
             "The Davidic Monarchy",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Blessings",
@@ -51506,7 +51512,7 @@
             "(7\/7) Yahweh God of Israel",
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation"
@@ -51516,7 +51522,7 @@
             "The Davidic Monarchy",
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation"
@@ -51526,7 +51532,7 @@
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
@@ -51540,7 +51546,7 @@
             "\u24cd Glory",
             "Salvation",
             "Feast",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -51555,7 +51561,7 @@
         "18914": [
             "(7\/7) Yahweh God of Israel",
             "\u29b7 Call\u2194Answer",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Children of Zion"
@@ -51576,7 +51582,7 @@
             "Israel\u2019s Apostasy",
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
@@ -51585,7 +51591,7 @@
             "Primordial Chaos",
             "\u29b7 Justice\u2194Punishments",
             "Apostasy",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Allegiance",
             "Woman Figure",
             "Ugaric Cycle 1",
@@ -51595,7 +51601,7 @@
         "18121": [
             "The Tower of Babel",
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Two Cities",
             "\u29b7 Righteous vs. the World",
             "City Attributes",
@@ -51607,7 +51613,7 @@
             "The Tower of Babel",
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Reprobates"
         ],
         "18853": [
@@ -51616,7 +51622,7 @@
             "Yahweh\u2019s Covenant",
             "\u24cd Everlasting",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -51658,7 +51664,7 @@
             "Cosmic Disturbance",
             "\u24cd The Sound of Terror",
             "\u24cd Judgment and Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Cumulative Themes I \u2013 V",
@@ -51699,7 +51705,7 @@
             "The Flood",
             "\u29b7 Destruction\u2194Strong Nation",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -51723,7 +51729,7 @@
         "18811": [
             "Assyria\u2019s Invasion of the Promised Land",
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -51734,7 +51740,7 @@
         "18753": [
             "Israel\u2019s Wandering in the Wilderness",
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Two Ways to Respond",
             "Peace",
             "Law & Word",
@@ -51757,7 +51763,7 @@
             "Israel\u2019s Pilgrimage to Zion",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -51768,7 +51774,7 @@
             "Israel\u2019s Pilgrimage to Zion",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -51778,7 +51784,7 @@
         "18152": [
             "The Passover",
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering",
             "Universal Salvation",
             "Suffering and Deliverance",
@@ -51860,7 +51866,7 @@
             "\u24cd I Am the Lord, Your God",
             "Hezekiah\u2019s Ascent",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Chaos Before Creation",
             "Redemptive Intervention",
@@ -51875,7 +51881,7 @@
         "17962": [
             "Cyrus\u2019 Universal Conquests",
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Oracles Against Foreign Powers",
             "Components of Babylon",
@@ -51887,7 +51893,7 @@
         "17985": [
             "Cyrus\u2019 Universal Conquests",
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Oracles Against Foreign Powers",
             "Components of Babylon",
@@ -51900,7 +51906,7 @@
             "\u24cd Overwatching God",
             "\u29b7 Destruction\u2194Strong Nation",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Oracles Against Foreign Powers",
             "Babylon\u21ccUniversal",
@@ -52026,7 +52032,7 @@
             "The Davidic Monarchy",
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
@@ -52050,7 +52056,7 @@
             "The Davidic Monarchy",
             "\u24cd Peace",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Suffering and Deliverance",
@@ -52061,7 +52067,7 @@
             "Paradise",
             "\u29b7 Call\u2194Answer",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants"
         ],
@@ -52071,7 +52077,7 @@
             "\u29b7 Call\u2194Answer",
             "Salvation",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Blessings"
@@ -52081,7 +52087,7 @@
             "Paradise",
             "\u29b7 Call\u2194Answer",
             "Feast",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Blessings"
@@ -52091,7 +52097,7 @@
             "Paradise",
             "\u29b7 Call\u2194Answer",
             "Feast",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Blessings"
@@ -52100,7 +52106,7 @@
             "The Davidic Monarchy",
             "Paradise",
             "\u29b7 Call\u2194Answer",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Blessings"
@@ -52183,7 +52189,7 @@
             "Zion as Yahweh\u2019s Residence",
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
@@ -52202,7 +52208,7 @@
             "The Creation",
             "\u29b7 Call\u2194Answer",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Sum of Redemption",
@@ -52244,7 +52250,7 @@
         ],
         "17963": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52252,7 +52258,7 @@
         ],
         "17964": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52260,7 +52266,7 @@
         ],
         "17965": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52268,7 +52274,7 @@
         ],
         "17966": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52276,7 +52282,7 @@
         ],
         "17967": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52284,7 +52290,7 @@
         ],
         "17968": [
             "\u24cd Salvation of Moab",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -52385,21 +52391,21 @@
         ],
         "17986": [
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "17993": [
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "17995": [
             "\u29b7 Glory As the Israelites\u2194Branches",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -52442,7 +52448,7 @@
         ],
         "18010": [
             "\u24cd Egyptian Drought",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52572,7 +52578,7 @@
         ],
         "18038": [
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Visionaries",
@@ -52580,7 +52586,7 @@
         ],
         "18039": [
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -52588,7 +52594,7 @@
         ],
         "18040": [
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -52596,7 +52602,7 @@
         ],
         "18041": [
             "\u24cd A Chariot, a Pair of Horses",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
@@ -52638,7 +52644,7 @@
         ],
         "18057": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -52648,7 +52654,7 @@
         ],
         "18058": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
@@ -52658,69 +52664,69 @@
         ],
         "18059": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "18060": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "18061": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "18065": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "18067": [
             "\u24cd The Day of the Lord",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon"
         ],
         "18068": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal"
         ],
         "18069": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "Cumulative Themes I \u2013 III"
         ],
         "18070": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal"
         ],
         "18071": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "Cumulative Themes I \u2013 III"
         ],
         "18072": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "Babylon\u2019s Humiliation",
             "Cumulative Themes I \u2013 III"
         ],
         "18074": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City",
             "Cumulative Themes I \u2013 III",
@@ -52728,7 +52734,7 @@
         ],
         "18077": [
             "\u24cd Expulsion \/ Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u21ccUniversal",
             "The Composite City",
             "The Servant\u2014Type"
@@ -52791,7 +52797,7 @@
         ],
         "18090": [
             "\u24cd Divine Plan",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
@@ -52800,7 +52806,7 @@
         ],
         "18091": [
             "\u24cd Divine Plan",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Babylon\u2019s Demise",
             "Components of Babylon",
@@ -52808,7 +52814,7 @@
         ],
         "18092": [
             "\u24cd Divine Plan",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
@@ -52930,7 +52936,7 @@
             "\u24cd Transgression",
             "\u24cd Judgment and Glory",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Two Cities",
             "\u29b7 Righteous vs. the World",
             "City Attributes",
@@ -52943,7 +52949,7 @@
             "\u24cd The Sound of Terror",
             "\u24cd Judgment and Glory",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation",
@@ -52954,7 +52960,7 @@
             "\u24cd Judgment and Glory",
             "Judgment",
             "Trouble at Home",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation",
@@ -52963,7 +52969,7 @@
         "18113": [
             "\u24cd The Sound of Terror",
             "\u24cd Judgment and Glory",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Isaiah Apocalypse",
@@ -52972,21 +52978,21 @@
         "18109": [
             "\u24cd Judgment and Glory",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
             "Universal Salvation"
         ],
         "18122": [
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Two Cities",
             "City\u21ccNations",
             "Universal Suffering"
         ],
         "18130": [
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "\u29b7 City\u21ccMoab",
@@ -52997,7 +53003,7 @@
         ],
         "18131": [
             "\u24cd Tears Wiped",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "\u29b7 City\u21ccMoab",
@@ -53008,7 +53014,7 @@
         ],
         "18143": [
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "Universal Suffering",
             "Universal Salvation",
@@ -53018,7 +53024,7 @@
         ],
         "18146": [
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Zion Ideology",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
@@ -53026,12 +53032,12 @@
         ],
         "18147": [
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering"
         ],
         "18148": [
             "\u24cd Peace",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Universal Suffering"
         ],
         "18159": [
@@ -53058,22 +53064,22 @@
         ],
         "18168": [
             "\u24cd Blooms",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Assyria Destroyed"
         ],
         "18169": [
             "\u24cd Blooms",
-            "Covenant Curses"
+            "Covenantal Curses"
         ],
         "18170": [
             "\u24cd Blooms",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Assyria Destroyed",
             "Covenantal Loyalty"
         ],
         "18186": [
             "\u24cd Covenant With Death",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Assyria Destroyed"
         ],
         "18189": [
@@ -53093,12 +53099,12 @@
         "18244": [
             "\u24cd To Defile Idols",
             "Judgment",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Peace\/Healing"
         ],
         "18284": [
             "\u24cd Hear What I Have Done",
-            "Covenant Curses",
+            "Covenantal Curses",
             "Leaders Condemned",
             "The Tyrant"
         ],
@@ -53211,7 +53217,7 @@
         ],
         "18492": [
             "\u24cd A New Song",
-            "Covenant Blessings"
+            "Covenantal Blessings"
         ],
         "18493": [
             "\u24cd A New Song",
@@ -53219,7 +53225,7 @@
         ],
         "18514": [
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Cyrus\u2019s Name",
@@ -53228,14 +53234,14 @@
         ],
         "18515": [
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Questions\/Answers"
         ],
         "18516": [
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "4 Agents",
@@ -53243,7 +53249,7 @@
         ],
         "18517": [
             "\u24cd I Am the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "The Trial",
             "Yahweh\u2019s Ascent",
@@ -53258,7 +53264,7 @@
         "18540": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Redemptive Intervention",
             "Divine Attributes",
@@ -53267,14 +53273,14 @@
         "18541": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Redemptive Intervention"
         ],
         "18544": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "Endtime Participants",
@@ -53283,7 +53289,7 @@
         "18545": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "Endtime Participants",
@@ -53292,35 +53298,35 @@
         "18546": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
         "18547": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
         "18548": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
         "18550": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
         "18551": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry",
             "Redemptive Roles"
@@ -53328,14 +53334,14 @@
         "18552": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
         "18553": [
             "\u24cd Idolatry",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Idolatry"
         ],
@@ -53352,7 +53358,7 @@
         ],
         "18596": [
             "\u24cd Creation by the Lord",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Eastern Figure\u21ccRighteousness",
             "Questions\/Answers"
@@ -53360,7 +53366,7 @@
         "18605": [
             "\u24cd Evils",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -53371,7 +53377,7 @@
         ],
         "18612": [
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -53379,7 +53385,7 @@
         ],
         "18613": [
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Zion\u2194Babylon",
@@ -53388,7 +53394,7 @@
         ],
         "18615": [
             "\u24cd Evils",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "Components of Babylon",
             "\u29b7 Tyre\u2194Babylon",
@@ -53400,7 +53406,7 @@
             "\u24cd Equality to the Gentiles",
             "Restoration",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Two Ways to Respond",
             "Exhortations",
             "Righteous Response",
@@ -53411,28 +53417,28 @@
         "18749": [
             "\u24cd Equality to the Gentiles",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Covenantal Allegiance",
             "Post-Exhile"
         ],
         "18750": [
             "\u24cd Equality to the Gentiles",
             "Restoration",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Covenantal Allegiance"
         ],
         "18751": [
             "\u24cd Equality to the Gentiles",
             "Restoration",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Two Ways to Respond",
             "Law & Word",
             "Covenantal Allegiance"
         ],
         "18756": [
             "\u24cd Equality to the Gentiles",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
             "Exhortations",
@@ -53608,7 +53614,7 @@
             "\u29b7 Enter Into Peace\u2194No Peace",
             "Restoration",
             "Happy Homecoming",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Wicked vs. Servants",
             "Response Dichotomy",
@@ -53624,7 +53630,7 @@
         ],
         "18803": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53633,14 +53639,14 @@
         ],
         "18806": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance"
         ],
         "18807": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53648,7 +53654,7 @@
         ],
         "18813": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53657,7 +53663,7 @@
         ],
         "18814": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53666,7 +53672,7 @@
         ],
         "18816": [
             "\u24cd Consciousness of Sins",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53677,7 +53683,7 @@
         "18830": [
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -53687,7 +53693,7 @@
         "18831": [
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
@@ -53697,7 +53703,7 @@
         "18834": [
             "\u24cd Glory",
             "Salvation",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "\u29b7 Zion\u2194Babylon",
@@ -53705,7 +53711,7 @@
         ],
         "18869": [
             "\u29b7 Silence\u2194Not to Be Forsaken",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Prayers of Repentance",
@@ -53866,25 +53872,25 @@
             "\u29b7 Jerusalem\u2194Forsaken",
             "Salvation",
             "Feast",
-            "Covenant Blessings",
+            "Covenantal Blessings",
             "Righteous Delivered",
             "\u24cd Announcing God\u2019s Kingdom",
             "Poems Announcing God\u2019s Kingdom",
             "Blessings"
         ],
         "18062": [
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "The Composite City"
         ],
         "18063": [
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
         "18064": [
-            "Covenant Curses",
+            "Covenantal Curses",
             "Components of Babylon",
             "Babylon\u21ccUniversal"
         ],
