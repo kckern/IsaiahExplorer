@@ -1507,7 +1507,8 @@ tr.metaref td div.meta + div.ref
 	display:block;
 }
 
-#text .detail 
+#text .detail,
+#text .post_detail
 {
 	font-style:italic;
 	margin:0 30px 10px 30px;
@@ -1522,6 +1523,13 @@ tr.metaref td div.meta + div.ref
 	cursor:text;
 }
 
+
+#text .post_detailx 
+{
+	margin-bottom:-10px;
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}
 
 #text .SearchReference + .detail 
 {

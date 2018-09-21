@@ -364,6 +364,7 @@ class TagBlocks extends Component {
 			var isFloater = false;
 			
 			var details = null;
+			var post_details = null;
 			
 			var selected_tag_block_index = app.state.selected_tag_block_index;
 			if(forceIndex!==null) selected_tag_block_index = forceIndex;
@@ -377,6 +378,8 @@ class TagBlocks extends Component {
 						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
 						if(entry.details !== "" && entry.details !== 0)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
+						debugger;
+						if(entry.post_details !== "" && entry.post_details !== 0)   post_details = (<div className="post_detail" >{app.addLinks(entry.post_details)}</div>)
 				}	
 			}
 			
@@ -415,6 +418,7 @@ class TagBlocks extends Component {
 			    <div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
 			        {item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
+			        {post_details}
 			    </div>
 			   	);
 		});
