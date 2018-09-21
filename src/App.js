@@ -2318,7 +2318,6 @@ class App extends Component {
   }
 
   setActiveTag(tagName, force, top) {
-  	debugger;
     if (tagName === null) return false
     var tagData = this.getTagData(tagName)
     if (tagData === undefined) return false
