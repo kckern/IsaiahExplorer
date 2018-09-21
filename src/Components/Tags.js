@@ -323,9 +323,11 @@ class TagBlocks extends Component {
 		
 		var count = entries.length;
 
+		var subscript = null;
 		var details = null;
 		var cite_str = null;
 		if(typeof tagMeta.cite === "string" && tagMeta.cite !== "") cite_str = <div className='cite'>{tagMeta.cite}</div>;
+		if(tagMeta.subscript !== undefined) subscript = <div className='detail'>{tagMeta.subscript}</div>;
 		var details_str = null;
 		if(typeof tagMeta.details === "string" && tagMeta.details !== "") details_str = <div>{this.props.app.addLinks(tagMeta.details)}</div>;
 		var descr_str = null;
@@ -432,6 +434,7 @@ class TagBlocks extends Component {
       		<div id="text" className={classes.join(" ")} >
 				{details}
 				{blocks}
+				{subscript}
 			</div>
 		)
 	}
