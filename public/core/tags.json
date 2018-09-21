@@ -38686,14 +38686,14 @@
                 "desc": "Like the king of Babylon, he enslaves nations and peoples of the world",
                 "verses": [
                     {
-                        "17656": 31
-                    },
-                    {
                         "17933": 3
-                    }
+                    },
+                    [
+                        17946
+                    ]
                 ],
-                "ref": "1;  14:4\u20136",
-                "oref": "Isaiah 14:4-6,"
+                "ref": "14:4\u20136,17",
+                "oref": "Isaiah 14:4-6, 17"
             },
             {
                 "desc": "Like the king of Babylon, he turns the world into a wilderness",
@@ -38948,13 +38948,10 @@
                     ],
                     {
                         "18422": 2
-                    },
-                    {
-                        "17656": 31
                     }
                 ],
-                "ref": "33:20,24;  40:1\u20132;  1",
-                "oref": "Isaiah 33:20, 24; Isaiah 40:1-2; "
+                "ref": "33:20,24;  40:1\u20132",
+                "oref": "Isaiah 33:20, 24; Isaiah 40:1-2"
             },
             {
                 "desc": "Jacob\/Israel, believers in the God of Israel who need to repent of sins",
@@ -45177,9 +45174,7 @@
             "Wicked Destroyed",
             "Old Jerusalem",
             "A National Entity",
-            "Zion",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Zion"
         ],
         "17663": [
             "Destruction",
@@ -45192,9 +45187,7 @@
             "Old Jerusalem",
             "The Composite City",
             "Woman Figure",
-            "Zion",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Zion"
         ],
         "17664": [
             "Destruction",
@@ -45209,9 +45202,7 @@
             "Wicked Destroyed",
             "The Composite City",
             "We\/Us\/Our\u2014Another Role",
-            "Zion",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Zion"
         ],
         "17665": [
             "Forms of Speech",
@@ -45219,83 +45210,63 @@
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenantal Curses",
-            "Questions\/Answers",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Questions\/Answers"
         ],
         "17666": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17667": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17668": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17669": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17670": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17671": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17672": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenantal Curses",
-            "Questions\/Answers",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Questions\/Answers"
         ],
         "17673": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Covenantal Curses",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Covenantal Curses"
         ],
         "17674": [
             "Forms of Speech",
             "\u24cd Useless Rituals",
             "Apostasy",
             "Covenantal Curses",
-            "Conditional Covenants",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Conditional Covenants"
         ],
         "17675": [
             "Forms of Speech",
@@ -45307,9 +45278,7 @@
             "Covenantal Curses",
             "Woman Figure",
             "Ugaric Cycle 1",
-            "Conditional Covenants",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Conditional Covenants"
         ],
         "18226": [
             "Forms of Speech",
@@ -45451,9 +45420,7 @@
             "Allegiance",
             "The Composite City",
             "Woman Figure",
-            "Ugaric Cycle 1",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 1"
         ],
         "18154": [
             "Forms of Speech",
@@ -45694,9 +45661,7 @@
             "Israel\u2019s Apostasy",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Old Jerusalem",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Old Jerusalem"
         ],
         "17658": [
             "Forms of Speech",
@@ -45704,9 +45669,7 @@
             "Israel\u2019s Apostasy",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Old Jerusalem",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Old Jerusalem"
         ],
         "18565": [
             "Forms of Speech",
@@ -47874,9 +47837,7 @@
         "17656": [
             "Narrative Characters",
             "Visionaries",
-            "Oracles Against Judah",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Oracles Against Judah"
         ],
         "18073": [
             "Narrative Characters",
@@ -49684,9 +49645,7 @@
             "Zion Ideology",
             "The Composite City",
             "Woman Figure",
-            "Ugaric Cycle 1",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 1"
         ],
         "18030": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -49936,9 +49895,7 @@
             "The Composite City",
             "Woman Figure",
             "Ugaric Cycle 1",
-            "Righteousness",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Righteousness"
         ],
         "17682": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -49953,9 +49910,7 @@
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
             "Ugaric Cycle 1",
-            "Characterizations",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Characterizations"
         ],
         "18023": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -50667,9 +50622,7 @@
             "The Composite City",
             "Woman Figure",
             "Ugaric Cycle 1",
-            "Questions\/Answers",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Questions\/Answers"
         ],
         "18311": [
             "Ruin\u2014National",
@@ -50767,18 +50720,14 @@
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Old Jerusalem",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Old Jerusalem"
         ],
         "17661": [
             "Ruin",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "\u24cd Useless Rituals",
             "Apostasy",
-            "Old Jerusalem",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Old Jerusalem"
         ],
         "17683": [
             "Ruin",
@@ -50790,9 +50739,7 @@
             "Old Jerusalem",
             "The Composite City",
             "Woman Figure",
-            "Ugaric Cycle 2",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 2"
         ],
         "17679": [
             "Rebirth",
@@ -50806,9 +50753,7 @@
             "The Composite City",
             "Brethren",
             "Woman Figure",
-            "Ugaric Cycle 1",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 1"
         ],
         "18323": [
             "Rebirth",
@@ -51015,9 +50960,7 @@
             "Old Jerusalem",
             "A National Entity",
             "Endtime Participants",
-            "Questions\/Answers",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Questions\/Answers"
         ],
         "18448": [
             "(3\/7) Jacob\u2013Israel",
@@ -51594,9 +51537,7 @@
             "Covenantal Curses",
             "Allegiance",
             "Woman Figure",
-            "Ugaric Cycle 1",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 1"
         ],
         "18121": [
             "The Tower of Babel",
@@ -51697,9 +51638,7 @@
             "\u29b7 Justice\u2194Punishments",
             "Old Jerusalem",
             "Zion Ideology",
-            "Ugaric Cycle 2",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 2"
         ],
         "17996": [
             "The Flood",
@@ -52237,16 +52176,12 @@
         "17684": [
             "\u29b7 Justice\u2194Punishments",
             "Old Jerusalem",
-            "Ugaric Cycle 2",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 2"
         ],
         "17685": [
             "\u29b7 Justice\u2194Punishments",
             "Old Jerusalem",
-            "Ugaric Cycle 2",
-            "The Tyrant",
-            "Ladder to Heaven"
+            "Ugaric Cycle 2"
         ],
         "17963": [
             "\u24cd Salvation of Moab",
