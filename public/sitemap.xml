@@ -49,6 +49,12 @@
       <priority>0.8</priority>
    </url>
    <url>
+      <loc>https://isaiah.scripture.guide/tag.walkthroughs</loc>
+      <lastmod>2018-09-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
       <loc>https://isaiah.scripture.guide/tag.ministudies</loc>
       <lastmod>2018-09-21</lastmod>
       <changefreq>monthly</changefreq>
@@ -2834,6 +2840,12 @@
    </url>
    <url>
       <loc>https://isaiah.scripture.guide/tag.jehovahs-ascent-phase</loc>
+      <lastmod>2018-09-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://isaiah.scripture.guide/tag.parallelstatements</loc>
       <lastmod>2018-09-21</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
