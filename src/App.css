@@ -1552,7 +1552,7 @@ tr.metaref td div.meta + div.ref
 	text-align:center;
 }
 
-#text .taggedblock  div.detail
+#text  div.detail
 {
 	border-top-left-radius:0px;
 	border-top-right-radius:0px;
@@ -1561,9 +1561,9 @@ tr.metaref td div.meta + div.ref
 	cursor:pointer;
 
 }
-#text > div.detail
+div#text.blocks.tagged .detail.sub
 {
-	margin-top:10px;
+	margin-top:20px;
 	border:1px solid #888;
 	border-radius:15px;
 }
@@ -1597,7 +1597,7 @@ div#text.chiasm.tagged .box
 
 
 div#text.chiasm.tagged .detail,
-div#text.blocks.tagged .taggedblock .detail
+div#text.blocks.tagged .detail
 {
     margin-top:-15px;
 }

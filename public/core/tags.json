@@ -3940,7 +3940,7 @@
             "type": "",
             "slug": "zion",
             "subscript": "Identify who or what is ZION and what happens to it.",
-            "next": "The Servant",
+            "next": "Endtime Participants",
             "prev": "Salvation"
         },
         "Knowing God": {
@@ -4714,22 +4714,22 @@
             "cite": "",
             "type": "",
             "slug": "annoucement-of-hope",
-            "next": "Servants\u2019 Inheritance",
+            "next": "The Servant",
             "prev": "Rise & Fall of Jerusalem"
         },
         "The Servant": {
             "parents": [
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
-            "description": "Mini-Study: Synonymous Parallels\u2014The Servant",
-            "details": "Because Hebrew poetry consists mostly of writing in parallel lines, Isaiah uses it to add more meanings to his prophecies. Synonymous parallel lines, for example, may identify one person or thing with another. Two pseudonyms appearing in parallel, in other words, could refer to the same person or thing while at the same time revealing additional character traits.",
-            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "description": "The Role of a Davidic Servant",
+            "details": "",
+            "cite": "",
             "type": "",
             "slug": "theservant",
-            "subscript": "Name some of the pseudonyms that identify the SERVANT.",
-            "next": "Endtime Participants",
-            "prev": "Zion"
+            "next": "Servants\u2019 Inheritance",
+            "prev": "Annoucement of Hope"
         },
         "Servants\u2019 Inheritance": {
             "parents": [
@@ -4742,7 +4742,7 @@
             "cite": "",
             "type": "",
             "slug": "servants-inheritance",
-            "prev": "Annoucement of Hope"
+            "prev": "The Servant"
         },
         "Old Jerusalem": {
             "parents": [
@@ -4919,7 +4919,8 @@
         "Servant\u2019s Mission": {
             "parents": [
                 "The Servant",
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
             "description": "The Servant Fulfills God\u2019s Mission",
@@ -4932,7 +4933,8 @@
         "\u29b7 Servant\u2019s Empowerment": {
             "parents": [
                 "The Servant",
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
             "description": "The Suffering Servant",
@@ -4946,7 +4948,8 @@
         "Servant is Rejected and Killed": {
             "parents": [
                 "The Servant",
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
             "description": "Servant is Rejected and Killed",
@@ -4960,7 +4963,8 @@
         "Servant Lives Again": {
             "parents": [
                 "The Servant",
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
             "description": "His days are prolonged",
@@ -4974,7 +4978,8 @@
         "Two Ways to Respond": {
             "parents": [
                 "The Servant",
-                "Mini-Studies",
+                "Bible Project",
+                "Structures",
                 "root"
             ],
             "description": "Acceptance and Rejection",
@@ -6229,7 +6234,7 @@
             "slug": "endtime-participants",
             "subscript": "Can you tell which ENDTIME PARTICIPANTS could match up with their ancient counterparts?",
             "next": "Endtime Servants",
-            "prev": "The Servant"
+            "prev": "Zion"
         },
         "Endtime Servants": {
             "parents": [
@@ -6326,8 +6331,22 @@
             "type": "",
             "slug": "peace-healing",
             "subscript": "Who is it that begets his people\u2019s PEACE\/HEALING by su\ufb00ering for their sake?",
-            "next": "Righteousness and Salvation",
+            "next": "Servant",
             "prev": "Righteousness"
+        },
+        "Servant": {
+            "parents": [
+                "Mini-Studies",
+                "root"
+            ],
+            "description": "Mini-Study: Synonymous Parallels\u2014The Servant",
+            "details": "Because Hebrew poetry consists mostly of writing in parallel lines, Isaiah uses it to add more meanings to his prophecies. Synonymous parallel lines, for example, may identify one person or thing with another. Two pseudonyms appearing in parallel, in other words, could refer to the same person or thing while at the same time revealing additional character traits.",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "servant",
+            "subscript": "Name some of the pseudonyms that identify the SERVANT.",
+            "next": "Righteousness and Salvation",
+            "prev": "Peace\/Healing"
         },
         "Righteousness and Salvation": {
             "parents": [
@@ -6341,7 +6360,7 @@
             "slug": "righteousness-andsalvation",
             "subscript": "How do RIGHTEOUSNESS and SALVATION complement one another? How do RIGHTEOUSNESS and SALVATION manifest God\u2019s blessings?",
             "next": "Mountains",
-            "prev": "Peace\/Healing"
+            "prev": "Servant"
         },
         "Mountains": {
             "parents": [
@@ -37308,7 +37327,7 @@
                 "oref": "Isaiah 1:1"
             }
         ],
-        "The Servant": {
+        "Servant": {
             "1": {
                 "desc": "Placeholder",
                 "verses": [
@@ -39008,7 +39027,7 @@
             "Righteousness",
             "Salvation",
             "Peace\/Healing",
-            "The Servant",
+            "Servant",
             "Righteousness and Salvation",
             "Mountains",
             "Humanity\u2019s Maker",
@@ -46752,7 +46771,7 @@
             "Visionaries",
             "Oracles Against Judah",
             "Peace\/Healing",
-            "The Servant",
+            "Servant",
             "Righteousness and Salvation",
             "Mountains",
             "Humanity\u2019s Maker",
@@ -53115,6 +53134,7 @@
             "The Servant\u2014Word Link",
             "Righteousness",
             "Peace\/Healing",
+            "Servant",
             "Righteousness and Salvation",
             "Mountains",
             "Humanity\u2019s Maker",
@@ -53426,6 +53446,7 @@
             "Judgment\u2014Nations",
             "Rise & Fall of Jerusalem",
             "Annoucement of Hope",
+            "The Servant",
             "Servants\u2019 Inheritance",
             "Old Jerusalem",
             "New Jerusalem",
@@ -53439,6 +53460,11 @@
             "Comfort, Comfort My People",
             "The Trial",
             "A \u201cNew Thing\u201d",
+            "Servant\u2019s Mission",
+            "\u29b7 Servant\u2019s Empowerment",
+            "Servant is Rejected and Killed",
+            "Servant Lives Again",
+            "Two Ways to Respond",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
             "Wicked vs. Servants",
@@ -54070,12 +54096,6 @@
         "Mini-Studies": [
             "Salvation",
             "Zion",
-            "The Servant",
-            "Servant\u2019s Mission",
-            "\u29b7 Servant\u2019s Empowerment",
-            "Servant is Rejected and Killed",
-            "Servant Lives Again",
-            "Two Ways to Respond",
             "Endtime Participants",
             "Endtime Servants",
             "Babylon",
@@ -54084,6 +54104,7 @@
             "The Servant\u2014Word Link",
             "Righteousness",
             "Peace\/Healing",
+            "Servant",
             "Righteousness and Salvation",
             "Mountains",
             "Humanity\u2019s Maker",
@@ -54210,6 +54231,7 @@
             "Judgment\u2014Nations",
             "Rise & Fall of Jerusalem",
             "Annoucement of Hope",
+            "The Servant",
             "Servants\u2019 Inheritance",
             "Old Jerusalem",
             "New Jerusalem",
@@ -54223,6 +54245,11 @@
             "Comfort, Comfort My People",
             "The Trial",
             "A \u201cNew Thing\u201d",
+            "Servant\u2019s Mission",
+            "\u29b7 Servant\u2019s Empowerment",
+            "Servant is Rejected and Killed",
+            "Servant Lives Again",
+            "Two Ways to Respond",
             "\u24cd Announcing God\u2019s Kingdom",
             "Nations Invited",
             "Wicked vs. Servants",
@@ -55862,7 +55889,7 @@
         ],
         "theservant": [
             "The Servant",
-            "Mini-Study: Synonymous Parallels\u2014The Servant"
+            "The Role of a Davidic Servant"
         ],
         "servants-inheritance": [
             "Servants\u2019 Inheritance",
@@ -56307,6 +56334,10 @@
         "peace-healing": [
             "Peace\/Healing",
             "Mini-Study: Word Links\u2014Peace\/Healing"
+        ],
+        "servant": [
+            "Servant",
+            "Mini-Study: Synonymous Parallels\u2014The Servant"
         ],
         "righteousness-andsalvation": [
             "Righteousness and Salvation",
