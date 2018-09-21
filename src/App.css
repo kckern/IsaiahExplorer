@@ -1364,11 +1364,19 @@ background-color:#FFA;
 
 	font-style:normal;
 	font-size:12px;
-	max-width:250px;
+	max-width:100px;
 	text-align:right;
 	margin-left:10px;
 
 }
+
+.tag_head
+{
+	color:#666;
+	text-align:center;
+	font-style:italic;
+}
+
 
 table.parallel
 {
@@ -2808,7 +2816,9 @@ img.play
     color: #552B1B;
 }
 
-
+#floater h3 {
+	display:none;
+}
 #floater a.ref,
 #text a.ref
 {

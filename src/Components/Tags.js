@@ -370,6 +370,7 @@ class TagBlocks extends Component {
 			var selected_tag_block_index = app.state.selected_tag_block_index;
 			if(forceIndex!==null) selected_tag_block_index = forceIndex;
 			
+			if(entry.heading !== undefined)  heading = <h3 className="tag_head" key={"h"+key}>{entry.heading}</h3>;
 			if(app.state.allCollapsed!==true && done===false){
 				if(selected_tag_block_index===key || (
 					entry.verses.indexOf(app.state.active_verse_id)>-1 && selected_tag_block_index===null
@@ -378,7 +379,6 @@ class TagBlocks extends Component {
 						done = true;
 						 this.active_block_index = key;
 						classes.push("active"); 	desc_classes.push("tag_desc_highlighted"); isFloater=true;
-						if(entry.heading !== undefined)  heading = <h3>{entry.heading}</h3>;
 						if(entry.details !== undefined)  details = (<div className="detail" >{app.addLinks(entry.details)}</div>)
 						if(entry.post_details !== undefined)   post_details = (<div className="post_detail" >{app.addLinks(entry.post_details)}</div>)
 				}	
@@ -403,11 +403,13 @@ class TagBlocks extends Component {
 			
 			
 			var item = (
+				[heading,
 			        <div 
+			        key={"item"+key}
 			        className={desc_classes.join(" ")} 
 			        onMouseEnter={()=>this.props.app.highlightTaggedVerses(entry.verses.map(Number))}
 			        onClick={()=>this.handleDescClick(entry.verses.map(Number)[0],classes,key,count) }
-			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>
+			        ><div className="tagref">{entry.ref}</div>{label}{showdesc}</div>]
 			   	);
 			   if(count===1 && entry.desc==="") { item = <div className="SearchReference">{entry.ref}</div>; isFloater = false;}
 			   else if(count===1) { 	classes.push("active");  }
@@ -416,11 +418,11 @@ class TagBlocks extends Component {
 			 
 			   	
 			 return (
-			    <div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
-			        {heading}{item}{details}
+			    [<div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
+			        {item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			        {post_details}
-			    </div>
+			    </div>]
 			   	);
 		});
 				

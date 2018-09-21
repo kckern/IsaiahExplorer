@@ -6704,7 +6704,20 @@
             "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
             "type": "",
             "slug": "parallelstatements",
-            "next": "Questions\/Answers"
+            "next": "Characterizations"
+        },
+        "Characterizations": {
+            "parents": [
+                "Walkthroughs",
+                "root"
+            ],
+            "description": "How Characterizations Convey Meaning",
+            "details": "As you have seen, word searches uncover deeper layers of meaning besides the literal meanings that appear on the surface. The same applies to the way Isaiah characterizes terms and names. Each carries nuances of meanings he intends to convey. You have already observed this to a degree in the metaphors Isaiah chooses that nuance the character of God\u2019s endtime servant and the king of Assyria\/Babylon. Terms such as ensign, hand, trumpet, voice, arm, righteousness, bird of prey, light, darkness, anger, and wrath reveal a lot about what kind of persons we are dealing with. Even the character of Israel\u2019s God Jehovah is evident in such terms as arm, rock, and salvation. As with the metaphors that act as pseudonyms of real persons, actual names of persons and peoples and the activities associated with them tell us much about who Isaiah is referring to. At times, for example, Isaiah addresses God\u2019s people using the paired names \u201cJacob\u201d and \u201cIsrael\u201d but at other times the names \u201cZion\u201d and \u201cJerusalem.\u201d What, we might ask, is the difference?",
+            "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
+            "type": "",
+            "slug": "characterizations",
+            "next": "Questions\/Answers",
+            "prev": "Parallel Statements"
         },
         "Questions\/Answers": {
             "parents": [
@@ -6716,7 +6729,7 @@
             "cite": "Adapted from Gileadi, Avraham. Isaiah Made Simple. Hebraeus Press, 2018.",
             "type": "",
             "slug": "questions-answers",
-            "prev": "Parallel Statements"
+            "prev": "Characterizations"
         }
     },
     "tagStructure": {
@@ -38206,6 +38219,191 @@
                 "ref": "29:13\u201314;  28:9\u201313;  42:18\u201320;  46:8\u201310;  45:21\u201322;  10:22\u201323;  29:18\u201319,24",
                 "oref": "Isaiah 29:13-14; Isaiah Isaiah 28:9-13; Isaiah Isaiah 42:18-20; Isaiah Isaiah 46:8-10; Isaiah Isaiah 45:21-22; Isaiah Isaiah 10:22-23; Isaiah Isaiah 29:18, 24, 19"
             }
+        ],
+        "Characterizations": [
+            {
+                "desc": "To explore the idea of characterization, observe the character of the people whom Isaiah addresses as \u201cJacob\u201d and \u201cIsrael\u201d in the following verses:",
+                "post_details": "Do the above verses characterize God\u2019s people as righteous or unrighteous, as faithful to God or unfaithful? Although they are called to be his collective servant\u2014as distinct from his individual servant\u2014are they living up to what could qualify them as a blessed people of God?",
+                "verses": [
+                    18448,
+                    18528,
+                    18505,
+                    18555
+                ],
+                "ref": "40:27;  43:22;  42:24;  44:21",
+                "oref": "Isaiah 40:27; Isaiah Isaiah 43:22; Isaiah Isaiah 42:24; Isaiah Isaiah 44:21"
+            },
+            {
+                "desc": "Now observe the character of the people whom Isaiah addresses as \u201cZion\u201d and \u201cJerusalem\u201d in the passages below:",
+                "post_details": "As before, do these passages characterize God\u2019s people as righteous or unrighteous, as faithful to God or unfaithful? In other words, hasn\u2019t Isaiah been describing two distinct categories of people\u2014 Jacob\/Israel and Zion\/Jerusalem\u2014the second more spiritually advanced than the first? That being so, we might ask whether Isaiah limits his characterizations of God\u2019s people to these two categories only or whether there exist others.",
+                "verses": [
+                    {
+                        "18237": 2
+                    },
+                    {
+                        "18856": 3
+                    },
+                    {
+                        "18698": 2
+                    },
+                    [
+                        18300,
+                        18304
+                    ]
+                ],
+                "ref": "30:19\u201320;  62:1\u20133;  52:1\u20132;  33:20,24",
+                "oref": "Isaiah 30:19-20; Isaiah Isaiah 62:1-3; Isaiah Isaiah 52:1-2; Isaiah Isaiah 33:20, 24"
+            },
+            {
+                "desc": "As you read the following passages, for example, who do you suppose are the \u201csons\u201d and \u201cdaughters\u201d of God\u2019s people whom the \u201ckings\u201d and \u201cqueens\u201d of the nations gather in a new exodus to Zion?",
+                "post_details": "Could you conclude from the last passage that God\u2019s acknowledging these \u201csons\u201d and \u201cdaughters\u201d of his people as his own\u2014as those whom he has \u201cformed, molded and wrought\u201d for his own glory\u2014 characterizes them as a special category of his people? Doesn\u2019t God\u2019s creating or re-creating them to a spiritual level that qualifies them to participate in the new exodus to Zion tell us that we are dealing with an elect category of his people?",
+                "verses": [
+                    {
+                        "18659": 2
+                    },
+                    {
+                        "18823": 4
+                    },
+                    {
+                        "18511": 3
+                    }
+                ],
+                "ref": "49:22\u201323;  60:1\u20134;  43:5\u20137",
+                "oref": "Isaiah 49:22-23; Isaiah Isaiah 60:1-4; Isaiah Isaiah 43:5-7"
+            },
+            {
+                "desc": "That being so, who are the \u201ckings\u201d and \u201cqueens\u201d of the nations who minister to them, who gather them in the new exodus to Zion at the time God raises up his servant?",
+                "details": "Evidently, when God\u2019s hand, ensign, and light appears on the scene that is when these \u201ckings\u201d and \u201cqueens\u201d deliver them from the powers of darkness that seek to enslave them.",
+                "verses": [
+                    {
+                        "17895": 3
+                    },
+                    [
+                        17901
+                    ]
+                ],
+                "ref": "11:10\u201312,16",
+                "oref": "Isaiah 11:10-12, 16"
+            },
+            {
+                "desc": "Now moving on from Isaiah\u2019s use of metaphors that act as pseudonyms of key players in the world\u2019s endtime scenario, let us return to instances of actual names. ",
+                "details": "Take a look at how Isaiah characterizes \u201cZion\u201d and \u201cBabylon\u201d as two opposite spiritual entities and \u201cEgypt\u201d and \u201cAssyria\u201d as two opposite political entities. Why are these names important? Because they function as codenames of the great spiritual and political powers in the world today. As you analyze the following verses, please note how Isaiah characterizes Zion:",
+                "post_details": "Keeping in mind the lower and higher spiritual levels we discovered earlier, could you conclude from the above verses that Isaiah defines Zion as a people, a people who\u2014by repenting of transgression\u2014ascend from the Jacob\/Israel category to that of Zion\/Jerusalem?",
+                "verses": [
+                    18821,
+                    17682,
+                    18690
+                ],
+                "ref": "59:20;  1:27;  51:16",
+                "oref": "Isaiah 59:20; Isaiah Isaiah 1:27; Isaiah Isaiah 51:16"
+            },
+            {
+                "desc": "Compare that definition of Zion, on the other hand, with what you observe from the verses below:",
+                "post_details": "From analyzing these verses, could you conclude that Zion is also a place, a place of safety and rejoicing in a time of trouble?",
+                "verses": [
+                    [
+                        18677,
+                        18685
+                    ],
+                    {
+                        "17739": 2
+                    }
+                ],
+                "ref": "51:3,11;  4:5\u20136",
+                "oref": "Isaiah 51:11; Isaiah Isaiah 51:3; Isaiah Isaiah 4:5-6"
+            },
+            {
+                "desc": "Now note how Isaiah characterizes Babylon\u2014how chapter 13, which addresses Babylon, defines Babylon within its own context:",
+                "post_details": "Could you infer from analyzing the above verses that Babylon too is both a people and a place? Do you notice, for example, how in the time of God\u2019s judgment\u2014called the \u201cDay of Jehovah\u201d\u2014those who perish are defined as \u201csinners,\u201d \u201cthe wicked,\u201d \u201cinsolent men,\u201d and \u201ctyrants\u201d and how in that case those terms characterize Babylon as a people? Do you further notice how God\u2019s judgment extends to \u201cthe earth\u201d and \u201cthe world? Don\u2019t those terms, therefore, additionally characterize Babylon as a place\u2014a place that becomes so evil it resembles Sodom and Gomorrah which God utterly levelled by a rain of fire and brimstone? When Isaiah says of Zion that God will \u201cform a cloud by day and a mist glowing with fire by night\u201d\u2014that this will act as \u201ca shelter and shade from the heat of the day, a secret refuge from the downpour and from rain\u201d\u2014isn\u2019t that an invitation to contrast what happens to Zion with what happens to Babylon? What kind of \u201cheat of the day\u201d and \u201cdownpour and rain\u201d do you suppose Isaiah is alluding to when God protects Zion at the time Babylon is destroyed in the \u201cDay of Jehovah\u201d?",
+                "verses": [
+                    17908,
+                    17916,
+                    17918,
+                    17926
+                ],
+                "ref": "13:1,9,11,19",
+                "oref": "Isaiah 13:1, 9, 11, 19"
+            },
+            {
+                "desc": "Discern Isaiah\u2019s word links to what happens to Zion, for example, in the passage below:",
+                "verses": {
+                    "18123": 2
+                },
+                "ref": "25:4\u20135",
+                "oref": "Isaiah 25:4-5"
+            },
+            {
+                "desc": "Now observe how Isaiah contrasts Zion and Babylon in the passages following:",
+                "post_details": "Did you compare the opposite fates of Zion and Babylon as Zion casts off the bands of her enslavement while Babylon becomes enslaved? As Zion rises from the dust while Babylon descends into the dust? As Zion is enthroned while Babylon is dethroned? As Jehovah redeems Zion while Zion\u2019s Redeemer banishes Babylon? And so forth? Don\u2019t such characterizations of Zion and Babylon epitomize not just people collectively but also individually? In other words, wouldn\u2019t such a reversal of circumstances between opposite spiritual entities inevitably occur for any person who belongs to them? Isn\u2019t that a pattern Isaiah is establishing by contrasting Zion and Babylon in this manner\u2014that exaltation follows involuntary humiliation and humiliation follows self-exaltation?",
+                "verses": [
+                    {
+                        "18698": 3
+                    },
+                    {
+                        "18601": 5
+                    }
+                ],
+                "ref": "52:1\u20133;  47:1\u20135",
+                "oref": "Isaiah 52:1-3; Isaiah Isaiah 47:1-5"
+            },
+            {
+                "desc": "Now let us address the names Egypt and Assyria. ",
+                "details": "Observe the way Isaiah characterizes Egypt, the great superpower of the ancient world:",
+                "post_details": "Did you notice how Isaiah characterizes Egypt as a failing state weakened from within, leading to civil war and invasion by God\u2019s hand of punishment\u2014the king of Assyria\/Babylon? Egypt\u2019s mighty military to which the lesser nations of the world looked for protection against Assyria\u2019s aggression proves to be but an arm of flesh. Can you discern possible parallels already developing between the world\u2019s ancient superpower and the world\u2019s superpower today, so that the name Egypt could act as a codename for America? If Isaiah\u2019s characterization of Egypt indeed parallels the course America is on, wouldn\u2019t that serve as a wonderful warning to those who perceive \u201cEgypt\u201d to be a prophetic name for America?",
+                "verses": [
+                    {
+                        "18007": 2
+                    },
+                    {
+                        "18018": 4
+                    },
+                    {
+                        "18252": 3
+                    },
+                    {
+                        "18034": 3
+                    }
+                ],
+                "ref": "19:2\u20133,13\u201316;  31:1\u20133;  20:4\u20136",
+                "oref": "Isaiah 19:13-16; Isaiah Isaiah 19:2-3; Isaiah Isaiah 31:1-3; Isaiah Isaiah 20:4-6"
+            },
+            {
+                "desc": "But this isn\u2019t all. Even as the main body of Egypt\u2019s inhabitants are destroyed or taken captive by the king of Assyria\/Babylon, Israel\u2019s God delivers certain covenanters in the land of Egypt:",
+                "post_details": "Having thus seen that all is not lost for Egypt but that God\u2019s eternal designs are at work to heal and deliver a righteous category of \u201cEgyptians,\u201d let us now turn our attention to Assyria.",
+                "verses": {
+                    "18024": 4
+                },
+                "ref": "19:19\u201322",
+                "oref": "Isaiah 19:19-22"
+            },
+            {
+                "desc": "Compare the way Isaiah characterizes Assyria and its king\u2014also called the \u201cking of Babylon,\u201d a title Assyrian conquerors of Babylon applied to themselves.",
+                "details": "Although we have already observed passages that describe the king of Assyria\/Babylon, note how those below round out Isaiah\u2019s characterization of a tyrannical world conqueror whom Israel\u2019s God subdues in the end:",
+                "verses": [
+                    {
+                        "17815": 3
+                    },
+                    {
+                        "17879": 5
+                    },
+                    {
+                        "17932": 5
+                    },
+                    {
+                        "17953": 4
+                    }
+                ],
+                "ref": "8:7\u20139;  10:28\u201332;  14:3\u20137,24\u201327",
+                "oref": "Isaiah 8:7-9; Isaiah Isaiah 10:28-32; Isaiah Isaiah 14:24-27; Isaiah Isaiah 14:3-7"
+            },
+            {
+                "desc": "Lastly\u2014observing the same pattern we saw with Babylon\u2014note how the king of Assyria\/Babylon who exalts himself to high heaven suffers a humiliating end in the Pit of Dissolution:",
+                "verses": {
+                    "17942": 5
+                },
+                "ref": "14:13\u201317",
+                "oref": "Isaiah 14:13-17"
+            }
         ]
     },
     "parentTagIndex": {
@@ -38803,6 +39001,7 @@
         ],
         "Walkthroughs": [
             "Parallel Statements",
+            "Characterizations",
             "Questions\/Answers"
         ]
     },
@@ -39310,7 +39509,8 @@
             "Cumulative Themes I \u2013 V",
             "Endtime Participants",
             "Endtime Servants",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "18660": [
             "Nephi",
@@ -39332,7 +39532,8 @@
             "Cumulative Themes I \u2013 V",
             "Endtime Participants",
             "Endtime Servants",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "18661": [
             "Nephi",
@@ -39829,7 +40030,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Woman Figure",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "17740": [
             "Nephi",
@@ -39842,7 +40044,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Zion Ideology",
             "Woman Figure",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "17741": [
             "Nephi",
@@ -40661,7 +40864,8 @@
             "Threat",
             "Coronation Psalm",
             "Assyrian Flood",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17816": [
             "Nephi",
@@ -40679,7 +40883,8 @@
             "A National Entity",
             "Assyrian Flood",
             "Oracles Against Judah",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17817": [
             "Nephi",
@@ -40690,7 +40895,8 @@
             "Cumulative Themes I \u2013 II",
             "Apostasy",
             "Zion Ideology",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17818": [
             "Nephi",
@@ -41412,7 +41618,8 @@
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17880": [
             "Nephi",
@@ -41422,7 +41629,8 @@
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17881": [
             "Nephi",
@@ -41432,7 +41640,8 @@
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17882": [
             "Nephi",
@@ -41442,7 +41651,8 @@
             "Covenant Curses",
             "Davidic King \ud83c\udd9a Assyrian King",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17883": [
             "Nephi",
@@ -41455,7 +41665,8 @@
             "Zion Ideology",
             "Woman Figure",
             "Zion",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17884": [
             "Nephi",
@@ -41587,7 +41798,8 @@
             "3 Redemptive Roles",
             "Cumulative Themes I \u2013 III",
             "Agents\u2019 Redemptive Roles",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "17896": [
             "Nephi",
@@ -41607,7 +41819,8 @@
             "Agents\u2019 Redemptive Roles",
             "Egypt",
             "Assyria",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "17897": [
             "Nephi",
@@ -41626,7 +41839,8 @@
             "Cumulative Themes I \u2013 III",
             "Agents\u2019 Redemptive Roles",
             "Oracles Against Judah",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "17898": [
             "Nephi",
@@ -41679,7 +41893,8 @@
             "Righteousness \u27a4 Salvation",
             "Cumulative Themes I \u2013 III",
             "Agents\u2019 Redemptive Roles",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17902": [
             "Nephi",
@@ -41765,7 +41980,8 @@
             "Babylon\u21ccUniversal",
             "Visionaries",
             "Cumulative Themes I \u2013 III",
-            "Babylon"
+            "Babylon",
+            "Characterizations"
         ],
         "17909": [
             "Nephi",
@@ -41855,7 +42071,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Personified Covenants",
             "Babylon",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17917": [
             "Nephi",
@@ -41881,7 +42098,8 @@
             "Babylon\u21ccUniversal",
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17919": [
             "Nephi",
@@ -41978,7 +42196,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
             "Cumulative Themes I \u2013 III",
-            "Cumulative Themes I \u2013 IV"
+            "Cumulative Themes I \u2013 IV",
+            "Characterizations"
         ],
         "17927": [
             "Nephi",
@@ -42046,7 +42265,8 @@
             "Glory\u2194Ignominy",
             "Babylon\u21ccUniversal",
             "\u29b7 King of Assyria\u2194King of Babylon",
-            "Redemptive Elements"
+            "Redemptive Elements",
+            "Characterizations"
         ],
         "17933": [
             "Nephi",
@@ -42063,7 +42283,8 @@
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
             "\u29b7 Three Subjects",
-            "Endtime Participants"
+            "Endtime Participants",
+            "Characterizations"
         ],
         "17934": [
             "Nephi",
@@ -42077,7 +42298,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Personified Covenants",
             "\u29b7 Three Subjects",
-            "Endtime Participants"
+            "Endtime Participants",
+            "Characterizations"
         ],
         "17935": [
             "Nephi",
@@ -42091,7 +42313,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Personified Covenants",
             "\u29b7 Three Subjects",
-            "Endtime Participants"
+            "Endtime Participants",
+            "Characterizations"
         ],
         "17936": [
             "Nephi",
@@ -42103,7 +42326,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
             "Cumulative Themes I \u2013 IV",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17937": [
             "Nephi",
@@ -42179,7 +42403,8 @@
             "Suffering Figure\u21ccYahweh",
             "Fate of Babylon\u2019s King",
             "Woman Figure",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17943": [
             "Nephi",
@@ -42195,7 +42420,8 @@
             "Fate of Babylon\u2019s King",
             "Yahweh\u2019s Ascent",
             "Woman Figure",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17944": [
             "Nephi",
@@ -42208,7 +42434,8 @@
             "Babylon\u2019s Humiliation",
             "\u29b7 Kings of Babylon & Zion",
             "Fate of Babylon\u2019s King",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17945": [
             "Nephi",
@@ -42222,7 +42449,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Fate of Babylon\u2019s King",
             "Personified Covenants",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17946": [
             "Nephi",
@@ -42235,7 +42463,8 @@
             "\u29b7 Kings of Babylon & Zion",
             "Fate of Babylon\u2019s King",
             "Personified Covenants",
-            "\u29b7 Three Subjects"
+            "\u29b7 Three Subjects",
+            "Characterizations"
         ],
         "17947": [
             "Nephi",
@@ -42315,7 +42544,8 @@
             "Forms of Speech",
             "\u24cd Lucifer",
             "Babylon\u2019s Fall",
-            "Babylon\u21ccUniversal"
+            "Babylon\u21ccUniversal",
+            "Characterizations"
         ],
         "17954": [
             "Nephi",
@@ -42329,7 +42559,8 @@
             "Babylon\u21ccUniversal",
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Cumulative Themes I \u2013 III",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "17955": [
             "Nephi",
@@ -42340,7 +42571,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Cumulative Themes I \u2013 IV",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17956": [
             "Nephi",
@@ -42349,7 +42581,8 @@
             "\u24cd Lucifer",
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "17957": [
             "Nephi",
@@ -42782,7 +43015,8 @@
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
             "Zion",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18678": [
             "Jacob",
@@ -42921,7 +43155,8 @@
             "Zion and Jerusalem",
             "Zion",
             "Righteousness",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "18686": [
             "Jacob",
@@ -42962,7 +43197,8 @@
             "4 Biblical Covenants",
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "18691": [
             "Jacob",
@@ -43047,7 +43283,8 @@
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
             "Zion",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18699": [
             "Jacob",
@@ -43072,7 +43309,8 @@
             "Cumulative Themes I \u2013 V",
             "Zion and Jerusalem",
             "Zion",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18742": [
             "Jacob",
@@ -43453,7 +43691,8 @@
             "Redemptive Intervention",
             "\u29b7 Kings of Babylon & Zion",
             "Redemptive Elements",
-            "Cumulative Themes I \u2013 V"
+            "Cumulative Themes I \u2013 V",
+            "Characterizations"
         ],
         "18703": [
             "Jesus",
@@ -44317,7 +44556,8 @@
             "Babylon\u2019s Humiliation",
             "Endtime Participants",
             "Egypt",
-            "Assyria"
+            "Assyria",
+            "Characterizations"
         ],
         "18035": [
             "Forms of Speech",
@@ -44326,7 +44566,8 @@
             "Components of Babylon",
             "Babylon\u21ccUniversal",
             "Endtime Participants",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18036": [
             "Forms of Speech",
@@ -44338,7 +44579,8 @@
             "Babylon\u2019s Humiliation",
             "Redemptive Roles",
             "Endtime Participants",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "17657": [
             "Forms of Speech",
@@ -45857,7 +46099,8 @@
             "Hezekiah\u2019s Ascent",
             "Idolatry",
             "Agents\u2019 Redemptive Roles",
-            "Israel"
+            "Israel",
+            "Characterizations"
         ],
         "18506": [
             "\u24cd Chaos\u2194Creation",
@@ -45940,7 +46183,8 @@
             "Redemptive Elements",
             "Servants Ascend",
             "Agents\u2019 Redemptive Roles",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18512": [
             "\u24cd Chaos\u2194Creation",
@@ -45957,7 +46201,8 @@
             "A Universal Entity",
             "Redemptive Elements",
             "Servants Ascend",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18513": [
             "\u24cd Chaos\u2194Creation",
@@ -45969,7 +46214,8 @@
             "The Trial",
             "Cyrus\u2019s Name",
             "3 Redemptive Roles",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18520": [
             "\u24cd Chaos\u2194Creation",
@@ -46045,7 +46291,8 @@
             "\u24cd I Am the Lord",
             "Hezekiah\u2019s Ascent",
             "The Trial",
-            "Israel"
+            "Israel",
+            "Characterizations"
         ],
         "18529": [
             "\u24cd Chaos\u2194Creation",
@@ -46145,7 +46392,8 @@
             "The Trial",
             "Redemptive Intervention",
             "Servant Word Links",
-            "Israel"
+            "Israel",
+            "Characterizations"
         ],
         "18556": [
             "\u24cd Chaos\u2194Creation",
@@ -46393,7 +46641,8 @@
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
             "Cumulative Themes I \u2013 IV",
-            "Babylon"
+            "Babylon",
+            "Characterizations"
         ],
         "18602": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46405,7 +46654,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
             "Redemptive Intervention",
-            "\u29b7 Kings of Babylon & Zion"
+            "\u29b7 Kings of Babylon & Zion",
+            "Characterizations"
         ],
         "18603": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46418,7 +46668,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Redemptive Intervention",
             "\u29b7 Kings of Babylon & Zion",
-            "Woman Figure"
+            "Woman Figure",
+            "Characterizations"
         ],
         "18604": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46432,7 +46683,8 @@
             "Redemptive Intervention",
             "Divine Attributes",
             "\u29b7 Kings of Babylon & Zion",
-            "Israel"
+            "Israel",
+            "Characterizations"
         ],
         "18701": [
             "\u29b7 Servant\u2194Tyrant",
@@ -46558,7 +46810,8 @@
             "Reprobates",
             "Late Oracles",
             "Endtime Participants",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18219": [
             "Disloyalty",
@@ -46672,7 +46925,8 @@
             "\u29b7 Look Not\u2194Utterly Deserted",
             "Covenant Curses",
             "Endtime Participants",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18254": [
             "Disloyalty",
@@ -46683,7 +46937,8 @@
             "Reprobates",
             "Assyria Destroyed",
             "Endtime Participants",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18180": [
             "Disloyalty",
@@ -46756,7 +47011,8 @@
             "Righteous Remnant",
             "Covenant with Death",
             "Cumulative Themes I \u2013 VI",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18236": [
             "Loyalty",
@@ -46849,7 +47105,8 @@
             "Judgment",
             "Covenant Curses",
             "Zion Ideology",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18175": [
             "Didactics",
@@ -47016,7 +47273,8 @@
             "Covenant Theology",
             "Post-Exhile",
             "Zion",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18161": [
             "Romans",
@@ -47179,7 +47437,8 @@
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
             "Egypt",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18046": [
             "Knowing God",
@@ -47381,7 +47640,8 @@
             "\u24cd Hear What I Have Done",
             "\u29b7 Zion\u2194Babylon",
             "Disparate Fates",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "18281": [
             "Disinheritance",
@@ -47468,7 +47728,8 @@
             "Zion Ideology",
             "The Composite City",
             "Disparate Fates",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "18301": [
             "Inheritance",
@@ -47887,7 +48148,8 @@
             "Endtime Participants",
             "Zion",
             "Righteousness",
-            "Parallel Statements"
+            "Parallel Statements",
+            "Characterizations"
         ],
         "17975": [
             "Yahweh God of Israel",
@@ -48126,7 +48388,8 @@
             "Two Arms",
             "Light \ud83c\udd9a Dark",
             "Blessings",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "18825": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48143,7 +48406,8 @@
             "Blessings",
             "Children of Zion",
             "Endtime Servants",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "17997": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48327,7 +48591,8 @@
             "Servants Ascend",
             "Cumulative Themes I \u2013 VII",
             "Endtime Participants",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18925": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48401,7 +48666,8 @@
             "Vassal Ascends",
             "Endtime Participants",
             "Zion",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18110": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48499,7 +48765,8 @@
             "The Composite City",
             "Woman Figure",
             "Cumulative Themes I \u2013 III",
-            "Ugaric Cycle 1"
+            "Ugaric Cycle 1",
+            "Characterizations"
         ],
         "18023": [
             "Yahweh\u2019s End\u2013Time Servant",
@@ -48745,7 +49012,8 @@
             "\u24cd Tears Wiped",
             "Covenant Curses",
             "\u29b7 Righteous vs. the World",
-            "Universal Suffering"
+            "Universal Suffering",
+            "Characterizations"
         ],
         "18124": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48753,7 +49021,8 @@
             "Yahweh\u2019s Protective Cloud",
             "\u24cd Tears Wiped",
             "Covenant Curses",
-            "Universal Suffering"
+            "Universal Suffering",
+            "Characterizations"
         ],
         "18245": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -48831,7 +49100,8 @@
             "Poems Announcing God\u2019s Kingdom",
             "Two Arms",
             "Light \ud83c\udd9a Dark",
-            "Blessings"
+            "Blessings",
+            "Characterizations"
         ],
         "18786": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -49070,7 +49340,8 @@
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "\u29b7 Zion\u2194Babylon"
+            "\u29b7 Zion\u2194Babylon",
+            "Characterizations"
         ],
         "18089": [
             "The End\u2013Time King of Assyria\/Babylon",
@@ -49527,7 +49798,8 @@
             "Upward Movement",
             "The Trial",
             "Israel",
-            "Questions\/Answers"
+            "Questions\/Answers",
+            "Characterizations"
         ],
         "18499": [
             "(3\/7) Jacob\u2013Israel",
@@ -49729,7 +50001,8 @@
             "Blessings",
             "Servants Ascend",
             "Endtime Servants",
-            "Zion"
+            "Zion",
+            "Characterizations"
         ],
         "18860": [
             "(5\/7) Sons\u2013Servants",
@@ -50894,14 +51167,16 @@
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18008": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18010": [
             "\u24cd Egyptian Drought",
@@ -50970,7 +51245,8 @@
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18019": [
             "\u24cd Egyptian Drought",
@@ -50979,14 +51255,16 @@
             "Babylon\u21ccUniversal",
             "Self\u2013Exalation",
             "Babylon\u2019s Humiliation",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18020": [
             "\u24cd Egyptian Drought",
             "Babylon\u2019s Fall",
             "Components of Babylon",
             "Babylon\u21ccUniversal",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18022": [
             "On That Day",
@@ -50999,7 +51277,8 @@
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
             "Redemptive Roles",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18025": [
             "On That Day",
@@ -51008,7 +51287,8 @@
             "Babylon\u21ccUniversal",
             "Redemptive Roles",
             "Vassal Ascends",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18028": [
             "On That Day",
@@ -51811,7 +52091,8 @@
             "\u29b7 Zion\u2194Babylon",
             "Babylon\u2019s Humiliation",
             "Woman Figure",
-            "Babylon"
+            "Babylon",
+            "Characterizations"
         ],
         "18612": [
             "\u24cd Evils",
@@ -52332,7 +52613,8 @@
         "18027": [
             "Babylon\u2019s Fall",
             "Babylon\u21ccUniversal",
-            "Egypt"
+            "Egypt",
+            "Characterizations"
         ],
         "18898": [
             "\u24cd Announcing God\u2019s Kingdom",
@@ -52823,6 +53105,7 @@
             "Jehovah\u2019s Descent Phase",
             "Jehovah\u2019s Ascent Phase",
             "Parallel Statements",
+            "Characterizations",
             "Questions\/Answers"
         ],
         "Textual Compositions": [
@@ -54027,6 +54310,7 @@
         ],
         "Walkthroughs": [
             "Parallel Statements",
+            "Characterizations",
             "Questions\/Answers"
         ]
     },
@@ -56099,6 +56383,10 @@
         "parallelstatements": [
             "Parallel Statements",
             "What Parellel Statements Can Teach Us"
+        ],
+        "characterizations": [
+            "Characterizations",
+            "How Characterizations Convey Meaning"
         ],
         "questions-answers": [
             "Questions\/Answers",
