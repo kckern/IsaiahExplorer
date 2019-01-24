@@ -196,12 +196,12 @@ class HebrewWord extends Component {
 				break;
 			}
 		}
-		return [<Tipsy  key="a" content={worddata.eng.replace(/[[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
+		return <span><Tipsy  key="a" content={worddata.eng.replace(/[[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
 			<span className={classes.join(" ")}
 			onClick={this.handleClick.bind(this)}
 			onMouseEnter={this.handleMouseEnter.bind(this)}
 			onMouseLeave={this.handleMouseLeave.bind(this)}
-		>{this.props.val.orig}</span></Tipsy>,punct,<span key="s" className="space" />]
+		>{this.props.val.orig}</span></Tipsy>{punct}<span key="s" className="space" /></span>
 	}
 	
 }

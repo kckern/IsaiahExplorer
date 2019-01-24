@@ -135,15 +135,22 @@ class ParentLinks extends Component {
 		if(this.props.tagMeta===undefined){
 		return null;	
 		} 
-		return this.props.tagMeta.parents.slice(0).reverse().map((val,key)=>{
+		var i = 0;
+		var items = this.props.tagMeta.parents.slice(0).reverse().map((val,key)=>{
 			
 			if(val==="root") return null;
-			return ([<div className="taglink"
-			onMouseEnter={()=>this.props.app.setPreviewedTag(val,true,this.props.tagMeta.tagName)} 
-			onMouseLeave={()=>this.props.app.setPreviewedTag(null)}
-			key={key}>{val}</div>,<span key={key+2}>»</span>])
+			i++;
+			return (
+			<span key={i}>
+				<div className="taglink" 
+					onMouseEnter={()=>this.props.app.setPreviewedTag(val,true,this.props.tagMeta.tagName)} 
+					onMouseLeave={()=>this.props.app.setPreviewedTag(null)}>{val}</div>
+				<span>»</span>
+			</span>) 
 			
 		})
+		
+		return (<span>{items}</span>);
 	}
 
 }
@@ -420,11 +427,11 @@ class TagBlocks extends Component {
 			 
 			   	
 			 return (
-			    [<div className="taggedblock" key={key} index={key} onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
+			    <div className="taggedblock" key={key}  onMouseEnter={()=>this.props.app.setState({mouseBlockIndex:key})}>
 			        {item}{details}
 			        <Passage app={this.props.app} verses={entry.verses} sub={entry.sub} highlights={highlights} wrapperId={null} wrapperClass={classes.join(" ")}/>
 			        {post_details}
-			    </div>]
+			    </div>
 			   	);
 		});
 				
@@ -564,7 +571,7 @@ class TagParallel extends Component {
 
 		      <div id="text" className={classes.join(" ")} style={{overflowY: 'scroll'}}>
 		        {details}
-		        <table className="parallel" id="parTable" count={items.length}>
+		        <table className="parallel" id="parTable" >
 		          <tbody id={tagstr}>
 		            {items}
 		          </tbody>

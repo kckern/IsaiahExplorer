@@ -724,24 +724,6 @@ class App extends Component {
 
   up() {
     if (this.state.showcase_tag !== null) return this.tagUp()
-    if (this.state.commentaryAudioMode && !this.state.searchMode) {
-      var keys = Object.keys(
-        globalData.commentary_audio.files[this.state.commentaryAudio]
-      )
-      var prev_file = keys[this.state.audioPointer - 1]
-      if (prev_file === undefined) prev_file = keys[keys.length - 1]
-      var prev_vid =
-        globalData.commentary_audio.files[this.state.commentaryAudio][
-          prev_file
-        ][0]
-      return this.setActiveVerse(
-        prev_vid,
-        undefined,
-        undefined,
-        true,
-        "comaudio"
-      )
-    }
 
     var index = -1
     var prev = 0
@@ -864,24 +846,7 @@ class App extends Component {
 
     if (this.state.showcase_tag !== null) return this.tagDown()
 
-    if (this.state.commentaryAudioMode && !this.state.searchMode) {
-      var keys = Object.keys(
-        globalData.commentary_audio.files[this.state.commentaryAudio]
-      )
-      var next_file = keys[this.state.audioPointer + 1]
-      if (next_file === undefined) next_file = keys[0]
-      var next_vid =
-        globalData.commentary_audio.files[this.state.commentaryAudio][
-          next_file
-        ][0]
-      return this.setActiveVerse(
-        next_vid,
-        undefined,
-        undefined,
-        undefined,
-        "comaudio"
-      )
-    }
+
 
     var index = -1
     var next = 0
@@ -1055,6 +1020,7 @@ class App extends Component {
   }
 
   selectVerse(verse_id, src) {
+  	console.log("Select Verse");
     if (verse_id === null) return this.unSelectVerse()
     //if searchmode and not in
     if (
@@ -1072,36 +1038,17 @@ class App extends Component {
       )
       return true
     }
+    
     if (
       this.state.audioState !== null &&
-      verse_id !== this.state.active_verse_id
+      verse_id !== this.state.active_verse_id &&
+      !this.state.commentaryAudioMode
     ) {
       this.setActiveVerse(verse_id, undefined, undefined, true, "audio")
       return true
-    } else if (
-      this.state.audioState !== null &&
-      this.state.commentaryAudioMode
-    ) {
-      if (this.state.commentary_audio_verse_range.indexOf(verse_id) > -1)
-        return false
-      this.setState(
-        {
-          selected_verse: null,
-          commentary_audio_verse_range: [verse_id],
-          audioState: "loading"
-        },
-        this.setActiveVerse.bind(
-          this,
-          verse_id,
-          undefined,
-          undefined,
-          true,
-          "comaudio"
-        )
-      )
+    }
+    
 
-      return true
-    } else if (this.state.audioState !== null) return false
 
     if (parseInt(this.state.selected_verse_id, 0) === parseInt(verse_id, 0))
       return this.unSelectVerse()
@@ -1722,7 +1669,7 @@ class App extends Component {
     if (source !== "arrow" && source !== "audio") this.arrowPointer = null
 
     var commentary_audio_verse_range = this.state.commentary_audio_verse_range
-    if (source === "comaudio") commentary_audio_verse_range = []
+    if (source === "comaudioDEBUG") commentary_audio_verse_range = [] ; //NO LONGER TRUE
 
     var audioState = this.state.audioState
     if (audioState === "playing" && !this.state.commentaryAudioMode)
@@ -1842,7 +1789,8 @@ class App extends Component {
       }
 
     if (this.checkInView(container, element) === true) return false
-
+	//debugger;
+	if(typeof container.childNodes[0].getBoundingClientRect !== "function") return false;
     var parent = container.childNodes[0].getBoundingClientRect().y
     var child = element.getBoundingClientRect().y
     const to = child - parent - 100
@@ -2267,6 +2215,7 @@ class App extends Component {
       tagMode: true,
       searchMode: false,
       comSearchMode: false,
+      audioState: null,
       commentaryAudioMode: false,
       preSearchMode: false,
       previewed_tag: null,

@@ -41,7 +41,6 @@ export class VerseBox extends Component {
               onDoubleClick={() => this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}
               onContextMenu={(e) => { e.preventDefault(); this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}}
               className={this.props.class.join(" ")}
-              verse_id={this.props.verse_id}
               title={this.props.title}  >
               {this.props.box_num}
             </div>

@@ -103,7 +103,7 @@ body .tipsy-pedigree,
 body .tipsyStructure,
 body span.label,
 body  a.ref,
-body  a.isa,
+body  span.isa,
 body .seqcircle,
 body .label,
 body .tagref,
@@ -399,7 +399,8 @@ div#text
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
-}#approot.commentaryMode #commentary_text a
+}#approot.commentaryMode #commentary_text a,
+#approot.commentaryMode #commentary_text span
 {
 	cursor:pointer;
 }
@@ -780,7 +781,7 @@ span.label
 
 div.taglink.tag_highlighted,
 div.taglink.tag_highlighted:hover,
-#commentary_text a.isa.tag_highlighted,
+#commentary_text span.isa.tag_highlighted,
 #commentary_text a.orig.tag_highlighted
 {
 	background-color:#467386;
@@ -914,7 +915,8 @@ div.heading_grid_tag_highlighted
 	color:#000;
 }
 
-#text span.poetry.versetext_com
+#text span.poetry.versetext_com,
+#text span.prose.versetext_com
 {
 	border-left:5px solid #DDD;
 	border-right:5px solid #DDD;
@@ -923,6 +925,7 @@ div.heading_grid_tag_highlighted
 	color:#666;
 
 }
+#text span.prose.versebox_highlighted.versetext_com,
 #text span.poetry.versebox_highlighted.versetext_com,
 #text .versetext_com.versebox_highlighted
 {
@@ -2769,7 +2772,8 @@ img.play
 	overflow:auto;
 
 }
-#commentary_text a
+#commentary_text a,
+#commentary_text span.isa
 {
 	border-radius:3px;
 	padding-left:3px;
@@ -2786,20 +2790,20 @@ img.play
 	text-align:left;
 	margin-top:0;
 }
-#commentary_text a.isa
+#commentary_text span.isa
 {
 
     background-color: #C5EEF3;
     border: 1px solid #103D50;
     color: #103D50;
 }
-#commentary_text a.isa:hover
+#commentary_text span.isa:hover
 {
 	background-color:#73A8DA;
 	color:#FFF;
 }
 
-#commentary_text h3 a.isa
+#commentary_text h3 span.isa
 {
 	font-size:16px;
 	padding-left:15px;
@@ -3388,12 +3392,18 @@ button#commentary
 	padding-top:1px;
 }
 
-.tag_meta>div.taglink:not(:first-child)
+.tag_meta div.taglink
 {
 	margin-left:15px;
 }
 
-.tag_meta>div.taglink:not(:last-child) + span
+
+.tag_meta>span>span:first-child>div.taglink
+{
+	margin-left:0px;
+}
+
+.tag_meta div.taglink:not(:last-child) + span
 {
 	color:#999;
 	line-height:10px;

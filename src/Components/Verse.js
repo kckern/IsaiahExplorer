@@ -186,7 +186,6 @@ class AudioCommentary extends Component {
 			audioState:"loading",
 			audioPointer:0,
 			tagMode:false,
-			selected_verse_id:null,  
 			commentaryAudio:shortcode,
     		commentaryAudioMode:true})
 	}
@@ -220,7 +219,7 @@ class AudioCommentary extends Component {
 	}
 	selectOption(e)
 	{
-		var shortcode = e.target.options[e.target.selectedIndex].attributes.shortcode.value;
+		var shortcode = e.target.options[e.target.selectedIndex].attributes.value.value;
 		
 		if(shortcode==="top") return false;
 		
@@ -235,12 +234,12 @@ class AudioCommentary extends Component {
 		if(this.state.options)
 		{
 			var options = null;
-			var items = [<option key="top" shortcode="top">Make a selection:</option>];
+			var items = [<option key="top" value="top">Make a selection:</option>];
 			
 			for(var i in globalData.meta.audiocom)
 			{
 				var it = globalData.meta.audiocom[i];
-				items.push(<option key={it.shortcode} shortcode={it.shortcode}> ⤷ {it.title}</option>);
+				items.push(<option key={it.shortcode} value={it.shortcode}> ⤷ {it.title}</option>);
 			}
 			
 			options = (<select onChange={this.selectOption.bind(this)} id="com_selector">{items}</select>)
@@ -351,12 +350,12 @@ class ExtraVersions extends Component {
 		</div>;
 		heading = <h4 key={3}>{num} Side-by-side Translations</h4>;
 		}
-		return [
+		return <div>
 			<Tipsy  key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
-			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{num}</span></Tipsy>,
-			heading,
-			extra
-			]
+			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{num}</span></Tipsy>
+			{heading}
+			{extra}
+			</div>
 	}
 	
 }

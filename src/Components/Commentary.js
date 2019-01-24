@@ -10,18 +10,20 @@ export class Commentary extends Component {
   render() {
   	
   	if(this.props.app.state.commentaryMode===false) 
-  	    return (  [<div key={1} className="heading_subtitle commentary">Commentary<img src={close} alt="close" onClick={this.props.app.clearCommentary.bind(this.props.app)} /></div>,
-        <div key={2} id="commentary_text">
-        </div>])
+  	    return (  
+  	    <div>
+  	    	<div className="heading_subtitle commentary">Commentary<img src={close} alt="close" onClick={this.props.app.clearCommentary.bind(this.props.app)} /></div>
+        	<div id="commentary_text"></div>
+        </div>)
   
   	    return (
-
-        [<div key={1} className="heading_subtitle commentary">Commentary<img src={close} alt="close"  onClick={this.props.app.clearCommentary.bind(this.props.app)} /></div>,
-        <div key={2} id="commentary_text">
-          <CommentaryTabs app={this.props.app} />
-          <CommentaryContent app={this.props.app} />
-        </div>]
-    );
+        <div>
+	        <div className="heading_subtitle commentary">Commentary<img src={close} alt="close"  onClick={this.props.app.clearCommentary.bind(this.props.app)} /></div>
+	        <div id="commentary_text">
+	          <CommentaryTabs app={this.props.app} />
+	          <CommentaryContent app={this.props.app} />
+	        </div>
+        </div> );
   
   }
   
@@ -97,7 +99,7 @@ class MoreTab extends Component {
 	selectOption(e)
 	{
 				
-		var shortcode = e.target.options[e.target.selectedIndex].attributes.shortcode.value;
+		var shortcode = e.target.options[e.target.selectedIndex].attributes.value.value;
 	  	var id = globalData.commentary.comIndex[this.props.app.state.commentary_verse_id][shortcode][0]
 		
 		if(shortcode==="top") return false;
@@ -115,8 +117,8 @@ class MoreTab extends Component {
 			
 			return (
 				<select  onChange={this.selectOption.bind(this)} >
-					<option val="top">⋯</option>
-					{ this.props.sources.map((source,key)=>{return <option key={key} shortcode={source.shortcode} > ⤷ [{source.year}] {source.name}</option> } ) }
+					<option value="top">⋯</option>
+					{ this.props.sources.map((source,key)=>{return <option key={key} value={source.shortcode} > ⤷ [{source.year}] {source.name}</option> } ) }
 				</select>
 				)
 		}
@@ -323,11 +325,11 @@ class CommentaryTagLink extends Component {
 	
 	render()
 	{
-		return (<a className="isa"
+		return (<span className="isa"
 		onMouseEnter={this.previewVerses.bind(this)} 
 		onMouseLeave={this.clearVerses.bind(this)} 
 		onClick={this.lookupVerses.bind(this)} 
-		>{this.props.reference}</a>);
+		>{this.props.reference}</span>);
 	}
 
 }

@@ -83,7 +83,7 @@ class AudioVersePlayer extends Component {
 		  	} 
 		  	
 		} 
-		return [<ReactPlayer className='react-player'
+		return <span><ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
 			key={11}
@@ -91,7 +91,7 @@ class AudioVersePlayer extends Component {
 			playing={true} 
 			onStart={onStart}
 			onEnded={onEnded.bind(this,next)}
-		/>,<ReactPlayer  className='react-player'
+		/><ReactPlayer  className='react-player'
           	width='0%'
           	height='0%'
 			key={12}
@@ -99,7 +99,7 @@ class AudioVersePlayer extends Component {
 			playing={true}
 			volume={0}
 			muted={true}
-		/>]
+		/></span>
 	}
 
 }
@@ -176,7 +176,7 @@ class AudioCommentaryPlayer extends Component {
 		  	this.props.app.setActiveVerse(next,undefined,undefined,undefined,"comaudio");
 		}
 		
-		return [<ReactPlayer className='react-player'
+		return <span><ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
 			key={21}
@@ -184,7 +184,7 @@ class AudioCommentaryPlayer extends Component {
 			playing={true} 
 			onStart={onStart}
 			onEnded={onEnded.bind(this,next)}
-		/>,<ReactPlayer  className='react-player'
+		/><ReactPlayer  className='react-player'
           	width='0%'
           	height='0%'
 			key={22}
@@ -192,7 +192,7 @@ class AudioCommentaryPlayer extends Component {
 			playing={true}
 			volume={0}
 			muted={true}
-		/>]
+		/></span>
 	}
 
 }

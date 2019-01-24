@@ -55,7 +55,7 @@ class Settings extends Component {
       <div id="user_prefs">
         <img alt="img" style={{float: 'right'}} onClick={() => app.closeSettings()}
              src={require('../../img/interface/close.png')} />
-        <h2 align="center">Isaiah Explorer User Preferences
+        <h2>Isaiah Explorer User Preferences
           <div className="instructions">Please rank the following options by order of preference by dragging an item up
             or down. The top five of each category will become readily accessible from the main screen.
           </div>

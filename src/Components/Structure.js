@@ -125,7 +125,7 @@ class Section extends Component {
           }
           
           var tagimg = null;
-          if(section.tag.length>0) tagimg = <img src={tag_png} alt="tag" className="gridTag" tag={section.tag} onClick={()=>this.props.app.showcaseTag(section.tag)}/>
+          if(section.tag.length>0) tagimg = <img src={tag_png} alt="tag" className="gridTag" onClick={()=>this.props.app.showcaseTag(section.tag)}/>
 
           return (
             <div className="overviewcontainer">
