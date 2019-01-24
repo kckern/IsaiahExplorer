@@ -1855,6 +1855,12 @@ tr.readmore:hover,
     margin-bottom: 5px;
 }
 
+#verse .vernum + h4
+{
+	padding-top:10px;
+    padding-bottom: 5px;
+    float:left;
+}
 /* OUTLINE */
 .verse_info_box.outline.top5
 {
