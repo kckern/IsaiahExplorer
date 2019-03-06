@@ -1715,7 +1715,12 @@ class App extends Component {
     if (source !== "arrow" && source !== "audio") this.arrowPointer = null
 
     var commentary_audio_verse_range = this.state.commentary_audio_verse_range
-    if (source === "comaudioDEBUG") commentary_audio_verse_range = [] ; //NO LONGER TRUE
+    var selected_verse_id = this.state.selected_verse_id;
+    if (source === "comaudio")
+    {
+    	commentary_audio_verse_range = [] ; //NO LONGER TRUE
+    	selected_verse_id = null;
+    }
 
     var audioState = this.state.audioState
     if (audioState === "playing" && !this.state.commentaryAudioMode)
@@ -1736,6 +1741,7 @@ class App extends Component {
 
     var vals = {
       active_verse_id: verse_id,
+      selected_verse_id: selected_verse_id,
       more_tags: false,
       searchMode: searchMode,
       searchQuery: searchQuery,

@@ -170,10 +170,11 @@ class AudioCommentaryPlayer extends Component {
 		
 		
 		var onEnded = (next)=>{
-			
 		  	if(next===null || next===undefined) return this.props.app.setState({  audioState:null,commentary_audio_verse_range:[] });
 		  	
-		  	this.props.app.setActiveVerse(next,undefined,undefined,undefined,"comaudio");
+		  	this.props.app.setActiveVerse(next,undefined,undefined,"force","comaudio");
+		  	
+		  	
 		}
 		
 		return <span><ReactPlayer className='react-player'

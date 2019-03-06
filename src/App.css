@@ -862,21 +862,23 @@ div.heading_grid_tag_highlighted
 
 
 
-/*  Commentary Highlight + active verse, black */
-.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary,
-.versebox.versebox_range_highlighted.versebox.active_commentary
-{
-	background-color:#73A8DA;
-	color:#FFF;
-}
-
-
 /*  Commentary Highlight, dark grey */
 .versebox.active_commentary
 {
 	background-color:#333;
 	color:#FFF;
 }
+
+
+/* Yellow Highlight */
+.versebox.versebox_highlighted.active_commentary,
+.versebox.versebox_range_highlighted.versebox_highlighted.active_commentary,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.active_commentary
+{
+	background-color:#333;
+	color:#FFA;
+}
+
 
 /* med blue */
 
@@ -891,10 +893,7 @@ div.heading_grid_tag_highlighted
 /* Yellow Highlight */
 .versebox.versebox_highlighted,
 .versebox.versebox_range_highlighted.versebox_highlighted,
-.versebox.versebox_range_highlighted.active_commentary.versebox_highlighted,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.active_commentary.versebox_highlighted,
-.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary.versebox_highlighted
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted
 {
 	background-color:#FFA;
 	color:#000;
@@ -906,13 +905,19 @@ div.heading_grid_tag_highlighted
 .versebox.versebox_selected,
 .versebox.versebox_highlighted.versebox_selected,
 .versebox.versebox_range_highlighted.versebox_highlighted.versebox_selected,
-.versebox.versebox_range_highlighted.versebox_highlighted.active_commentary.versebox_selected,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.versebox_selected,
-.heading_grid_highlighted .versebox.versebox_range_highlighted.versebox.active_commentary.versebox_selected,
-.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.active_commentary.versebox_selected
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.versebox_selected
 {
 	background-color:#fdd43a;
 	color:#000;
+}
+/* orange Highlight  versebox_selected */
+.versebox.versebox_selected.active_commentary,
+.versebox.versebox_highlighted.versebox_selected.active_commentary,
+.versebox.versebox_range_highlighted.versebox_highlighted.versebox_selected.active_commentary,
+.versebox.versebox_range_highlighted.versebox_tag_highlighted.versebox_highlighted.versebox_selected.active_commentary
+{
+	background-color:#333;
+	color:#fdd43a;
 }
 
 #text span.poetry.versetext_com,
@@ -923,6 +928,7 @@ div.heading_grid_tag_highlighted
 	background-color:#DDD;
 	border-color:#DDD;
 	color:#666;
+  box-shadow: -5px 0px 0px 0px #DDD, 5px 0px 0px 0px #DDD;
 
 }
 #text span.prose.versebox_highlighted.versetext_com,
