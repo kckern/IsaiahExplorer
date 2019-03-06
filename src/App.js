@@ -463,15 +463,15 @@ class App extends Component {
     if (settings.top_outlines === undefined) settings.top_outlines = []
     if (settings.top_structures === undefined) settings.top_structures = []
 
-    if (settings.top_versions.length !== 5)
-      settings.top_versions = ["KJV", "HBRS", "NRSV", "NIV", "NASB"]
+    if (settings.top_versions.length !== 5 || settings.top_versions.indexOf("HBRS")>=0)
+      settings.top_versions = ["KJV", "IINST", "NRSV", "NIV", "NASB"]
     if (settings.top_outlines.length !== 5)
       settings.top_outlines = ["chapters", "mev", "nrsv", "niv", "nasb"]
     if (settings.top_structures.length !== 5)
       settings.top_structures = [
         "whole",
         "bibleproject",
-        "bifid",
+        "7part",
         "authorship",
         "wikipedia"
       ]

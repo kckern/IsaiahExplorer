@@ -518,6 +518,7 @@ class SectionsBox extends Component{
 	      	var shortcode = option;
 	      	var index = parseInt(globalData["structureIndex"][this.props.app.state.active_verse_id][shortcode],0);
 	      	var structure = globalData["structures"][shortcode];
+	      	if(structure===undefined) return null;
 	      	var section = structure[index];
 	      	var count = "⦗"+(index+1)+"/"+structure.length+"⦘";
 	      	
