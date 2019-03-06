@@ -218,9 +218,13 @@ class App extends Component {
       "^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/hebrew.[0-9]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*",
       "ig"
     )
-    matches = regex.exec(path)
-    var params = [null]
-    if (matches === null) return settings
+    matches = regex.exec(path);
+    
+    var params = [null];
+    
+    if (matches === null) return this.checkForSpecialUrl(path,settings);
+    
+    
     for (var i = 1; i < matches.length; i++) {
       if (typeof matches[i] !== "string") params.push(null)
       else params.push(matches[i].replace(/^\//, ""))
@@ -268,6 +272,30 @@ class App extends Component {
     }
     
 
+    return settings;
+  }
+  
+  checkForSpecialUrl(path,settings)
+  {
+  	
+    //pure search
+    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(path);
+    if(pure_search!==null)
+    {
+      settings.searchQuery = pure_search[1]
+      settings.searchMode = false
+      settings.urlSearch = true
+    }
+    
+    //pure hebrew
+    var pure_hebrew = (new RegExp("^/hebrew/([^/]+)","ig")).exec(path);
+    if(pure_hebrew!==null)
+    {
+    	var hebint = parseInt(pure_hebrew[1],0);
+    	console.log("heb",hebint);
+    	settings.hebrewStrongIndex = hebint;
+    } 
+    
     return settings;
   }
   
@@ -467,7 +495,25 @@ class App extends Component {
     var regex = new RegExp("^/[^/]+/[^/]+/([^/]+)", "ig")
     var matches = regex.exec(this.props.location.pathname)
     if (matches !== null)
-      if (matches[1].length > 1) settings.version = matches[1].toUpperCase()
+      if (matches[1].length > 1) settings.version = matches[1].toUpperCase();
+      
+      
+    //pure search
+    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(this.props.location.pathname);
+    if(pure_search!==null)
+    {
+      settings.searchQuery = pure_search[1];
+      settings.searchMode = false;
+      settings.urlSearch = true;
+    }
+    
+    //pure hebrew
+    var pure_hebrew = (new RegExp("^/hebrew/([0-9]+)","ig")).exec(this.props.location.pathname);
+    if(pure_hebrew!==null)
+    {
+      settings.hebrewStrongIndex = parseInt( pure_hebrew[1],0);
+    }  
+
 
     this.setState(settings, function() {
       this.saveSettings()
@@ -1020,7 +1066,7 @@ class App extends Component {
   }
 
   selectVerse(verse_id, src) {
-  	console.log("Select Verse");
+  //	console.log("Select Verse");
     if (verse_id === null) return this.unSelectVerse()
     //if searchmode and not in
     if (
@@ -1225,7 +1271,7 @@ class App extends Component {
     this.lastTags = []
     this.lastVerseId = null
 
-    if (this.props.location.pathname.match(/\/hebrew\.[0-9]+/) !== null)
+    if (this.props.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null)
       this.load_queue.push("hebrew")
 
     var subsite = "default"
@@ -1486,7 +1532,7 @@ class App extends Component {
       .then(response => response.text())
       .then(data => {
         globalData["hebrew"] = this.unzipJSON(data)
-        if (this.props.location.pathname.match(/\/hebrew\.[0-9]+/) !== null) {
+        if (this.props.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null) {
           this.pull("hebrew")
           this.checkLoaded()
         }
