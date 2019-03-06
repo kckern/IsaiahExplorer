@@ -863,7 +863,8 @@ div.heading_grid_tag_highlighted
 
 
 /*  Commentary Highlight, dark grey */
-.versebox.active_commentary
+.versebox.active_commentary,
+.heading_grid_highlighted .versebox.active_commentary
 {
 	background-color:#333;
 	color:#FFF;
