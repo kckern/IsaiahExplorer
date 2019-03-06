@@ -383,7 +383,7 @@
             "slug": "d-c",
             "prev": "New Testament"
         },
-        "Bifid": {
+        "Seven Part Structure": {
             "parents": [
                 "Structures",
                 "root"
@@ -392,7 +392,7 @@
             "details": "",
             "cite": "",
             "type": "",
-            "slug": "bifid",
+            "slug": "seven-partstructure",
             "next": "Bible Project"
         },
         "Bible Project": {
@@ -406,7 +406,7 @@
             "type": "",
             "slug": "bible-project",
             "next": "Home, Exhile, Return",
-            "prev": "Bifid"
+            "prev": "Seven Part Structure"
         },
         "Home, Exhile, Return": {
             "parents": [
@@ -539,8 +539,8 @@
         },
         "Oracles Against Foreign Powers": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -688,9 +688,9 @@
             "slug": "return",
             "prev": "Initiation"
         },
-        "Bifid I": {
+        "Part I": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -698,12 +698,12 @@
             "details": "Reversal of circumstances between Zion and non\u2013Zion",
             "cite": "",
             "type": "",
-            "slug": "bifid-i",
-            "next": "Bifid II"
+            "slug": "part-i",
+            "next": "Part II"
         },
-        "Bifid II": {
+        "Part II": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -711,13 +711,13 @@
             "details": "Coexistence of two antithetical peoples and their kings",
             "cite": "",
             "type": "",
-            "slug": "bifid-ii",
-            "next": "Bifid III",
-            "prev": "Bifid I"
+            "slug": "part-ii",
+            "next": "Part III",
+            "prev": "Part I"
         },
-        "Bifid III": {
+        "Part III": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -725,13 +725,13 @@
             "details": "Composite of types to depict an ideal agent of Yahweh\u2019s redemption, an exemplar and paradigm of Yahweh\u2019s people",
             "cite": "",
             "type": "",
-            "slug": "bifid-iii",
-            "next": "Bifid IV",
-            "prev": "Bifid II"
+            "slug": "part-iii",
+            "next": "Part IV",
+            "prev": "Part II"
         },
-        "Bifid IV": {
+        "Part IV": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -739,13 +739,13 @@
             "details": "Composite of types to depict a pluralistic arch entity (Babylon) that is the oppressor and opponent of Zion.",
             "cite": "",
             "type": "",
-            "slug": "bifid-iv",
-            "next": "Bifid V",
-            "prev": "Bifid III"
+            "slug": "part-iv",
+            "next": "Part V",
+            "prev": "Part III"
         },
-        "Bifid V": {
+        "Part V": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -753,13 +753,13 @@
             "details": "",
             "cite": "",
             "type": "",
-            "slug": "bifid-v",
-            "next": "Bifid VI",
-            "prev": "Bifid IV"
+            "slug": "part-v",
+            "next": "Part VI",
+            "prev": "Part IV"
         },
-        "Bifid VI": {
+        "Part VI": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -767,13 +767,13 @@
             "details": "",
             "cite": "",
             "type": "",
-            "slug": "bifid-vi",
-            "next": "Bifid VII",
-            "prev": "Bifid V"
+            "slug": "part-vi",
+            "next": "Part VII",
+            "prev": "Part V"
         },
-        "Bifid VII": {
+        "Part VII": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -781,14 +781,14 @@
             "details": "",
             "cite": "",
             "type": "",
-            "slug": "bifid-vii",
+            "slug": "part-vii",
             "next": "Cumulative Themes",
-            "prev": "Bifid VI"
+            "prev": "Part VI"
         },
         "Ruin": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -801,8 +801,8 @@
         },
         "Ruin\u2014National": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -816,8 +816,8 @@
         },
         "Ruin\u2014Universal": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -831,8 +831,8 @@
         },
         "Rebirth": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -846,8 +846,8 @@
         },
         "Rebirth\u2014National": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -861,8 +861,8 @@
         },
         "Rebirth\u2014Universal": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -876,8 +876,8 @@
         },
         "\u24cd Edom\u2194Nations": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -891,8 +891,8 @@
         },
         "\u29b7 Ruin\u2194Rebirth Motifs": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -906,8 +906,8 @@
         },
         "\u29b7 Israel\u2194Nations Motifs": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -921,8 +921,8 @@
         },
         "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin": {
             "parents": [
-                "Bifid I",
-                "Bifid",
+                "Part I",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -935,8 +935,8 @@
         },
         "Biographical Material": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -949,8 +949,8 @@
         },
         "\u24cd Narrative Structure": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -964,8 +964,8 @@
         },
         "Rebellion\u2014Ahaz": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -979,8 +979,8 @@
         },
         "Rebellion\u2014People": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -994,8 +994,8 @@
         },
         "Compliance\u2014Hezekiah": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1009,8 +1009,8 @@
         },
         "Compliance\u2014People": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1024,8 +1024,8 @@
         },
         "3 Sons": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1039,8 +1039,8 @@
         },
         "King as Exemplar": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1054,8 +1054,8 @@
         },
         "\u29b7 Prophet\u2194People": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1069,8 +1069,8 @@
         },
         "Prophetic Paradigm": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1084,8 +1084,8 @@
         },
         "\u29b7 Isaiah\u2194Seraph": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1099,8 +1099,8 @@
         },
         "Israel\u2019s Rise and Fall": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1114,8 +1114,8 @@
         },
         "Hezekiah\u2019s Ascent": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1129,13 +1129,13 @@
         },
         "Covenantal Naming": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
             "description": "Spiritual ascent involves receiving a new name",
-            "details": "The pairs of parallel names Jacob\/Israel and Zion\/Jerusalem in the Book of Isaiah provide a clue to a differentiation of spiritual levels and an entire hierarchy of spiritual categories is on display in Bifid II.",
+            "details": "The pairs of parallel names Jacob\/Israel and Zion\/Jerusalem in the Book of Isaiah provide a clue to a differentiation of spiritual levels and an entire hierarchy of spiritual categories is on display in Part II.",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "covenantal-naming",
@@ -1144,8 +1144,8 @@
         },
         "Upward Movement": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1159,13 +1159,13 @@
         },
         "\u29b7 Ch 40\u2194Chs 36\u201337": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
             "description": "Common themes link Part II\u2019s Proto and Deutero Isaiah",
-            "details": "Isaiah 40, whose historical setting appears partly exilic\u2014describing conditions during Judah\u2019s exile in Babylon\u2014is as much a part of the included material as is Isaiah 36\u201339, whose historical setting is preexilic, describing conditions before the Southern Kingdom came to an end. Although, historically, Chapter 40 may be separated from the others by Judah\u2019s exile, the second unit nevertheless consistently portrays the categories identified in Bifid II.",
+            "details": "Isaiah 40, whose historical setting appears partly exilic\u2014describing conditions during Judah\u2019s exile in Babylon\u2014is as much a part of the included material as is Isaiah 36\u201339, whose historical setting is preexilic, describing conditions before the Southern Kingdom came to an end. Although, historically, Chapter 40 may be separated from the others by Judah\u2019s exile, the second unit nevertheless consistently portrays the categories identified in Part II.",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "parallel",
             "slug": "ch-40-chs-36-37",
@@ -1174,8 +1174,8 @@
         },
         "Zion Ideology": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1188,8 +1188,8 @@
         },
         "\u24cd Chaos\u2194Creation": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1203,8 +1203,8 @@
         },
         "4 Agents": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1218,8 +1218,8 @@
         },
         "3 Redemptive Roles": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1233,8 +1233,8 @@
         },
         "\u29b7 3 Redemptive Events": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1248,8 +1248,8 @@
         },
         "Agents\u2019 Redemptive Roles": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1263,8 +1263,8 @@
         },
         "\ud83d\udc64 Davidic Figure": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1278,8 +1278,8 @@
         },
         "\ud83d\udc64 Righteous Warrior Figure": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1293,8 +1293,8 @@
         },
         "\ud83d\udc64 Cyrus Figure": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1308,8 +1308,8 @@
         },
         "\ud83d\udc64 Servant Figure": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1324,8 +1324,8 @@
         "A Davidic Figure": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1339,8 +1339,8 @@
         "Davidic King \ud83c\udd9a Assyrian King": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1355,8 +1355,8 @@
         "\u29b7 Hand\u2194Ensign": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1371,8 +1371,8 @@
         "3 Linked Events": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1387,8 +1387,8 @@
         "Coronation Psalm": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1403,8 +1403,8 @@
         "Davidic Accession\u2194Return from Exhile": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1419,8 +1419,8 @@
         "Davidic Rise\u2194Assyrian Fall": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1435,8 +1435,8 @@
         "New Creation": {
             "parents": [
                 "\ud83d\udc64 Davidic Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1450,8 +1450,8 @@
         "A Righteous Warrior Figure": {
             "parents": [
                 "\ud83d\udc64 Righteous Warrior Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1465,8 +1465,8 @@
         "Eastern Figure\u21ccRighteousness": {
             "parents": [
                 "\ud83d\udc64 Righteous Warrior Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1481,8 +1481,8 @@
         "Chaos Before Creation": {
             "parents": [
                 "\ud83d\udc64 Righteous Warrior Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1496,8 +1496,8 @@
         "A Servant Figure": {
             "parents": [
                 "\ud83d\udc64 Servant Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1511,8 +1511,8 @@
         "\u24cd Servant\u2194Justice": {
             "parents": [
                 "\ud83d\udc64 Servant Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1526,8 +1526,8 @@
         "A Cyrus Figure": {
             "parents": [
                 "\ud83d\udc64 Cyrus Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1541,8 +1541,8 @@
         "Cyrus\u2019s Name": {
             "parents": [
                 "\ud83d\udc64 Cyrus Figure",
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1555,8 +1555,8 @@
         },
         "Babylon\u2019s Demise": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1570,8 +1570,8 @@
         },
         "Glory\u2194Ignominy": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1586,8 +1586,8 @@
         "\u29b7 Servant\u2194Tyrant": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1600,8 +1600,8 @@
         },
         "Components of Babylon": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1615,8 +1615,8 @@
         },
         "Babylon\u21ccUniversal": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1630,8 +1630,8 @@
         },
         "\u29b7 Tyre\u2194Babylon": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1645,8 +1645,8 @@
         },
         "Self\u2013Exalation": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1660,8 +1660,8 @@
         },
         "\u29b7 Zion\u2194Babylon": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1675,8 +1675,8 @@
         },
         "Babylon\u2019s Humiliation": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1690,8 +1690,8 @@
         },
         "\u29b7 King of Assyria\u2194King of Babylon": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1705,8 +1705,8 @@
         },
         "\ud83c\udff0 The City": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1720,8 +1720,8 @@
         "City Attributes": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1735,8 +1735,8 @@
         "\u29b7 City\u21ccMoab": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1751,8 +1751,8 @@
         "City\u2194Moab\u2019s Agression": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1767,8 +1767,8 @@
         "City\u21ccEarth": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1783,8 +1783,8 @@
         "City\u21ccNations": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1799,8 +1799,8 @@
         "City\u21ccJacob\/Israel": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1815,8 +1815,8 @@
         "The Composite City": {
             "parents": [
                 "\ud83c\udff0 The City",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1829,8 +1829,8 @@
         },
         "\u29b7 Righteous vs. the World": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1844,8 +1844,8 @@
         },
         "Universal Suffering": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1859,8 +1859,8 @@
         },
         "Universal Salvation": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1874,8 +1874,8 @@
         },
         "Peace\u21ccSalvation": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1901,8 +1901,8 @@
         },
         "Law\/Word\u21ccServant\u2019s Mission": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1916,8 +1916,8 @@
         },
         "Suffering \u27a4 Hope": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1931,8 +1931,8 @@
         },
         "Suffering Before Salvation": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1946,8 +1946,8 @@
         },
         "\u24cd Individual Servant": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1961,8 +1961,8 @@
         },
         "Redemption": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1977,8 +1977,8 @@
         "Redemptive Intervention": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -1993,8 +1993,8 @@
         "Divine Attributes": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2009,8 +2009,8 @@
         "Deliverance\u2194Ideal Vassal": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2025,8 +2025,8 @@
         "Redemptive Roles": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2041,8 +2041,8 @@
         "Righteousness \u27a4 Salvation": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2057,8 +2057,8 @@
         "Two Arms": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2073,8 +2073,8 @@
         "Righteousness\u21ccHand\u21ccArm": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2089,8 +2089,8 @@
         "Fourth Servant Song of Isaiah": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2105,8 +2105,8 @@
         "I\/Me\/My\u2014Servant Role": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2121,8 +2121,8 @@
         "We\/Us\/Our\u2014Another Role": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2137,8 +2137,8 @@
         "\u29b7 Three Subjects": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2153,8 +2153,8 @@
         "\u29b7 Kings of Babylon & Zion": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2169,8 +2169,8 @@
         "Suffering Figure\u21ccYahweh": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2185,8 +2185,8 @@
         "Peace": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2201,8 +2201,8 @@
         "Redemptive Elements": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2217,8 +2217,8 @@
         "\u24cd Suffering Figure": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2233,8 +2233,8 @@
         "Proxy Roles": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2249,8 +2249,8 @@
         "Royal Accession": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2265,8 +2265,8 @@
         "Ideal Vassal\u2194People": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2281,8 +2281,8 @@
         "Fate of Babylon\u2019s King": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2297,8 +2297,8 @@
         "Vassal\u2019s Redemption": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2313,8 +2313,8 @@
         "Yahweh\u2019s Descent": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2329,8 +2329,8 @@
         "\u24cd Vindication": {
             "parents": [
                 "Redemption",
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2343,8 +2343,8 @@
         },
         "Comparative Suffering": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2358,8 +2358,8 @@
         },
         "Suffering and Deliverance": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2373,8 +2373,8 @@
         },
         "3 Roles": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2388,13 +2388,13 @@
         },
         "Deliverance Criteria": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
             "description": "The servants meet the criteria for Yahweh\u2019s deliverance",
-            "details": "In the Bifid Structure\u2019s end-time context, both his ideal vassal and Zion\/Jerusalem\u2014those who emulate the ideal vassal\u2019s righteousness\u2014meet the criteria for Yahweh\u2019s deliverance. ",
+            "details": "In the Part Structure\u2019s end-time context, both his ideal vassal and Zion\/Jerusalem\u2014those who emulate the ideal vassal\u2019s righteousness\u2014meet the criteria for Yahweh\u2019s deliverance. ",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "deliverance-criteria",
@@ -2403,8 +2403,8 @@
         },
         "Yahweh\u2019s Ascent": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2418,8 +2418,8 @@
         },
         "Loyalty": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2432,8 +2432,8 @@
         },
         "Disloyalty": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2447,8 +2447,8 @@
         },
         "Didactics": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2462,8 +2462,8 @@
         },
         "A Covenant with Death": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2478,8 +2478,8 @@
         "4 Woes": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2493,8 +2493,8 @@
         "Reprobates": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2509,8 +2509,8 @@
         "Righteous Remnant": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2525,13 +2525,13 @@
         "Prevailing Falsehoods": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
             "description": "Loyalty is tested amid prevailing falsehoods",
-            "details": "At the very time the archtyrant destroys the wicked\u2014cleansing the earth before Yahweh comes\u2014the righteous are taken out. A concept established in previous categories of the Bifid Structure and in Isaiah\u2019s Zion ideology is that Yahweh\u2019s coming also involves the coming of the archtyrant. While the ideal vassal prepares those who repent\/return for Yahweh\u2019s coming\u2014leading to their rebirth, deliverance, exaltation, and salvation\u2014the archtyrant prepares to destroy Yahweh\u2019s people. In the end, however, he succeeds only in causing the ruin, punishment, humiliation, and suffering of Yahweh\u2019s reprobate people.",
+            "details": "At the very time the archtyrant destroys the wicked\u2014cleansing the earth before Yahweh comes\u2014the righteous are taken out. A concept established in previous categories of the Part Structure and in Isaiah\u2019s Zion ideology is that Yahweh\u2019s coming also involves the coming of the archtyrant. While the ideal vassal prepares those who repent\/return for Yahweh\u2019s coming\u2014leading to their rebirth, deliverance, exaltation, and salvation\u2014the archtyrant prepares to destroy Yahweh\u2019s people. In the end, however, he succeeds only in causing the ruin, punishment, humiliation, and suffering of Yahweh\u2019s reprobate people.",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "prevailing-falsehoods",
@@ -2541,8 +2541,8 @@
         "Covenant with Death": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2557,8 +2557,8 @@
         "Assyrian Flood": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2573,8 +2573,8 @@
         "Assyria Destroyed": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2589,8 +2589,8 @@
         "Cursed Covenant People": {
             "parents": [
                 "A Covenant with Death",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2603,8 +2603,8 @@
         },
         "A Covenant with Life": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2619,8 +2619,8 @@
         "Redeemed Covenant People": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2634,8 +2634,8 @@
         "Divine Guidance": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2650,8 +2650,8 @@
         "Exhortations": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2666,8 +2666,8 @@
         "Condemnations": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2682,8 +2682,8 @@
         "Wicked Response": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2698,8 +2698,8 @@
         "Righteous Response": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2714,8 +2714,8 @@
         "Law & Word": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2730,8 +2730,8 @@
         "\u24cd Universal Appeal": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2746,8 +2746,8 @@
         "Covenantal Allegiance": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2762,8 +2762,8 @@
         "Ideal Vassal\u21ccLiving Oracle": {
             "parents": [
                 "A Covenant with Life",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2776,8 +2776,8 @@
         },
         "Response Dichotomy": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2791,8 +2791,8 @@
         },
         "Response to Vassal": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2806,8 +2806,8 @@
         },
         "The New Covenant": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2822,8 +2822,8 @@
         "Covenant Theology": {
             "parents": [
                 "The New Covenant",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2837,8 +2837,8 @@
         "4 Biblical Covenants": {
             "parents": [
                 "The New Covenant",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2853,8 +2853,8 @@
         "New Covenant": {
             "parents": [
                 "The New Covenant",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2869,8 +2869,8 @@
         "Covenantal Peace": {
             "parents": [
                 "The New Covenant",
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2883,8 +2883,8 @@
         },
         "Contrasting Fortunes": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2898,8 +2898,8 @@
         },
         "Opposite Responses": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2913,8 +2913,8 @@
         },
         "Great Division": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2928,8 +2928,8 @@
         },
         "Covenantal Loyalty": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2943,8 +2943,8 @@
         },
         "Covenantal Disloyalty": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2958,8 +2958,8 @@
         },
         "Disinheritance": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2972,8 +2972,8 @@
         },
         "Inheritance": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -2987,8 +2987,8 @@
         },
         "Wicked Superlatives": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3002,8 +3002,8 @@
         },
         "Righteous Superlatives": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3017,8 +3017,8 @@
         },
         "Nations\u21ccSinners": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3032,8 +3032,8 @@
         },
         "Covenental Separation": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3048,8 +3048,8 @@
         "Disparate Fates": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3063,8 +3063,8 @@
         "Desert Reversals": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3079,8 +3079,8 @@
         "Personified Covenants": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3095,8 +3095,8 @@
         "King and Servants": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3111,8 +3111,8 @@
         "Light \ud83c\udd9a Dark": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3127,8 +3127,8 @@
         "Separation": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3143,8 +3143,8 @@
         "Brethren": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3159,8 +3159,8 @@
         "Servants\u2194Ideal Vassal": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3175,8 +3175,8 @@
         "Enemies \ud83c\udd9a Servants": {
             "parents": [
                 "Covenental Separation",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3189,8 +3189,8 @@
         },
         "Sum of Redemption": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3204,8 +3204,8 @@
         },
         "Woman Figure": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3219,8 +3219,8 @@
         },
         "Blessings": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3234,8 +3234,8 @@
         },
         "\u24cd Unconditional Covenant": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3249,8 +3249,8 @@
         },
         "Two Functions": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3264,8 +3264,8 @@
         },
         "Ascension Theology": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3280,8 +3280,8 @@
         "Annointed Vassal": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3295,8 +3295,8 @@
         "Hierarchy": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3311,8 +3311,8 @@
         "Universal Mission": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3327,8 +3327,8 @@
         "Servants Ascend": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3343,8 +3343,8 @@
         "Children of Zion": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3359,8 +3359,8 @@
         "Vassal Ascends": {
             "parents": [
                 "Ascension Theology",
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3373,21 +3373,21 @@
         },
         "Cumulative Themes": {
             "parents": [
-                "Bifid",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
             "description": "",
-            "details": "Cumulative Bifid Themes",
+            "details": "Cumulative Part Themes",
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "cumulative-themes",
-            "prev": "Bifid VII"
+            "prev": "Part VII"
         },
         "Cumulative Themes I \u2013 II": {
             "parents": [
-                "Bifid II",
-                "Bifid",
+                "Part II",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3400,8 +3400,8 @@
         },
         "Cumulative Themes I \u2013 III": {
             "parents": [
-                "Bifid III",
-                "Bifid",
+                "Part III",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3414,8 +3414,8 @@
         },
         "Cumulative Themes I \u2013 IV": {
             "parents": [
-                "Bifid IV",
-                "Bifid",
+                "Part IV",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3428,8 +3428,8 @@
         },
         "Cumulative Themes I \u2013 V": {
             "parents": [
-                "Bifid V",
-                "Bifid",
+                "Part V",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3442,8 +3442,8 @@
         },
         "Cumulative Themes I \u2013 VI": {
             "parents": [
-                "Bifid VI",
-                "Bifid",
+                "Part VI",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -3456,8 +3456,8 @@
         },
         "Cumulative Themes I \u2013 VII": {
             "parents": [
-                "Bifid VII",
-                "Bifid",
+                "Part VII",
+                "Seven Part Structure",
                 "Structures",
                 "root"
             ],
@@ -33200,7 +33200,7 @@
             },
             {
                 "desc": "Neither she nor her children have recourse to Yahweh\u2019s protection because \u201cby sinning you sold yourselves, on account of your crimes was your mother an outcast\u201d",
-                "details": "The idea of being \u201csold\u201d (nimkartem) suggests that Yahweh\u2019s alienated people become the possession of another lord. Part IV of the Bifid Structure thus develops the idea of a Greater Babylon and its king that incorporates Yahweh\u2019s people who choose evil.",
+                "details": "The idea of being \u201csold\u201d (nimkartem) suggests that Yahweh\u2019s alienated people become the possession of another lord. Part IV of the Part Structure thus develops the idea of a Greater Babylon and its king that incorporates Yahweh\u2019s people who choose evil.",
                 "verses": [
                     18664
                 ],
@@ -40344,7 +40344,7 @@
             "New Testament\u2013Other"
         ],
         "Structures": [
-            "Bifid",
+            "Seven Part Structure",
             "Bible Project",
             "Home, Exhile, Return",
             "Ugaritic",
@@ -40372,17 +40372,17 @@
             "Initiation",
             "Return"
         ],
-        "Bifid": [
-            "Bifid I",
-            "Bifid II",
-            "Bifid III",
-            "Bifid IV",
-            "Bifid V",
-            "Bifid VI",
-            "Bifid VII",
+        "Seven Part Structure": [
+            "Part I",
+            "Part II",
+            "Part III",
+            "Part IV",
+            "Part V",
+            "Part VI",
+            "Part VII",
             "Cumulative Themes"
         ],
-        "Bifid I": [
+        "Part I": [
             "Ruin",
             "Ruin\u2014National",
             "Ruin\u2014Universal",
@@ -40394,7 +40394,7 @@
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin"
         ],
-        "Bifid II": [
+        "Part II": [
             "Biographical Material",
             "\u24cd Narrative Structure",
             "Rebellion\u2014Ahaz",
@@ -40413,7 +40413,7 @@
             "\u29b7 Ch 40\u2194Chs 36\u201337",
             "Cumulative Themes I \u2013 II"
         ],
-        "Bifid III": [
+        "Part III": [
             "Zion Ideology",
             "\u24cd Chaos\u2194Creation",
             "4 Agents",
@@ -40449,7 +40449,7 @@
             "A Cyrus Figure",
             "Cyrus\u2019s Name"
         ],
-        "Bifid IV": [
+        "Part IV": [
             "Oracles Against Foreign Powers",
             "Babylon\u2019s Demise",
             "Glory\u2194Ignominy",
@@ -40463,7 +40463,7 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Cumulative Themes I \u2013 IV"
         ],
-        "Bifid V": [
+        "Part V": [
             "\ud83c\udff0 The City",
             "\u29b7 Righteous vs. the World",
             "Universal Suffering",
@@ -40517,7 +40517,7 @@
             "Yahweh\u2019s Descent",
             "\u24cd Vindication"
         ],
-        "Bifid VI": [
+        "Part VI": [
             "Loyalty",
             "Disloyalty",
             "Didactics",
@@ -40561,7 +40561,7 @@
             "New Covenant",
             "Covenantal Peace"
         ],
-        "Bifid VII": [
+        "Part VII": [
             "Disinheritance",
             "Inheritance",
             "Wicked Superlatives",
@@ -55095,7 +55095,7 @@
             "Peter",
             "New Testament\u2013Other",
             "D&C",
-            "Bifid",
+            "Seven Part Structure",
             "Bible Project",
             "Home, Exhile, Return",
             "Ugaritic",
@@ -55118,13 +55118,13 @@
             "Departure",
             "Initiation",
             "Return",
-            "Bifid I",
-            "Bifid II",
-            "Bifid III",
-            "Bifid IV",
-            "Bifid V",
-            "Bifid VI",
-            "Bifid VII",
+            "Part I",
+            "Part II",
+            "Part III",
+            "Part IV",
+            "Part V",
+            "Part VI",
+            "Part VII",
             "Ruin",
             "Ruin\u2014National",
             "Ruin\u2014Universal",
@@ -55592,7 +55592,7 @@
             "New Testament\u2013Other"
         ],
         "Structures": [
-            "Bifid",
+            "Seven Part Structure",
             "Bible Project",
             "Home, Exhile, Return",
             "Ugaritic",
@@ -55615,13 +55615,13 @@
             "Departure",
             "Initiation",
             "Return",
-            "Bifid I",
-            "Bifid II",
-            "Bifid III",
-            "Bifid IV",
-            "Bifid V",
-            "Bifid VI",
-            "Bifid VII",
+            "Part I",
+            "Part II",
+            "Part III",
+            "Part IV",
+            "Part V",
+            "Part VI",
+            "Part VII",
             "Ruin",
             "Ruin\u2014National",
             "Ruin\u2014Universal",
@@ -55947,7 +55947,7 @@
             "Zion and Jerusalem",
             "Post-Exhile"
         ],
-        "Bifid IV": [
+        "Part IV": [
             "Oracles Against Foreign Powers",
             "Babylon\u2019s Demise",
             "Glory\u2194Ignominy",
@@ -55960,15 +55960,15 @@
             "\u29b7 King of Assyria\u2194King of Babylon",
             "Cumulative Themes I \u2013 IV"
         ],
-        "Bifid": [
+        "Seven Part Structure": [
             "Oracles Against Foreign Powers",
-            "Bifid I",
-            "Bifid II",
-            "Bifid III",
-            "Bifid IV",
-            "Bifid V",
-            "Bifid VI",
-            "Bifid VII",
+            "Part I",
+            "Part II",
+            "Part III",
+            "Part IV",
+            "Part V",
+            "Part VI",
+            "Part VII",
             "Ruin",
             "Ruin\u2014National",
             "Ruin\u2014Universal",
@@ -56150,7 +56150,7 @@
             "Initiation",
             "Return"
         ],
-        "Bifid I": [
+        "Part I": [
             "Ruin",
             "Ruin\u2014National",
             "Ruin\u2014Universal",
@@ -56162,7 +56162,7 @@
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin"
         ],
-        "Bifid II": [
+        "Part II": [
             "Biographical Material",
             "\u24cd Narrative Structure",
             "Rebellion\u2014Ahaz",
@@ -56181,7 +56181,7 @@
             "\u29b7 Ch 40\u2194Chs 36\u201337",
             "Cumulative Themes I \u2013 II"
         ],
-        "Bifid III": [
+        "Part III": [
             "Zion Ideology",
             "\u24cd Chaos\u2194Creation",
             "4 Agents",
@@ -56258,7 +56258,7 @@
             "Yahweh\u2019s Descent",
             "\u24cd Vindication"
         ],
-        "Bifid V": [
+        "Part V": [
             "\u29b7 Servant\u2194Tyrant",
             "\ud83c\udff0 The City",
             "City Attributes",
@@ -56326,7 +56326,7 @@
             "Watchmen\/Prophets",
             "Visionaries"
         ],
-        "Bifid VI": [
+        "Part VI": [
             "Loyalty",
             "Disloyalty",
             "Didactics",
@@ -56392,7 +56392,7 @@
             "New Covenant",
             "Covenantal Peace"
         ],
-        "Bifid VII": [
+        "Part VII": [
             "Disinheritance",
             "Inheritance",
             "Wicked Superlatives",
@@ -56774,7 +56774,7 @@
         "Structures": {
             "17656": 1292
         },
-        "Bifid": {
+        "Seven Part Structure": {
             "17656": 1292
         },
         "Bible Project": {
@@ -56837,7 +56837,7 @@
         "Return": {
             "18742": 206
         },
-        "Bifid I": [
+        "Part I": [
             {
                 "17656": 115
             },
@@ -56845,7 +56845,7 @@
                 "18305": 27
             }
         ],
-        "Bifid II": [
+        "Part II": [
             {
                 "17771": 60
             },
@@ -56853,7 +56853,7 @@
                 "18332": 121
             }
         ],
-        "Bifid III": [
+        "Part III": [
             {
                 "17831": 77
             },
@@ -56861,7 +56861,7 @@
                 "18453": 148
             }
         ],
-        "Bifid IV": [
+        "Part IV": [
             {
                 "17908": 189
             },
@@ -56869,7 +56869,7 @@
                 "18601": 15
             }
         ],
-        "Bifid V": [
+        "Part V": [
             {
                 "18097": 69
             },
@@ -56877,7 +56877,7 @@
                 "18616": 126
             }
         ],
-        "Bifid VI": [
+        "Part VI": [
             {
                 "18166": 95
             },
@@ -56885,7 +56885,7 @@
                 "18742": 81
             }
         ],
-        "Bifid VII": [
+        "Part VII": [
             {
                 "18261": 44
             },
@@ -57076,8 +57076,8 @@
             "D&C",
             "Citations from Doctrine and Covenants 113"
         ],
-        "bifid": [
-            "Bifid",
+        "seven-partstructure": [
+            "Seven Part Structure",
             "Isaiah\u2019s Seven\u2013Part Chiastic Structure"
         ],
         "bible-project": [
@@ -57168,32 +57168,32 @@
             "Return",
             "The hero returns, having undergone a transformation"
         ],
-        "bifid-i": [
-            "Bifid I",
+        "part-i": [
+            "Part I",
             "Ruin and Rebirth"
         ],
-        "bifid-ii": [
-            "Bifid II",
+        "part-ii": [
+            "Part II",
             "Rebellion and Compliance"
         ],
-        "bifid-iii": [
-            "Bifid III",
+        "part-iii": [
+            "Part III",
             "Punishment and Deliverance"
         ],
-        "bifid-iv": [
-            "Bifid IV",
+        "part-iv": [
+            "Part IV",
             "Humiliation and Exaltation"
         ],
-        "bifid-v": [
-            "Bifid V",
+        "part-v": [
+            "Part V",
             "Suffering and Salvation"
         ],
-        "bifid-vi": [
-            "Bifid VI",
+        "part-vi": [
+            "Part VI",
             "Loyalty and Disloyalty"
         ],
-        "bifid-vii": [
-            "Bifid VII",
+        "part-vii": [
+            "Part VII",
             "Disinheritance and Inheritance"
         ],
         "ruin": [
