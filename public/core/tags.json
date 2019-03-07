@@ -871,23 +871,8 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "",
             "slug": "rebirth-universal",
-            "next": "\u24cd Edom\u2194Nations",
-            "prev": "Rebirth\u2014National"
-        },
-        "\u24cd Edom\u2194Nations": {
-            "parents": [
-                "Part I",
-                "Seven Part Structure",
-                "Structures",
-                "root"
-            ],
-            "description": "Edom is a code word linked to the \u201cnations\u201d",
-            "details": "A series of motifs in common identifies Edom with the nations",
-            "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
-            "type": "chiasm",
-            "slug": "edom-nations",
             "next": "\u29b7 Ruin\u2194Rebirth Motifs",
-            "prev": "Rebirth\u2014Universal"
+            "prev": "Rebirth\u2014National"
         },
         "\u29b7 Ruin\u2194Rebirth Motifs": {
             "parents": [
@@ -901,8 +886,23 @@
             "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
             "type": "parallel",
             "slug": "ruin-rebirth-motifs",
+            "next": "\u24cd Edom\u2194Nations",
+            "prev": "Rebirth\u2014Universal"
+        },
+        "\u24cd Edom\u2194Nations": {
+            "parents": [
+                "Part I",
+                "Seven Part Structure",
+                "Structures",
+                "root"
+            ],
+            "description": "Edom is a code word linked to the \u201cnations\u201d",
+            "details": "A series of motifs in common identifies Edom with the nations",
+            "cite": "Adapted from Gileadi, Avraham. The Literary Message of Isaiah. Hebraeus Press, 1994.",
+            "type": "chiasm",
+            "slug": "edom-nations",
             "next": "\u29b7 Israel\u2194Nations Motifs",
-            "prev": "\u24cd Edom\u2194Nations"
+            "prev": "\u29b7 Ruin\u2194Rebirth Motifs"
         },
         "\u29b7 Israel\u2194Nations Motifs": {
             "parents": [
@@ -917,7 +917,7 @@
             "type": "parallel",
             "slug": "israel-nations-motifs",
             "next": "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
-            "prev": "\u29b7 Ruin\u2194Rebirth Motifs"
+            "prev": "\u24cd Edom\u2194Nations"
         },
         "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin": {
             "parents": [
@@ -11785,7 +11785,7 @@
                 "oref": "Isaiah 5:6"
             },
             {
-                "desc": "Exception: he ruin of \u201call nations\u201d (kol haggoyim) is characterized as the ruin of \u201cEdom,\u201d a national entity",
+                "desc": "[Exception] He ruin of \u201call nations\u201d (kol haggoyim) is characterized as the ruin of \u201cEdom,\u201d a national entity",
                 "verses": [
                     [
                         18306
@@ -11806,24 +11806,8 @@
                 "oref": "Isaiah 34:8"
             }
         ],
-        "Ruin\u2014Universal": [
-            {
-                "desc": "Exception: Yahweh\u2019s condemnation of his alienated people Israel occurs synonymously or concurrently with his condemnation of the nations: Yahweh \u201chas arisen to judge the nations\u201d",
-                "verses": [
-                    17721
-                ],
-                "ref": "3:13",
-                "oref": "Isaiah 3:13"
-            },
-            {
-                "desc": "Exception: the \u201cmountains\u201d quaking at Yahweh\u2019s anger may be read allegorically as \u201ckingdoms\u201d or \u201cnations\u201d quaking",
-                "verses": [
-                    17765
-                ],
-                "ref": "5:25",
-                "oref": "Isaiah 5:25"
-            },
-            {
+        "Ruin\u2014Universal": {
+            "1": {
                 "desc": "The earth and the world should take warning",
                 "verses": [
                     18305
@@ -11831,7 +11815,7 @@
                 "ref": "34:1",
                 "oref": "Isaiah 34:1"
             },
-            {
+            "2": {
                 "desc": "Yahweh\u2019s rage is upon all nations, whom he has doomed, consigned to the slaughter",
                 "verses": [
                     {
@@ -11844,7 +11828,7 @@
                 "ref": "34:2\u20134,6\u20137",
                 "oref": "Isaiah 34:2-4, 6-7"
             },
-            {
+            "3": {
                 "desc": "When the heavens roll up as a scroll, its starry hosts cast themselves down",
                 "verses": [
                     18308
@@ -11852,15 +11836,31 @@
                 "ref": "34:4",
                 "oref": "Isaiah 34:4"
             },
-            {
+            "4": {
                 "desc": "The earth turns into a wasteland",
                 "verses": {
                     "18313": 7
                 },
                 "ref": "34:9\u201315",
                 "oref": "Isaiah 34:9-15"
+            },
+            "5": {
+                "desc": "[Exception] Yahweh\u2019s condemnation of his alienated people Israel occurs synonymously or concurrently with his condemnation of the nations: Yahweh \u201chas arisen to judge the nations\u201d",
+                "verses": [
+                    17721
+                ],
+                "ref": "3:13",
+                "oref": "Isaiah 3:13"
+            },
+            "6": {
+                "desc": "[Exception] the \u201cmountains\u201d quaking at Yahweh\u2019s anger may be read allegorically as \u201ckingdoms\u201d or \u201cnations\u201d quaking",
+                "verses": [
+                    17765
+                ],
+                "ref": "5:25",
+                "oref": "Isaiah 5:25"
             }
-        ],
+        },
         "\u24cd Edom\u2194Nations": {
             "A1": {
                 "desc": "Nations \/ People",
@@ -12175,8 +12175,8 @@
                 "oref": "Isaiah 34:12"
             }
         ],
-        "Rebirth": [
-            {
+        "Rebirth": {
+            "0": {
                 "desc": "[Unit 1] Zion as those of Yahweh\u2019s people who \u201crepent\u201d (swb) of transgression.",
                 "verses": [
                     17682
@@ -12184,15 +12184,7 @@
                 "ref": "1:27",
                 "oref": "Isaiah 1:27"
             },
-            {
-                "desc": "[Unit 1] A similar parallelistic denomination of Zion",
-                "verses": [
-                    18821
-                ],
-                "ref": "59:20",
-                "oref": "Isaiah 59:20"
-            },
-            {
+            "2": {
                 "desc": "[Unit 1] A restoration of political power",
                 "verses": [
                     {
@@ -12205,7 +12197,7 @@
                 "ref": "1:25\u201326;  2:4",
                 "oref": "Isaiah 1:25-26; Isaiah 2:4"
             },
-            {
+            "3": {
                 "desc": "[Unit 1] The mountain of Yahweh\u2019s house in the \u201clast days\u201d or \u201cend\u2013time\u201d (\u2019aharit hayyamim) established as21 the \u201chead of the mountains\u201d (ro\u2019s heharim)",
                 "verses": [
                     17688
@@ -12213,7 +12205,7 @@
                 "ref": "2:2",
                 "oref": "Isaiah 2:2"
             },
-            {
+            "4": {
                 "desc": "[Unit 1] Yahweh restores his law and word",
                 "verses": [
                     17689
@@ -12221,7 +12213,7 @@
                 "ref": "2:3",
                 "oref": "Isaiah 2:3"
             },
-            {
+            "5": {
                 "desc": "[Unit 1] Zion will assume its rightful place as head of the nations. When that event takes place, the nations experience an unprecedented era of peace",
                 "verses": [
                     17690
@@ -12229,7 +12221,7 @@
                 "ref": "2:4",
                 "oref": "Isaiah 2:4"
             },
-            {
+            "6": {
                 "desc": "[Unit 1] Israel\u2019s rebirth as Zion, which consists of a reversal of malediction, culminates with the flowering of a righteous remnant of Yahweh\u2019s people at the time Yahweh regenerates the earth",
                 "verses": {
                     "17736": 2
@@ -12237,7 +12229,7 @@
                 "ref": "4:2\u20133",
                 "oref": "Isaiah 4:2-3"
             },
-            {
+            "7": {
                 "desc": "[Unit 1] Meanwhile, a cloud of glory forms a protective canopy over the assemblies of Zion during Yahweh\u2019s Day of Judgment",
                 "verses": {
                     "17739": 2
@@ -12245,7 +12237,7 @@
                 "ref": "4:5\u20136",
                 "oref": "Isaiah 4:5-6"
             },
-            {
+            "8": {
                 "desc": "[Unit 1] We thus distinguish between those whom Yahweh ransoms from ruin\u2014a category of his people that experiences rebirth\u2014and those whose ruin is identical with the demise of reprobates, who nonetheless comprise his people",
                 "verses": [
                     17679,
@@ -12254,7 +12246,7 @@
                 "ref": "1:24,28",
                 "oref": "Isaiah 1:24; Isaiah 1:28"
             },
-            {
+            "9": {
                 "desc": "[Unit 1] The juxtaposition of these verses with Zion\u2019s ransoming and restoration  shows that the ruin of Yahweh\u2019s enemies and the rebirth of Zion occur concurrently",
                 "verses": {
                     "17680": 3
@@ -12262,7 +12254,7 @@
                 "ref": "1:25\u201327",
                 "oref": "Isaiah 1:25-27"
             },
-            {
+            "10": {
                 "desc": "[Unit 1] Just as the structure of Part I implies",
                 "verses": [
                     {
@@ -12275,7 +12267,7 @@
                 "ref": "1:7\u20139;  3:8\u201311",
                 "oref": "Isaiah 1:7-9; Isaiah 3:8-11"
             },
-            {
+            "11": {
                 "desc": "[Unit 2] Rebirth in the second unit occurs when Yahweh reverses covenantal malediction for those who are identified as \u201choly\u201d (qds)\u2014who traverse the \u201cWay of Holiness\u201d",
                 "verses": [
                     18329
@@ -12283,7 +12275,7 @@
                 "ref": "35:8",
                 "oref": "Isaiah 35:8"
             },
-            {
+            "12": {
                 "desc": "[Unit 2] Yahweh restores his glory to the land",
                 "verses": [
                     18323
@@ -12291,7 +12283,7 @@
                 "ref": "35:2",
                 "oref": "Isaiah 35:2"
             },
-            {
+            "13": {
                 "desc": "[Unit 2] Moisture comes to the wilderness",
                 "verses": {
                     "18327": 2
@@ -12299,7 +12291,7 @@
                 "ref": "35:6\u20137",
                 "oref": "Isaiah 35:6-7"
             },
-            {
+            "14": {
                 "desc": "[Unit 2] The wilderness turns fertile",
                 "verses": {
                     "18322": 2
@@ -12307,7 +12299,7 @@
                 "ref": "35:1\u20132",
                 "oref": "Isaiah 35:1-2"
             },
-            {
+            "15": {
                 "desc": "[Unit 2] The feeble receive strength",
                 "verses": [
                     18324
@@ -12315,7 +12307,7 @@
                 "ref": "35:3",
                 "oref": "Isaiah 35:3"
             },
-            {
+            "16": {
                 "desc": "[Unit 2] The blind, deaf, dumb, and lame receive healing",
                 "verses": {
                     "18326": 2
@@ -12323,7 +12315,7 @@
                 "ref": "35:5\u20136",
                 "oref": "Isaiah 35:5-6"
             },
-            {
+            "17": {
                 "desc": "[Unit 2] The wicked and beasts of prey depart the land",
                 "verses": {
                     "18329": 2
@@ -12331,7 +12323,7 @@
                 "ref": "35:8\u20139",
                 "oref": "Isaiah 35:8-9"
             },
-            {
+            "18": {
                 "desc": "[Unit 2] And joy and singing break out",
                 "verses": [
                     18323,
@@ -12340,7 +12332,7 @@
                 "ref": "35:2,10",
                 "oref": "Isaiah 35:2, 10"
             },
-            {
+            "19": {
                 "desc": "[Unit 2] Rebirth culminates at Yahweh\u2019s appearance, when Yahweh delivers and rewards those who hold out faithful to him.",
                 "verses": [
                     18325
@@ -12348,7 +12340,7 @@
                 "ref": "35:4",
                 "oref": "Isaiah 35:4"
             },
-            {
+            "20": {
                 "desc": "[Unit 2] Within that context of rebirth, Zion forms the abode of Yahweh\u2019s \u201cransomed\u201d ones (pdh), those who \u201crepent\/return\u201d (swb)",
                 "verses": [
                     18331
@@ -12356,7 +12348,7 @@
                 "ref": "35:10",
                 "oref": "Isaiah 35:10"
             }
-        ],
+        },
         "Zion": [
             {
                 "desc": "Part I thus establishes Zion as both a people and a place\u2014those of Yahweh\u2019s people who repent of transgression and the place to which they return from among the nations",
@@ -40389,8 +40381,8 @@
             "Rebirth",
             "Rebirth\u2014National",
             "Rebirth\u2014Universal",
-            "\u24cd Edom\u2194Nations",
             "\u29b7 Ruin\u2194Rebirth Motifs",
+            "\u24cd Edom\u2194Nations",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin"
         ],
@@ -49502,7 +49494,6 @@
         ],
         "18821": [
             "Romans",
-            "Rebirth",
             "(4\/7) Zion\u2013Jerusalem",
             "(7\/7) Yahweh God of Israel",
             "\u24cd Consciousness of Sins",
@@ -55131,8 +55122,8 @@
             "Rebirth",
             "Rebirth\u2014National",
             "Rebirth\u2014Universal",
-            "\u24cd Edom\u2194Nations",
             "\u29b7 Ruin\u2194Rebirth Motifs",
+            "\u24cd Edom\u2194Nations",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Biographical Material",
@@ -55628,8 +55619,8 @@
             "Rebirth",
             "Rebirth\u2014National",
             "Rebirth\u2014Universal",
-            "\u24cd Edom\u2194Nations",
             "\u29b7 Ruin\u2194Rebirth Motifs",
+            "\u24cd Edom\u2194Nations",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Biographical Material",
@@ -55975,8 +55966,8 @@
             "Rebirth",
             "Rebirth\u2014National",
             "Rebirth\u2014Universal",
-            "\u24cd Edom\u2194Nations",
             "\u29b7 Ruin\u2194Rebirth Motifs",
+            "\u24cd Edom\u2194Nations",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Biographical Material",
@@ -56157,8 +56148,8 @@
             "Rebirth",
             "Rebirth\u2014National",
             "Rebirth\u2014Universal",
-            "\u24cd Edom\u2194Nations",
             "\u29b7 Ruin\u2194Rebirth Motifs",
+            "\u24cd Edom\u2194Nations",
             "\u29b7 Israel\u2194Nations Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin"
         ],
@@ -57220,13 +57211,13 @@
             "Rebirth\u2014Universal",
             "The rebirth expands universally across the world"
         ],
-        "edom-nations": [
-            "\u24cd Edom\u2194Nations",
-            "Edom is a code word linked to the \u201cnations\u201d"
-        ],
         "ruin-rebirth-motifs": [
             "\u29b7 Ruin\u2194Rebirth Motifs",
             "Units 1 and 2 contain parallel ruin\/rebirth motifs"
+        ],
+        "edom-nations": [
+            "\u24cd Edom\u2194Nations",
+            "Edom is a code word linked to the \u201cnations\u201d"
         ],
         "israel-nations-motifs": [
             "\u29b7 Israel\u2194Nations Motifs",
