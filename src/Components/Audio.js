@@ -35,7 +35,7 @@ class AudioVersePlayer extends Component {
 		//Queue Management
 		var version = this.props.app.state.version;
 		if(this.props.app.state.hebrewMode) version = "HEBREW";
-		var url = "http://mp3.scripture.guide/"+version+"/"+this.props.app.state.active_verse_id;
+		var url = "https://mp3.scripture.guide/"+version+"/"+this.props.app.state.active_verse_id;
 		var next_url = url;
 		var next = null;
 		this.audioPointer=this.props.app.state.audioPointer;
@@ -47,7 +47,7 @@ class AudioVersePlayer extends Component {
 		}
 		 if((index+1)<this.props.app.state.highlighted_verse_range.length)  { 
 		 	next = this.props.app.state.highlighted_verse_range[index+1];
-		 	next_url =  "http://mp3.scripture.guide/"+version+"/"+next;
+		 	next_url =  "https://mp3.scripture.guide/"+version+"/"+next;
 		 }
 		if(index>=0) this.audioPointer=index;
 		
@@ -129,7 +129,7 @@ class AudioCommentaryPlayer extends Component {
 		var callback = this.lookupVerses.bind(this,this.h_verses)
 		this.props.app.setState({audioPointer:this.audioPointer},callback);
 	}
-	// URL for Commentary http://isaiah.scripture.guide/commentary/gileadi/Isaiah_01.1.mp3
+	// URL for Commentary https://isaiah.scripture.guide/commentary/gileadi/Isaiah_01.1.mp3
 	render()
 	{
 			var verse_id = this.props.app.state.active_verse_id;
@@ -140,14 +140,14 @@ class AudioCommentaryPlayer extends Component {
 			if(globalData.commentary_audio.files[this.props.app.state.commentaryAudio]===undefined) commentaryAudio = "gileadi";
 			
 			var filename = globalData.commentary_audio.index[verse_id][commentaryAudio];
-			var url = "http://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+filename;
+			var url = "https://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+filename;
 			
 			var keys = Object.keys(globalData.commentary_audio.files[commentaryAudio]);
 			var com_index = keys.indexOf(filename[0]);
 			this.audioPointer=com_index;
 			var nextfile = keys[com_index+1];
 			if(nextfile===undefined) return null;
-			var next_url = "http://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+nextfile;
+			var next_url = "https://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+nextfile;
 			this.h_verses = globalData.commentary_audio.files[commentaryAudio][filename];
 			var nh_verses = globalData.commentary_audio.files[commentaryAudio][nextfile];
 			var next = nh_verses[0];

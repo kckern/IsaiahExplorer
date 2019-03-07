@@ -2158,7 +2158,7 @@ class App extends Component {
     e.preventDefault()
     var ref = this.props.reference.replace(/[\s.]+/g, ".").toLowerCase()
     this.props.app.PopupCenter(
-      "http://scripture.guide/" + ref,
+      "https://scripture.guide/" + ref,
       "Scripture Guide",
       1000,
       750
@@ -2866,7 +2866,7 @@ export class SGLink extends Component {
       <a
         className="ref"
         onClick={this.props.app.sgshow.bind(this)}
-        href={"http://scripture.guide/" + link}>
+        href={"https://scripture.guide/" + link}>
         {this.props.reference}
       </a>
     )
