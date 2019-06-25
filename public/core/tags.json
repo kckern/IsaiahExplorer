@@ -7713,7 +7713,7 @@
                 "oref": "Isaiah 52:13"
             },
             "12A": {
-                "desc": "[Humiliation] The ignorninious Tyrant previously enjoyed eminence",
+                "desc": "[Humiliation] The ignominious Tyrant previously enjoyed eminence",
                 "verses": [
                     17940
                 ],
@@ -8081,7 +8081,7 @@
                 "oref": "Isaiah 8:2"
             },
             {
-                "desc": "And the Prophetess",
+                "desc": "The Prophetess",
                 "verses": [
                     17811
                 ],
@@ -9982,7 +9982,7 @@
                 "oref": "Isaiah 32:2-4"
             }
         ],
-        "Home, Exhile, Return": [
+        "Ugaric Cycle": [
             {
                 "desc": "A nation of awakened Individuals",
                 "verses": {
@@ -12255,7 +12255,7 @@
                 "oref": "Isaiah 1:25-27"
             },
             "10": {
-                "desc": "[Unit 1] Just as the structure of Part I implies",
+                "desc": "[Unit 1] Part 1: The ruin of Yahweh\u2019s enemies and the rebirth of Zion occur concurrently",
                 "verses": [
                     {
                         "17662": 3
@@ -12603,10 +12603,10 @@
             "5B": {
                 "desc": "[Rebirth II] A Returning Remnant Ransomed",
                 "verses": [
-                    18329
+                    18331
                 ],
-                "ref": "35:8",
-                "oref": "Isaiah 35:8"
+                "ref": "35:10",
+                "oref": "Isaiah 35:10"
             },
             "6A": {
                 "desc": "[Rebirth I] Yahweh\u2019s Glory",
@@ -12619,10 +12619,10 @@
             "6B": {
                 "desc": "[Rebirth II] Yahweh\u2019s Glory",
                 "verses": [
-                    18331
+                    18323
                 ],
-                "ref": "35:10",
-                "oref": "Isaiah 35:10"
+                "ref": "35:2",
+                "oref": "Isaiah 35:2"
             }
         },
         "Avenge\/Reward": [
@@ -15121,12 +15121,13 @@
                 "oref": "Isaiah 61:1-2"
             },
             {
-                "desc": "As God\u2019s \u201cday of vengeance\u201d is an end\u2013time event, the fuller context of the passage depicts the messianic mission of God\u2019s end\u2013time servant, not that of Yahweh\/Jesus.",
+                "desc": "The part that Jesus omits from his reading\u2014\u201cand the day of vengeance of our God\u201d\u2014points to a key difference between the role of Jehovah\/Jesus and that of his servant",
+                "heading": "As God\u2019s \u201cday of vengeance\u201d is an end\u2013time event, the fuller context of the passage depicts the messianic mission of God\u2019s end\u2013time servant, not that of Yahweh\/Jesus.",
                 "verses": {
-                    "18847": 7
+                    "18845": 9
                 },
-                "ref": "61:3\u20139",
-                "oref": "Isaiah 61:3-9"
+                "ref": "61:1\u20139",
+                "oref": "Isaiah 61:1-9"
             },
             {
                 "desc": "This transition from servanthood to sonship, applies to all end\u2013time servants of God who fulfill roles as proxy saviors to God\u2019s people under the terms of the Davidic Covenant. Part III of Isaiah\u2019s Seven\u2013Part Structure\u2019s conjoining of its two units of material into a single whole\u2014one dealing with the servant\u2019s \u201cson\u201d phase, the other with his \u201cservant\u201d phase.",
@@ -16914,11 +16915,11 @@
         "\u24cd The Day of the Lord": {
             "A1": {
                 "desc": "[The words of the LORD] The oracle",
-                "verses": {
-                    "18054": 2
-                },
-                "ref": "22:1\u20132",
-                "oref": "Isaiah 22:1-2"
+                "verses": [
+                    18054
+                ],
+                "ref": "22:1",
+                "oref": "Isaiah 22:1"
             },
             "A2": {
                 "desc": "[The words of the LORD] The words of the LORD",
@@ -16930,11 +16931,11 @@
             },
             "B1": {
                 "desc": "[Celebrate] O city full of noise and chaos, O wanton town!",
-                "verses": [
-                    18056
-                ],
-                "ref": "22:3",
-                "oref": "Isaiah 22:3"
+                "verses": {
+                    "18055": 2
+                },
+                "ref": "22:2\u20133",
+                "oref": "Isaiah 22:2-3"
             },
             "B2": {
                 "desc": "[Celebrate] you feast and celebrate",
@@ -45418,7 +45419,7 @@
         ],
         "18742": [
             "Jacob",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Equality to the Gentiles",
             "Two Ways to Respond",
             "Remnant of Israel",
@@ -45430,7 +45431,7 @@
         ],
         "18743": [
             "Jacob",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Equality to the Gentiles",
             "Covenantal Blessings",
             "Remnant of Israel",
@@ -48638,7 +48639,7 @@
         ],
         "18556": [
             "\u24cd Chaos\u2194Creation",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "The Davidic Monarchy",
             "The Creation",
             "\u24cd Idolatry",
@@ -48815,7 +48816,7 @@
         ],
         "18590": [
             "\u24cd Chaos\u2194Creation",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
             "Idolatry",
@@ -48826,7 +48827,7 @@
         ],
         "18591": [
             "\u24cd Chaos\u2194Creation",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
             "Idolatry",
@@ -49437,7 +49438,7 @@
         ],
         "18744": [
             "Acts",
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "Covenant of Peace",
             "Yahweh\u2019s End\u2013Time Servant",
             "The Davidic Monarchy",
@@ -50071,7 +50072,7 @@
             "Questions\/Answers"
         ],
         "18745": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "Watchmen\/Prophets",
             "The Davidic Monarchy",
             "Yahweh\u2019s Covenant",
@@ -50088,7 +50089,7 @@
             "Questions\/Answers"
         ],
         "18746": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "The Davidic Monarchy",
             "Yahweh\u2019s Covenant",
             "\u24cd Equality to the Gentiles",
@@ -50101,7 +50102,7 @@
             "Endtime Participants"
         ],
         "18747": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Equality to the Gentiles",
             "Covenantal Blessings",
             "Remnant of Israel",
@@ -50113,7 +50114,7 @@
             "Lesson 40"
         ],
         "18460": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "The Call of Abraham",
             "\u24cd I Am the Lord, Your God",
             "Hezekiah\u2019s Ascent",
@@ -50131,7 +50132,7 @@
             "The Servant\u2014Type"
         ],
         "18461": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "The Call of Abraham",
             "\u24cd I Am the Lord, Your God",
             "Righteous Delivered",
@@ -50147,7 +50148,7 @@
             "Endtime Participants"
         ],
         "18592": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
             "Idolatry",
@@ -50155,14 +50156,14 @@
             "Lesson 38"
         ],
         "18593": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
             "Idolatry",
             "Remnant of Israel"
         ],
         "18594": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(3\/7) Jacob\u2013Israel",
             "\u24cd Creation by the Lord",
             "Covenantal Blessings",
@@ -50171,7 +50172,7 @@
             "Redemptive Roles"
         ],
         "18595": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Creation by the Lord",
             "Covenantal Blessings",
             "Righteous Delivered",
@@ -50179,7 +50180,7 @@
             "Questions\/Answers"
         ],
         "18584": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Creation by the Lord",
             "Remnant of Israel",
             "A Universal Entity",
@@ -50188,7 +50189,7 @@
             "Lesson 38"
         ],
         "18927": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "\u24cd Satisfaction",
             "Salvation",
             "\u24cd Announcing God\u2019s Kingdom",
@@ -50199,7 +50200,7 @@
             "Questions\/Answers"
         ],
         "18928": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(6\/7) Seraphs\u2013Seraphim",
             "The Davidic Monarchy",
             "\u24cd Satisfaction",
@@ -50216,7 +50217,7 @@
             "Questions\/Answers"
         ],
         "18929": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "Yahweh\u2019s End\u2013Time Servant",
             "(6\/7) Seraphs\u2013Seraphim",
             "\u24cd Satisfaction",
@@ -50232,7 +50233,7 @@
             "Questions\/Answers"
         ],
         "18930": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "Yahweh\u2019s Covenant",
             "\u24cd Satisfaction",
             "Salvation",
@@ -50245,7 +50246,7 @@
             "Servants Ascend"
         ],
         "18931": [
-            "Home, Exhile, Return",
+            "Ugaric Cycle",
             "(4\/7) Zion\u2013Jerusalem",
             "Yahweh\u2019s Covenant",
             "\u24cd Satisfaction",
@@ -51758,7 +51759,6 @@
         "18329": [
             "Rebirth\u2014National",
             "Rebirth",
-            "\u29b7 Ruin\u2194Rebirth Motifs",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Israel\u2019s Pilgrimage to Zion",
             "Restoration",
@@ -51921,6 +51921,7 @@
         ],
         "18323": [
             "Rebirth",
+            "\u29b7 Ruin\u2194Rebirth Motifs",
             "Avenge\/Reward",
             "\u29b7 Zion\u2019s Rebirth\u2194Non\u2013Zion\u2019s Ruin",
             "Paradise",
