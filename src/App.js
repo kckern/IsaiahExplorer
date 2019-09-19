@@ -17,7 +17,7 @@ import Tipsy from "react-tipsy"
 import "./App.css"
 
 class App extends Component {
-  floater = {}
+  floater = {} 
 
   state = {
     ready: false,
@@ -81,12 +81,12 @@ class App extends Component {
     commentaryID: null,
     commentary_verse_id: null,
     commentary_verse_range: [],
-    commentary_order: [],
+    commentary_order: [], 
 
     ui_version_loading: false,
     ui_core_loading: true,
 
-    rootURL: window.location.href.replace(/(.*?)[^/]*$/,"$1")
+    rootURL: window.location.href.replace(/(^file(.*\/+).*|^https*:\/\/[^/]+\/).*/,"$1")
 
   }
 
@@ -197,7 +197,7 @@ class App extends Component {
 
   getSettingsFromUrl(settings) {
     settings.active_verse_id = 17656
-    var path = this.props.location.pathname
+    var path = window.location.pathname
 
     var matches = new RegExp("^/([0-9]+)/([0-9]+)$", "ig").exec(path)
     if (matches !== null) {
@@ -449,7 +449,7 @@ class App extends Component {
     //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
 
     if(this.state.rootURL.match(/^file/)==null)
-    this.props.history.push(path.toLowerCase())
+    window.history.pushState(null,null,path.toLowerCase())
 
     document.title = title
   }
@@ -497,13 +497,13 @@ class App extends Component {
 
     //check url for version
     var regex = new RegExp("^/[^/]+/[^/]+/([^/]+)", "ig")
-    var matches = regex.exec(this.props.location.pathname)
+    var matches = regex.exec(window.location.pathname)
     if (matches !== null)
       if (matches[1].length > 1) settings.version = matches[1].toUpperCase();
       
       
     //pure search
-    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(this.props.location.pathname);
+    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(window.location.pathname);
     if(pure_search!==null)
     {
       settings.searchQuery = pure_search[1];
@@ -512,7 +512,7 @@ class App extends Component {
     }
     
     //pure hebrew
-    var pure_hebrew = (new RegExp("^/hebrew/([0-9]+)","ig")).exec(this.props.location.pathname);
+    var pure_hebrew = (new RegExp("^/hebrew/([0-9]+)","ig")).exec(window.location.pathname);
     if(pure_hebrew!==null)
     {
       settings.hebrewStrongIndex = parseInt( pure_hebrew[1],0);
@@ -1281,7 +1281,7 @@ class App extends Component {
     this.lastTags = []
     this.lastVerseId = null
 
-    if (this.props.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null)
+    if (window.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null)
       this.load_queue.push("hebrew")
 
     var subsite = "default"
@@ -1385,8 +1385,10 @@ class App extends Component {
           }
 
         // META
+		
 
         var m = globalData["meta"]
+        //console.log(m);
         if (m.version[s.top_versions[0]] === undefined) {
           var t = s.top_versions
           t[0] = "KJV"
@@ -1542,7 +1544,7 @@ class App extends Component {
       .then(response => response.text())
       .then(data => {
         globalData["hebrew"] = this.unzipJSON(data)
-        if (this.props.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null) {
+        if (window.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null) {
           this.pull("hebrew")
           this.checkLoaded()
         }

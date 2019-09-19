@@ -104,17 +104,17 @@ export class SearchResults extends Component {
 			last_h = hindex;
 		}
 		var results = [];
-		for(const k in groups)
+		for(let gr in groups)
 		{
-			var h_index = this.props.app.getHeadingIndex(groups[k][0],this.props.app.state.outline);
+			var h_index = this.props.app.getHeadingIndex(groups[gr][0],this.props.app.state.outline);
 			var h_text = null;
 			if(h_index===-1) h_text = "No Heading"
 			else h_text = globalData["outlines"][this.props.app.state.outline][h_index].heading;
 
 			
 			var heading = null;
-			if(groups[k].length===1) heading = globalData['index'][groups[k][0]].string;
-			else heading = this.props.app.getReference(groups[k]);
+			if(groups[gr].length===1) heading = globalData['index'][groups[gr][0]].string;
+			else heading = this.props.app.getReference(groups[gr]);
 			var q = this.props.app.state.searchQuery;
 			if(q===null) q = "";
 			q = q.replace(/[\\]b/g,"");
@@ -131,11 +131,11 @@ export class SearchResults extends Component {
 			if(this.props.app.state.refSearch===true) highlights = null;
 			
 			
-      		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.clearTag(null,groups[k][0])}>{h_text}</span></h3>],
+      		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.clearTag(null,groups[gr][0])}>{h_text}</span></h3>],
       		[<Passage
       			  key={2}
 				  app={this.props.app}
-				  verses={this.unique(groups[k])}
+				  verses={this.unique(groups[gr])}
 				  highlights={highlights}
 				/>]);
 		}
