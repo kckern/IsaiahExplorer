@@ -13,6 +13,10 @@
 /prod
 
 
+# production
+/dist
+
+
 # admin
 /admin
 

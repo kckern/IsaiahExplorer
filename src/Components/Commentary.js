@@ -204,7 +204,7 @@ class CommentaryContentLoaded extends Component {
 		      	globalData.commentary.comData[data.id] = data;
 			};
 			
-		  	fetch("/com/"+src+"."+new_id+".json")
+		  	fetch(this.props.app.state.rootURL+"./com/"+src+"."+new_id+".json")
 		  	.then(jsoner)
 		  	.then(setter)
 		  	.then(this.props.app.setUrl.bind(this.props.app));
@@ -363,7 +363,7 @@ class CommentaryContentLoading extends Component {
 			}.bind(this);
 			if(globalData.commentary.idIndex[comid]===undefined) return false;
 			var src = globalData.commentary.idIndex[comid].source;
-		  	fetch("/com/"+src+"."+comid+".json")
+		  	fetch(this.props.app.state.rootURL+"./com/"+src+"."+comid+".json")
 		  	.then(jsoner)
 		  	.then(setter)
 		  	.then(this.props.app.setUrl.bind(this.props.app));

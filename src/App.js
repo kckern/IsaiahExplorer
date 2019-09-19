@@ -86,7 +86,7 @@ class App extends Component {
     ui_version_loading: false,
     ui_core_loading: true,
 
-    rootURL: window.location.href.replace(/(^file(.*\/+).*|^https*:\/\/[^/]+\/).*/,"$1")
+    rootURL: window.location.href.replace(/((^file.*?)([^/]+$)|(^https*:\/\/[^/]+\/)(.*))/,"$2$4")
 
   }
 
@@ -455,6 +455,7 @@ class App extends Component {
   }
 
   initApp() {
+    console.log(window.location);
     var settings = localStorage.getItem("settings")
     try {
       settings = JSON.parse(settings)
@@ -1273,7 +1274,7 @@ class App extends Component {
 
   loadCore() {
 
-    if(this.state.version==="DOCUMENTS")
+    if(["DOCUMENTS","CONTENTS"].indexOf(this.state.version) >=0)
     {
       return this.setState({version: this.state.top_versions[0]},this.loadCore.bind(this));
     }
