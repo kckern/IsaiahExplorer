@@ -379,11 +379,18 @@ class TagBlocks extends Component {
 			var selected_tag_block_index = app.state.selected_tag_block_index;
 			if(forceIndex!==null) selected_tag_block_index = forceIndex;
 			
+			//console.log(selected_tag_block_index)
+			
+			var conditions = selected_tag_block_index===key 
+					|| 
+					(
+						entry.verses.indexOf(app.state.active_verse_id)>-1 
+						&& selected_tag_block_index===null
+					)
+			
 			if(entry.heading !== undefined)  heading = <h3 className="tag_head" key={"h"+key}>{entry.heading}</h3>;
 			if(app.state.allCollapsed!==true && done===false){
-				if(selected_tag_block_index===key || (
-					entry.verses.indexOf(app.state.active_verse_id)>-1 && selected_tag_block_index===null
-					)){
+				if(conditions){
 						
 						done = true;
 						 this.active_block_index = key;

@@ -84,7 +84,10 @@ class App extends Component {
     commentary_order: [],
 
     ui_version_loading: false,
-    ui_core_loading: true
+    ui_core_loading: true,
+
+    rootURL: window.location.href.replace(/(.*?)[^/]*$/,"$1")
+
   }
 
   load_queue = ["core", "version"]
@@ -445,6 +448,7 @@ class App extends Component {
     //if(this.state.audioState !== null && !this.state.commentaryAudioMode) path = path + "/audio";
     //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
 
+    if(this.state.rootURL.match(/^file/)==null)
     this.props.history.push(path.toLowerCase())
 
     document.title = title
@@ -1268,6 +1272,12 @@ class App extends Component {
   }
 
   loadCore() {
+
+    if(this.state.version==="DOCUMENTS")
+    {
+      return this.setState({version: this.state.top_versions[0]},this.loadCore.bind(this));
+    }
+
     this.lastTags = []
     this.lastVerseId = null
 
@@ -1279,8 +1289,8 @@ class App extends Component {
     if (arr !== null) subsite = arr[1]
 
     //if (subsite === "dev") subsite = "spu"
-
-    fetch("/core/core.txt")
+    
+    fetch(this.state.rootURL+"./core/core.txt")
       .then(response => response.text())
       .then(data => {
         var unzipped = this.unzipJSON(data)
@@ -1510,7 +1520,7 @@ class App extends Component {
           )
         this.pull("tags")
         this.checkLoaded()
-        fetch("/core/tags_hl.txt")
+        fetch(this.state.rootURL+"./core/tags_hl.txt")
           .then(response => response.text())
           .then(base64 => {
             var hdata = this.unzipJSON(base64)
@@ -1528,7 +1538,7 @@ class App extends Component {
         this.checkLoaded()
       })
 
-    fetch("/text/words_HEB.txt")
+    fetch(this.state.rootURL+"./text/words_HEB.txt")
       .then(response => response.text())
       .then(data => {
         globalData["hebrew"] = this.unzipJSON(data)
@@ -1539,7 +1549,8 @@ class App extends Component {
         this.setState({hebrewReady: true})
       })
 
-    fetch("/text/verses_" + this.state.version.toUpperCase() + ".txt")
+
+    fetch(this.state.rootURL+"./text/verses_" + this.state.version.toUpperCase() + ".txt")
       .then(response => response.text())
       .then(data => {
         globalData["text"][this.state.version] = this.unzipJSON(data)
@@ -1558,7 +1569,7 @@ class App extends Component {
           var ver = this.state.top_versions[x]
           if (ver === this.state.version) continue
           const const_ver = ver
-          fetch("/text/verses_" + const_ver.toUpperCase() + ".txt")
+          fetch(this.state.rootURL+"./text/verses_" + const_ver.toUpperCase() + ".txt")
             .then(response => response.text())
             .then(data => {
               globalData["text"][const_ver] = this.unzipJSON(data)
@@ -1617,7 +1628,7 @@ class App extends Component {
     this.setState({ui_version_loading: true})
     let image = new Image()
     image.src = require("./img/versions/" + shortcode.toLowerCase() + ".jpg")
-    return fetch("/text/verses_" + shortcode + ".txt")
+    return fetch(this.state.rootURL+"./text/verses_" + shortcode + ".txt")
       .then(response => response.text())
       .then(data => {
         globalData["text"][shortcode] = this.unzipJSON(data)
@@ -2459,7 +2470,6 @@ class App extends Component {
   }
 
   setActiveVersion(shortcode) {
-  	
     if (typeof globalData["text"][shortcode] === "undefined") {
       //set state to loading....
       this.loadVersion(shortcode)
