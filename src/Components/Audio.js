@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import { globalData } from "../globals.js";
