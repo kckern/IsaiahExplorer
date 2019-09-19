@@ -2,17 +2,19 @@
   "name": "IsaiahExplorer",
   "version": "0.1.0",
   "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "ajv": "^6.5.2",
     "all": "0.0.0",
     "atob": "^2.1.2",
     "babel-runtime": "^6.26.0",
+    "crypto": "^1.0.1",
     "html-react-parser": "^0.4.6",
     "jsoncomp": "^1.6.1",
     "pako": "^1.0.6",
     "react": "^15.5.0",
     "react-device-detect": "^1.5.8",
-    "react-dom": "^15.5.0",
     "react-player": "^1.12.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.1.1",
@@ -26,12 +28,39 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0"
+    "@rescripts/cli": "^0.0.12",
+    "@rescripts/rescript-env": "^0.0.10",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "concurrently": "^4.1.2",
+    "electron": "^6.0.9",
+    "electron-builder": "^21.2.0",
+    "typescript": "^3.6.3",
+    "wait-on": "^3.3.0"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "author": {
+    "name": "KC Kern",
+    "email": "kc@kckern.com",
+    "url": "http://kckern.com"
+  },
+  "build": {
+    "appId": "guide.scripture.isaiah",
+    "productName": "Isaiah Explorer",
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "build/icon.icns"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
 }

@@ -455,7 +455,6 @@ class App extends Component {
   }
 
   initApp() {
-    console.log(window.location);
     var settings = localStorage.getItem("settings")
     try {
       settings = JSON.parse(settings)

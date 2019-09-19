@@ -126,6 +126,7 @@ class HebrewFax extends Component{
 	{
 		if(this.props.app.state.hebrewFax===false)
 		{
+			console.log(globalData); 
 			if(globalData.hebrew.fax[this.props.app.state.active_verse_id]===null) return null;
 			return <div id="seefax" onClick={()=>this.props.app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">&#x1F4DC;</span> </div>
 		}
