@@ -15,8 +15,8 @@
     "jsoncomp": "^1.6.1",
     "pako": "^1.0.6",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "react-device-detect": "^1.5.8",
+    "react-dom": "^16.0.0",
     "react-player": "^1.12.0",
     "react-scripts": "^3.1.1",
     "react-sortable-hoc": "^0.8.3",
@@ -26,7 +26,13 @@
     "start": "react-scripts start --port 3000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "e-start": "rescripts start",
+    "e-build": "rescripts build",
+    "e-test": "rescripts test",
+    "postinstall": "electron-builder install-app-deps",
+    "pree-pack": "yarn add @rescripts/cli @rescripts/rescript-env && yarn e-build",
+    "e-pack": "electron-builder -mw"
   },
   "devDependencies": {
     "@rescripts/cli": "^0.0.12",

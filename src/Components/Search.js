@@ -103,7 +103,7 @@ export class SearchResults extends Component {
 			groups[j-1].push(verse_id);
 			last_h = hindex;
 		}
-		var results = [];
+		var results = [];// eslint-disable-next-line
 		for(let gr in groups)
 		{
 			var h_index = this.props.app.getHeadingIndex(groups[gr][0],this.props.app.state.outline);
