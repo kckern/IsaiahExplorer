@@ -13,6 +13,8 @@ import {TagFloater} from "./Components/Tags.js"
 import {globalData} from "./globals.js"
 import VideoBox from "./Components/VideoBox.js"
 import Tipsy from "react-tipsy"
+import isElectron from 'is-electron';
+
 
 import "./App.css"
 
@@ -108,6 +110,23 @@ class App extends Component {
 
   componentWillMount() {
     document.addEventListener("keydown", this.keyDown.bind(this))
+
+    // ELECTRON MENU FUNCTION
+		if (isElectron()) {
+			window.ipcRenderer.on('structure', (event, shortcode) => {
+        this.setActiveStructure(shortcode);
+      })
+			window.ipcRenderer.on('outline', (event, shortcode) => {
+        this.setActiveOutline(shortcode);
+      })
+			window.ipcRenderer.on('version', (event, shortcode) => {
+        this.setActiveVersion(shortcode);
+      })
+      
+    }
+    
+
+
   }
 
   saveFloater(key, item) {
@@ -1130,19 +1149,22 @@ class App extends Component {
   }
 
   saveSettings() {
+    let settings = {
+      version: this.state.version,
+      outline: this.state.outline,
+      structure: this.state.structure,
+      top_versions: this.state.top_versions,
+      top_outlines: this.state.top_outlines,
+      top_structures: this.state.top_structures,
+      version_views: this.state.version_views,
+      commentary_order: this.state.commentary_order
+    };
     localStorage.setItem(
       "settings",
-      JSON.stringify({
-        version: this.state.version,
-        outline: this.state.outline,
-        structure: this.state.structure,
-        top_versions: this.state.top_versions,
-        top_outlines: this.state.top_outlines,
-        top_structures: this.state.top_structures,
-        version_views: this.state.version_views,
-        commentary_order: this.state.commentary_order
-      })
-    )
+      JSON.stringify(settings)
+    );
+
+	if(isElectron()) window.ipcRenderer.send('saveSettings',settings);
   }
 
   setNewTop(list, value, new_index) {

@@ -13,6 +13,7 @@
     "core-js": "^3.2.1",
     "electron-is-dev": "^1.1.0",
     "html-react-parser": "^0.4.6",
+    "is-electron": "^2.2.0",
     "jsoncomp": "^1.6.1",
     "pako": "^1.0.6",
     "react": "^16.0.0",
