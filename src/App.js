@@ -2680,6 +2680,30 @@ class App extends Component {
     return r
   }
 
+ isConsecArray(arr) {
+    var previous = arr[0];
+    var i;
+    var y = (arr.length);
+    if (y > 1) {
+        for (i=1; i < y; i += 1) {
+            if (parseInt(arr[i]) -1  !== parseInt(previous)) {
+                return false;
+            }
+            previous = arr[i];        
+        }
+    }
+    return true;
+}
+
+  getMegaRef(verse_ids)
+  {
+  	var first = this.getReference([verse_ids[0]])
+  	var last = this.getReference([verse_ids.pop()]);
+  	
+  	return first+"–"+(last.replace(/^[A-z]+/,'')).trim();
+  	
+  }
+
   getReference(verse_ids) {
     verse_ids = this.ArrNoDupe(verse_ids.sort())
     var index = globalData["index"]
@@ -2703,7 +2727,9 @@ class App extends Component {
       }
     }
     var final = "Isaiah "
+    var counter = 0;
     for (chapter in obj) {
+    	counter++;
       var verse_groups = obj[chapter]
       var v_arr = []
       for (i in verse_groups) {
@@ -2717,8 +2743,11 @@ class App extends Component {
       }
       final = final + chapter + ":" + v_arr.join(",") + "; "
     }
+    if(counter>1 && this.isConsecArray(verse_ids) && verse_ids.length>1) return this.getMegaRef(verse_ids);
+    
     return final.replace(/;\s*$/g, "")
   }
+  
 
   loadCommentaryID() {
     if (
