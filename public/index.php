@@ -25,5 +25,7 @@ else if (
 }
 else {
     // that is not Facebook
-	echo file_get_contents("index.html");
+	$html = file_get_contents("index.html");
+	$html = str_replace('="./','="/',$html);
+	echo $html;
 }

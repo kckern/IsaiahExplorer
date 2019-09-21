@@ -466,13 +466,17 @@ class TagParallel extends Component {
 		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
 		if(tagMeta.verses[0]!==this.props.app.state.active_verse_id)
     	document.getElementById("text").querySelectorAll(".versebox_highlighted")[0].parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling.scrollIntoView();
-
-    	for(var i=1; i<=[document.getElementById("parTable").getAttribute('count')].map(Number)[0]; i++ )
+    	for(var i=1; i<=document.querySelectorAll("#parTable .row").length; i++ )
     	{
-    		var left 	=	document.getElementById(i+"content"+tagstr).querySelectorAll("td>div")[0].offsetHeight;
-    		var right 	=	document.getElementById(i+"content"+tagstr).querySelectorAll("td>div")[1].offsetHeight;
-    		if(left>144 || right>144)  document.getElementById(i+"content"+tagstr).className = "row parallel_mini";
-    		else this.readMore(i)
+    		
+    		var cells = document.getElementById(i+"content"+tagstr).querySelectorAll("td>div");
+    		
+    		var left 	=	cells[0].offsetHeight;
+    		var right = (cells[1] === undefined) ? 0  : cells[1].offsetHeight;
+    		
+    		
+    		if(left<150 && right<150)  this.readMore(i);
+    		else document.getElementById(i+"content"+tagstr).className = "row minirow";
     	}
 	}
 	
@@ -487,7 +491,7 @@ class TagParallel extends Component {
 		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
  		var element = document.getElementById(i+"readMore"+tagstr);
  		element.style.display = 'none';
- 		document.getElementById(i+"content"+tagstr).className = "row";
+ 		document.getElementById(i+"content"+tagstr).className = "row fullrow";
  
  	}
  
@@ -496,9 +500,14 @@ class TagParallel extends Component {
 		var tagstr = this.props.app.state.selected_tag.toLowerCase().replace(/[^a-z]/g,"");
 		var tagMeta = globalData['tags']['tagIndex'][this.props.app.state.selected_tag];
 		var tagStructure = globalData['tags']['tagStructure'][this.props.app.state.selected_tag];
+	//	debugger;
 		const items = [];
-		for(var i = 1; i<=Object.keys(tagStructure).length/2; i++ )
+		let keys = Object.keys(tagStructure);
+		for(var k in keys)
 		{
+			let alpha = keys[k].replace(/\d+/g,'');
+			if(alpha!=="A") continue;
+			let i = keys[k].replace(/\D+/g,''); 
 
 			var left_label = null;
 			if(typeof tagStructure[i+"A"]==="undefined") debugger;
@@ -511,7 +520,44 @@ class TagParallel extends Component {
 			}
 	
 			var right_label = null;
-			if(typeof tagStructure[i+"B"]==="undefined") debugger;
+			var classes = ["meta"];
+			const index = i;
+			var l_highlights = null;
+			if(tagStructure[i+"A"].highlight!==undefined) l_highlights = tagStructure[i+"A"].highlight;
+			
+			let heading = null;
+			if(tagStructure[i+"A"].heading!==undefined)  heading = <tr key={11} className="heading"><td colSpan={2}>{tagStructure[i+"A"].heading}</td></tr>;
+			
+			let verses = tagStructure[i+"A"].verses;
+			if(verses.indexOf(parseInt(this.props.app.state.active_verse_id,0))>=0) classes.push("parameta_highlighted");
+			
+			if(typeof tagStructure[i+"B"]==="undefined")
+			{
+				//COLSPAN
+				items.push([
+						heading,	
+			            <tr   className="metaref" id={i+"i"+tagstr} key={i+"i"} onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
+			              <td colSpan={2}>
+			              	{left_label}
+			                <div className="ref">{tagStructure[i+"A"].ref}</div>
+			              </td>
+			            </tr>,
+			            <tr className={classes.join(" ")} id={i+"ii"+tagstr} key={i+"ii"}  onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
+			              <td colSpan={2}>{l_desc}</td>
+			            </tr>
+			            ,
+			            <tr   id={i+"content"+tagstr} className="row" key={i+"iii"} onMouseEnter={()=>this.props.app.highlightTaggedVerses(verses)}>
+			              <td colSpan={2}>
+							<Passage wrapperId={i+"AA"+tagstr} plain={1} app={this.props.app} verses={tagStructure[i+"A"].verses} sub={tagStructure[i+"A"].sub} highlights={l_highlights} />
+						  </td>
+			            </tr>,
+			            <tr key={i+"iv"+tagstr} id={i+"readMore"+tagstr} className="readmore" onClick={()=>this.readMore(index)}><td colSpan={2}>Read More...</td></tr>
+					]);
+					continue;
+			}
+			
+			
+			//IF B SIDE IS THETHERE TOO
 			var r_desc = tagStructure[i+"B"].desc;
 			match = /\s*\[(.*?)\]\s*(.*)/g.exec(r_desc);  
 			if(match!==null)
@@ -519,20 +565,23 @@ class TagParallel extends Component {
 				right_label = (<div className="meta">{match[1]}</div>);
 				r_desc = match[2];
 			}
-			const verses = tagStructure[i+"A"].verses.concat(tagStructure[i+"B"].verses).map(Number);
-			var classes = ["meta"];
+			verses = tagStructure[i+"A"].verses.concat(tagStructure[i+"B"].verses).map(Number);
+			
+			
+			if(tagStructure[i+"A"].heading!==undefined && tagStructure[i+"B"].heading!==undefined)  
+				heading = <tr className="heading"><td>{tagStructure[i+"A"].heading}</td><td>{tagStructure[i+"B"].heading}</td></tr>;
+			if(tagStructure[i+"A"].heading===undefined && tagStructure[i+"B"].heading!==undefined)  
+				heading = <tr className="heading"><td colSpan={2}>{tagStructure[i+"B"].heading}</td></tr>;
 			
 			if(verses.indexOf(parseInt(this.props.app.state.active_verse_id,0))>=0) classes.push("parameta_highlighted");
-			const index = i;
 			
 			
-			var l_highlights = null;
 			var r_highlights = null;
-			if(tagStructure[i+"A"].highlight!==undefined) l_highlights = tagStructure[i+"A"].highlight;
 			if(tagStructure[i+"B"].highlight!==undefined) r_highlights = tagStructure[i+"B"].highlight;
 			
 			
 			items.push([
+						heading,	
 		            <tr className="metaref" id={i+"i"+tagstr} key={i+"i"} onMouseEnter={()=>{this.props.app.highlightTaggedVerses(verses);this.props.app.setActiveVerse(verses[0]);}}>
 		              <td>
 		              	{left_label}

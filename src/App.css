@@ -1241,15 +1241,30 @@ div.verse_container
 {
     vertical-align: top;
 }
-#text > table.parallel  .row td
+#text > table.parallel .row td
 {
     padding:10px;
     padding-bottom:0px;
     text-align:justify;
     letter-spacing:-0.7;
     font-size:14px;
-    line-height:15px;
+    line-height:16px;
 }
+#text > table.parallel tr.heading td
+{
+	text-align:center;
+	font-weight:800;
+	padding: 1em 0 1em 0;
+	font-size:larger;
+}
+
+
+#text > table.parallel .row.minirow td div
+{
+	max-height:144px;
+	overflow:hidden;
+}
+
 #text > table.parallel .meta td
 {
     padding:5px;
@@ -1283,12 +1298,6 @@ table.parallel span.verse
 	background-color:#448;
 }
 
-
-#text >table.parallel tr.parallel_mini td div
-{
-	overflow:hidden;
-	height:149px;
-}
 
 #text >table.parallel .readmore
 {
