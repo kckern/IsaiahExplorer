@@ -127,8 +127,12 @@ class Section extends Component {
           var tagimg = null;
           if(section.tag.length>0) tagimg = <img src={tag_png} alt="tag" className="gridTag" onClick={()=>this.props.app.showcaseTag(section.tag)}/>
 
+		  let superhead = null;
+		  if(section.super!==undefined && section.super!=="") superhead = (<h2>{section.super}</h2>);
+
           return (
             <div className="overviewcontainer">
+            {superhead}
               <h3
                 className={sectionClass.join(" ")}
                 onMouseEnter={() =>

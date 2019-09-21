@@ -140,6 +140,16 @@
             "description": "Sections from Encountering the Book of Isaiah",
             "details": ""
         },
+        "motyer": {
+            "category": "structure",
+            "shortcode": "motyer",
+            "title": "Three Books",
+            "short_title": "",
+            "image": "",
+            "audio": "",
+            "description": "Structure from J. Alec Motyer\u2019s Introduction & Commentary",
+            "details": ""
+        },
         "wikipedia": {
             "category": "structure",
             "shortcode": "wikipedia",
@@ -358,6 +368,16 @@
             "title": "Headings from the New English Translation",
             "short_title": "NET Headings",
             "image": "net.jpg",
+            "audio": "",
+            "description": "",
+            "details": ""
+        },
+        "motyer": {
+            "category": "outline",
+            "shortcode": "motyer",
+            "title": "Outline from J. Alec Motyer\u2019s Introduction & Commentary",
+            "short_title": "Motyer Outline",
+            "image": "motyer.jpg",
             "audio": "",
             "description": "",
             "details": ""

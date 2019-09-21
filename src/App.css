@@ -564,6 +564,26 @@ div#book h3
 	float:left;
 	width:100%;
 }
+
+div#book h2
+{
+	margin:0;
+	font-size:20px;
+	margin-bottom:-5px;
+	margin-top:1em;
+	text-align:left;
+	background-color:#333;
+	color:#DDD;
+	padding-left:1em;
+	font-variant:small-caps;
+	float:left;
+	width:100%;
+	font-size:1.5em;
+	border-top-left-radius:1em;
+	border-top-right-radius:1em;
+}
+
+
 span.section_tile
 {
 	color:#999;
@@ -2325,6 +2345,8 @@ div.option.top.option--dragging > div.optionbox > img.structure_title_icon
 }
 
 #outline .overviewcontainer{height:100%;}
+
+
 
 #user_prefs div.optionbox, .option--dragging div.optionbox
 {
