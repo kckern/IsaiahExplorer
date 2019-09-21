@@ -2654,6 +2654,7 @@ class App extends Component {
       }
       for (i in children) {
         var childObj = this.getTagData(children[i])
+        if(childObj===undefined) continue;
         g.verses = g.verses.concat(childObj.verses)
       }
     }
