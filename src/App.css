@@ -169,7 +169,6 @@ body.ie #text div.chiastic_column
 .extraversions table
 {
 	border-collapse: collapse;
-	width:497px;
 } 
 .extraversions tr.cells td
 {
@@ -3919,12 +3918,6 @@ body.narrow .col2b {
 
     width:250px;
 }
-
-body.narrow .extraversions table
-{
-	border-collapse: collapse;
-	width:497px;
-} 
 
 
 body.narrow .extraversions tr.head td img
