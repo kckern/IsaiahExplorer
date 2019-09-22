@@ -47,7 +47,7 @@ export default class VerseColumn extends Component {
 			          <div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
 			            <div className="heading_title" id="audio_heading">
 			            	<div id='audio_verse' className='active_audio'><img alt="Play Audio" src={loading_icon}/> Play Audio Verse</div>
-			            	<div id='audio_commentary'><img alt="Audio Commentary" src={play_icon}/> Play Commentary <img alt="Select" id='com_option' src={sprocket_icon}/></div>
+			            	<div id='audio_commentary'><img alt="Select" id='com_option' src={sprocket_icon}/><img alt="Audio Commentary" src={play_icon}/> Play Commentary</div>
 			            	<div  id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
 		
 			    		</div>

@@ -105,7 +105,12 @@ class App extends Component {
   componentDidMount() {
     var img = new Image()
     img.src = require("./img/interface/book.gif")
-    img.onload = this.initApp()
+    img.onload = this.initApp();
+    
+    if(window.innerWidth<1920)
+    {
+    	document.getElementsByTagName("body")[0].className = "narrow";
+    }
   }
 
   componentWillMount() {
