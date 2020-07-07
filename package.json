@@ -42,7 +42,7 @@
     "@rescripts/rescript-env": "^0.0.10",
     "babel-plugin-transform-runtime": "^6.23.0",
     "concurrently": "^4.1.2",
-    "electron": "^6.0.9",
+    "electron": "^7.2.4",
     "electron-builder": "^21.2.0",
     "typescript": "^3.6.3",
     "wait-on": "^3.3.0"
