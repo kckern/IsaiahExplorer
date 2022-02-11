@@ -5,7 +5,7 @@
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
-    "ajv": "^6.5.2",
+    "ajv": "^6.12.3",
     "all": "0.0.0",
     "atob": "^2.1.2",
     "babel-loader": "^8.0.6",
