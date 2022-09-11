@@ -83,7 +83,7 @@ export default class PassageColumn extends Component {
 	  	sectionTitle = globalData["structures"][this.props.app.state.structure][s_index].description;
 	  	var h_index = globalData['outlineIndex'][verse_id.toString()][this.props.app.state.outline];
 	  	headingTitle = globalData["outlines"][this.props.app.state.outline][h_index].heading;
-		version_img = require('../img/versions/'+this.props.app.state.version.toLowerCase()+'.png');
+		version_img = require('../img/versions/'+this.props.app.state.version.toLowerCase()+'.jpg');
 		if(this.props.app.state.ui_version_loading) version_img = loading_version; 
   		
 	}
@@ -442,7 +442,7 @@ class VersionOption extends Component
     	this.props.app.setActiveVersion(this.props.option.shortcode)
     		
     	}}>
-			<img alt="Option" src={require('../img/versions/'+this.props.option.shortcode.toLowerCase()+'.png')} />
+			<img alt="Option" src={require('../img/versions/'+this.props.option.shortcode.toLowerCase()+'.jpg')} />
 		    <div className={"icon"}>{audioimg}{this.props.option.title}</div> 
 		    <span>{this.props.option.description}</span> 
 		</div> )
