@@ -25,7 +25,7 @@
     "react-tipsy": "^0.6.2"
   },
   "scripts": {
-    "start": "react-scripts start --port 3000",
+    "start": "react-scripts --openssl-legacy-provider start --port 3000",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
