@@ -138,11 +138,11 @@ class HebrewFax extends Component{
 		//http://old.isaiah.scripture.guide/img/scroll/verses/18658.jpg
 		//return null;
 		var faxNavStyle = {
-		  backgroundImage: "url(https://scripture.guide/img/scroll/"+this.props.app.state.active_verse_id+".jpg)"
+		  backgroundImage: "url(https://scripture-guide-assets.s3.us-west-2.amazonaws.com/scroll/"+this.props.app.state.active_verse_id+".jpg)"
 		};
 		var faxZoomStyle = {
 			backgroundPosition: this.state.x+"px "+this.state.y+"px",
-		  backgroundImage: "url(https://scripture.guide/img/scroll/"+this.props.app.state.active_verse_id+".jpg)"
+		  backgroundImage: "url(https://scripture-guide-assets.s3.us-west-2.amazonaws.com/scroll/"+this.props.app.state.active_verse_id+".jpg)"
 		};
 		return (<div className="faxBox">
 			<div className="faxZoom"  onMouseMove={this.moveZoom.bind(this)}   style={faxZoomStyle}></div>

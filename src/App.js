@@ -473,7 +473,8 @@ class App extends Component {
     //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
 
     if(this.state.rootURL.match(/^file/)==null)
-    window.history.pushState(null,null,path.toLowerCase())
+    //window.history.pushState(null,null,path.toLowerCase())
+    window.location.hash = path.toLowerCase();
 
     document.title = title
   }
