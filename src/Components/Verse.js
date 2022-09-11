@@ -153,7 +153,17 @@ class AudioVerse extends Component {
 		}
 	}
 
+	cyclePlaybackRate()
+	{
+		let sequence = {
+			"1":1.5,
+			"1.5":2,
+			"2":1
+		}
+		let rate = this.props.app.state.playbackRate;
+		this.props.app.setState({ playbackRate:sequence[rate]})
 
+	}
 
 	render()
 	{
@@ -161,6 +171,8 @@ class AudioVerse extends Component {
 		
 		if(globalData.meta.version[this.props.app.state.version].audio!==1 && this.props.app.state.hebrewMode===false) classes.push("noaudio");
 		
+		let rateLabel = this.props.app.state.playbackRate + "×";
+		if(this.props.app.state.playbackRate===1.5) rateLabel = "1½";
 		
 		var icon = play_icon;
 		var text = "Play Audio Verse";
@@ -169,8 +181,8 @@ class AudioVerse extends Component {
 			if(this.props.app.state.audioState==="loading") { icon=loading_icon; text="Loading Audio Verse"; classes.push("active_audio")}
 			if(this.props.app.state.audioState==="playing") { icon=playing_icon; text="Pause Audio Verse"; classes.push("active_audio")}
 		}
-		
-		return (<div className={classes.join(" ")} onClick={this.handleClick.bind(this)} id='audio_verse'><img alt="Play Audio" src={icon}/> {text}</div>)
+		let button = (this.props.app.state.audioState==="playing") ? <button onClick={this.cyclePlaybackRate.bind(this)}>{rateLabel}</button> : null
+		return (<><div className={classes.join(" ")} onClick={this.handleClick.bind(this)} id='audio_verse'><img alt="Play Audio" src={icon}/> {text}</div>{button}</>)
 	}
 	
 }

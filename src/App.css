@@ -3045,12 +3045,32 @@ button#commentary
 	padding-left:10px;
 	border-radius:10px;
 	background-color:#666;
-	display:inline;
-	width:165px;
 	height:22px;
 
 	float:left;
 	margin-right:5px;
+	flex: auto;
+}
+
+#audio_heading
+{
+	display: flex;
+}
+#audio_heading button{
+	height:20px;
+	width: 20px;
+	border-radius: 10px;
+	border-color: #AAA;
+	text-align: center;
+	padding: 0;
+	line-height: 100%;
+	margin: 2px;
+	margin-right: 5px;
+	font-size: 10px;
+	cursor: pointer;
+}
+#audio_heading button:hover{
+	color: #888;
 }
 
 .safari #audio_heading div

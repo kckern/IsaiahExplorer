@@ -82,6 +82,7 @@ class AudioVersePlayer extends Component {
 		  	} 
 		  	
 		} 
+
 		return <span><ReactPlayer className='react-player'
           	width='0%'
           	height='0%'
@@ -89,6 +90,7 @@ class AudioVersePlayer extends Component {
 			url={url}
 			playing={true} 
 			onStart={onStart}
+			playbackRate={this.props.app.state.playbackRate || 1}
 			onEnded={onEnded.bind(this,next)}
 		/><ReactPlayer  className='react-player'
           	width='0%'
@@ -97,6 +99,7 @@ class AudioVersePlayer extends Component {
 			url={next_url}
 			playing={true}
 			volume={0}
+			playbackRate={this.props.app.state.playbackRate || 1}
 			muted={true}
 		/></span>
 	}
@@ -154,7 +157,7 @@ class AudioCommentaryPlayer extends Component {
 			
 			if(this.h_verses===undefined)
 			{
-				debugger;
+				//debugger;
 				return false;
 			}
 			
@@ -183,6 +186,7 @@ class AudioCommentaryPlayer extends Component {
 			url={url}
 			playing={true} 
 			onStart={onStart}
+			playbackRate={this.props.app.state.playbackRate || 1}
 			onEnded={onEnded.bind(this,next)}
 		/><ReactPlayer  className='react-player'
           	width='0%'
@@ -191,6 +195,7 @@ class AudioCommentaryPlayer extends Component {
 			url={next_url}
 			playing={true}
 			volume={0}
+			playbackRate={this.props.app.state.playbackRate || 1}
 			muted={true}
 		/></span>
 	}

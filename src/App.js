@@ -73,6 +73,7 @@ class App extends Component {
     version_views: 1,
 
     audioState: null,
+    playbackRate: 1,
     audioPointer: 0,
     commentaryAudioMode: false,
     commentaryAudio: "gileadi",
