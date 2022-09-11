@@ -34,7 +34,7 @@ class AudioVersePlayer extends Component {
 		//Queue Management
 		var version = this.props.app.state.version;
 		if(this.props.app.state.hebrewMode) version = "HEBREW";
-		var url = "https://mp3.scripture.guide/"+version+"/"+this.props.app.state.active_verse_id;
+		var url = "https://audio.scripture.guide/"+version+"/"+this.props.app.state.active_verse_id;
 		var next_url = url;
 		var next = null;
 		this.audioPointer=this.props.app.state.audioPointer;
@@ -46,7 +46,7 @@ class AudioVersePlayer extends Component {
 		}
 		 if((index+1)<this.props.app.state.highlighted_verse_range.length)  { 
 		 	next = this.props.app.state.highlighted_verse_range[index+1];
-		 	next_url =  "https://mp3.scripture.guide/"+version+"/"+next;
+		 	next_url =  "https://audio.scripture.guide/"+version+"/"+next;
 		 }
 		if(index>=0) this.audioPointer=index;
 		
