@@ -89,7 +89,7 @@ export default class VerseColumn extends Component {
 					onMouseLeave={()=>this.props.app.spotVerse(this.props.app.state.version)}
 					onClick={()=>this.props.app.setActiveVersion(shortcode)}
 					className={classes.join(" ")}  
-					src={require('../img/versions/'+shortcode.toLowerCase()+'.jpg')} 
+					src={require('../img/versions/'+shortcode.toLowerCase()+'.png')} 
 					key={key} />) 
 			});
 			var readhide = "Read Commentaries";
@@ -336,7 +336,7 @@ class ExtraVersions extends Component {
 				version={ver} 
 				highlights={this.props.highlights} />
 				</td>);
-			heads.push(<td key={i}><img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.jpg')} 
+			heads.push(<td key={i}><img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.png')} 
 			 onClick={this.props.app.setActiveVersion.bind(this.props.app,ver)} /></td>);
 		}
 		
@@ -499,7 +499,7 @@ class PassagesLink extends Component{
 		 >
             <div  className={this.props.item.classes.join(" ")} >
             
-            <img   alt="Passage Version" src={require('../img/versions/'+this.props.item.shortcode+'.jpg')} /> <span>{this.props.item.heading}</span> </div>
+            <img   alt="Passage Version" src={require('../img/versions/'+this.props.item.shortcode+'.png')} /> <span>{this.props.item.heading}</span> </div>
         </div>
 		)
 	}

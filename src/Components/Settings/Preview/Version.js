@@ -10,7 +10,7 @@ class VersionPreview extends Component {
 
       <div className="pref_row" id="prefs_example" style={{height: 648}}>
         <h3>Sample Passages from: <br />{meta.title}</h3>
-        <div className="detail"><img alt="img" className="cover"  src={require('../../../img/versions/'+meta.shortcode.toLowerCase()+'.jpg')} />{meta.description}</div>
+        <div className="detail"><img alt="img" className="cover"  src={require('../../../img/versions/'+meta.shortcode.toLowerCase()+'.png')} />{meta.description}</div>
         <hr/>
         <Passage app={this.props.app} version={meta.shortcode} verses={[17673]} wrapperClass="passage preview"/>
         <hr/>

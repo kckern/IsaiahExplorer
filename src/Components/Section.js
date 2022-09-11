@@ -57,7 +57,7 @@ export default class SectionColumn extends Component {
           </div>
           <div className="heading_title"  onClick={this.props.app.cycleOutline.bind(this.props.app,1)}> 
             □ <span id="outline_title">
-            <img alt="outline_logo" src={require('../img/versions/'+this.props.app.state.outline.toLowerCase()+'.jpg')}  onClick={toggler}  />
+            <img alt="outline_logo" src={require('../img/versions/'+this.props.app.state.outline.toLowerCase()+'.png')}  onClick={toggler}  />
             {globalData["meta"]["outline"][this.props.app.state.outline].short_title}</span>
           </div>
         </div>

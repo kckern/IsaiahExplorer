@@ -27,7 +27,7 @@ class VersionSetting extends Component {
           <span>{dragging ? '' : this.props.optionKey + 1}</span>
         </div>
         <div className="optionbox">
-          <img alt="img" src={require('../../../img/versions/'+this.props.option.shortcode.toLowerCase()+'.jpg')} />
+          <img alt="img" src={require('../../../img/versions/'+this.props.option.shortcode.toLowerCase()+'.png')} />
           <div className="version_full_title">{audioimg}{this.props.option.title}</div>
           <div className="version_description">{this.props.option.description}</div>
         </div>

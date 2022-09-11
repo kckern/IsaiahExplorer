@@ -26,7 +26,7 @@ class OutlineSetting extends Component {
           <span>{dragging ? '' : this.props.optionKey + 1}</span>
         </div>
         <div className="optionbox">
-          <img alt="img" src={require('../../../img/versions/' + this.props.option.shortcode + '.jpg')} />
+          <img alt="img" src={require('../../../img/versions/' + this.props.option.shortcode + '.png')} />
           <div className="outline_full_title">{this.props.option.title}</div>
         </div>
       </div>
