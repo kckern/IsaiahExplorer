@@ -222,7 +222,7 @@ class App extends Component {
 
   getSettingsFromUrl(settings) {
     settings.active_verse_id = 17656
-    var path = window.location.pathname
+    var path = window.location.hash.substring(1) || window.location.pathname ;
 
     var matches = new RegExp("^/([0-9]+)/([0-9]+)$", "ig").exec(path)
     if (matches !== null) {
