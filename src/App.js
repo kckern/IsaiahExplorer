@@ -1882,28 +1882,15 @@ class App extends Component {
   }
 
   checkInView(container, element, p) {
-    if (container === undefined || element === undefined) return null
-    var partial = false
-    if (p === true) partial = true
-    //Get container properties
-    let cTop = container.scrollTop
-    let cBottom = cTop + container.clientHeight
-
-    //Get element properties
-    let eTop =
-      element.getBoundingClientRect().y -
-      container.getBoundingClientRect().y +
-      cTop // change here
-    let eBottom = eTop + element.getBoundingClientRect().height
-
-    //Check if in view
-    let isTotal = eTop >= cTop && eBottom <= cBottom
-    let isPartial =
-      partial &&
-      ((eTop < cTop && eBottom > cTop) || (eBottom > cBottom && eTop < cBottom))
-
-    //Return outcome
-    return isTotal || isPartial
+    if (!container || !element) return false;
+    var cRect = container.getBoundingClientRect();
+    var eRect = element.getBoundingClientRect();
+    var totallyInView = eRect.top >= cRect.top && eRect.bottom <= cRect.bottom;
+    if (totallyInView) return true;
+    if (p !== true) return false;
+    // Partial mode: count "partially overlapping" as in view.
+    return (eRect.top < cRect.top && eRect.bottom > cRect.top)
+        || (eRect.bottom > cRect.bottom && eRect.top < cRect.bottom);
   }
 
   getTagHighlightRange(verse_id, source) {
