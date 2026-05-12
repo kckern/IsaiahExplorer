@@ -96,8 +96,8 @@ var state = globalData.state;
 			/>
 		);
 	});
-	var readhide = "Read Commentaries";
-	if (state.commentaryMode) readhide = "Hide Commentaries";
+	var readhide = "Read";
+	if (state.commentaryMode) readhide = "Hide";
 	return (
 		<div className="col col2">
 			<div className="heading">

@@ -481,7 +481,10 @@ div#verse
 	position:relative;
 	border-bottom:1px solid #555;
 	border-top:1px solid #555;
-	background-color: #DDD;
+	/* No background: lets the dark .audio-btn buttons sit on the parent
+	   .heading background (#999) rather than a light grey strip. */
+	background-color: transparent;
+	padding: 6px;
 }
 
 .passage_title
@@ -3102,12 +3105,17 @@ button#commentary
 .audio-btn--rate {
     border-radius: 0;
     border-left: 0;
+    border-right: 0;
     padding: 0 10px;
     font-size: 11px;
     flex: 0 0 auto;
-    background: rgba(0,0,0,0.15);
+    /* Solid darker tone of --ui-surface so the pill reads as part of the
+       split-button group rather than a translucent overlay on the parent
+       background. */
+    background: #333;
+    color: rgba(255,255,255,0.8);
 }
-.audio-btn--rate:hover { background: rgba(0,0,0,0.3); }
+.audio-btn--rate:hover { background: #222; color: #fff; }
 .audio-btn:hover { background: var(--ui-surface-hover); }
 .audio-btn:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -2px; z-index: 1; }
 .audio-btn[aria-pressed="true"] { background: var(--ui-accent); }
