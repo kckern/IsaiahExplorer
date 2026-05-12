@@ -19,6 +19,7 @@ import isElectron from 'is-electron';
 
 import { parseRoute, buildRoute } from "./routing/routeCodec"
 import { getFocalTag } from "./state/tagSelectors"
+import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
 import { Helmet } from "react-helmet"
 import "./App.css"
 
@@ -56,6 +57,7 @@ class App extends Component {
     chiasm_letter: null,
     more_tags: false,
 
+    tagPanel: TAG_PANEL.CLOSED,
     infoOpen: false,
     allCollapsed: false,
     tagMode: false,
@@ -986,12 +988,11 @@ class App extends Component {
         }
       }
     }
+    this.setTagPanel(TAG_PANEL.CLOSED)
     this.setState(
       {
         highlighted_verse_range: matches,
         selected_tag: null,
-        infoOpen: false,
-        tagMode: false,
         preSearchMode: false,
         refSearch: refSearch,
         showcase_tag: null,
@@ -2196,8 +2197,6 @@ class App extends Component {
     var newvals = {
       active_verse_id: newVerseId,
       selected_tag: null,
-      infoOpen: false,
-      tagMode: true,
       searchMode: false,
       comSearchMode: false,
       audioState: null,
@@ -2210,11 +2209,12 @@ class App extends Component {
       highlighted_tagged_verse_range: [],
       highlighted_tagged_parent_verse_range: tagData.verses
     }
+    this.setTagPanel(TAG_PANEL.VERSES)
     this.setState(newvals, function() {
       //this.scrollText(true,src);
       this.scrollTagTree()
 
-      this.setState({infoOpen: false})
+      this.setTagPanel(TAG_PANEL.VERSES)
       this.setUrl()
     })
   }
@@ -2283,6 +2283,7 @@ class App extends Component {
     if ([null, 0, undefined].indexOf(newVerseId) > -1) debugger
 
     this.arrowPointer = 0
+    this.setTagPanel(TAG_PANEL.CLOSED)
     this.setState(
       {
         active_verse_id: newVerseId,
@@ -2291,9 +2292,7 @@ class App extends Component {
         hebrewMode: false,
         hebrewSearch: false,
         hebrewStrongIndex: null,
-        infoOpen: false,
         allCollapsed: false,
-        tagMode: false,
         showcase_tag: null,
         previewed_tag: null,
         selected_tag_block_index: null,
@@ -2324,12 +2323,11 @@ class App extends Component {
     )
       return false
     this.floater = {}
+    this.setTagPanel(tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED)
     this.setState(
       {
         selected_tag: null,
         selected_verse_id: null,
-        infoOpen: false,
-        tagMode: tagMode,
         searchMode: false,
         hebrewMode: false,
         mouseBlockIndex: null,
@@ -2351,6 +2349,13 @@ class App extends Component {
         this.setActiveVerse(verse, undefined, undefined, true, "tag")
       }
     )
+  }
+  setTagPanel(panel) {
+    this.setState({
+      tagPanel: panel,
+      tagMode: derivedTagMode(panel),
+      infoOpen: derivedInfoOpen(panel),
+    });
   }
   setActiveStructure(shortcode) {
     this.setState(
@@ -2747,6 +2752,7 @@ class App extends Component {
       }
     }
 
+    this.setTagPanel(TAG_PANEL.CLOSED)
     this.setState(
       {
         highlighted_verse_range: matches,
@@ -2754,8 +2760,6 @@ class App extends Component {
         hebrewSearch: true,
         hebrewMode: true,
         selected_tag: null,
-        infoOpen: false,
-        tagMode: false,
         preSearchMode: false,
         showcase_tag: null,
         previewed_tag: null,

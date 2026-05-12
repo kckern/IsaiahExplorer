@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import {DataContext} from '../DataContext';
 import { Passage } from "./Passage.js";
 import { getFocalTag } from '../state/tagSelectors';
+import { TAG_PANEL } from '../state/tagPanel';
 
 import tag_png from '../img/interface/tag.png';
 
@@ -70,7 +71,8 @@ var state = globalData.state;
 		if (state.tagMode === true) return false;
 		if (e.target.parentElement.className === "leaf") return false;
 		if (e.target.parentElement.className === "branch") return false;
-		app.setState({ infoOpen: true, commentaryMode: false }, function() {
+		app.setTagPanel(TAG_PANEL.TREE);
+		app.setState({ commentaryMode: false }, function() {
 			var panel = document.querySelector(".tag_meta");
 			if (!panel) return;
 			var onDone = function() {

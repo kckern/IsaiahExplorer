@@ -10,6 +10,7 @@ import loading_icon from "../img/interface/audioload.gif";
 import comment_icon from "../img/interface/comment.png";
 import loading_img from "../img/interface/message.gif";
 import heb_png from "../img/interface/hebrew.png";
+import { TAG_PANEL } from "../state/tagPanel";
 
 export default function VerseColumn() {
 	var globalData = useContext(DataContext);
@@ -95,7 +96,10 @@ var state = globalData.state;
 				<div className="heading_title" id="audio_heading">
 					<AudioVerse />
 					<AudioCommentary />
-					<button type="button" id="commentary" onClick={() => app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id, infoOpen: false }, app.setUrl.bind(app))}><img alt="Commentary" src={comment_icon} /> {readhide}</button>
+					<button type="button" id="commentary" onClick={() => {
+						app.setTagPanel(state.tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED);
+						app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id }, app.setUrl.bind(app));
+					}}><img alt="Commentary" src={comment_icon} /> {readhide}</button>
 				</div>
 			</div>
 			<VersePanel />
@@ -194,10 +198,10 @@ var state = globalData.state;
 	const [options, setOptions] = useState(false);
 
 	function startPlaying(shortcode) {
+		app.setTagPanel(TAG_PANEL.CLOSED);
 		app.setState({
 			audioState: "loading",
 			audioPointer: 0,
-			tagMode: false,
 			commentaryAudio: shortcode,
 			commentaryAudioMode: true
 		});
