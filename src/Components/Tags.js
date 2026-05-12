@@ -78,8 +78,10 @@ var state = globalData.state;
 	if (state.showcase_tag !== null) key_tag = state.showcase_tag;
 	if (state.tagMode && key_tag === null) key_tag = state.previewed_tag;
 
-	var tagMeta = globalData["tags"]["tagIndex"][key_tag];
-	if (tagMeta !== undefined) tagMeta["tagName"] = key_tag;
+	var rawTagMeta = globalData["tags"]["tagIndex"][key_tag];
+	var tagMeta = rawTagMeta !== undefined
+		? Object.assign({}, rawTagMeta, { tagName: key_tag })
+		: undefined;
 
 	var tagBox = null;
 	if (key_tag === null) {
