@@ -17,7 +17,7 @@ Live URL shape: `/#/structure/outline/VERSION/chapter/verse[/tag.slug][/search.q
 | Desktop | Electron 6 + `electron-builder` |
 | State | Single root `App` class state — no Redux, no Context API |
 | Data | `pako` (zlib inflate) + `atob` — all large datasets are gzip+base64-encoded `.txt` files |
-| Routing | Manual hash-based (`window.location.hash`) — no React Router |
+| Routing | React Router v6 (BrowserRouter on web, MemoryRouter in Electron) — clean paths, no hash; see `docs/plans/react-router-migration-plan.md` |
 | Backend | PHP (`server.php`, `index.php`) for OG/meta tags only — no REST API |
 
 ---
@@ -44,7 +44,7 @@ Live URL shape: `/#/structure/outline/VERSION/chapter/verse[/tag.slug][/search.q
 │   └── com/
 │       └── barnes.NNNN.json   # Albert Barnes commentary entries, one JSON file per entry
 └── src/
-    ├── index.js               # ReactDOM.render(<App />)
+    ├── index.js               # ReactDOM.render(<HashRouter><RouterShell/></HashRouter>)
     ├── App.js                 # Root class component (~2500 lines) — all app logic
     ├── globals.js             # Mutable global singleton: `globalData`
     ├── App.css
@@ -89,8 +89,14 @@ Live URL shape: `/#/structure/outline/VERSION/chapter/verse[/tag.slug][/search.q
 - Commentary is loaded per-entry: `fetch("com/barnes.${id}.json")`.
 
 ### Routing
-- No React Router. `App.js` implements `getSettingsFromUrl()` (parse hash on load) and `setUrl()` (push state to hash on navigation).
-- URL segments are positional, separated by `/`. Optional segments use prefixes like `tag.`, `search.`, `hebrew.`, `commentary.`.
+- React Router v6 is the routing runtime. **BrowserRouter** on web (clean paths, no `#`), **MemoryRouter** in Electron (file:// has no URL bar).
+- Entry: `index.js` wraps `<RouterShell>` in the correct router based on `is-electron`.
+- `src/routing/routeCodec.js` owns all URL parse/build logic: `parseRoute(path)` and `buildRoute(state, getTagSlug)`. No route regex exists in App.js.
+- `App.js` calls `parseRoute()` in `getSettingsFromUrl()` (reads `this.props.location.pathname`) and `buildRoute()` in `setUrl(replace)`, which calls `this.props.navigate` (injected by `withRouter` HOC). `replace=true` for keyboard/audio stepping to avoid history flooding.
+- `src/routing/RouterShell.js` declares all routes with `<Routes>/<Route>`, including redirect routes for legacy `/search/:query` and `/hebrew/:strong` slash-form paths.
+- `App.js` renders `<Helmet>` with computed `<title>`, `<meta name="description">`, and `<link rel="canonical">` per route for SEO.
+- Canonical URL shape: `/:structure/:outline/:version[/tag.:slug][/search.:query][/hebrew.:strong]/:chapter/:verse[/commentary.:source[/:id]]`
+- AWS Amplify rewrite rule: all paths → `/index.html` with status 200 (configure in Amplify Console under Rewrites and redirects, or see `amplify.yml` comments).
 
 ### Four-Column Layout
 - The UI is always: **Structure | Section | Verse | Passage**, with overlays for Settings, Commentary, Hebrew, Tags, Audio, and Video.

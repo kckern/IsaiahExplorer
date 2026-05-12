@@ -17,6 +17,8 @@ import Tipsy from "react-tipsy"
 import isElectron from 'is-electron';
 
 
+import { parseRoute, buildRoute } from "./routing/routeCodec"
+import { Helmet } from "react-helmet"
 import "./App.css"
 
 class App extends Component {
@@ -181,8 +183,15 @@ class App extends Component {
 
     var title = <span>Isaiah Explorer</span>
 
+    var seo = this.getSeoData();
+
     return (
       <DataContext.Provider value={globalData}>
+        <Helmet>
+          <title>{seo.title}</title>
+          <meta name="description" content={seo.description} />
+          <link rel="canonical" href={seo.canonical} />
+        </Helmet>
         <div id="approot" className={classes.join(" ")}>
           <h1>
             <Tipsy
@@ -228,108 +237,39 @@ class App extends Component {
 
   getSettingsFromUrl(settings) {
     settings.active_verse_id = 17656
-    var path = window.location.hash.substring(1) || window.location.pathname ;
+    var path = (this.props.location && this.props.location.pathname) || window.location.pathname;
+    var parsed = parseRoute(path);
 
-    var matches = new RegExp("^/([0-9]+)/([0-9]+)$", "ig").exec(path)
-    if (matches !== null) {
-      settings.active_verse_id = this.loadVerseId(matches[1], matches[2])
+    if (parsed.structure !== undefined && globalData.meta.structure[parsed.structure] !== undefined)
+      settings.structure = parsed.structure;
+    if (parsed.outline !== undefined && globalData.meta.outline[parsed.outline] !== undefined)
+      settings.outline = parsed.outline;
+    if (parsed.version !== undefined && globalData.meta.version[parsed.version] !== undefined)
+      settings.version = parsed.version;
+
+    if (parsed.tag !== undefined) {
+      settings.selected_tag = this.loadTagFromSlug(parsed.tag);
+      var tagd = this.getTagData(settings.selected_tag);
+      if (tagd) settings.active_verse_id = tagd.verses[0];
     }
-    matches = new RegExp("^/([0-9]+)$", "ig").exec(path)
-    if (matches !== null) {
-      settings.active_verse_id = this.loadVerseId(matches[1], 1)
+    if (parsed.search !== undefined) {
+      settings.searchQuery = parsed.search;
+      settings.searchMode = false;
+      settings.urlSearch = true;
+    }
+    if (parsed.hebrew !== undefined) {
+      settings.hebrewStrongIndex = parsed.hebrew;
+    }
+    if (parsed.chapter !== undefined && parsed.verse !== undefined) {
+      settings.active_verse_id = this.loadVerseId(parsed.chapter, parsed.verse);
+    }
+    if (parsed.commentarySource !== undefined) {
+      settings.commentaryMode = true;
+      settings.commentarySource = parsed.commentarySource;
+      settings.commentary_verse_id = settings.active_verse_id;
+      if (parsed.commentaryID !== undefined) settings.commentaryID = parsed.commentaryID;
     }
 
-    matches = new RegExp("^/tag.([^/]+)", "ig").exec(path)
-    if (matches !== null) {
-      settings.selected_tag = this.loadTagFromSlug(
-        matches[1].replace(/^tag\./, "")
-      )
-      var tagd = this.getTagData(settings.selected_tag)
-      settings.active_verse_id = tagd.verses[0]
-    }
-
-    var regex = new RegExp(
-      "^(/[^/]+)(/[^/]+)(/[^/]+)(/tag.[^/]+)*(/search.[^/]+)*(/hebrew.[0-9]+)*(/[0-9]+)(/[0-9]+)(/commentary.[^/]+)*(/[0-9]+)*",
-      "ig"
-    )
-    matches = regex.exec(path);
-    
-    var params = [null];
-    
-    if (matches === null) return this.checkForSpecialUrl(path,settings);
-    
-    
-    for (var i = 1; i < matches.length; i++) {
-      if (typeof matches[i] !== "string") params.push(null)
-      else params.push(matches[i].replace(/^\//, ""))
-    }
-    if (
-      params[1] !== null &&
-      globalData.meta.structure[params[1]] !== undefined
-    )
-      settings.structure = params[1]
-    if (params[2] !== null && globalData.meta.outline[params[2]] !== undefined)
-      settings.outline = params[2]
-    if (
-      params[3] !== null &&
-      globalData.meta.version[params[3].toUpperCase()] !== undefined
-    )
-      settings.version = params[3].toUpperCase()
-    if (params[4] !== null)
-      settings.selected_tag = this.loadTagFromSlug(
-        params[4].replace(/^tag\./, "")
-      )
-    if (params[5] !== null) {
-      settings.searchQuery = params[5]
-        .replace(/^search\./, "")
-        .replace(/[｢｣]/g, "/")
-        .replace(/\+/g, " ");
-      settings.searchMode = false
-      settings.urlSearch = true
-    }
-    if (params[6] !== null) {
-      settings.hebrewStrongIndex = parseInt(
-        params[6].replace(/^hebrew\./, ""),
-        0
-      )
-    }
-    if (params[7] !== null && params[8] !== null)
-      settings.active_verse_id = this.loadVerseId(params[7], params[8])
-
-    if (params[9] !== null) {
-      settings.commentaryMode = true
-      settings.commentarySource = params[9].replace(/^commentary\./, "")
-      settings.commentary_verse_id = settings.active_verse_id
-      if (params[10] !== null) {
-        settings.commentaryID = params[10]
-      }
-    }
-    
-
-    return settings;
-  }
-  
-  checkForSpecialUrl(path,settings)
-  {
-  	
-    //pure search
-    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(path);
-    if(pure_search!==null)
-    {
-      settings.searchQuery = pure_search[1]
-      settings.searchMode = false
-      settings.urlSearch = true
-    }
-    
-    //pure hebrew
-    var pure_hebrew = (new RegExp("^/hebrew/([^/]+)","ig")).exec(path);
-    if(pure_hebrew!==null)
-    {
-    	var hebint = parseInt(pure_hebrew[1],0);
-    	console.log("heb",hebint);
-    	settings.hebrewStrongIndex = hebint;
-    } 
-    
     return settings;
   }
   
@@ -390,100 +330,112 @@ class App extends Component {
     return null
   }
 
-  setUrl() {
-    var title = ""
-    var path = ""
-    path = path + "/" + this.state.structure
-    path = path + "/" + this.state.outline
-    path = path + "/" + this.state.version
+  getSeoData() {
+    var idx = globalData.index && globalData.index[this.state.active_verse_id];
+    var chapter = idx ? idx.chapter : "";
+    var verse = idx ? idx.verse : "";
+    var baseTitle = chapter ? "Isaiah " + chapter + ":" + verse : "Isaiah Explorer";
+    var title = baseTitle;
+    var description = "Read Isaiah " + chapter + ":" + verse + " in multiple translations with thematic tags, Hebrew lexicon, and scholarly commentary.";
 
-    if (
-      this.state.showcase_tag !== null &&
-      globalData.tags.tagIndex[this.state.showcase_tag] !== undefined
-    ) {
-      path =
-        path + "/tag." + globalData.tags.tagIndex[this.state.showcase_tag].slug
+    var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
+    if (activeTag && globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[activeTag]) {
+      title = activeTag + " | " + baseTitle;
+      description = "Explore the theme "" + activeTag + "" in Isaiah.";
+    } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
+      title = """ + this.state.searchQuery + "" | Isaiah Explorer";
+      description = "Isaiah Explorer search results for "" + this.state.searchQuery + "".";
+    } else if (this.state.hebrewStrongIndex) {
+      title = "Hebrew H" + this.state.hebrewStrongIndex + " | Isaiah Explorer";
+      description = "Study Hebrew word H" + this.state.hebrewStrongIndex + " in Isaiah.";
+    } else if (this.state.commentaryMode && this.state.commentarySource &&
+        globalData.commentary && globalData.commentary.comSources &&
+        globalData.commentary.comSources[this.state.commentarySource]) {
+      var sourceName = globalData.commentary.comSources[this.state.commentarySource].name;
+      title = "Isaiah " + chapter + ":" + verse + " | " + sourceName;
+      description = sourceName + " commentary on Isaiah " + chapter + ":" + verse + ".";
+    }
 
-      title = this.state.showcase_tag + " | "
-    } else if (
-      this.state.selected_tag !== null &&
-      globalData.tags.tagIndex[this.state.selected_tag] !== undefined
-    ) {
-      path =
-        path + "/tag." + globalData.tags.tagIndex[this.state.selected_tag].slug
-      title = this.state.selected_tag + " | "
-    } else if (
-      this.state.searchQuery !== null &&
-      this.state.hebrewStrongIndex === null
-    ) {
-    	var disQ = this.state.searchQuery;
-		disQ = disQ.replace(/[-]+/g,"–");
-		disQ = disQ.replace(/[;]+/g,"; ");
-		disQ = disQ.replace(/[\\]b([a-z])/g,"｢$1");
-		disQ = disQ.replace(/([a-z])[\\]b/g,"$1｣");
-		
-		
-      path =
-        path +
-        "/search." +
-        disQ.replace(/\s+/g, "+").replace(/[/]b/,"").toLowerCase()
-      title = "“" + disQ + "” | "
+    var getTagSlug = function(tagName) {
+      var entry = globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[tagName];
+      return entry ? entry.slug : null;
+    };
+    var canonical = window.location.origin + (idx ? buildRoute({
+      structure: this.state.structure,
+      outline: this.state.outline,
+      version: this.state.version,
+      chapter: chapter,
+      verse: verse,
+      showcase_tag: this.state.showcase_tag,
+      selected_tag: this.state.selected_tag,
+      searchQuery: this.state.searchQuery,
+      hebrewStrongIndex: this.state.hebrewStrongIndex,
+      commentaryMode: this.state.commentaryMode,
+      commentarySource: this.state.commentarySource,
+      commentaryID: this.state.commentaryID,
+    }, getTagSlug) : "/");
+
+    return { title: title, description: description, canonical: canonical };
+  }
+
+  setUrl(replace) {
+    var idx = globalData.index[this.state.active_verse_id];
+    var chapter = idx.chapter;
+    var verse = idx.verse;
+
+    var getTagSlug = function(tagName) {
+      var entry = globalData.tags.tagIndex[tagName];
+      return entry ? entry.slug : null;
+    };
+
+    var path = buildRoute({
+      structure: this.state.structure,
+      outline: this.state.outline,
+      version: this.state.version,
+      chapter: chapter,
+      verse: verse,
+      showcase_tag: this.state.showcase_tag,
+      selected_tag: this.state.selected_tag,
+      searchQuery: this.state.searchQuery,
+      hebrewStrongIndex: this.state.hebrewStrongIndex,
+      commentaryMode: this.state.commentaryMode,
+      commentarySource: this.state.commentarySource,
+      commentaryID: this.state.commentaryID,
+    }, getTagSlug);
+
+    var title = “”;
+    var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
+    if (activeTag && globalData.tags.tagIndex[activeTag]) {
+      title = activeTag + “ | “;
+    } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
+      var disQ = this.state.searchQuery
+        .replace(/[-]+/g, “–“)
+        .replace(/[;]+/g, “; “)
+        .replace(/[\\]b([a-z])/g, “｢$1”)
+        .replace(/([a-z])[\\]b/g, “$1｣”);
+      title = “”” + disQ + “” | “;
     } else if (this.state.hebrewStrongIndex !== null) {
-      path = path + "/hebrew." + this.state.hebrewStrongIndex
-      title = "Hebrew H" + this.state.hebrewStrongIndex + " | "
+      title = “Hebrew H” + this.state.hebrewStrongIndex + “ | “;
     }
 
-    path = path + "/" + globalData.index[this.state.active_verse_id].chapter
-    path = path + "/" + globalData.index[this.state.active_verse_id].verse
+    title += “Isaiah “ + chapter + “:” + verse;
 
-    title =
-      title +
-      "Isaiah " +
-      globalData.index[this.state.active_verse_id].chapter +
-      ":" +
-      globalData.index[this.state.active_verse_id].verse
-
-    if (this.state.commentaryMode && this.state.commentaryID !== null) {
-      path =
-        path +
-        "/commentary." +
-        this.state.commentarySource +
-        "/" +
-        this.state.commentaryID
-      if (
-        globalData.commentary.comSources[this.state.commentarySource] !==
-        undefined
-      )
-        title =
-          "Isaiah " +
-          globalData.index[this.state.active_verse_id].chapter +
-          ":" +
-          globalData.index[this.state.active_verse_id].verse +
-          " | " +
-          globalData.commentary.comSources[this.state.commentarySource].name
-    } else if (this.state.commentaryMode) {
-      path = path + "/commentary." + this.state.commentarySource
-      if (
-        globalData.commentary.comSources[this.state.commentarySource] !==
-        undefined
-      )
-        title =
-          "Isaiah " +
-          globalData.index[this.state.active_verse_id].chapter +
-          ":" +
-          globalData.index[this.state.active_verse_id].verse +
-          " | " +
-          globalData.commentary.comSources[this.state.commentarySource].name
+    if (this.state.commentaryMode && this.state.commentarySource &&
+        globalData.commentary.comSources[this.state.commentarySource]) {
+      title = “Isaiah “ + chapter + “:” + verse +
+        “ | “ + globalData.commentary.comSources[this.state.commentarySource].name;
     }
 
-    //if(this.state.audioState !== null && !this.state.commentaryAudioMode) path = path + "/audio";
-    //	if(this.state.audioState !== null && this.state.commentaryAudioMode) path = path + "/audio-commentary/"+this.state.commentaryAudio;
+    if (this.props.navigate && this.state.rootURL.match(/^file/) === null) {
+      this.props.navigate(path, { replace: replace === true });
+    }
 
-    if(this.state.rootURL.match(/^file/)==null)
-    //window.history.pushState(null,null,path.toLowerCase())
-    window.location.hash = path.toLowerCase();
+    document.title = title;
 
-    document.title = title
+    // Fire Clicky page-view on every navigation (SPA does not trigger automatic tracking)
+    if (!replace && typeof window.clicky !== "undefined") {
+      try { window.clicky.log("#" + path, title, "pageview"); } catch (e) {}
+    }
   }
 
   initApp() {
@@ -527,28 +479,17 @@ class App extends Component {
     if (settings.commentary_order.length > 0)
       settings.commentarySource = settings.commentary_order[0]
 
-    //check url for version
-    var regex = new RegExp("^/[^/]+/[^/]+/([^/]+)", "ig")
-    var matches = regex.exec(window.location.pathname)
-    if (matches !== null)
-      if (matches[1].length > 1) settings.version = matches[1].toUpperCase();
-      
-      
-    //pure search
-    var pure_search = (new RegExp("^/search/([^/]+)","ig")).exec(window.location.pathname);
-    if(pure_search!==null)
-    {
-      settings.searchQuery = pure_search[1];
+    // Apply any URL overrides from pathname using the route codec
+    var initParsed = parseRoute(window.location.pathname);
+    if (initParsed.version !== undefined && initParsed.version.length > 1)
+      settings.version = initParsed.version;
+    if (initParsed.search !== undefined) {
+      settings.searchQuery = initParsed.search;
       settings.searchMode = false;
       settings.urlSearch = true;
     }
-    
-    //pure hebrew
-    var pure_hebrew = (new RegExp("^/hebrew/([0-9]+)","ig")).exec(window.location.pathname);
-    if(pure_hebrew!==null)
-    {
-      settings.hebrewStrongIndex = parseInt( pure_hebrew[1],0);
-    }  
+    if (initParsed.hebrew !== undefined)
+      settings.hebrewStrongIndex = initParsed.hebrew;
 
 
     this.setState(settings, function() {
@@ -1316,7 +1257,7 @@ class App extends Component {
     this.lastTags = []
     this.lastVerseId = null
 
-    if (window.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null)
+    if (parseRoute(window.location.pathname).hebrew !== undefined)
       this.load_queue.push("hebrew")
 
     var subsite = "default"
@@ -1579,7 +1520,7 @@ class App extends Component {
       .then(response => response.text())
       .then(data => {
         globalData["hebrew"] = this.unzipJSON(data)
-        if (window.location.pathname.match(/\/hebrew(\.|\/)[0-9]+/) !== null) {
+        if (parseRoute(window.location.pathname).hebrew !== undefined) {
           this.pull("hebrew")
           this.checkLoaded()
         }
@@ -1824,7 +1765,8 @@ class App extends Component {
       this.scrollText(false, source)
       this.checkFloater()
       this.highlightReadMore()
-      this.setUrl()
+      var isHighFreq = source === "arrow" || source === "audio" || source === "comaudio";
+      this.setUrl(isHighFreq)
       if (this.state.hebrewSearch && this.state.hebrewStrongIndex !== null) {
         this.searchHebrewWord(this.state.hebrewStrongIndex)
       } else if (this.state.searchMode && source === "newversion") {

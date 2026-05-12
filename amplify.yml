@@ -1,0 +1,35 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install --legacy-peer-deps --ignore-scripts
+    build:
+      commands:
+        - NODE_OPTIONS=--openssl-legacy-provider npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+  customHeaders:
+    - pattern: '**/*'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=0, must-revalidate'
+    - pattern: 'static/**/*'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
+
+# SPA rewrite: all paths → index.html (status 200, not a redirect)
+# Configure this in the Amplify Console under:
+#   Hosting > Rewrites and redirects
+#   Source: </^[^.]+$|\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>
+#   Target: /index.html
+#   Type: 200 (Rewrite)
+#
+# Or add this to the Amplify Console custom rewrite rules as:
+#   /<*>  →  /index.html  →  200
