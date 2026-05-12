@@ -95,7 +95,7 @@ var state = globalData.state;
 				<div className="heading_title" id="audio_heading">
 					<AudioVerse />
 					<AudioCommentary />
-					<div id="commentary" onClick={() => app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id, infoOpen: false }, app.setUrl.bind(app))}><img alt="Commentary" src={comment_icon} /> {readhide}</div>
+					<button type="button" id="commentary" onClick={() => app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id, infoOpen: false }, app.setUrl.bind(app))}><img alt="Commentary" src={comment_icon} /> {readhide}</button>
 				</div>
 			</div>
 			<VersePanel />
@@ -175,7 +175,17 @@ var state = globalData.state;
 			className={isPlaying ? "rate-pill" : "rate-pill rate-pill--idle"}
 		>{rateLabel}</button>
 	);
-	return <><div className={classes.join(" ")} onClick={handleClick} id="audio_verse"><img alt="Play Audio" src={icon} /> {text}</div>{button}</>;
+	let isDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
+	return <>
+		<button
+			type="button"
+			className={classes.join(" ")}
+			onClick={handleClick}
+			disabled={isDisabled}
+			id="audio_verse"
+		><img alt="Play Audio" src={icon} /> {text}</button>
+		{button}
+	</>;
 }
 
 function AudioCommentary() {
@@ -196,7 +206,6 @@ var state = globalData.state;
 
 	function handleClick(e) {
 		if (e === undefined) return false;
-		if (e.target.id !== "audio_commentary") return false;
 		if (state.audioState !== null) {
 			app.setState({ audioState: null, commentary_audio_verse_range: [] }, function() {
 				if (!state.commentaryAudioMode) {
@@ -253,7 +262,12 @@ var state = globalData.state;
 		}
 	}
 
-	return <div className={classes.join(" ")} id="audio_commentary" onClick={handleClick}><img alt="Audio Commentary" src={icon} /> {text} <img onClick={handleOptions} alt="Select" id="com_option" src={sprocket_icon} /></div>;
+	return <button
+		type="button"
+		className={classes.join(" ")}
+		id="audio_commentary"
+		onClick={handleClick}
+	><img alt="Audio Commentary" src={icon} /> {text} <img onClick={(e) => { e.stopPropagation(); handleOptions(); }} alt="Select audio source" id="com_option" src={sprocket_icon} /></button>;
 }
 
 function VersePanel() {

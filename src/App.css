@@ -114,6 +114,7 @@ body div.taglink,
 body #book div.verse_grid,
 body #outline div.verse_grid,
 body #audio_heading div,
+body #audio_heading > button,
 body .tipsy-pedigree,
 body .tipsyStructure,
 body span.label,
@@ -3053,7 +3054,8 @@ button#commentary
 	line-height:20px;
 }
 
-#audio_heading div
+#audio_heading div,
+#audio_heading > button
 {
 	font-size:12px;
 	border:2px solid #000;
@@ -3076,11 +3078,14 @@ button#commentary
 {
 	display: flex;
 }
-#audio_heading button{
-	height:20px;
+#audio_heading button.rate-pill {
+	height: 20px;
 	width: 20px;
+	min-width: 20px;
 	border-radius: 10px;
-	border-color: #AAA;
+	border: 1px solid #AAA;
+	background-color: #FFF;
+	color: #000;
 	text-align: center;
 	padding: 0;
 	line-height: 100%;
@@ -3088,12 +3093,14 @@ button#commentary
 	margin-right: 5px;
 	font-size: 10px;
 	cursor: pointer;
+	flex: 0 0 auto;
+	float: none;
 }
 #audio_heading button.rate-pill--idle {
     opacity: 0.35;
     cursor: pointer;
 }
-#audio_heading button:hover{
+#audio_heading button.rate-pill:hover{
 	color: #888;
 }
 
@@ -3103,12 +3110,15 @@ button#commentary
 }
 
 #audio_heading div:hover,
-#audio_heading div.active_audio
+#audio_heading > button:hover,
+#audio_heading div.active_audio,
+#audio_heading > button.active_audio
 {
 
 	background-color:#333;
 }
-#audio_heading div img
+#audio_heading div img,
+#audio_heading > button img
 {
 	height:16px;
 	position:relative;
@@ -3118,7 +3128,8 @@ button#commentary
 }
 
 
-#audio_heading div img#com_option
+#audio_heading div img#com_option,
+#audio_heading > button img#com_option
 {
 	position:absolute;
     margin-right: 3px;
@@ -3127,7 +3138,8 @@ button#commentary
 }
 
 
-#audio_heading div img#com_option:hover
+#audio_heading div img#com_option:hover,
+#audio_heading > button img#com_option:hover
 {
 	opacity:0.8;
     top:1px;
@@ -3175,18 +3187,22 @@ button#commentary
 	color:#000;
 }
 
-#audio_heading div#audio_verse.noaudio,
-#audio_heading div#audio_verse.noaudio:hover
+#audio_heading button#audio_verse[disabled],
+#audio_heading button#audio_verse[disabled]:hover
 {
 	color:#999;
 	border-color:#999;
 	background-color:#666;
-	cursor:not-allowed;
 }
 
-#audio_heading div#audio_verse.noaudio img
+#audio_heading button#audio_verse[disabled] img
 {
 	opacity:0.3;
+}
+
+#audio_heading > button:focus-visible {
+	outline: 2px solid #4a90e2;
+	outline-offset: 2px;
 }
 
 
@@ -4004,7 +4020,8 @@ body.narrow #outline .verse_grid
 }
 
 
-body.narrow #audio_heading div
+body.narrow #audio_heading div,
+body.narrow #audio_heading > button:not(.rate-pill)
 {
 	width:120px;
 }
