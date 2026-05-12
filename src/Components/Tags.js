@@ -190,7 +190,9 @@ var state = globalData.state;
 
 	useEffect(() => {
 		openTree();
-	});
+		// openTree closes over base; the relevant changes are tracked below
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [state.selected_tag, state.showcase_tag, state.tagMode, base]);
 
 	var meta = globalData["tags"]["tagIndex"][base];
 	var desc = "";
