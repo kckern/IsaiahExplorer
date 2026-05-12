@@ -3058,7 +3058,9 @@ button#commentary
 	font-size:12px;
 	border:2px solid #000;
 	font-family:'Comfortaa', Helvetica, Arial, sans-serif;
-	word-break: break-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	line-height:20px;
 	padding-left:10px;
 	border-radius:10px;
