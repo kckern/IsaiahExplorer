@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import {DataContext} from '../DataContext';
-import { Passage } from "./Passage.js";  
+import { Passage } from "./Passage.js";
+import { getFocalTag } from '../state/tagSelectors';
 
 import tag_png from '../img/interface/tag.png';
 
@@ -82,9 +83,7 @@ var state = globalData.state;
 		}.bind(app));
 	}
 
-	var key_tag = state.selected_tag;
-	if (state.showcase_tag !== null) key_tag = state.showcase_tag;
-	if (state.tagMode && key_tag === null) key_tag = state.previewed_tag;
+	var key_tag = getFocalTag(state).tag;
 
 	var rawTagMeta = globalData["tags"]["tagIndex"][key_tag];
 	var tagMeta = rawTagMeta !== undefined
@@ -248,8 +247,7 @@ var state = globalData.state;
 	}
 
 	var classes = ["leaf"];
-	if (tag === state.selected_tag) classes.push("highlight");
-	if (tag === state.showcase_tag) classes.push("highlight");
+	if (tag === getFocalTag(state).tag) classes.push("highlight");
 
 	return (
 		<div className={classes.join(" ")}>

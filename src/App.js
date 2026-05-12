@@ -18,6 +18,7 @@ import isElectron from 'is-electron';
 
 
 import { parseRoute, buildRoute } from "./routing/routeCodec"
+import { getFocalTag } from "./state/tagSelectors"
 import { Helmet } from "react-helmet"
 import "./App.css"
 
@@ -337,7 +338,7 @@ class App extends Component {
     var title = baseTitle;
     var description = "Read Isaiah " + chapter + ":" + verse + " in multiple translations with thematic tags, Hebrew lexicon, and scholarly commentary.";
 
-    var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
+    var activeTag = getFocalTag(this.state).tag;
     if (activeTag && globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[activeTag]) {
       title = activeTag + " | " + baseTitle;
       description = "Explore the theme “" + activeTag + "” in Isaiah.";
@@ -403,7 +404,7 @@ class App extends Component {
     }, getTagSlug);
 
     var title = "";
-    var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
+    var activeTag = getFocalTag(this.state).tag;
     if (activeTag && globalData.tags.tagIndex[activeTag]) {
       title = activeTag + " | ";
     } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
