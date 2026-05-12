@@ -3,7 +3,6 @@ import { DataContext } from "../DataContext";
 import { Passage } from "./Passage.js";
 import { Hebrew } from "./Hebrew.js";
 import Tipsy from "react-tipsy";
-import sprocket_icon from "../img/interface/sprocket.png";
 import play_icon from "../img/interface/play.png";
 import playing_icon from "../img/interface/audio.gif";
 import loading_icon from "../img/interface/audioload.gif";
@@ -39,9 +38,22 @@ var state = globalData.state;
 					<div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
 					<div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
 					<div className="heading_title" id="audio_heading">
-						<div id="audio_verse" className="active_audio"><img alt="Play Audio" src={loading_icon} /> Play Audio Verse</div>
-						<div id="audio_commentary"><img alt="Select" id="com_option" src={sprocket_icon} /><img alt="Audio Commentary" src={play_icon} /> Play Commentary</div>
-						<div id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
+						<div className="audio-btn-group" role="group" aria-label="Verse audio">
+							<button type="button" className="audio-btn audio-btn--primary" disabled>
+								<img alt="" src={loading_icon} aria-hidden="true" /> <span className="audio-btn__label">Loading</span>
+							</button>
+							<button type="button" className="audio-btn audio-btn--rate" disabled>1×</button>
+							<button type="button" className="audio-btn audio-btn--dropdown" disabled aria-label="Verse audio options">▾</button>
+						</div>
+						<div className="audio-btn-group" role="group" aria-label="Commentary audio">
+							<button type="button" className="audio-btn audio-btn--primary" disabled>
+								<img alt="" src={play_icon} aria-hidden="true" /> <span className="audio-btn__label">Commentary</span>
+							</button>
+							<button type="button" className="audio-btn audio-btn--dropdown" disabled aria-label="Commentary audio options">▾</button>
+						</div>
+						<button type="button" id="commentary" disabled>
+							<img alt="" src={comment_icon} aria-hidden="true" /> Read
+						</button>
 					</div>
 				</div>
 				<div id="verse" className={loadingClasses.join(" ")}><img alt="Loading" src={loading_img} /><br /> Loading Verse Details...</div>
