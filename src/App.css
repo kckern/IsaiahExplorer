@@ -479,7 +479,7 @@ div#verse
 #audio_heading
 {
 	position:relative;
-	border-bottom:1px solid #555;
+	border-bottom: 3px solid #FFE; /* yellow accent matching the column motif */
 	border-top:1px solid #555;
 	/* No background: lets the dark .audio-btn buttons sit on the parent
 	   .heading background (#999) rather than a light grey strip. */
