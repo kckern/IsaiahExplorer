@@ -480,11 +480,11 @@ div#verse
 {
 	position:relative;
 	border-bottom: 3px solid #FFE; /* yellow accent matching the column motif */
-	border-top:1px solid #555;
-	/* No background: lets the dark .audio-btn buttons sit on the parent
-	   .heading background (#999) rather than a light grey strip. */
-	background-color: transparent;
-	padding: 6px;
+	border-top:1px solid #1a1a1a;
+	/* Dedicated dark band so the #444 buttons read as raised, lit-key
+	   elements rather than blending into the parent .heading (#999). */
+	background-color: #2a2a2a;
+	padding: 8px;
 }
 
 .passage_title
