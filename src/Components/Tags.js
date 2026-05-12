@@ -247,7 +247,8 @@ var state = globalData.state;
 	}
 
 	var classes = ["leaf"];
-	if (tag === getFocalTag(state).tag) classes.push("highlight");
+	if (tag === state.selected_tag) classes.push("highlight");
+	if (tag === state.showcase_tag) classes.push("highlight");
 
 	return (
 		<div className={classes.join(" ")}>
