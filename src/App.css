@@ -3089,6 +3089,10 @@ button#commentary
 	font-size: 10px;
 	cursor: pointer;
 }
+#audio_heading button.rate-pill--idle {
+    opacity: 0.35;
+    cursor: pointer;
+}
 #audio_heading button:hover{
 	color: #888;
 }

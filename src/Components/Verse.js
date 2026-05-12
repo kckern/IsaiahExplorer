@@ -166,7 +166,15 @@ var state = globalData.state;
 			classes.push("active_audio");
 		}
 	}
-	let button = state.audioState === "playing" ? <button onClick={cyclePlaybackRate}>{rateLabel}</button> : null;
+	let isPlaying = state.audioState === "playing";
+	let button = (
+		<button
+			type="button"
+			onClick={cyclePlaybackRate}
+			aria-label={"Playback speed: " + rateLabel + (isPlaying ? "" : " (audio not playing)")}
+			className={isPlaying ? "rate-pill" : "rate-pill rate-pill--idle"}
+		>{rateLabel}</button>
+	);
 	return <><div className={classes.join(" ")} onClick={handleClick} id="audio_verse"><img alt="Play Audio" src={icon} /> {text}</div>{button}</>;
 }
 
