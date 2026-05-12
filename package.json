@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
-  "homepage": "./",
   "dependencies": {
     "ajv": "^6.5.2",
     "atob": "^2.1.2",
@@ -29,7 +28,7 @@
     "eject": "react-scripts eject",
     "e-start": "rescripts start",
     "e-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "e-build": "rescripts build",
+    "e-build": "PUBLIC_URL=. rescripts build",
     "e-test": "rescripts test",
     "postinstall": "node -e \"if(process.env.ELECTRON_BUILD) require('child_process').execSync('electron-builder install-app-deps', {stdio:'inherit'})\"",
     "e-pack": "ELECTRON_BUILD=1 electron-builder -mw"
