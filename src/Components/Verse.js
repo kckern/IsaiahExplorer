@@ -12,6 +12,7 @@ import loading_img from "../img/interface/message.gif";
 import heb_png from "../img/interface/hebrew.png";
 import { TAG_PANEL } from "../state/tagPanel";
 import { AUDIO_MODE } from "../state/audioState";
+import AudioMenuPopover from "./AudioMenuPopover";
 
 export default function VerseColumn() {
 	var globalData = useContext(DataContext);
@@ -112,6 +113,7 @@ function AudioVerse() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
+	const [menuOpen, setMenuOpen] = useState(false);
 	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 
 	function startPlaying() {
@@ -159,43 +161,59 @@ var state = globalData.state;
 	if (state.playbackRate === 1.25) rateLabel = "1¼";
 
 	var icon = play_icon;
-	var text = "Play Audio Verse";
+	var shortText = "Verse";
 	if (state.audioMode === AUDIO_MODE.VERSE_LOADING) {
 		icon = loading_icon;
-		text = "Loading Audio Verse";
-		classes.push("active_audio");
+		shortText = "Loading";
 	}
 	if (state.audioMode === AUDIO_MODE.VERSE_PLAYING) {
 		icon = playing_icon;
-		text = "Pause Audio Verse";
-		classes.push("active_audio");
+		shortText = "Pause";
 	}
-	let isPlaying = state.audioMode === AUDIO_MODE.VERSE_PLAYING || state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING;
-	let button = (
-		<button
-			type="button"
-			onClick={cyclePlaybackRate}
-			aria-label={"Playback speed: " + rateLabel + (isPlaying ? "" : " (audio not playing)")}
-			className={isPlaying ? "rate-pill" : "rate-pill rate-pill--idle"}
-		>{rateLabel}</button>
+
+	return (
+		<div className="audio-btn-group" id="audio_verse_group">
+			<button
+				type="button"
+				id="audio_verse"
+				className={[...classes, "audio-btn audio-btn--primary"].join(" ")}
+				onClick={handleClick}
+				disabled={isAudioDisabled}
+				aria-pressed={state.audioMode === AUDIO_MODE.VERSE_PLAYING}
+			>
+				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
+				<span className="audio-btn__rate" onClick={(e) => { e.stopPropagation(); cyclePlaybackRate(); }}>{rateLabel}</span>
+			</button>
+			<button
+				type="button"
+				className="audio-btn audio-btn--dropdown"
+				onClick={() => setMenuOpen(o => !o)}
+				aria-label="Verse audio options"
+				aria-haspopup="menu"
+				aria-expanded={menuOpen}
+			>▾</button>
+			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)}>
+				<div className="audio-menu__group" role="group" aria-label="Playback speed">
+					<div className="audio-menu__heading">Playback speed</div>
+					{[1, 1.25, 1.5, 2].map(rate =>
+						<button
+							key={rate}
+							type="button"
+							className={"audio-menu__chip" + (state.playbackRate === rate ? " audio-menu__chip--active" : "")}
+							onClick={() => { app.setState({ playbackRate: rate }); setMenuOpen(false); }}
+						>{rate}×</button>
+					)}
+				</div>
+			</AudioMenuPopover>
+		</div>
 	);
-	return <>
-		<button
-			type="button"
-			className={classes.join(" ")}
-			onClick={handleClick}
-			disabled={isAudioDisabled}
-			id="audio_verse"
-		><img alt="Play Audio" src={icon} /> {text}</button>
-		{button}
-	</>;
 }
 
 function AudioCommentary() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
-	const [options, setOptions] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	function startPlaying(shortcode) {
 		app.setTagPanel(TAG_PANEL.CLOSED);
@@ -228,51 +246,65 @@ var state = globalData.state;
 		}
 	}
 
-
-	function handleOptions() {
-		// Just open the picker; do NOT tear down active playback.
-		// The user is choosing a source, not stopping audio. If they pick
-		// a different source, startPlaying() below will switch streams.
-		setOptions(true);
-	}
-
-	function selectOption(e) {
-		var shortcode = e.target.options[e.target.selectedIndex].attributes.value.value;
-		if (shortcode === "top") return false;
-		startPlaying(shortcode);
-		setOptions(false);
-	}
-
-	if (options) {
-		var items = [<option key="top" value="top">Make a selection:</option>];
-		for (var i in globalData.meta.audiocom) {
-			var it = globalData.meta.audiocom[i];
-			items.push(<option key={it.shortcode} value={it.shortcode}> ⤷ {it.title}</option>);
-		}
-		var selector = <select onChange={selectOption} id="com_selector">{items}</select>;
-		return <div id="audio_commentary" onClick={handleClick}>{selector}</div>;
-	}
-
 	var classes = [];
 	var icon = play_icon;
-	var text = "Play Commentary";
+	var shortText = "Commentary";
 	if (state.audioMode === AUDIO_MODE.COMMENTARY_LOADING) {
 		icon = loading_icon;
-		text = "Loading Commentary";
-		classes.push("active_audio");
+		shortText = "Loading";
 	}
 	if (state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING) {
 		icon = playing_icon;
-		text = "Pause Commentary";
-		classes.push("active_audio");
+		shortText = "Pause";
 	}
 
-	return <button
-		type="button"
-		className={classes.join(" ")}
-		id="audio_commentary"
-		onClick={handleClick}
-	><img alt="Audio Commentary" src={icon} /> {text} <img onClick={(e) => { e.stopPropagation(); handleOptions(); }} alt="Select audio source" id="com_option" src={sprocket_icon} /></button>;
+	return (
+		<div className="audio-btn-group" id="audio_commentary_group">
+			<button
+				type="button"
+				id="audio_commentary"
+				className={[...classes, "audio-btn audio-btn--primary"].join(" ")}
+				onClick={handleClick}
+				aria-pressed={state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING}
+			>
+				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
+			</button>
+			<button
+				type="button"
+				className="audio-btn audio-btn--dropdown"
+				onClick={() => setMenuOpen(o => !o)}
+				aria-label="Commentary audio options"
+				aria-haspopup="menu"
+				aria-expanded={menuOpen}
+			>▾</button>
+			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)}>
+				<div className="audio-menu__group" role="group" aria-label="Commentary source">
+					<div className="audio-menu__heading">Commentary source</div>
+					{Object.values(globalData.meta.audiocom).map(src =>
+						<button
+							key={src.shortcode}
+							type="button"
+							className={"audio-menu__item" + (state.commentaryAudio === src.shortcode ? " audio-menu__item--active" : "")}
+							onClick={() => { startPlaying(src.shortcode); setMenuOpen(false); }}
+						>
+							{state.commentaryAudio === src.shortcode ? "● " : "○ "}{src.short_title || src.title}
+						</button>
+					)}
+				</div>
+				<div className="audio-menu__group" role="group" aria-label="Playback speed">
+					<div className="audio-menu__heading">Playback speed</div>
+					{[1, 1.25, 1.5, 2].map(rate =>
+						<button
+							key={rate}
+							type="button"
+							className={"audio-menu__chip" + (state.playbackRate === rate ? " audio-menu__chip--active" : "")}
+							onClick={() => { app.setState({ playbackRate: rate }); setMenuOpen(false); }}
+						>{rate}×</button>
+					)}
+				</div>
+			</AudioMenuPopover>
+		</div>
+	);
 }
 
 function VersePanel() {
