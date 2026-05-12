@@ -156,7 +156,7 @@ var state = globalData.state;
 	return <span>{items}</span>;
 }
 
-export function TagTree({ base }) {
+function TagTreeImpl({ base }) {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
@@ -233,7 +233,12 @@ var state = globalData.state;
 	);
 }
 
-function TagTreeLeaf({ tag, desc }) {
+export const TagTree = React.memo(TagTreeImpl, function(prev, next) {
+	// Re-render only when `base` changes (parent re-renders cascade in)
+	return prev.base === next.base;
+});
+
+function TagTreeLeafImpl({ tag, desc }) {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
@@ -263,6 +268,10 @@ var state = globalData.state;
 		</div>
 	);
 }
+
+const TagTreeLeaf = React.memo(TagTreeLeafImpl, function(prev, next) {
+	return prev.tag === next.tag && prev.desc === next.desc;
+});
 
 function getAllIndexes(arr, val) {
 	var indexes = [];
