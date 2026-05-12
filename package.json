@@ -6,11 +6,7 @@
   "homepage": "./",
   "dependencies": {
     "ajv": "^6.5.2",
-    "all": "0.0.0",
     "atob": "^2.1.2",
-    "babel-loader": "^8.0.6",
-    "babel-runtime": "^6.26.0",
-    "core-js": "^3.2.1",
     "electron-is-dev": "^1.1.0",
     "html-react-parser": "^0.4.6",
     "is-electron": "^2.2.0",
@@ -27,23 +23,25 @@
     "react-tipsy": "^0.6.2"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start --port 3000",
-    "build": "react-scripts build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start --port 3000",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "e-start": "rescripts start",
-    "e-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "e-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "e-build": "rescripts build",
     "e-test": "rescripts test",
-    "postinstall": "electron-builder install-app-deps",
-    "pree-pack": "yarn add @rescripts/cli @rescripts/rescript-env && yarn e-build",
-    "e-pack": "electron-builder -mw"
+    "postinstall": "node -e \"if(process.env.ELECTRON_BUILD) require('child_process').execSync('electron-builder install-app-deps', {stdio:'inherit'})\"",
+    "e-pack": "ELECTRON_BUILD=1 electron-builder -mw"
   },
   "devDependencies": {
     "@rescripts/cli": "^0.0.12",
     "@rescripts/rescript-env": "^0.0.10",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "concurrently": "^4.1.2",
+    "core-js": "^3.2.1",
     "electron": "^6.0.9",
     "electron-builder": "^21.2.0",
     "typescript": "^3.6.3",
