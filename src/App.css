@@ -3070,7 +3070,7 @@ button#commentary
 
 .audio-btn-group {
     display: inline-flex;
-    flex: auto;
+    flex: 1 1 0;
     min-width: 0;
     position: relative;
 }
