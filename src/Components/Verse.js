@@ -130,8 +130,6 @@ function AudioVerse() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
-	const [menuOpen, setMenuOpen] = useState(false);
-	const triggerRef = useRef(null);
 	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 
 	function startPlaying() {
@@ -184,7 +182,7 @@ var state = globalData.state;
 	}
 
 	return (
-		<div className="audio-btn-group" id="audio_verse_group" ref={triggerRef} role="group" aria-label="Verse audio">
+		<div className="audio-btn-group" id="audio_verse_group" role="group" aria-label="Verse audio">
 			<button
 				type="button"
 				id="audio_verse"
@@ -199,29 +197,9 @@ var state = globalData.state;
 				type="button"
 				className="audio-btn audio-btn--rate"
 				onClick={cyclePlaybackRate}
-				aria-label={"Playback speed: " + rateLabel}
+				aria-label={"Playback speed: " + rateLabel + " (click to cycle)"}
+				title="Click to change playback speed"
 			>{rateLabel}</button>
-			<button
-				type="button"
-				className="audio-btn audio-btn--dropdown"
-				onClick={() => setMenuOpen(o => !o)}
-				aria-label="Verse audio options"
-				aria-haspopup="menu"
-				aria-expanded={menuOpen}
-			>▾</button>
-			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={triggerRef}>
-				<div className="audio-menu__group" role="group" aria-label="Playback speed">
-					<div className="audio-menu__heading">Playback speed</div>
-					{[1, 1.25, 1.5, 2].map(rate =>
-						<button
-							key={rate}
-							type="button"
-							className={"audio-menu__chip" + (state.playbackRate === rate ? " audio-menu__chip--active" : "")}
-							onClick={() => { app.setState({ playbackRate: rate }); setMenuOpen(false); }}
-						>{rate}×</button>
-					)}
-				</div>
-			</AudioMenuPopover>
 		</div>
 	);
 }

@@ -3077,7 +3077,7 @@ button#commentary
 
 .audio-btn {
     height: 44px;
-    padding: 0 14px;
+    padding: 0 16px;
     border: 1px solid var(--ui-border);
     background: var(--ui-surface);
     color: var(--ui-on-accent);
@@ -3085,10 +3085,21 @@ button#commentary
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: background 80ms ease-out, transform 80ms ease-out;
+}
+.audio-btn:active:not([disabled]) {
+    transform: translateY(1px);
+    background: var(--ui-surface-hover);
+}
+.audio-btn img {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    vertical-align: middle;
 }
 .audio-btn--primary {
     border-radius: 8px 0 0 8px;

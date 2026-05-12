@@ -136,15 +136,19 @@ function AudioVersePlayer() {
 				onEnded={onEnded}
 				playbackRate={state.playbackRate || 1}
 			/>
+			{/* Prefetch the next verse but DO NOT autoplay it — two simultaneous
+			    <video> elements both with playing={true} compete for the browser's
+			    media session (Safari especially) and can cause the main playback
+			    to silently fail. preload-only is enough to warm the cache. */}
 			{next ? <ReactPlayer
 				className='react-player'
 				width='0%' height='0%'
 				key={12}
 				url={next_url}
-				playing={true}
+				playing={false}
 				volume={0}
 				muted={true}
-				playbackRate={state.playbackRate || 1}
+				config={{ file: { attributes: { preload: 'auto' } } }}
 			/> : null}
 		</span>
 	);
@@ -239,15 +243,16 @@ function AudioCommentaryPlayer() {
 				onEnded={onEnded}
 				playbackRate={state.playbackRate || 1}
 			/>
+			{/* Preload next commentary file without autoplaying it (see AudioVersePlayer). */}
 			{nextUrl ? <ReactPlayer
 				className='react-player'
 				width='0%' height='0%'
 				key={22}
 				url={nextUrl}
-				playing={true}
+				playing={false}
 				volume={0}
 				muted={true}
-				playbackRate={state.playbackRate || 1}
+				config={{ file: { attributes: { preload: 'auto' } } }}
 			/> : null}
 		</span>
 	);
