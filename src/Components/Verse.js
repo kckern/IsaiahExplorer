@@ -107,6 +107,7 @@ function AudioVerse() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
 var state = globalData.state;
+	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 
 	function startPlaying() {
 		app.setState(
@@ -122,7 +123,7 @@ var state = globalData.state;
 	}
 
 	function handleClick() {
-		if (globalData.meta.version[state.version].audio !== 1) return false;
+		if (isAudioDisabled) return false;
 		if (state.audioState !== null) {
 			app.setState({ audioState: null }, function() {
 				if (state.commentaryAudioMode) startPlaying();
@@ -146,7 +147,6 @@ var state = globalData.state;
 	}
 
 	var classes = [];
-	if (globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false) classes.push("noaudio");
 
 	let rateLabel = state.playbackRate + "×";
 	if (state.playbackRate === 1.5) rateLabel = "1½";
@@ -175,13 +175,12 @@ var state = globalData.state;
 			className={isPlaying ? "rate-pill" : "rate-pill rate-pill--idle"}
 		>{rateLabel}</button>
 	);
-	let isDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 	return <>
 		<button
 			type="button"
 			className={classes.join(" ")}
 			onClick={handleClick}
-			disabled={isDisabled}
+			disabled={isAudioDisabled}
 			id="audio_verse"
 		><img alt="Play Audio" src={icon} /> {text}</button>
 		{button}
