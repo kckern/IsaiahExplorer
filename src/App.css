@@ -3131,7 +3131,15 @@ button#commentary
 }
 .audio-btn--rate:hover { background: var(--ui-surface-hover); color: #fff; }
 .audio-btn:hover { background: var(--ui-surface-hover); }
-.audio-btn:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -2px; z-index: 1; }
+/* Use inset box-shadow rather than outline so the focus ring stays
+   strictly inside the button geometry regardless of browser outline
+   quirks. (Outline + negative offset rendered inconsistently in some
+   user environments and could appear to "lift" the button outside
+   its container.) */
+.audio-btn:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ui-focus); }
+.audio-btn[aria-pressed="true"]:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--ui-focus), inset 0 0 0 1px rgba(255,255,255,0.25);
+}
 .audio-btn[aria-pressed="true"] {
     background: var(--ui-accent);
     color: #fff;
@@ -3171,7 +3179,10 @@ button#commentary
     background: var(--ui-accent);
     filter: brightness(1.08);
 }
-#commentary:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: -2px; }
+#commentary:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ui-focus); }
+#commentary[aria-pressed="true"]:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--ui-focus), inset 0 0 0 1px rgba(255,255,255,0.25);
+}
 
 .audio-menu-popover {
     position: absolute;
