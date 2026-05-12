@@ -365,6 +365,9 @@ div#text
 
     top:137px;
     overflow-y:scroll;
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1.1;
 }
 
 
