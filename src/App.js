@@ -1943,7 +1943,6 @@ class App extends Component {
   }
 
   setPreviewedTag(tagName, parent, leaf) {
-    this.clearTimeouts("tag_meta")
     if (this.state.commentaryAudioMode) return false
     if (tagName === null) {
       this.setState({
@@ -2040,7 +2039,6 @@ class App extends Component {
   }
 
   setActiveChiasm(letter, verses) {
-    this.clearTimeouts()
     if (verses === null || verses === undefined) verses = []
     this.setState(
       {chiasm_letter: letter, highlighted_tagged_verse_range: verses},
@@ -2074,12 +2072,6 @@ class App extends Component {
         }
       }
     )
-  }
-
-  clearTimeouts(scope) {
-    for (var x in globalData["timeouts"][scope])
-      clearTimeout(globalData["timeouts"][x])
-    globalData["timeouts"] = []
   }
 
   PopupCenter(e, n, t, i) {

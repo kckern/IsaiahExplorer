@@ -15,7 +15,6 @@ globalData["commentary"] = {};
 globalData["commentary_audio"] = {};
 globalData["app"] = null;
 globalData["custom"] = {};
-globalData["timeouts"] = {};
 
 
 export {globalData};
