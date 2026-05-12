@@ -130,15 +130,9 @@ var state = globalData.state;
 	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 
 	function startPlaying() {
-		app.setState(
-			{
-				audioMode: AUDIO_MODE.VERSE_LOADING,
-				audioState: "loading",
-				commentaryAudioMode: false,
-				audioPointer: 0,
-				selected_verse_id: null,
-				commentary_audio_verse_range: []
-			},
+		app.setAudioMode(
+			AUDIO_MODE.VERSE_LOADING,
+			{ audioPointer: 0, selected_verse_id: null, commentary_audio_verse_range: [] },
 			app.setUrl.bind(app)
 		);
 	}
@@ -236,24 +230,13 @@ var state = globalData.state;
 
 	function startPlaying(shortcode) {
 		app.setTagPanel(TAG_PANEL.CLOSED);
-		app.setState({
-			audioMode: AUDIO_MODE.COMMENTARY_LOADING,
-			audioState: "loading",
-			commentaryAudioMode: true,
-			audioPointer: 0,
-			commentaryAudio: shortcode
-		});
+		app.setAudioMode(AUDIO_MODE.COMMENTARY_LOADING, { audioPointer: 0, commentaryAudio: shortcode });
 	}
 
 	function handleClick(e) {
 		if (e === undefined) return false;
 		if (state.audioState !== null) {
-			app.setState({
-				audioMode: AUDIO_MODE.IDLE,
-				audioState: null,
-				commentaryAudioMode: false,
-				commentary_audio_verse_range: []
-			}, function() {
+			app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] }, function() {
 				if (!state.commentaryAudioMode) {
 					startPlaying(state.commentaryAudio);
 				} else {

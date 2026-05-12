@@ -195,12 +195,7 @@ function AudioCommentaryPlayer() {
 		// than leaving the player stuck on "Loading".
 		console.warn("No commentary audio for verse", lookupVerseId, "source", source);
 		setTimeout(function() {
-			app.setState({
-				audioMode: AUDIO_MODE.IDLE,
-				audioState: null,
-				commentaryAudioMode: false,
-				commentary_audio_verse_range: []
-			});
+			app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] });
 		}, 0);
 		return null;
 	}
@@ -221,22 +216,12 @@ function AudioCommentaryPlayer() {
 
 	var onError = function(e) {
 		console.warn("Commentary audio failed to load:", current.url, e);
-		app.setState({
-			audioMode: AUDIO_MODE.IDLE,
-			audioState: null,
-			commentaryAudioMode: false,
-			commentary_audio_verse_range: []
-		});
+		app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] });
 	};
 
 	var onEnded = function() {
 		if (nextVerse === null || nextVerse === undefined) {
-			return app.setState({
-				audioMode: AUDIO_MODE.IDLE,
-				audioState: null,
-				commentaryAudioMode: false,
-				commentary_audio_verse_range: []
-			});
+			return app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] });
 		}
 		app.setActiveVerse(nextVerse, undefined, undefined, "force", "comaudio");
 	};

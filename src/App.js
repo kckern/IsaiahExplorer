@@ -2369,12 +2369,18 @@ class App extends Component {
       infoOpen: derivedInfoOpen(panel),
     });
   }
-  setAudioMode(mode, callback) {
-    this.setState({
+  setAudioMode(mode, extraState, callback) {
+    // Allow setAudioMode(mode, callback) by detecting when extraState is a function.
+    if (typeof extraState === "function") {
+      callback = extraState;
+      extraState = null;
+    }
+    var stateUpdate = Object.assign({
       audioMode: mode,
       audioState: legacyAudioState(mode),
       commentaryAudioMode: legacyCommentaryAudioMode(mode),
-    }, callback);
+    }, extraState || {});
+    this.setState(stateUpdate, callback);
   }
   setActiveStructure(shortcode) {
     this.setState(

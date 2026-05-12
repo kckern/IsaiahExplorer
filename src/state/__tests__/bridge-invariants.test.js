@@ -44,12 +44,6 @@ var SRC_ROOT = path.resolve(__dirname, '..', '..');
 var ALLOWLIST_REL = [
   'state/tagPanel.js',
   'state/audioState.js',
-  // Known legacy drift: these files write audioMode + audioState +
-  // commentaryAudioMode together (manual bridge instead of setAudioMode).
-  // They keep the bridge in sync today; future cleanup should migrate these
-  // to setAudioMode() and remove them from this allowlist.
-  'Components/Audio.js',
-  'Components/Verse.js',
 ];
 
 // The state initializer in App.js writes these fields once; allow that file
