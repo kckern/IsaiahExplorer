@@ -341,10 +341,10 @@ class App extends Component {
     var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
     if (activeTag && globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[activeTag]) {
       title = activeTag + " | " + baseTitle;
-      description = "Explore the theme "" + activeTag + "" in Isaiah.";
+      description = "Explore the theme “" + activeTag + "” in Isaiah.";
     } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
-      title = """ + this.state.searchQuery + "" | Isaiah Explorer";
-      description = "Isaiah Explorer search results for "" + this.state.searchQuery + "".";
+      title = "“" + this.state.searchQuery + "” | Isaiah Explorer";
+      description = "Isaiah Explorer search results for “" + this.state.searchQuery + "”.";
     } else if (this.state.hebrewStrongIndex) {
       title = "Hebrew H" + this.state.hebrewStrongIndex + " | Isaiah Explorer";
       description = "Study Hebrew word H" + this.state.hebrewStrongIndex + " in Isaiah.";
@@ -403,27 +403,27 @@ class App extends Component {
       commentaryID: this.state.commentaryID,
     }, getTagSlug);
 
-    var title = “”;
+    var title = "";
     var activeTag = this.state.showcase_tag || this.state.selected_tag || null;
     if (activeTag && globalData.tags.tagIndex[activeTag]) {
-      title = activeTag + “ | “;
+      title = activeTag + " | ";
     } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
       var disQ = this.state.searchQuery
-        .replace(/[-]+/g, “–“)
-        .replace(/[;]+/g, “; “)
-        .replace(/[\\]b([a-z])/g, “｢$1”)
-        .replace(/([a-z])[\\]b/g, “$1｣”);
-      title = “”” + disQ + “” | “;
+        .replace(/[-]+/g, "–")
+        .replace(/[;]+/g, "; ")
+        .replace(/[\\]b([a-z])/g, "｢$1")
+        .replace(/([a-z])[\\]b/g, "$1｣");
+      title = "“" + disQ + "” | ";
     } else if (this.state.hebrewStrongIndex !== null) {
-      title = “Hebrew H” + this.state.hebrewStrongIndex + “ | “;
+      title = "Hebrew H" + this.state.hebrewStrongIndex + " | ";
     }
 
-    title += “Isaiah “ + chapter + “:” + verse;
+    title += "Isaiah " + chapter + ":" + verse;
 
     if (this.state.commentaryMode && this.state.commentarySource &&
         globalData.commentary.comSources[this.state.commentarySource]) {
-      title = “Isaiah “ + chapter + “:” + verse +
-        “ | “ + globalData.commentary.comSources[this.state.commentarySource].name;
+      title = "Isaiah " + chapter + ":" + verse +
+        " | " + globalData.commentary.comSources[this.state.commentarySource].name;
     }
 
     if (this.props.navigate && this.state.rootURL.match(/^file/) === null) {
