@@ -46,9 +46,19 @@ body #verse,
 body .versetext_com,
 body .extraversions tr.cells td,
 body .extraversions tr.cells td div,
-body #commentary_text .versetext_com
+body #commentary_text .versetext_com,
+body .text_heading
 {
 	font-family: 'Scripture', Times, Georgia, serif;
+}
+
+/* Roboto Condensed overrides INSIDE scripture-content containers: the
+   tag/block detail copy and the tagged-block description text are
+   editorial/UI prose, not scripture. */
+body #text .detail,
+body #text .taggedblock .desc
+{
+	font-family: 'Roboto Condensed', 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
 }
 #root
 {
