@@ -248,6 +248,21 @@ var state = globalData.state;
 		}
 	}
 
+	function cyclePlaybackRate() {
+		let sequence = {
+			"1": 1.25,
+			"1.25": 1.5,
+			"1.5": 2,
+			"2": 1
+		};
+		let rate = state.playbackRate;
+		app.setState({ playbackRate: sequence[rate] || 1 });
+	}
+
+	let rateLabel = state.playbackRate + "×";
+	if (state.playbackRate === 1.5) rateLabel = "1½";
+	if (state.playbackRate === 1.25) rateLabel = "1¼";
+
 	var classes = [];
 	var icon = play_icon;
 	var shortText = "Commentary";
@@ -271,6 +286,12 @@ var state = globalData.state;
 			>
 				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
 			</button>
+			<button
+				type="button"
+				className="audio-btn audio-btn--rate"
+				onClick={cyclePlaybackRate}
+				aria-label={"Playback speed: " + rateLabel}
+			>{rateLabel}</button>
 			<button
 				type="button"
 				className="audio-btn audio-btn--dropdown"
