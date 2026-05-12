@@ -51,7 +51,6 @@ class App extends Component {
     highlighted_tagged_parent_verse_range: [],
     highlighted_verse_range: [],
     highlighted_section_verses: [],
-    timeouts: [],
     selected_tag_block_index: null,
     chiasm_letter: null,
     more_tags: false,

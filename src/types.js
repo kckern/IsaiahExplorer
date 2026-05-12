@@ -43,8 +43,7 @@
  *   commentary_audio:any,
  *   app?:any,
  *   hebrew?:any,
- *   custom?:any,
- *   timeouts:Object.<string, ReturnType<typeof setTimeout>[]>
+ *   custom?:any
  * }} IsaiahData
  */
 
