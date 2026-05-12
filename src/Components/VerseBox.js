@@ -1,50 +1,42 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../DataContext";
 
-export class VerseBox extends Component {
-  isActive() {
-    return parseInt(this.props.app.state.active_verse_id,0) === parseInt(this.props.verse_id,0);
-  }
-  isInRange() {
-    return (  this.props.app.state.highlighted_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 );
-  }
-  isTagged() {
-    return (  this.props.app.state.highlighted_tagged_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 );
-  }
-  isTaggedParent() {
-    return (  this.props.app.state.highlighted_tagged_parent_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 );
-  }
-  isSelected() {
-    return  parseInt(this.props.app.state.selected_verse_id,0) === parseInt(this.props.verse_id,0);
-  }
-  isActiveCommentary() {
-    return (  
-    	this.props.app.state.commentary_audio_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1 ||
-    	this.props.app.state.commentary_verse_range.indexOf(parseInt(this.props.verse_id,0)) > -1
-    
-    );
-  }
+export function VerseBox({ verse_id, class: baseClasses, title, box_num }) {
+  var globalData = useContext(DataContext);
+  var app = globalData.app;
+  var state = globalData.state;
 
-  render() {
-    if (this.isActive()) this.props.class.push("versebox_highlighted");
-    if (this.isInRange()) this.props.class.push("versebox_range_highlighted");
-    if (this.isSelected()) this.props.class.push("versebox_selected");
-    if (this.isTagged()) this.props.class.push("versebox_tag_highlighted");
-    if (this.isTaggedParent()) this.props.class.push("versebox_parent_range_highlighted");
-    if (this.isActiveCommentary()) this.props.class.push("active_commentary");
-    
+  var parsedVerseId = parseInt(verse_id,0);
 
-    return (
+  var isActive = parseInt(state.active_verse_id,0) === parsedVerseId;
+  var isInRange = state.highlighted_verse_range.indexOf(parsedVerseId) > -1;
+  var isTagged = state.highlighted_tagged_verse_range.indexOf(parsedVerseId) > -1;
+  var isTaggedParent = state.highlighted_tagged_parent_verse_range.indexOf(parsedVerseId) > -1;
+  var isSelected = parseInt(state.selected_verse_id,0) === parsedVerseId;
+  var isActiveCommentary = (
+	  state.commentary_audio_verse_range.indexOf(parsedVerseId) > -1 ||
+	  state.commentary_verse_range.indexOf(parsedVerseId) > -1
+  );
 
-            <div
-              onMouseEnter={() => this.props.app.setActiveVerse(this.props.verse_id,undefined,undefined,undefined,"versebox")}
-              onClick={() => this.props.app.selectVerse(this.props.verse_id,"versebox")}
-              onDoubleClick={() => this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}
-              onContextMenu={(e) => { e.preventDefault(); this.props.app.doubleClickVerse(this.props.verse_id,"versebox")}}
-              className={this.props.class.join(" ")}
-              title={this.props.title}  >
-              {this.props.box_num}
-            </div>
-          );
-  }
+  var classes = baseClasses.slice(0);
+  if (isActive) classes.push("versebox_highlighted");
+  if (isInRange) classes.push("versebox_range_highlighted");
+  if (isSelected) classes.push("versebox_selected");
+  if (isTagged) classes.push("versebox_tag_highlighted");
+  if (isTaggedParent) classes.push("versebox_parent_range_highlighted");
+  if (isActiveCommentary) classes.push("active_commentary");
+
+  return (
+
+          <div
+            onMouseEnter={() => app.setActiveVerse(verse_id,undefined,undefined,undefined,"versebox")}
+            onClick={() => app.selectVerse(verse_id,"versebox")}
+            onDoubleClick={() => app.doubleClickVerse(verse_id,"versebox")}
+            onContextMenu={(e) => { e.preventDefault(); app.doubleClickVerse(verse_id,"versebox")}}
+            className={classes.join(" ")}
+            title={title}  >
+            {box_num}
+          </div>
+        );
 }
- 
+

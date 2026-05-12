@@ -1,13 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-export default class VideoBox extends Component {
-	
-	
-	render()
-	{
-	
-		return <div id="videobox">
+export default function VideoBox() {
+	return <div id="videobox">
 		<iframe 
 			title="tutorial"
 			width="1280" 
@@ -19,6 +14,5 @@ export default class VideoBox extends Component {
 	        msallowfullscreen="msallowfullscreen" 
 	        oallowfullscreen="oallowfullscreen" 
 	        webkitallowfullscreen="webkitallowfullscreen"></iframe>
-		</div>	
-	}
+	</div>
 }

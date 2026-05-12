@@ -1,597 +1,511 @@
-import React, { Component } from "react";
-import { globalData } from "../globals.js";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { DataContext } from "../DataContext";
 import { Passage } from "./Passage.js";
 import { Hebrew } from "./Hebrew.js";
-import Tipsy from 'react-tipsy'
-import sprocket_icon from '../img/interface/sprocket.png';
-import play_icon from '../img/interface/play.png';
-import playing_icon from '../img/interface/audio.gif';
-import loading_icon from '../img/interface/audioload.gif';
-import comment_icon from '../img/interface/comment.png';
-import loading_img from '../img/interface/message.gif';
-import heb_png from '../img/interface/hebrew.png';
+import Tipsy from "react-tipsy";
+import sprocket_icon from "../img/interface/sprocket.png";
+import play_icon from "../img/interface/play.png";
+import playing_icon from "../img/interface/audio.gif";
+import loading_icon from "../img/interface/audioload.gif";
+import comment_icon from "../img/interface/comment.png";
+import loading_img from "../img/interface/message.gif";
+import heb_png from "../img/interface/hebrew.png";
 
-export default class VerseColumn extends Component {
-	
-  constructor(props) {
-    super(props);
-    this.state = {  fullsize: false, spot:null, lastVersions:[]  };
-    this.lastVersions = [];
-    this.lastVerse = null;
-    this.lastTags = [];
-  }
+export default function VerseColumn() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	const [fullsize, setFullsize] = useState(false);
+	const lastVersionsRef = useRef([]);
 
-
-
- componentDidMount () {
-	setTimeout(() => {
-		if(this.props.app.state.ready===false)
-		{
-			this.setState({ fullsize: true });
-			this.render();
-		}
-	}, 450)
- }
- 
- 
-  render() {
-  	
-		    if(this.props.app.state.ready===false)
-		    {
-		    	var classes = ["loading"];
-		    	if(this.state.fullsize===true) classes.push("fullsize");
-		    	return(
-			      <div className="col col2">
-			        <div className="heading">
-			          <div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
-			          <div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
-			            <div className="heading_title" id="audio_heading">
-			            	<div id='audio_verse' className='active_audio'><img alt="Play Audio" src={loading_icon}/> Play Audio Verse</div>
-			            	<div id='audio_commentary'><img alt="Select" id='com_option' src={sprocket_icon}/><img alt="Audio Commentary" src={play_icon}/> Play Commentary</div>
-			            	<div  id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
-		
-			    		</div>
-			        </div>
-			        <div id="verse" className={classes.join(" ")}><img alt="Loading" src={loading_img}/><br/> Loading Verse Details...</div>
-			      </div>
-			    )
-		    }
-		   if([null,0,undefined].indexOf(this.props.app.state.active_verse_id) > -1) return false;
-			
-			var heading = "□ "+globalData.index[this.props.app.state.active_verse_id].string;
-			
-			var versions = this.lastVersions;
-			if(!this.props.app.state.spotHover)
-			{
-				versions = this.props.app.state.top_versions.slice(0);
-				var pos = versions.indexOf(this.props.app.state.version);
-				if( pos >=0 ) versions.splice(pos,1);
-				if(versions.length>4) versions = versions.slice(0,4);
-				versions.push(this.props.app.state.version);
-				
-
-				
-				this.lastVersions = versions;
+	useEffect(() => {
+		var timeout = setTimeout(() => {
+			if (state.ready === false) {
+				setFullsize(true);
 			}
+		}, 450);
+		return () => clearTimeout(timeout);
+	}, [app]);
 
-			var hebimg = null;
-			if(this.props.app.state.hebrewReady===true) hebimg =  <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={()=>{
-				if(this.props.app.state.hebrewMode) return this.props.app.setState({hebrewMode:false,hebrewFax:false},this.props.app.clearTag.bind(this.props.app));
-				this.props.app.setState({hebrewMode:true},this.props.app.setUrl.bind(this.props.app));
-				
-			}}/>
-			
-			var swap_imgs = versions.map((shortcode,key)=>{
-					var classes = [];
-					if(shortcode!==this.props.app.state.version) classes.push("alt");
-					return (<img alt="spot"
-					onMouseEnter={()=>this.props.app.spotVerse(shortcode)}
-					onMouseLeave={()=>this.props.app.spotVerse(this.props.app.state.version)}
-					onClick={()=>this.props.app.setActiveVersion(shortcode)}
-					className={classes.join(" ")}  
-					src={require('../img/versions/'+shortcode.toLowerCase()+'.jpg')} 
-					key={key} />) 
+	if (state.ready === false) {
+		var loadingClasses = ["loading"];
+		if (fullsize === true) loadingClasses.push("fullsize");
+		return (
+			<div className="col col2">
+				<div className="heading">
+					<div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
+					<div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
+					<div className="heading_title" id="audio_heading">
+						<div id="audio_verse" className="active_audio"><img alt="Play Audio" src={loading_icon} /> Play Audio Verse</div>
+						<div id="audio_commentary"><img alt="Select" id="com_option" src={sprocket_icon} /><img alt="Audio Commentary" src={play_icon} /> Play Commentary</div>
+						<div id="commentary"><img alt="Commentary" src={comment_icon} /> Read Commentaries</div>
+					</div>
+				</div>
+				<div id="verse" className={loadingClasses.join(" ")}><img alt="Loading" src={loading_img} /><br /> Loading Verse Details...</div>
+			</div>
+		);
+	}
+	if ([null, 0, undefined].indexOf(state.active_verse_id) > -1) return false;
+
+	var heading = "□ " + globalData.index[state.active_verse_id].string;
+
+	var versions = lastVersionsRef.current;
+	if (!state.spotHover) {
+		versions = state.top_versions.slice(0);
+		var pos = versions.indexOf(state.version);
+		if (pos >= 0) versions.splice(pos, 1);
+		if (versions.length > 4) versions = versions.slice(0, 4);
+		versions.push(state.version);
+		lastVersionsRef.current = versions;
+	}
+
+	var hebimg = null;
+	if (state.hebrewReady === true)
+		hebimg = <img src={heb_png} alt="tag" id="hebIcon" className="tag" onClick={() => {
+			if (state.hebrewMode) return app.setState({ hebrewMode: false, hebrewFax: false }, app.clearTag.bind(app));
+			app.setState({ hebrewMode: true }, app.setUrl.bind(app));
+		}} />;
+
+	var swap_imgs = versions.map((shortcode, key) => {
+		var classes = [];
+		if (shortcode !== state.version) classes.push("alt");
+		return (
+			<img
+				alt="spot"
+				onMouseEnter={() => app.spotVerse(shortcode)}
+				onMouseLeave={() => app.spotVerse(state.version)}
+				onClick={() => app.setActiveVersion(shortcode)}
+				className={classes.join(" ")}
+				src={require("../img/versions/" + shortcode.toLowerCase() + ".jpg")}
+				key={key}
+			/>
+		);
+	});
+	var readhide = "Read Commentaries";
+	if (state.commentaryMode) readhide = "Hide Commentaries";
+	return (
+		<div className="col col2">
+			<div className="heading">
+				<div className="heading_subtitle">{hebimg}Verse Details</div>
+				<div className="heading_title" id="detail_heading">{heading}
+					<div className="swapverse" onClick={app.freezeSwap.bind(app)} onMouseLeave={app.reOrderSwap.bind(app)}>
+						{swap_imgs}
+					</div>
+				</div>
+				<div className="heading_title" id="audio_heading">
+					<AudioVerse />
+					<AudioCommentary />
+					<div id="commentary" onClick={() => app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id, infoOpen: false }, app.setUrl.bind(app))}><img alt="Commentary" src={comment_icon} /> {readhide}</div>
+				</div>
+			</div>
+			<VersePanel />
+		</div>
+	);
+}
+
+function AudioVerse() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+
+	function startPlaying() {
+		app.setState(
+			{
+				audioState: "loading",
+				audioPointer: 0,
+				selected_verse_id: null,
+				commentary_audio_verse_range: [],
+				commentaryAudioMode: false
+			},
+			app.setUrl.bind(app)
+		);
+	}
+
+	function handleClick() {
+		if (globalData.meta.version[state.version].audio !== 1) return false;
+		if (state.audioState !== null) {
+			app.setState({ audioState: null }, function() {
+				if (state.commentaryAudioMode) startPlaying();
+				app.setUrl();
 			});
-			var readhide = "Read Commentaries";
-			if(this.props.app.state.commentaryMode) readhide = "Hide Commentaries"
-		return(
-			    <div className="col col2">
-			    	<div className="heading">
-			            <div className="heading_subtitle">{hebimg}Verse Details</div>
-			    		<div className="heading_title" id="detail_heading">{heading}
-			    		<div className="swapverse" 
-			    		onClick={this.props.app.freezeSwap.bind(this.props.app)}
-			    		onMouseLeave={this.props.app.reOrderSwap.bind(this.props.app)}
-			    		>
-			    			{swap_imgs}
-			    		</div>
-			    		</div>
-			            <div className="heading_title" id="audio_heading">
-			            	<AudioVerse app={this.props.app} />
-			            	<AudioCommentary app={this.props.app} />
-			            	<div  id="commentary"  onClick={()=>this.props.app.setState({commentaryMode:!this.props.app.state.commentaryMode,commentary_verse_range:[],selected_verse_id:null,commentary_verse_id:this.props.app.state.active_verse_id,infoOpen:false},this.props.app.setUrl.bind(this.props.app))}><img alt="Commentary" src={comment_icon}/> {readhide}</div>
-		
-			    		</div>
-			    	</div>
-			    	<VersePanel  
-				    	app={this.props.app} 
-			    	/>
-			    </div>
-			     
-		)
-	}
-}
-
-
-class AudioVerse extends Component {
-
-	startPlaying()
-	{
-		
-			this.props.app.setState({    
-				audioState:"loading",
-				audioPointer:0,
-				selected_verse_id:null,  
-				commentary_audio_verse_range:[],
-	    		commentaryAudioMode:false},this.props.app.setUrl.bind(this.props.app))
-	}
-
-	handleClick()
-	{
-		if(globalData.meta.version[this.props.app.state.version].audio!==1) return false;
-		if(this.props.app.state.audioState!==null)
-		{
-			this.props.app.setState({  audioState:null },function(){
-				if(this.props.app.state.commentaryAudioMode)	this.startPlaying();
-				this.props.app.setUrl();
-			}.bind(this))
-		}
-		else
-		{
-			this.startPlaying();
-			this.props.app.setUrl();
+		} else {
+			startPlaying();
+			app.setUrl();
 		}
 	}
 
-	cyclePlaybackRate()
-	{
+	function cyclePlaybackRate() {
 		let sequence = {
-			"1":1.5,
-			"1.5":2,
-			"2":1
-		}
-		let rate = this.props.app.state.playbackRate;
-		this.props.app.setState({ playbackRate:sequence[rate]})
-
+			"1": 1.5,
+			"1.5": 2,
+			"2": 1
+		};
+		let rate = state.playbackRate;
+		app.setState({ playbackRate: sequence[rate] });
 	}
 
-	render()
-	{
-		var classes = [];
-		
-		if(globalData.meta.version[this.props.app.state.version].audio!==1 && this.props.app.state.hebrewMode===false) classes.push("noaudio");
-		
-		let rateLabel = this.props.app.state.playbackRate + "×";
-		if(this.props.app.state.playbackRate===1.5) rateLabel = "1½";
-		
-		var icon = play_icon;
-		var text = "Play Audio Verse";
-		if(this.props.app.state.commentaryAudioMode===false)
-		{
-			if(this.props.app.state.audioState==="loading") { icon=loading_icon; text="Loading Audio Verse"; classes.push("active_audio")}
-			if(this.props.app.state.audioState==="playing") { icon=playing_icon; text="Pause Audio Verse"; classes.push("active_audio")}
+	var classes = [];
+	if (globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false) classes.push("noaudio");
+
+	let rateLabel = state.playbackRate + "×";
+	if (state.playbackRate === 1.5) rateLabel = "1½";
+
+	var icon = play_icon;
+	var text = "Play Audio Verse";
+	if (state.commentaryAudioMode === false) {
+		if (state.audioState === "loading") {
+			icon = loading_icon;
+			text = "Loading Audio Verse";
+			classes.push("active_audio");
 		}
-		let button = (this.props.app.state.audioState==="playing") ? <button onClick={this.cyclePlaybackRate.bind(this)}>{rateLabel}</button> : null
-		return (<><div className={classes.join(" ")} onClick={this.handleClick.bind(this)} id='audio_verse'><img alt="Play Audio" src={icon}/> {text}</div>{button}</>)
+		if (state.audioState === "playing") {
+			icon = playing_icon;
+			text = "Pause Audio Verse";
+			classes.push("active_audio");
+		}
 	}
-	
+	let button = state.audioState === "playing" ? <button onClick={cyclePlaybackRate}>{rateLabel}</button> : null;
+	return <><div className={classes.join(" ")} onClick={handleClick} id="audio_verse"><img alt="Play Audio" src={icon} /> {text}</div>{button}</>;
 }
 
-class AudioCommentary extends Component {
+function AudioCommentary() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	const [options, setOptions] = useState(false);
 
-	state= {options:false}
-	
-	startPlaying(shortcode)
-	{
-		
-		this.props.app.setState({    
-			audioState:"loading",
-			audioPointer:0,
-			tagMode:false,
-			commentaryAudio:shortcode,
-    		commentaryAudioMode:true})
+	function startPlaying(shortcode) {
+		app.setState({
+			audioState: "loading",
+			audioPointer: 0,
+			tagMode: false,
+			commentaryAudio: shortcode,
+			commentaryAudioMode: true
+		});
 	}
 
-	handleClick(e)
-	{
-		if(e===undefined) return false;
-		if(e.target.id!=="audio_commentary") return false;
-		if(this.props.app.state.audioState!==null)
-		{
-			this.props.app.setState({  audioState:null, commentary_audio_verse_range:[] },function(){
-				if(!this.props.app.state.commentaryAudioMode)
-				{
-					this.startPlaying(this.props.app.state.commentaryAudio);
-				}else
-				{
-					this.props.app.setState({commentaryAudioMode:false },
-					this.props.app.setActiveVerse.bind(this.props.app,this.props.app.state.active_verse_id,undefined,undefined,undefined,"audio"));
+	function handleClick(e) {
+		if (e === undefined) return false;
+		if (e.target.id !== "audio_commentary") return false;
+		if (state.audioState !== null) {
+			app.setState({ audioState: null, commentary_audio_verse_range: [] }, function() {
+				if (!state.commentaryAudioMode) {
+					startPlaying(state.commentaryAudio);
+				} else {
+					app.setState(
+						{ commentaryAudioMode: false },
+						app.setActiveVerse.bind(app, state.active_verse_id, undefined, undefined, undefined, "audio")
+					);
 				}
-			}.bind(this))
-		}
-		else
-		{
-			this.startPlaying(this.props.app.state.commentaryAudio);
+			});
+		} else {
+			startPlaying(state.commentaryAudio);
 		}
 	}
-		
-	handleOptions()
-	{
-		this.props.app.setState({  audioState:null },function(){this.setState({options:true});}.bind(this));
+
+	function handleOptions() {
+		app.setState({ audioState: null }, function() {
+			setOptions(true);
+		});
 	}
-	selectOption(e)
-	{
+
+	function selectOption(e) {
 		var shortcode = e.target.options[e.target.selectedIndex].attributes.value.value;
-		
-		if(shortcode==="top") return false;
-		
-		this.startPlaying(shortcode);
-			this.setState({options:false});
-		
+		if (shortcode === "top") return false;
+		startPlaying(shortcode);
+		setOptions(false);
 	}
 
-	render()
-	{
-		
-		if(this.state.options)
-		{
-			var options = null;
-			var items = [<option key="top" value="top">Make a selection:</option>];
-			
-			for(var i in globalData.meta.audiocom)
-			{
-				var it = globalData.meta.audiocom[i];
-				items.push(<option key={it.shortcode} value={it.shortcode}> ⤷ {it.title}</option>);
-			}
-			
-			options = (<select onChange={this.selectOption.bind(this)} id="com_selector">{items}</select>)
-			
-		return (<div id='audio_commentary'  onClick={this.handleClick.bind(this)} >{options}</div>)
+	if (options) {
+		var items = [<option key="top" value="top">Make a selection:</option>];
+		for (var i in globalData.meta.audiocom) {
+			var it = globalData.meta.audiocom[i];
+			items.push(<option key={it.shortcode} value={it.shortcode}> ⤷ {it.title}</option>);
 		}
-		
-		
-		var classes = [];
-		var icon = play_icon;
-		var text = "Play Commentary";
-		if(this.props.app.state.commentaryAudioMode)
-		{
-			if(this.props.app.state.audioState==="loading") { icon=loading_icon; text="Loading Commentary"; classes.push("active_audio")}
-			if(this.props.app.state.audioState==="playing") { icon=playing_icon; text="Pause Commentary"; classes.push("active_audio")}
-		}
-		
-		return (<div className={classes.join(" ")}  id='audio_commentary'  onClick={this.handleClick.bind(this)} ><img alt="Audio Commentary" src={icon}/> {text} <img onClick={this.handleOptions.bind(this)} alt="Select" id='com_option' src={sprocket_icon}/></div>)
+		var selector = <select onChange={selectOption} id="com_selector">{items}</select>;
+		return <div id="audio_commentary" onClick={handleClick}>{selector}</div>;
 	}
-	
+
+	var classes = [];
+	var icon = play_icon;
+	var text = "Play Commentary";
+	if (state.commentaryAudioMode) {
+		if (state.audioState === "loading") {
+			icon = loading_icon;
+			text = "Loading Commentary";
+			classes.push("active_audio");
+		}
+		if (state.audioState === "playing") {
+			icon = playing_icon;
+			text = "Pause Commentary";
+			classes.push("active_audio");
+		}
+	}
+
+	return <div className={classes.join(" ")} id="audio_commentary" onClick={handleClick}><img alt="Audio Commentary" src={icon} /> {text} <img onClick={handleOptions} alt="Select" id="com_option" src={sprocket_icon} /></div>;
 }
 
+function VersePanel() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	const [passagesMore, setPassagesMore] = useState(false);
+	const [sectionsMore, setSectionsMore] = useState(false);
+	const [, setTagsMore] = useState(false);
 
-class VersePanel extends Component {
-	
-		
-  constructor(props) {
-    super(props);
-    this.state = { passagesMore: false, sectionsMore: false  };
-  }
-  
-  seeMorePassages(){this.setState( {passagesMore: true});}
-  seeMoreSections(){this.setState( {sectionsMore: true});}
-  reset(){this.setState({ tagsMore: false, passagesMore: false, sectionsMore: false });}
-  resetTags(){this.setState({ tagsMore: false});}
+	function seeMorePassages() {
+		setPassagesMore(true);
+	}
+	function seeMoreSections() {
+		setSectionsMore(true);
+	}
+	function reset() {
+		setTagsMore(false);
+		setPassagesMore(false);
+		setSectionsMore(false);
+	}
 
-  
-  componentDidMount()
-  {
-  	this.props.app.spreadVerse();
-  }
-  componentDidUpdate()
-  {
-  	this.props.app.spreadVerse();
-  }
-  
-	render()  {
-		
+	useEffect(() => {
+		app.spreadVerse();
+	});
+
 	var highlights = [null];
-	if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewReady)
-	{
+	if (state.hebrewMode && state.hebrewStrongIndex !== null && state.hebrewReady) {
 		var tmp = globalData.hebrew.high;
-		if(tmp[this.props.app.state.hebrewStrongIndex]!==undefined)
-		highlights = tmp[this.props.app.state.hebrewStrongIndex].h;
+		if (tmp[state.hebrewStrongIndex] !== undefined) highlights = tmp[state.hebrewStrongIndex].h;
 	}
 
-  	var seeMorePassages = this.seeMorePassages.bind(this);
-  	var seeMoreSections = this.seeMoreSections.bind(this);
-  	
-		return <div id="verse" >
-		<Hebrew app={this.props.app}  />
-    <div className="verse_container">
-        <Passage app={this.props.app}  verses={this.props.app.state.active_verse_id}  highlights={highlights}   spottable={true} wrapperId="verse_text"/>
-    </div>
-    <ExtraVersions  app={this.props.app}  highlights={highlights} />
-	<TagBox   app={this.props.app} />
-    <SeeMoreTags  app={this.props.app} />
-    <PassagesBox  app={this.props.app} showFull={this.state.passagesMore} resetter={this.reset.bind(this)} />
-    <SeeMore clicker={seeMorePassages} clicked={this.state.passagesMore} />
-	<SectionsBox  app={this.props.app} showFull={this.state.sectionsMore} resetter={this.reset.bind(this)} />
-    <SeeMore clicker={seeMoreSections} clicked={this.state.sectionsMore} />
-</div>
-	}
+	return <div id="verse">
+		<Hebrew />
+		<div className="verse_container">
+			<Passage verses={state.active_verse_id} highlights={highlights} spottable={true} wrapperId="verse_text" />
+		</div>
+		<ExtraVersions highlights={highlights} />
+		<TagBox />
+		<SeeMoreTags />
+		<PassagesBox showFull={passagesMore} resetter={reset} />
+		<SeeMore clicker={seeMorePassages} clicked={passagesMore} />
+		<SectionsBox showFull={sectionsMore} resetter={reset} />
+		<SeeMore clicker={seeMoreSections} clicked={sectionsMore} />
+	</div>;
 }
 
-class ExtraVersions extends Component {
-	
-	render()
-	{
-		var cells = [];
-		var heads = [];
-		var num = this.props.app.state.version_views;
-		for(var i in this.props.app.state.top_versions)
-		{
-			if(i>=num) continue;
-			var ver = this.props.app.state.top_versions[i];
-			
-			if(globalData["text"][ver]===undefined) 	cells.push(<td  key={i}>Loading...</td>);
-			else cells.push(<td  key={i}>
-				<Passage 
-				app={this.props.app}  
-				plain={1}
-				verses={this.props.app.state.active_verse_id} 
-				version={ver} 
-				highlights={this.props.highlights} />
-				</td>);
-			heads.push(<td key={i}><img alt="Passage Version" src={require('../img/versions/'+ver.toLowerCase()+'.jpg')} 
-			 onClick={this.props.app.setActiveVersion.bind(this.props.app,ver)} /></td>);
-		}
-		
-		var extra = null;
-		var heading = null;
-		
-		if(num>1)
-		{
-		extra = <div key={2} className={"extraversions count"+num}>
+function ExtraVersions({ highlights }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	var cells = [];
+	var heads = [];
+	var num = state.version_views;
+	for (var i in state.top_versions) {
+		if (i >= num) continue;
+		var ver = state.top_versions[i];
+
+		if (globalData["text"][ver] === undefined) cells.push(<td key={i}>Loading...</td>);
+		else
+			cells.push(
+				<td key={i}>
+					<Passage plain={1} verses={state.active_verse_id} version={ver} highlights={highlights} />
+				</td>
+			);
+		heads.push(<td key={i}><img alt="Passage Version" src={require("../img/versions/" + ver.toLowerCase() + ".jpg")} onClick={app.setActiveVersion.bind(app, ver)} /></td>);
+	}
+
+	var extra = null;
+	var heading = null;
+
+	if (num > 1) {
+		extra = <div key={2} className={"extraversions count" + num}>
 			<table><tbody><tr className="head">{heads}</tr><tr className="cells">{cells}</tr></tbody></table>
 		</div>;
 		heading = <h4 key={3}>{num} Side-by-side Translations</h4>;
+	}
+	return <div>
+		<Tipsy key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
+			<span key={4} onClick={app.cycleVersionViews.bind(app)} className="vernum">{num}</span>
+		</Tipsy>
+		{heading}
+		{extra}
+	</div>;
+}
+
+function SeeMoreTags({ clicked }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	if (clicked) return null;
+	return <div className="readmore" onClick={app.moreTags.bind(app)}>See More Tags...</div>;
+}
+
+function TagBox() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	const divElementRef = useRef(null);
+
+	useEffect(() => {
+		if (divElementRef.current === null) return;
+		var height = divElementRef.current.clientHeight;
+		if (height > 90) {
+			// keep behavior parity; oversize handling is intentionally disabled
+		} else if (height <= 90) {
+			// keep behavior parity; oversize handling is intentionally disabled
 		}
-		return <div>
-			<Tipsy  key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
-			<span   key={4} onClick={this.props.app.cycleVersionViews.bind(this.props.app)} className="vernum">{num}</span></Tipsy>
-			{heading}
-			{extra}
-			</div>
-	}
-	
-}
+	});
 
-class SeeMoreTags extends Component {
-	
+	var tags = app.getVerseTags(state.active_verse_id);
+	var tagLinks = tags.map((tagName, key) => {
+		return <TagLink tagName={tagName} key={key} />;
+	});
 
-	
-	render()
-	{
-		if(this.props.clicked) return null;
-		return(<div className="readmore" onClick={this.props.app.moreTags.bind(this.props.app)}>See More Tags...</div>)
-		
-	}
-	
-}
+	var classes = ["verse_info_box", "tags"];
 
-
-class TagBox extends Component{ 
-	
-	
-  constructor(props) {
-    super(props);
-     this.state = { oversize: null };
-     this.tags = [];
-  }
-
-	
-	 componentDidUpdate() {
-
-	 	const height = this.divElement.clientHeight;
-	 	if(height>90 )
-	 	{
-	 	//	this.setState({oversize:true});
-	 	}
-	 	else if(height<=90)
-	 	{
-	 	//	this.setState({oversize:false});
-	 	}
-	 	 
-	 }
-	
-	
-	render()
-	{
-
-		this.tags = this.props.app.getVerseTags(this.props.app.state.active_verse_id);
-		var tagLinks = this.tags.map((tagName,key)=>{
-			return (<TagLink tagName={tagName}  app={this.props.app}  key={key}/>) 
-		});
-		
-		var classes = ["verse_info_box","tags"];
-		
-
-		return(    
-		<div className={classes.join(" ")} ref={ (divElement) => this.divElement = divElement} >
+	return (
+		<div className={classes.join(" ")} ref={divElementRef}>
 			<h4>Verse Tags</h4>
 			{tagLinks}
-        </div>)
-	}
+		</div>
+	);
 }
 
-class TagLink extends Component{
+function TagLink({ tagName }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	var classes = ["taglink"];
+	if (state.selected_tag === tagName) classes.push("tag_highlighted");
+	var tagData = app.getTagData(tagName);
+	var content = (
+		<div>
+			<div className="pedigree"><span>{tagData.parents.filter(v => v !== "root").reverse().join(" » ")}</span></div>
+			<div>{tagData.description.trim().replace(/\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)$/g, "\u00a0$1\u00a0$2\u00a0$3")}</div>
+		</div>
+	);
 
-	render()
-	{
-
-    	var classes = ["taglink"];
-    	if(this.props.app.state.selected_tag===this.props.tagName) classes.push("tag_highlighted");
-    	var tagData = this.props.app.getTagData(this.props.tagName);
-    	var content = (<div><div className="pedigree"><span>{tagData.parents.filter(v => v !== 'root').reverse().join(" » ")}</span></div><div>{tagData.description.trim().replace(/\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)$/g,"\u00a0$1\u00a0$2\u00a0$3")}</div></div>);
-    	
-		return(
-			<Tipsy content={content} placement="top" trigger="hover focus touch" className="tagtip">
-			<div 
-			className={classes.join(" ")}
-			onMouseEnter={()=>this.props.app.setPreviewedTag(this.props.tagName)}
-			onMouseLeave={()=>this.props.app.setPreviewedTag(null)}
-			onClick={()=>this.props.app.setActiveTag(this.props.tagName)}
-			>{this.props.tagName}</div></Tipsy>
-		)
-	}
+	return (
+		<Tipsy content={content} placement="top" trigger="hover focus touch" className="tagtip">
+			<div
+				className={classes.join(" ")}
+				onMouseEnter={() => app.setPreviewedTag(tagName)}
+				onMouseLeave={() => app.setPreviewedTag(null)}
+				onClick={() => app.setActiveTag(tagName)}>{tagName}</div>
+		</Tipsy>
+	);
 }
 
+function PassagesBox({ showFull, resetter }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	if (state.active_verse_id === null) return null;
 
-class PassagesBox extends Component{
-	
-	render()
-	{
-		if(this.props.app.state.active_verse_id===null) return null;
-	    var entries = this.props.app.state.top_outlines.slice(0); for(var i in globalData["meta"]["outline"]) if(entries.indexOf(i)<0) entries.push(i); 
-	    const Passagelist = entries.map(
-	      (option, optionKey) => {
-	      	
-	      	var shortcode = option;
-	      	var index = parseInt(globalData["outlineIndex"][this.props.app.state.active_verse_id][shortcode],0);
-	      	var outline = globalData["outlines"][shortcode];
-	      	
-	      	if(typeof outline[index] === "undefined") return null;
+	var entries = state.top_outlines.slice(0);
+	for (var i in globalData["meta"]["outline"]) if (entries.indexOf(i) < 0) entries.push(i);
+	const Passagelist = entries.map((option, optionKey) => {
+		var shortcode = option;
+		var index = parseInt(globalData["outlineIndex"][state.active_verse_id][shortcode], 0);
+		var outline = globalData["outlines"][shortcode];
+		if (typeof outline[index] === "undefined") return null;
 
-	      	
-	      	var heading = outline[index];
-	      	
-	      	var classes = []; //active first
-	      	if(shortcode===this.props.app.state.outline) classes.push("active");
-	      	
-	      	var item = {};
-	      	item['classes']  	= classes;
-	      	item['shortcode']  	= shortcode;
-	      	item['heading']  	= heading.heading;
-	      	
-	        return (
-	          <PassagesLink
-	            key={optionKey}
-	            item={item}
-	            app={this.props.app}
-	            resetter={this.props.resetter}
-	          />
-	        );
-	      }
-	    );
-	    var classes = ["verse_info_box","outline"];
-	    if(!this.props.showFull) classes.push("top5");
-		return(    
-		    <div className={classes.join(" ")}>
-        <h4>Encompassing Passages</h4>
-        <div>{Passagelist}</div>
-    </div>)
-	}
+		var heading = outline[index];
+		var classes = [];
+		if (shortcode === state.outline) classes.push("active");
+
+		var item = {};
+		item["classes"] = classes;
+		item["shortcode"] = shortcode;
+		item["heading"] = heading.heading;
+
+		return <PassagesLink key={optionKey} item={item} resetter={resetter} />;
+	});
+	var classes = ["verse_info_box", "outline"];
+	if (!showFull) classes.push("top5");
+	return (
+		<div className={classes.join(" ")}>
+			<h4>Encompassing Passages</h4>
+			<div>{Passagelist}</div>
+		</div>
+	);
 }
 
-class PassagesLink extends Component{
-	render()
-	{
-		
-		return(
-		 <div 
-		 onClick={() => { this.props.app.setActiveOutline(this.props.item.shortcode); this.props.resetter(); }}
-			onMouseEnter={()=>this.props.app.setPreviewedPassage(this.props.item.shortcode)}
-			onMouseLeave={()=>this.props.app.setPreviewedPassage(null)}
-		 >
-            <div  className={this.props.item.classes.join(" ")} >
-            
-            <img   alt="Passage Version" src={require('../img/versions/'+this.props.item.shortcode+'.jpg')} /> <span>{this.props.item.heading}</span> </div>
-        </div>
-		)
-	}
+function PassagesLink({ item, resetter }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	return (
+		<div
+			onClick={() => {
+				app.setActiveOutline(item.shortcode);
+				resetter();
+			}}
+			onMouseEnter={() => app.setPreviewedPassage(item.shortcode)}
+			onMouseLeave={() => app.setPreviewedPassage(null)}>
+			<div className={item.classes.join(" ")}>
+				<img alt="Passage Version" src={require("../img/versions/" + item.shortcode + ".jpg")} /> <span>{item.heading}</span>
+			</div>
+		</div>
+	);
 }
 
+function SectionsBox({ showFull, resetter }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	if (state.active_verse_id === null) return null;
 
-class SectionsBox extends Component{
-	
-	render()
-	{
-		if(this.props.app.state.active_verse_id===null) return null;
-	    
-	    var entries = this.props.app.state.top_structures.slice(0); for(var i in globalData["meta"]["structure"]) if(entries.indexOf(i)<0) entries.push(i); 
-	    const Sectionlist = entries.map(
-	      (option, optionKey) => {
-	      	var shortcode = option;
-	      	var index = parseInt(globalData["structureIndex"][this.props.app.state.active_verse_id][shortcode],0);
-	      	var structure = globalData["structures"][shortcode];
-	      	if(structure===undefined) return null;
-	      	var section = structure[index];
-	      	var count = "⦗"+(index+1)+"/"+structure.length+"⦘";
-	      	
-	      	var classes = []; //active first
-	      	if(shortcode===this.props.app.state.structure) classes.push("active");
-	      	
-	      	var item = {};
-	      	item['classes']  	= classes;
-	      	item['title']  		= globalData["meta"]["structure"][shortcode].title;
-	      	item['shortcode']  	= shortcode;
-	      	item['section']  	= count+" "+section.description;
-	      	
-	        return (
-	          <SectionsLink
-	            key={optionKey}
-	            item={item}
-	            app={this.props.app}
-	            resetter={this.props.resetter}
-	            
-	          />
-	        );
-	      }
-	    );
+	var entries = state.top_structures.slice(0);
+	for (var i in globalData["meta"]["structure"]) if (entries.indexOf(i) < 0) entries.push(i);
+	const Sectionlist = entries.map((option, optionKey) => {
+		var shortcode = option;
+		var index = parseInt(globalData["structureIndex"][state.active_verse_id][shortcode], 0);
+		var structure = globalData["structures"][shortcode];
+		if (structure === undefined) return null;
+		var section = structure[index];
+		var count = "⦗" + (index + 1) + "/" + structure.length + "⦘";
 
-	    var classes = ["verse_info_box","structure"];
-	    if(!this.props.showFull) classes.push("top5");
-		return(    
-		    <div className={classes.join(" ")}>
-	        <h4>Corresponding Structural Sections</h4>
-	        <div>{Sectionlist}</div>
-	    </div>)
-	}
+		var classes = [];
+		if (shortcode === state.structure) classes.push("active");
+
+		var item = {};
+		item["classes"] = classes;
+		item["title"] = globalData["meta"]["structure"][shortcode].title;
+		item["shortcode"] = shortcode;
+		item["section"] = count + " " + section.description;
+
+		return <SectionsLink key={optionKey} item={item} resetter={resetter} />;
+	});
+
+	var classes = ["verse_info_box", "structure"];
+	if (!showFull) classes.push("top5");
+	return (
+		<div className={classes.join(" ")}>
+			<h4>Corresponding Structural Sections</h4>
+			<div>{Sectionlist}</div>
+		</div>
+	);
 }
 
-class SectionsLink extends Component{
-	render()
-	{
-		return(
-	        <div 
-	        onClick={() => { this.props.app.setActiveStructure(this.props.item.shortcode); this.props.resetter(); }}
-			onMouseEnter={()=>this.props.app.setPreviewedSection(this.props.item.shortcode)}
-			onMouseLeave={()=>this.props.app.setPreviewedSection(null)}
-	        >
-	            <div  className={this.props.item.classes.join(" ")} >
-	                <div className="icon">{this.props.item.title}</div> 
-	                <span><img alt="Logo"  src={require('../img/structures/'+this.props.item.shortcode+'.png')}  />{this.props.item.section}</span> </div>
-	        </div>
-		)
-	}
+function SectionsLink({ item, resetter }) {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+var state = globalData.state;
+	return (
+		<div
+			onClick={() => {
+				app.setActiveStructure(item.shortcode);
+				resetter();
+			}}
+			onMouseEnter={() => app.setPreviewedSection(item.shortcode)}
+			onMouseLeave={() => app.setPreviewedSection(null)}>
+			<div className={item.classes.join(" ")}>
+				<div className="icon">{item.title}</div>
+				<span><img alt="Logo" src={require("../img/structures/" + item.shortcode + ".png")} />{item.section}</span>
+			</div>
+		</div>
+	);
 }
 
-
-
-class SeeMore extends Component {
-	
-	render()
-	{
-		
-		if(this.props.clicked) return null;
-		return(<div className="readmore" onClick={this.props.clicker}>See More...</div>)
-		
-	}
-	
+function SeeMore({ clicked, clicker }) {
+	if (clicked) return null;
+	return <div className="readmore" onClick={clicker}>See More...</div>;
 }

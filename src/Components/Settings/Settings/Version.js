@@ -1,40 +1,41 @@
-import React, {Component} from "react";
+import React, {useContext} from "react";
 import {SortableElement} from 'react-sortable-hoc';
+import {DataContext} from "../../../DataContext";
 
 const noop = () =>{}; // useful to have
 
-class VersionSetting extends Component {
-  render() {
-    const {dragging} = this.props
+function VersionSetting({dragging, option, optionKey, settings}) {
+    const globalData = useContext(DataContext);
+    const app = globalData.app;
+    const state = globalData.state;
     var classes = ["option"];
-    if (this.props.option.shortcode === this.props.app.state.version) classes.push("active");
-    if (this.props.optionKey === 0) classes.push("first top");
-    else if (this.props.optionKey < 5) classes.push("top");
-    else if (this.props.optionKey === 5) classes.push("other firstother");
+    if (option.shortcode === state.version) classes.push("active");
+    if (optionKey === 0) classes.push("first top");
+    else if (optionKey < 5) classes.push("top");
+    else if (optionKey === 5) classes.push("other firstother");
     else classes.push("other");
 
     var audioimg = null;
-    if(this.props.option.audio===1) audioimg = <img alt="img" src={require('../../../img/interface/audio.png')}/>;
+    if(option.audio===1) audioimg = <img alt="img" src={require('../../../img/interface/audio.png')}/>;
 
     return (
-      <div title={this.props.option.title} className={classes.join(" ")}
+      <div title={option.title} className={classes.join(" ")}
            onMouseEnter={() => {
         // eslint-disable-next-line
              dragging
                ? noop // do not display preview while dragging. Saves a log of repaints;
-               : this.props.settings.setState({preview:"version", shortcode:this.props.option.shortcode})}} >
+               : settings.setState({preview:"version", shortcode:option.shortcode})}} >
         <div className="rank">
-          <span>{dragging ? '' : this.props.optionKey + 1}</span>
+          <span>{dragging ? '' : optionKey + 1}</span>
         </div>
         <div className="optionbox">
-          <img alt="img" src={require('../../../img/versions/'+this.props.option.shortcode.toLowerCase()+'.jpg')} />
-          <div className="version_full_title">{audioimg}{this.props.option.title}</div>
-          <div className="version_description">{this.props.option.description}</div>
+          <img alt="img" src={require('../../../img/versions/'+option.shortcode.toLowerCase()+'.jpg')} />
+          <div className="version_full_title">{audioimg}{option.title}</div>
+          <div className="version_description">{option.description}</div>
         </div>
       </div>
 
     );
-  }
 }
 
 export default SortableElement(VersionSetting)

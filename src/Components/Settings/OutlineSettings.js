@@ -1,62 +1,54 @@
-import React, {Component} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import OutlineSetting from "./Settings/Outline";
-import {globalData} from "../../globals";
+import {DataContext} from "../../DataContext";
 import SortableList from './SortableList'
 import {arrayMove} from 'react-sortable-hoc';
 
-class OutlineSettings extends Component {
-  state = {entries: [], full: false, dragging: false}
+function OutlineSettings({entries: sourceEntries = [], settings}) {
+  var globalData = useContext(DataContext);
+  var app = globalData.app;
+  var [entries,setEntries] = useState(sourceEntries || []);
+  var [full,setFull] = useState(false);
+  var [dragging,setDragging] = useState(false);
 
-  componentDidMount() {
-    const {entries} = this.props
-    this.setState({entries})
-  }
+  useEffect(() => {
+    if (sourceEntries.length === entries.length && full) return;
+    setEntries(sourceEntries);
+    setFull(true);
+  }, [sourceEntries, entries.length, full]);
 
-  componentWillReceiveProps({entries}) {
-    if (entries.length === this.props.entries.length && this.state.full) return null;
-    this.setState({entries, full: true})
-  }
+  var onSortStart = () => {
+    setDragging(true);
+  };
 
-  onSortStart = () => {
-    this.setState({dragging: true});
-  }
-
-  onSortEnd = ({oldIndex, newIndex}) => {
-    const {entries} = this.state
+  var onSortEnd = ({oldIndex, newIndex}) => {
     const newEntries = arrayMove(entries, oldIndex, newIndex)
-    this.setState({
-      entries: newEntries,
-      dragging: false
-    });
-    this.props.app.setNewTop("top_outlines", newEntries[newIndex], newIndex)
-  }
+    setEntries(newEntries);
+    setDragging(false);
+    app.setNewTop("top_outlines", newEntries[newIndex], newIndex)
+  };
 
-  render() {
-    const {entries, dragging} = this.state
-    const {app, settings} = this.props
-    const iterated = entries.map((shortcode, optionKey) => {
-      return (
-        <OutlineSetting
-          app={app}
-          settings={settings}
-          option={globalData["meta"]["outline"][shortcode]}
-          optionKey={optionKey}
-          index={optionKey}
-          key={shortcode}
-          dragging={dragging}
-        />
-      )
-    })
-    iterated.splice(5, 0, (<h5 key="R" className="otherheading">Reserve Items</h5>));
-    return <SortableList
-      axis="y"
-      lockAxis="y"
-      entries={iterated}
-      onSortStart={this.onSortStart}
-      onSortEnd={this.onSortEnd}
-      helperClass="option--dragging"
-    />
-  }
+  const iterated = entries.map((shortcode, optionKey) => {
+    return (
+      <OutlineSetting
+        settings={settings}
+        option={globalData["meta"]["outline"][shortcode]}
+        optionKey={optionKey}
+        index={optionKey}
+        key={shortcode}
+        dragging={dragging}
+      />
+    )
+  })
+  iterated.splice(5, 0, (<h5 key="R" className="otherheading">Reserve Items</h5>));
+  return <SortableList
+    axis="y"
+    lockAxis="y"
+    entries={iterated}
+    onSortStart={onSortStart}
+    onSortEnd={onSortEnd}
+    helperClass="option--dragging"
+  />
 }
 
 export default OutlineSettings

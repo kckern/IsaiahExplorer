@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, {Component, useContext} from "react"
 import pako from "pako"
 import atob from "atob"
 import settings_icon from "./img/interface/settings.png"
@@ -11,6 +11,7 @@ import Audio from "./Components/Audio.js"
 import Settings from "./Components/Settings/Settings.js"
 import {TagFloater} from "./Components/Tags.js"
 import {globalData} from "./globals.js"
+import {DataContext} from "./DataContext"
 import VideoBox from "./Components/VideoBox.js"
 import Tipsy from "react-tipsy"
 import isElectron from 'is-electron';
@@ -146,6 +147,9 @@ class App extends Component {
   }
 
   render() {
+    globalData.app = this
+    globalData.state = this.state
+
     var settingsPanel = null
     if (this.state.settings === true)
       settingsPanel = [
@@ -154,7 +158,7 @@ class App extends Component {
           className="shader"
           onClick={() => this.closeSettings()}
         />,
-        <Settings key="settingbox" app={this} />
+        <Settings key="settingbox" />
       ]
     else settingsPanel = null
 
@@ -166,7 +170,7 @@ class App extends Component {
           className="shader"
           onClick={() => this.closeVideo()}
         />,
-        <VideoBox key="videobox" app={this} />
+        <VideoBox key="videobox" />
       ]
     else videoPanel = null
 
@@ -178,45 +182,47 @@ class App extends Component {
     var title = <span>Isaiah Explorer</span>
 
     return (
-      <div id="approot" className={classes.join(" ")}>
-        <h1>
-          <Tipsy
-            content="Settings"
-            placement="left"
-            trigger="hover focus touch"
-            className="topper">
-            <img
-              alt="Settings"
-              onClick={() => this.openSettings()}
-              src={settings_icon}
-              className="settings"
-            />
-          </Tipsy>
-          {title}
-          <Tipsy
-            content="Video Tutorial"
-            placement="right"
-            trigger="hover focus touch"
-            className="topper">
-            <img
-              alt="Video"
-              onClick={() => this.openVideo()}
-              src={video_icon}
-              className="demo"
-            />
-          </Tipsy>
-        </h1>
-        <div className="wrapper">
-          <StructureColumn app={this} />
-          <SectionColumn app={this} />
-          <VerseColumn app={this} />
-          <PassageColumn app={this} />
+      <DataContext.Provider value={globalData}>
+        <div id="approot" className={classes.join(" ")}>
+          <h1>
+            <Tipsy
+              content="Settings"
+              placement="left"
+              trigger="hover focus touch"
+              className="topper">
+              <img
+                alt="Settings"
+                onClick={() => this.openSettings()}
+                src={settings_icon}
+                className="settings"
+              />
+            </Tipsy>
+            {title}
+            <Tipsy
+              content="Video Tutorial"
+              placement="right"
+              trigger="hover focus touch"
+              className="topper">
+              <img
+                alt="Video"
+                onClick={() => this.openVideo()}
+                src={video_icon}
+                className="demo"
+              />
+            </Tipsy>
+          </h1>
+          <div className="wrapper">
+            <StructureColumn />
+            <SectionColumn />
+            <VerseColumn />
+            <PassageColumn />
+          </div>
+          {settingsPanel}
+          {videoPanel}
+          <TagFloater floater={this.floater} />
+          <Audio />
         </div>
-        {settingsPanel}
-        {videoPanel}
-        <TagFloater app={this} floater={this.floater} />
-        <Audio app={this} />
-      </div>
+      </DataContext.Provider>
     )
   }
 
@@ -2199,7 +2205,7 @@ class App extends Component {
   sgshow(e) {
     e.preventDefault()
     var ref = this.props.reference.replace(/[\s.]+/g, ".").toLowerCase()
-    this.props.app.PopupCenter(
+    this.PopupCenter(
       "https://scripture.guide/" + ref,
       "Scripture Guide",
       1000,
@@ -2212,7 +2218,7 @@ class App extends Component {
     var blocks = []
     var items = string.split(/[{}]/)
     for (var i = 0; i < items.length; i++) {
-      if (i % 2) blocks.push(<SGLink key={i} reference={items[i]} app={this} />)
+      if (i % 2) blocks.push(<SGLink key={i} reference={items[i]} />)
       else blocks.push(<span key={i}>{items[i]}</span>)
     }
     return blocks
@@ -2929,17 +2935,17 @@ if (!Element.prototype.matches) {
 }
 export default App
 
-export class SGLink extends Component {
-  render() {
-    if (this.props.reference === undefined) return null
-    var link = this.props.reference.replace(/\s+/g, ".").toLowerCase()
-    return (
-      <a
-        className="ref"
-        onClick={this.props.app.sgshow.bind(this)}
-        href={"https://scripture.guide/" + link}>
-        {this.props.reference}
-      </a>
-    )
-  }
+export function SGLink({reference}) {
+  var globalData = useContext(DataContext)
+  var app = globalData.app
+  if (reference === undefined) return null
+  var link = reference.replace(/\s+/g, ".").toLowerCase()
+  return (
+    <a
+      className="ref"
+      onClick={(e) => app.sgshow(e)}
+      href={"https://scripture.guide/" + link}>
+      {reference}
+    </a>
+  )
 }

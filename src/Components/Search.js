@@ -1,104 +1,84 @@
-import React, { Component } from "react";
-import { globalData } from "../globals.js";
+import React, { useContext, useEffect, useRef } from "react";
+import { DataContext } from "../DataContext";
 
 import { Passage } from "./Passage.js";  
 
 
 
-export  class SearchBox extends Component {
-	
-	search(event)
-	{
+export function SearchBox() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+	var state = globalData.state;
+	var initialized = useRef(false);
+
+	var search = (event) => {
 		var query = event.target.value;
 		var keycode = event.keyCode;
-		if(keycode===8 && query.length<3) { return this.props.app.clearTag();}
-		if(query.length<3 && this.props.app.state.refSearch!==true) {return false};
-		
-    
-		
+		if(keycode===8 && query.length<3) { return app.clearTag();}
+		if(query.length<3 && state.refSearch!==true) {return false}
+
 		//sanitize query for regex
 		query = query.replace(/(\|.{0,2})+$/,"");
 		query = query.replace(/\\[^b]/,"");
-		
-		//query
-		if(query.trim()===this.props.app.state.searchQuery) return false;
-		this.props.app.search(query.trim());
-	}
-	
-	searchModeOn()
-	{
-		this.props.app.setState({preSearchMode:true, selected_tag:null, selected_verse_id:null});
-	}
-	
-	componentDidUpdate()
-	{
-		if(document.getElementById("searchbox")!==null)
-		document.getElementById("searchbox").focus();
-	}
-	
-	componentDidMount()
-	{
-		if(document.getElementById("searchbox")===null) return false;
-		if(document.getElementById("searchbox").value.length>1) return false;
-		var q = this.props.app.state.searchQuery;
-		if(q===null) return false;
-		document.getElementById("searchbox").value = q;
-	}
-		
-  render()
-  {
-  	if(this.props.app.state.comSearchMode) return null;
-  	var val = this.props.app.state.searchQuery;
-  	if(val===null) val = "";
-  	val = val.replace(/([\\]b|[｢｣])/g,"/");
-  	if(this.props.app.state.urlSearch!==true) val="";
-  	
-  	if((this.props.app.state.preSearchMode || this.props.app.state.searchMode ) && !this.props.app.state.hebrewSearch)
-  	return(
-  		<input defaultValue={val} id="searchbox" type="text" onKeyUp={this.search.bind(this)} onClick={this.search.bind(this)}   />
-  		)
-  		
-  	return(
-  		<span onClick={this.searchModeOn.bind(this)} className="mag" role="img" aria-label="search">&#128270;</span>
-  		)
-  }
 
+		//query
+		if(query.trim()===state.searchQuery) return false;
+		app.search(query.trim());
+	};
+
+	var searchModeOn = () => {
+		app.setState({preSearchMode:true, selected_tag:null, selected_verse_id:null});
+	};
+
+	useEffect(() => {
+		var searchbox = document.getElementById("searchbox");
+		if(searchbox!==null) searchbox.focus();
+		if(initialized.current) return;
+		initialized.current = true;
+		if(searchbox===null) return;
+		if(searchbox.value.length>1) return;
+		var q = state.searchQuery;
+		if(q===null) return;
+		searchbox.value = q;
+	});
+
+	if(state.comSearchMode) return null;
+	var val = state.searchQuery;
+	if(val===null) val = "";
+	val = val.replace(/([\\]b|[｢｣])/g,"/");
+	if(state.urlSearch!==true) val="";
+
+	if((state.preSearchMode || state.searchMode ) && !state.hebrewSearch) {
+		return(
+			<input defaultValue={val} id="searchbox" type="text" onKeyUp={search} onClick={search}   />
+		)
+	}
+
+	return(
+		<span onClick={searchModeOn} className="mag" role="img" aria-label="search">&#128270;</span>
+	)
 }
 
-export class SearchResults extends Component {
+export function SearchResults() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+	var state = globalData.state;
 
-	result_count = 0;
-	componentDidUpdate()
-	{
-		if(this.result_count>0 || this.props.app.state.searchQuery!==null || this.props.app.state.commentaryAudioMode || this.props.app.state.hebrewSearch) return false;
-		this.props.app.setState(
-		{
-			searchMode:false,
-			preSearchMode:false,
-			highlighted_verse_range:[],
-			highlighted_tagged_verse_range:[]
-		},
-		this.props.app.clearTag.bind(this.props.app));
-	}
-	
-	unique(a){
-	  var arr = [];
-	  for (var i=0;i<a.length;i++) if (arr.indexOf(a[i])===-1)arr.push(a[i]);
-	  return arr;
-	}
+	var unique = (a) => {
+		var arr = [];
+		for (var i=0;i<a.length;i++) if (arr.indexOf(a[i])===-1)arr.push(a[i]);
+		return arr;
+	};
 
-
-	render()
-	{
 		var last_h = 0;
 		var j=0;
 		var groups = [];
-		var verses = this.props.app.state.highlighted_verse_range;
-		//if(this.props.app.state.commentaryAudioMode) verses = this.props.app.state.highlighted_tagged_verse_range;
+		var verses = state.highlighted_verse_range;
+		//if(state.commentaryAudioMode) verses = state.highlighted_tagged_verse_range;
 		for(var i in verses)
 		{
 			var verse_id = verses[i];
-			var hindex = this.props.app.getHeadingIndex(verse_id,this.props.app.state.outline);
+			var hindex = app.getHeadingIndex(verse_id,state.outline);
 			if(hindex!==last_h) { groups.push([]); j++;}
 			groups[j-1].push(verse_id);
 			last_h = hindex;
@@ -106,51 +86,63 @@ export class SearchResults extends Component {
 		var results = [];// eslint-disable-next-line
 		for(let gr in groups)
 		{
-			var h_index = this.props.app.getHeadingIndex(groups[gr][0],this.props.app.state.outline);
+			var h_index = app.getHeadingIndex(groups[gr][0],state.outline);
 			var h_text = null;
 			if(h_index===-1) h_text = "No Heading"
-			else h_text = globalData["outlines"][this.props.app.state.outline][h_index].heading;
+			else h_text = globalData["outlines"][state.outline][h_index].heading;
 
 			
 			var heading = null;
 			if(groups[gr].length===1) heading = globalData['index'][groups[gr][0]].string;
-			else heading = this.props.app.getReference(groups[gr]);
-			var q = this.props.app.state.searchQuery;
+			else heading = app.getReference(groups[gr]);
+			var q = state.searchQuery;
 			if(q===null) q = "";
 			q = q.replace(/[\\]b/g,"");
 			q = q.split("|");
 			var highlights = ["partialmatch"].concat(q);
 			
-			if(this.props.app.state.hebrewMode && this.props.app.state.hebrewStrongIndex !== null && this.props.app.state.hebrewSearch)
+			if(state.hebrewMode && state.hebrewStrongIndex !== null && state.hebrewSearch)
 			{
 				var tmp = globalData.hebrew.high;
-				if(tmp[this.props.app.state.hebrewStrongIndex]!==undefined)
-				highlights = tmp[this.props.app.state.hebrewStrongIndex].h;
+				if(tmp[state.hebrewStrongIndex]!==undefined)
+				highlights = tmp[state.hebrewStrongIndex].h;
 			}
 			
-			if(this.props.app.state.refSearch===true) highlights = null;
+			if(state.refSearch===true) highlights = null;
 			
 			
-      		results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>this.props.app.clearTag(null,groups[gr][0])}>{h_text}</span></h3>],
+	      	results.push([<h3 key={1}>{heading}&emsp;<span onClick={()=>app.clearTag(null,groups[gr][0])}>{h_text}</span></h3>],
       		[<Passage
       			  key={2}
-				  app={this.props.app}
-				  verses={this.unique(groups[gr])}
+				 
+				  verses={unique(groups[gr])}
 				  highlights={highlights}
 				/>]);
 		}
 		var reference = null;
-		this.result_count = results.length;
+		var result_count = results.length;
 		var nores = "";
 		if(results.length===0){ nores = " nores"; results = <div className="noresults"> No Matching Verses </div>; }
 		else
 		{
-			reference = this.props.app.getReference(verses);
+			reference = app.getReference(verses);
 			reference = <div className="SearchReference">{reference}</div>
 			
 			if(groups.length===1) reference=null;
 			if(verses.length>100) reference=null;
 		}
+
+		useEffect(() => {
+			if(result_count>0 || state.searchQuery!==null || state.commentaryAudioMode || state.hebrewSearch) return;
+			app.setState(
+			{
+				searchMode:false,
+				preSearchMode:false,
+				highlighted_verse_range:[],
+				highlighted_tagged_verse_range:[]
+			},
+			app.clearTag.bind(app));
+		}, [result_count, app]);
 
     return (
 
@@ -159,22 +151,20 @@ export class SearchResults extends Component {
       		{results}
 			</div>
 		)
-	}
-	
 }
 
 
 
 
-export class SearchHeading extends Component {
-	
-	render()
-	{
-		var verses = this.props.app.state.highlighted_verse_range;
-		//if(this.props.app.state.commentaryAudioMode) verses = this.props.app.state.highlighted_tagged_verse_range;
+export function SearchHeading() {
+	var globalData = useContext(DataContext);
+	var app = globalData.app;
+	var state = globalData.state;
+	var verses = state.highlighted_verse_range;
+	//if(state.commentaryAudioMode) verses = state.highlighted_tagged_verse_range;
 		var count = verses.length;
 		
-		var disQ = this.props.app.state.searchQuery;
+		var disQ = state.searchQuery;
 		if(disQ===null) disQ = "";
 		
 		disQ = disQ.replace(/[-]+/g,"–");
@@ -182,7 +172,7 @@ export class SearchHeading extends Component {
 		disQ = disQ.replace(/[\\]b([a-z])/g,"｢$1");
 		disQ = disQ.replace(/([a-z])[\\]b/g,"$1｣");
 		
-		if(this.props.app.state.comSearchMode && this.props.app.state.commentaryAudioMode && this.props.app.state.audioState!==null)
+		if(state.comSearchMode && state.commentaryAudioMode && state.audioState!==null)
 		{
 			var name = "Multi‑verse Audio Commentary"
 			
@@ -190,10 +180,10 @@ export class SearchHeading extends Component {
 			<div className="text_heading search"><span className="section_tile" >▽ {name}</span><br /><span id="drarrow">⤷</span>▷ {count} Referenced Verses</div>
 			)
 		}
-		if(this.props.app.state.comSearchMode)
+		if(state.comSearchMode)
 		{
 			name = "";
-			var title  = globalData.commentary.comSources[this.props.app.state.commentarySource];
+			var title  = globalData.commentary.comSources[state.commentarySource];
 			if(title===undefined) name = "Commentary Lookup";
 			else name = title.name
 			
@@ -205,6 +195,4 @@ export class SearchHeading extends Component {
 		return (
 			<div className="text_heading search"><span className="section_tile" >▽ {count} Search Results</span><br /><span id="drarrow">⤷</span>▷ “<span className='q'>{disQ}</span>”</div>
 			)
-	}
-	
 }
