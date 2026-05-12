@@ -2,17 +2,56 @@ import React, { useContext, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import { DataContext } from "../DataContext";
 
+// Audio host. The CloudFront function `SGMapping` translates:
+//   /commentary/{shortcode}/{file}  → /commentary/{S3_dir}/{file}
+//   /{VERSION}/{verse_id}           → /mp3/{VERSION}/{VERSION}-{verse_id}.mp3
+//   (HEBREW special-cased)
+const AUDIO_HOST = "https://audio.scripture.guide";
+
+/** Build the URL for a single verse's audio. */
+function verseAudioUrl(version, verseId) {
+	return AUDIO_HOST + "/" + version + "/" + verseId;
+}
+
+/**
+ * Resolve the audio file for a verse under a commentary source.
+ * Returns { filename, url, fileIndex, files } or null if no file exists.
+ * Centralizes the data-shape handling: `index[verseId][source]` is an
+ * array of filenames; we use the first one.
+ */
+function resolveCommentaryFile(globalData, verseId, source) {
+	var allFiles = globalData.commentary_audio && globalData.commentary_audio.files;
+	var byVerse = globalData.commentary_audio && globalData.commentary_audio.index;
+	if (!allFiles || !allFiles[source]) return null;
+	if (!byVerse || !byVerse[verseId] || !byVerse[verseId][source]) return null;
+
+	var filenames = byVerse[verseId][source];
+	var filename = Array.isArray(filenames) ? filenames[0] : filenames;
+	if (!filename) return null;
+
+	var files = allFiles[source];
+	var keys = Object.keys(files);
+	var fileIndex = keys.indexOf(filename);
+	if (fileIndex < 0) return null;
+
+	return {
+		filename: filename,
+		url: AUDIO_HOST + "/commentary/" + source + "/" + filename,
+		fileIndex: fileIndex,
+		files: files,
+		keys: keys
+	};
+}
 
 
 export default function Audio() {
 	var globalData = useContext(DataContext);
-	var app = globalData.app;
 	var state = globalData.state;
-	if(state.audioState===null) return null;
-	if(state.commentaryAudioMode) return <AudioCommentaryPlayer />
-	return <AudioVersePlayer />
+	if (state.audioState === null) return null;
+	if (state.commentaryAudioMode) return <AudioCommentaryPlayer />;
+	return <AudioVersePlayer />;
 }
-	
+
 
 function AudioVersePlayer() {
 	var globalData = useContext(DataContext);
@@ -20,87 +59,94 @@ function AudioVersePlayer() {
 	var state = globalData.state;
 	var audioPointerRef = useRef(0);
 
+	// Compute the queue (current + next) for the active verse.
+	var version = state.hebrewMode ? "HEBREW" : state.version;
+	var hasAudio = globalData.meta.version[state.version].audio === 1 || state.hebrewMode;
+
+	var url = verseAudioUrl(version, state.active_verse_id);
+	var next_url = url;
+	var next = null;
+	var resolvedPointer = audioPointerRef.current;
+
+	if (hasAudio) {
+		var p = state.audioPointer;
+		var idx = -1;
+		while (idx === -1 && p >= 0) {
+			idx = state.highlighted_verse_range.indexOf(state.active_verse_id, p);
+			p--;
+		}
+		if (idx >= 0) {
+			resolvedPointer = idx;
+			if (idx + 1 < state.highlighted_verse_range.length) {
+				next = state.highlighted_verse_range[idx + 1];
+				next_url = verseAudioUrl(version, next);
+			}
+		}
+	}
+
+	// Sync the ref + state.audioPointer via effect (NOT during render).
 	useEffect(() => {
-		if(state.audioPointer===audioPointerRef.current) return;
-		app.setState({audioPointer:audioPointerRef.current});
-	});
-
-	if(globalData.meta.version[state.version].audio!==1 && !state.version.hebrewMode) return null;
-		
-		//Queue Management
-		var version = state.version;
-		if(state.hebrewMode) version = "HEBREW";
-		var url = "https://audio.scripture.guide/"+version+"/"+state.active_verse_id;
-		var next_url = url;
-		var next = null;
-		var audioPointer = state.audioPointer;
-		var index = -1;
-		while(index===-1 && audioPointer>=0)
-		{
-			 index = state.highlighted_verse_range.indexOf(state.active_verse_id,audioPointer);
-			 audioPointer--;
+		if (resolvedPointer === audioPointerRef.current) return;
+		audioPointerRef.current = resolvedPointer;
+		if (state.audioPointer !== resolvedPointer) {
+			app.setState({ audioPointer: resolvedPointer });
 		}
-		 if((index+1)<state.highlighted_verse_range.length)  { 
-		 	next = state.highlighted_verse_range[index+1];
-		 	next_url =  "https://audio.scripture.guide/"+version+"/"+next;
-		 }
-		if(index>=0) audioPointer=index;
-		audioPointerRef.current = audioPointer;
-		
-		//Call Backs
-		var onStart = ()=>{
-			app.setState({    
-			selected_verse:null,    
-			audioState:"playing"})
+	}, [resolvedPointer, state.audioPointer, app]);
+
+	if (!hasAudio) return null;
+
+	var onStart = function() {
+		app.setState({ audioState: "playing" });
+	};
+
+	var onError = function(e) {
+		console.warn("Verse audio failed to load:", url, e);
+		app.setState({ audioState: null }, app.setUrl.bind(app));
+	};
+
+	var onEnded = function() {
+		if (next === null ||
+			state.highlighted_verse_range.indexOf(state.active_verse_id) < 0 ||
+			state.highlighted_verse_range.indexOf(next) < 0) {
+			return app.setState({ audioState: null }, app.setUrl.bind(app));
 		}
-		var onEnded = (next)=>{
+		var rangeIdx = -1;
+		if (app.arrowPointer === null) app.arrowPointer = 0;
+		for (var pointer = app.arrowPointer; rangeIdx === -1 && pointer >= 0; pointer--) {
+			rangeIdx = state.highlighted_verse_range.indexOf(state.active_verse_id, pointer);
+		}
+		rangeIdx++;
+		if (rangeIdx >= state.highlighted_verse_range.length) rangeIdx = 0;
+		var nexter = state.highlighted_verse_range[rangeIdx];
+		app.arrowPointer = audioPointerRef.current = rangeIdx;
+		app.setActiveVerse(nexter, undefined, undefined, true, "audio");
+	};
 
-
-		  	if(next===null || 
-		  	state.highlighted_verse_range.indexOf(state.active_verse_id)<0 || 
-		  	state.highlighted_verse_range.indexOf(next)<0)
-		  	{
-		  		return app.setState({  audioState:null },app.setUrl.bind(app));
-		  	}
-		  	else{
-		  		
-		  		  	var index = -1
-				  	var nexter = 0;
-				  	if(app.arrowPointer===null) app.arrowPointer = 0;
-					for(var pointer = app.arrowPointer; index===-1 && pointer>=0; pointer--)
-						index = state.highlighted_verse_range.indexOf(state.active_verse_id,pointer);
-					index++;
-					if(index>=state.highlighted_verse_range.length) index = 0;
-					nexter = state.highlighted_verse_range[index]; 
-					app.arrowPointer = audioPointerRef.current = index;
-		  		
-		  			app.setActiveVerse(nexter,undefined,undefined,true,"audio");
-		  		
-		  	} 
-		  	
-		} 
-
-		return <span><ReactPlayer className='react-player'
-          	width='0%'
-          	height='0%'
-			key={11}
-			url={url}
-			playing={true} 
-			onStart={onStart}
-			playbackRate={state.playbackRate || 1}
-			onEnded={onEnded.bind(null,next)}
-		/><ReactPlayer  className='react-player'
-          	width='0%'
-          	height='0%'
-			key={12}
-			url={next_url}
-			playing={true}
-			volume={0}
-			playbackRate={state.playbackRate || 1}
-			muted={true}
-		/></span>
-	
-
+	return (
+		<span>
+			<ReactPlayer
+				className='react-player'
+				width='0%' height='0%'
+				key={11}
+				url={url}
+				playing={true}
+				onStart={onStart}
+				onError={onError}
+				onEnded={onEnded}
+				playbackRate={state.playbackRate || 1}
+			/>
+			{next ? <ReactPlayer
+				className='react-player'
+				width='0%' height='0%'
+				key={12}
+				url={next_url}
+				playing={true}
+				volume={0}
+				muted={true}
+				playbackRate={state.playbackRate || 1}
+			/> : null}
+		</span>
+	);
 }
 
 
@@ -111,91 +157,106 @@ function AudioCommentaryPlayer() {
 	var audioPointerRef = useRef(0);
 	var hVersesRef = useRef([]);
 
-	var lookupVerses = (verses) => {
-		if(verses===undefined) return false;
-		if(verses.length===0)  return false;
-		
+	// Pick the verse to look up. If we have a commentary verse range from a
+	// previous resolution, use its first verse; otherwise use the focal verse.
+	var lookupVerseId = state.commentary_audio_verse_range.length > 0
+		? state.commentary_audio_verse_range[0]
+		: state.active_verse_id;
 
+	// Fall back to gileadi if the requested source is missing.
+	var source = state.commentaryAudio;
+	if (!globalData.commentary_audio.files || !globalData.commentary_audio.files[source]) {
+		source = "gileadi";
+	}
+
+	var current = resolveCommentaryFile(globalData, lookupVerseId, source);
+
+	// Sync audioPointer + highlight-verses range via effect, not during render.
+	useEffect(() => {
+		if (!current) return;
+		var nextPointer = current.fileIndex;
+		var verses = current.files[current.filename];
+		audioPointerRef.current = nextPointer;
+		hVersesRef.current = verses;
+
+		var needsRangeUpdate = !arraysEqual(state.commentary_audio_verse_range, verses);
+		if (state.audioPointer !== nextPointer || needsRangeUpdate) {
 			app.setState({
-				commentary_audio_verse_range:verses,
-				comSearchMode:false},
-				app.setActiveVerse.bind(app,verses[0],undefined,undefined,undefined,"audio"));
+				audioPointer: nextPointer,
+				commentary_audio_verse_range: verses,
+				comSearchMode: false
+			});
+		}
+	}, [current && current.filename, source, app, state.audioPointer, state.commentary_audio_verse_range]);
 
+	if (!current) {
+		// No audio file for this verse + source. Surface the failure rather
+		// than leaving the player stuck on "Loading".
+		console.warn("No commentary audio for verse", lookupVerseId, "source", source);
+		setTimeout(function() {
+			app.setState({ audioState: null, commentary_audio_verse_range: [] });
+		}, 0);
+		return null;
+	}
+
+	// Look up the next file in the source's playlist for prefetch.
+	var nextFile = current.keys[current.fileIndex + 1];
+	var nextUrl = null;
+	var nextVerse = null;
+	if (nextFile) {
+		nextUrl = AUDIO_HOST + "/commentary/" + source + "/" + nextFile;
+		var nhVerses = current.files[nextFile];
+		if (Array.isArray(nhVerses) && nhVerses.length > 0) nextVerse = nhVerses[0];
+	}
+
+	var onStart = function() {
+		app.setState({ audioState: "playing" });
 	};
 
-	useEffect(() => {
-		if(state.audioPointer===audioPointerRef.current) return;
-		var callback = lookupVerses.bind(null,hVersesRef.current);
-		app.setState({audioPointer:audioPointerRef.current},callback);
-	});
+	var onError = function(e) {
+		console.warn("Commentary audio failed to load:", current.url, e);
+		app.setState({ audioState: null, commentary_audio_verse_range: [] });
+	};
 
-	// URL for Commentary https://isaiah.scripture.guide/commentary/gileadi/Isaiah_01.1.mp3
-			var verse_id = state.active_verse_id;
-			if(state.commentary_audio_verse_range.length>0) verse_id = state.commentary_audio_verse_range[0];
-			
-			
-			var commentaryAudio = state.commentaryAudio;
-			if(globalData.commentary_audio.files[state.commentaryAudio]===undefined) commentaryAudio = "gileadi";
-			
-			var filename = globalData.commentary_audio.index[verse_id][commentaryAudio];
-			var url = "https://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+filename;
-			
-			var keys = Object.keys(globalData.commentary_audio.files[commentaryAudio]);
-			var com_index = keys.indexOf(filename[0]);
-			audioPointerRef.current=com_index;
-			var nextfile = keys[com_index+1];
-			if(nextfile===undefined) return null;
-			var next_url = "https://scripture.guide/mp3/commentary/"+commentaryAudio+"/"+nextfile;
-			hVersesRef.current = globalData.commentary_audio.files[commentaryAudio][filename];
-			var nh_verses = globalData.commentary_audio.files[commentaryAudio][nextfile];
-			var next = nh_verses[0];
-			//set highlight verses
-			
-			if(hVersesRef.current===undefined)
-			{
-				//debugger;
-				return false;
-			}
-			
-			var onStart = ()=>{
-				app.setState({    
-				selected_verse:null,
-				commentary_audio_verse_range: hVersesRef.current,
-				audioState:"playing"});
-				
-				//preload next
-			}
-		
-		
-		var onEnded = (next)=>{
-		  	if(next===null || next===undefined) return app.setState({  audioState:null,commentary_audio_verse_range:[] });
-		  	
-		  	app.setActiveVerse(next,undefined,undefined,"force","comaudio");
-		  	
-		  	
+	var onEnded = function() {
+		if (nextVerse === null || nextVerse === undefined) {
+			return app.setState({ audioState: null, commentary_audio_verse_range: [] });
 		}
-		
-		return <span><ReactPlayer className='react-player'
-          	width='0%'
-          	height='0%'
-			key={21}
-			url={url}
-			playing={true} 
-			onStart={onStart}
-			playbackRate={state.playbackRate || 1}
-			onEnded={onEnded.bind(null,next)}
-		/><ReactPlayer  className='react-player'
-          	width='0%'
-          	height='0%'
-			key={22}
-			url={next_url}
-			playing={true}
-			volume={0}
-			playbackRate={state.playbackRate || 1}
-			muted={true}
-		/></span>
-	
+		app.setActiveVerse(nextVerse, undefined, undefined, "force", "comaudio");
+	};
 
+	return (
+		<span>
+			<ReactPlayer
+				className='react-player'
+				width='0%' height='0%'
+				key={21}
+				url={current.url}
+				playing={true}
+				onStart={onStart}
+				onError={onError}
+				onEnded={onEnded}
+				playbackRate={state.playbackRate || 1}
+			/>
+			{nextUrl ? <ReactPlayer
+				className='react-player'
+				width='0%' height='0%'
+				key={22}
+				url={nextUrl}
+				playing={true}
+				volume={0}
+				muted={true}
+				playbackRate={state.playbackRate || 1}
+			/> : null}
+		</span>
+	);
 }
 
-	
+
+function arraysEqual(a, b) {
+	if (a === b) return true;
+	if (!a || !b) return false;
+	if (a.length !== b.length) return false;
+	for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+	return true;
+}

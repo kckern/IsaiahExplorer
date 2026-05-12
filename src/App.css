@@ -53,12 +53,17 @@ body .text_heading
 }
 
 /* Roboto Condensed overrides INSIDE scripture-content containers: the
-   tag/block detail copy and the tagged-block description text are
-   editorial/UI prose, not scripture. */
+   tag/block detail copy, the tagged-block description, the parallel-table
+   block headings (gray & blue rows), and the tag-tree title are all
+   editorial/UI prose, not scripture. Force font-style:normal so any
+   inherited italic from the prior Scripture styling is cleared. */
 body #text .detail,
-body #text .taggedblock .desc
+body #text .taggedblock .desc,
+body #text > table.parallel .meta td,
+body .tagtitle
 {
 	font-family: 'Roboto Condensed', 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
+	font-style: normal;
 }
 #root
 {

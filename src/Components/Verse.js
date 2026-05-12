@@ -136,12 +136,13 @@ var state = globalData.state;
 
 	function cyclePlaybackRate() {
 		let sequence = {
-			"1": 1.5,
+			"1": 1.25,
+			"1.25": 1.5,
 			"1.5": 2,
 			"2": 1
 		};
 		let rate = state.playbackRate;
-		app.setState({ playbackRate: sequence[rate] });
+		app.setState({ playbackRate: sequence[rate] || 1 });
 	}
 
 	var classes = [];
@@ -149,6 +150,7 @@ var state = globalData.state;
 
 	let rateLabel = state.playbackRate + "×";
 	if (state.playbackRate === 1.5) rateLabel = "1½";
+	if (state.playbackRate === 1.25) rateLabel = "1¼";
 
 	var icon = play_icon;
 	var text = "Play Audio Verse";
@@ -204,9 +206,10 @@ var state = globalData.state;
 	}
 
 	function handleOptions() {
-		app.setState({ audioState: null }, function() {
-			setOptions(true);
-		});
+		// Just open the picker; do NOT tear down active playback.
+		// The user is choosing a source, not stopping audio. If they pick
+		// a different source, startPlaying() below will switch streams.
+		setOptions(true);
 	}
 
 	function selectOption(e) {
