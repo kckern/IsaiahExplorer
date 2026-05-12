@@ -70,7 +70,15 @@ var state = globalData.state;
 		if (e.target.parentElement.className === "leaf") return false;
 		if (e.target.parentElement.className === "branch") return false;
 		app.setState({ infoOpen: true, commentaryMode: false }, function() {
-			setTimeout(this.scrollTagTree.bind(this), 1000);
+			var panel = document.querySelector(".tag_meta");
+			if (!panel) return;
+			var onDone = function() {
+				panel.removeEventListener('transitionend', onDone);
+				app.scrollTagTree();
+			};
+			panel.addEventListener('transitionend', onDone, { once: true });
+			// Fallback if no transition fires (e.g. user has prefers-reduced-motion)
+			setTimeout(onDone, 600);
 		}.bind(app));
 	}
 
