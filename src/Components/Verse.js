@@ -13,6 +13,11 @@ import { TAG_PANEL } from "../state/tagPanel";
 import { AUDIO_MODE } from "../state/audioState";
 import AudioMenuPopover from "./AudioMenuPopover";
 
+const COMMENTARY_SOURCE_LABELS = {
+	gileadi: "Gileadi",
+	mcgee: "McGee",
+};
+
 export default function VerseColumn() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
@@ -264,15 +269,16 @@ var state = globalData.state;
 	if (state.playbackRate === 1.25) rateLabel = "1¼";
 
 	var classes = [];
+	var srcShort = COMMENTARY_SOURCE_LABELS[state.commentaryAudio] || state.commentaryAudio;
 	var icon = play_icon;
-	var shortText = "Commentary";
+	var shortText = srcShort;
 	if (state.audioMode === AUDIO_MODE.COMMENTARY_LOADING) {
 		icon = loading_icon;
-		shortText = "Loading";
+		shortText = "Loading " + srcShort;
 	}
 	if (state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING) {
 		icon = playing_icon;
-		shortText = "Pause";
+		shortText = "Pause " + srcShort;
 	}
 
 	return (
