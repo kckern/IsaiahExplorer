@@ -233,8 +233,11 @@ var state = globalData.state;
 	);
 }
 
+// React.memo gates re-renders caused by parent re-renders with stable props.
+// NOTE: this does NOT prevent re-renders triggered by useContext(DataContext) —
+// any change to globalData will re-render every consumer. The memo's real
+// benefit is bounded: ancestor-driven re-renders only.
 export const TagTree = React.memo(TagTreeImpl, function(prev, next) {
-	// Re-render only when `base` changes (parent re-renders cascade in)
 	return prev.base === next.base;
 });
 
@@ -269,6 +272,10 @@ var state = globalData.state;
 	);
 }
 
+// React.memo here is bounded the same way as TagTree above: it skips
+// parent-driven re-renders when (tag, desc) are stable, but useContext
+// subscriptions on DataContext will still re-render every consumer when
+// globalData changes.
 const TagTreeLeaf = React.memo(TagTreeLeafImpl, function(prev, next) {
 	return prev.tag === next.tag && prev.desc === next.desc;
 });

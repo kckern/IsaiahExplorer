@@ -641,10 +641,12 @@ class App extends Component {
 
     if (e.keyCode === 32 && this.state.commentaryAudioMode) {
       e.preventDefault()
-      return this.setAudioMode(
-        this.state.audioMode,
-        this.clickElementID("audio_commentary")
-      )
+      // Was: this.setAudioMode(this.state.audioMode, this.clickElementID("audio_commentary"))
+      // The 2nd arg was supposed to be a setState callback but was being invoked
+      // immediately, returning undefined. The setAudioMode call itself was a no-op
+      // (writing the same mode back to state). Same anti-pattern Task A6 fixed in
+      // Tags.js — just trigger the click directly.
+      return this.clickElementID("audio_commentary")
     }
     if (
       e.keyCode === 32 &&
@@ -1784,11 +1786,13 @@ class App extends Component {
     })
   }
 
+  // No-op stub kept for back-compat: the body previously click()'d
+  // #audio_verse on a state flip, but that path is now dead. Callers
+  // still reference this method, so we preserve the flag-reset behavior
+  // without invoking any audio side effect.
   triggerAudio() {
     if (this.state.triggerAudio) {
-      this.setState({triggerAudio: false}, function() {
-        //document.getElementById("audio_verse").click();
-      })
+      this.setState({triggerAudio: false})
     }
   }
 
@@ -1877,8 +1881,6 @@ class App extends Component {
 
     if (element === undefined) return false
     if (container === undefined) return false
-
-    //	if(this.checkInView(container,element)===true) return false;
 
     var parent = container.getBoundingClientRect().y
     var child = element.getBoundingClientRect().y
@@ -2131,6 +2133,10 @@ class App extends Component {
       document.getElementById("version_meta").classList[1] === "visible"
 
     var blueBarisVisible = this.checkInView(container, element)
+    // TODO(audit-followup): parentNode.lastChild here is the same kind of
+    // brittle DOM walk that B1 replaced for .previousSibling chains. The
+    // floater positioning logic could be migrated to a [data-floater-content]
+    // selector, but doing so requires reshaping the verse renderer; deferred.
     var textNotVisible = !this.checkInView(
       container,
       element.parentNode.lastChild,
