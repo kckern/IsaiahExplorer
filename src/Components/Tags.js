@@ -37,9 +37,9 @@ var state = globalData.state;
 		key = keys[0];
 	}
 
-	var floater = floaters[key];
+	var floaterContent = floaters[key];
 
-	return <div id="floater" style={{ display: "block" }}>{floater}</div>;
+	return <div id="floater" style={{ display: "block" }}>{floaterContent}</div>;
 }
 
 export function TaggedVerses() {

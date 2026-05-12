@@ -213,13 +213,13 @@ function StructureMeta({open, toggle}) {
 }
 
 function StructureOption({option, optionKey, toggle}) {
+  var app = useContext(DataContext).app;
   if(option===undefined) return null;
   var classes = ["option"];
   if (optionKey === 0) classes.push("first top");
   else if (optionKey < 5) classes.push("top");
   else if (optionKey === 5) classes.push("other firstother");
   else classes.push("other");
-  var app = useContext(DataContext).app;
   return (
     <div
       className={classes.join(" ")}

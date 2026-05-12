@@ -42,6 +42,21 @@ export function SearchBox() {
 		searchbox.value = q;
 	});
 
+	// Reset search state when there are no results and nothing active to display.
+	// Uses highlighted_verse_range.length as the "result_count" proxy (computed in detail below).
+	var hasResults = state.highlighted_verse_range && state.highlighted_verse_range.length > 0;
+	useEffect(() => {
+		if(hasResults || state.searchQuery!==null || state.commentaryAudioMode || state.hebrewSearch) return;
+		app.setState(
+		{
+			searchMode:false,
+			preSearchMode:false,
+			highlighted_verse_range:[],
+			highlighted_tagged_verse_range:[]
+		},
+		app.clearTag.bind(app));
+	}, [hasResults, app, state.searchQuery, state.commentaryAudioMode, state.hebrewSearch]);
+
 	if(state.comSearchMode) return null;
 	var val = state.searchQuery;
 	if(val===null) val = "";
@@ -127,22 +142,10 @@ export function SearchResults() {
 		{
 			reference = app.getReference(verses);
 			reference = <div className="SearchReference">{reference}</div>
-			
+
 			if(groups.length===1) reference=null;
 			if(verses.length>100) reference=null;
 		}
-
-		useEffect(() => {
-			if(result_count>0 || state.searchQuery!==null || state.commentaryAudioMode || state.hebrewSearch) return;
-			app.setState(
-			{
-				searchMode:false,
-				preSearchMode:false,
-				highlighted_verse_range:[],
-				highlighted_tagged_verse_range:[]
-			},
-			app.clearTag.bind(app));
-		}, [result_count, app]);
 
     return (
 

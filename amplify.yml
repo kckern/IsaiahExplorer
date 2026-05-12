@@ -9,9 +9,11 @@ frontend:
         - npm install --legacy-peer-deps
     build:
       commands:
-        # Use react-scripts directly on Node 16 — no --openssl-legacy-provider needed
-        # (Node 16 still defaults to legacy OpenSSL provider, so webpack 4 works as-is)
-        - node node_modules/.bin/react-scripts build
+        # CI=false: Amplify sets CI=true by default which elevates ESLint warnings
+        # to build errors. The legacy codebase has many pre-existing warnings
+        # (unused vars, exhaustive-deps) that the local dev build has always tolerated.
+        # Node 16 doesn't need --openssl-legacy-provider; webpack 4 works as-is.
+        - CI=false node node_modules/.bin/react-scripts build
   artifacts:
     baseDirectory: build
     files:
