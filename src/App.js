@@ -20,6 +20,7 @@ import isElectron from 'is-electron';
 import { parseRoute, buildRoute } from "./routing/routeCodec"
 import { getFocalTag } from "./state/tagSelectors"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
+import { AUDIO_MODE, legacyAudioState, legacyCommentaryAudioMode, audioModeFromLegacy } from "./state/audioState"
 import { Helmet } from "react-helmet"
 import "./App.css"
 
@@ -77,6 +78,7 @@ class App extends Component {
 
     version_views: 1,
 
+    audioMode: AUDIO_MODE.IDLE,
     audioState: null,
     playbackRate: 1,
     audioPointer: 0,
@@ -639,8 +641,8 @@ class App extends Component {
 
     if (e.keyCode === 32 && this.state.commentaryAudioMode) {
       e.preventDefault()
-      return this.setState(
-        {commentaryAudioMode: true},
+      return this.setAudioMode(
+        this.state.audioMode,
         this.clickElementID("audio_commentary")
       )
     }
@@ -1720,6 +1722,7 @@ class App extends Component {
       !this.state.commentaryAudioMode
     )
       audioState = null
+    var nextAudioMode = audioModeFromLegacy(audioState, this.state.commentaryAudioMode)
 
     outline = outline === undefined ? this.state.outline : outline
     structure = structure === undefined ? this.state.structure : structure
@@ -1740,7 +1743,9 @@ class App extends Component {
       hebrewStrongIndex: strong,
       hebrewWord: word,
       urlSearch: false,
-      audioState: audioState,
+      audioMode: nextAudioMode,
+      audioState: legacyAudioState(nextAudioMode),
+      commentaryAudioMode: legacyCommentaryAudioMode(nextAudioMode),
       allCollapsed: allCollapsed,
       commentary_audio_verse_range: commentary_audio_verse_range,
 
@@ -2199,6 +2204,7 @@ class App extends Component {
       selected_tag: null,
       searchMode: false,
       comSearchMode: false,
+      audioMode: AUDIO_MODE.IDLE,
       audioState: null,
       commentaryAudioMode: false,
       preSearchMode: false,
@@ -2356,6 +2362,13 @@ class App extends Component {
       tagMode: derivedTagMode(panel),
       infoOpen: derivedInfoOpen(panel),
     });
+  }
+  setAudioMode(mode, callback) {
+    this.setState({
+      audioMode: mode,
+      audioState: legacyAudioState(mode),
+      commentaryAudioMode: legacyCommentaryAudioMode(mode),
+    }, callback);
   }
   setActiveStructure(shortcode) {
     this.setState(

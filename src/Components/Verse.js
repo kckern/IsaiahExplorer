@@ -11,6 +11,7 @@ import comment_icon from "../img/interface/comment.png";
 import loading_img from "../img/interface/message.gif";
 import heb_png from "../img/interface/hebrew.png";
 import { TAG_PANEL } from "../state/tagPanel";
+import { AUDIO_MODE } from "../state/audioState";
 
 export default function VerseColumn() {
 	var globalData = useContext(DataContext);
@@ -116,11 +117,12 @@ var state = globalData.state;
 	function startPlaying() {
 		app.setState(
 			{
+				audioMode: AUDIO_MODE.VERSE_LOADING,
 				audioState: "loading",
+				commentaryAudioMode: false,
 				audioPointer: 0,
 				selected_verse_id: null,
-				commentary_audio_verse_range: [],
-				commentaryAudioMode: false
+				commentary_audio_verse_range: []
 			},
 			app.setUrl.bind(app)
 		);
@@ -129,7 +131,7 @@ var state = globalData.state;
 	function handleClick() {
 		if (isAudioDisabled) return false;
 		if (state.audioState !== null) {
-			app.setState({ audioState: null }, function() {
+			app.setAudioMode(AUDIO_MODE.IDLE, function() {
 				if (state.commentaryAudioMode) startPlaying();
 				app.setUrl();
 			});
@@ -158,19 +160,17 @@ var state = globalData.state;
 
 	var icon = play_icon;
 	var text = "Play Audio Verse";
-	if (state.commentaryAudioMode === false) {
-		if (state.audioState === "loading") {
-			icon = loading_icon;
-			text = "Loading Audio Verse";
-			classes.push("active_audio");
-		}
-		if (state.audioState === "playing") {
-			icon = playing_icon;
-			text = "Pause Audio Verse";
-			classes.push("active_audio");
-		}
+	if (state.audioMode === AUDIO_MODE.VERSE_LOADING) {
+		icon = loading_icon;
+		text = "Loading Audio Verse";
+		classes.push("active_audio");
 	}
-	let isPlaying = state.audioState === "playing";
+	if (state.audioMode === AUDIO_MODE.VERSE_PLAYING) {
+		icon = playing_icon;
+		text = "Pause Audio Verse";
+		classes.push("active_audio");
+	}
+	let isPlaying = state.audioMode === AUDIO_MODE.VERSE_PLAYING || state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING;
 	let button = (
 		<button
 			type="button"
@@ -200,30 +200,34 @@ var state = globalData.state;
 	function startPlaying(shortcode) {
 		app.setTagPanel(TAG_PANEL.CLOSED);
 		app.setState({
+			audioMode: AUDIO_MODE.COMMENTARY_LOADING,
 			audioState: "loading",
+			commentaryAudioMode: true,
 			audioPointer: 0,
-			commentaryAudio: shortcode,
-			commentaryAudioMode: true
+			commentaryAudio: shortcode
 		});
 	}
 
 	function handleClick(e) {
 		if (e === undefined) return false;
 		if (state.audioState !== null) {
-			app.setState({ audioState: null, commentary_audio_verse_range: [] }, function() {
+			app.setState({
+				audioMode: AUDIO_MODE.IDLE,
+				audioState: null,
+				commentaryAudioMode: false,
+				commentary_audio_verse_range: []
+			}, function() {
 				if (!state.commentaryAudioMode) {
 					startPlaying(state.commentaryAudio);
 				} else {
-					app.setState(
-						{ commentaryAudioMode: false },
-						app.setActiveVerse.bind(app, state.active_verse_id, undefined, undefined, undefined, "audio")
-					);
+					app.setActiveVerse(state.active_verse_id, undefined, undefined, undefined, "audio");
 				}
 			});
 		} else {
 			startPlaying(state.commentaryAudio);
 		}
 	}
+
 
 	function handleOptions() {
 		// Just open the picker; do NOT tear down active playback.
@@ -252,17 +256,15 @@ var state = globalData.state;
 	var classes = [];
 	var icon = play_icon;
 	var text = "Play Commentary";
-	if (state.commentaryAudioMode) {
-		if (state.audioState === "loading") {
-			icon = loading_icon;
-			text = "Loading Commentary";
-			classes.push("active_audio");
-		}
-		if (state.audioState === "playing") {
-			icon = playing_icon;
-			text = "Pause Commentary";
-			classes.push("active_audio");
-		}
+	if (state.audioMode === AUDIO_MODE.COMMENTARY_LOADING) {
+		icon = loading_icon;
+		text = "Loading Commentary";
+		classes.push("active_audio");
+	}
+	if (state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING) {
+		icon = playing_icon;
+		text = "Pause Commentary";
+		classes.push("active_audio");
 	}
 
 	return <button

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import { DataContext } from "../DataContext";
+import { AUDIO_MODE, isCommentaryMode } from "../state/audioState";
 
 // Audio host. The CloudFront function `SGMapping` translates:
 //   /commentary/{shortcode}/{file}  → /commentary/{S3_dir}/{file}
@@ -47,8 +48,8 @@ function resolveCommentaryFile(globalData, verseId, source) {
 export default function Audio() {
 	var globalData = useContext(DataContext);
 	var state = globalData.state;
-	if (state.audioState === null) return null;
-	if (state.commentaryAudioMode) return <AudioCommentaryPlayer />;
+	if (state.audioMode === AUDIO_MODE.IDLE) return null;
+	if (isCommentaryMode(state.audioMode)) return <AudioCommentaryPlayer />;
 	return <AudioVersePlayer />;
 }
 
@@ -96,19 +97,19 @@ function AudioVersePlayer() {
 	if (!hasAudio) return null;
 
 	var onStart = function() {
-		app.setState({ audioState: "playing" });
+		app.setAudioMode(AUDIO_MODE.VERSE_PLAYING);
 	};
 
 	var onError = function(e) {
 		console.warn("Verse audio failed to load:", url, e);
-		app.setState({ audioState: null }, app.setUrl.bind(app));
+		app.setAudioMode(AUDIO_MODE.IDLE, app.setUrl.bind(app));
 	};
 
 	var onEnded = function() {
 		if (next === null ||
 			state.highlighted_verse_range.indexOf(state.active_verse_id) < 0 ||
 			state.highlighted_verse_range.indexOf(next) < 0) {
-			return app.setState({ audioState: null }, app.setUrl.bind(app));
+			return app.setAudioMode(AUDIO_MODE.IDLE, app.setUrl.bind(app));
 		}
 		var rangeIdx = -1;
 		if (app.arrowPointer === null) app.arrowPointer = 0;
@@ -194,7 +195,12 @@ function AudioCommentaryPlayer() {
 		// than leaving the player stuck on "Loading".
 		console.warn("No commentary audio for verse", lookupVerseId, "source", source);
 		setTimeout(function() {
-			app.setState({ audioState: null, commentary_audio_verse_range: [] });
+			app.setState({
+				audioMode: AUDIO_MODE.IDLE,
+				audioState: null,
+				commentaryAudioMode: false,
+				commentary_audio_verse_range: []
+			});
 		}, 0);
 		return null;
 	}
@@ -210,17 +216,27 @@ function AudioCommentaryPlayer() {
 	}
 
 	var onStart = function() {
-		app.setState({ audioState: "playing" });
+		app.setAudioMode(AUDIO_MODE.COMMENTARY_PLAYING);
 	};
 
 	var onError = function(e) {
 		console.warn("Commentary audio failed to load:", current.url, e);
-		app.setState({ audioState: null, commentary_audio_verse_range: [] });
+		app.setState({
+			audioMode: AUDIO_MODE.IDLE,
+			audioState: null,
+			commentaryAudioMode: false,
+			commentary_audio_verse_range: []
+		});
 	};
 
 	var onEnded = function() {
 		if (nextVerse === null || nextVerse === undefined) {
-			return app.setState({ audioState: null, commentary_audio_verse_range: [] });
+			return app.setState({
+				audioMode: AUDIO_MODE.IDLE,
+				audioState: null,
+				commentaryAudioMode: false,
+				commentary_audio_verse_range: []
+			});
 		}
 		app.setActiveVerse(nextVerse, undefined, undefined, "force", "comaudio");
 	};
