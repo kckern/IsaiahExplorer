@@ -173,7 +173,7 @@ var state = globalData.state;
 	}
 
 	return (
-		<div className="audio-btn-group" id="audio_verse_group" ref={triggerRef}>
+		<div className="audio-btn-group" id="audio_verse_group" ref={triggerRef} role="group" aria-label="Verse audio">
 			<button
 				type="button"
 				id="audio_verse"
@@ -183,8 +183,13 @@ var state = globalData.state;
 				aria-pressed={state.audioMode === AUDIO_MODE.VERSE_PLAYING}
 			>
 				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
-				<span className="audio-btn__rate" onClick={(e) => { e.stopPropagation(); cyclePlaybackRate(); }}>{rateLabel}</span>
 			</button>
+			<button
+				type="button"
+				className="audio-btn audio-btn--rate"
+				onClick={cyclePlaybackRate}
+				aria-label={"Playback speed: " + rateLabel}
+			>{rateLabel}</button>
 			<button
 				type="button"
 				className="audio-btn audio-btn--dropdown"
@@ -261,7 +266,7 @@ var state = globalData.state;
 	}
 
 	return (
-		<div className="audio-btn-group" id="audio_commentary_group" ref={triggerRef}>
+		<div className="audio-btn-group" id="audio_commentary_group" ref={triggerRef} role="group" aria-label="Commentary audio">
 			<button
 				type="button"
 				id="audio_commentary"
