@@ -1820,15 +1820,12 @@ class App extends Component {
     if (element === undefined) return false
     if (container === undefined) return false
 
-    if (this.state.selected_tag !== null)
-      if (
-        globalData["tags"]["tagIndex"][this.state.selected_tag].meta ===
-        "parallel"
-      ) {
-        element =
-          element.parentNode.parentNode.parentNode.parentNode.previousSibling
-            .previousSibling
-      }
+    if (this.state.selected_tag !== null &&
+        globalData["tags"]["tagIndex"][this.state.selected_tag].meta === "parallel") {
+      var parallelHeading = element.closest("table.parallel")
+        && element.closest("table.parallel").querySelector('tr[data-scroll-target="parallel-heading"]');
+      if (parallelHeading) element = parallelHeading;
+    }
 
     if (this.checkInView(container, element) === true) return false
 	//debugger;

@@ -444,10 +444,12 @@ var state = globalData.state;
 		if (textNode.querySelectorAll(".versebox_highlighted").length === 0) return;
 
 		var tagMeta = globalData["tags"]["tagIndex"][state.selected_tag];
-		if (tagMeta.verses[0] !== state.active_verse_id)
-			textNode
-				.querySelectorAll(".versebox_highlighted")[0]
-				.parentNode.parentNode.parentNode.parentNode.previousSibling.previousSibling.scrollIntoView();
+		if (tagMeta.verses[0] !== state.active_verse_id) {
+			var hl = textNode.querySelectorAll(".versebox_highlighted")[0];
+			var heading = hl.closest("table.parallel")
+				&& hl.closest("table.parallel").querySelector('tr[data-scroll-target="parallel-heading"]');
+			if (heading) heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
 		for (var i = 1; i <= document.querySelectorAll("#parTable .row").length; i++) {
 			var row = document.getElementById(i + "content" + tagstr);
 			if (row === null) continue;
@@ -495,7 +497,7 @@ var state = globalData.state;
 		if (typeof tagStructure[i + "B"] === "undefined") {
 			items.push([
 				heading,
-				<tr className="metaref" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
+				<tr className="metaref" data-scroll-target="parallel-heading" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
 					<td colSpan={2}>
 						{left_label}
 						<div className="ref">{tagStructure[i + "A"].ref}</div>
@@ -534,7 +536,7 @@ var state = globalData.state;
 
 		items.push([
 			heading,
-			<tr className="metaref" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
+			<tr className="metaref" data-scroll-target="parallel-heading" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
 				<td>
 					{left_label}
 					<div className="ref">{tagStructure[i + "A"].ref}</div>
