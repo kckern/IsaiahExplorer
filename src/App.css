@@ -22,8 +22,11 @@
 /* Structure */
 html,body
 {
-
-	font-family: 'Scripture', Times, Georgia, serif;
+	/* UI default is Roboto Condensed. Scripture font is reserved for the
+	   scripture-content containers below (#text, #verse, .versetext_com,
+	   .extraversions tr.cells td). Comfortaa overrides (further down) still
+	   win where they apply because they have higher selector specificity. */
+	font-family: 'Roboto Condensed', 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
 	margin: 0;
     padding: 0;
 
@@ -33,6 +36,19 @@ html,body
     background-color:#000;
 	cursor:pointer;
 	transform-origin: 0 0;
+}
+
+/* Scripture font: prose, focal verse, side-by-side translations, and
+   commentary verse-text. Inheriting children pick this up automatically
+   (e.g., #text p, #verse blockquote, the heading_title inside a column). */
+body #text,
+body #verse,
+body .versetext_com,
+body .extraversions tr.cells td,
+body .extraversions tr.cells td div,
+body #commentary_text .versetext_com
+{
+	font-family: 'Scripture', Times, Georgia, serif;
 }
 #root
 {
