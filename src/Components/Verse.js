@@ -110,7 +110,7 @@ var state = globalData.state;
 				<div className="heading_title" id="audio_heading">
 					<AudioVerse />
 					<AudioCommentary />
-					<button type="button" id="commentary" onClick={() => {
+					<button type="button" id="commentary" aria-pressed={state.commentaryMode === true} onClick={() => {
 						app.setTagPanel(state.tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED);
 						app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id }, app.setUrl.bind(app));
 					}}><img alt="Commentary" src={comment_icon} /> {readhide}</button>
