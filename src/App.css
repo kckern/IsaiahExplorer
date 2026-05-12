@@ -1,3 +1,12 @@
+:root {
+    --ui-surface: #444;
+    --ui-surface-hover: #555;
+    --ui-border: #222;
+    --ui-accent: #2a6ea1;
+    --ui-on-accent: #fff;
+    --ui-focus: #4a90e2;
+}
+
 @font-face {
 	font-family: 'Scripture';
 	src: url('./img/fonts/scripture.woff2') format('woff2');
@@ -3048,15 +3057,6 @@ button#commentary
 	color:#999;
 }
 
-:root {
-    --ui-surface: #444;
-    --ui-surface-hover: #555;
-    --ui-border: #222;
-    --ui-accent: #2a6ea1;
-    --ui-on-accent: #fff;
-    --ui-focus: #4a90e2;
-}
-
 #audio_heading {
     display: flex;
     gap: 8px;
@@ -3078,7 +3078,7 @@ button#commentary
     border: 1px solid var(--ui-border);
     background: var(--ui-surface);
     color: var(--ui-on-accent);
-    font: 500 13px 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif;
+    font: 500 13px 'Comfortaa', 'Helvetica Neue', Arial, sans-serif;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -3146,12 +3146,12 @@ button#commentary
     z-index: 100;
 }
 .audio-menu__group { margin: 8px 0; }
-.audio-menu__heading { font: 600 11px 'Roboto Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 4px; padding: 0 8px; }
+.audio-menu__heading { font: 600 11px 'Comfortaa', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 4px; padding: 0 8px; }
 .audio-menu__item, .audio-menu__chip {
     background: transparent;
     border: 0;
     cursor: pointer;
-    font: 400 13px 'Roboto Condensed', sans-serif;
+    font: 400 13px 'Comfortaa', sans-serif;
 }
 .audio-menu__item {
     display: block;

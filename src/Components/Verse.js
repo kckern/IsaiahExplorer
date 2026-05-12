@@ -114,6 +114,7 @@ function AudioVerse() {
 	var app = globalData.app;
 var state = globalData.state;
 	const [menuOpen, setMenuOpen] = useState(false);
+	const triggerRef = useRef(null);
 	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
 
 	function startPlaying() {
@@ -172,7 +173,7 @@ var state = globalData.state;
 	}
 
 	return (
-		<div className="audio-btn-group" id="audio_verse_group">
+		<div className="audio-btn-group" id="audio_verse_group" ref={triggerRef}>
 			<button
 				type="button"
 				id="audio_verse"
@@ -192,7 +193,7 @@ var state = globalData.state;
 				aria-haspopup="menu"
 				aria-expanded={menuOpen}
 			>▾</button>
-			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)}>
+			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={triggerRef}>
 				<div className="audio-menu__group" role="group" aria-label="Playback speed">
 					<div className="audio-menu__heading">Playback speed</div>
 					{[1, 1.25, 1.5, 2].map(rate =>
@@ -214,6 +215,7 @@ function AudioCommentary() {
 	var app = globalData.app;
 var state = globalData.state;
 	const [menuOpen, setMenuOpen] = useState(false);
+	const triggerRef = useRef(null);
 
 	function startPlaying(shortcode) {
 		app.setTagPanel(TAG_PANEL.CLOSED);
@@ -259,7 +261,7 @@ var state = globalData.state;
 	}
 
 	return (
-		<div className="audio-btn-group" id="audio_commentary_group">
+		<div className="audio-btn-group" id="audio_commentary_group" ref={triggerRef}>
 			<button
 				type="button"
 				id="audio_commentary"
@@ -277,7 +279,7 @@ var state = globalData.state;
 				aria-haspopup="menu"
 				aria-expanded={menuOpen}
 			>▾</button>
-			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)}>
+			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={triggerRef}>
 				<div className="audio-menu__group" role="group" aria-label="Commentary source">
 					<div className="audio-menu__heading">Commentary source</div>
 					{Object.values(globalData.meta.audiocom).map(src =>
