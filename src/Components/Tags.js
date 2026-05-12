@@ -282,18 +282,22 @@ var state = globalData.state;
 	}
 
 	useEffect(() => {
-		var fn = app.checkFloater.bind(app);
-		fn({ active_block_index: activeBlockIndex.current });
+		// No deps array: activeBlockIndex.current is updated during render at line
+		// ~355 (entries.map callback). This effect must fire after every render
+		// to forward the latest ref value to checkFloater.
+		app.checkFloater({ active_block_index: activeBlockIndex.current });
 	});
 
 	useEffect(() => {
-		app.setState(
-			{
-				allCollapsed: false,
-				selected_tag_block_index: activeBlockIndex.current
-			},
-			app.setTagBlock(activeBlockIndex.current, state.active_verse_id)
-		);
+		// Mount-only initialisation. Two statements replace a setState(arg, cb)
+		// call whose callback slot was being passed setTagBlock's return value
+		// (undefined) — the original intent was "do A, then B".
+		app.setState({
+			allCollapsed: false,
+			selected_tag_block_index: activeBlockIndex.current
+		});
+		app.setTagBlock(activeBlockIndex.current, state.active_verse_id);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	var tagMeta = globalData["tags"]["tagIndex"][state.selected_tag];
