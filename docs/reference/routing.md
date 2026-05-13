@@ -206,9 +206,9 @@ Versions are stored uppercase in `globalData.meta.version` but emitted lowercase
 
 ### 5.1 Redirect interaction
 
-The two router-level redirects in `RouterShell.js` rewrite `/search/:query` → `/search.:query` and `/hebrew/:strong` → `/hebrew.:strong` **before** the App sees them. These dot-form URLs are NOT themselves canonical (they lack structure/outline/version), so `parseRoute` falls through MAIN_REGEX and returns `{}` — the modifier is lost.
+The two redirects rewrite `/search/:query` → `/search.:query` and `/hebrew/:strong` → `/hebrew.:strong` **before** the page sees them. These dot-form URLs are NOT themselves canonical (they lack structure/outline/version), so `parseRoute` falls through MAIN_REGEX and returns `{}` — the modifier is lost.
 
-This is almost certainly a bug or incomplete migration: the redirect targets are not valid canonical URLs. In practice, the user's intended modifier survives only if it came from a manually-typed legacy URL that the codec's own legacy regex catches **before** the redirect runs. Worth investigating if you touch this code.
+**Status as of 2026-05-13:** Migrated to Next.js middleware (`middleware.ts`). `RouterShell.js` is deleted. The known issue persists: the redirect targets `/search.<query>` and `/hebrew.<strong>` are not valid canonical URLs without an SoV prefix, so they fall through to default state when parsed. This was the behavior under react-router too. A future task should redirect to a full canonical URL with default SoV instead (e.g. `/whole/chapters/iinst/search.<query>/1/1`).
 
 ### 5.2 Why no `normalizeRoute` redirects fire
 
