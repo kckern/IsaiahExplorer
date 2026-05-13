@@ -38,3 +38,6 @@ yarn-error.log*
 /out/
 next-env.d.ts
 *.tsbuildinfo
+
+# CRA generated, will be removed in Phase 11
+src/react-app-env.d.ts

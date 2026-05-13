@@ -65,6 +65,9 @@
     "email": "kc@kckern.com",
     "url": "http://kckern.com"
   },
+  "engines": {
+    "node": ">=18.18"
+  },
   "build": {
     "appId": "guide.scripture.isaiah",
     "productName": "Isaiah Explorer",
