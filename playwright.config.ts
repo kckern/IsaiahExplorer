@@ -21,7 +21,7 @@ export default defineConfig({
   webServer: process.env.E2E_BASE_URL
     ? undefined
     : {
-        command: 'npm run start:next',
+        command: 'npm start',
         port: 3001,
         timeout: 120_000,
         reuseExistingServer: !process.env.CI,
