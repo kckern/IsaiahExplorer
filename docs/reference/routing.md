@@ -1,46 +1,60 @@
 # Isaiah Explorer — Routing Reference
 
-This document is the authoritative reference for every URL shape Isaiah Explorer accepts, every URL shape it emits, and the precedence rules that decide which is which. It is meant to be read in full before changing anything that touches `window.location`, `react-router-dom`, or `src/routing/`.
+This document is the authoritative reference for every URL shape Isaiah Explorer accepts, every URL shape it emits, and the precedence rules that decide which is which. It is meant to be read in full before changing anything that touches `window.location`, `next/navigation`, or `src/routing/`.
 
-The grammar is **path-based** (despite a historical doc comment in `routeCodec.js` describing it as a hash path — see [Historical notes](#historical-notes)). The app reads `window.location.pathname` and writes via `react-router-dom` `navigate()`.
+The grammar is **path-based** — the catch-all Next.js route reads `params.slug`, runs it through the codec, and either renders metadata server-side or hydrates the SPA on the client. Internal URL writes go through a Next.js-aware `withRouter` shim that picks between `router.push()` and `history.replaceState()`.
 
 ---
 
 ## 1. Topology
 
-There are three layers that together produce the app's routing behavior:
+Three layers produce the routing behavior:
 
 | Layer | Source | Responsibility |
 |---|---|---|
-| Top-level router | `src/index.js` | Picks `BrowserRouter` (web) or `MemoryRouter` (Electron, because `file://` breaks `BrowserRouter`) |
-| Route shell | `src/routing/RouterShell.js` | Three `<Route>` patterns: two legacy compatibility redirects + a catch-all that mounts `<App>` |
-| Codec | `src/routing/routeCodec.js` | The actual route grammar. Parses pathnames into a state shape; emits canonical pathnames from app state |
+| Next.js App Router | `app/[[...slug]]/page.tsx`, `middleware.ts` | Single catch-all dynamic route that runs `generateMetadata` server-side and renders the `<AppClient />` boundary on the client. Middleware handles two legacy slash-form redirects. |
+| Client shell | `app/[[...slug]]/AppClient.tsx` | `'use client'` boundary that dynamically imports `App.js` with `ssr: false`. Wraps it in the `next/navigation`-backed `withRouter` shim. |
+| Codec | `src/routing/routeCodec.js` | The actual route grammar. Parses pathnames into a state shape; emits canonical pathnames from app state. Unchanged from pre-Next.js — pure, framework-free. |
 
-The router itself is intentionally thin. **All non-trivial route logic lives in the codec.**
+The router layer is intentionally thin. **All non-trivial route logic lives in the codec.**
 
-### 1.1 React Router patterns (RouterShell.js)
+### 1.1 Next.js routes
 
 ```
-search/:query   →  <Navigate replace> to "/search.:query"   (legacy slash form)
-hebrew/:strong  →  <Navigate replace> to "/hebrew.:strong"  (legacy slash form)
-*               →  <App />                                  (every other path; App parses it itself)
+middleware.ts:
+  /search/:query   →  307 redirect to /search.:query   (legacy slash form)
+  /hebrew/:strong  →  307 redirect to /hebrew.:strong  (legacy slash form)
+
+app/[[...slug]]/page.tsx:
+  *                →  generateMetadata (server) + <AppClient /> (client)
 ```
 
-There are only **three** router-level patterns. Everything else, including tag and commentary routes, falls through to the `*` catch-all and is handled by `App.js` calling `parseRoute(window.location.pathname)`.
+There are only **three** route definitions. Everything else, including tag and commentary routes, matches the catch-all `[[...slug]]` and is parsed by `lib/server/routeFromParams.ts` which delegates to the codec's `parseRoute`. The same codec runs again in the browser when App.js calls `parseRoute(window.location.pathname)` after hydration.
 
-### 1.2 Electron caveat
+### 1.2 URL-write flow (`withRouter` shim → `next/navigation`)
 
-`App.setUrl()` (App.js:433) suppresses `navigate()` when `rootURL` starts with `file://`. So in Electron, routes are still parsed from the initial URL but not written back as state changes — the address bar concept doesn't exist there anyway. `MemoryRouter` keeps the React Router state coherent without touching `window.location`.
+`src/routing/withRouter.js` is a `'use client'`-safe HOC that injects `navigate(path, opts)` and `location.pathname` into the class component:
+
+| Call form | Mechanism | Metadata refetch? |
+|---|---|---|
+| `navigate(path)` or `navigate(path, { replace: false })` | `router.push(path)` from `next/navigation` | Yes — Next.js soft-navigates and re-runs `generateMetadata` |
+| `navigate(path, { replace: true })` | `window.history.replaceState({}, '', path)` | **No** — bypasses Next.js entirely |
+
+The `replace: true` branch is used by `App.setUrl()` for high-frequency scroll-driven URL updates that must not trigger a server round-trip. `react-helmet` (client-side) keeps the `<title>` and meta tags in sync during these silent updates.
 
 ### 1.3 Subdomain / "subsite" parsing
 
-Not a route per se, but it affects which routes resolve successfully. App.js:1268-1270 extracts a `subsite` prefix from the hostname:
+Not a route per se, but it affects which routes resolve successfully. The codec is host-agnostic, but `generateMetadata` reads the `Host` header on every request and applies the matching subsite blacklist before producing metadata:
 
-```js
-window.location.host.match(/^(.*?).isaiah/)
+```ts
+const host = headers().get('host');     // "dev.isaiah.scripture.guide"
+const subsite = subsiteFromHost(host);  // "dev"
+const data = applySubsite(fullData, subsite);
 ```
 
-So `dev.isaiah.scripture.guide` → `subsite = "dev"`. The subsite drives a customization layer (`loadCustoms`) that can blacklist commentary sources, versions, etc. **The same `/commentary.<source>` URL may be valid on one subdomain and silently fall back on another.** This matters for SEO/SSR planning.
+`subsiteFromHost` mirrors the original `App.loadCore` regex (`/^(.*?)\.isaiah/`). The client-side path still does the same parsing for its own data load (`src/App.js:1268-1270`).
+
+**The same `/commentary.<source>` URL may be valid on one subdomain and silently fall back on another** — that's a deliberate feature of the customization model. SSR honors it via the Host header so social-card previews match what users see.
 
 ---
 
@@ -316,47 +330,56 @@ When the URL provides a search modifier, App.js:259-263 sets both `searchQuery =
 
 ---
 
-## 9. Implications for SSR / Next.js migration
+## 9. SSR / Next.js architecture (current state)
 
-This is reference-level guidance for the migration discussion in the architecture thread, summarized here so it lives next to the grammar.
+This section describes how SSR works today (post-migration 2026-05-13). The plan that produced this architecture is at `docs/plans/2026-05-13-nextjs-ssr-migration.md`.
 
 ### 9.1 One catch-all route, one parser
 
-All 13 canonical permutations parse through a single `MAIN_REGEX`. In Next.js this becomes **one catch-all dynamic route** (`app/[[...slug]]/page.tsx`) that:
+All 13 canonical permutations parse through a single `MAIN_REGEX`. Next.js routes them through **one catch-all dynamic route** (`app/[[...slug]]/page.tsx`) that:
 
-1. Joins `params.slug` with `/`, prefixes with `/`
-2. Calls `parseRoute()` (the existing function, unmodified)
-3. Validates against `globalData.meta` (load it server-side)
-4. Returns metadata via `generateMetadata` — port `getSeoData` directly
+1. URL-decodes each `params.slug` element (Next.js percent-encodes `+` to `%2B`)
+2. Joins with `/`, prefixes with `/`
+3. Calls `parseRoute()` (the existing function, unmodified) via `lib/server/routeFromParams.ts`
+4. Resolves the tag slug to a tag name (`lib/server/resolveTag.ts`)
+5. Loads `globalData` from the module-cached `core.txt` (`lib/server/dataCache.ts`)
+6. Applies subsite filtering per `Host` header (`lib/server/applySubsite.ts`)
+7. Returns metadata via `generateMetadata` using `lib/server/buildMetadata.ts` (port of the original `App.getSeoData`)
 
-You do **not** need separate route files for tag, search, hebrew, commentary. The grammar is centralized.
+There are **no separate route files** for tag, search, hebrew, commentary. The grammar is centralized in the codec.
 
-### 9.2 Redirects become Next.js `redirect()`
+### 9.2 Redirects via Next.js middleware
 
-The two `RouterShell` redirects (`/search/:query`, `/hebrew/:strong`) become either `redirects` entries in `next.config.js` or `redirect()` calls in a middleware. Either works.
+`middleware.ts` handles the two legacy slash-form redirects:
 
-### 9.3 Subsite customization complicates static rendering
+```
+/search/:query   →  307 redirect to /search.:query
+/hebrew/:strong  →  307 redirect to /hebrew.:strong
+```
 
-Section 1.3 means the same URL can resolve to different content based on hostname. For ISR/SSG you have two options:
+The known quirk persists: the redirect targets lack structure/outline/version and so parse to default state. A future cleanup should redirect to a full canonical URL.
 
-- **Per-subdomain builds** — separate Amplify branches per subsite
-- **Runtime SSR with `headers()`** — read `Host`, apply customizations dynamically, lose static caching
+### 9.3 Subsite customization at runtime
 
-Decide before scoping the migration. The current subsite list is small enough that per-subdomain builds may be cleaner.
+The architecture chose runtime Host-header parsing over per-subdomain builds — one Amplify deployment serves all subdomains. `generateMetadata` reads `headers().get('host')` on every request, derives the subsite, and runs `applySubsite()` to remove blacklisted commentary sources before producing the title/description. This preserves the client-side customization model exactly: same URL → different content per subdomain.
 
 ### 9.4 Commentary URLs are the highest-value SSR targets
 
-Each `/structure/outline/version/chapter/verse/commentary.<source>[/<id>]` is a unique scholarly note on a specific verse. These are the deep links that benefit most from:
+Each `/structure/outline/version/chapter/verse/commentary.<source>[/<id>]` is a unique scholarly note on a specific verse. These deep links benefit most from:
 
 - Rich Open Graph cards (`"<source-name> on Isaiah <ch>:<v>"`)
-- Per-source structured data (Citation schema)
+- Per-source structured data (Citation schema — TODO)
 - Crawlable HTML for search engines
 
-`getSeoData()` already produces the title/description for these. SSR just needs to render them into the initial HTML.
+`buildMetadata` produces the title/description and OG/Twitter tags for all 13 permutations. Verified by the Playwright suite at `tests-e2e/seo.spec.ts`.
 
-### 9.5 The codec is already pure
+### 9.5 The codec is pure and shared
 
-`parseRoute` and `buildRoute` have **no DOM, no React, no globals**. They are trivially portable to a Node SSR runtime. The only data dependency is `globalData.tags.tagIndex[*].slug` for slug ↔ tag-name resolution — make sure that index is available at request time.
+`parseRoute` and `buildRoute` have **no DOM, no React, no globals**. The same `src/routing/routeCodec.js` runs on the server (inside `generateMetadata`) and the client (inside App.js). The only data dependency is `globalData.tags.tagIndex[*].slug` for slug ↔ tag-name resolution — `lib/server/dataCache.ts` keeps that available at request time, cached in module scope per Lambda instance.
+
+### 9.6 What's NOT server-rendered
+
+The page body itself ships as `'use client'` with `ssr: false` — App.js touches `window`, `document`, and `localStorage` in many places, so SSR is intentionally disabled for the body. The initial HTML has the correct `<title>`, `<meta>`, and `<link rel="canonical">` (which is what social-card crawlers and search engines need) but the verse content renders only after hydration. Future work could extract a server-renderable read view from App.js for better SEO content depth.
 
 ---
 
@@ -370,7 +393,11 @@ Each `/structure/outline/version/chapter/verse/commentary.<source>[/<id>]` is a 
 URL shape (hash path, no leading #)
 ```
 
-This is **not accurate today**. The app runs on path-based routing via `BrowserRouter`. The codec parses pathnames, not hashes. The Clicky tracker (App.js:441) still records pageviews as `"#" + path`, suggesting an earlier hash-routed implementation. Don't be misled by the comment.
+This is **not accurate today**. The app runs on path-based routing via Next.js. The codec parses pathnames, not hashes. The Clicky tracker (App.js:441) still records pageviews as `"#" + path`, an artifact of an earlier hash-routed implementation. Don't be misled by the comment.
+
+### 10.2 react-router-dom / RouterShell.js / BrowserRouter / MemoryRouter
+
+All gone as of 2026-05-13. Next.js owns routing; `withRouter` is a thin shim over `next/navigation`. Electron support was removed alongside CRA.
 
 ### 10.2 `normalizeRoute` is vestigial
 
