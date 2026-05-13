@@ -37,9 +37,11 @@
     "build:next": "next build",
     "start:next": "next start --port 3001",
     "lint:next": "next lint",
-    "test:server": "jest"
+    "test:server": "jest",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@rescripts/cli": "^0.0.12",
     "@rescripts/rescript-env": "^0.0.10",
     "@swc/core": "^1.15.33",
