@@ -3,30 +3,31 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16
-        - nvm use 16
+        - nvm install 20
+        - nvm use 20
         - node --version
-        - npm install --legacy-peer-deps
+        - npm ci --legacy-peer-deps
     build:
       commands:
-        # CI=false: Amplify sets CI=true by default which elevates ESLint warnings
-        # to build errors. The legacy codebase has many pre-existing warnings
-        # (unused vars, exhaustive-deps) that the local dev build has always tolerated.
-        # Node 16 doesn't need --openssl-legacy-provider; webpack 4 works as-is.
-        - CI=false node node_modules/.bin/react-scripts build
+        # Next.js 14 (App Router) SSR build.
+        # The Amplify app's platform field must be WEB_COMPUTE for SSR to be
+        # served from Lambda; see scripts/amplify-migrate.sh for the one-time
+        # platform flip.
+        - npm run build:next
   artifacts:
-    baseDirectory: build
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+      - .next/cache/**/*
   customHeaders:
     - pattern: '**/*'
       headers:
         - key: Cache-Control
           value: 'public, max-age=0, must-revalidate'
-    - pattern: 'static/**/*'
+    - pattern: '_next/static/**/*'
       headers:
         - key: Cache-Control
           value: 'public, max-age=31536000, immutable'
