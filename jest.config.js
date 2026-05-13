@@ -21,6 +21,14 @@ module.exports = {
         target: 'es2020',
       },
     }],
+    // Transform ES-module JS files (e.g. src/routing/routeCodec.js) so the
+    // server tests can import them without a build step.
+    '^.+\\.jsx?$': ['@swc/jest', {
+      jsc: {
+        parser: { syntax: 'ecmascript', jsx: true },
+        target: 'es2020',
+      },
+    }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
 };
