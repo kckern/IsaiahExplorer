@@ -75,4 +75,9 @@ describe('routeFromParams', () => {
     expect(s.chapter).toBe(53);
     expect(s.verse).toBe(1);
   });
+
+  test('URL-encoded slug elements are decoded (Next.js gives us %2B for +)', () => {
+    const s = routeFromParams(['whole', 'chapters', 'iinst', 'search.comfort%2Bmy%2Bpeople', '40', '3']);
+    expect(s.searchQuery).toBe('comfort my people');
+  });
 });

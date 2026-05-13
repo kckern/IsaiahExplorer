@@ -32,7 +32,10 @@ const DEFAULT_VERSION = 'IINST';
  * missing fields are filled with project defaults.
  */
 export function routeFromParams(slug: string[] | undefined): RouteState {
-  const path = slug && slug.length > 0 ? '/' + slug.join('/') : '/';
+  // Next.js percent-encodes path segments in `params.slug` (e.g. `+` → `%2B`).
+  // The codec expects raw characters, so decode each segment before joining.
+  const decoded = slug && slug.length > 0 ? slug.map((s) => decodeURIComponent(s)) : [];
+  const path = decoded.length > 0 ? '/' + decoded.join('/') : '/';
   const parsed = parseRoute(path);
 
   return {
