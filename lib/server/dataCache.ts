@@ -13,7 +13,7 @@ import pako from 'pako';
  * Lambda instance return the same reference. Concurrent calls during the
  * initial load share a single inflight promise.
  */
-type GlobalData = {
+export type GlobalData = {
   tags: { tagIndex: Record<string, { slug: string; name?: string }> };
   meta: {
     structure: Record<string, unknown>;
@@ -23,7 +23,7 @@ type GlobalData = {
   };
   commentary: { comSources: Record<string, { name: string }> };
   index: Record<string, { chapter: number; verse: number }>;
-  custom?: unknown;
+  custom?: Record<string, { type?: string; com?: string[]; [key: string]: unknown } | undefined>;
 };
 
 let cached: GlobalData | null = null;

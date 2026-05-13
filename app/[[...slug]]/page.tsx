@@ -4,19 +4,25 @@ import { loadGlobalData } from '../../lib/server/dataCache';
 import { routeFromParams } from '../../lib/server/routeFromParams';
 import { resolveTagFromSlug } from '../../lib/server/resolveTag';
 import { buildMetadata } from '../../lib/server/buildMetadata';
+import { subsiteFromHost } from '../../lib/server/subsite';
+import { applySubsite } from '../../lib/server/applySubsite';
 import AppClient from './AppClient';
 
 type Props = { params: { slug?: string[] } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = await loadGlobalData();
+  const fullData = await loadGlobalData();
   const route = routeFromParams(params.slug);
-  const tagName = resolveTagFromSlug(route.tagSlug, data);
 
   const h = headers();
   const host = h.get('host') ?? 'isaiah.scripture.guide';
   const proto = h.get('x-forwarded-proto') ?? 'https';
   const origin = `${proto}://${host}`;
+
+  const subsite = subsiteFromHost(host);
+  const data = applySubsite(fullData, subsite);
+
+  const tagName = resolveTagFromSlug(route.tagSlug, data);
 
   return buildMetadata(
     {
