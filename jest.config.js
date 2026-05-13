@@ -13,6 +13,7 @@ module.exports = {
     '<rootDir>/lib/**/__tests__/**/*.test.ts',
     '<rootDir>/lib/**/*.test.ts',
     '<rootDir>/__tests__/**/*.test.ts',
+    '<rootDir>/src/routing/__tests__/**/*.test.{js,jsx,ts,tsx}',
   ],
   transform: {
     '^.+\\.tsx?$': ['@swc/jest', {
