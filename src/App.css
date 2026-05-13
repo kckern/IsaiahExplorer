@@ -465,8 +465,10 @@ div#text
 
 div#verse
 {
-
-    top:101px;
+    /* 60px for the title bar (heading_subtitle 30 + heading_title 30)
+       + 86px for #audio_heading (22 settings strip + 52 buttons + 8 padding
+       + 4 borders) + 1px margin = 147px. */
+    top:147px;
 }
 
 .heading_title img
@@ -481,10 +483,14 @@ div#verse
 	position:relative;
 	border-bottom: 3px solid #FFE; /* yellow accent matching the column motif */
 	border-top:1px solid #1a1a1a;
-	/* Dedicated dark band so the #444 buttons read as raised, lit-key
-	   elements rather than blending into the parent .heading (#999). */
 	background-color: #2a2a2a;
-	padding: 8px;
+	/* Override .heading_title defaults so the two-zone toolbar can size
+	   to its actual content (gear strip + 52px action buttons + padding)
+	   and so the gear popover is not clipped by overflow:hidden. */
+	height: auto;
+	line-height: 1;
+	padding: 0;
+	overflow: visible;
 }
 
 .passage_title
@@ -3060,162 +3066,155 @@ button#commentary
 	color:#999;
 }
 
-#audio_heading {
+/* ─── Audio toolbar (rewrite 2026-05-12) ───────────────────────────────
+   Two-zone strip: ⚙ in a small top settings row, three equal-width
+   action buttons below. Buttons are self-contained — no inline pills,
+   chevrons, or split segments. Speed + commentary source live behind
+   the gear's popover (.audio-menu-popover wrapper from AudioMenuPopover).
+*/
+
+.audio-toolbar { display: flex; flex-direction: column; }
+
+.audio-toolbar__settings {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 22px;
+    padding: 0 8px;
+    /* No position:relative — the popover should anchor to #audio_heading
+       (which IS relative) so `top: 100%` puts the popover below the entire
+       toolbar (clearing the action buttons), not just below the gear strip. */
+}
+.audio-gear {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 4px;
+}
+.audio-gear:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.audio-gear:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ui-focus); }
+.audio-gear[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+.audio-toolbar__actions {
     display: flex;
     gap: 8px;
-    align-items: center;
-    line-height: 1;
-    position: relative;
+    padding: 0 8px 8px 8px;
 }
-
-.audio-btn-group {
-    display: inline-flex;
+.audio-action {
     flex: 1 1 0;
     min-width: 0;
-    position: relative;
-}
-
-.audio-btn {
-    height: 44px;
-    padding: 0 16px;
+    height: 52px;
+    padding: 0 12px;
     border: 1px solid var(--ui-border);
-    background: var(--ui-surface);
+    border-radius: 8px;
+    background: #3a3a3a;
     color: var(--ui-on-accent);
     font: 500 13px 'Comfortaa', 'Helvetica Neue', Arial, sans-serif;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.35);
     transition: background 80ms ease-out, transform 80ms ease-out;
 }
-.audio-btn:active:not([disabled]) {
-    transform: translateY(1px);
-    background: var(--ui-surface-hover);
+.audio-action:hover:not(:disabled):not([aria-pressed="true"]) {
+    background: #4a4a4a;
 }
-.audio-btn img {
+.audio-action:active:not(:disabled) {
+    transform: translateY(1px);
+}
+.audio-action:focus-visible {
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.35), inset 0 0 0 2px var(--ui-focus);
+}
+.audio-action[disabled] { opacity: 0.4; cursor: not-allowed; }
+.audio-action[aria-pressed="true"] {
+    background: var(--ui-accent);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+.audio-action[aria-pressed="true"]:hover { filter: brightness(1.08); }
+.audio-action img {
     width: 22px;
     height: 22px;
     flex: 0 0 22px;
-    vertical-align: middle;
 }
-.audio-btn--primary {
-    border-radius: 8px 0 0 8px;
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 0 8px;
-    justify-content: center;
-}
-.audio-btn--dropdown {
-    border-radius: 0 8px 8px 0;
-    border-left: 1px solid rgba(255,255,255,0.12);
-    padding: 0 6px;
-    flex: 0 0 auto;
-    font-size: 10px;
-    color: rgba(255,255,255,0.6);
-}
-.audio-btn--dropdown:hover { color: #fff; }
-.audio-btn--rate {
-    border-radius: 0;
-    border-left: 1px solid rgba(255,255,255,0.12);
-    border-right: 1px solid rgba(255,255,255,0.12);
-    padding: 0 8px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    flex: 0 0 auto;
-    background: var(--ui-surface);
-    color: rgba(255,255,255,0.85);
-}
-.audio-btn--rate:hover { background: var(--ui-surface-hover); color: #fff; }
-.audio-btn:hover { background: var(--ui-surface-hover); }
-/* Use inset box-shadow rather than outline so the focus ring stays
-   strictly inside the button geometry regardless of browser outline
-   quirks. (Outline + negative offset rendered inconsistently in some
-   user environments and could appear to "lift" the button outside
-   its container.) */
-.audio-btn:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ui-focus); }
-.audio-btn[aria-pressed="true"]:focus-visible {
-    box-shadow: inset 0 0 0 2px var(--ui-focus), inset 0 0 0 1px rgba(255,255,255,0.25);
-}
-.audio-btn[aria-pressed="true"] {
-    background: var(--ui-accent);
-    color: #fff;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
-}
-.audio-btn[aria-pressed="true"]:hover {
-    background: var(--ui-accent);
-    filter: brightness(1.08);
-}
-.audio-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
-.audio-btn__label { flex: 1; overflow: hidden; text-overflow: ellipsis; }
-
-#commentary {
-    height: 44px;
-    padding: 0 14px;
-    border: 1px solid var(--ui-border);
-    border-radius: 8px;
-    background: var(--ui-surface);
-    color: var(--ui-on-accent);
-    font: 500 13px 'Roboto Condensed', 'Helvetica Neue', Arial, sans-serif;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    white-space: nowrap;
-    flex: 1 1 0;
-    min-width: 0;
-}
-#commentary:hover { background: var(--ui-surface-hover); }
-#commentary[aria-pressed="true"] {
-    background: var(--ui-accent);
-    color: #fff;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
-}
-#commentary[aria-pressed="true"]:hover {
-    background: var(--ui-accent);
-    filter: brightness(1.08);
-}
-#commentary:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--ui-focus); }
-#commentary[aria-pressed="true"]:focus-visible {
-    box-shadow: inset 0 0 0 2px var(--ui-focus), inset 0 0 0 1px rgba(255,255,255,0.25);
+.audio-action__label {
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* AudioMenuPopover wrapper (reused). The .audio-options-popover content
+   below uses this as its rounded white card backdrop. */
 .audio-menu-popover {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     margin-top: 4px;
     background: #fff;
     color: #222;
     border: 1px solid var(--ui-border);
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
     padding: 8px;
-    min-width: 220px;
+    min-width: 240px;
     z-index: 100;
 }
-.audio-menu__group { margin: 8px 0; }
-.audio-menu__heading { font: 600 11px 'Comfortaa', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 4px; padding: 0 8px; }
-.audio-menu__item, .audio-menu__chip {
-    background: transparent;
+
+.audio-options-popover { min-width: 220px; }
+.audio-options__section { margin: 4px 0 12px 0; }
+.audio-options__section:last-child { margin-bottom: 4px; }
+.audio-options__heading {
+    font: 600 11px 'Comfortaa', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 6px;
+    padding: 0 8px;
+}
+.audio-speed-chips {
+    display: flex;
+    gap: 6px;
+    padding: 0 8px;
+}
+.audio-speed-chip {
+    flex: 1;
+    padding: 6px 0;
+    background: #eee;
     border: 0;
+    border-radius: 999px;
     cursor: pointer;
     font: 400 13px 'Comfortaa', sans-serif;
 }
-.audio-menu__item {
-    display: block;
+.audio-speed-chip:hover:not(.audio-speed-chip--active) { background: #def; }
+.audio-speed-chip--active { background: var(--ui-accent); color: var(--ui-on-accent); }
+.audio-source-list { display: flex; flex-direction: column; }
+.audio-source-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
     text-align: left;
-    padding: 6px 8px;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+    font: 400 13px 'Comfortaa', sans-serif;
     border-radius: 4px;
 }
-.audio-menu__chip { padding: 4px 10px; margin: 2px; background: #eee; border-radius: 999px; }
-.audio-menu__item:hover, .audio-menu__chip:hover { background: #def; }
-.audio-menu__item--active, .audio-menu__chip--active { background: var(--ui-accent); color: var(--ui-on-accent); }
+.audio-source-item:hover:not(.audio-source-item--active) { background: #def; }
+.audio-source-item--active { background: var(--ui-accent); color: var(--ui-on-accent); }
+.audio-source-item__bullet { font-size: 14px; line-height: 1; }
 
 .heading_subtitle.commentary img
 {

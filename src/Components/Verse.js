@@ -4,19 +4,9 @@ import { Passage } from "./Passage.js";
 import { Hebrew } from "./Hebrew.js";
 import Tipsy from "react-tipsy";
 import play_icon from "../img/interface/play.png";
-import playing_icon from "../img/interface/audio.gif";
-import loading_icon from "../img/interface/audioload.gif";
-import comment_icon from "../img/interface/comment.png";
 import loading_img from "../img/interface/message.gif";
 import heb_png from "../img/interface/hebrew.png";
-import { TAG_PANEL } from "../state/tagPanel";
-import { AUDIO_MODE } from "../state/audioState";
-import AudioMenuPopover from "./AudioMenuPopover";
-
-const COMMENTARY_SOURCE_LABELS = {
-	gileadi: "Gileadi",
-	mcgee: "McGee",
-};
+import AudioToolbar from "./AudioToolbar";
 
 export default function VerseColumn() {
 	var globalData = useContext(DataContext);
@@ -43,22 +33,25 @@ var state = globalData.state;
 					<div className="heading_subtitle" id="outline_subtitle">Verse Details</div>
 					<div className="heading_title">□{" "}<span id="outline_title">Verse Reference</span></div>
 					<div className="heading_title" id="audio_heading">
-						<div className="audio-btn-group" role="group" aria-label="Verse audio">
-							<button type="button" className="audio-btn audio-btn--primary" disabled>
-								<img alt="" src={loading_icon} aria-hidden="true" /> <span className="audio-btn__label">Loading</span>
-							</button>
-							<button type="button" className="audio-btn audio-btn--rate" disabled>1×</button>
-							<button type="button" className="audio-btn audio-btn--dropdown" disabled aria-label="Verse audio options">▾</button>
+						<div className="audio-toolbar">
+							<div className="audio-toolbar__settings">
+								<button type="button" className="audio-gear" disabled aria-label="Audio settings">⚙</button>
+							</div>
+							<div className="audio-toolbar__actions">
+								<button type="button" className="audio-action" disabled>
+									<img alt="" src={play_icon} aria-hidden="true" />
+									<span className="audio-action__label">Verse</span>
+								</button>
+								<button type="button" className="audio-action" disabled>
+									<img alt="" src={play_icon} aria-hidden="true" />
+									<span className="audio-action__label">Commentary</span>
+								</button>
+								<button type="button" className="audio-action" disabled>
+									<img alt="" src={play_icon} aria-hidden="true" />
+									<span className="audio-action__label">Read</span>
+								</button>
+							</div>
 						</div>
-						<div className="audio-btn-group" role="group" aria-label="Commentary audio">
-							<button type="button" className="audio-btn audio-btn--primary" disabled>
-								<img alt="" src={play_icon} aria-hidden="true" /> <span className="audio-btn__label">Commentary</span>
-							</button>
-							<button type="button" className="audio-btn audio-btn--dropdown" disabled aria-label="Commentary audio options">▾</button>
-						</div>
-						<button type="button" id="commentary" disabled>
-							<img alt="" src={comment_icon} aria-hidden="true" /> Read
-						</button>
 					</div>
 				</div>
 				<div id="verse" className={loadingClasses.join(" ")}><img alt="Loading" src={loading_img} /><br /> Loading Verse Details...</div>
@@ -101,8 +94,6 @@ var state = globalData.state;
 			/>
 		);
 	});
-	var readhide = "Read";
-	if (state.commentaryMode) readhide = "Hide";
 	return (
 		<div className="col col2">
 			<div className="heading">
@@ -113,12 +104,7 @@ var state = globalData.state;
 					</div>
 				</div>
 				<div className="heading_title" id="audio_heading">
-					<AudioVerse />
-					<AudioCommentary />
-					<button type="button" id="commentary" aria-pressed={state.commentaryMode === true} onClick={() => {
-						app.setTagPanel(state.tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED);
-						app.setState({ commentaryMode: !state.commentaryMode, commentary_verse_range: [], selected_verse_id: null, commentary_verse_id: state.active_verse_id }, app.setUrl.bind(app));
-					}}><img alt="Commentary" src={comment_icon} /> {readhide}</button>
+					<AudioToolbar />
 				</div>
 			</div>
 			<VersePanel />
@@ -126,193 +112,6 @@ var state = globalData.state;
 	);
 }
 
-function AudioVerse() {
-	var globalData = useContext(DataContext);
-	var app = globalData.app;
-var state = globalData.state;
-	var isAudioDisabled = globalData.meta.version[state.version].audio !== 1 && state.hebrewMode === false;
-
-	function startPlaying() {
-		app.setAudioMode(
-			AUDIO_MODE.VERSE_LOADING,
-			{ audioPointer: 0, selected_verse_id: null, commentary_audio_verse_range: [] },
-			app.setUrl.bind(app)
-		);
-	}
-
-	function handleClick() {
-		if (isAudioDisabled) return false;
-		if (state.audioState !== null) {
-			app.setAudioMode(AUDIO_MODE.IDLE, function() {
-				if (state.commentaryAudioMode) startPlaying();
-				app.setUrl();
-			});
-		} else {
-			startPlaying();
-			app.setUrl();
-		}
-	}
-
-	function cyclePlaybackRate() {
-		let sequence = {
-			"1": 1.25,
-			"1.25": 1.5,
-			"1.5": 2,
-			"2": 1
-		};
-		let rate = state.playbackRate;
-		app.setState({ playbackRate: sequence[rate] || 1 });
-	}
-
-	var classes = [];
-
-	let rateLabel = state.playbackRate + "×";
-	if (state.playbackRate === 1.5) rateLabel = "1½";
-	if (state.playbackRate === 1.25) rateLabel = "1¼";
-
-	var icon = play_icon;
-	var shortText = "Verse";
-	if (state.audioMode === AUDIO_MODE.VERSE_LOADING) {
-		icon = loading_icon;
-		shortText = "Loading";
-	}
-	if (state.audioMode === AUDIO_MODE.VERSE_PLAYING) {
-		icon = playing_icon;
-		shortText = "Pause";
-	}
-
-	return (
-		<div className="audio-btn-group" id="audio_verse_group" role="group" aria-label="Verse audio">
-			<button
-				type="button"
-				id="audio_verse"
-				className={[...classes, "audio-btn audio-btn--primary"].join(" ")}
-				onClick={handleClick}
-				disabled={isAudioDisabled}
-				aria-pressed={state.audioMode === AUDIO_MODE.VERSE_PLAYING}
-			>
-				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
-			</button>
-			<button
-				type="button"
-				className="audio-btn audio-btn--rate"
-				onClick={cyclePlaybackRate}
-				aria-label={"Playback speed: " + rateLabel + " (click to cycle)"}
-				title="Click to change playback speed"
-			>{rateLabel}</button>
-		</div>
-	);
-}
-
-function AudioCommentary() {
-	var globalData = useContext(DataContext);
-	var app = globalData.app;
-var state = globalData.state;
-	const [menuOpen, setMenuOpen] = useState(false);
-	const triggerRef = useRef(null);
-
-	function startPlaying(shortcode) {
-		app.setTagPanel(TAG_PANEL.CLOSED);
-		app.setAudioMode(AUDIO_MODE.COMMENTARY_LOADING, { audioPointer: 0, commentaryAudio: shortcode });
-	}
-
-	function handleClick(e) {
-		if (e === undefined) return false;
-		if (state.audioState !== null) {
-			app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] }, function() {
-				if (!state.commentaryAudioMode) {
-					startPlaying(state.commentaryAudio);
-				} else {
-					app.setActiveVerse(state.active_verse_id, undefined, undefined, undefined, "audio");
-				}
-			});
-		} else {
-			startPlaying(state.commentaryAudio);
-		}
-	}
-
-	function cyclePlaybackRate() {
-		let sequence = {
-			"1": 1.25,
-			"1.25": 1.5,
-			"1.5": 2,
-			"2": 1
-		};
-		let rate = state.playbackRate;
-		app.setState({ playbackRate: sequence[rate] || 1 });
-	}
-
-	let rateLabel = state.playbackRate + "×";
-	if (state.playbackRate === 1.5) rateLabel = "1½";
-	if (state.playbackRate === 1.25) rateLabel = "1¼";
-
-	var classes = [];
-	var srcShort = COMMENTARY_SOURCE_LABELS[state.commentaryAudio] || state.commentaryAudio;
-	var icon = play_icon;
-	var shortText = srcShort;
-	if (state.audioMode === AUDIO_MODE.COMMENTARY_LOADING) {
-		icon = loading_icon;
-		shortText = "Loading " + srcShort;
-	}
-	if (state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING) {
-		icon = playing_icon;
-		shortText = "Pause " + srcShort;
-	}
-
-	return (
-		<div className="audio-btn-group" id="audio_commentary_group" ref={triggerRef} role="group" aria-label="Commentary audio">
-			<button
-				type="button"
-				id="audio_commentary"
-				className={[...classes, "audio-btn audio-btn--primary"].join(" ")}
-				onClick={handleClick}
-				aria-pressed={state.audioMode === AUDIO_MODE.COMMENTARY_PLAYING}
-			>
-				<img alt="" src={icon} aria-hidden="true" /> <span className="audio-btn__label">{shortText}</span>
-			</button>
-			<button
-				type="button"
-				className="audio-btn audio-btn--rate"
-				onClick={cyclePlaybackRate}
-				aria-label={"Playback speed: " + rateLabel}
-			>{rateLabel}</button>
-			<button
-				type="button"
-				className="audio-btn audio-btn--dropdown"
-				onClick={() => setMenuOpen(o => !o)}
-				aria-label="Commentary audio options"
-				aria-haspopup="menu"
-				aria-expanded={menuOpen}
-			>▾</button>
-			<AudioMenuPopover open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={triggerRef}>
-				<div className="audio-menu__group" role="group" aria-label="Commentary source">
-					<div className="audio-menu__heading">Commentary source</div>
-					{Object.values(globalData.meta.audiocom).map(src =>
-						<button
-							key={src.shortcode}
-							type="button"
-							className={"audio-menu__item" + (state.commentaryAudio === src.shortcode ? " audio-menu__item--active" : "")}
-							onClick={() => { startPlaying(src.shortcode); setMenuOpen(false); }}
-						>
-							{state.commentaryAudio === src.shortcode ? "● " : "○ "}{src.short_title || src.title}
-						</button>
-					)}
-				</div>
-				<div className="audio-menu__group" role="group" aria-label="Playback speed">
-					<div className="audio-menu__heading">Playback speed</div>
-					{[1, 1.25, 1.5, 2].map(rate =>
-						<button
-							key={rate}
-							type="button"
-							className={"audio-menu__chip" + (state.playbackRate === rate ? " audio-menu__chip--active" : "")}
-							onClick={() => { app.setState({ playbackRate: rate }); setMenuOpen(false); }}
-						>{rate}×</button>
-					)}
-				</div>
-			</AudioMenuPopover>
-		</div>
-	);
-}
 
 function VersePanel() {
 	var globalData = useContext(DataContext);
