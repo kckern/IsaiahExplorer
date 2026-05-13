@@ -32,7 +32,11 @@
     "e-build": "PUBLIC_URL=. rescripts build",
     "e-test": "rescripts test",
     "postinstall": "node -e \"if(process.env.ELECTRON_BUILD) require('child_process').execSync('electron-builder install-app-deps', {stdio:'inherit'})\"",
-    "e-pack": "ELECTRON_BUILD=1 electron-builder -mw"
+    "e-pack": "ELECTRON_BUILD=1 electron-builder -mw",
+    "dev:next": "next dev --port 3001",
+    "build:next": "next build",
+    "start:next": "next start --port 3001",
+    "lint:next": "next lint"
   },
   "devDependencies": {
     "@rescripts/cli": "^0.0.12",
