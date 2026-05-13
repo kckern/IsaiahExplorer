@@ -1,4 +1,3 @@
-// @ts-expect-error JS module without types — see docs/reference/routing.md §2
 import { parseRoute } from '../../src/routing/routeCodec';
 
 export type RouteState = {

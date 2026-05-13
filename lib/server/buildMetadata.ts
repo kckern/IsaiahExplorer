@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-// @ts-expect-error JS module without types — see docs/reference/routing.md §2
 import { buildRoute } from '../../src/routing/routeCodec';
 
 type GlobalData = {
