@@ -41,3 +41,4 @@ next-env.d.ts
 
 # CRA generated, will be removed in Phase 11
 src/react-app-env.d.ts
+test-results/
