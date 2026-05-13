@@ -13,7 +13,7 @@ frontend:
         # The Amplify app's platform field must be WEB_COMPUTE for SSR to be
         # served from Lambda; see scripts/amplify-migrate.sh for the one-time
         # platform flip.
-        - npm run build:next
+        - npm run build
   artifacts:
     baseDirectory: .next
     files:
