@@ -14,7 +14,6 @@ import {globalData} from "./globals.js"
 import {DataContext} from "./DataContext"
 import VideoBox from "./Components/VideoBox.js"
 import Tipsy from "react-tipsy"
-import isElectron from 'is-electron';
 
 
 import { parseRoute, buildRoute } from "./routing/routeCodec"
@@ -123,20 +122,6 @@ class App extends Component {
 
   componentWillMount() {
     document.addEventListener("keydown", this.keyDown.bind(this))
-
-    // ELECTRON MENU FUNCTION
-		if (isElectron()) {
-			window.ipcRenderer.on('structure', (event, shortcode) => {
-        this.setActiveStructure(shortcode);
-      })
-			window.ipcRenderer.on('outline', (event, shortcode) => {
-        this.setActiveOutline(shortcode);
-      })
-			window.ipcRenderer.on('version', (event, shortcode) => {
-        this.setActiveVersion(shortcode);
-      })
-      
-    }
     
 
 
@@ -1123,7 +1108,6 @@ class App extends Component {
       JSON.stringify(settings)
     );
 
-	if(isElectron()) window.ipcRenderer.send('saveSettings',settings);
   }
 
   setNewTop(list, value, new_index) {
