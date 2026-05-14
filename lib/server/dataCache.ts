@@ -18,7 +18,7 @@ export type GlobalData = {
   meta: {
     structure: Record<string, unknown>;
     outline: Record<string, unknown>;
-    version: Record<string, unknown>;
+    version: Record<string, { shortcode?: string; title?: string } | undefined>;
     commentary: Record<string, unknown>;
   };
   commentary: { comSources: Record<string, { name: string }> };

@@ -51,6 +51,8 @@ for (const { path, description, expectedTitleSubstring } of PERMUTATIONS) {
     expect(html).toMatch(/<meta\s+property="og:url"/);
     expect(html).toMatch(/<meta\s+property="og:type"\s+content="article"/);
     expect(html).toMatch(/<meta\s+name="twitter:card"\s+content="summary_large_image"/);
+    // og:image must be explicitly provided (Facebook warns when only inferred).
+    expect(html).toMatch(/<meta\s+property="og:image"\s+content="[^"]*\/og\?/);
   });
 
   test(`${description}: canonical link — ${path}`, async ({ request }) => {
@@ -70,4 +72,24 @@ test('legacy /hebrew/:strong redirects to /hebrew.:strong', async ({ request }) 
   const res = await request.get('/hebrew/2490', { maxRedirects: 0 });
   expect(res.status()).toBe(307);
   expect(res.headers().location).toContain('/hebrew.2490');
+});
+
+test('dynamic OG card route renders a PNG', async ({ request }) => {
+  const res = await request.get('/og?v=NRSV&c=5&vs=13');
+  expect(res.ok()).toBeTruthy();
+  expect(res.headers()['content-type']).toContain('image/png');
+  const body = await res.body();
+  // PNG magic number.
+  expect(body.subarray(0, 4).toString('hex')).toBe('89504e47');
+  expect(body.byteLength).toBeGreaterThan(2000);
+});
+
+test('og:title carries the version, og:description is the verse text', async ({ request }) => {
+  const html = await (await request.get('/whole/chapters/nrsv/5/13')).text();
+  const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
+  expect(title).toBe('Isaiah 5:13 · NRSV | Isaiah Explorer');
+  const ogDesc = html.match(/<meta\s+property="og:description"\s+content="([^"]*)"/)?.[1] ?? '';
+  expect(ogDesc).toContain('Therefore my people go into exile');
+  // The generic boilerplate description must be gone for a plain verse route.
+  expect(ogDesc).not.toContain('multiple translations');
 });

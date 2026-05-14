@@ -14,6 +14,12 @@ const fakeData: any = {
     },
   },
   index: { '17656': { chapter: 1, verse: 1 } },
+  meta: {
+    version: {
+      IINST: { shortcode: 'IINST' },
+      NRSV: { shortcode: 'NRSV' },
+    },
+  },
 };
 
 const baseState = {
@@ -32,11 +38,30 @@ const baseState = {
 };
 
 describe('buildMetadata', () => {
-  test('default verse: "Isaiah 5:4 | Isaiah Explorer"', () => {
+  test('default verse: title carries reference + version', () => {
     const m = buildMetadata(baseState, fakeData, 'https://isaiah.scripture.guide');
-    expect(m.title).toBe('Isaiah 5:4 | Isaiah Explorer');
+    expect(m.title).toBe('Isaiah 5:4 · IINST | Isaiah Explorer');
     expect(m.description).toContain('Isaiah 5:4');
     expect(m.alternates?.canonical).toBe('https://isaiah.scripture.guide/whole/chapters/iinst/5/4');
+  });
+
+  test('version shortcode comes from meta.version, case-insensitive', () => {
+    const m = buildMetadata({ ...baseState, version: 'nrsv' }, fakeData, 'https://x');
+    expect(m.title).toBe('Isaiah 5:4 · NRSV | Isaiah Explorer');
+  });
+
+  test('verse text becomes the description when provided', () => {
+    const verseText = 'Therefore my people go into exile without knowledge.';
+    const m = buildMetadata(baseState, fakeData, 'https://x', verseText);
+    expect(m.description).toBe(verseText);
+    expect(m.openGraph?.description).toBe(verseText);
+  });
+
+  test('long verse text is truncated for the description', () => {
+    const long = 'word '.repeat(120).trim();
+    const m = buildMetadata(baseState, fakeData, 'https://x', long);
+    expect((m.description as string).length).toBeLessThanOrEqual(301);
+    expect(m.description as string).toMatch(/…$/);
   });
 
   test('with tag: title leads with tag', () => {
@@ -56,7 +81,7 @@ describe('buildMetadata', () => {
 
   test('unknown tag: falls through to default title', () => {
     const m = buildMetadata({ ...baseState, selected_tag: 'Nonexistent Tag' }, fakeData, 'https://x');
-    expect(m.title).toBe('Isaiah 5:4 | Isaiah Explorer');
+    expect(m.title).toBe('Isaiah 5:4 · IINST | Isaiah Explorer');
   });
 
   test('with search: quoted query in title', () => {
@@ -95,7 +120,7 @@ describe('buildMetadata', () => {
       fakeData,
       'https://x'
     );
-    expect(m.title).toBe('Isaiah 5:4 | Isaiah Explorer');
+    expect(m.title).toBe('Isaiah 5:4 · IINST | Isaiah Explorer');
   });
 
   test('OpenGraph tags present', () => {

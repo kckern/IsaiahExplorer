@@ -6,6 +6,7 @@ import { resolveTagFromSlug } from '../../lib/server/resolveTag';
 import { buildMetadata } from '../../lib/server/buildMetadata';
 import { subsiteFromHost } from '../../lib/server/subsite';
 import { applySubsite } from '../../lib/server/applySubsite';
+import { getVerseText } from '../../lib/server/verseText';
 import AppClient from './AppClient';
 
 type Props = { params: { slug?: string[] } };
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = applySubsite(fullData, subsite);
 
   const tagName = resolveTagFromSlug(route.tagSlug, data);
+  const verseText = await getVerseText(route.version, route.chapter, route.verse);
 
   return buildMetadata(
     {
@@ -41,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     data,
     origin,
+    verseText,
   );
 }
 
