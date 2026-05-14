@@ -31,3 +31,11 @@ frontend:
       headers:
         - key: Cache-Control
           value: 'public, max-age=31536000, immutable'
+    # Dynamic OG card (app/og/route.tsx): deterministic per query string,
+    # so let the CDN cache it instead of hitting the Lambda on every
+    # crawler scrape. Without this the blanket **/* rule above forces
+    # max-age=0.
+    - pattern: 'og'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=31536000, immutable'
