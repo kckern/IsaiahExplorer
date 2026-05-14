@@ -86,11 +86,11 @@ export async function GET(request: NextRequest) {
             alignItems: 'center',
             justifyContent: 'center',
             height: 116,
-            background: '#e8dcbd',
-            borderBottom: '1px solid rgba(154,133,82,0.3)',
+            background: '#2e2519',
+            borderBottom: '1px solid rgba(154,133,82,0.5)',
             fontSize: 30,
             letterSpacing: 6,
-            color: '#9a8552',
+            color: '#d8c597',
           }}
         >
           {reference.toUpperCase()}
@@ -122,11 +122,11 @@ export async function GET(request: NextRequest) {
             alignItems: 'center',
             justifyContent: 'center',
             height: 104,
-            background: '#e8dcbd',
-            borderTop: '1px solid rgba(154,133,82,0.3)',
+            background: '#2e2519',
+            borderTop: '1px solid rgba(154,133,82,0.5)',
             fontSize: 28,
             letterSpacing: 3,
-            color: '#9a8552',
+            color: '#d8c597',
           }}
         >
           Isaiah Explorer
