@@ -5,18 +5,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { withRouter } from '../withRouter';
 
-const mockPush = jest.fn();
-const mockReplace = jest.fn();
-
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({ push: mockPush, replace: mockReplace }),
   usePathname: () => '/whole/chapters/iinst/5/4',
 }));
-
-beforeEach(() => {
-  mockPush.mockClear();
-  mockReplace.mockClear();
-});
 
 describe('withRouter (next/navigation shim)', () => {
   test('injects location.pathname from usePathname', () => {
@@ -30,7 +21,8 @@ describe('withRouter (next/navigation shim)', () => {
     expect(getByTestId('path').textContent).toBe('/whole/chapters/iinst/5/4');
   });
 
-  test('navigate (default push) calls router.push', () => {
+  test('navigate (default push) calls history.pushState — no router round-trip', () => {
+    const pushStateSpy = jest.spyOn(window.history, 'pushState');
     let navRef;
     class Capture extends React.Component {
       componentDidMount() { navRef = this.props.navigate; }
@@ -39,11 +31,11 @@ describe('withRouter (next/navigation shim)', () => {
     const W = withRouter(Capture);
     render(React.createElement(W));
     navRef('/new/path');
-    expect(mockPush).toHaveBeenCalledWith('/new/path');
-    expect(mockReplace).not.toHaveBeenCalled();
+    expect(pushStateSpy).toHaveBeenCalledWith({}, '', '/new/path');
+    pushStateSpy.mockRestore();
   });
 
-  test('navigate with { replace: true } calls history.replaceState (no router round-trip)', () => {
+  test('navigate with { replace: true } calls history.replaceState', () => {
     const replaceStateSpy = jest.spyOn(window.history, 'replaceState');
     let navRef;
     class Capture extends React.Component {
@@ -54,11 +46,11 @@ describe('withRouter (next/navigation shim)', () => {
     render(React.createElement(W));
     navRef('/replace/path', { replace: true });
     expect(replaceStateSpy).toHaveBeenCalledWith({}, '', '/replace/path');
-    expect(mockPush).not.toHaveBeenCalled();
     replaceStateSpy.mockRestore();
   });
 
-  test('navigate with { replace: false } calls router.push', () => {
+  test('navigate with { replace: false } calls history.pushState', () => {
+    const pushStateSpy = jest.spyOn(window.history, 'pushState');
     let navRef;
     class Capture extends React.Component {
       componentDidMount() { navRef = this.props.navigate; }
@@ -67,7 +59,8 @@ describe('withRouter (next/navigation shim)', () => {
     const W = withRouter(Capture);
     render(React.createElement(W));
     navRef('/push/path', { replace: false });
-    expect(mockPush).toHaveBeenCalledWith('/push/path');
+    expect(pushStateSpy).toHaveBeenCalledWith({}, '', '/push/path');
+    pushStateSpy.mockRestore();
   });
 
   test('displayName reflects wrapped component', () => {
