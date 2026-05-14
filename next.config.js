@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // CRA uses /public for static assets — Next.js does too, so no remapping needed.
-  // The legacy `--openssl-legacy-provider` flag is not required for Next.js builds.
+  // Disable Next.js's built-in StaticImageData transform so `import x from
+  // './foo.png'` returns a URL string. Without this, Next's image loader runs
+  // before our asset/resource rule, replaces the PNG bytes with a JS module
+  // (`export default { src, blurDataURL, ... }`), and the resulting file
+  // shipped at /_next/static/media/<hash>.png is text — every <img> on the
+  // page renders as broken. The legacy components under src/Components/ use
+  // `<img src={x}>` directly, so a string URL is what we want.
+  images: { disableStaticImages: true },
   webpack: (config) => {
-    // Make `import x from './foo.png'` return a URL string (CRA-compatible)
-    // instead of Next.js's default StaticImageData object. The legacy components
-    // under src/Components/ use `<img src={x}>` directly — adapting the loader
-    // here is one line; rewriting every import would be a dozen file edits and
-    // leave a permanent `.src` pattern that disappears the moment CRA is gone.
     config.module.rules.unshift({
       test: /\.(png|jpe?g|gif|svg|webp)$/i,
       type: 'asset/resource',
