@@ -44,9 +44,14 @@ export function SearchBox() {
 
 	// Reset search state when there are no results and nothing active to display.
 	// Uses highlighted_verse_range.length as the "result_count" proxy (computed in detail below).
+	// A selected tag (or tag-browsing mode) IS something active to display — the
+	// guard must skip those, or this effect clobbers a tag selected via deep-link
+	// during init (when highlighted_verse_range is briefly empty) and calls
+	// clearTag, dropping the user back to the plain verse view.
 	var hasResults = state.highlighted_verse_range && state.highlighted_verse_range.length > 0;
 	useEffect(() => {
 		if(hasResults || state.searchQuery!==null || state.commentaryAudioMode || state.hebrewSearch) return;
+		if(state.selected_tag!==null || state.tagMode) return;
 		app.setState(
 		{
 			searchMode:false,
@@ -55,7 +60,7 @@ export function SearchBox() {
 			highlighted_tagged_verse_range:[]
 		},
 		app.clearTag.bind(app));
-	}, [hasResults, app, state.searchQuery, state.commentaryAudioMode, state.hebrewSearch]);
+	}, [hasResults, app, state.searchQuery, state.commentaryAudioMode, state.hebrewSearch, state.selected_tag, state.tagMode]);
 
 	if(state.comSearchMode) return null;
 	var val = state.searchQuery;
