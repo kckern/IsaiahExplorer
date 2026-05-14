@@ -27,6 +27,11 @@ const scriptureFont = fs.readFileSync(
   path.join(process.cwd(), 'public', 'scripture.ttf'),
 );
 
+// Faint paper texture behind the whole card.
+const scrollTexture =
+  'data:image/jpeg;base64,' +
+  fs.readFileSync(path.join(process.cwd(), 'public', 'scroll.jpg')).toString('base64');
+
 export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams;
   const version = sp.get('v') || 'IINST';
@@ -52,32 +57,78 @@ export async function GET(request: NextRequest) {
     (
       <div
         style={{
+          position: 'relative',
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           background: '#f4ead2',
-          padding: '70px 90px',
           fontFamily: 'Goudy Scripture',
         }}
       >
-        <div style={{ fontSize: 30, letterSpacing: 6, color: '#9a8552' }}>
+        <img
+          src={scrollTexture}
+          width={1200}
+          height={630}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.1,
+          }}
+        />
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 116,
+            background: '#e8dcbd',
+            borderBottom: '1px solid rgba(154,133,82,0.3)',
+            fontSize: 30,
+            letterSpacing: 6,
+            color: '#9a8552',
+          }}
+        >
           {reference.toUpperCase()}
         </div>
         <div
           style={{
-            fontSize: verseSize,
-            lineHeight: 1.4,
-            color: '#2e2519',
-            textAlign: 'center',
-            maxWidth: 1000,
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '40px 90px',
           }}
         >
-          {verseBody}
+          <div
+            style={{
+              fontSize: verseSize,
+              lineHeight: 1.4,
+              color: '#2e2519',
+              textAlign: 'center',
+              maxWidth: 1000,
+            }}
+          >
+            {verseBody}
+          </div>
         </div>
-        <div style={{ fontSize: 28, letterSpacing: 3, color: '#9a8552' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 104,
+            background: '#e8dcbd',
+            borderTop: '1px solid rgba(154,133,82,0.3)',
+            fontSize: 28,
+            letterSpacing: 3,
+            color: '#9a8552',
+          }}
+        >
           Isaiah Explorer
         </div>
       </div>
