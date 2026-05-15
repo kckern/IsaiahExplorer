@@ -86,12 +86,16 @@ body .tagtitle
 {
     background-color: #FFFFFF;
     margin: auto;
-    width: 1920px;
+    /* Fill the viewport. The 4-column layout (col1/col2b/col2 floats + col3
+       fluid centre) needs ~1820px for col3 to stay above its min-width; below
+       that we let the page scroll horizontally rather than snap to a smaller
+       fixed layout. */
+    width: 100%;
+    min-width: 1820px;
     height: 100%;
     color: #000000;
     background-color: #333;
     position: relative;
-	transform-origin: 0 0;
 }
 
 .wrapper
@@ -3991,119 +3995,3 @@ span.debug
 
 
 
-/* NARROW VIEW */
-
-body.narrow #approot
-{
-	   width: 1530px;
-}
-
-body.narrow .col1 {
-    width: 300px; 
-
-}
-
-body.narrow .col2 {
-    width: 430px; 
-}
-
-
-body.narrow .col3 {
-
-	margin-left:570px;
-    width:500px;
-}
-
-body.narrow .col2b {
-
-    width:250px;
-}
-
-
-body.narrow .extraversions tr.head td img
-{
-	border:1px solid #777;
-	max-width: 95px;
-	max-width: 70px;
-	cursor:pointer;
-}
-
-body.narrow .extraversions.count2 td div{ width:160px; }
-body.narrow .extraversions.count3 td div{ width:100px; }
-body.narrow .extraversions.count4 td div{ width:70px; text-align:left; }
-body.narrow .extraversions.count5 td div{ width:55px;text-align:left;  }
-
-
-body.narrow .extraversions div
-{
-	font-size:14px;
-	line-height:14px;
-}
-
-
-body.narrow #book .verse_grid,#outline .verse_grid {
-
-    width:270px;
-}
-
-
-
-body.narrow #book .verse_grid.half
-{
-	width:133px
-}
-
-
-body.narrow #outline .verse_grid
-{
-	width:220px;
-}
-
-
-body.narrow #verse
-{
- font-size:18px;
-}
-
-
-
-body.narrow .swapverse img
-{
-	margin-top:5px;
-	height:20px;
-    width: 57px;
-}
-
-
-body.narrow .verse_info_box.tags.oversize,
-body.narrow .verse_info_box.tags.regular
-{
-	height:101px;
-}
-
-body.narrow .verse_info_box.outline.top5
-{
-	height:200px;
-
-}
-
-body.narrow #hebrew.fax
-{
-	width:438px;
-}
-
-body.narrow #hebrew_text_box
-{
-	padding-right:1em;
-}
-
-
-body.narrow #floater
-{
-	left:596px;
-}
-
-
-
-
- 

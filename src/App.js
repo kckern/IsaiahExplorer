@@ -113,11 +113,6 @@ class App extends Component {
     var img = new Image()
     img.src = require("./img/interface/book.gif")
     img.onload = this.initApp();
-    
-    if(window.innerWidth<1920)
-    {
-    	document.getElementsByTagName("body")[0].className = "narrow";
-    }
   }
 
   componentWillMount() {
@@ -484,7 +479,6 @@ class App extends Component {
     this.setState(settings, function() {
       this.saveSettings()
       this.loadCore()
-      this.checkZoom()
     })
   }
 
@@ -2820,21 +2814,6 @@ class App extends Component {
     )
   }
 
-  checkZoom() {
-    return false
-    /*
-    var h = this.getHeight()
-    var w = this.getWidth()
-    var appw = 1920
-    if (w < appw) {
-      var ratio = w / appw
-      document.getElementById("approot").style.transform =
-        "scale(" + ratio + ")"
-      document.getElementById("approot").style.height = (h + 15) / ratio + "px"
-      var nw = document.getElementById("approot").style.width
-      if (nw <= w) document.body.style.overflow = "hidden"
-    }*/
-  }
 }
 if (!Element.prototype.matches) {
   Element.prototype.matches =
