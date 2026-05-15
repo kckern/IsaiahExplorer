@@ -4,6 +4,10 @@ import type { ReactNode } from 'react';
 export const metadata: Metadata = {
   title: 'Isaiah Explorer',
   description: 'Read Isaiah in multiple translations with thematic tags, Hebrew lexicon, and scholarly commentary.',
+  // Google Search Console URL-prefix property for https://isaiah.scripture.guide.
+  // (The TXT-record method conflicts with the existing CNAME on this name in
+  // Route 53, so we verify via the meta tag instead.)
+  verification: { google: 'lMBgL5xixXULsNvFFt_pNVR8SMJGuKxwcHxxM50uY74' },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
