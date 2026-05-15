@@ -105,7 +105,10 @@ function Settings() {
             </div>
           </td>
           <td width="25%">
-            <Preview shortcode={shortcode} />
+            {/* shortcode is null on first render — the useEffect that seeds it
+                runs after mount, so the preview components (each of which does
+                meta.version[shortcode].title) would throw on that frame. */}
+            {shortcode && <Preview shortcode={shortcode} />}
           </td>
         </tr>
         </tbody>
