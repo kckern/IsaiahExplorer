@@ -165,6 +165,16 @@ var state = globalData.state;
 	var cells = [];
 	var heads = [];
 	var num = state.version_views;
+
+	// Kick off background fetches for any side-by-side versions whose text
+	// isn't loaded yet — otherwise the cells below sit on "Loading..." forever.
+	useEffect(() => {
+		for (var i = 0; i < num && i < state.top_versions.length; i++) {
+			var ver = state.top_versions[i];
+			if (ver && globalData["text"][ver] === undefined) app.loadVersionText(ver);
+		}
+	}, [num, state.top_versions, state.active_verse_id, app, globalData]);
+
 	for (var i in state.top_versions) {
 		if (i >= num) continue;
 		var ver = state.top_versions[i];

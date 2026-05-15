@@ -1590,6 +1590,25 @@ class App extends Component {
     return verses
   }
 
+  // Load a version's text into globalData.text without switching the primary
+  // version. Used by the side-by-side translations panel, which would otherwise
+  // sit on a "Loading..." cell forever — nothing else triggers the fetch.
+  loadVersionText(shortcode) {
+    if (!shortcode) return
+    if (globalData["text"][shortcode] !== undefined) return
+    this._versionLoads = this._versionLoads || {}
+    if (this._versionLoads[shortcode]) return
+    this._versionLoads[shortcode] = true
+    fetch(this.state.rootURL + "./text/verses_" + shortcode + ".txt")
+      .then(function(r) { return r.text() })
+      .then(function(data) {
+        globalData["text"][shortcode] = this.unzipJSON(data)
+        this._versionLoads[shortcode] = false
+        this.forceUpdate()
+      }.bind(this))
+      .catch(function() { this._versionLoads[shortcode] = false }.bind(this))
+  }
+
   loadVersion(shortcode) {
     if (shortcode === undefined) shortcode = "KJV"
     this.setState({ui_version_loading: true})
