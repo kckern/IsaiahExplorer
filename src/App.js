@@ -1184,28 +1184,13 @@ class App extends Component {
     return height + 0
   }
 
-  tagOverflow() {
-    if (this.state.more_tags === true) return false
-    var text = document.getElementById("verse")
-    if (text === null) return false
-    var tagbox = text.querySelectorAll(".verse_info_box.tags")[0]
-    if (tagbox === undefined) return false
-
-    tagbox.className = "verse_info_box tags"
-    if (tagbox.offsetHeight > 100) {
-      tagbox.className = "verse_info_box tags oversize"
-    } else {
-      tagbox.className = "verse_info_box tags regular"
-    }
-  }
+  // TagBox now decides its own className (showfull / overflowing) based on
+  // state.more_tags and a useEffect-driven measurement, so this is a no-op
+  // kept for back-compat with the setActiveVerse callback below.
+  tagOverflow() {}
 
   moreTags() {
     if (this.state.more_tags === true) return false
-    var text = document.getElementById("verse")
-    if (text === null) return false
-    var tagbox = text.querySelectorAll(".verse_info_box.tags")[0]
-    if (tagbox === undefined) return false
-    tagbox.className = "verse_info_box tags"
     this.setState({more_tags: true})
   }
 

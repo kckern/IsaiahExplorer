@@ -207,28 +207,33 @@ var state = globalData.state;
 	</div>;
 }
 
-function SeeMoreTags({ clicked }) {
+function SeeMoreTags() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
-var state = globalData.state;
-	if (clicked) return null;
-	return <div className="readmore" onClick={app.moreTags.bind(app)}>See More Tags...</div>;
+	var state = globalData.state;
+	// Hide the "See More Tags…" affordance when the row is already expanded,
+	// or when the verse has so few tags that everything fits in the collapsed
+	// box anyway (the .overflowing modifier is set by TagBox below).
+	if (state.more_tags) return null;
+	return <div className="readmore tags-readmore" onClick={app.moreTags.bind(app)}>See More Tags…</div>;
 }
 
 function TagBox() {
 	var globalData = useContext(DataContext);
 	var app = globalData.app;
-var state = globalData.state;
+	var state = globalData.state;
 	const divElementRef = useRef(null);
+	const [overflowing, setOverflowing] = useState(false);
 
+	// Measure after each render. The box is collapsed by default; if the actual
+	// content (scrollHeight) is taller than the visible (clientHeight) area, the
+	// row should advertise itself as overflowing — TagBox renders with a class
+	// the CSS reads, and SeeMoreTags decides whether to show the affordance.
 	useEffect(() => {
-		if (divElementRef.current === null) return;
-		var height = divElementRef.current.clientHeight;
-		if (height > 90) {
-			// keep behavior parity; oversize handling is intentionally disabled
-		} else if (height <= 90) {
-			// keep behavior parity; oversize handling is intentionally disabled
-		}
+		var el = divElementRef.current;
+		if (!el) return;
+		var isOver = el.scrollHeight - el.clientHeight > 1;
+		if (isOver !== overflowing) setOverflowing(isOver);
 	});
 
 	var tags = app.getVerseTags(state.active_verse_id);
@@ -237,6 +242,8 @@ var state = globalData.state;
 	});
 
 	var classes = ["verse_info_box", "tags"];
+	if (state.more_tags) classes.push("showfull");
+	if (overflowing && !state.more_tags) classes.push("overflowing");
 
 	return (
 		<div className={classes.join(" ")} ref={divElementRef}>

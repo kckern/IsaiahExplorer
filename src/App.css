@@ -74,6 +74,26 @@ body .tagtitle
 	font-family: 'Roboto Condensed', 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
 	font-style: normal;
 }
+
+/* UI section labels in the Verse Details column ("Verse Tags",
+   "N Side-by-side Translations", "Encompassing Passages",
+   "Corresponding Structural Sections") and the "See More Tags…" affordance
+   are editorial labels, not scripture — keep them in Roboto Condensed. */
+body .col2 h4,
+body .col2 div.readmore,
+body .verse_info_box h4
+{
+	font-family: 'Roboto Condensed', 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
+	font-style: normal;
+}
+
+/* Version-preview sample passages render with wrapperClass="passage preview".
+   Match the app's reading view by setting them in the scripture font. */
+body .passage.preview,
+body .passage.preview blockquote
+{
+	font-family: 'Scripture', Times, Georgia, serif;
+}
 #root
 {
 	margin: auto;
@@ -1909,27 +1929,29 @@ tr.readmore:hover,
 
 }
 
-.verse_info_box.tags.oversize,
-.verse_info_box.tags.regular
+/* Verse Tags box: collapsed by default to show the heading plus ~3 rows of
+   chips, expanded via "See More Tags…" (which only renders when the box is
+   actually overflowing). The previous fixed height:90px clipped the bottom
+   border of the third row. Using max-height lets shorter rows fit cleanly
+   while a generous ceiling keeps three full rows visible. */
+.verse_info_box.tags
 {
-	height:90px;
+	max-height: 124px;
+	overflow: hidden;
+	transition: max-height 0.2s ease;
 }
-.verse_info_box.tags + div.readmore
+.verse_info_box.tags.showfull
 {
-	height:9px;
+	max-height: none;
 }
-.verse_info_box.tags:not(.oversize) + div.readmore
+.verse_info_box.tags + div.tags-readmore
 {
-	visibility:hidden;
+	display: none;
+	padding-top: 2px;
 }
-
-.verse_info_box.tags.oversize
+.verse_info_box.tags.overflowing + div.tags-readmore
 {
-}
-
-.verse_info_box.tags.oversize.showfull
-{
-	max-height:inherit;
+	display: block;
 }
 
 #verse h4
