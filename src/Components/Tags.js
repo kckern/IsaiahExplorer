@@ -19,6 +19,10 @@ var state = globalData.state;
 
 	var tag = state.selected_tag;
 	if (tag === null) return null;
+	// checkFloater (called from the effect above) drives state.floaterVisible
+	// based on whether the highlighted block is in view. Used to live in a
+	// vanilla `element.style.display = "none"` mutation.
+	if (!state.floaterVisible) return null;
 	var tagMeta = globalData["tags"]["tagIndex"][tag];
 	if (tagMeta.type === "chiasm" || tagMeta.type === "parallel") return null;
 	var strc = globalData["tags"]["tagStructure"][tag];
@@ -41,7 +45,7 @@ var state = globalData.state;
 
 	var floaterContent = floaters[key];
 
-	return <div id="floater" style={{ display: "block" }}>{floaterContent}</div>;
+	return <div id="floater">{floaterContent}</div>;
 }
 
 export function TaggedVerses() {
@@ -454,11 +458,19 @@ function TagParallel() {
 	var app = globalData.app;
 var state = globalData.state;
 
+	// Per-row class state. Keys are row indices (the numeric prefix used in
+	// the DOM ids like "1content<tagstr>"). Values are one of:
+	//   "row"          — default, pre-measurement
+	//   "row minirow"  — measured tall, clipped with a "Read More..." toggle
+	//   "row fullrow"  — expanded, readmore TR hidden
+	const [rowClasses, setRowClasses] = useState({});
+
 	function readMore(i) {
-		var tagstr = state.selected_tag.toLowerCase().replace(/[^a-z]/g, "");
-		var element = document.getElementById(i + "readMore" + tagstr);
-		element.style.display = "none";
-		document.getElementById(i + "content" + tagstr).className = "row fullrow";
+		setRowClasses(function(prev) {
+			var next = Object.assign({}, prev);
+			next[i] = "row fullrow";
+			return next;
+		});
 	}
 
 	useEffect(() => {
@@ -475,6 +487,9 @@ var state = globalData.state;
 				&& hl.closest("table.parallel").querySelector('tr[data-scroll-target="parallel-heading"]');
 			if (heading) heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}
+
+		// Measure each row and stage class assignments, then commit once.
+		var next = {};
 		for (var i = 1; i <= document.querySelectorAll("#parTable .row").length; i++) {
 			var row = document.getElementById(i + "content" + tagstr);
 			if (row === null) continue;
@@ -483,9 +498,11 @@ var state = globalData.state;
 			var left = cells[0].offsetHeight;
 			var right = cells[1] === undefined ? 0 : cells[1].offsetHeight;
 
-			if (left < 150 && right < 150) readMore(i);
-			else row.className = "row minirow";
+			if (left < 150 && right < 150) next[i] = "row fullrow";
+			else next[i] = "row minirow";
 		}
+		setRowClasses(function(prev) { return Object.assign({}, prev, next); });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	var tagstr = state.selected_tag.toLowerCase().replace(/[^a-z]/g, "");
@@ -520,6 +537,7 @@ var state = globalData.state;
 		if (verses.indexOf(parseInt(state.active_verse_id, 0)) >= 0) classes.push("parameta_highlighted");
 
 		if (typeof tagStructure[i + "B"] === "undefined") {
+			var rowClassSingle = rowClasses[i] || "row";
 			items.push([
 				heading,
 				<tr className="metaref" data-scroll-target="parallel-heading" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
@@ -531,12 +549,14 @@ var state = globalData.state;
 				<tr className={classes.join(" ")} id={i + "ii" + tagstr} key={i + "ii"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
 					<td colSpan={2}>{l_desc}</td>
 				</tr>,
-				<tr id={i + "content" + tagstr} className="row" key={i + "iii"} onMouseEnter={() => app.highlightTaggedVerses(verses)}>
+				<tr id={i + "content" + tagstr} className={rowClassSingle} key={i + "iii"} onMouseEnter={() => app.highlightTaggedVerses(verses)}>
 					<td colSpan={2}>
 						<Passage wrapperId={i + "AA" + tagstr} plain={1} verses={tagStructure[i + "A"].verses} sub={tagStructure[i + "A"].sub} highlights={l_highlights} />
 					</td>
 				</tr>,
-				<tr key={i + "iv" + tagstr} id={i + "readMore" + tagstr} className="readmore" onClick={() => readMore(index)}><td colSpan={2}>Read More...</td></tr>
+				rowClassSingle === "row fullrow"
+					? null
+					: <tr key={i + "iv" + tagstr} id={i + "readMore" + tagstr} className="readmore" onClick={() => readMore(index)}><td colSpan={2}>Read More...</td></tr>
 			]);
 			continue;
 		}
@@ -559,6 +579,7 @@ var state = globalData.state;
 		var r_highlights = null;
 		if (tagStructure[i + "B"].highlight !== undefined) r_highlights = tagStructure[i + "B"].highlight;
 
+		var rowClassPair = rowClasses[i] || "row";
 		items.push([
 			heading,
 			<tr className="metaref" data-scroll-target="parallel-heading" id={i + "i" + tagstr} key={i + "i"} onMouseEnter={() => { app.highlightTaggedVerses(verses); app.setActiveVerse(verses[0]); }}>
@@ -575,7 +596,7 @@ var state = globalData.state;
 				<td>{l_desc}</td>
 				<td>{r_desc}</td>
 			</tr>,
-			<tr id={i + "content" + tagstr} className="row" key={i + "iii"} onMouseEnter={() => app.highlightTaggedVerses(verses)}>
+			<tr id={i + "content" + tagstr} className={rowClassPair} key={i + "iii"} onMouseEnter={() => app.highlightTaggedVerses(verses)}>
 				<td>
 					<Passage wrapperId={i + "AA" + tagstr} plain={1} verses={tagStructure[i + "A"].verses} sub={tagStructure[i + "A"].sub} highlights={l_highlights} />
 				</td>
@@ -583,7 +604,9 @@ var state = globalData.state;
 					<Passage wrapperId={i + "BB" + tagstr} plain={1} verses={tagStructure[i + "B"].verses} sub={tagStructure[i + "B"].sub} highlights={r_highlights} />
 				</td>
 			</tr>,
-			<tr key={i + "iv" + tagstr} id={i + "readMore" + tagstr} className="readmore" onClick={() => readMore(index)}><td colSpan={2}>Read More...</td></tr>
+			rowClassPair === "row fullrow"
+				? null
+				: <tr key={i + "iv" + tagstr} id={i + "readMore" + tagstr} className="readmore" onClick={() => readMore(index)}><td colSpan={2}>Read More...</td></tr>
 		]);
 	}
 
@@ -617,35 +640,55 @@ function ChiasticBlock({ content, letter_verses, side, index }) {
 	var app = globalData.app;
 var state = globalData.state;
 
-	function readMore(i) {
-		var element = document.getElementById(i + "readMore");
-		element.parentNode.removeChild(element);
-		document.getElementById(i + "content").className = "verses";
+	// Local state replaces three vanilla-DOM mutations that the old
+	// useEffect did against the same elements:
+	//   - containerClass: "verses" | "verses chiastic_mini"
+	//     defaults to "verses"; mount measures container height and sets
+	//     "verses chiastic_mini" when h > 203.
+	//   - readMoreVisible: shows/hides the "Read More..." div. When the
+	//     content is short enough to auto-expand (h <= 203), the readmore
+	//     toggle disappears (old code removed the DOM node via removeChild).
+	//   - readMoreActive: adds the "active" modifier when the highlighted
+	//     verse is offscreen in the clipped container.
+	const [containerClass, setContainerClass] = useState("verses");
+	const [readMoreVisible, setReadMoreVisible] = useState(true);
+	const [readMoreActive, setReadMoreActive] = useState(false);
+
+	function readMore(/* i */) {
+		// Click handler: expand the block. Mirrors the old code's effect
+		// (className="verses" + readMore node removed).
+		setContainerClass("verses");
+		setReadMoreVisible(false);
 	}
 
 	useEffect(() => {
-		var textNode = document.getElementById("text");
-		if (textNode === null) return;
-
-		var allreads = textNode.querySelectorAll(".readmore");
-		for (var i in allreads) if (/active/.exec(allreads[i].className)) allreads[i].className = "readmore";
-
+		// The old effect also did a sweeping reset of every ".readmore.active"
+		// in #text back to "readmore". That cross-instance loop is dropped on
+		// purpose per the spec: each ChiasticBlock now owns its own
+		// readMoreActive state, so stale "active" classes can't linger across
+		// remounts. App.highlightReadMore() continues to manage the runtime
+		// toggling separately (other agent's scope).
 		var id = side + "" + index + "content";
 		var container = document.getElementById(id);
 		if (container === null) return;
 
 		var h = container.offsetHeight;
-		if (h > 203) container.className = "verses chiastic_mini";
-		else readMore(side + "" + index);
+		if (h > 203) {
+			setContainerClass("verses chiastic_mini");
+		} else {
+			// Short content: auto-expand, hide the readmore toggle.
+			setContainerClass("verses");
+			setReadMoreVisible(false);
+		}
 		if (content.verses.map(Number).indexOf(state.active_verse_id) === -1) return;
 		var matches = container.querySelectorAll(".versebox_highlighted");
 		if (matches.length < 1) return;
 		var element = matches[0];
 
 		if (!app.checkInView(container, element)) {
-			var readmore = document.getElementById(side + "" + index + "readMore");
-			if (readmore !== null) readmore.className = "readmore active";
+			setReadMoreActive(true);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	var label = null;
@@ -675,10 +718,12 @@ var state = globalData.state;
 				<div className="tagref">{content.ref}</div>
 			</div>
 			<div className={classes.join(" ")}>{desc}</div>
-			<div id={side + index + "content"} className="verses">
+			<div id={side + index + "content"} className={containerClass}>
 				<Passage highlights={highlights} plain={1} verses={content.verses} sub={content.sub} />
 			</div>
-			<div id={side + index + "readMore"} className="readmore" onClick={() => readMore(side + "" + index)}>Read More...</div>
+			{readMoreVisible
+				? <div id={side + index + "readMore"} className={readMoreActive ? "readmore active" : "readmore"} onClick={() => readMore(side + "" + index)}>Read More...</div>
+				: null}
 		</div>
 	);
 }

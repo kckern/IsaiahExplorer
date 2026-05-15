@@ -60,6 +60,7 @@ class App extends Component {
     tagPanel: TAG_PANEL.CLOSED,
     infoOpen: false,
     allCollapsed: false,
+    floaterVisible: false,
     tagMode: false,
     searchMode: false,
     comSearchMode: false,
@@ -1754,7 +1755,9 @@ class App extends Component {
       this.scrollOutline(false, source)
       this.scrollText(false, source)
       this.checkFloater()
-      this.highlightReadMore()
+      // highlightReadMore removed: ChiasticBlock / TagParallel in Tags.js now
+      // own their own "readmore active" state via internal useEffect measurement
+      // of the highlighted verse's visibility (no cross-tree DOM mutation).
       var isHighFreq = source === "arrow" || source === "audio" || source === "comaudio";
       this.setUrl(isHighFreq)
       if (this.state.hebrewSearch && this.state.hebrewStrongIndex !== null) {
@@ -1994,26 +1997,12 @@ class App extends Component {
     }
   }
 
-  highlightReadMore() {
-    if (this.state.selected_tag === null) return false
-    var tagMeta = globalData["tags"]["tagIndex"][this.state.selected_tag]
-    if (["chiasm", "parallel"].indexOf(tagMeta.type) >= 0) {
-      var mores = document.getElementById("text").querySelectorAll(".readmore")
-      for (var y = 0; y < mores.length; ++y) mores[y].className = "readmore"
-      var yellowVerses = document
-        .getElementById("text")
-        .querySelectorAll(".versebox_highlighted")
-      for (var x = 0; x < yellowVerses.length; ++x) {
-        var verse = yellowVerses[x]
-        var box = null
-        if (tagMeta.type === "chiasm") box = this.findAncestor(verse, ".verses")
-        if (tagMeta.type === "parallel") box = this.findAncestor(verse, ".row")
-        var readmore = box.nextElementSibling
-        if (!this.checkInView(box, verse))
-          if (readmore !== null) readmore.className = "readmore active"
-      }
-    }
-  }
+  // highlightReadMore was removed in the DOM-mutation audit cleanup.
+  // It used to querySelector across the whole #text container and overwrite
+  // .readmore className on elements owned by ChiasticBlock / TagParallel in
+  // Tags.js, fighting React's render. The child components now derive their
+  // own "readmore active" state via useEffect + checkInView on their own
+  // highlighted verse. Call site in setActiveVerse was also removed.
 
   setActiveChiasm(letter, verses) {
     if (verses === null || verses === undefined) verses = []
@@ -2100,19 +2089,31 @@ class App extends Component {
   }
 
   checkFloater(TagBlocks) {
-    if (this.state.selected_tag === null) return false
+    // Helper: only setState when the value actually changes, to avoid render loops
+    // (checkFloater is invoked from setActiveVerse's setState callback AND from
+    // TagBlocks' unconditional useEffect — see Tags.js ~line 309).
+    var setFloaterVisible = (nextVisible) => {
+      if (this.state.floaterVisible !== nextVisible) {
+        this.setState({floaterVisible: nextVisible})
+      }
+    }
+
+    if (this.state.selected_tag === null) {
+      setFloaterVisible(false)
+      return false
+    }
     var container = document.getElementById("text")
     if (container === null) return false
     var h = container.querySelectorAll(".tag_desc_highlighted")
     if (h.length < 1) {
-      if (document.getElementById("floater") === null) return false
-      document.getElementById("floater").style.display = "none"
+      setFloaterVisible(false)
       return false
     }
     var element = h[0]
 
+    var versionMetaEl = document.getElementById("version_meta")
     var metaOpen =
-      document.getElementById("version_meta").classList[1] === "visible"
+      versionMetaEl !== null && versionMetaEl.classList[1] === "visible"
 
     var blueBarisVisible = this.checkInView(container, element)
     // TODO(audit-followup): parentNode.lastChild here is the same kind of
@@ -2125,19 +2126,15 @@ class App extends Component {
       true
     )
 
-    if (document.getElementById("floater") === undefined) return false
-    if (document.getElementById("floater") === null) return false
-    //console.log({blueBarisVisible:blueBarisVisible,textNotVisible:textNotVisible,metaOpen:metaOpen,allCollapsed:this.state.allCollapsed});
-    if (
+    var shouldHide =
       blueBarisVisible ||
       textNotVisible ||
       metaOpen ||
       this.state.allCollapsed
-    ) {
-      document.getElementById("floater").style.display = "none"
-    } else {
-      document.getElementById("floater").style.display = "block"
-    }
+    setFloaterVisible(!shouldHide)
+    // TODO: TagFloater in Tags.js should `return null` (or otherwise unmount)
+    // when state.floaterVisible is false. App now drives floater visibility
+    // via state instead of mutating element.style.display.
 
     if (TagBlocks !== undefined) {
       //if(this.state.selected_tag_block_index!==TagBlocks.active_block_index)
