@@ -105,12 +105,7 @@ body .passage.preview blockquote
 {
     background-color: #FFFFFF;
     margin: auto;
-    /* Fill the viewport. The 4-column layout (col1/col2b/col2 floats + col3
-       fluid centre) needs ~1820px for col3 to stay above its min-width; below
-       that we let the page scroll horizontally rather than snap to a smaller
-       fixed layout. */
     width: 100%;
-    min-width: 1820px;
     height: 100%;
     color: #000000;
     background-color: #333;
@@ -119,14 +114,29 @@ body .passage.preview blockquote
 
 .wrapper
 {
-	overflow: auto;
     position: absolute;
     right: 0px;
     left: 0px;
     bottom: 0px;
     top: 40px;
     overflow: hidden;
-    margin: 10px;
+    /* Fluid 4-column grid: Structure | Section | Verse (reading) | Passage.
+       Grid areas map to columns by name, so DOM order is irrelevant. Each
+       column scrolls internally; the container never scrolls horizontally.
+       Replaces the old fixed float layout that forced min-width:1820px. */
+    display: grid;
+    grid-template-columns:
+        minmax(240px, 24%)
+        minmax(180px, 16%)
+        minmax(320px, 1fr)
+        minmax(300px, 29%);
+    grid-template-areas: "structure section verse passage";
+    /* One full-height row (minmax(0,…) lets columns shrink below content and
+       scroll internally instead of expanding past the clipped container). */
+    grid-template-rows: minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .react-player
@@ -292,32 +302,25 @@ h1
 }
 
 .col1 {
-    width: 491px; float:left;
-	margin-left:0px;
-
+    grid-area: structure;
+    float: none; width: auto; margin: 0;
+    overflow-y: auto; min-width: 0;
 }
 .col2 {
-    width: 560px; float:right;
+    grid-area: passage;
+    float: none; width: auto;
+    overflow-y: auto; min-width: 0;
 }
 
 .col3 {
-	margin-left:820px;
-	margin-right:570px;
-    min-width:400px;
+    grid-area: verse;
+    margin: 0; min-width: 0;
+    overflow-y: auto;
 }
 .col2b {
-
-
-    width: 310px; float:left;
-    /*
-    left:625px;
-    height:400px;
-
-    position:absolute;
-    bottom:0px;
-    width:310px;
-    margin:0;
-    */
+    grid-area: section;
+    float: none; width: auto;
+    overflow-y: auto; min-width: 0;
 }
 .hidden
 {
