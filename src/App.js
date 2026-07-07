@@ -25,6 +25,7 @@ import {
 } from "./routing/defaults"
 import { getFocalTag } from "./state/tagSelectors"
 import { buildActions } from "./state/actions"
+import { resolveKey, NO_PREVENT_DEFAULT_ACTIONS } from "./state/keymap"
 import { buildTitle } from "./routing/seo"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
 import { AUDIO_MODE, legacyAudioState, legacyCommentaryAudioMode, audioModeFromLegacy } from "./state/audioState"
@@ -118,6 +119,50 @@ class App extends Component {
   // snapshot, so they call actions.* instead of holding the live App instance
   // and calling app.setState directly (audit 1.1/P2.1). Bound once here.
   actions = buildActions(this)
+
+  // Declarative keyboard dispatch table. `resolveKey` (src/state/keymap.js) maps
+  // a key event + context flags to one of these action names; this object maps
+  // the action name to the existing App method(s) it invokes. Kept as arrow
+  // fields so `this` is the App instance and `this.state` is read live at call
+  // time (needed by enterToggleVerse / minusToggleTag / toggleHebrew). The
+  // methods and their arguments match the legacy keyDown branches exactly.
+  keyboardActions = {
+    escapeClearTag: () => this.clearTag(),
+    enterToggleVerse: () => {
+      if (this.state.selected_verse_id === null) {
+        return this.selectVerse(this.state.active_verse_id)
+      }
+      return this.selectVerse(null)
+    },
+    left: () => this.left(),
+    up: () => this.up(),
+    right: () => this.right(),
+    down: () => this.down(),
+    cycleVersionPrev: () => this.cycleVersion(-1),
+    cycleVersionNext: () => this.cycleVersion(1),
+    cycleOutlinePrev: () => this.cycleOutline(-1),
+    cycleOutlineNext: () => this.cycleOutline(1),
+    cycleStructurePrev: () => this.cycleStructure(-1),
+    cycleStructureNext: () => this.cycleStructure(1),
+    cycleSection: () => this.cycleSection(1),
+    openCommentary: () => this.clickElementID("commentary"),
+    cycleTag: () => this.cycleTag(1),
+    minusToggleTag: () => {
+      if (this.state.tagMode) return this.clearTag()
+      var recent = globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"]
+      if (recent === undefined) return this.showcaseTag(null)
+      return this.setActiveTag(recent[recent.length - 1])
+    },
+    toggleHebrew: () => {
+      if (!this.state.hebrewFax && this.state.hebrewMode)
+        return this.clickElementID("seefax")
+      return this.clickElementID("hebIcon")
+    },
+    toggleCommentaryAudio: () => this.clickElementID("audio_commentary"),
+    toggleAudioVerse: () => this.clickElementID("audio_verse"),
+    preSearch: () => this.setState({preSearchMode: true}),
+    preSearchRef: () => this.setState({preSearchMode: true, refSearch: true}),
+  }
 
   handleLoadError(what) {
     return function (err) {
@@ -556,145 +601,31 @@ class App extends Component {
   }
 
   keyDown(e) {
-    if (typeof e.keyCode !== "number") return false
-    if (e.ctrlKey) return false
-    if (e.metaKey) return false
-    if (e.keyCode === 27) {
-      if (this.state.audioState !== null) return false
-      this.clearTag()
-      return false
-    }
-    if (
-      document.getElementById("searchbox") === document.activeElement &&
-      [37, 39, 35, 36, 46, 9].indexOf(e.keyCode) !== -1
-    )
-      return false
-
-    if (e.keyCode === 13) {
-      e.preventDefault()
-      if (this.state.selected_verse_id === null) {
-        this.selectVerse(this.state.active_verse_id)
-      } else {
-        this.selectVerse(null)
-      }
+    // Build the context snapshot resolveKey needs, then let the declarative
+    // keymap (src/state/keymap.js) decide which action — if any — this key
+    // triggers. The DOM read (searchbox focus) stays here in the impure caller;
+    // resolveKey itself is pure. See keymap.js for the full key -> action table.
+    const context = {
+      audioActive: this.state.audioState !== null,
+      searchboxFocused:
+        typeof document !== "undefined" &&
+        document.getElementById("searchbox") === document.activeElement,
+      commentaryAudioMode: this.state.commentaryAudioMode,
+      searchMode: this.state.searchMode,
+      preSearchMode: this.state.preSearchMode,
     }
 
-    if (e.keyCode === 37) {
-      e.preventDefault()
-      return this.left()
-    }
-    if (e.keyCode === 38) {
-      e.preventDefault()
-      return this.up()
-    }
-    if (e.keyCode === 39) {
-      e.preventDefault()
-      return this.right()
-    }
-    if (e.keyCode === 40) {
-      e.preventDefault()
-      return this.down()
-    }
+    const action = resolveKey(e, context)
+    if (action === null) return false
 
-    //page up/down: cycle versions
-    if (e.keyCode === 33 || e.keyCode === 219) {
-      e.preventDefault()
-      return this.cycleVersion(-1)
-    }
-    if (e.keyCode === 34 || e.keyCode === 221) {
-      e.preventDefault()
-      return this.cycleVersion(1)
-    }
-    //home end: cycle outlines
-    if (e.keyCode === 36) {
-      e.preventDefault()
-      return this.cycleOutline(-1)
-    }
-    if (e.keyCode === 35 || e.keyCode === 222) {
-      e.preventDefault()
-      return this.cycleOutline(1)
-    }
-    //ins/del: cycle structures
-    if (e.keyCode === 45) {
-      e.preventDefault()
-      return this.cycleStructure(-1)
-    }
-    if (e.keyCode === 46) {
-      e.preventDefault()
-      return this.cycleStructure(1)
-    }
+    const handler = this.keyboardActions[action]
+    if (handler === undefined) return false
 
-    //tab: move to next section
-    if (e.keyCode === 9) {
-      e.preventDefault()
-      return this.cycleSection(1)
-    }
+    // Every action calls preventDefault except the "soft" ones (Escape and the
+    // type-to-search triggers), which the legacy handler left to the browser.
+    if (!NO_PREVENT_DEFAULT_ACTIONS.has(action)) e.preventDefault()
 
-    //tilda opens commentary
-    if (e.keyCode === 192) {
-      e.preventDefault()
-      return this.clickElementID("commentary")
-    }
-
-    //TAGS
-    //plus: cycle
-    if (e.keyCode === 107 || e.keyCode === 187) {
-      e.preventDefault()
-      return this.cycleTag(1)
-    }
-
-    //minus toggle
-    if (e.keyCode === 111) {
-      e.preventDefault()
-      if (this.state.tagMode) return this.clearTag()
-      else {
-        var recent =
-          globalData["tags"]["parentTagIndex"]["Recently Viewed Tags"]
-        if (recent === undefined) return this.showcaseTag(null)
-        return this.setActiveTag(recent[recent.length - 1])
-      }
-    }
-    //Numbkey nimus hebrew
-    if (e.keyCode === 106) {
-      e.preventDefault()
-      if (!this.state.hebrewFax && this.state.hebrewMode)
-        return this.clickElementID("seefax")
-      return this.clickElementID("hebIcon")
-    }
-
-    if (e.keyCode === 32 && this.state.commentaryAudioMode) {
-      e.preventDefault()
-      // Was: this.setAudioMode(this.state.audioMode, this.clickElementID("audio_commentary"))
-      // The 2nd arg was supposed to be a setState callback but was being invoked
-      // immediately, returning undefined. The setAudioMode call itself was a no-op
-      // (writing the same mode back to state). Same anti-pattern Task A6 fixed in
-      // Tags.js — just trigger the click directly.
-      return this.clickElementID("audio_commentary")
-    }
-    if (
-      e.keyCode === 32 &&
-      !this.state.searchMode &&
-      !this.state.preSearchMode
-    ) {
-      e.preventDefault()
-      return this.clickElementID("audio_verse")
-    }
-
-    if (
-      !this.state.preSearchMode &&
-      !this.state.searchMode &&
-      e.keyCode >= 65 &&
-      e.keyCode <= 90
-    ) {
-      this.setState({preSearchMode: true})
-    }
-    if (
-      (e.keyCode >= 48 && e.keyCode <= 57) ||
-      (e.keyCode >= 96 && e.keyCode <= 105) ||
-      [110, 190, 186].indexOf(e.keyCode) !== -1
-    ) {
-      this.setState({preSearchMode: true, refSearch: true})
-    }
+    return handler()
   }
 
   clickElementID(id) {
