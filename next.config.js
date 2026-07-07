@@ -23,7 +23,11 @@ const nextConfig = {
             //   *.getclicky.com — analytics (restored in Task 13; beacon is img+script+xhr)
             value:
               "default-src 'self'; " +
-              "script-src 'self' 'unsafe-inline' static.getclicky.com in.getclicky.com; " +
+              // 'unsafe-eval' is required by react-refresh in `next dev` only;
+              // production CSP stays eval-free.
+              (process.env.NODE_ENV === 'development'
+                ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' static.getclicky.com in.getclicky.com; "
+                : "script-src 'self' 'unsafe-inline' static.getclicky.com in.getclicky.com; ") +
               "style-src 'self' 'unsafe-inline' fonts.googleapis.com; " +
               "font-src 'self' fonts.gstatic.com; " +
               "img-src 'self' data: scripture-guide-assets.s3.us-west-2.amazonaws.com in.getclicky.com; " +

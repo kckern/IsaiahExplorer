@@ -94,11 +94,13 @@ var state = globalData.state;
     available[source.year + source.shortcode] = source;
     var classes = [];
     if (source.shortcode === state.commentarySource) classes.push("selected");
+    // NOTE: this had a legacy string ref (ref={source.shortcode}) — dead in a
+    // function component and a hard crash under React 19's react-dom, which
+    // Next 16 bundles. It took the whole commentary route down.
     return (
       <span
         className={classes.join(" ")}
         key={key}
-        ref={source.shortcode}
         onClick={() => handleClick(source.shortcode)}>
         {source.label}
       </span>
