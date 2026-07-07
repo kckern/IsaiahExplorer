@@ -15,16 +15,20 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             // 'unsafe-inline' script-src is required until the legacy SPA sheds
-            // inline handlers (Phase 5). Clicky origins are pre-allowed for the
-            // analytics restore (Task 13); Google Fonts are the only other
-            // external origins (app/layout.tsx).
+            // inline handlers (Phase 5). External origins the app actually uses:
+            //   fonts.googleapis.com / fonts.gstatic.com — Roboto Condensed (app/layout.tsx)
+            //   audio.scripture.guide — verse & commentary audio (Audio.js)
+            //   www.youtube.com — tutorial video iframe (VideoBox.js)
+            //   scripture-guide-assets.s3…amazonaws.com — Hebrew scroll images (Hebrew.js)
+            //   *.getclicky.com — analytics (restored in Task 13; beacon is img+script+xhr)
             value:
               "default-src 'self'; " +
               "script-src 'self' 'unsafe-inline' static.getclicky.com in.getclicky.com; " +
               "style-src 'self' 'unsafe-inline' fonts.googleapis.com; " +
               "font-src 'self' fonts.gstatic.com; " +
-              "img-src 'self' data:; " +
-              "media-src 'self'; " +
+              "img-src 'self' data: scripture-guide-assets.s3.us-west-2.amazonaws.com in.getclicky.com; " +
+              "media-src 'self' audio.scripture.guide; " +
+              "frame-src www.youtube.com; " +
               "connect-src 'self' in.getclicky.com; " +
               "frame-ancestors 'none'",
           },
