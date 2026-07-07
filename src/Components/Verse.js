@@ -200,9 +200,9 @@ var state = globalData.state;
 		heading = <h4 key={3}>{num} Side-by-side Translations</h4>;
 	}
 	return <div>
-		<span key={4} onClick={app.cycleVersionViews.bind(app)} className="vernum"
+		<button type="button" key={4} onClick={app.cycleVersionViews.bind(app)} className="linklike vernum"
 			title="Number of side-by-side translations"
-			aria-label="Number of side-by-side translations">{num}</span>
+			aria-label="Number of side-by-side translations">{num}</button>
 		{heading}
 		{extra}
 	</div>;
@@ -216,7 +216,7 @@ function SeeMoreTags() {
 	// or when the verse has so few tags that everything fits in the collapsed
 	// box anyway (the .overflowing modifier is set by TagBox below).
 	if (state.more_tags) return null;
-	return <div className="readmore tags-readmore" onClick={app.moreTags.bind(app)}>See More Tags…</div>;
+	return <button type="button" className="linklike readmore tags-readmore" onClick={app.moreTags.bind(app)}>See More Tags…</button>;
 }
 
 function TagBox() {
@@ -389,5 +389,5 @@ var state = globalData.state;
 
 function SeeMore({ clicked, clicker }) {
 	if (clicked) return null;
-	return <div className="readmore" onClick={clicker}>See More...</div>;
+	return <button type="button" className="linklike readmore" onClick={clicker}>See More...</button>;
 }

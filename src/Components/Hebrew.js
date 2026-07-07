@@ -110,7 +110,7 @@ function HebrewFax() {
 	if(state.hebrewFax===false)
 	{
 		if(globalData.hebrew.fax[state.active_verse_id]===null) return null;
-		return <div id="seefax" onClick={()=>app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">&#x1F4DC;</span> </div>
+		return <button type="button" className="linklike" id="seefax" onClick={()=>app.setState({hebrewFax:true})}> Facsimile <span role="img" aria-label="scroll">&#x1F4DC;</span> </button>
 	}
 
 	if(globalData.hebrew.fax[state.active_verse_id]===null) return (<div className="faxBox none">

@@ -38,7 +38,7 @@ var state = globalData.state;
       <div>
         <div className="heading_subtitle commentary">
           Commentary
-          <img src={close} alt="close" onClick={app.clearCommentary.bind(app)} />
+          <button type="button" className="linklike" aria-label="Close commentary" onClick={app.clearCommentary.bind(app)}><img src={close} alt="" /></button>
         </div>
         <div id="commentary_text"></div>
       </div>
@@ -48,7 +48,7 @@ var state = globalData.state;
     <div>
       <div className="heading_subtitle commentary">
         Commentary
-        <img src={close} alt="close" onClick={app.clearCommentary.bind(app)} />
+        <button type="button" className="linklike" aria-label="Close commentary" onClick={app.clearCommentary.bind(app)}><img src={close} alt="" /></button>
       </div>
       <div id="commentary_text">
         <CommentaryTabs />
@@ -271,12 +271,14 @@ var state = globalData.state;
   return (
     <div>
       <h3>
-        <div className="prev" id="com_prev" onClick={() => move(-1)}>
+        <button type="button" className="linklike prev" id="com_prev"
+                aria-label="Previous commentary" onClick={() => move(-1)}>
           ⇦
-        </div>
-        <div className="next" id="com_next" onClick={() => move(1)}>
+        </button>
+        <button type="button" className="linklike next" id="com_next"
+                aria-label="Next commentary" onClick={() => move(1)}>
           ⇨
-        </div>
+        </button>
         <CommentaryTagLink reference={"Isaiah " + item.reference} verses={range} />
       </h3>
       <img alt="source" className="ver" src={require("../img/commentaries/" + item.source + ".jpg")} />

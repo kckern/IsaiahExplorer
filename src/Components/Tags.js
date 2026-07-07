@@ -115,9 +115,9 @@ var state = globalData.state;
 	var prevnext = [];
 	if (tagMeta !== undefined) {
 		if (tagMeta.next !== undefined)
-			prevnext.push(<div key={1} className="nexttag" id="tag_next" onClick={() => setTag(tagMeta.next)}>»</div>);
+			prevnext.push(<button type="button" key={1} className="linklike nexttag" id="tag_next" aria-label="Next tag" onClick={() => setTag(tagMeta.next)}>»</button>);
 		if (tagMeta.prev !== undefined)
-			prevnext.push(<div key={2} className="prevtag" id="tag_prev" onClick={() => setTag(tagMeta.prev)}>«</div>);
+			prevnext.push(<button type="button" key={2} className="linklike prevtag" id="tag_prev" aria-label="Previous tag" onClick={() => setTag(tagMeta.prev)}>«</button>);
 	}
 
 	return (
@@ -722,7 +722,7 @@ var state = globalData.state;
 				<Passage highlights={highlights} plain={1} verses={content.verses} sub={content.sub} />
 			</div>
 			{readMoreVisible
-				? <div id={side + index + "readMore"} className={readMoreActive ? "readmore active" : "readmore"} onClick={() => readMore(side + "" + index)}>Read More...</div>
+				? <button type="button" id={side + index + "readMore"} className={readMoreActive ? "linklike readmore active" : "linklike readmore"} onClick={() => readMore(side + "" + index)}>Read More...</button>
 				: null}
 		</div>
 	);

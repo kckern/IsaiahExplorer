@@ -121,7 +121,7 @@ function Section({section, sectionKey}) {
   }
 
   var tagimg = null;
-  if(section.tag.length>0) tagimg = <img src={tag_png} alt="tag" className="gridTag" onClick={()=>app.showcaseTag(section.tag)}/>
+  if(section.tag.length>0) tagimg = <button type="button" className="linklike gridTag" aria-label={"Show tag: " + section.tag} onClick={()=>app.showcaseTag(section.tag)}><img src={tag_png} alt="" /></button>
 
   let superhead = null;
   if(section.super!==undefined && section.super!=="") superhead = (<h2>{section.super}</h2>);
