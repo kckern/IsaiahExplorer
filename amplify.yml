@@ -6,7 +6,7 @@ frontend:
         - nvm install 20
         - nvm use 20
         - node --version
-        - npm ci --legacy-peer-deps
+        - npm ci
         - npx tsc --noEmit
         - npx jest --ci
     build:

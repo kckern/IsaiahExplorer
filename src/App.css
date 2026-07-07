@@ -139,7 +139,7 @@ body .passage.preview blockquote
     box-sizing: border-box;
 }
 
-.react-player
+.audio-host
 {
 	width:0; height:0;
 }
@@ -179,13 +179,6 @@ body.ie #text div.chiastic_column
 
 }
 
-.sbs .Tipsy-inner
-{
-	color:white;
-	max-width:1000px;
-	background-color:#555;
-	
-}
 .vernum
 {
 	border:1px solid black;
@@ -3734,132 +3727,6 @@ a.strong:hover
 }
 
 
-/**
- * React Tipsy
- * ===========
- */
- 
- .right .Tipsy-inner, .left .Tipsy-inner
- {
- 	
-  background-color: #111;
- }
- 
-.Tipsy {
-  display: block;
-  position: absolute;
-  z-index: 1070;
-  font-family:'Comfortaa', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: normal;
-  line-break: auto;
-  line-height: 1.42857143;
-  text-align: left;
-  text-align: start;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  white-space: normal;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
-  font-size: 12px;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-.Tipsy.in {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-.Tipsy.top {
-  margin-top: -3px;
-  padding: 5px 0;
-}
-.Tipsy.right {
-  margin-left: 3px;
-  padding: 0 5px;
-}
-.Tipsy.bottom {
-  margin-top: 3px;
-  padding: 5px 0;
-}
-.Tipsy.left {
-  margin-left: -3px;
-  padding: 0 5px;
-}
-.Tipsy-inner {
-  background-color: #467386;
-  border-radius: 4px;
-  color: #FFFFFF;
-  overflow:hidden;
-  max-height:45px;
-  max-width: 250px;
-  padding: 3px 8px;
-  text-align: center;
-}
-.Tipsy-inner.right {
-  background-color: #444;
-}
-.Tipsy-arrow {
-  border-color: transparent;
-  border-style: solid;
-  height: 0;
-  position: absolute;
-  width: 0;
-}
-.Tipsy.top .Tipsy-arrow {
-  bottom: 0;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px 5px 0;
-  border-top-color: #467386;
-}
-.Tipsy.right .Tipsy-arrow {
-  top: 50%;
-  left: 0;
-  margin-top: -5px;
-  border-width: 5px 5px 5px 0;
-  border-right-color: #111;
-}
-.Tipsy.left .Tipsy-arrow {
-  top: 50%;
-  right: 0;
-  margin-top: -5px;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #111;
-}
-.Tipsy.bottom .Tipsy-arrow {
-  top: 0;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 0 5px 5px;
-  border-bottom-color: #467386;
-}
-
-.pedigree
-{
-	font-size:10px;
-	color:#FFF;
-	opacity:0.5;
-	letter-spacing:-.3px;
-	white-space: nowrap;
-}
-
-.hebdef .Tipsy-inner
-{
-	color:orange;
-	background-color:#FFA;
-	border:3px solid orange;
-	font-weight:bold;
-	line-height:2em;
-    box-shadow: 0px 0px 7px 1px #000;
-    white-space: nowrap;
-    
-}
-.hebdef.Tipsy.top .Tipsy-arrow {
-    border-top-color: orange;
-}
 
 #hebrew
 {

@@ -12,7 +12,6 @@ import {globalData} from "./globals.js"
 import {DataContext} from "./DataContext"
 import VideoBox from "./Components/VideoBox.js"
 import MobileTabBar from "./Components/MobileTabBar.js"
-import Tipsy from "react-tipsy"
 
 
 import { fetchData } from "./data/fetchData"
@@ -203,31 +202,23 @@ class App extends Component {
         <div id="approot" className={classes.join(" ")} data-mobile-pane={this.state.mobilePane}>
           {errorPanel}
           <h1>
-            <Tipsy
-              content="Settings"
-              placement="left"
-              trigger="hover focus touch"
-              className="topper">
-              <img
-                alt="Settings"
-                onClick={() => this.openSettings()}
-                src={settings_icon}
-                className="settings"
-              />
-            </Tipsy>
+            <img
+              alt="Settings"
+              title="Settings"
+              aria-label="Settings"
+              onClick={() => this.openSettings()}
+              src={settings_icon}
+              className="settings"
+            />
             {title}
-            <Tipsy
-              content="Video Tutorial"
-              placement="right"
-              trigger="hover focus touch"
-              className="topper">
-              <img
-                alt="Video"
-                onClick={() => this.openVideo()}
-                src={video_icon}
-                className="demo"
-              />
-            </Tipsy>
+            <img
+              alt="Video"
+              title="Video Tutorial"
+              aria-label="Video Tutorial"
+              onClick={() => this.openVideo()}
+              src={video_icon}
+              className="demo"
+            />
           </h1>
           <div className="wrapper">
             <StructureColumn />

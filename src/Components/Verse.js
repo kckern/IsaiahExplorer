@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { DataContext } from "../DataContext";
 import { Passage } from "./Passage.js";
 import { Hebrew } from "./Hebrew.js";
-import Tipsy from "react-tipsy";
 import play_icon from "../img/interface/play.png";
 import loading_img from "../img/interface/message.gif";
 import heb_png from "../img/interface/hebrew.png";
@@ -201,9 +200,9 @@ var state = globalData.state;
 		heading = <h4 key={3}>{num} Side-by-side Translations</h4>;
 	}
 	return <div>
-		<Tipsy key={1} content="Number of side-by-side translations" placement="left" trigger="hover focus touch" className="sbs">
-			<span key={4} onClick={app.cycleVersionViews.bind(app)} className="vernum">{num}</span>
-		</Tipsy>
+		<span key={4} onClick={app.cycleVersionViews.bind(app)} className="vernum"
+			title="Number of side-by-side translations"
+			aria-label="Number of side-by-side translations">{num}</span>
 		{heading}
 		{extra}
 	</div>;
@@ -262,21 +261,17 @@ var state = globalData.state;
 	var classes = ["taglink"];
 	if (state.selected_tag === tagName) classes.push("tag_highlighted");
 	var tagData = app.getTagData(tagName);
-	var content = (
-		<div>
-			<div className="pedigree"><span>{tagData.parents.filter(v => v !== "root").reverse().join(" » ")}</span></div>
-			<div>{tagData.description.trim().replace(/\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)$/g, "\u00a0$1\u00a0$2\u00a0$3")}</div>
-		</div>
-	);
-
+	var pedigree = tagData.parents.filter(v => v !== "root").reverse().join(" » ");
+	var description = tagData.description.trim();
+	var tagTitle = (pedigree ? pedigree + "\n" : "") + description;
 	return (
-		<Tipsy content={content} placement="top" trigger="hover focus touch" className="tagtip">
-			<div
-				className={classes.join(" ")}
-				onMouseEnter={() => app.setPreviewedTag(tagName)}
-				onMouseLeave={() => app.setPreviewedTag(null)}
-				onClick={() => app.setActiveTag(tagName)}>{tagName}</div>
-		</Tipsy>
+		<div
+			className={classes.join(" ")}
+			title={tagTitle}
+			aria-label={tagTitle}
+			onMouseEnter={() => app.setPreviewedTag(tagName)}
+			onMouseLeave={() => app.setPreviewedTag(null)}
+			onClick={() => app.setActiveTag(tagName)}>{tagName}</div>
 	);
 }
 

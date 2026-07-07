@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../DataContext";
-import Tipsy from 'react-tipsy';
 
 
 export function Hebrew() {
@@ -174,12 +173,14 @@ function HebrewWord({val}) {
 			break;
 		}
 	}
-	return <span><Tipsy  key="a" content={worddata.eng.replace(/[[\]]/g,"")} placement="top" trigger="hover focus touch" className="hebdef">
-		<span className={classes.join(" ")}
+	var hebTitle = worddata.eng.replace(/[[\]]/g,"");
+	return <span><span key="a" className={classes.join(" ")}
+		title={hebTitle}
+		aria-label={hebTitle}
 		onClick={handleClick}
 		onMouseEnter={handleMouseEnter}
 		onMouseLeave={handleMouseLeave}
-	>{val.orig}</span></Tipsy>{punct}<span key="s" className="space" /></span>
+	>{val.orig}</span>{punct}<span key="s" className="space" /></span>
 }
 
 

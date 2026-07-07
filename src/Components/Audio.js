@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import ReactPlayer from 'react-player';
 import { DataContext } from "../DataContext";
 import { AUDIO_MODE, isCommentaryMode } from "../state/audioState";
 
@@ -59,6 +58,7 @@ function AudioVersePlayer() {
 	var app = globalData.app;
 	var state = globalData.state;
 	var audioPointerRef = useRef(0);
+	var audioElRef = useRef(null);
 
 	// Compute the queue (current + next) for the active verse.
 	var version = state.hebrewMode ? "HEBREW" : state.version;
@@ -94,6 +94,16 @@ function AudioVersePlayer() {
 		}
 	}, [resolvedPointer, state.audioPointer, app]);
 
+	// Autoplay the current verse audio (native <audio>; replaces the old player).
+	// play() returns a promise; swallow autoplay-block rejections.
+	useEffect(() => {
+		var el = audioElRef.current;
+		if (!el) return;
+		el.playbackRate = state.playbackRate || 1;
+		var pr = el.play();
+		if (pr && pr.catch) pr.catch(function() {});
+	}, [url, state.playbackRate]);
+
 	if (!hasAudio) return null;
 
 	var onStart = function() {
@@ -125,30 +135,27 @@ function AudioVersePlayer() {
 
 	return (
 		<span>
-			<ReactPlayer
-				className='react-player'
-				width='0%' height='0%'
-				key={11}
-				url={url}
-				playing={true}
-				onStart={onStart}
+			<audio
+				ref={audioElRef}
+				className='audio-host'
+				key={url}
+				src={url}
+				preload="auto"
+				onPlay={onStart}
 				onError={onError}
 				onEnded={onEnded}
-				playbackRate={state.playbackRate || 1}
 			/>
 			{/* Prefetch the next verse but DO NOT autoplay it — two simultaneous
-			    <video> elements both with playing={true} compete for the browser's
-			    media session (Safari especially) and can cause the main playback
-			    to silently fail. preload-only is enough to warm the cache. */}
-			{next ? <ReactPlayer
-				className='react-player'
-				width='0%' height='0%'
-				key={12}
-				url={next_url}
-				playing={false}
-				volume={0}
-				muted={true}
-				config={{ file: { attributes: { preload: 'auto' } } }}
+			    <audio> elements both auto-playing compete for the browser's media
+			    session (Safari especially) and can cause the main playback to
+			    silently fail. This preload-only element never calls play(); it
+			    exists purely to warm the cache. */}
+			{next ? <audio
+				className='audio-host'
+				key={next_url}
+				src={next_url}
+				preload="auto"
+				muted
 			/> : null}
 		</span>
 	);
@@ -161,6 +168,7 @@ function AudioCommentaryPlayer() {
 	var state = globalData.state;
 	var audioPointerRef = useRef(0);
 	var hVersesRef = useRef([]);
+	var audioElRef = useRef(null);
 
 	// Pick the verse to look up. If we have a commentary verse range from a
 	// previous resolution, use its first verse; otherwise use the focal verse.
@@ -193,6 +201,15 @@ function AudioCommentaryPlayer() {
 			});
 		}
 	}, [current && current.filename, source, app, state.audioPointer, state.commentary_audio_verse_range]);
+
+	// Autoplay the current commentary audio (native <audio>; replaces the old player).
+	useEffect(() => {
+		var el = audioElRef.current;
+		if (!el) return;
+		el.playbackRate = state.playbackRate || 1;
+		var pr = el.play();
+		if (pr && pr.catch) pr.catch(function() {});
+	}, [current && current.url, state.playbackRate]);
 
 	if (!current) {
 		// No audio file for this verse + source. Surface the failure rather
@@ -232,27 +249,24 @@ function AudioCommentaryPlayer() {
 
 	return (
 		<span>
-			<ReactPlayer
-				className='react-player'
-				width='0%' height='0%'
-				key={21}
-				url={current.url}
-				playing={true}
-				onStart={onStart}
+			<audio
+				ref={audioElRef}
+				className='audio-host'
+				key={current.url}
+				src={current.url}
+				preload="auto"
+				onPlay={onStart}
 				onError={onError}
 				onEnded={onEnded}
-				playbackRate={state.playbackRate || 1}
 			/>
-			{/* Preload next commentary file without autoplaying it (see AudioVersePlayer). */}
-			{nextUrl ? <ReactPlayer
-				className='react-player'
-				width='0%' height='0%'
-				key={22}
-				url={nextUrl}
-				playing={false}
-				volume={0}
-				muted={true}
-				config={{ file: { attributes: { preload: 'auto' } } }}
+			{/* Preload next commentary file without autoplaying it (see AudioVersePlayer).
+			    This element never calls play(); it only warms the cache. */}
+			{nextUrl ? <audio
+				className='audio-host'
+				key={nextUrl}
+				src={nextUrl}
+				preload="auto"
+				muted
 			/> : null}
 		</span>
 	);

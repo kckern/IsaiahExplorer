@@ -10,9 +10,7 @@
     "next": "^14.2.35",
     "pako": "^2.1.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-player": "^1.12.0",
-    "react-tipsy": "^0.6.2"
+    "react-dom": "^18.3.1"
   },
   "scripts": {
     "dev": "next dev --port 3001",
