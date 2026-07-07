@@ -1,10 +1,7 @@
 /**
- * Jest config for the Next.js / server-side test layer.
- *
- * This config only matches tests under `lib/server/__tests__/` and
- * other TypeScript test files added during the Next.js migration.
- * Legacy CRA component tests under `src/` continue to run via
- * `react-scripts test` until CRA is removed in Phase 11.
+ * Jest config for the whole codebase — the Next.js/server layer under lib/ and
+ * app-level __tests__/, plus the client SPA tests under src/. (react-scripts is
+ * gone; nothing runs these except this config.)
  */
 /** @type {import('jest').Config} */
 module.exports = {
@@ -13,7 +10,8 @@ module.exports = {
     '<rootDir>/lib/**/__tests__/**/*.test.ts',
     '<rootDir>/lib/**/*.test.ts',
     '<rootDir>/__tests__/**/*.test.ts',
-    '<rootDir>/src/routing/__tests__/**/*.test.{js,jsx,ts,tsx}',
+    '<rootDir>/src/**/*.test.{js,jsx}',
+    '<rootDir>/src/**/__tests__/**/*.test.{js,jsx}',
   ],
   transform: {
     '^.+\\.tsx?$': ['@swc/jest', {
