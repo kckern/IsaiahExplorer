@@ -2165,18 +2165,6 @@ class App extends Component {
     return window.focus && s.focus()
   }
 
-  sgshow(e) {
-    e.preventDefault()
-    var ref = this.props.reference.replace(/[\s.]+/g, ".").toLowerCase()
-    this.PopupCenter(
-      "https://scripture.guide/" + ref,
-      "Scripture Guide",
-      1000,
-      750
-    )
-    e.stopPropagation()
-  }
-
   addLinks(string) {
     var blocks = []
     var items = string.split(/[{}]/)
@@ -2891,15 +2879,14 @@ if (!Element.prototype.matches) {
 export default App
 
 export function SGLink({reference}) {
-  var globalData = useContext(DataContext)
-  var app = globalData.app
   if (reference === undefined) return null
   var link = reference.replace(/\s+/g, ".").toLowerCase()
   return (
     <a
       className="ref"
-      onClick={(e) => app.sgshow(e)}
-      href={"https://scripture.guide/" + link}>
+      href={"https://scripture.guide/" + link}
+      target="_blank"
+      rel="noopener noreferrer">
       {reference}
     </a>
   )
