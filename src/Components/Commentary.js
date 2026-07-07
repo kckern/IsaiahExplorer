@@ -3,6 +3,7 @@ import { DataContext } from "../DataContext";
 import close from "../img/interface/close.png";
 import Parser from "html-react-parser";
 import { SGLink } from "../App.js";
+import { commentaryReplacer } from "./commentaryReplacer";
 
 function mapOrder(array, order, key) {
   array.sort(function(a, b) {
@@ -277,29 +278,7 @@ var state = globalData.state;
       <img alt="source" className="ver" src={require("../img/commentaries/" + item.source + ".jpg")} />
       {title}
       {Parser(item.html, {
-        replace: function(domNode) {
-          if (domNode === undefined) return domNode;
-          if (domNode.name && domNode.name === "a") {
-            if (domNode.children[0] === undefined) return null;
-            if (domNode.attribs.class === "ref")
-              return <SGLink reference={domNode.children[0].data} />;
-
-            if (domNode.attribs.class === "isa") {
-              var rowRange = [];
-              if (domNode.attribs.verses !== undefined) {
-                try {
-                  var obj = JSON.parse(atob(domNode.attribs.verses));
-                  rowRange = app.verseDatatoArray(obj);
-                } catch (e) {
-                  console.warn("Bad verses attribute in commentary HTML", e);
-                  return undefined;
-                }
-              }
-              return <CommentaryTagLink reference={domNode.children[0].data} verses={rowRange} />;
-            }
-          }
-          return domNode;
-        }
+        replace: commentaryReplacer(app, { SGLink, CommentaryTagLink })
       })}
     </div>
   );
