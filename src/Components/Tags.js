@@ -301,7 +301,7 @@ var state = globalData.state;
 
 	function handleDescClick(verseId, classes, index, count) {
 		if (classes.indexOf("active") < 0) {
-			app.setState({ allCollapsed: false, selected_verse_id: null }, app.setTagBlock(index, verseId));
+			app.setState({ allCollapsed: false, selected_verse_id: null }, () => app.setTagBlock(index, verseId));
 		} else if (count > 1) {
 			app.setState(
 				{ allCollapsed: true, selected_verse_id: null, selected_tag_block_index: null },
