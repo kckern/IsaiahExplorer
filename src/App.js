@@ -23,7 +23,7 @@ import {
   DEFAULT_TOP_OUTLINES,
   DEFAULT_TOP_STRUCTURES
 } from "./routing/defaults"
-import { getFocalTag } from "./state/tagSelectors"
+import { getFocalTag, getTagVerses } from "./state/tagSelectors"
 import { buildActions } from "./state/actions"
 import { resolveKey, NO_PREVENT_DEFAULT_ACTIONS } from "./state/keymap"
 import { buildTitle } from "./routing/seo"
@@ -2287,44 +2287,19 @@ class App extends Component {
         slug: "alltags",
         verses: globalData["tags"]["superRefs"]["Structures"]
       }
-    delete g.verses
-    if (g.verses === undefined) {
-      var segments = globalData["tags"]["tagStructure"][tagName]
-      if (segments !== undefined) {
-        g.verses = []
-        if (typeof segments === "object")
-          segments = Object.keys(segments).map(function(key) {
-            return segments[key]
-          })
-        for (var i in segments) g.verses = g.verses.concat(segments[i].verses)
-      }
+    // Verse list comes from the pure, memoized selector — no longer mutates the
+    // shared tagIndex entry (audit P1.8). Return a COPY so callers can't mutate
+    // the store through the returned object.
+    var verses = getTagVerses(globalData["tags"], tagName)
+    if (verses.length === 0 &&
+        globalData["tags"]["tagChildren"][tagName] === undefined &&
+        globalData["tags"]["parentTagIndex"][tagName] === undefined &&
+        globalData["tags"]["superRefs"][tagName] === undefined &&
+        globalData["tags"]["tagStructure"][tagName] === undefined) {
+      // Leaf with no verses at all — preserve the legacy error recovery.
+      return this.clearTag()
     }
-    if (g.verses === undefined)
-      g.verses = globalData["tags"]["superRefs"][tagName]
-    if (g.verses === undefined) {
-      // No super refs, no verses, must be a parent
-
-      g.verses = []
-      var t = globalData["tags"]
-      var children = t["tagChildren"][tagName]
-
-      if (children === undefined) {
-        children = t["parentTagIndex"][tagName]
-      }
-
-      if (children === undefined) {
-        //we have a problem, a leaf has no verses!
-        return this.clearTag()
-      }
-      for (i in children) {
-        var childObj = this.getTagData(children[i])
-        if(childObj===undefined) continue;
-        g.verses = g.verses.concat(childObj.verses)
-      }
-    }
-    return g
-
-    //Add Parents, etc
+    return Object.assign({}, g, { verses: verses })
   }
 
   ArrNoDupe(a) {
