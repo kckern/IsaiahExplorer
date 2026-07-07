@@ -11,6 +11,7 @@ import {TagFloater} from "./Components/Tags.js"
 import {globalData} from "./globals.js"
 import {DataContext} from "./DataContext"
 import VideoBox from "./Components/VideoBox.js"
+import MobileTabBar from "./Components/MobileTabBar.js"
 import Tipsy from "react-tipsy"
 
 
@@ -101,6 +102,10 @@ class App extends Component {
     ui_version_loading: false,
     ui_core_loading: true,
     load_error: null,
+
+    // Which panel fills the screen in the mobile (single-column) layout.
+    // One of: "structure" | "section" | "verses" | "read". Ignored on desktop.
+    mobilePane: "read",
 
     rootURL: window.location.href.replace(/((^file.*?)([^/]+$)|(^https*:\/\/[^/]+\/)(.*))/,"$2$4")
 
@@ -195,7 +200,7 @@ class App extends Component {
 
     return (
       <DataContext.Provider value={globalData}>
-        <div id="approot" className={classes.join(" ")}>
+        <div id="approot" className={classes.join(" ")} data-mobile-pane={this.state.mobilePane}>
           {errorPanel}
           <h1>
             <Tipsy
@@ -234,6 +239,7 @@ class App extends Component {
           {videoPanel}
           <TagFloater floater={this.floater} />
           <Audio />
+          <MobileTabBar app={this} />
         </div>
       </DataContext.Provider>
     )
@@ -1803,6 +1809,17 @@ class App extends Component {
       }
       this.triggerAudio();
       if (source === "init") this.setActiveVersion(this.state.version)
+      // On mobile, activating a verse (tap or arrow) means the user wants to
+      // read it — surface the reading pane. Not on the initial load.
+      if (
+        source !== "init" &&
+        typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(max-width: 1023px)").matches &&
+        this.state.mobilePane !== "read"
+      ) {
+        this.setState({ mobilePane: "read" })
+      }
     })
   }
 

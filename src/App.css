@@ -4017,3 +4017,54 @@ span.debug
   color: #fff; display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: 1rem; font-size: 16px; }
 .load-error button { font-size: 16px; padding: 12px 32px; cursor: pointer; }
+
+/* ─── Responsive: mobile / tablet single-column with a bottom tab bar ─────────
+   Below 1200px the fluid 4-column grid collapses to one full-width panel at a
+   time, chosen by the MobileTabBar (App state `mobilePane` → data-mobile-pane).
+   At/above 1200px the desktop grid (see .wrapper) applies unchanged. */
+.mobile-tabbar { display: none; }
+
+@media (max-width: 1199px) {
+  html, body { height: 100dvh; }
+
+  .wrapper {
+    display: block;      /* override the desktop grid */
+    top: 40px;
+    bottom: 56px;        /* clear the fixed tab bar */
+    padding: 0;
+    gap: 0;
+  }
+
+  .col1, .col2b, .col3, .col2 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  #approot[data-mobile-pane="structure"] .col1,
+  #approot[data-mobile-pane="section"]   .col2b,
+  #approot[data-mobile-pane="verses"]    .col3,
+  #approot[data-mobile-pane="read"]      .col2 { display: block; }
+
+  .mobile-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 56px;
+    z-index: 500;
+    background: #1a1a1a;
+  }
+  .mobile-tabbar button {
+    flex: 1;
+    min-height: 44px;
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-tabbar button.active {
+    background: #333;
+    font-weight: bold;
+  }
+}

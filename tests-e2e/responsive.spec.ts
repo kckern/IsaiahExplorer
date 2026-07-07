@@ -34,8 +34,19 @@ test('mobile shows the reading pane and a tab bar; side columns hidden', async (
   await page.goto('/whole/chapters/kjv/1/1');
   await page.waitForSelector('#approot');
   await expect(page.locator('.mobile-tabbar')).toBeVisible();
-  await expect(page.locator('.col3')).toBeVisible();
+  // Default mobile pane is "read" → the Passage reading column (.col2) shows;
+  // the Structure column (.col1) is hidden until its tab is selected.
+  await expect(page.locator('.col2')).toBeVisible();
   await expect(page.locator('.col1')).toBeHidden();
+});
+
+test('mobile tab bar switches the visible pane', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/whole/chapters/kjv/1/1');
+  await page.waitForSelector('.mobile-tabbar');
+  await page.locator('.mobile-tabbar button', { hasText: 'Structure' }).click();
+  await expect(page.locator('.col1')).toBeVisible();
+  await expect(page.locator('.col2')).toBeHidden();
 });
 
 test('desktop shows all four columns', async ({ page }) => {
