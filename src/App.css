@@ -3934,6 +3934,12 @@ span.debug
     background: #333;
     font-weight: bold;
   }
+
+  /* The version-swap thumbnail strip is a desktop hover affordance (five
+     77x25 images that don't fit the narrow heading — they clipped to a
+     broken-looking sliver). Version switching on mobile goes through the
+     heading tap / settings instead. */
+  .swapverse { display: none; }
 }
 
 /* ─── Accessibility: touch targets & contrast ────────────────────────────────

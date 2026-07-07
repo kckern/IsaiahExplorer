@@ -64,13 +64,13 @@ for (const { path, description, expectedTitleSubstring } of PERMUTATIONS) {
 
 test('legacy /search/:query redirects to /search.:query', async ({ request }) => {
   const res = await request.get('/search/comfort+my+people', { maxRedirects: 0 });
-  expect(res.status()).toBe(307);
+  expect(res.status()).toBe(308);
   expect(res.headers().location).toContain('/search.comfort+my+people');
 });
 
 test('legacy /hebrew/:strong redirects to /hebrew.:strong', async ({ request }) => {
   const res = await request.get('/hebrew/2490', { maxRedirects: 0 });
-  expect(res.status()).toBe(307);
+  expect(res.status()).toBe(308);
   expect(res.headers().location).toContain('/hebrew.2490');
 });
 
