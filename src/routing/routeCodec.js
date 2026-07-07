@@ -15,6 +15,8 @@
  *   /hebrew/:strong
  */
 
+import { encodeForUrl, decodeFromUrl } from "./searchCodec";
+
 const MAIN_REGEX = new RegExp(
   "^(/[^/]+)(/[^/]+)(/[^/]+)" +           // structure / outline / version
   "(/tag\\.[^/]+)*" +                       // optional tag
@@ -183,18 +185,8 @@ export function normalizeRoute(path) {
 }
 
 // ─── Internal helpers ────────────────────────────────────────────────────────
+// Search-param encode/decode live in the shared searchCodec (single source of
+// truth); aliased here to the names this module already used.
 
-function encodeSearchParam(query) {
-  let q = query;
-  q = q.replace(/–/g, "-");
-  q = q.replace(/; /g, ";");
-  q = q.replace(/｢([a-z])/g, "\\b$1");
-  q = q.replace(/([a-z])｣/g, "$1\\b");
-  return q.replace(/\s+/g, "+").replace(/\//g, "").toLowerCase();
-}
-
-function decodeSearchParam(encoded) {
-  return encoded
-    .replace(/[｢｣]/g, "/")
-    .replace(/\+/g, " ");
-}
+const encodeSearchParam = encodeForUrl;
+const decodeSearchParam = decodeFromUrl;

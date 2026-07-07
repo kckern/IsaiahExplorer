@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { DataContext } from "../DataContext";
+import { toDisplay, fromDisplay } from "../routing/searchCodec";
 
 import { Passage } from "./Passage.js";  
 
@@ -65,7 +66,7 @@ export function SearchBox() {
 	if(state.comSearchMode) return null;
 	var val = state.searchQuery;
 	if(val===null) val = "";
-	val = val.replace(/([\\]b|[｢｣])/g,"/");
+	val = fromDisplay(val);
 	if(state.urlSearch!==true) val="";
 
 	if((state.preSearchMode || state.searchMode ) && !state.hebrewSearch) {
@@ -172,13 +173,7 @@ export function SearchHeading() {
 	//if(state.commentaryAudioMode) verses = state.highlighted_tagged_verse_range;
 		var count = verses.length;
 		
-		var disQ = state.searchQuery;
-		if(disQ===null) disQ = "";
-		
-		disQ = disQ.replace(/[-]+/g,"–");
-		disQ = disQ.replace(/[;]+/g,"; ");
-		disQ = disQ.replace(/[\\]b([a-z])/g,"｢$1");
-		disQ = disQ.replace(/([a-z])[\\]b/g,"$1｣");
+		var disQ = toDisplay(state.searchQuery);
 		
 		if(state.comSearchMode && state.commentaryAudioMode && state.audioState!==null)
 		{
