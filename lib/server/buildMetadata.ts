@@ -1,19 +1,12 @@
 import type { Metadata } from 'next';
 import { buildRoute } from '../../src/routing/routeCodec';
+import { buildTitle, buildDescription } from '../../src/routing/seo';
 
 type GlobalData = {
   tags?: { tagIndex?: Record<string, { slug: string } | undefined> };
   commentary?: { comSources?: Record<string, { name: string } | undefined> };
   meta?: { version?: Record<string, { shortcode?: string } | undefined> };
 };
-
-/** Trim verse text to a social-card-friendly length on a word boundary. */
-function truncate(text: string, max: number): string {
-  if (text.length <= max) return text;
-  const slice = text.slice(0, max);
-  const lastSpace = slice.lastIndexOf(' ');
-  return (lastSpace > max * 0.6 ? slice.slice(0, lastSpace) : slice).trimEnd() + '…';
-}
 
 export type MetadataState = {
   structure: string;
@@ -45,37 +38,28 @@ export function buildMetadata(
   origin: string,
   verseText?: string | null,
 ): Metadata {
-  const baseTitle = `Isaiah ${state.chapter}:${state.verse}`;
   const versionKey = state.version.toUpperCase();
   const shortcode = data?.meta?.version?.[versionKey]?.shortcode || versionKey;
 
-  // Default (plain verse) route: title carries the reference + version, and
-  // the description is the verse's own text. The branches below override
-  // both for the tag / hebrew / search / commentary route variants.
-  let title = `${baseTitle} · ${shortcode} | Isaiah Explorer`;
-  let description = verseText
-    ? truncate(verseText, 300)
-    : `Read Isaiah ${state.chapter}:${state.verse} in multiple translations with thematic tags, Hebrew lexicon, and scholarly commentary.`;
-
   const activeTag = state.showcase_tag || state.selected_tag;
   const tagEntry = activeTag ? data?.tags?.tagIndex?.[activeTag] : null;
+  const tagName = activeTag && tagEntry ? activeTag : null;
+  const commentarySourceName =
+    state.commentaryMode && state.commentarySource
+      ? data?.commentary?.comSources?.[state.commentarySource]?.name
+      : undefined;
 
-  if (activeTag && tagEntry) {
-    title = `${activeTag} | ${baseTitle}`;
-    description = `Explore the theme "${activeTag}" in Isaiah.`;
-  } else if (state.hebrewStrongIndex) {
-    title = `Hebrew H${state.hebrewStrongIndex} | Isaiah Explorer`;
-    description = `Study Hebrew word H${state.hebrewStrongIndex} in Isaiah.`;
-  } else if (state.searchQuery) {
-    title = `"${state.searchQuery}" | Isaiah Explorer`;
-    description = `Isaiah Explorer search results for "${state.searchQuery}".`;
-  } else if (state.commentaryMode && state.commentarySource) {
-    const sourceName = data?.commentary?.comSources?.[state.commentarySource]?.name;
-    if (sourceName) {
-      title = `${baseTitle} | ${sourceName}`;
-      description = `${sourceName} commentary on Isaiah ${state.chapter}:${state.verse}.`;
-    }
-  }
+  const seoInputs = {
+    chapter: state.chapter,
+    verse: state.verse,
+    shortcode,
+    tagName,
+    hebrewStrongIndex: state.hebrewStrongIndex,
+    searchQuery: state.searchQuery,
+    commentarySourceName,
+  };
+  const title = buildTitle(seoInputs);
+  const description = buildDescription({ ...seoInputs, verseText });
 
   const getTagSlug = (tagName: string): string | null => {
     const entry = data?.tags?.tagIndex?.[tagName];

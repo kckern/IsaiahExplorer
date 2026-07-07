@@ -23,9 +23,9 @@ import {
   DEFAULT_TOP_STRUCTURES
 } from "./routing/defaults"
 import { getFocalTag } from "./state/tagSelectors"
+import { buildTitle } from "./routing/seo"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
 import { AUDIO_MODE, legacyAudioState, legacyCommentaryAudioMode, audioModeFromLegacy } from "./state/audioState"
-import { Helmet } from "react-helmet"
 import "./App.css"
 
 class App extends Component {
@@ -193,15 +193,8 @@ class App extends Component {
 
     var title = <span>Isaiah Explorer</span>
 
-    var seo = this.getSeoData();
-
     return (
       <DataContext.Provider value={globalData}>
-        <Helmet>
-          <title>{seo.title}</title>
-          <meta name="description" content={seo.description} />
-          <link rel="canonical" href={seo.canonical} />
-        </Helmet>
         <div id="approot" className={classes.join(" ")}>
           {errorPanel}
           <h1>
@@ -341,54 +334,6 @@ class App extends Component {
     return null
   }
 
-  getSeoData() {
-    var idx = globalData.index && globalData.index[this.state.active_verse_id];
-    var chapter = idx ? idx.chapter : "";
-    var verse = idx ? idx.verse : "";
-    var baseTitle = chapter ? "Isaiah " + chapter + ":" + verse : "Isaiah Explorer";
-    var title = baseTitle;
-    var description = "Read Isaiah " + chapter + ":" + verse + " in multiple translations with thematic tags, Hebrew lexicon, and scholarly commentary.";
-
-    var activeTag = getFocalTag(this.state).tag;
-    if (activeTag && globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[activeTag]) {
-      title = activeTag + " | " + baseTitle;
-      description = "Explore the theme “" + activeTag + "” in Isaiah.";
-    } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
-      title = "“" + this.state.searchQuery + "” | Isaiah Explorer";
-      description = "Isaiah Explorer search results for “" + this.state.searchQuery + "”.";
-    } else if (this.state.hebrewStrongIndex) {
-      title = "Hebrew H" + this.state.hebrewStrongIndex + " | Isaiah Explorer";
-      description = "Study Hebrew word H" + this.state.hebrewStrongIndex + " in Isaiah.";
-    } else if (this.state.commentaryMode && this.state.commentarySource &&
-        globalData.commentary && globalData.commentary.comSources &&
-        globalData.commentary.comSources[this.state.commentarySource]) {
-      var sourceName = globalData.commentary.comSources[this.state.commentarySource].name;
-      title = "Isaiah " + chapter + ":" + verse + " | " + sourceName;
-      description = sourceName + " commentary on Isaiah " + chapter + ":" + verse + ".";
-    }
-
-    var getTagSlug = function(tagName) {
-      var entry = globalData.tags && globalData.tags.tagIndex && globalData.tags.tagIndex[tagName];
-      return entry ? entry.slug : null;
-    };
-    var canonical = window.location.origin + (idx ? buildRoute({
-      structure: this.state.structure,
-      outline: this.state.outline,
-      version: this.state.version,
-      chapter: chapter,
-      verse: verse,
-      showcase_tag: this.state.showcase_tag,
-      selected_tag: this.state.selected_tag,
-      searchQuery: this.state.searchQuery,
-      hebrewStrongIndex: this.state.hebrewStrongIndex,
-      commentaryMode: this.state.commentaryMode,
-      commentarySource: this.state.commentarySource,
-      commentaryID: this.state.commentaryID,
-    }, getTagSlug) : "/");
-
-    return { title: title, description: description, canonical: canonical };
-  }
-
   setUrl(replace) {
     var idx = globalData.index[this.state.active_verse_id];
     var chapter = idx.chapter;
@@ -414,28 +359,21 @@ class App extends Component {
       commentaryID: this.state.commentaryID,
     }, getTagSlug);
 
-    var title = "";
-    var activeTag = getFocalTag(this.state).tag;
-    if (activeTag && globalData.tags.tagIndex[activeTag]) {
-      title = activeTag + " | ";
-    } else if (this.state.searchQuery && !this.state.hebrewStrongIndex) {
-      var disQ = this.state.searchQuery
-        .replace(/[-]+/g, "–")
-        .replace(/[;]+/g, "; ")
-        .replace(/[\\]b([a-z])/g, "｢$1")
-        .replace(/([a-z])[\\]b/g, "$1｣");
-      title = "“" + disQ + "” | ";
-    } else if (this.state.hebrewStrongIndex !== null) {
-      title = "Hebrew H" + this.state.hebrewStrongIndex + " | ";
-    }
-
-    title += "Isaiah " + chapter + ":" + verse;
-
-    if (this.state.commentaryMode && this.state.commentarySource &&
-        globalData.commentary.comSources[this.state.commentarySource]) {
-      title = "Isaiah " + chapter + ":" + verse +
-        " | " + globalData.commentary.comSources[this.state.commentarySource].name;
-    }
+    var focalTag = getFocalTag(this.state).tag;
+    var validTag = focalTag && globalData.tags.tagIndex[focalTag] ? focalTag : null;
+    var shortcode = (globalData.meta.version[this.state.version.toUpperCase()] &&
+      globalData.meta.version[this.state.version.toUpperCase()].shortcode) ||
+      this.state.version.toUpperCase();
+    var sourceName = (this.state.commentaryMode && this.state.commentarySource &&
+      globalData.commentary.comSources[this.state.commentarySource]) ?
+      globalData.commentary.comSources[this.state.commentarySource].name : undefined;
+    var title = buildTitle({
+      chapter: chapter, verse: verse, shortcode: shortcode,
+      tagName: validTag || undefined,
+      hebrewStrongIndex: this.state.hebrewStrongIndex || undefined,
+      searchQuery: (this.state.searchQuery && !this.state.hebrewStrongIndex) ? this.state.searchQuery : undefined,
+      commentarySourceName: sourceName,
+    });
 
     // Never push a duplicate history entry. On a popstate (Back/Forward) the
     // browser has already set window.location to the target, so rebuilding the
