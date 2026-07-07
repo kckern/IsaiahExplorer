@@ -23,6 +23,7 @@ import {
   DEFAULT_TOP_STRUCTURES
 } from "./routing/defaults"
 import { getFocalTag } from "./state/tagSelectors"
+import { buildActions } from "./state/actions"
 import { buildTitle } from "./routing/seo"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
 import { AUDIO_MODE, legacyAudioState, legacyCommentaryAudioMode, audioModeFromLegacy } from "./state/audioState"
@@ -112,6 +113,11 @@ class App extends Component {
 
   load_queue = ["core", "version"]
 
+  // Bounded, frozen action surface handed to components via the context
+  // snapshot, so they call actions.* instead of holding the live App instance
+  // and calling app.setState directly (audit 1.1/P2.1). Bound once here.
+  actions = buildActions(this)
+
   handleLoadError(what) {
     return function (err) {
       console.error("Data load failed (" + what + "):", err)
@@ -128,6 +134,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Set the singleton's app reference once (not per-render). Components read
+    // app/state through the context snapshot; this is a safety net for any
+    // non-context reader of the imported globalData.
+    globalData.app = this
     this.boundKeyDown = this.keyDown.bind(this)
     document.addEventListener("keydown", this.boundKeyDown)
     // preload the loading image (its return was already invoked immediately by
@@ -152,8 +162,17 @@ class App extends Component {
   }
 
   render() {
-    globalData.app = this
-    globalData.state = this.state
+    // Fresh per-render snapshot: carries the data store, the current state, the
+    // App instance, and the bounded actions. Providing a NEW object each render
+    // lets React context actually signal updates to consumers (the old code
+    // mutated the singleton in place, so the provider value never changed —
+    // updates only propagated because the whole tree re-rendered). No global
+    // mutation happens during render anymore.
+    var contextValue = Object.assign({}, globalData, {
+      app: this,
+      state: this.state,
+      actions: this.actions
+    })
 
     var settingsPanel = null
     if (this.state.settings === true)
@@ -198,7 +217,7 @@ class App extends Component {
     var title = <span>Isaiah Explorer</span>
 
     return (
-      <DataContext.Provider value={globalData}>
+      <DataContext.Provider value={contextValue}>
         <div id="approot" className={classes.join(" ")} data-mobile-pane={this.state.mobilePane}>
           {errorPanel}
           <h1>
