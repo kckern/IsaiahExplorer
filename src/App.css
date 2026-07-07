@@ -4017,3 +4017,8 @@ span.debug
 
 
 
+
+.load-error { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.85);
+  color: #fff; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 1rem; font-size: 16px; }
+.load-error button { font-size: 16px; padding: 12px 32px; cursor: pointer; }

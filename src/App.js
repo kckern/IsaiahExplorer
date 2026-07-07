@@ -1,6 +1,4 @@
 import React, {Component, useContext} from "react"
-import pako from "pako"
-import atob from "atob"
 import settings_icon from "./img/interface/settings.png"
 import video_icon from "./img/interface/video.png"
 import StructureColumn from "./Components/Structure.js"
@@ -16,6 +14,7 @@ import VideoBox from "./Components/VideoBox.js"
 import Tipsy from "react-tipsy"
 
 
+import { fetchData } from "./data/fetchData"
 import { parseRoute, buildRoute } from "./routing/routeCodec"
 import { getFocalTag } from "./state/tagSelectors"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
@@ -95,12 +94,21 @@ class App extends Component {
 
     ui_version_loading: false,
     ui_core_loading: true,
+    load_error: null,
 
     rootURL: window.location.href.replace(/((^file.*?)([^/]+$)|(^https*:\/\/[^/]+\/)(.*))/,"$2$4")
 
   }
 
   load_queue = ["core", "version"]
+
+  handleLoadError(what) {
+    return function (err) {
+      console.error("Data load failed (" + what + "):", err)
+      this.setState({load_error: what})
+    }.bind(this)
+  }
+
   pull(element) {
     const index = this.load_queue.indexOf(element)
 
@@ -161,6 +169,17 @@ class App extends Component {
       ]
     else videoPanel = null
 
+    var errorPanel = null
+    if (this.state.load_error !== null)
+      errorPanel = (
+        <div key="loaderror" className="load-error" role="alert">
+          <p>Something went wrong loading the {this.state.load_error} data.</p>
+          <button type="button" onClick={() => window.location.reload()}>
+            Reload
+          </button>
+        </div>
+      )
+
     var classes = []
     if (this.state.infoOpen === true) classes.push("infoOpen")
     if (this.state.commentaryMode === true) classes.push("commentaryMode")
@@ -178,6 +197,7 @@ class App extends Component {
           <link rel="canonical" href={seo.canonical} />
         </Helmet>
         <div id="approot" className={classes.join(" ")}>
+          {errorPanel}
           <h1>
             <Tipsy
               content="Settings"
@@ -1235,10 +1255,8 @@ class App extends Component {
 
     //if (subsite === "dev") subsite = "spu"
     
-    fetch(this.state.rootURL+"./core/core.txt")
-      .then(response => response.text())
-      .then(data => {
-        var unzipped = this.unzipJSON(data)
+    fetchData(this.state.rootURL+"./core/core.txt")
+      .then(unzipped => {
         for (var k in unzipped) globalData[k] = unzipped[k]
 
         var s = this.state
@@ -1467,10 +1485,8 @@ class App extends Component {
           )
         this.pull("tags")
         this.checkLoaded()
-        fetch(this.state.rootURL+"./core/tags_hl.txt")
-          .then(response => response.text())
-          .then(base64 => {
-            var hdata = this.unzipJSON(base64)
+        fetchData(this.state.rootURL+"./core/tags_hl.txt")
+          .then(hdata => {
             for (x in hdata) {
               for (var y in hdata[x]) {
                 if (globalData["tags"]["tagStructure"][x] !== undefined)
@@ -1480,30 +1496,37 @@ class App extends Component {
             }
             this.setState({tagsHLReady: true})
           })
+          .catch(err => console.warn("tags_hl failed", err))
 
         this.pull("core")
         this.checkLoaded()
       })
+      .catch(this.handleLoadError("core"))
 
-    fetch(this.state.rootURL+"./text/words_HEB.txt")
-      .then(response => response.text())
+    fetchData(this.state.rootURL+"./text/words_HEB.txt")
       .then(data => {
-        globalData["hebrew"] = this.unzipJSON(data)
+        globalData["hebrew"] = data
         if (parseRoute(window.location.pathname).hebrew !== undefined) {
           this.pull("hebrew")
           this.checkLoaded()
         }
         this.setState({hebrewReady: true})
       })
+      .catch(err => {
+        // Only fatal when a hebrew route is waiting on it (blocks checkLoaded)
+        if (parseRoute(window.location.pathname).hebrew !== undefined)
+          this.handleLoadError("hebrew")(err)
+        else console.warn("words_HEB failed", err)
+      })
 
 
-    fetch(this.state.rootURL+"./text/verses_" + this.state.version.toUpperCase() + ".txt")
-      .then(response => response.text())
+    fetchData(this.state.rootURL+"./text/verses_" + this.state.version.toUpperCase() + ".txt")
       .then(data => {
-        globalData["text"][this.state.version] = this.unzipJSON(data)
+        globalData["text"][this.state.version] = data
         this.pull("version")
         this.checkLoaded()
       })
+      .catch(this.handleLoadError("version"))
 
     this.loadTopVersions()
   }
@@ -1516,10 +1539,9 @@ class App extends Component {
           var ver = this.state.top_versions[x]
           if (ver === this.state.version) continue
           const const_ver = ver
-          fetch(this.state.rootURL+"./text/verses_" + const_ver.toUpperCase() + ".txt")
-            .then(response => response.text())
+          fetchData(this.state.rootURL+"./text/verses_" + const_ver.toUpperCase() + ".txt")
             .then(data => {
-              globalData["text"][const_ver] = this.unzipJSON(data)
+              globalData["text"][const_ver] = data
               this.setActiveVerse(
                 this.state.active_verse_id,
                 undefined,
@@ -1528,6 +1550,7 @@ class App extends Component {
                 "init"
               )
             })
+            .catch(err => console.warn("alt version load failed", err))
         }
       }.bind(this),
       3000
@@ -1579,10 +1602,9 @@ class App extends Component {
     this._versionLoads = this._versionLoads || {}
     if (this._versionLoads[shortcode]) return
     this._versionLoads[shortcode] = true
-    fetch(this.state.rootURL + "./text/verses_" + shortcode + ".txt")
-      .then(function(r) { return r.text() })
+    fetchData(this.state.rootURL + "./text/verses_" + shortcode + ".txt")
       .then(function(data) {
-        globalData["text"][shortcode] = this.unzipJSON(data)
+        globalData["text"][shortcode] = data
         this._versionLoads[shortcode] = false
         this.forceUpdate()
       }.bind(this))
@@ -1594,10 +1616,9 @@ class App extends Component {
     this.setState({ui_version_loading: true})
     let image = new Image()
     image.src = require("./img/versions/" + shortcode.toLowerCase() + ".jpg")
-    return fetch(this.state.rootURL+"./text/verses_" + shortcode + ".txt")
-      .then(response => response.text())
+    return fetchData(this.state.rootURL+"./text/verses_" + shortcode + ".txt")
       .then(data => {
-        globalData["text"][shortcode] = this.unzipJSON(data)
+        globalData["text"][shortcode] = data
         this.setState(
           {version: shortcode, ui_version_loading: false, spot: null},
           function() {
@@ -1613,6 +1634,10 @@ class App extends Component {
               this.search(this.state.searchQuery)
           }
         )
+      })
+      .catch(err => {
+        console.warn("version load failed", err)
+        this.setState({ui_version_loading: false})
       })
   }
 
@@ -2718,28 +2743,6 @@ class App extends Component {
         this.scrollText(false, "search")
       }
     )
-  }
-
-  unzipJSON(base64) {
-    function atos(arr) {
-      // eslint-disable-next-line
-      for (var i = 0, l = arr.length, s = "", c; (c = arr[i++]); )
-        s += String.fromCharCode(
-          c > 0xdf && c < 0xf0 && i < l - 1
-            ? // eslint-disable-next-line
-              ((c & 0xf) << 12) | ((arr[i++] & 0x3f) << 6) | (arr[i++] & 0x3f)
-            : c > 0x7f && i < l
-              ? // eslint-disable-next-line
-                ((c & 0x1f) << 6) | (arr[i++] & 0x3f)
-              : c
-        )
-      return s
-    }
-    try {
-      return JSON.parse(atos(pako.ungzip(atob(base64))))
-    } catch (err) {
-      return ["Unzip Failure", err]
-    }
   }
 
   searchHebrewWord(strong) {
