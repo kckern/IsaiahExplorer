@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Isaiah Explorer',
@@ -24,7 +25,29 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Clicky analytics (site 101134488) — the snippet lived in the CRA
+            public/index.html removed during the Next.js migration; restored
+            here. data-id auto-inits; App.js fires SPA pageviews via
+            window.clicky.log on navigation. CSP allows *.getclicky.com. */}
+        <Script
+          src="https://static.getclicky.com/js"
+          data-id="101134488"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          <p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Clicky"
+              width="1"
+              height="1"
+              src="https://in.getclicky.com/101134488ns.gif"
+            />
+          </p>
+        </noscript>
+      </body>
     </html>
   );
 }
