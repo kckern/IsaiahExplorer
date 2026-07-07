@@ -13,7 +13,11 @@ function OutlineSetting({dragging, option, optionKey, settings, id, index, onMov
     const app = globalData.app;
     const state = globalData.state;
     const {attributes, listeners, setNodeRef, transform, transition, isDragging} = useSortable({id});
-    const style = {transform: CSS.Transform.toString(transform), transition};
+    const style = {transform: CSS.Transform.toString(transform), transition, touchAction: 'none'};
+    const stopDragCapture = {
+      onPointerDown: (e) => e.stopPropagation(),
+      onKeyDown: (e) => e.stopPropagation(),
+    };
     var classes = ["option"];
     if (isDragging) classes.push("option--dragging");
     if (option.shortcode === state.outline) classes.push("active");
@@ -38,10 +42,12 @@ function OutlineSetting({dragging, option, optionKey, settings, id, index, onMov
           <img alt="img" src={require('../../../img/versions/' + option.shortcode + '.jpg')} />
           <div className="outline_full_title">{option.title}</div>
         </div>
-        <div className="reorder-controls" style={{userSelect: 'none'}}>
+        <div className="reorder-controls" style={{userSelect: 'none'}} {...stopDragCapture}>
           <button type="button" aria-label={"Move " + option.title + " up"}
+                  {...stopDragCapture}
                   onClick={() => onMove(index, index - 1)}>▲</button>
           <button type="button" aria-label={"Move " + option.title + " down"}
+                  {...stopDragCapture}
                   onClick={() => onMove(index, index + 1)}>▼</button>
         </div>
       </div>

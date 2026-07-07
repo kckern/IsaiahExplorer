@@ -17,8 +17,8 @@ function VersionSettings({entries: sourceEntries = [], settings}){
     setFull(true);
   }, [sourceEntries, entries.length, full]);
 
-  var onSortStart = () => {
-    setDragging(true);
+  var onSortStart = (starting = true) => {
+    setDragging(starting);
   };
 
   var onSortEnd = ({oldIndex, newIndex}) => {

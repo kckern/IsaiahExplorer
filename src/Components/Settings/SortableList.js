@@ -34,12 +34,21 @@ export default function SortableList({items = [], entries, onSortStart, onSortEn
     // Translate dnd-kit's {active, over} into react-sortable-hoc's {oldIndex, newIndex}.
     const oldIndex = items.indexOf(active.id);
     const newIndex = over ? items.indexOf(over.id) : oldIndex;
-    if (onSortEnd) {
-      onSortEnd({
-        oldIndex: oldIndex < 0 ? 0 : oldIndex,
-        newIndex: newIndex < 0 ? oldIndex : newIndex,
-      });
+    // Only commit a REAL move. dnd-kit fires drag-end for drop-in-place and
+    // drop-outside too; persisting those churns saved settings for no reason.
+    if (onSortEnd && newIndex >= 0 && newIndex !== oldIndex) {
+      onSortEnd({oldIndex, newIndex});
+    } else if (onSortStart) {
+      // No move — still let the parent clear its `dragging` flag.
+      onSortStart(false);
     }
+  };
+
+  // Cancel (Escape mid-drag, or a pointercancel from the browser reclaiming a
+  // touch-scroll) must NEVER commit the move — it would persist a reorder the
+  // user explicitly abandoned. Just clear the dragging flag.
+  const handleCancel = () => {
+    if (onSortStart) onSortStart(false);
   };
 
   return (
@@ -48,7 +57,7 @@ export default function SortableList({items = [], entries, onSortStart, onSortEn
       collisionDetection={closestCenter}
       onDragStart={handleDragStart}
       onDragEnd={handleEnd}
-      onDragCancel={handleEnd}
+      onDragCancel={handleCancel}
     >
       <SortableContext items={items} strategy={verticalListSortingStrategy}>
         <div>{entries}</div>

@@ -13,7 +13,16 @@ function VersionSetting({dragging, option, optionKey, settings, id, index, onMov
     const app = globalData.app;
     const state = globalData.state;
     const {attributes, listeners, setNodeRef, transform, transition, isDragging} = useSortable({id});
-    const style = {transform: CSS.Transform.toString(transform), transition};
+    // touchAction:none lets the PointerSensor own touch drags (without it the
+    // browser claims the gesture for scrolling). The ▲/▼ buttons remain the
+    // touch-friendly non-drag reorder path.
+    const style = {transform: CSS.Transform.toString(transform), transition, touchAction: 'none'};
+    // Keep pointer/keyboard events on the reorder buttons from reaching the row's
+    // drag listeners (otherwise Enter/Space lifts a drag instead of clicking).
+    const stopDragCapture = {
+      onPointerDown: (e) => e.stopPropagation(),
+      onKeyDown: (e) => e.stopPropagation(),
+    };
     var classes = ["option"];
     if (isDragging) classes.push("option--dragging");
     if (option.shortcode === state.version) classes.push("active");
@@ -41,10 +50,12 @@ function VersionSetting({dragging, option, optionKey, settings, id, index, onMov
           <div className="version_full_title">{audioimg}{option.title}</div>
           <div className="version_description">{option.description}</div>
         </div>
-        <div className="reorder-controls" style={{userSelect: 'none'}}>
+        <div className="reorder-controls" style={{userSelect: 'none'}} {...stopDragCapture}>
           <button type="button" aria-label={"Move " + option.title + " up"}
+                  {...stopDragCapture}
                   onClick={() => onMove(index, index - 1)}>▲</button>
           <button type="button" aria-label={"Move " + option.title + " down"}
+                  {...stopDragCapture}
                   onClick={() => onMove(index, index + 1)}>▼</button>
         </div>
       </div>

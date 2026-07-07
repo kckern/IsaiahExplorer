@@ -95,13 +95,18 @@ function AudioVersePlayer() {
 	}, [resolvedPointer, state.audioPointer, app]);
 
 	// Autoplay the current verse audio (native <audio>; replaces the old player).
-	// play() returns a promise; swallow autoplay-block rejections.
+	// A rejected play() (autoplay policy block, e.g. auto-advance without a
+	// gesture) must reset the audio mode — the old ReactPlayer routed play()
+	// rejections into onError, and swallowing them leaves the toolbar stuck on
+	// "Loading"/"Pause" forever.
 	useEffect(() => {
 		var el = audioElRef.current;
 		if (!el) return;
 		el.playbackRate = state.playbackRate || 1;
 		var pr = el.play();
-		if (pr && pr.catch) pr.catch(function() {});
+		if (pr && pr.catch) pr.catch(function() {
+			app.setAudioMode(AUDIO_MODE.IDLE, app.setUrl.bind(app));
+		});
 	}, [url, state.playbackRate]);
 
 	if (!hasAudio) return null;
@@ -135,10 +140,14 @@ function AudioVersePlayer() {
 
 	return (
 		<span>
+			{/* Constant key: keep ONE persistent <audio> element and swap its
+			    src across verses. Remounting per-url (key={url}) destroys the
+			    element's user-activation token, so Safari/iOS rejects the
+			    gesture-less play() on auto-advance and playback stops. */}
 			<audio
 				ref={audioElRef}
 				className='audio-host'
-				key={url}
+				key="verse-audio"
 				src={url}
 				preload="auto"
 				onPlay={onStart}
@@ -152,7 +161,7 @@ function AudioVersePlayer() {
 			    exists purely to warm the cache. */}
 			{next ? <audio
 				className='audio-host'
-				key={next_url}
+				key="verse-preload"
 				src={next_url}
 				preload="auto"
 				muted
@@ -203,12 +212,16 @@ function AudioCommentaryPlayer() {
 	}, [current && current.filename, source, app, state.audioPointer, state.commentary_audio_verse_range]);
 
 	// Autoplay the current commentary audio (native <audio>; replaces the old player).
+	// A rejected play() must reset to IDLE (see AudioVersePlayer) or the toolbar
+	// hangs on "Loading"/"Pause".
 	useEffect(() => {
 		var el = audioElRef.current;
 		if (!el) return;
 		el.playbackRate = state.playbackRate || 1;
 		var pr = el.play();
-		if (pr && pr.catch) pr.catch(function() {});
+		if (pr && pr.catch) pr.catch(function() {
+			app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] });
+		});
 	}, [current && current.url, state.playbackRate]);
 
 	if (!current) {
@@ -249,10 +262,12 @@ function AudioCommentaryPlayer() {
 
 	return (
 		<span>
+			{/* Constant key (see AudioVersePlayer): persistent element + src swap
+			    so iOS keeps the media user-activation token across tracks. */}
 			<audio
 				ref={audioElRef}
 				className='audio-host'
-				key={current.url}
+				key="commentary-audio"
 				src={current.url}
 				preload="auto"
 				onPlay={onStart}
@@ -263,7 +278,7 @@ function AudioCommentaryPlayer() {
 			    This element never calls play(); it only warms the cache. */}
 			{nextUrl ? <audio
 				className='audio-host'
-				key={nextUrl}
+				key="commentary-preload"
 				src={nextUrl}
 				preload="auto"
 				muted

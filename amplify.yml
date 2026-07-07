@@ -48,18 +48,36 @@ frontend:
     # translation text that only change on a data rebuild. Cache them at the CDN
     # (a day, with a week of stale-while-revalidate). If a rebuild must bust the
     # cache sooner, add a ?v=<hash> query when fetching.
-    - pattern: 'com/**/*'
+    #
+    # `com/**` (not `com/**/*`) so flat files directly under the dir match. The
+    # security headers are repeated here because Amplify may REPLACE (not merge)
+    # the blanket rule's headers for a more specific pattern — without them the
+    # corpus responses would silently lose X-Frame-Options/nosniff/HSTS.
+    # Verify post-deploy: `curl -sI <origin>/core/core.txt | grep -i cache`.
+    - pattern: 'com/**'
       headers:
         - key: Cache-Control
           value: 'public, max-age=86400, stale-while-revalidate=604800'
-    - pattern: 'text/**/*'
+        - key: X-Content-Type-Options
+          value: 'nosniff'
+        - key: Strict-Transport-Security
+          value: 'max-age=63072000; includeSubDomains'
+    - pattern: 'text/**'
       headers:
         - key: Cache-Control
           value: 'public, max-age=86400, stale-while-revalidate=604800'
-    - pattern: 'core/**/*'
+        - key: X-Content-Type-Options
+          value: 'nosniff'
+        - key: Strict-Transport-Security
+          value: 'max-age=63072000; includeSubDomains'
+    - pattern: 'core/**'
       headers:
         - key: Cache-Control
           value: 'public, max-age=3600, stale-while-revalidate=86400'
+        - key: X-Content-Type-Options
+          value: 'nosniff'
+        - key: Strict-Transport-Security
+          value: 'max-age=63072000; includeSubDomains'
     # Dynamic OG card (app/og/route.tsx): deterministic per query string,
     # so let the CDN cache it instead of hitting the Lambda on every
     # crawler scrape. Without this the blanket **/* rule above forces

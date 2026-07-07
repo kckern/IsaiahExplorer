@@ -34,15 +34,21 @@ export async function loadGlobalData(): Promise<GlobalData> {
   if (inflight) return inflight;
 
   inflight = (async () => {
-    const filePath = path.join(process.cwd(), 'public', 'core', 'core.txt');
-    const base64 = await fs.readFile(filePath, 'utf-8');
-    const compressed = Buffer.from(base64, 'base64');
-    const decompressed = pako.ungzip(compressed);
-    const text = Buffer.from(decompressed).toString('utf-8');
-    const data = JSON.parse(text) as GlobalData;
-    cached = data;
-    inflight = null;
-    return data;
+    try {
+      const filePath = path.join(process.cwd(), 'public', 'core', 'core.txt');
+      const base64 = await fs.readFile(filePath, 'utf-8');
+      const compressed = Buffer.from(base64, 'base64');
+      const decompressed = pako.ungzip(compressed);
+      const text = Buffer.from(decompressed).toString('utf-8');
+      const data = JSON.parse(text) as GlobalData;
+      cached = data;
+      return data;
+    } finally {
+      // Always clear inflight — on rejection too. Otherwise a single transient
+      // FS/decode error would cache the rejected promise and permanently 500
+      // every page render on this Lambda instance until it recycles.
+      inflight = null;
+    }
   })();
 
   return inflight;

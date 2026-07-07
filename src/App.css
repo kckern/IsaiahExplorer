@@ -3959,3 +3959,28 @@ span#drarrow,
 div#outline .heading_grid .ref { color: #6a6a6a; }
 div#outline h4 { color: #444; }
 .versebox { color: #767676; }
+
+/* dnd-kit reorder buttons in the Settings lists (Task 28). Compact, keyboard-
+   focusable up/down controls that reorder without a drag. */
+.reorder-controls {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: auto;
+}
+.reorder-controls button {
+  min-width: 28px;
+  min-height: 20px;
+  line-height: 1;
+  font-size: 11px;
+  border: 1px solid #bbb;
+  background: #f4f4f4;
+  color: #333;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.reorder-controls button:hover { background: #e6e6e6; }
+.reorder-controls button:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 1px; }
+@media (pointer: coarse) {
+  .reorder-controls button { min-width: 44px; min-height: 44px; font-size: 14px; }
+}
