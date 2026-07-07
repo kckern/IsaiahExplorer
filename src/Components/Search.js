@@ -76,7 +76,7 @@ export function SearchBox() {
 	}
 
 	return(
-		<span onClick={searchModeOn} className="mag" role="img" aria-label="search">&#128270;</span>
+		<button type="button" onClick={searchModeOn} className="linklike mag" aria-label="Search Isaiah">&#128270;</button>
 	)
 }
 

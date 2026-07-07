@@ -3984,3 +3984,21 @@ div#outline h4 { color: #444; }
 @media (pointer: coarse) {
   .reorder-controls button { min-width: 44px; min-height: 44px; font-size: 14px; }
 }
+
+/* A11y: reset for elements converted from <div>/<span> onClick to real <button>
+   so they keep their original inline appearance but gain button semantics,
+   keyboard operability, and a visible focus ring (audit P2.6). */
+button.linklike {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+button.linklike:focus-visible {
+  outline: 2px solid var(--ui-focus);
+  outline-offset: 2px;
+}
