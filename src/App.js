@@ -549,7 +549,11 @@ class App extends Component {
       {
         structure: this.state.structure,
         outline: this.state.outline,
-        version: this.state.version
+        version: this.state.version,
+        // Preserve the last chosen commentary source so a later UI-open after a
+        // Back doesn't fall back to the meta-first source (validateSettings only
+        // resets it when undefined).
+        commentarySource: this.state.commentarySource
       },
       pathname
     )
@@ -1848,8 +1852,13 @@ class App extends Component {
       // highlightReadMore removed: ChiasticBlock / TagParallel in Tags.js now
       // own their own "readmore active" state via internal useEffect measurement
       // of the highlighted verse's visibility (no cross-tree DOM mutation).
-      var isHighFreq = source === "arrow" || source === "audio" || source === "comaudio";
-      this.setUrl(isHighFreq)
+      // Replace (don't push) on high-frequency stepping AND on "init": the very
+      // first load's history entry is the raw URL the user arrived on (bare "/",
+      // a legacy short form, or mixed case), which buildRoute canonicalizes.
+      // Replacing it means there is no dangling non-canonical entry to Back onto
+      // that would otherwise defeat the same-path guard and truncate Forward.
+      var replaceUrl = source === "arrow" || source === "audio" || source === "comaudio" || source === "init";
+      this.setUrl(replaceUrl)
       if (this.state.hebrewSearch && this.state.hebrewStrongIndex !== null) {
         this.searchHebrewWord(this.state.hebrewStrongIndex)
       } else if (this.state.searchMode && source === "newversion") {
