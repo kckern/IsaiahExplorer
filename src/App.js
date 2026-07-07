@@ -240,9 +240,9 @@ class App extends Component {
     )
   }
 
-  getSettingsFromUrl(settings) {
+  getSettingsFromUrl(settings, pathnameOverride) {
     settings.active_verse_id = 17656
-    var path = (this.props.location && this.props.location.pathname) || window.location.pathname;
+    var path = pathnameOverride || (this.props.location && this.props.location.pathname) || window.location.pathname;
     var parsed = parseRoute(path);
 
     if (parsed.structure !== undefined && globalData.meta.structure[parsed.structure] !== undefined)
@@ -530,6 +530,29 @@ class App extends Component {
 
       this.setState(this.validateSettings(settings), callback) // 17656
     }
+  }
+
+  handlePopState(pathname) {
+    if (this.state.ready !== true) return
+    var settings = this.getSettingsFromUrl({}, pathname)
+    settings = this.validateSettings(settings)
+
+    var callback = this.setActiveVerse.bind(
+      this,
+      settings.active_verse_id,
+      undefined,
+      undefined,
+      true,
+      "init"
+    )
+    if (settings.selected_tag !== undefined && settings.selected_tag !== null)
+      callback = this.setActiveTag.bind(this, settings.selected_tag, true)
+    if (settings.searchQuery !== undefined && settings.searchQuery !== null)
+      callback = this.search.bind(this, settings.searchQuery, true)
+    if (settings.hebrewStrongIndex !== undefined)
+      callback = this.searchHebrewWord.bind(this, settings.hebrewStrongIndex, true)
+
+    this.setState(settings, callback)
   }
 
   keyDown(e) {

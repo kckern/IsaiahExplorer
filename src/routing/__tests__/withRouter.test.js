@@ -70,4 +70,14 @@ describe('withRouter (next/navigation shim)', () => {
     const Wrapped = withRouter(MyComponent);
     expect(Wrapped.displayName).toBe('withRouter(MyComponent)');
   });
+
+  test('invokes onPopState with the current window pathname when the user presses Back', () => {
+    const spy = jest.fn();
+    class Probe extends React.Component { render() { return null; } }
+    const Wrapped = withRouter(Probe);
+    render(React.createElement(Wrapped, { onPopState: spy }));
+    window.history.pushState({}, '', '/whole/chapters/kjv/2/1');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    expect(spy).toHaveBeenCalledWith('/whole/chapters/kjv/2/1');
+  });
 });

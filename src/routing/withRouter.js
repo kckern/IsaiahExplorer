@@ -34,9 +34,16 @@ export function withRouter(Component) {
       }
     }, []);
 
+    React.useEffect(function () {
+      if (typeof props.onPopState !== 'function') return undefined;
+      function onPop() { props.onPopState(window.location.pathname); }
+      window.addEventListener('popstate', onPop);
+      return function () { window.removeEventListener('popstate', onPop); };
+    }, [props.onPopState]);
+
     const location = { pathname: pathname };
 
-    return React.createElement(Component, Object.assign({}, props, { navigate: navigate, location: location }));
+    return React.createElement(Component, Object.assign({ ref: props.appRef }, props, { navigate: navigate, location: location }));
   }
   Wrapper.displayName = 'withRouter(' + (Component.displayName || Component.name || 'Component') + ')';
   return Wrapper;

@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import dynamic from 'next/dynamic';
 
 // SSR is intentionally disabled — App.js touches `window`, `document`, and
@@ -17,5 +18,11 @@ const AppWithRouter = dynamic(
 );
 
 export default function AppClient() {
-  return <AppWithRouter />;
+  const ref = React.useRef<any>(null);
+  return (
+    <AppWithRouter
+      appRef={ref}
+      onPopState={(pathname: string) => ref.current?.handlePopState(pathname)}
+    />
+  );
 }
