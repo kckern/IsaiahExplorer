@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import OutlineSetting from "./Settings/Outline";
 import {DataContext} from "../../DataContext";
 import SortableList from './SortableList'
-import {arrayMove} from 'react-sortable-hoc';
+import {arrayMove} from './arrayMove';
 
 function OutlineSettings({entries: sourceEntries = [], settings}) {
   var globalData = useContext(DataContext);
@@ -28,6 +28,12 @@ function OutlineSettings({entries: sourceEntries = [], settings}) {
     app.setNewTop("top_outlines", newEntries[newIndex], newIndex)
   };
 
+  // keyboard/no-drag reorder: routes through the same onSortEnd persistence path
+  var onMove = (from, to) => {
+    if (to < 0 || to >= entries.length) return;
+    onSortEnd({oldIndex: from, newIndex: to});
+  };
+
   const iterated = entries.map((shortcode, optionKey) => {
     return (
       <OutlineSetting
@@ -35,19 +41,19 @@ function OutlineSettings({entries: sourceEntries = [], settings}) {
         option={globalData["meta"]["outline"][shortcode]}
         optionKey={optionKey}
         index={optionKey}
+        id={shortcode}
         key={shortcode}
         dragging={dragging}
+        onMove={onMove}
       />
     )
   })
   iterated.splice(5, 0, (<h5 key="R" className="otherheading">Reserve Items</h5>));
   return <SortableList
-    axis="y"
-    lockAxis="y"
+    items={entries}
     entries={iterated}
     onSortStart={onSortStart}
     onSortEnd={onSortEnd}
-    helperClass="option--dragging"
   />
 }
 

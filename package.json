@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "html-react-parser": "^5.2.6",
     "next": "^14.2.35",
     "pako": "^2.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-player": "^1.12.0",
-    "react-sortable-hoc": "^0.8.3",
     "react-tipsy": "^0.6.2"
   },
   "scripts": {

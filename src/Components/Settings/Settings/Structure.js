@@ -1,14 +1,21 @@
 import React, {useContext} from "react";
-import {SortableElement} from 'react-sortable-hoc';
+import {useSortable} from '@dnd-kit/sortable';
+import {CSS} from '@dnd-kit/utilities';
 import {DataContext} from "../../../DataContext";
 
 const noop = () =>{}; // useful to have
 
-function StructureSetting({dragging, option, optionKey, settings}) {
+// dnd-kit sortable leaf (replaces react-sortable-hoc's SortableElement).
+// useSortable provides the drag ref/listeners; the whole row is the drag handle.
+// The ▲/▼ buttons give reorder without any drag at all (a11y belt-and-suspenders).
+function StructureSetting({dragging, option, optionKey, settings, id, index, onMove}) {
     const globalData = useContext(DataContext);
     const app = globalData.app;
     const state = globalData.state;
+    const {attributes, listeners, setNodeRef, transform, transition, isDragging} = useSortable({id});
+    const style = {transform: CSS.Transform.toString(transform), transition};
     const classes = ["option"];
+    if (isDragging) classes.push("option--dragging");
     if (option.shortcode === state.structure) classes.push("active");
     if (optionKey === 0) classes.push("first top");
     else if (optionKey < 5) { classes.push("top");  }
@@ -17,7 +24,8 @@ function StructureSetting({dragging, option, optionKey, settings}) {
 
 
     return (
-      <div key={option.shortcode}  title={option.title} className={classes.join(" ")}
+      <div ref={setNodeRef} style={style} {...attributes} {...listeners}
+           key={option.shortcode}  title={option.title} className={classes.join(" ")}
            onMouseEnter={() => {
         // eslint-disable-next-line
              dragging
@@ -31,9 +39,15 @@ function StructureSetting({dragging, option, optionKey, settings}) {
           <img alt="img" src={require('../../../img/structures/'+option.shortcode+'.png')} className="structure_title_icon" />
           <span>{option.description}</span>
         </div>
+        <div className="reorder-controls" style={{userSelect: 'none'}}>
+          <button type="button" aria-label={"Move " + option.title + " up"}
+                  onClick={() => onMove(index, index - 1)}>▲</button>
+          <button type="button" aria-label={"Move " + option.title + " down"}
+                  onClick={() => onMove(index, index + 1)}>▼</button>
+        </div>
       </div>
     );
 }
 
 
-export default SortableElement(StructureSetting)
+export default StructureSetting
