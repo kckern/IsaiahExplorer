@@ -33,5 +33,14 @@ describe('fetchData', () => {
   it('rejects with UnzipError on corrupt payload (never returns the ["Unzip Failure"] tuple)', async () => {
     global.fetch = jest.fn().mockResolvedValue({ ok: true, text: () => Promise.resolve('not-base64-gzip!!') })
     await expect(fetchData('/core/core.txt')).rejects.toBeInstanceOf(UnzipError)
+    expect(global.fetch).toHaveBeenCalledTimes(1)
+  })
+
+  it('rejects after exhausting the single retry on repeated network failure', async () => {
+    global.fetch = jest.fn()
+      .mockRejectedValueOnce(new TypeError('network'))
+      .mockRejectedValueOnce(new TypeError('network'))
+    await expect(fetchData('/core/core.txt')).rejects.toThrow('network')
+    expect(global.fetch).toHaveBeenCalledTimes(2)
   })
 })

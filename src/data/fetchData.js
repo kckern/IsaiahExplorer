@@ -5,7 +5,12 @@
 // into globalData as keys "0"/"1").
 import pako from 'pako'
 
-export class UnzipError extends Error {}
+export class UnzipError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = 'UnzipError'
+  }
+}
 
 export function unzipJSON(base64) {
   try {
