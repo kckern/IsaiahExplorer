@@ -327,7 +327,7 @@ class App extends Component {
         index[verse_id].chapter + ":" + index[verse_id].verse ===
         ch + ":" + vs
       )
-        return parseInt(verse_id, 0)
+        return parseInt(verse_id, 10)
     }
     return DEFAULT_VERSE_ID
   }
@@ -694,7 +694,7 @@ class App extends Component {
 
   cycleSection(incr) {
     if (incr === undefined) incr = 1
-    var index = parseInt(this.state.highlighted_section_index, 0) + incr
+    var index = parseInt(this.state.highlighted_section_index, 10) + incr
     if (index > globalData["structures"][this.state.structure].length - 1)
       index = 0
     if (globalData["structures"][this.state.structure][index] === undefined)
@@ -705,7 +705,7 @@ class App extends Component {
   }
   cycleHeading(incr) {
     if (incr === undefined) incr = 1
-    var index = parseInt(this.state.highlighted_heading_index, 0) + incr
+    var index = parseInt(this.state.highlighted_heading_index, 10) + incr
     if (index > globalData["outlines"][this.state.outline].length - 1) index = 0
     if (globalData["outlines"][this.state.outline][index] === undefined)
       return false
@@ -935,8 +935,8 @@ class App extends Component {
         offset,
         string
       ) {
-      	p1 = parseInt(p1,0);
-      	p2 = parseInt(p2,0);
+      	p1 = parseInt(p1, 10);
+      	p2 = parseInt(p2, 10);
         var vs = []
         for (var i = p1; i <= p2; i++) {
           vs.push(i)
@@ -947,26 +947,26 @@ class App extends Component {
       var g = globalData
       if (chapter) {
         var parts = ref.match(/(.*?)[.:](.*)/)
-        var ch = parseInt(parts[1], 0)
+        var ch = parseInt(parts[1], 10)
         var vs = parts[2].split(/\s*,\s*/g)
         for (x in vs) {
-          var v = parseInt(vs[x], 0)
+          var v = parseInt(vs[x], 10)
           for (var verse_id in g.index) {
             if (
               g.index[verse_id].chapter === ch &&
               g.index[verse_id].verse === v
             )
-              matches.push(parseInt(verse_id, 0))
+              matches.push(parseInt(verse_id, 10))
           }
         }
         //console.log("chapter with vs",ch,vs,matches);
       } else {
         var chs = ref.split(/\s*,\s*/g)
         for (x in chs) {
-          ch = parseInt(chs[x], 0)
+          ch = parseInt(chs[x], 10)
           for (verse_id in g.index) {
             if (g.index[verse_id].chapter === ch)
-              matches.push(parseInt(verse_id, 0))
+              matches.push(parseInt(verse_id, 10))
           }
         }
         //console.log("chapter range", chs, matches)
@@ -1000,7 +1000,7 @@ class App extends Component {
       var regex = new RegExp("" + query + "", "igm")
       for (var x in globalData["text"][this.state.version]) {
         if (globalData["text"][this.state.version][x].text.match(regex)) {
-          matches.push(parseInt(x, 0))
+          matches.push(parseInt(x, 10))
         }
       }
     }
@@ -1064,7 +1064,7 @@ class App extends Component {
     if (verse_id === null) return this.unSelectVerse()
     //if searchmode and not in
     if (
-      this.state.highlighted_verse_range.indexOf(parseInt(verse_id, 0)) < 0 &&
+      this.state.highlighted_verse_range.indexOf(parseInt(verse_id, 10)) < 0 &&
       (this.state.searchMode || this.state.selected_tag !== null)
     ) {
       return this.clearTag(undefined, verse_id)
@@ -1090,11 +1090,11 @@ class App extends Component {
     
 
 
-    if (parseInt(this.state.selected_verse_id, 0) === parseInt(verse_id, 0))
+    if (parseInt(this.state.selected_verse_id, 10) === parseInt(verse_id, 10))
       return this.unSelectVerse()
     if (
       this.state.selected_tag !== null &&
-      this.state.highlighted_verse_range.indexOf(parseInt(verse_id, 0)) < 0
+      this.state.highlighted_verse_range.indexOf(parseInt(verse_id, 10)) < 0
     )
       return () => {}
     this.setState({selected_verse_id: verse_id}, () =>
@@ -1213,7 +1213,7 @@ class App extends Component {
     var height = el.offsetHeight
     var style = getComputedStyle(el)
 
-    height += parseInt(style.marginTop, 0) + parseInt(style.marginBottom, 0)
+    height += parseInt(style.marginTop, 10) + parseInt(style.marginBottom, 10)
     return height + 0
   }
 
@@ -1458,7 +1458,7 @@ class App extends Component {
                 }
               globalData.commentary.idIndex[thisid]["source"] = source
               globalData.commentary.idIndex[thisid].verse_ids.push(
-                parseInt(verse_id, 0)
+                parseInt(verse_id, 10)
               )
             }
           }
@@ -1588,7 +1588,7 @@ class App extends Component {
         }
         //ranges
         for (var i in item) {
-          var vid = parseInt(i, 0)
+          var vid = parseInt(i, 10)
           for (var j = vid; j < vid + item[i]; j++) {
             verses.push(j)
           }
@@ -1597,7 +1597,7 @@ class App extends Component {
     } //object
     else {
       for (i in versedata) {
-        vid = parseInt(i, 0)
+        vid = parseInt(i, 10)
         for (j = vid; j < vid + versedata[i]; j++) {
           verses.push(j)
         }
@@ -1944,7 +1944,7 @@ class App extends Component {
   }
 
   getTagHighlightRange(verse_id, source) {
-    verse_id = parseInt(verse_id, 0)
+    verse_id = parseInt(verse_id, 10)
     //todo get range from verse id
     var tagStructure =
       globalData["tags"]["tagStructure"][this.state.selected_tag]
@@ -2635,7 +2635,7 @@ class App extends Component {
     var y = (arr.length);
     if (y > 1) {
         for (i=1; i < y; i += 1) {
-            if (parseInt(arr[i]) -1  !== parseInt(previous)) {
+            if (parseInt(arr[i], 10) -1  !== parseInt(previous, 10)) {
                 return false;
             }
             previous = arr[i];        
@@ -2745,7 +2745,7 @@ class App extends Component {
     for (var verse_id in verses) {
       for (var word_id in verses[verse_id]) {
         if (verses[verse_id][word_id].strong === strong) {
-          matches.push(parseInt(verse_id, 0))
+          matches.push(parseInt(verse_id, 10))
         }
       }
     }
@@ -2769,7 +2769,7 @@ class App extends Component {
     for (var verse_id in verses) {
       for (var word_id in verses[verse_id]) {
         if (verses[verse_id][word_id].strong === strong) {
-          matches.push(parseInt(verse_id, 0))
+          matches.push(parseInt(verse_id, 10))
           query = verses[verse_id][word_id].orig
           //" ("+verses[verse_id][word_id].phon+")—"+verses[verse_id][word_id].eng;
         }

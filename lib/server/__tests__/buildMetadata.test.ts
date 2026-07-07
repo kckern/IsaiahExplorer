@@ -128,13 +128,13 @@ describe('buildMetadata', () => {
     expect(m.openGraph?.title).toBeDefined();
     expect(m.openGraph?.description).toBeDefined();
     expect(m.openGraph?.url).toBeDefined();
-    expect(m.openGraph?.type).toBe('article');
+    expect((m.openGraph as { type?: string }).type).toBe('article');
     expect(m.openGraph?.siteName).toBe('Isaiah Explorer');
   });
 
   test('Twitter card present', () => {
     const m = buildMetadata(baseState, fakeData, 'https://x');
-    expect(m.twitter?.card).toBe('summary_large_image');
+    expect((m.twitter as { card?: string }).card).toBe('summary_large_image');
     expect(m.twitter?.title).toBeDefined();
     expect(m.twitter?.description).toBeDefined();
   });

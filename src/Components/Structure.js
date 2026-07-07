@@ -100,7 +100,7 @@ function Section({section, sectionKey}) {
     if(state.selected_tag !== null) return false;
     if(state.searchMode && !state.commentaryAudioMode) return false;
     return (
-      parseInt(state.highlighted_section_index,0) === sectionKey
+      parseInt(state.highlighted_section_index, 10) === sectionKey
     );
   };
 

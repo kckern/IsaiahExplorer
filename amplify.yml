@@ -7,6 +7,8 @@ frontend:
         - nvm use 20
         - node --version
         - npm ci --legacy-peer-deps
+        - npx tsc --noEmit
+        - npx jest --ci
     build:
       commands:
         # Next.js 14 (App Router) SSR build.

@@ -285,8 +285,8 @@ var state = globalData.state;
 
 				//Break between non consecutive verses
 				if (
-					parseInt(verse_id, 0) !== last_verse_id &&
-					parseInt(verse_id, 0) !== last_verse_id + 1 &&
+					parseInt(verse_id, 10) !== last_verse_id &&
+					parseInt(verse_id, 10) !== last_verse_id + 1 &&
 					last_verse_id !== null
 				) {
 					block_index++;
@@ -304,7 +304,7 @@ var state = globalData.state;
 					classes: classes,
 					line: parts[y]
 				});
-				last_verse_id = parseInt(verse_id, 0);
+				last_verse_id = parseInt(verse_id, 10);
 			}
 		}
 		last_format = format;
@@ -364,7 +364,7 @@ export function PassageLine({ line: lineData, highlights }) {
 var state = globalData.state;
 
 	function isActive() {
-		return parseInt(state.active_verse_id, 0) === parseInt(lineData.verse_id, 0);
+		return parseInt(state.active_verse_id, 10) === parseInt(lineData.verse_id, 10);
 	}
 
 	function isCommentary() {
@@ -375,7 +375,7 @@ var state = globalData.state;
 	}
 
 	function isSelected() {
-		return parseInt(state.selected_verse_id, 0) === parseInt(lineData.verse_id, 0);
+		return parseInt(state.selected_verse_id, 10) === parseInt(lineData.verse_id, 10);
 	}
 
 	if (typeof lineData.classes === "undefined") {

@@ -108,7 +108,7 @@ function Outline() {
 		var heading = outline[x];
 		if(isInSection(heading) && isInTagRange(heading) && isInSearchRange(heading))
 		{
-			var section_i = parseInt(section_index[heading.verses[0]][state.structure],0);
+			var section_i = parseInt(section_index[heading.verses[0]][state.structure], 10);
 			var section = sections[state.structure][section_i];
 			if(section_i!==lastheading)
 			{
@@ -122,7 +122,7 @@ function Outline() {
 				{
 					if(section.verses[y].indexOf(heading.verses[0]) >= 0  && y!==lastunit)
 					{
-						headings.push(<h5 key={"u"+x}>Unit {parseInt(y,0)+1}</h5>);
+						headings.push(<h5 key={"u"+x}>Unit {parseInt(y, 10)+1}</h5>);
 						lastunit = y;
 					}
 				}
@@ -165,10 +165,10 @@ function Heading({heading, id}) {
 	var state = globalData.state;
 
 	var isActive = () => {
-		//console.log(parseInt(state.highlighted_heading_index,0),id);
+		//console.log(parseInt(state.highlighted_heading_index, 10),id);
 		return (
 		//	heading.verses[0].indexOf(state.active_verse_id) >= 0
-			parseInt(state.highlighted_heading_index,0) === parseInt(id,0)
+			parseInt(state.highlighted_heading_index, 10) === parseInt(id, 10)
 		);
 	};
 

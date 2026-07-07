@@ -354,7 +354,7 @@ var state = globalData.state;
 	if (app.arrowPointer !== null && app.arrowPointer !== undefined) {
 		var inblocks = [];
 		for (var x in entries) {
-			if (entries[x].verses.indexOf(state.active_verse_id) > -1) inblocks.push(parseInt(x, 0));
+			if (entries[x].verses.indexOf(state.active_verse_id) > -1) inblocks.push(parseInt(x, 10));
 		}
 		var all_verses = state.highlighted_verse_range;
 		var verse_indeces = getAllIndexes(all_verses, state.active_verse_id);
@@ -534,7 +534,7 @@ var state = globalData.state;
 			heading = <tr key={11} className="heading"><td colSpan={2}>{tagStructure[i + "A"].heading}</td></tr>;
 
 		let verses = tagStructure[i + "A"].verses;
-		if (verses.indexOf(parseInt(state.active_verse_id, 0)) >= 0) classes.push("parameta_highlighted");
+		if (verses.indexOf(parseInt(state.active_verse_id, 10)) >= 0) classes.push("parameta_highlighted");
 
 		if (typeof tagStructure[i + "B"] === "undefined") {
 			var rowClassSingle = rowClasses[i] || "row";
@@ -574,7 +574,7 @@ var state = globalData.state;
 		if (tagStructure[i + "A"].heading === undefined && tagStructure[i + "B"].heading !== undefined)
 			heading = <tr className="heading"><td colSpan={2}>{tagStructure[i + "B"].heading}</td></tr>;
 
-		if (verses.indexOf(parseInt(state.active_verse_id, 0)) >= 0) classes.push("parameta_highlighted");
+		if (verses.indexOf(parseInt(state.active_verse_id, 10)) >= 0) classes.push("parameta_highlighted");
 
 		var r_highlights = null;
 		if (tagStructure[i + "B"].highlight !== undefined) r_highlights = tagStructure[i + "B"].highlight;

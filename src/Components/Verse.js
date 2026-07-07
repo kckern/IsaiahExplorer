@@ -290,7 +290,7 @@ var state = globalData.state;
 	for (var i in globalData["meta"]["outline"]) if (entries.indexOf(i) < 0) entries.push(i);
 	const Passagelist = entries.map((option, optionKey) => {
 		var shortcode = option;
-		var index = parseInt(globalData["outlineIndex"][state.active_verse_id][shortcode], 0);
+		var index = parseInt(globalData["outlineIndex"][state.active_verse_id][shortcode], 10);
 		var outline = globalData["outlines"][shortcode];
 		if (typeof outline[index] === "undefined") return null;
 
@@ -344,7 +344,7 @@ var state = globalData.state;
 	for (var i in globalData["meta"]["structure"]) if (entries.indexOf(i) < 0) entries.push(i);
 	const Sectionlist = entries.map((option, optionKey) => {
 		var shortcode = option;
-		var index = parseInt(globalData["structureIndex"][state.active_verse_id][shortcode], 0);
+		var index = parseInt(globalData["structureIndex"][state.active_verse_id][shortcode], 10);
 		var structure = globalData["structures"][shortcode];
 		if (structure === undefined) return null;
 		var section = structure[index];
