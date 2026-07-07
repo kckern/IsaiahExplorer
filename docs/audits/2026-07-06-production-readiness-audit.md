@@ -6,6 +6,22 @@
 
 ---
 
+## Disposition (updated 2026-07-07)
+
+Executed on branch `production-readiness` (44 commits). Baseline now: **222 tests / 21 suites green, `tsc --noEmit` 0 errors, ESLint 0 errors, `next build` succeeds, `npm audit` 1 high (dev-only `xlsx`, no fix) + 2 moderate (postcss bundled in Next 16).** Two adversarial-review passes (Fable model) ran over Phase 1 and Phase 4 and their findings were fixed and re-verified.
+
+**✅ Done and verified (all P0 + all P1 + platform + most P2 architecture):**
+- **P0:** responsive grid + mobile tab bar (P0.1); popstate Back/Forward incl. history-pollution + stale-mode fixes (P0.2); fetch resilience + error banner + error boundaries + strict unzip (P0.3); real 404s + robots + generated sitemap + 308 + JSON-LD (P0.4); CSP + security headers + `html-react-parser` upgrade + Next 14→16 clearing the runtime advisories (P0.5); shared route defaults + single isomorphic metadata builder, KJV agreement (P0.6).
+- **P1:** analytics restored (P1.1); ESLint + GitHub Actions + Amplify test gates + fixed `tsc` gate (P1.2); data-corpus CDN caching (P1.3); the always-throwing scripture popup (P1.4); `debugger` removal + radix (P1.5/P1.6); keydown lifecycle (P1.7); `getTagData` mutation → pure memoized selector (P1.8); deterministic data / load-time shuffle removed (P1.9); `setState` callback bug (P1.10); silent verse drop (P1.11); selectable commentary + cursor/audio/debug CSS (P1.12–P1.15); loading skeleton + CLS (P1.16/P1.17); repo slimming (P1.21); AGENTS.md rewrite (P1.22); testMatch un-orphaning (P1.19); dep purge (P1.20).
+- **P2 architecture done:** actions API + per-render context snapshot, no render-time global mutation (P2.1 core); `loadIsaiahData`/`normalizeCoreData` extraction (P2.2 data); declarative keymap (P2.2 keyboard); pure tag selector (P1.8); search codec consolidation (P2.5); touch targets + AA contrast (P2.9 partial); button infrastructure + first icon-button conversions + h2-nesting fix (P2.6/P2.10 partial).
+
+**⏸ Deferred (accepted risk / needs runtime verification):**
+- **Error tracking (P1.1 Sentry):** deferred by user decision — `/api/health` probe + Clicky analytics are in place; add Sentry later with a DSN.
+- **P1.18 git history for `public/com`:** requires `git filter-repo` (history rewrite) — sign-off needed; keeping the dir tracked going forward is fine.
+- **Remaining P2, needs a running browser to verify safely (do as a batch with a dev server):** DOM-driven navigation removal (P2.3 — `clickElementID` callers, DOM-derived tag order, `checkFloater` sniffing); `resolveInitialState` consolidation (P2.5 init); the remaining ~23 interactive-element → `<button>` conversions (P2.6); dialog focus-trap/Escape for Settings + the audio popover (P2.7); controlled search input + removal of the `spread*` layout engine + render-phase timers (P2.4/P2.11); the font-size legibility floor on width-constrained boxes (P2.9). These touch the legacy SPA's most delicate runtime/visual paths; each change wants a dev-server pass (`npm run dev` → :3001) plus `npx playwright install chromium && npm run test:e2e` (the responsive + settings specs), which the audit machine's file-descriptor pressure could not run reliably.
+
+---
+
 ## Executive summary
 
 The Next.js 14 server layer (`app/`, `lib/server/`) is in decent shape — typed, tested, sensibly designed. The problems concentrate in three places:
