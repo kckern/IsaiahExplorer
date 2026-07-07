@@ -156,7 +156,11 @@ var state = globalData.state;
   }
 
   return (
-    <span className="more" onMouseEnter={() => setOpen(true)}>
+    <span
+      className="more"
+      onMouseEnter={() => setOpen(true)}
+      onClick={() => setOpen(true)}
+    >
       ⋯
     </span>
   );

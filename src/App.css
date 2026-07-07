@@ -4068,3 +4068,27 @@ span.debug
     font-weight: bold;
   }
 }
+
+/* ─── Accessibility: touch targets & contrast ────────────────────────────────
+   Appended overrides (later rules win at equal specificity) so we don't reflow
+   the desktop layout. Touch sizing applies only to coarse pointers. */
+
+@media (pointer: coarse) {
+  .vernum, .taglink, .seqcircle, .audio-gear,
+  #tag_next, #tag_prev, #com_prev, #com_next {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Contrast: the audit-flagged gray text on light backgrounds failed WCAG AA
+   (#999-on-white ~2.8:1, #999-on-#DDD ~2.1:1, #CCC-on-#EEE ~1.3:1). Darkened
+   to >=4.5:1 without touching decorative borders/backgrounds. */
+span.section_tile,
+span#drarrow,
+div#outline .heading_grid .ref { color: #6a6a6a; }
+div#outline h4 { color: #444; }
+.versebox { color: #767676; }
