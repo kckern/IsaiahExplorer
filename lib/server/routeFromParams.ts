@@ -1,4 +1,9 @@
 import { parseRoute } from '../../src/routing/routeCodec';
+import {
+  DEFAULT_STRUCTURE,
+  DEFAULT_OUTLINE,
+  DEFAULT_VERSION,
+} from '../../src/routing/defaults';
 
 export type RouteState = {
   structure: string;
@@ -14,15 +19,8 @@ export type RouteState = {
   commentaryID: string | null;
 };
 
-/**
- * Defaults match the client's getSettingsFromUrl behavior (App.js:242-278)
- * after validation: when structure/outline/version are missing or invalid,
- * the app falls back to the first entry in globalData.meta.* — these
- * constants are the first entries in the canonical data set.
- */
-const DEFAULT_STRUCTURE = 'whole';
-const DEFAULT_OUTLINE = 'chapters';
-const DEFAULT_VERSION = 'IINST';
+// Route defaults are shared with the client via src/routing/defaults.js so the
+// server and SPA agree on what a bare "/" resolves to (audit P0.6).
 
 // Isaiah has 66 chapters. A route naming a chapter outside 1..66 (or verse < 1)
 // is not a real page and must 404 rather than soft-render Isaiah 1:1.

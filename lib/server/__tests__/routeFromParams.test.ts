@@ -35,7 +35,7 @@ describe('routeFromParams', () => {
     expect(s.verse).toBe(1);
     expect(s.structure).toBe('whole');
     expect(s.outline).toBe('chapters');
-    expect(s.version).toBe('IINST');
+    expect(s.version).toBe('KJV');
   });
 
   test('empty array returns defaults', () => {
@@ -95,7 +95,7 @@ describe('routeFromParams', () => {
     // defaults backfilled
     expect(s.structure).toBe('whole');
     expect(s.outline).toBe('chapters');
-    expect(s.version).toBe('IINST');
+    expect(s.version).toBe('KJV');
   });
 
   test('legacy /:chapter alone defaults verse to 1', () => {

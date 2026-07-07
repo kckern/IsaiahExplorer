@@ -16,6 +16,12 @@ import Tipsy from "react-tipsy"
 
 import { fetchData } from "./data/fetchData"
 import { parseRoute, buildRoute } from "./routing/routeCodec"
+import {
+  DEFAULT_VERSE_ID,
+  DEFAULT_TOP_VERSIONS,
+  DEFAULT_TOP_OUTLINES,
+  DEFAULT_TOP_STRUCTURES
+} from "./routing/defaults"
 import { getFocalTag } from "./state/tagSelectors"
 import { TAG_PANEL, derivedTagMode, derivedInfoOpen } from "./state/tagPanel"
 import { AUDIO_MODE, legacyAudioState, legacyCommentaryAudioMode, audioModeFromLegacy } from "./state/audioState"
@@ -241,7 +247,7 @@ class App extends Component {
   }
 
   getSettingsFromUrl(settings, pathnameOverride) {
-    settings.active_verse_id = 17656
+    settings.active_verse_id = DEFAULT_VERSE_ID
     var path = pathnameOverride || (this.props.location && this.props.location.pathname) || window.location.pathname;
     var parsed = parseRoute(path);
 
@@ -324,7 +330,7 @@ class App extends Component {
       )
         return parseInt(verse_id, 0)
     }
-    return 17656
+    return DEFAULT_VERSE_ID
   }
 
   loadTagFromSlug(slug) {
@@ -463,17 +469,11 @@ class App extends Component {
     if (settings.top_structures === undefined) settings.top_structures = []
 
     if (settings.top_versions.length !== 5 || settings.top_versions.indexOf("HBRS")>=0)
-      settings.top_versions = ["KJV", "IINST", "NRSV", "NIV", "NASB"]
+      settings.top_versions = DEFAULT_TOP_VERSIONS.slice()
     if (settings.top_outlines.length !== 5)
-      settings.top_outlines = ["chapters", "mev", "nrsv", "niv", "nasb"]
+      settings.top_outlines = DEFAULT_TOP_OUTLINES.slice()
     if (settings.top_structures.length !== 5 || settings.top_structures.indexOf("bifid")>=0)
-      settings.top_structures = [
-        "whole",
-        "bibleproject",
-        "7part",
-        "authorship",
-        "wikipedia"
-      ]
+      settings.top_structures = DEFAULT_TOP_STRUCTURES.slice()
 
     if (settings.version === undefined || settings.version === null)
       settings.version = settings.top_versions[0]
