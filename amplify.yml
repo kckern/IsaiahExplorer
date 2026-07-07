@@ -27,6 +27,16 @@ frontend:
       headers:
         - key: Cache-Control
           value: 'public, max-age=0, must-revalidate'
+        # Security headers on static assets too — Amplify serves these directly
+        # without invoking Next's headers() (which only covers SSR responses).
+        - key: X-Frame-Options
+          value: 'DENY'
+        - key: X-Content-Type-Options
+          value: 'nosniff'
+        - key: Referrer-Policy
+          value: 'strict-origin-when-cross-origin'
+        - key: Strict-Transport-Security
+          value: 'max-age=63072000; includeSubDomains'
     - pattern: '_next/static/**/*'
       headers:
         - key: Cache-Control
