@@ -42,3 +42,11 @@ next-env.d.ts
 # CRA generated, will be removed in Phase 11
 src/react-app-env.d.ts
 test-results/
+
+# Editorial source under copyright review — keep out of the public repo.
+# The build script reads from here and emits obfuscated artifacts under
+# public/. See scripts/import.mjs for the one-time migration from the
+# external XLSX + CSV sources.
+/import/
+/source-data/
+/build-output/
