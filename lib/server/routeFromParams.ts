@@ -24,6 +24,31 @@ const DEFAULT_STRUCTURE = 'whole';
 const DEFAULT_OUTLINE = 'chapters';
 const DEFAULT_VERSION = 'IINST';
 
+// Isaiah has 66 chapters. A route naming a chapter outside 1..66 (or verse < 1)
+// is not a real page and must 404 rather than soft-render Isaiah 1:1.
+const MAX_CHAPTER = 66;
+
+/**
+ * Structural validity check for a catch-all slug: true if the whole path parses
+ * into known route fields (no trailing junk) and any chapter/verse is in range.
+ * The bare root (undefined/empty slug) is always recognized. Used by the page
+ * to decide between rendering and notFound().
+ */
+export function isRecognizedRoute(slug: string[] | undefined): boolean {
+  if (!slug || slug.length === 0) return true;
+  const decoded = slug.map((s) => decodeURIComponent(s));
+  const parsed = parseRoute('/' + decoded.join('/')) as {
+    recognizedSegments?: number;
+    chapter?: number;
+    verse?: number;
+  };
+  if ((parsed.recognizedSegments ?? 0) !== decoded.length) return false;
+  if (parsed.chapter !== undefined && (parsed.chapter < 1 || parsed.chapter > MAX_CHAPTER))
+    return false;
+  if (parsed.verse !== undefined && parsed.verse < 1) return false;
+  return true;
+}
+
 /**
  * Converts Next.js catch-all params (`{ slug: string[] | undefined }`) into
  * the route state object that buildMetadata consumes.

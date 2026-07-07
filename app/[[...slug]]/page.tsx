@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import { notFound } from 'next/navigation';
 import { loadGlobalData } from '../../lib/server/dataCache';
-import { routeFromParams } from '../../lib/server/routeFromParams';
+import { routeFromParams, isRecognizedRoute } from '../../lib/server/routeFromParams';
 import { resolveTagFromSlug } from '../../lib/server/resolveTag';
 import { buildMetadata } from '../../lib/server/buildMetadata';
 import { subsiteFromHost } from '../../lib/server/subsite';
@@ -12,6 +13,8 @@ import AppClient from './AppClient';
 type Props = { params: { slug?: string[] } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  if (!isRecognizedRoute(params.slug)) notFound();
+
   const fullData = await loadGlobalData();
   const route = routeFromParams(params.slug);
 
@@ -47,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
 }
 
-export default function Page() {
+export default function Page({ params }: Props) {
+  if (!isRecognizedRoute(params.slug)) notFound();
   return <AppClient />;
 }

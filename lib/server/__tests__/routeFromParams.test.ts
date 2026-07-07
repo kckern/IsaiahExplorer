@@ -1,4 +1,32 @@
-import { routeFromParams } from '../routeFromParams';
+import { routeFromParams, isRecognizedRoute } from '../routeFromParams';
+
+describe('isRecognizedRoute', () => {
+  test('bare root (undefined/empty) is recognized', () => {
+    expect(isRecognizedRoute(undefined)).toBe(true);
+    expect(isRecognizedRoute([])).toBe(true);
+  });
+  test('canonical path is recognized', () => {
+    expect(isRecognizedRoute(['whole', 'chapters', 'kjv', '5', '4'])).toBe(true);
+  });
+  test('legacy short forms are recognized', () => {
+    expect(isRecognizedRoute(['5', '4'])).toBe(true);
+    expect(isRecognizedRoute(['5'])).toBe(true);
+  });
+  test('garbage paths are rejected', () => {
+    expect(isRecognizedRoute(['wp-admin', 'setup.php'])).toBe(false);
+    expect(isRecognizedRoute(['.env'])).toBe(false);
+  });
+  test('trailing junk after a canonical path is rejected', () => {
+    expect(isRecognizedRoute(['whole', 'chapters', 'kjv', '5', '4', 'junk'])).toBe(false);
+  });
+  test('out-of-range chapters are rejected', () => {
+    expect(isRecognizedRoute(['whole', 'chapters', 'kjv', '99', '1'])).toBe(false);
+    expect(isRecognizedRoute(['67', '1'])).toBe(false);
+  });
+  test('verse 0 is rejected', () => {
+    expect(isRecognizedRoute(['5', '0'])).toBe(false);
+  });
+});
 
 describe('routeFromParams', () => {
   test('undefined slug returns defaults', () => {

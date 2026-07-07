@@ -91,6 +91,25 @@ describe('parseRoute', () => {
   test('legacy /hebrew/:strong', () => {
     expect(parseRoute('/hebrew/2490')).toMatchObject({ hebrew: 2490 });
   });
+
+  describe('recognizedSegments', () => {
+    test('full canonical path consumes all 5 segments', () => {
+      expect(parseRoute('/whole/chapters/kjv/5/4').recognizedSegments).toBe(5);
+    });
+    test('garbage that does not match consumes 0 segments', () => {
+      expect(parseRoute('/wp-admin/setup.php').recognizedSegments).toBe(0);
+    });
+    test('canonical prefix with trailing junk consumes only the matched prefix', () => {
+      // structure/outline/version/chapter/verse = 5; the extra segment is junk
+      expect(parseRoute('/whole/chapters/kjv/5/4/junk').recognizedSegments).toBe(5);
+    });
+    test('legacy /:chapter/:verse consumes 2', () => {
+      expect(parseRoute('/5/4').recognizedSegments).toBe(2);
+    });
+    test('legacy /:chapter consumes 1', () => {
+      expect(parseRoute('/5').recognizedSegments).toBe(1);
+    });
+  });
 });
 
 // ─── buildRoute ──────────────────────────────────────────────────────────────

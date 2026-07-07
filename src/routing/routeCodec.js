@@ -44,6 +44,7 @@ export function parseRoute(path) {
   const legacyTag = /^\/tag\.([^/]+)/i.exec(path);
   if (legacyTag) {
     result.tag = legacyTag[1].replace(/^tag\./, "");
+    result.recognizedSegments = 1;
     return result;
   }
 
@@ -51,6 +52,7 @@ export function parseRoute(path) {
   const legacySearch = /^\/search\/([^/]+)/i.exec(path);
   if (legacySearch) {
     result.search = decodeSearchParam(legacySearch[1]);
+    result.recognizedSegments = 2;
     return result;
   }
 
@@ -58,6 +60,7 @@ export function parseRoute(path) {
   const legacyHebrew = /^\/hebrew\/([0-9]+)/i.exec(path);
   if (legacyHebrew) {
     result.hebrew = parseInt(legacyHebrew[1], 10);
+    result.recognizedSegments = 2;
     return result;
   }
 
@@ -66,6 +69,7 @@ export function parseRoute(path) {
   if (legacyCV) {
     result.chapter = parseInt(legacyCV[1], 10);
     result.verse = parseInt(legacyCV[2], 10);
+    result.recognizedSegments = 2;
     return result;
   }
 
@@ -74,12 +78,21 @@ export function parseRoute(path) {
   if (legacyC) {
     result.chapter = parseInt(legacyC[1], 10);
     result.verse = 1;
+    result.recognizedSegments = 1;
     return result;
   }
 
   // Full canonical form
   const m = MAIN_REGEX.exec(path);
-  if (!m) return result;
+  if (!m) {
+    // Nothing matched — no path segment was consumed into a known field.
+    result.recognizedSegments = 0;
+    return result;
+  }
+  // Segments consumed = those in the matched prefix m[0]. If the regex only
+  // matched part of the path (trailing junk), this is < the path's segment
+  // count, which lets isRecognizedRoute reject it.
+  result.recognizedSegments = m[0].split("/").filter(Boolean).length;
 
   const params = Array.from({ length: 11 }, (_, i) =>
     typeof m[i] === "string" ? m[i].replace(/^\//, "") : null
