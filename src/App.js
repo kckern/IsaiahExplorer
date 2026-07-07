@@ -15,6 +15,7 @@ import MobileTabBar from "./Components/MobileTabBar.js"
 
 
 import { fetchData } from "./data/fetchData"
+import { normalizeCoreData, verseDatatoArray } from "./data/normalizeCoreData"
 import { parseRoute, buildRoute } from "./routing/routeCodec"
 import {
   DEFAULT_VERSE_ID,
@@ -1237,27 +1238,6 @@ class App extends Component {
     this.setState({more_tags: true})
   }
 
-  loadCustoms(key, data) {
-    if (data === undefined) return {}
-
-    if (data[key] === undefined) key = "default"
-    var output
-    if (data[key].base !== undefined) {
-      output = this.loadCustoms(data[key].base, data)
-      //add extras
-      for (var x in data[key]) {
-        if (Array.isArray(data[key][x])) {
-          if (output[x] === undefined) output[x] = data[key][x]
-          else output[x] = output[x].concat(data[key][x])
-        }
-      }
-    } else {
-      output = data[key]
-    }
-
-    return output
-  }
-
   loadCore() {
 
     if(["DOCUMENTS","CONTENTS"].indexOf(this.state.version) >=0)
@@ -1279,95 +1259,30 @@ class App extends Component {
     
     fetchData(this.state.rootURL+"./core/core.txt")
       .then(unzipped => {
-        for (var k in unzipped) globalData[k] = unzipped[k]
+        // Normalize + index the decoded core with a pure, deterministic pass
+        // (no shuffle, no globalData, no `this`), then merge the result into
+        // the store. See src/data/normalizeCoreData.js.
+        var result = normalizeCoreData(unzipped, subsite, unzipped["custom"])
+        for (var k in result.core) globalData[k] = result.core[k]
 
         var s = this.state
 
-        //CUSTOMIZE
-        var c = this.loadCustoms(subsite, globalData["custom"])
-
-        if (c.type === "blacklist")
-          for (var key in c) {
-            if (!Array.isArray(c[key])) continue
-            for (var y in c[key]) {
-              var shortcode = c[key][y]
-              if (key === "com") {
-                //comIndex
-                for (var verse_id in globalData.commentary.comIndex)
-                  delete globalData.commentary.comIndex[verse_id][shortcode]
-                //comOrder
-                var index = globalData.commentary.comOrder.indexOf(shortcode)
-                globalData.commentary.comOrder.splice(index, 1)
-                //comOrder
-                delete globalData.commentary.comSources[shortcode]
-                delete globalData.meta.commentary[shortcode]
-              }
-              if (key === "comaudio") {
-                delete globalData.commentary_audio.files[shortcode]
-                delete globalData.meta.audiocom[shortcode]
-              }
-              if (key === "version") {
-                delete globalData.meta.version[shortcode.toUpperCase()]
-                index = s.top_versions.indexOf(shortcode)
-                if (index >= 0) s.top_versions.splice(index, 1)
-              }
-              if (key === "outline") {
-                delete globalData.meta.outline[shortcode]
-                delete globalData.outlines[shortcode]
-                index = s.top_outlines.indexOf(shortcode)
-                if (index >= 0) s.top_outlines.splice(index, 1)
-              }
-              if (key === "structure") {
-                delete globalData.meta.structure[shortcode]
-                delete globalData.structures[shortcode]
-                index = s.top_structures.indexOf(shortcode)
-                if (index >= 0) s.top_structures.splice(index, 1)
-              }
-              if (key === "tag") {
-                var list = [shortcode]
-                var children = globalData.tags.tagChildren[shortcode]
-                if (Array.isArray(children)) list = list.concat(children)
-                for (var a in list) {
-                  var tagName = list[a]
-                  for (verse_id in globalData.tags.verseTagIndex) {
-                    index = globalData.tags.verseTagIndex[verse_id].indexOf(
-                      tagName
-                    )
-                    if (index >= 0)
-                      globalData.tags.verseTagIndex[verse_id].splice(index, 1)
-                  }
-                  for (var parentTag in globalData.tags.tagChildren) {
-                    index = globalData.tags.tagChildren[parentTag].indexOf(
-                      tagName
-                    )
-                    if (index >= 0)
-                      globalData.tags.tagChildren[parentTag].splice(index, 1)
-                  }
-
-                  for (parentTag in globalData.tags.parentTagIndex) {
-                    index = globalData.tags.parentTagIndex[parentTag].indexOf(
-                      tagName
-                    )
-                    if (index >= 0)
-                      globalData.tags.parentTagIndex[parentTag].splice(index, 1)
-                  }
-
-                  for (var sibTag in globalData.tags.tagIndex) {
-                    if (globalData.tags.tagIndex[sibTag].prev === tagName)
-                      delete globalData.tags.tagIndex[sibTag].prev
-                    if (globalData.tags.tagIndex[sibTag].next === tagName)
-                      delete globalData.tags.tagIndex[sibTag].next
-                  }
-
-                  delete globalData.tags.tagIndex[tagName]
-                  delete globalData.tags.tagStructure[tagName]
-                  delete globalData.tags.tagChildren[tagName]
-                  delete globalData.tags.superRefs[tagName]
-                  delete globalData.tags.parentTagIndex[tagName]
-                }
-              }
-            }
-          }
+        // Apply the blacklist's version/outline/structure removals to the
+        // component-state top_* arrays (the data-side removals already happened
+        // inside normalizeCoreData).
+        var removed = result.removed
+        for (var ri in removed.version) {
+          var rvIdx = s.top_versions.indexOf(removed.version[ri])
+          if (rvIdx >= 0) s.top_versions.splice(rvIdx, 1)
+        }
+        for (ri in removed.outline) {
+          var roIdx = s.top_outlines.indexOf(removed.outline[ri])
+          if (roIdx >= 0) s.top_outlines.splice(roIdx, 1)
+        }
+        for (ri in removed.structure) {
+          var rsIdx = s.top_structures.indexOf(removed.structure[ri])
+          if (rsIdx >= 0) s.top_structures.splice(rsIdx, 1)
+        }
 
         // META
 		
@@ -1391,125 +1306,14 @@ class App extends Component {
             ".jpg"))
         })
 
-        //STRUCTURES
+        // (Structure/outline/commentary/audio/tag indexing + verse expansion
+        // now happens deterministically inside normalizeCoreData above.)
 
-        var structures = globalData["structures"]
-        for (var structure_id in structures) {
-          for (var i in structures[structure_id]) {
-            for (var seg in structures[structure_id][i].verses) {
-              structures[structure_id][i].verses[seg] = this.verseDatatoArray(
-                structures[structure_id][i].verses[seg]
-              )
-              for (var j in structures[structure_id][i].verses[seg]) {
-                var verse = structures[structure_id][i].verses[seg][j]
-                if (!(verse in globalData["structureIndex"])) {
-                  globalData["structureIndex"][verse] = {}
-                }
-                globalData["structureIndex"][verse][structure_id] = i
-              }
-            }
-          }
-        }
-
-        //OUTLINES
-
-        var outlines = globalData["outlines"]
-        for (var outline_id in outlines) {
-          for (i in outlines[outline_id]) {
-            globalData["outlines"][outline_id][i].verses = outlines[outline_id][
-              i
-            ].verses = this.verseDatatoArray(outlines[outline_id][i].verses) //convert to
-            for (j in outlines[outline_id][i].verses) {
-              verse = outlines[outline_id][i].verses[j]
-              if (!(verse in globalData["outlineIndex"])) {
-                globalData["outlineIndex"][verse] = {}
-              }
-              globalData["outlineIndex"][verse][outline_id] = i
-            }
-          }
-        }
-
-        // COM AUDIO
-
-        globalData.commentary_audio["index"] = {}
-        var dirs = globalData.commentary_audio.files
-        for (shortcode in dirs) {
-          for (var filename in dirs[shortcode]) {
-            var verses = this.verseDatatoArray(dirs[shortcode][filename])
-            dirs[shortcode][filename] = verses
-            for (var x in verses) {
-              if (globalData.commentary_audio.index[verses[x]] === undefined)
-                globalData.commentary_audio.index[verses[x]] = {}
-              if (
-                globalData.commentary_audio.index[verses[x]][shortcode] ===
-                undefined
-              )
-                globalData.commentary_audio.index[verses[x]][shortcode] = []
-              globalData.commentary_audio.index[verses[x]][shortcode].push(
-                filename
-              )
-            }
-          }
-        }
-
-        // COMMENTARY
-
-        globalData.commentary["idIndex"] = {}
-        var comIndex = globalData.commentary.comIndex
-
-        for (verse_id in comIndex) {
-          for (var source in comIndex[verse_id]) {
-            for (i in comIndex[verse_id][source]) {
-              var thisid = comIndex[verse_id][source][i]
-              if (globalData.commentary.idIndex[thisid] === undefined)
-                globalData.commentary.idIndex[thisid] = {
-                  source: null,
-                  verse_ids: []
-                }
-              globalData.commentary.idIndex[thisid]["source"] = source
-              globalData.commentary.idIndex[thisid].verse_ids.push(
-                parseInt(verse_id, 10)
-              )
-            }
-          }
-        }
-
-        //TAGS
-
-        globalData["tags"]["tagSiblings"] = {}
-        globalData["tags"]["tagBranches"] = []
-        for (x in globalData["tags"]["verseTagIndex"])
-          globalData["tags"]["verseTagIndex"][x] = this.shuffle(
-            globalData["tags"]["verseTagIndex"][x]
-          )
-        for (x in globalData["tags"]["tagIndex"]) {
-          globalData["tags"]["tagIndex"][x]["verses"] = this.verseDatatoArray(
-            globalData["tags"]["tagIndex"][x]["verses"]
-          )
-
-          var p = globalData["tags"]["tagIndex"][x]["parents"][0]
-          if (globalData["tags"]["tagSiblings"][p] === undefined)
-            globalData["tags"]["tagSiblings"][p] = []
-          globalData["tags"]["tagSiblings"][p].push(x)
-        }
-        for (x in globalData["tags"]["tagStructure"]) {
-          for (y in globalData["tags"]["tagStructure"][x]) {
-            globalData["tags"]["tagStructure"][x][y][
-              "verses"
-            ] = this.verseDatatoArray(
-              globalData["tags"]["tagStructure"][x][y]["verses"]
-            )
-          }
-        }
-        for (x in globalData["tags"]["superRefs"])
-          globalData["tags"]["superRefs"][x] = this.verseDatatoArray(
-            globalData["tags"]["superRefs"][x]
-          )
         this.pull("tags")
         this.checkLoaded()
         fetchData(this.state.rootURL+"./core/tags_hl.txt")
           .then(hdata => {
-            for (x in hdata) {
+            for (var x in hdata) {
               for (var y in hdata[x]) {
                 if (globalData["tags"]["tagStructure"][x] !== undefined)
                   globalData["tags"]["tagStructure"][x][y]["highlight"] =
@@ -1584,40 +1388,10 @@ class App extends Component {
     }
   }
 
+  // Thin delegate to the extracted pure helper, kept because components call
+  // app.verseDatatoArray (e.g. commentaryReplacer).
   verseDatatoArray(versedata, src) {
-    var verses = []
-    if (typeof versedata === "number") verses.push(versedata)
-    else if (Array.isArray(versedata)) {
-      if (typeof versedata[0] === "number") versedata = [versedata]
-      for (var y in versedata) {
-        var item = versedata[y]
-        //singles
-        if (Array.isArray(item)) {
-          verses = verses.concat(item)
-          continue
-        }
-        //ranges
-        for (var i in item) {
-          var vid = parseInt(i, 10)
-          for (var j = vid; j < vid + item[i]; j++) {
-            verses.push(j)
-          }
-        }
-      }
-    } //object
-    else {
-      for (i in versedata) {
-        vid = parseInt(i, 10)
-        for (j = vid; j < vid + versedata[i]; j++) {
-          verses.push(j)
-        }
-      }
-    }
-
-    if (verses.length === 0) {
-      //	console.log("No Verses: ",versedata);
-    }
-    return verses
+    return verseDatatoArray(versedata, src)
   }
 
   // Load a version's text into globalData.text without switching the primary
@@ -2620,15 +2394,6 @@ class App extends Component {
     return g
 
     //Add Parents, etc
-  }
-
-  shuffle(arr) {
-    let newArr = arr.slice()
-    for (var i = newArr.length - 1; i > 0; i--) {
-      var rand = Math.floor(Math.random() * (i + 1))
-      ;[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]]
-    }
-    return newArr
   }
 
   ArrNoDupe(a) {
