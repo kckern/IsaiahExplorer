@@ -532,7 +532,6 @@ class App extends Component {
           settings.hebrewStrongIndex,
           true
         )
-      //var g = globalData;   debugger;
 
       this.setState(this.validateSettings(settings), callback) // 17656
     }
@@ -1865,7 +1864,6 @@ class App extends Component {
         this.search(this.state.searchQuery)
       }
       this.triggerAudio();
-      //debugger;
       if (source === "init") this.setActiveVersion(this.state.version)
     })
   }
@@ -1922,7 +1920,6 @@ class App extends Component {
     }
 
     if (this.checkInView(container, element) === true) return false
-	//debugger;
 	if(typeof container.childNodes[0].getBoundingClientRect !== "function") return false;
     var parent = container.childNodes[0].getBoundingClientRect().y
     var child = element.getBoundingClientRect().y
@@ -2358,7 +2355,8 @@ class App extends Component {
       newVerseId = tagData.verses[0]
     }
 
-    if ([null, 0, undefined].indexOf(newVerseId) > -1) debugger
+    if ([null, 0, undefined].indexOf(newVerseId) > -1)
+      console.warn("showcaseTag: no valid verse for tag", newVerseId)
 
     this.arrowPointer = 0
     this.setTagPanel(TAG_PANEL.CLOSED)
@@ -2560,7 +2558,6 @@ class App extends Component {
       return this.state.highlighted_verse_range
 
     if (globalData["outlineIndex"][verse_id.toString()] === undefined) {
-      debugger
       return []
     }
 
@@ -2605,7 +2602,6 @@ class App extends Component {
     return this.lastTags
   }
   getTagData(tagName) {
-    //if(tagName==="Wicked Destroyed"){ var gb = globalData; 	debugger;  	}
     var g = globalData["tags"]["tagIndex"][tagName]
     if (g === undefined)
       return {
@@ -2643,7 +2639,6 @@ class App extends Component {
 
       if (children === undefined) {
         //we have a problem, a leaf has no verses!
-        debugger
         return this.clearTag()
       }
       for (i in children) {

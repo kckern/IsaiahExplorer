@@ -162,7 +162,7 @@ function VerseGrid({count, verses}) {
         }
         if (
           parseInt(
-            globalData["outlineIndex"][verse_id.toString()][state.outline],16
+            globalData["outlineIndex"][verse_id.toString()][state.outline], 10
           ) %
             2 ===
           0
