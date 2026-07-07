@@ -44,6 +44,11 @@ const nextConfig = {
   // page renders as broken. The legacy components under src/Components/ use
   // `<img src={x}>` directly, so a string URL is what we want.
   images: { disableStaticImages: true },
+  // NOTE: Next 16 makes Turbopack the default builder, and Turbopack ignores
+  // this `webpack` config. The asset/resource rule below is load-bearing for the
+  // legacy `<img src={importedPng}>` components, so the build/dev scripts pin the
+  // webpack builder with `--webpack` (see package.json). Migrating this rule to
+  // Turbopack's asset handling is deferred to a later task.
   webpack: (config) => {
     config.module.rules.unshift({
       test: /\.(png|jpe?g|gif|svg|webp)$/i,

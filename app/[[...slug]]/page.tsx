@@ -10,15 +10,16 @@ import { applySubsite } from '../../lib/server/applySubsite';
 import { getVerseText } from '../../lib/server/verseText';
 import AppClient from './AppClient';
 
-type Props = { params: { slug?: string[] } };
+type Props = { params: Promise<{ slug?: string[] }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  if (!isRecognizedRoute(params.slug)) notFound();
+  const { slug } = await params;
+  if (!isRecognizedRoute(slug)) notFound();
 
   const fullData = await loadGlobalData();
-  const route = routeFromParams(params.slug);
+  const route = routeFromParams(slug);
 
-  const h = headers();
+  const h = await headers();
   const host = h.get('host') ?? 'isaiah.scripture.guide';
   const proto = h.get('x-forwarded-proto') ?? 'https';
   const origin = `${proto}://${host}`;
@@ -50,10 +51,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
 }
 
-export default function Page({ params }: Props) {
-  if (!isRecognizedRoute(params.slug)) notFound();
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+  if (!isRecognizedRoute(slug)) notFound();
 
-  const route = routeFromParams(params.slug);
+  const route = routeFromParams(slug);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
