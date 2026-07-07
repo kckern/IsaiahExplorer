@@ -431,14 +431,20 @@ class App extends Component {
         " | " + globalData.commentary.comSources[this.state.commentarySource].name;
     }
 
+    // Never push a duplicate history entry. On a popstate (Back/Forward) the
+    // browser has already set window.location to the target, so rebuilding the
+    // same path must REPLACE, not push — otherwise every Back press appends a
+    // new entry, truncating Forward and trapping the user.
+    var isSamePath = path === window.location.pathname;
+    var doReplace = replace === true || isSamePath;
     if (this.props.navigate && this.state.rootURL.match(/^file/) === null) {
-      this.props.navigate(path, { replace: replace === true });
+      this.props.navigate(path, { replace: doReplace });
     }
 
     document.title = title;
 
-    // Fire Clicky page-view on every navigation (SPA does not trigger automatic tracking)
-    if (!replace && typeof window.clicky !== "undefined") {
+    // Fire Clicky page-view on genuine (non-replace) navigations only
+    if (!doReplace && typeof window.clicky !== "undefined") {
       try { window.clicky.log("#" + path, title, "pageview"); } catch (e) {}
     }
   }
@@ -534,23 +540,59 @@ class App extends Component {
 
   handlePopState(pathname) {
     if (this.state.ready !== true) return
-    var settings = this.getSettingsFromUrl({}, pathname)
+    var parsed = parseRoute(pathname)
+
+    // Seed with the current structure/outline/version so a Back to a URL that
+    // omits them keeps the session choice instead of validateSettings resetting
+    // to the meta-first entry (e.g. bare "/" would otherwise snap to IINST).
+    var settings = this.getSettingsFromUrl(
+      {
+        structure: this.state.structure,
+        outline: this.state.outline,
+        version: this.state.version
+      },
+      pathname
+    )
+
+    // getSettingsFromUrl only SETS the modes present in the URL. When the user
+    // navigates BACK from a tag/search/hebrew/commentary view to a plain verse
+    // URL, the old mode must be explicitly cleared — otherwise the stale state
+    // makes setActiveVerse's guards (App.js:1714-1725) no-op the update, or the
+    // rebuilt URL reverts the Back. Clear every mode absent from THIS url.
+    if (parsed.tag === undefined) settings.selected_tag = null
+    if (parsed.search === undefined) {
+      settings.searchQuery = null
+      settings.searchMode = false
+      settings.urlSearch = false
+    }
+    if (parsed.hebrew === undefined) {
+      settings.hebrewStrongIndex = null
+      settings.hebrewSearch = false
+      settings.hebrewWord = null
+    }
+    if (parsed.commentarySource === undefined) settings.commentaryMode = false
+
     settings = this.validateSettings(settings)
 
-    var callback = this.setActiveVerse.bind(
-      this,
-      settings.active_verse_id,
-      undefined,
-      undefined,
-      true,
-      "init"
-    )
-    if (settings.selected_tag !== undefined && settings.selected_tag !== null)
-      callback = this.setActiveTag.bind(this, settings.selected_tag, true)
-    if (settings.searchQuery !== undefined && settings.searchQuery !== null)
-      callback = this.search.bind(this, settings.searchQuery, true)
-    if (settings.hebrewStrongIndex !== undefined)
+    // Dispatch the restore callback by what the URL actually contains, matching
+    // getSettingsFromUrl's precedence (hebrew > search > tag > verse). Keyed on
+    // `parsed` (not the settings values) so a cleared null field can't mis-route.
+    var callback
+    if (parsed.hebrew !== undefined)
       callback = this.searchHebrewWord.bind(this, settings.hebrewStrongIndex, true)
+    else if (parsed.search !== undefined && settings.searchQuery)
+      callback = this.search.bind(this, settings.searchQuery, true)
+    else if (parsed.tag !== undefined && settings.selected_tag)
+      callback = this.setActiveTag.bind(this, settings.selected_tag, true)
+    else
+      callback = this.setActiveVerse.bind(
+        this,
+        settings.active_verse_id,
+        undefined,
+        undefined,
+        true,
+        "init"
+      )
 
     this.setState(settings, callback)
   }
