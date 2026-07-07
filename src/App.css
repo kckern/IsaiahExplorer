@@ -3935,11 +3935,8 @@ span.debug
     font-weight: bold;
   }
 
-  /* The version-swap thumbnail strip is a desktop hover affordance (five
-     77x25 images that don't fit the narrow heading — they clipped to a
-     broken-looking sliver). Version switching on mobile goes through the
-     heading tap / settings instead. */
-  .swapverse { display: none; }
+  /* (.swapverse hiding moved to a container query on .col2 at the end of this
+     file — it depends on COLUMN width, not viewport width.) */
 }
 
 /* ─── Accessibility: touch targets & contrast ────────────────────────────────
@@ -4007,4 +4004,65 @@ button.linklike {
 button.linklike:focus-visible {
   outline: 2px solid var(--ui-focus);
   outline-offset: 2px;
+}
+
+/* ─── Fluid-column fixes: content sized for the old fixed columns ────────────
+   The grid made columns fluid, but several elements were still dimensioned for
+   the old fixed widths (col1 491px / col2b 310px / col2 560px) and overflowed
+   or clipped mid-glyph at other widths. */
+
+/* 1. Encompassing Passages / Corresponding Structural Sections row titles:
+   were position:absolute + width:100% (+15px pad), overflowing the row by
+   ~90px at any width. Pin BOTH edges (left past the 90px icon, right to the
+   row edge) so the span fills exactly the remaining row; ellipsis instead of
+   a hard clip. (left must be explicit: with left:auto + right:0 an abs-pos
+   span shrink-wraps and hugs the right edge instead.) */
+#verse .outline >div div span,
+#verse .structure >div div span {
+  width: auto;
+  left: 100px;
+  right: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+/* 2. "Available Structures"/"Available Outlines" drawer rows: fixed widths
+   (422px / 251px) cut text mid-letter in fluid columns. Fill the column and
+   let long titles/descriptions wrap; rows grow instead of chopping glyphs. */
+div#book_meta > div.option,
+div#outline_meta > div.option {
+  width: auto;
+  height: auto;
+  min-height: 42px;
+}
+/* Outline/version rows: flex keeps the label text in its own column beside the
+   120px thumbnail instead of float-wrapping underneath it. */
+div#outline_meta > div.option,
+div#version_meta > div.option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+div#outline_meta > div.option > img,
+div#version_meta > div.option > img {
+  flex: 0 0 auto;
+}
+
+/* 3. Version-swap strip: five 77px thumbnails need ~420px of heading; hide by
+   COLUMN width (container query), not viewport — it also clipped to a sliver
+   on desktop whenever the Verse Details column ran narrow. */
+.col2 { container-type: inline-size; }
+@container (max-width: 640px) {
+  .swapverse { display: none; }
+}
+
+/* 4. Verse Tags collapse: the 124px ceiling can land mid-row at fluid widths,
+   chopping the next chip row in half. Fade the cut edge so the truncation
+   reads as intentional; expanded view unmasks. */
+.verse_info_box.tags.overflowing:not(.showfull) {
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent);
+  mask-image: linear-gradient(to bottom, black calc(100% - 24px), transparent);
 }
