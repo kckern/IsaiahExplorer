@@ -14,7 +14,27 @@ const AppWithRouter = dynamic(
       import('../../src/App.js'),
       import('../../src/routing/withRouter.js'),
     ]).then(([appMod, routerMod]) => routerMod.withRouter(appMod.default)),
-  { ssr: false },
+  {
+    ssr: false,
+    // Shown while the SPA bundle downloads/parses. Without it the user stares
+    // at a black page (body background is #000) until the whole bundle boots.
+    loading: () => (
+      <div
+        style={{
+          minHeight: '100dvh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#000',
+          color: '#888',
+          fontFamily: 'Roboto Condensed, sans-serif',
+          fontSize: 18,
+        }}
+      >
+        Loading Isaiah Explorer…
+      </div>
+    ),
+  },
 );
 
 export default function AppClient() {

@@ -1544,29 +1544,34 @@ class App extends Component {
   }
 
   loadTopVersions() {
-    //Load ALT
-    setTimeout(
-      function() {
-        for (var x in this.state.top_versions) {
-          var ver = this.state.top_versions[x]
-          if (ver === this.state.version) continue
-          const const_ver = ver
-          fetchData(this.state.rootURL+"./text/verses_" + const_ver.toUpperCase() + ".txt")
-            .then(data => {
-              globalData["text"][const_ver] = data
-              this.setActiveVerse(
-                this.state.active_verse_id,
-                undefined,
-                undefined,
-                true,
-                "init"
-              )
-            })
-            .catch(err => console.warn("alt version load failed", err))
-        }
-      }.bind(this),
-      3000
-    )
+    // Load the side-by-side alternate translations as soon as the main thread
+    // is idle after first paint — was a hard 3s setTimeout that left the
+    // side-by-side cells on "Loading..." then popped content in.
+    var run = function() {
+      for (var x in this.state.top_versions) {
+        var ver = this.state.top_versions[x]
+        if (ver === this.state.version) continue
+        const const_ver = ver
+        fetchData(this.state.rootURL+"./text/verses_" + const_ver.toUpperCase() + ".txt")
+          .then(data => {
+            globalData["text"][const_ver] = data
+            this.setActiveVerse(
+              this.state.active_verse_id,
+              undefined,
+              undefined,
+              true,
+              "init"
+            )
+          })
+          .catch(err => console.warn("alt version load failed", err))
+      }
+    }.bind(this)
+
+    if (typeof window !== "undefined" && typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(run, { timeout: 2000 })
+    } else {
+      setTimeout(run, 200)
+    }
   }
 
   verseDatatoArray(versedata, src) {

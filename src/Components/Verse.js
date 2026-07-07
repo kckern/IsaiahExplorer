@@ -84,7 +84,9 @@ var state = globalData.state;
 		if (shortcode !== state.version) classes.push("alt");
 		return (
 			<img
-				alt="spot"
+				alt={shortcode}
+				width={77}
+				height={25}
 				onMouseEnter={() => app.spotVerse(shortcode)}
 				onMouseLeave={() => app.spotVerse(state.version)}
 				onClick={() => app.setActiveVersion(shortcode)}
