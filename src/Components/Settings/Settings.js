@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useMemo, useState} from "react";
+import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 import {DataContext} from "../../DataContext";
 
 import VersionPreview from './Preview/Version'
@@ -58,8 +58,50 @@ function Settings() {
 
   const Preview = previews[preview]
 
+  // Dialog semantics: focus the first control on open, trap Tab within the
+  // panel, close on Escape, and restore focus to the opener on close. Settings
+  // mounts only while open, so mount/unmount == open/close.
+  const dialogRef = useRef(null);
+  const restoreFocusTo = useRef(null);
+  useEffect(() => {
+    restoreFocusTo.current = document.activeElement;
+    const node = dialogRef.current;
+    if (!node) return undefined;
+    const focusables = () =>
+      node.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const first = focusables()[0];
+    if (first && first.focus) first.focus();
+    function onKey(e) {
+      if (e.key === "Escape") {
+        app.closeSettings();
+        return;
+      }
+      if (e.key === "Tab") {
+        const items = focusables();
+        if (items.length === 0) return;
+        const firstEl = items[0];
+        const lastEl = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        } else if (!e.shiftKey && document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    }
+    node.addEventListener("keydown", onKey);
+    return () => {
+      node.removeEventListener("keydown", onKey);
+      const el = restoreFocusTo.current;
+      if (el && el.focus) el.focus();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div id="user_prefs">
+    <div id="user_prefs" ref={dialogRef} role="dialog" aria-modal="true"
+         aria-label="Isaiah Explorer User Preferences">
       <button type="button" className="linklike" style={{float: 'right'}}
               aria-label="Close settings" onClick={() => app.closeSettings()}>
         <img alt="" src={require('../../img/interface/close.png')} />

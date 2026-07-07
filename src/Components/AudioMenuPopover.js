@@ -13,9 +13,17 @@ import React, { useEffect, useRef } from 'react';
  */
 export default function AudioMenuPopover({ open, onClose, triggerRef, children }) {
   const ref = useRef(null);
+  const restoreFocusTo = useRef(null);
 
   useEffect(() => {
     if (!open) return;
+    // Move focus into the popover on open and restore it to whatever was
+    // focused (the trigger) on close — a disclosure, not an ARIA menu, so the
+    // children stay plain buttons and there's no role="menu" lie.
+    restoreFocusTo.current = document.activeElement;
+    const first = ref.current && ref.current.querySelector('button, [href], input, select, [tabindex]');
+    if (first && first.focus) first.focus();
+
     function handleOutside(e) {
       if (ref.current && ref.current.contains(e.target)) return;
       if (triggerRef && triggerRef.current && triggerRef.current.contains(e.target)) return;
@@ -29,9 +37,11 @@ export default function AudioMenuPopover({ open, onClose, triggerRef, children }
     return () => {
       document.removeEventListener('mousedown', handleOutside);
       document.removeEventListener('keydown', handleKey);
+      const el = restoreFocusTo.current;
+      if (el && el.focus) el.focus();
     };
   }, [open, onClose, triggerRef]);
 
   if (!open) return null;
-  return <div className="audio-menu-popover" ref={ref} role="menu">{children}</div>;
+  return <div className="audio-menu-popover" ref={ref}>{children}</div>;
 }
