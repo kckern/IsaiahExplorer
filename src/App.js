@@ -117,18 +117,18 @@ class App extends Component {
     }
   }
 
-  //preload images
   componentDidMount() {
+    this.boundKeyDown = this.keyDown.bind(this)
+    document.addEventListener("keydown", this.boundKeyDown)
+    // preload the loading image (its return was already invoked immediately by
+    // the previous `img.onload = this.initApp()`, so call initApp directly)
     var img = new Image()
     img.src = require("./img/interface/book.gif")
-    img.onload = this.initApp();
+    this.initApp()
   }
 
-  componentWillMount() {
-    document.addEventListener("keydown", this.keyDown.bind(this))
-    
-
-
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.boundKeyDown)
   }
 
   saveFloater(key, item) {
