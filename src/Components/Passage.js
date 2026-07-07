@@ -379,9 +379,12 @@ var state = globalData.state;
 	}
 
 	if (typeof lineData.classes === "undefined") {
-		console.log("ERROR");
-		console.log(lineData);
-		return null;
+		console.warn("Unrenderable verse line", lineData);
+		return (
+			<span className="verse-render-error" title="This verse could not be rendered">
+				⚠ verse unavailable
+			</span>
+		);
 	}
 	lineData.classes.push("v_" + lineData.verse_id);
 	if (isActive()) lineData.classes.push("versebox_highlighted");
