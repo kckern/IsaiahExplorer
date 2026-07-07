@@ -21,14 +21,14 @@ export function middleware(req: NextRequest) {
   if (searchMatch) {
     const url = req.nextUrl.clone();
     url.pathname = `/search.${searchMatch[1]}`;
-    return NextResponse.redirect(url, 307);
+    return NextResponse.redirect(url, 308);
   }
 
   const hebrewMatch = HEBREW_LEGACY.exec(path);
   if (hebrewMatch) {
     const url = req.nextUrl.clone();
     url.pathname = `/hebrew.${hebrewMatch[1]}`;
-    return NextResponse.redirect(url, 307);
+    return NextResponse.redirect(url, 308);
   }
 
   return NextResponse.next();

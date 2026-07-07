@@ -52,5 +52,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function Page({ params }: Props) {
   if (!isRecognizedRoute(params.slug)) notFound();
-  return <AppClient />;
+
+  const route = routeFromParams(params.slug);
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `Isaiah ${route.chapter}:${route.verse}`,
+    isPartOf: { '@type': 'Book', name: 'Book of Isaiah' },
+    inLanguage: 'en',
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <AppClient />
+    </>
+  );
 }
