@@ -11,7 +11,7 @@ frontend:
         - npx jest --ci
     build:
       commands:
-        # Next.js 14 (App Router) SSR build.
+        # Next.js 16 (App Router) SSR build.
         # The Amplify app's platform field must be WEB_COMPUTE for SSR to be
         # served from Lambda; see scripts/amplify-migrate.sh for the one-time
         # platform flip.
@@ -43,6 +43,23 @@ frontend:
       headers:
         - key: Cache-Control
           value: 'public, max-age=31536000, immutable'
+    # Compressed data corpus — the blanket **/* rule above otherwise forces
+    # revalidation on every request of ~67 MB of commentary JSON + 3.7 MB of
+    # translation text that only change on a data rebuild. Cache them at the CDN
+    # (a day, with a week of stale-while-revalidate). If a rebuild must bust the
+    # cache sooner, add a ?v=<hash> query when fetching.
+    - pattern: 'com/**/*'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=86400, stale-while-revalidate=604800'
+    - pattern: 'text/**/*'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=86400, stale-while-revalidate=604800'
+    - pattern: 'core/**/*'
+      headers:
+        - key: Cache-Control
+          value: 'public, max-age=3600, stale-while-revalidate=86400'
     # Dynamic OG card (app/og/route.tsx): deterministic per query string,
     # so let the CDN cache it instead of hitting the Lambda on every
     # crawler scrape. Without this the blanket **/* rule above forces
