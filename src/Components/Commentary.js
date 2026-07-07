@@ -287,8 +287,13 @@ var state = globalData.state;
             if (domNode.attribs.class === "isa") {
               var rowRange = [];
               if (domNode.attribs.verses !== undefined) {
-                var obj = JSON.parse(atob(domNode.attribs.verses));
-                rowRange = app.verseDatatoArray(obj);
+                try {
+                  var obj = JSON.parse(atob(domNode.attribs.verses));
+                  rowRange = app.verseDatatoArray(obj);
+                } catch (e) {
+                  console.warn("Bad verses attribute in commentary HTML", e);
+                  return undefined;
+                }
               }
               return <CommentaryTagLink reference={domNode.children[0].data} verses={rowRange} />;
             }
