@@ -43,7 +43,6 @@ html,body
 	height:100%;
 
     background-color:#000;
-	cursor:pointer;
 	transform-origin: 0 0;
 }
 
@@ -380,7 +379,7 @@ div#version_meta.meta.visible
 
 div.verse_grid,
 h1,h2,h3,h4,h5,.heading div,.tagtree div,.meta div,.desc ,.detail,.taglink,.verse_info_box ,.readmore, #seefax,
-#user_prefs div,#user_prefs span,#user_prefs p, #approot.commentaryMode #commentary_text p
+#user_prefs div,#user_prefs span,#user_prefs p
 
 {
   -webkit-touch-callout: none;
@@ -1055,18 +1054,11 @@ div#text  span.versebox_tag_highlighted.versebox_highlighted
 
 
 
-div#text .textcontent
-{
-	border: 1px solid red;
-	position: fixed;
-	margin-top: 40px;
-}
-
-
 .verse.audio_playing
 {
 	color:red;
-	font-size:40px;
+	background: rgba(255,0,0,.08);
+	font-weight:bold;
 }
 
 
