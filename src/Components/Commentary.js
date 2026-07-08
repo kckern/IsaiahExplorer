@@ -234,31 +234,11 @@ var state = globalData.state;
     preloadNext(loadedItem);
   }, [loadedItem ? loadedItem.id : null]);
 
+  // Prev/next stepping lives on App (app.moveCommentary) so the keyboard can
+  // drive it directly instead of click()ing these buttons. The root setState
+  // re-renders this component through the context snapshot.
   function move(val) {
-    var thisid = state.commentaryID;
-    var list = Object.keys(globalData.commentary.idIndex).map(Number);
-    var index = list.indexOf(thisid);
-    var new_id = list[index + val];
-    if (list.indexOf(new_id) === -1) new_id = list[0];
-    if (globalData.commentary.comData[new_id] === null) return false;
-
-    var item = globalData.commentary.idIndex[new_id];
-    var range = [];
-    for (var i = item.verse_id; i < item.verse_id + item.verse_count; i++) range.push(i);
-    if (range.length === 0) range = state.commentary_verse_range;
-    var comData = globalData.commentary.comData[new_id];
-    app.setState(
-      {
-        commentaryID: new_id,
-        selected_verse_id: null,
-        commentary_verse_range: range,
-        commentarySource: item.source,
-        commentary_verse_id: item.verse_ids[0]
-      },
-      function() {
-        setLoaded(comData !== undefined);
-      }
-    );
+    app.moveCommentary(val);
   }
 
   var item = globalData.commentary.comData[state.commentaryID];

@@ -45,39 +45,20 @@ export default function AudioToolbar() {
 
 	// --- Handlers ---
 
+	// The three toggles live on App (toggleVerseAudio / toggleCommentaryAudio /
+	// toggleCommentaryRead) so the keyboard drives the same transitions without
+	// click()ing these buttons. These wrappers keep the local disabled guard.
 	function clickVerse() {
 		if (isVerseDisabled) return;
-		if (state.audioState !== null) {
-			app.setAudioMode(AUDIO_MODE.IDLE, app.setUrl.bind(app));
-		} else {
-			app.setAudioMode(
-				AUDIO_MODE.VERSE_LOADING,
-				{ audioPointer: 0, selected_verse_id: null, commentary_audio_verse_range: [] },
-				app.setUrl.bind(app)
-			);
-		}
+		app.toggleVerseAudio();
 	}
 
 	function clickCommentary() {
-		if (state.audioState !== null) {
-			app.setAudioMode(AUDIO_MODE.IDLE, { commentary_audio_verse_range: [] });
-		} else {
-			app.setTagPanel(TAG_PANEL.CLOSED);
-			app.setAudioMode(AUDIO_MODE.COMMENTARY_LOADING, { audioPointer: 0 });
-		}
+		app.toggleCommentaryAudio();
 	}
 
 	function clickRead() {
-		app.setTagPanel(state.tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED);
-		app.setState(
-			{
-				commentaryMode: !state.commentaryMode,
-				commentary_verse_range: [],
-				selected_verse_id: null,
-				commentary_verse_id: state.active_verse_id,
-			},
-			app.setUrl.bind(app)
-		);
+		app.toggleCommentaryRead();
 	}
 
 	function switchSource(shortcode) {

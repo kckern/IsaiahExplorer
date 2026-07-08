@@ -145,7 +145,7 @@ class App extends Component {
     cycleStructurePrev: () => this.cycleStructure(-1),
     cycleStructureNext: () => this.cycleStructure(1),
     cycleSection: () => this.cycleSection(1),
-    openCommentary: () => this.clickElementID("commentary"),
+    openCommentary: () => this.toggleCommentaryRead(),
     cycleTag: () => this.cycleTag(1),
     minusToggleTag: () => {
       if (this.state.tagMode) return this.clearTag()
@@ -153,13 +153,9 @@ class App extends Component {
       if (recent === undefined) return this.showcaseTag(null)
       return this.setActiveTag(recent[recent.length - 1])
     },
-    toggleHebrew: () => {
-      if (!this.state.hebrewFax && this.state.hebrewMode)
-        return this.clickElementID("seefax")
-      return this.clickElementID("hebIcon")
-    },
-    toggleCommentaryAudio: () => this.clickElementID("audio_commentary"),
-    toggleAudioVerse: () => this.clickElementID("audio_verse"),
+    toggleHebrew: () => this.toggleHebrew(),
+    toggleCommentaryAudio: () => this.toggleCommentaryAudio(),
+    toggleAudioVerse: () => this.toggleVerseAudio(),
     preSearch: () => this.setState({preSearchMode: true}),
     preSearchRef: () => this.setState({preSearchMode: true, refSearch: true}),
   }
@@ -628,10 +624,87 @@ class App extends Component {
     return handler()
   }
 
-  clickElementID(id) {
-    var el = document.getElementById(id)
-    if (el === null) return false
-    el.click()
+  // ── State-based navigation (audit P2.3) ────────────────────────────────
+  // These replace the old clickElementID pattern, where keyboard actions were
+  // dispatched by finding a rendered button and click()ing it. Each method is
+  // the same state transition the corresponding button performs.
+
+  // Mirrors AudioToolbar clickVerse (#audio_verse).
+  toggleVerseAudio() {
+    var verseDisabled =
+      globalData.meta.version[this.state.version].audio !== 1 &&
+      this.state.hebrewMode === false
+    if (verseDisabled) return false
+    if (this.state.audioState !== null) {
+      this.setAudioMode(AUDIO_MODE.IDLE, this.setUrl.bind(this))
+    } else {
+      this.setAudioMode(
+        AUDIO_MODE.VERSE_LOADING,
+        {audioPointer: 0, selected_verse_id: null, commentary_audio_verse_range: []},
+        this.setUrl.bind(this)
+      )
+    }
+  }
+
+  // Mirrors AudioToolbar clickCommentary (#audio_commentary).
+  toggleCommentaryAudio() {
+    if (this.state.audioState !== null) {
+      this.setAudioMode(AUDIO_MODE.IDLE, {commentary_audio_verse_range: []})
+    } else {
+      this.setTagPanel(TAG_PANEL.CLOSED)
+      this.setAudioMode(AUDIO_MODE.COMMENTARY_LOADING, {audioPointer: 0})
+    }
+  }
+
+  // Mirrors AudioToolbar clickRead (#commentary).
+  toggleCommentaryRead() {
+    this.setTagPanel(this.state.tagMode ? TAG_PANEL.VERSES : TAG_PANEL.CLOSED)
+    this.setState(
+      {
+        commentaryMode: !this.state.commentaryMode,
+        commentary_verse_range: [],
+        selected_verse_id: null,
+        commentary_verse_id: this.state.active_verse_id
+      },
+      this.setUrl.bind(this)
+    )
+  }
+
+  // Mirrors the #hebIcon / #seefax toggles (Verse.js / Hebrew.js).
+  toggleHebrew() {
+    if (this.state.hebrewMode && !this.state.hebrewFax)
+      return this.setState({hebrewFax: true})
+    if (this.state.hebrewMode)
+      return this.setState(
+        {hebrewMode: false, hebrewFax: false},
+        this.clearTag.bind(this)
+      )
+    if (this.state.hebrewReady !== true) return false
+    this.setState({hebrewMode: true}, this.setUrl.bind(this))
+  }
+
+  // Ported verbatim from Commentary.js move() (the #com_prev/#com_next
+  // handlers) so keyboard stepping no longer clicks those buttons.
+  moveCommentary(val) {
+    var thisid = this.state.commentaryID
+    var list = Object.keys(globalData.commentary.idIndex).map(Number)
+    var index = list.indexOf(thisid)
+    var new_id = list[index + val]
+    if (list.indexOf(new_id) === -1) new_id = list[0]
+    if (globalData.commentary.comData[new_id] === null) return false
+
+    var item = globalData.commentary.idIndex[new_id]
+    var range = []
+    for (var i = item.verse_id; i < item.verse_id + item.verse_count; i++)
+      range.push(i)
+    if (range.length === 0) range = this.state.commentary_verse_range
+    this.setState({
+      commentaryID: new_id,
+      selected_verse_id: null,
+      commentary_verse_range: range,
+      commentarySource: item.source,
+      commentary_verse_id: item.verse_ids[0]
+    })
   }
 
   cycleSection(incr) {
@@ -656,10 +729,14 @@ class App extends Component {
   }
 
   cycleTag(incr) {
+    // Advance through the active verse's tags (the chips whose click handler
+    // is setActiveTag) — was a DOM walk over .tag_highlighted+.taglink.
     this.moreTags()
-    var el = document.querySelectorAll(".tag_highlighted+.taglink")[0]
-    if (el === undefined) el = document.querySelectorAll(".taglink")[0]
-    el.click()
+    var tags = this.getVerseTags(this.state.active_verse_id) || []
+    if (tags.length === 0) return false
+    var i = tags.indexOf(this.state.selected_tag)
+    var next = i === -1 || i + 1 >= tags.length ? tags[0] : tags[i + 1]
+    this.setActiveTag(next)
   }
 
   cycleVersionViews() {
@@ -669,32 +746,37 @@ class App extends Component {
   }
 
   cycleHebrewWord(incr) {
-    var el
-    if (incr === 1)
-      el = document.querySelectorAll(
-        "#hebrew_text span.active + span.space + span"
-      )[0]
-    else {
-      el = document.querySelectorAll("#hebrew_text span.active")[0]
-      if (el === undefined || el === null) return false
-      if (
-        el.previousElementSibling === undefined ||
-        el.previousElementSibling === null
-      )
-        return false
-      if (typeof el === "object")
-        el = el.previousElementSibling.previousElementSibling
+    // Step through the verse's Hebrew words by data order (the same order the
+    // #hebrew_text spans render in) — was a previousElementSibling DOM walk.
+    var words =
+      globalData.hebrew && globalData.hebrew.verses
+        ? globalData.hebrew.verses[this.state.active_verse_id]
+        : undefined
+    if (!words || words.length === 0) return false
+    var idx = -1
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].strong === this.state.hebrewStrongIndex) {
+        idx = i
+        break
+      }
     }
-    if (typeof el !== "object")
-      el = document.querySelectorAll("#hebrew_text span")[0]
-    el.click()
+    var target
+    if (incr === 1) {
+      // next word; past the end (or nothing active) wraps to the first —
+      // matching the old "no next sibling → click the first span" fallback
+      target = idx === -1 || idx + 1 >= words.length ? words[0] : words[idx + 1]
+    } else {
+      if (idx <= 0) return false // old walk bailed with no previous sibling
+      target = words[idx - 1]
+    }
+    this.searchHebrewWord(target.strong)
   }
 
   left() {
     //if hebrew
     if (this.state.hebrewMode) return this.cycleHebrewWord(-1)
-    //if commentary hit next commentary button
-    if (this.state.commentaryMode) return this.clickElementID("com_prev")
+    //if commentary step to previous commentary
+    if (this.state.commentaryMode) return this.moveCommentary(-1)
     //if tag, hit next tag button
     if (this.state.selected_tag !== null || this.state.tagMode) this.tagLeft()
     //if search do nothing
@@ -730,8 +812,8 @@ class App extends Component {
   right() {
     //if hebrew
     if (this.state.hebrewMode) return this.cycleHebrewWord(1)
-    //if commentary hit next commentary button
-    if (this.state.commentaryMode) return this.clickElementID("com_next")
+    //if commentary step to next commentary
+    if (this.state.commentaryMode) return this.moveCommentary(1)
 
     if (
       this.state.previewed_tag !== null &&
@@ -750,31 +832,60 @@ class App extends Component {
     this.cycleHeading(1)
   }
 
+  // The ordered list of parent tags as the tag tree renders them: top-level
+  // branches in data order, descending only along the currently-showcased
+  // path (the tree auto-opens ancestors of the showcase tag). Replaces
+  // reading .parentTag innerText out of the DOM.
+  visibleParentTags() {
+    var g = globalData.tags
+    var open = {}
+    var showcase = this.state.showcase_tag
+    if (showcase && g.tagIndex[showcase]) {
+      open[showcase] = true
+      var parents = g.tagIndex[showcase].parents || []
+      for (var p = 0; p < parents.length; p++) open[parents[p]] = true
+    }
+    var list = []
+    var walk = function(base) {
+      var children = g.parentTagIndex[base]
+      if (children === undefined) return
+      for (var i = 0; i < children.length; i++) {
+        var c = children[i]
+        if (g.parentTagIndex[c] === undefined) continue // leaf, not a branch
+        list.push(c)
+        if (open[c]) walk(c)
+      }
+    }
+    walk("root")
+    return list
+  }
+
   tagDown() {
-    var list = Array.prototype.slice
-      .call(document.querySelectorAll(".parentTag"))
-      .map(function(e) {
-        return e.innerText
-      })
+    var list = this.visibleParentTags()
     var i = list.indexOf(this.state.showcase_tag)
     if (list[i + 1] === undefined) return this.showcaseTag("Structures")
     this.showcaseTag(list[i + 1])
   }
 
   tagUp() {
-    var list = Array.prototype.slice
-      .call(document.querySelectorAll(".parentTag"))
-      .map(function(e) {
-        return e.innerText
-      })
+    var list = this.visibleParentTags()
     var i = list.indexOf(this.state.showcase_tag)
     if (list[i - 1] === undefined) return this.showcaseTag("Structures")
     this.showcaseTag(list[i - 1])
   }
 
   tagRight() {
-    if (!this.state.tagMode && document.getElementById("tag_next") !== null)
-      return this.clickElementID("tag_next")
+    if (!this.state.tagMode) {
+      // Same transition the #tag_next button performs (Tags.js setTag):
+      // advance to the focal tag's `next` when it has one.
+      var focal = getFocalTag(this.state).tag
+      var focalMeta = focal !== null ? globalData.tags.tagIndex[focal] : undefined
+      if (focalMeta !== undefined && focalMeta.next !== undefined) {
+        if (this.getTagData(focalMeta.next) !== undefined)
+          this.setActiveTag(focalMeta.next, null, true)
+        return
+      }
+    }
     var g = globalData
     if (this.state.tagMode) {
       var r = g.tags.parentTagIndex["Recently Viewed Tags"]
@@ -796,8 +907,16 @@ class App extends Component {
     }
   }
   tagLeft() {
-    if (!this.state.tagMode && document.getElementById("tag_prev") !== null)
-      return this.clickElementID("tag_prev")
+    if (!this.state.tagMode) {
+      // Same transition the #tag_prev button performs.
+      var focal = getFocalTag(this.state).tag
+      var focalMeta = focal !== null ? globalData.tags.tagIndex[focal] : undefined
+      if (focalMeta !== undefined && focalMeta.prev !== undefined) {
+        if (this.getTagData(focalMeta.prev) !== undefined)
+          this.setActiveTag(focalMeta.prev, null, true)
+        return
+      }
+    }
     var g = globalData
     if (this.state.tagMode) {
       this.tagUp()
