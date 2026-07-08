@@ -20,12 +20,18 @@ Executed on branch `production-readiness` (44 commits). Baseline now: **222 test
 - ~13 of the ~25 interactive elements converted to real `<button>`s with aria-labels + a `.linklike` reset + visible focus, plus the invalid `<div>`-in-`<h2>` fix — P2.6/P2.10 (the composite heading-cycler regions, which wrap nested controls, remain).
 - Removed the dead `Element.prototype.matches` polyfill — P2.11.
 
-**⏸ Deferred (accepted risk / needs a running browser to verify safely):**
+**✅ Browser-verified pass (2026-07-07, Chromium via Playwright):** 44/44 e2e tests green (responsive, render, SEO, settings, side-by-side, tag feature, visual); screenshots reviewed at 1920/1440/1280/820/390 px plus Settings/tag/commentary/search views. Found and fixed in the process:
+- **Commentary route crash** — a legacy string ref was a hard render error under Next 16's bundled React 19 react-dom; every `/commentary.*` deep link hit the error boundary.
+- **Fluid-column clipping family** — drawer rows, info-box row titles, the version-swap strip, and the tag-collapse edge were all still sized for the old fixed columns and clipped mid-glyph at other widths; now fluid (container query, pinned spans, flex rows, fade mask).
+- **Client bare-`/` IINST clobber** — `checkLoaded`'s validate snapped an unseeded patch to meta-first IINST, contradicting the server's KJV metadata (the client half of P0.6); patch now seeded from session state.
+- **DOM-driven navigation removed (P2.3, Task 37)** — `clickElementID` deleted; keyboard drives state directly (10/10 keyboard behaviors browser-verified).
+- **`resolveInitialState` extracted (P2.5, Task 39)** — pure, 9 unit tests; 5/5 boot paths browser-verified (fresh `/`→KJV, URL override, search/hebrew deep links, stored-preference persistence).
+- CSP allows `unsafe-eval` in development only (react-refresh); production unchanged.
+
+**⏸ Deferred (accepted risk):**
 - **Error tracking (P1.1 Sentry):** deferred by user decision — `/api/health` probe + Clicky analytics are in place; add Sentry later with a DSN.
 - **P1.18 git history for `public/com`:** requires `git filter-repo` (history rewrite) — sign-off needed; keeping the dir tracked going forward is fine.
-- **The two full remaining refactors (P2), each rewriting a delicate live path:** DOM-driven navigation removal (P2.3 — `clickElementID` dispatch, `tagUp/tagDown` reading DOM `innerText`, `checkFloater` sniffing `classList`) and the `resolveInitialState` startup consolidation (P2.5). Both have live callers and no unit-test coverage of the integrated path.
-- **Sub-items of otherwise-done P2 tasks:** the composite heading-cycler `<button>` conversions (nested-interactive markup), the controlled search input, removal of the `spread*` measured-layout engine (live callers in Verse/Section), and the font-size legibility floor on width-constrained boxes.
-- **Runtime confirmation of the blind Phase 3–5 changes:** the responsive grid + mobile tab bar, the native-audio playback (autoplay/auto-advance/iOS), and dnd-kit drag/keyboard reorder were verified by build + adversarial review but not exercised in a browser. Run `npm run dev` → :3001 and `npx playwright install chromium && npm run test:e2e` (the responsive + settings specs are the acceptance gates) when the machine has file-descriptor headroom.
+- **Cosmetic sub-items:** the composite heading-cycler `<button>` conversions (nested-interactive markup), the controlled search input, removal of the `spread*` measured-layout engine (live callers in Verse/Section), the font-size legibility floor on width-constrained boxes, and native-audio behavior on real iOS Safari (desktop-Chromium verified; the constant-key/user-activation fix targets iOS but only a device test proves it).
 
 ---
 
