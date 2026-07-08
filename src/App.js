@@ -18,11 +18,9 @@ import { fetchData } from "./data/fetchData"
 import { normalizeCoreData, verseDatatoArray } from "./data/normalizeCoreData"
 import { parseRoute, buildRoute } from "./routing/routeCodec"
 import {
-  DEFAULT_VERSE_ID,
-  DEFAULT_TOP_VERSIONS,
-  DEFAULT_TOP_OUTLINES,
-  DEFAULT_TOP_STRUCTURES
+  DEFAULT_VERSE_ID
 } from "./routing/defaults"
+import { resolveInitialState } from "./state/resolveInitialState"
 import { getFocalTag, getTagVerses } from "./state/tagSelectors"
 import { buildActions } from "./state/actions"
 import { resolveKey, NO_PREVENT_DEFAULT_ACTIONS } from "./state/keymap"
@@ -452,53 +450,12 @@ class App extends Component {
   }
 
   initApp() {
-    var settings = localStorage.getItem("settings")
-    try {
-      settings = JSON.parse(settings)
-    } catch (e) {
-      settings = {}
-    }
-    if (settings === null) settings = {}
-
-    if (settings.top_versions === undefined) settings.top_versions = []
-    if (settings.top_outlines === undefined) settings.top_outlines = []
-    if (settings.top_structures === undefined) settings.top_structures = []
-
-    if (settings.top_versions.length !== 5 || settings.top_versions.indexOf("HBRS")>=0)
-      settings.top_versions = DEFAULT_TOP_VERSIONS.slice()
-    if (settings.top_outlines.length !== 5)
-      settings.top_outlines = DEFAULT_TOP_OUTLINES.slice()
-    if (settings.top_structures.length !== 5 || settings.top_structures.indexOf("bifid")>=0)
-      settings.top_structures = DEFAULT_TOP_STRUCTURES.slice()
-
-    if (settings.version === undefined || settings.version === null)
-      settings.version = settings.top_versions[0]
-    if (settings.outline === undefined || settings.outline === null)
-      settings.outline = settings.top_outlines[0]
-    if (settings.structure === undefined || settings.structure === null)
-      settings.structure = settings.top_structures[0]
-
-    if (
-      settings.commentary_order === undefined ||
-      settings.commentary_order === null
+    // One pure function owns the defaults < localStorage < URL precedence
+    // (src/state/resolveInitialState.js, unit-tested).
+    var settings = resolveInitialState(
+      localStorage.getItem("settings"),
+      window.location.pathname
     )
-      settings.commentary_order = []
-    if (settings.commentary_order.length > 0)
-      settings.commentarySource = settings.commentary_order[0]
-
-    // Apply any URL overrides from pathname using the route codec
-    var initParsed = parseRoute(window.location.pathname);
-    if (initParsed.version !== undefined && initParsed.version.length > 1)
-      settings.version = initParsed.version;
-    if (initParsed.search !== undefined) {
-      settings.searchQuery = initParsed.search;
-      settings.searchMode = false;
-      settings.urlSearch = true;
-    }
-    if (initParsed.hebrew !== undefined)
-      settings.hebrewStrongIndex = initParsed.hebrew;
-
-
     this.setState(settings, function() {
       this.saveSettings()
       this.loadCore()
@@ -507,7 +464,18 @@ class App extends Component {
 
   checkLoaded() {
     if (this.load_queue.length === 0) {
-      var settings = {ready: true}
+      // Seed the URL patch with the session's structure/outline/version (set by
+      // initApp from stored prefs / defaults). getSettingsFromUrl only fills
+      // fields the URL names, and validateSettings snaps any UNDEFINED field to
+      // the meta-first entry — so without seeding, a bare "/" clobbered the
+      // user's version with IINST (the client half of audit P0.6).
+      var settings = {
+        ready: true,
+        structure: this.state.structure,
+        outline: this.state.outline,
+        version: this.state.version,
+        commentarySource: this.state.commentarySource
+      }
       settings = this.getSettingsFromUrl(settings)
 
       var callback = this.setActiveVerse.bind(
